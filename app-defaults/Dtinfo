@@ -1,0 +1,1972 @@
+Dtinfo.version:  $XConsortium: Dtinfo.res /main/25 1996/11/26 15:47:44 cde-hal $
+
+Dtinfo*FontSans:         -dt-application-medium-r-normal-sans-*-*-*-*-p-*-iso8859-1
+Dtinfo*FontSerif:        -dt-application-medium-r-normal-serif-*-*-*-*-p-*-iso8859-1
+Dtinfo*FontMono:         -dt-application-medium-r-normal-serif-*-*-*-*-m-*-iso8859-1
+Dtinfo*FontSymbol:       -dt-application-medium-r-normal-*-*-*-*-*-p-*-dtsymbol-1
+
+Dtinfo.BorderWidth:	2
+Dtinfo*highlightThickness:	1
+
+! $XConsortium: Help.res /main/15 1996/11/20 18:39:23 cde-hal $
+
+! *helpcardDbFiles: Olias.hlp
+
+Dtinfo*helpdialog*DisplayArea.foreground: black
+
+! +++ Info Manager Browser +++ 
+
+Dtinfo*help.helpcard:                   common.HelpWin.HelpButton.ctx
+Dtinfo*helpcard*.helpcard:              common.HelpWin.HelpButton.ctx
+Dtinfo*VertScrollBar.helpcard:          common.ScrollBar.ctx
+Dtinfo*HorScrollBar.helpcard:           common.ScrollBar.ctx
+Dtinfo*sash.helpcard:                   common.Sash.ctx
+Dtinfo*helpHelpDialog_popup.helpcard:   dtinfo.helpHelpDialog-popup.win
+Dtinfo*indexHelpDialog_popup.helpcard:  dtinfo.indexHelpDialog-popup.win
+
+! +++ Info Manager Help Menu +++ 
+
+on_overview:				dtinfo.booklist.on-overview
+on_tasks:				dtinfo.booklist.on-tasks
+on_reference:				dtinfo.booklist.on-reference
+on_help:				common.hlp
+on_about:				dtinfo.booklist.on-about
+
+! +++++++++++++++++++++++
+! +++ Booklist Window +++
+! +++++++++++++++++++++++
+
+doc_list_help:				dtinfo.booklist.win
+
+Dtinfo.helpcard:			dtinfo.booklist.win
+
+
+! +++ Booklist Menu +++
+
+Dtinfo.mainw*menu_bar.file.helpcard:		dtinfo.booklist.file-menu.ctx
+Dtinfo.mainw*menu_bar.edit.helpcard:		dtinfo.booklist.edit-menu.ctx
+Dtinfo.mainw*menu_bar.options.helpcard:		dtinfo.booklist.options-menu.ctx
+Dtinfo.mainw*menu_bar.windows.helpcard:		dtinfo.booklist.windows-menu.ctx
+
+! +++ Booklist Tool Bar +++
+
+Dtinfo.mainw*view.helpcard:			dtinfo.booklist.browse.ctx
+Dtinfo.mainw*print.helpcard:			dtinfo.booklist.print.ctx
+Dtinfo.mainw*add.helpcard:			dtinfo.booklist.add.ctx
+Dtinfo.mainw*remove.helpcard:			dtinfo.booklist.remove.ctx
+Dtinfo.mainw*query.helpcard:			dtinfo.booklist.edit-query.ctx
+Dtinfo.mainw*marks_list.helpcard:			dtinfo.booklist.marks.ctx
+
+! +++ Booklist Search Area +++
+
+Dtinfo.mainw*scope_editor.helpcard:		dtinfo.booklist.scope-editor.ctx
+Dtinfo.mainw*search_area.text.helpcard:		dtinfo.booklist.search.ctx
+Dtinfo.mainw*search_area*OptionButton.helpcard:	dtinfo.booklist.scope.ctx
+
+! ++++++++++++++++++++++++++
+! +++ Add infolib dialog +++
+! ++++++++++++++++++++++++++
+
+add_infolib_help: 			dtinfo.add-infolib.win
+
+! +++++++++++++++++++++++
+! +++ Nodeview Window +++
+! +++++++++++++++++++++++
+
+Dtinfo.nodeview.mainw.form.helpcard:	dtinfo.nodeview.win
+
+Dtinfo.nodeview.mainw*DisplayAreaForm.display_area: dtinfo.nodeview.win
+
+! +++ Nodeview Menu +++
+
+Dtinfo.nodeview.mainw*menu_bar.file.helpcard:	dtinfo.nodeview.menu-bar.file.ctx
+Dtinfo.nodeview.mainw*menu_bar.search.helpcard:	dtinfo.nodeview.menu-bar.search.ctx
+Dtinfo.nodeview.mainw*menu_bar.go.helpcard:	dtinfo.nodeview.menu-bar.go.ctx
+Dtinfo.nodeview.mainw*menu_bar.marks.helpcard:	dtinfo.nodeview.menu-bar.marks.ctx
+Dtinfo.nodeview.mainw*menu_bar.options.helpcard:	dtinfo.nodeview.menu-bar.options.ctx
+Dtinfo.nodeview.mainw*menu_bar.windows.helpcard:	dtinfo.nodeview.menu-bar.windows.ctx
+Dtinfo.nodeview.mainw*menu_bar.help.helpcard:	common.HelpMenu.ctx
+
+! +++ Nodeview Toolbar +++
+
+Dtinfo.nodeview.mainw.tool_bar.history_prev.helpcard:  dtinfo.nodeview.tool-bar.history-prev.ctx
+Dtinfo.nodeview.mainw.tool_bar.history_next.helpcard:  dtinfo.nodeview.tool-bar.history-next.ctx
+Dtinfo.nodeview.mainw.tool_bar.section_prev.helpcard:  dtinfo.nodeview.tool-bar.section-prev.ctx
+Dtinfo.nodeview.mainw.tool_bar.section_next.helpcard:  dtinfo.nodeview.tool-bar.section-next.ctx
+Dtinfo.nodeview.mainw.tool_bar.search_prev.helpcard:   dtinfo.nodeview.tool-bar.search-prev.ctx
+Dtinfo.nodeview.mainw.tool_bar.search_next.helpcard:   dtinfo.nodeview.tool-bar.search-next.ctx
+Dtinfo.nodeview.mainw.tool_bar.print.helpcard:         dtinfo.nodeview.tool-bar.print.ctx
+Dtinfo.nodeview.mainw.tool_bar.booklist.helpcard:      dtinfo.nodeview.tool-bar.booklist.ctx
+Dtinfo.nodeview.mainw.tool_bar.graphical_map.helpcard: dtinfo.nodeview.tool-bar.graphical-map.ctx
+Dtinfo.nodeview.mainw.tool_bar.lock.helpcard:          dtinfo.nodeview.tool-bar.lock.ctx
+
+! +++ Nodeview Option Menu +++
+
+Dtinfo.nodeview.mainw*form.title.OptionButton.helpcard: dtinfo.nodeview.title.ctx
+
+! +++ Nodeview Search Area +++
+
+Dtinfo.nodeview.mainw*search_area.scope.OptionButton.helpcard: dtinfo.booklist.scope.ctx
+Dtinfo.nodeview.mainw*search_area.text.helpcard:               dtinfo.booklist.search.ctx
+Dtinfo.nodeview.mainw*search_area.scope_editor.helpcard:	    dtinfo.booklist.scope-editor.ctx
+
+! +++ Nodeview Scroll Bars +++
+
+Dtinfo.nodeview.mainw*DisplayDtHelpVertScrollBar.helpcard: common.ScrollBar.ctx
+Dtinfo.nodeview.mainw*DisplayHorzScrollBar.helpcard:       common.ScrollBar.ctx
+
+! +++++++++++++++++++++++
+! +++ Search Results +++
+! +++++++++++++++++++++++
+
+results_help:				dtinfo.results.win
+
+Dtinfo.results*helpcard:				dtinfo.results.win
+Dtinfo.results*retain.helpcard:			dtinfo.results.retain.ctx
+Dtinfo.results*query_text.helpcard:			dtinfo.results.query-text.ctx
+Dtinfo.results*listform.listSW.list.helpcard:	dtinfo.results.listSW.list.ctx
+Dtinfo.results*display.helpcard:			dtinfo.results.display.ctx
+Dtinfo.results*close.helpcard:			dtinfo.results.close.ctx
+Dtinfo.results*help.helpcard:			common.HelpWin.HelpButton.ctx
+Dtinfo.results*pane*sash.helpcard:                     common.Sash.ctx
+Dtinfo.results*pane*VertScrollBar.helpcard:            common.ScrollBar.ctx
+Dtinfo.results*pane*HorScrollBar.helpcard:             common.ScrollBar.ctx
+
+! +++++++++++++++++++++++
+! +++ Bookmark Editor +++
+! +++++++++++++++++++++++
+
+bookmark_edit_help:		dtinfo.bookmark-edit.win
+
+Dtinfo.bookmark_edit*helpcard:			dtinfo.bookmark-edit.win
+Dtinfo.bookmark_edit*name_text.helpcard:		dtinfo.bookmark-edit.name.ctx
+Dtinfo.bookmark_edit*notes_text.helpcard:		dtinfo.bookmark-edit.notes.ctx
+Dtinfo.bookmark_edit*ok.helpcard:			dtinfo.bookmark-edit.ok.ctx
+Dtinfo.bookmark_edit*view.helpcard:		dtinfo.bookmark-edit.view.ctx
+Dtinfo.bookmark_edit*cancel.helpcard:		dtinfo.bookmark-edit.cancel.ctx
+Dtinfo.bookmark_edit*help.helpcard:		common.HelpWin.HelpButton.ctx
+Dtinfo.bookmark_edit*VertScrollBar.helpcard:	common.ScrollBar.ctx
+
+! +++++++++++++++++++++++
+! +++ Preferences +++
+! +++++++++++++++++++++++
+
+preferences_help:			dtinfo.preferences.win
+
+Dtinfo.preferences*helpcard:				dtinfo.preferences.win
+Dtinfo.preferences*options.OptionButton.helpcard:	dtinfo.preferences.options.OptionButton.ctx
+Dtinfo.preferences*ok.helpcard:				dtinfo.preferences.ok.ctx
+Dtinfo.preferences*apply.helpcard:			dtinfo.preferences.Apply.ctx
+Dtinfo.preferences*reset.helpcard:			dtinfo.preferences.reset.ctx
+Dtinfo.preferences*cancel.helpcard:			dtinfo.preferences.cancel.ctx
+Dtinfo.preferences*help.helpcard:			common.HelpWin.HelpButton.ctx
+
+! +++ Browser Preferences +++
+
+Dtinfo.preferences*browse_prefs*browse_geo.helpcard:     		dtinfo.preferences.browse-prefs.browse-geo.ctx
+Dtinfo.preferences*browse_prefs*get_browse_geo.helpcard: 		dtinfo.preferences.browse-prefs.get-browse-geo.ctx
+Dtinfo.preferences*browse_prefs*fs_label.helpcard:       		dtinfo.preferences.browse-prefs.fs-form.scale-field.ctx
+Dtinfo.preferences*browse_prefs*lock_toggle.helpcard:		dtinfo.preferences.browse-prefs.lock-toggle.ctx
+Dtinfo.preferences*browse_prefs*fs_form.scale_up.helpcard:		dtinfo.preferences.browse-prefs.fs-form.scale-field.ctx
+Dtinfo.preferences*browse_prefs*fs_form.scale_down.helpcard:	dtinfo.preferences.browse-prefs.fs-form.scale-field.ctx
+
+! +++ Map Preferences +++
+
+Dtinfo.preferences*map_prefs.map_geo.helpcard:		dtinfo.preferences.map-prefs.map-geo.ctx
+Dtinfo.preferences*map_prefs.get_map_geo.helpcard:	dtinfo.preferences.map-prefs.get-map-geo.ctx
+Dtinfo.preferences*map_prefs.update_toggle.helpcard:	dtinfo.preferences.prefs.update-toggle.ctx
+ 
+! +++ History Preferences +++
+
+Dtinfo.preferences*history_prefs.nh_field.helpcard:  dtinfo.preferences.history-prefs.nh-field.ctx
+Dtinfo.preferences*history_prefs.nh_up.helpcard:     dtinfo.preferences.history-prefs.nh-up.ctx
+Dtinfo.preferences*history_prefs.nh_down.helpcard:   dtinfo.preferences.history-prefs.nh-down.ctx
+Dtinfo.preferences*history_prefs.sh_field.helpcard:  dtinfo.preferences.history-prefs.sh-field.ctx
+Dtinfo.preferences*history_prefs.sh_up.helpcard:     dtinfo.preferences.history-prefs.sh-up.ctx
+Dtinfo.preferences*history_prefs.sh_down.helpcard:   dtinfo.preferences.history-prefs.sh-down.ctx
+
+! +++ Search Preferences +++
+
+Dtinfo.preferences*search_prefs*hits_field.helpcard: 		dtinfo.preferences.search-prefs.hits-field.ctx
+Dtinfo.preferences*search_prefs*adisplay_toggle.helpcard: 	dtinfo.preferences.search-prefs.adisplay-toggle.ctx
+Dtinfo.preferences*search_prefs.hits_form.hits_up.helpcard:	dtinfo.preferences.search-prefs.hits-form.hits-up.ctx
+Dtinfo.preferences*search_prefs.hits_form.hits_down.helpcard:	dtinfo.preferences.search-prefs.hits-form.hits-down.ctx
+
+! +++++++++++++++++++++++
+! +++ Print Panel +++
+! +++++++++++++++++++++++
+
+print_panel_help:			dtinfo.print.win
+
+Dtinfo*nodeview*PrintSetup_popup.PrintSetup.helpcard:	dtinfo.print.win
+Dtinfo*nodeview.mainw*PrintSetup.Info.helpcard:		dtinfo.PrintSetup.Info.ctx
+Dtinfo*nodeview.mainw*PrintSetup.Name.Text.helpcard:	dtinfo.PrintSetup.Name.Text.ctx
+Dtinfo*nodeview.mainw*PrintSetup.SelectPrinter.helpcard:	dtinfo.PrintSetup.SelectPrinter.ctx
+Dtinfo*nodeview.mainw*PrintSetup.FileName.helpcard:	dtinfo.PrintSetup.FileName.ctx
+Dtinfo*nodeview.mainw*PrintSetup.SelectFile.helpcard:	dtinfo.PrintSetup.SelectFile.ctx
+Dtinfo*nodeview.mainw*DestRadioBox.button_0.helpcard:	dtinfo.PrintSetup.DestRadioBox.button_0.ctx
+Dtinfo*nodeview.mainw*DestRadioBox.button_1.helpcard:	dtinfo.PrintSetup.DestRadioBox.button_1.ctx
+Dtinfo*nodeview.mainw*Copies.Copies_TF.helpcard:		dtinfo.doc-tree.PrintSetup.Copies.Copies-TF.ctx
+
+Dtinfo*nodeview.mainw*PrintSetup*print_nodes.helpcard: 	dtinfo.PrintSetup.what-form.print-nodes.ctx
+Dtinfo*nodeview.mainw*PrintSetup*print_hierarchy.helpcard:	dtinfo.PrintSetup.what-form.print-hierarchy.ctx
+Dtinfo*nodeview.mainw*PrintSetup.Print.helpcard:		dtinfo.PrintSetup.Print.ctx
+Dtinfo*nodeview.mainw*PrintSetup.Setup.helpcard:		dtinfo.PrintSetup.Setup.ctx
+Dtinfo*nodeview.mainw*PrintSetup.Cancel.helpcard:		dtinfo.PrintSetup.Cancel.ctx
+Dtinfo*nodeview.mainw*PrintSetup.Help:			common.HelpWin.HelpButton.ctx
+
+Dtinfo.doc_tree*PrintSetup_popup.PrintSetup.helpcard:	dtinfo.print.win
+Dtinfo.doc_tree*PrintSetup.Info.helpcard:		dtinfo.PrintSetup.Info.ctx
+Dtinfo.doc_tree*PrintSetup.Name.Text.helpcard:	dtinfo.PrintSetup.Name.Text.ctx
+Dtinfo.doc_tree*PrintSetup.SelectPrinter.helpcard:	dtinfo.PrintSetup.SelectPrinter.ctx
+Dtinfo.doc_tree*PrintSetup.FileName.helpcard:	dtinfo.PrintSetup.FileName.ctx
+Dtinfo.doc_tree*PrintSetup.SelectFile.helpcard:	dtinfo.PrintSetup.SelectFile.ctx
+Dtinfo.doc_tree*DestRadioBox.button_0.helpcard:	dtinfo.PrintSetup.DestRadioBox.button-0.ctx
+Dtinfo.doc_tree*DestRadioBox.button_1.helpcard:	dtinfo.PrintSetup.DestRadioBox.button-1.ctx
+Dtinfo.doc_tree*Copies.Copies_TF.helpcard:		dtinfo.doc-tree.PrintSetup.Copies.Copies-TF.ctx
+  
+Dtinfo.doc_tree*PrintSetup*print_nodes.helpcard: 	dtinfo.PrintSetup.what-form.print-nodes.ctx
+Dtinfo.doc_tree*PrintSetup*print_hierarchy.helpcard:	dtinfo.PrintSetup.what-form.print-hierarchy.ctx
+Dtinfo.doc_tree*PrintSetup.Print.helpcard:		dtinfo.PrintSetup.Print.ctx
+Dtinfo.doc_tree*PrintSetup.Setup.helpcard:		dtinfo.PrintSetup.Setup.ctx
+Dtinfo.doc_tree*PrintSetup.Cancel.helpcard:		dtinfo.PrintSetup.Cancel.ctx
+Dtinfo.doc_tree*PrintSetup.Help:			common.HelpWin.HelpButton.ctx
+
+!  *how_many_title.helpcard:         dtinfo.print.how-many-title.ctx
+!  *how_many_form.helpcard:          dtinfo.print.how-many-form.ctx
+!  *how_many_form.selected_label.helpcard:  dtinfo.print.how-many-form.selected-label.ctx
+!  *how_many_form.selected_field.helpcard:  dtinfo.print.how-many-form.selected-field.ctx
+!  *how_many_form.to_print_label.helpcard:  dtinfo.print.how-many-form.to-print-label.ctx
+!  *how_many_form.to_print_field.helpcard:  dtinfo.print.how-many-form.to print-field.ctx
+!  *what_title.helpcard:             dtinfo.print.what-title.ctx
+!  *what_form.print_nodes.helpcard:  dtinfo.print.what-form.print-nodes.ctx
+!  *what_form.print_hierarchy.helpcard:  dtinfo.print.what-form.print-hierarchy.ctx
+!  *where_title.helpcard:            dtinfo.print.where-title.ctx
+!  *where_form.to_printer.helpcard:  dtinfo.print.where-form.to-printer.ctx
+!  *where_form.to_file.helpcard:     dtinfo.print.where-form.to-file.ctx
+!  *where_form.file_select.helpcard: dtinfo.print.where-form.file-select.ctx
+!  *where_form.printer_name.helpcard: dtinfo.print.where-form.printer-name.ctx
+!  *where_form.file_name.helpcard:   dtinfo.print.where-form.file-name.ctx
+!  *ok.helpcard:                     dtinfo.print.ok.ctx
+!  *cancel.helpcard:                 dtinfo.print.cancel.ctx
+!  *help.helpcard:                   common.HelpWin.HelpButton.ctx
+!  *file_select_popup*.helpcard:     dtinfo.print.file-select-popup.win
+!  *file_select_popup*Items.helpcard:  dtinfo.print.file-select-popup.Items.ctx
+!  *file_select_popup*ItemsList.helpcard:  dtinfo.print.file-select-popup.ItemsList.ctx
+!  *file_select_popup*VertScrollBar.helpcard: common.ScrollBar.ctx
+!  *file_select_popup*HorScrollBar.helpcard:  common.ScrollBar.ctx
+!  *file_select_popup*Selection.helpcard:  dtinfo.print.file-select-popup.Selection.ctx
+!  *file_select_popup*Text.helpcard:  dtinfo.print.file-select-popup.Text.ctx
+!  *file_select_popup*OK.helpcard:    dtinfo.print.file-select-popup.OK.ctx
+!  *file_select_popup*Apply.helpcard: dtinfo.print.file-select-popup.Apply.ctx
+!  *file_select_popup*Cancel.helpcard:dtinfo.print.file-select-popup.Cancel.ctx
+!  *file_select_popup*Help.helpcard:  common.HelpWin.HelpButton.ctx
+!  *file_select_popup*FilterLabel.helpcard:  dtinfo.print.file-select-popup.FilterLabel.ctx
+!  *file_select_popup*Dir.helpcard:   dtinfo.print.file-select-popup.Dir.ctx
+!  *file_select_popup*DirList.helpcard:  dtinfo.print.file-select-popup.DirList.ctx
+
+! +++++++++++++++++++++++
+! +++ Graphical Map +++
+! +++++++++++++++++++++++
+
+map_help:                           	dtinfo.map.win
+
+Dtinfo.map.rootform*helpcard:                   		dtinfo.map.win
+Dtinfo.map.rootform.pane.topform*panner.helpcard: 	dtinfo.map.pane.topform.panner.ctx
+Dtinfo.map.rootform.pane.topform.lock.helpcard:		dtinfo.map.autoUpB.ctx
+Dtinfo.map.rootform.pane.tframe.porthole.tree.helpcard:	dtinfo.map.win
+Dtinfo.map.rootform.pane.Sash.helpcard:              	common.Sash.ctx
+Dtinfo.map.rootform.bottomform.close.helpcard:		common.Close.ctx
+Dtinfo.map.rootform.bottomform.help.helpcard:		common.HelpWin.HelpButton.ctx
+
+! +++++++++++++++++++++++
+! +++ User Marks List +++
+! +++++++++++++++++++++++
+
+mark_list_help:				dtinfo.mark-list.win
+
+Dtinfo.mark_list*helpcard:				dtinfo.mark-list.win
+Dtinfo.mark_list*listSW.list.helpcard:		dtinfo.mark-list.list.ctx
+Dtinfo.mark_list*view.helpcard:			dtinfo.mark-list.view.ctx
+Dtinfo.mark_list*edit.helpcard:			dtinfo.mark-list.edit.ctx
+Dtinfo.mark_list*delete.helpcard:			dtinfo.mark-list.delete.ctx
+Dtinfo.mark_list*close.helpcard:			common.Close.ctx
+Dtinfo.mark_list*help.helpcard:			common.HelpWin.HelpButton.ctx
+Dtinfo.mark_list*listSW.VertScrollBar.helpcard:	common.ScrollBar.ctx
+
+! +++++++++++++++++++++++
+! +++ Section History +++
+! +++++++++++++++++++++++
+
+node_hist_help:			dtinfo.history.win
+
+Dtinfo.node_hist.form*helpcard:			dtinfo.history.win
+Dtinfo.node_hist.form*list.helpcard:		dtinfo.history.pane.listform.listSW.list.ctx
+Dtinfo.node_hist.form*display.helpcard:		dtinfo.history.display.ctx
+Dtinfo.node_hist.form*close.helpcard:		common.Close.ctx
+Dtinfo.node_hist.form*help.helpcard:		common.HelpWin.HelpButton.ctx
+Dtinfo.node_hist.form*VertScrollBar.helpcard:	common.ScrollBar.ctx
+Dtinfo.node_hist.form*HorScrollBar.helpcard:	common.ScrollBar.ctx
+Dtinfo.node_hist.form*sash.helpcard:		common.Sash.ctx
+
+! +++++++++++++++++++++++
+! +++ Search History +++
+! +++++++++++++++++++++++
+
+search_history_help:			dtinfo.search-history.win
+ 
+Dtinfo.search_history*helpcard:				dtinfo.search-history.win
+Dtinfo.search_history*listSW.list.helpcard:		dtinfo.search-history.listSW.list.ctx
+Dtinfo.search_history*activate.helpcard:			dtinfo.search-history.activate.ctx
+Dtinfo.search_history*close.helpcard:			common.Close.ctx
+Dtinfo.search_history*help.helpcard:			common.HelpWin.HelpButton.ctx
+Dtinfo.search_history*listSW.VertScrollBar.helpcard:	common.ScrollBar.ctx
+Dtinfo.search_history*listSW.HorScrollBar.helpcard:	common.ScrollBar.ctx
+
+! +++++++++++++++++++++++
+! +++ Query Editor +++
+! +++++++++++++++++++++++
+
+query_editor_help:			dtinfo.query-editor.win
+
+Dtinfo.query_editor*helpcard:				dtinfo.query-editor.win
+Dtinfo.query_editor*scope_option.OptionButton.helpcard:	dtinfo.query-editor.scope-option.OptionButton.ctx
+Dtinfo.query_editor*prefix.OptionButton.helpcard:	dtinfo.query-editor.pane.popup-prefix-menu.ctx
+Dtinfo.query_editor*term_text.helpcard:			dtinfo.query-editor.pane.term-text.ctx
+Dtinfo.query_editor*connective.OptionButton.helpcard:	dtinfo.query-editor.pane.connective.ctx
+Dtinfo.query_editor*qform.qtextSW.qtext.helpcard:	dtinfo.query-editor.qform.ctx
+Dtinfo.query_editor*sash.helpcard:			common.Sash.ctx
+
+Dtinfo.query_editor*search.helpcard:			dtinfo.query-editor.XmPushButton.search.ctx
+Dtinfo.query_editor*clear.helpcard:			dtinfo.query-editor.XmPushButton.clear.ctx
+Dtinfo.query_editor*scope.helpcard:			dtinfo.query-editor.XmPushButton.scope.ctx
+Dtinfo.query_editor*close.helpcard:			common.Close.ctx
+Dtinfo.query_editor*help.helpcard:			common.HelpWin.HelpButton.ctx
+Dtinfo.query_editor*pane*VertScrollBar.helpcard:		common.ScrollBar.ctx
+Dtinfo.query_editor*pane*HorScrollBar.helpcard:		common.ScrollBar.ctx
+
+! +++++++++++++++++++++++
+! +++ Search Scope +++
+! +++++++++++++++++++++++
+
+scope_editor_help:			dtinfo.scope-editor.win
+
+Dtinfo.scope_editor*helpcard:				dtinfo.scope-editor.win
+Dtinfo.scope_editor*scope_option.OptionButton.helpcard:	dtinfo.scope-editor.scope-option.ctx
+Dtinfo.scope_editor*infobases.helpcard:			dtinfo.scope-editor.books.ctx
+Dtinfo.scope_editor*components.helpcard:			dtinfo.scope-editor.components.ctx
+Dtinfo.scope_editor*new.helpcard:			dtinfo.scope-editor.new.ctx
+Dtinfo.scope_editor*save.helpcard:			dtinfo.scope-editor.save.ctx
+Dtinfo.scope_editor*rename.helpcard:			dtinfo.scope-editor.rename.ctx
+Dtinfo.scope_editor*delete.helpcard:			dtinfo.scope-editor.delete.ctx
+Dtinfo.scope_editor*reset.helpcard:			dtinfo.scope-editor.reset.ctx
+Dtinfo.scope_editor*close.helpcard:			common.Close.ctx
+Dtinfo.scope_editor*help.helpcard:                   	common.HelpWin.HelpButton.ctx
+Dtinfo.scope_editor*VertScrollBar.helpcard:		common.ScrollBar.ctx
+Dtinfo.scope_editor*HorScrollBar.helpcard:		common.ScrollBar.ctx
+
+! ++++++++++++++++++++++++
+! +++ Detached Graphic +++
+! ++++++++++++++++++++++++
+
+graphic_on_window:		dtinfo.graphic.win
+graphic_on_help:		common.hlp
+
+Dtinfo.graphic*helpcard:			dtinfo.graphic.win
+Dtinfo.graphic*menu_bar.file.helpcard:	dtinfo.graphic.menu-bar.file.ctx
+Dtinfo.graphic*menu_bar.panner.helpcard:	dtinfo.graphic.menu-bar.panner.ctx
+Dtinfo.graphic*menu_bar.view.helpcard:	dtinfo.graphic.menu-bar.view.ctx
+Dtinfo.graphic*menu_bar.help.helpcard:	common.HelpMenu.ctx
+Dtinfo.graphic*frame*panner.helpcard:	dtinfo.graphic.panner.ctx
+
+! ++++++++++++++++++++++
+! +++  Open Locator  +++
+! ++++++++++++++++++++++
+
+open_url_help:		dtinfo.open-url.win
+
+Dtinfo.open_url*helpcard:		dtinfo.open-url.win
+Dtinfo.open_url*form.text_field:	dtinfo.open-url.text-field.ctx
+Dtinfo.open_url*ok.helpcard:		dtinfo.open-url.ok.ctx
+Dtinfo.open_url*apply.helpcard:	dtinfo.open-url.apply.ctx
+Dtinfo.open_url*clear.helpcard:	dtinfo.open-url.clear.ctx
+Dtinfo.open_url*close.helpcard:	common.Close.ctx
+Dtinfo.open_url*help.helpcard:	common.HelpWin.HelpButton.ctx
+
+! ++++++++++++ end ++++++++++++++
+
+! $XConsortium: Macros.res /main/4 1996/07/18 17:27:10 rcs $
+
+! $XConsortium: QueryEditor.res /main/9 1996/11/22 20:54:54 cde-hal $
+
+Dtinfo.query_editor.deleteResponse: unmap
+!    geometry: 620x320
+Dtinfo.query_editor.height: 320
+!    allowShellResize: True
+Dtinfo.query_editor.form.scope_option.navigationType: tab_group
+Dtinfo.query_editor.form.scope_option.leftAttachment: attach_form
+Dtinfo.query_editor.form.scope_option.topAttachment: attach_form
+Dtinfo.query_editor.form.menu_bar.topAttachment: attach_form
+Dtinfo.query_editor.form.menu_bar.leftAttachment: attach_form
+Dtinfo.query_editor.form.menu_bar.rightAttachment: attach_form
+Dtinfo.query_editor.form.menu_bar.edit.sensitive: False
+Dtinfo.query_editor.form.pane.topAttachment: attach_widget
+Dtinfo.query_editor.form.pane.topWidget: scope_option
+Dtinfo.query_editor.form.pane.leftAttachment: attach_form
+Dtinfo.query_editor.form.pane.rightAttachment: attach_form
+Dtinfo.query_editor.form.pane.bottomAttachment: attach_widget
+Dtinfo.query_editor.form.pane.bottomWidget: separator
+Dtinfo.query_editor.form.pane.qform.qlabel.leftAttachment: attach_form
+Dtinfo.query_editor.form.pane.qform.qlabel.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.qform.qlabel.topOffset: 6
+!            fontList: -dt-application-bold-r-normal-sans-*-140-*-*-p-*-iso8859-1
+Dtinfo.query_editor.form.pane.qform.qtextSW.leftAttachment: attach_widget
+Dtinfo.query_editor.form.pane.qform.qtextSW.leftWidget: qlabel
+Dtinfo.query_editor.form.pane.qform.qtextSW.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.qform.qtextSW.bottomAttachment: attach_form
+Dtinfo.query_editor.form.pane.qform.qtextSW.rightAttachment: attach_form
+Dtinfo.query_editor.form.pane.qform.qtextSW.qtext.cursorPositionVisible: False
+Dtinfo.query_editor.form.pane.qform.qtextSW.qtext.editable: False
+Dtinfo.query_editor.form.pane.qform.qtextSW.qtext.editMode: multi_line_edit
+Dtinfo.query_editor.form.pane.qform.qtextSW.qtext.rows: 2
+Dtinfo.query_editor.form.pane.qform.qtextSW.qtext.wordWrap: True
+Dtinfo.query_editor.form.pane.qform.qtextSW.qtext.verifyBell: False
+Dtinfo.query_editor.form.pane.qform.qtextSW.qtext.scrollHorizontal: False
+Dtinfo.query_editor.form.pane.qform.qtextSW.qtext.traversalOn: false
+!              translations: #override <Key>Tab: next-tab-group()
+Dtinfo.query_editor.form.pane.query_area.scrollingPolicy: automatic
+! Needs to be static until we can control sizing better.
+Dtinfo.query_editor.form.pane.query_area.scrollBarDisplayPolicy: static
+Dtinfo.query_editor.form.separator.bottomAttachment: attach_widget
+Dtinfo.query_editor.form.separator.bottomWidget: search
+Dtinfo.query_editor.form.separator.leftAttachment: attach_form
+Dtinfo.query_editor.form.separator.rightAttachment: attach_form
+Dtinfo.query_editor.form.separator.bottomOffset: 4
+Dtinfo.query_editor.form.separator.highlightThickness: 0
+Dtinfo.query_editor.form.hform.leftAttachment: attach_position
+Dtinfo.query_editor.form.hform.leftPosition: 25
+Dtinfo.query_editor.form.hform.rightAttachment: attach_position
+Dtinfo.query_editor.form.hform.rightPosition: 50
+Dtinfo.query_editor.form.hform.bottomAttachment: attach_form
+Dtinfo.query_editor.form.hform.bottomOffset: 8
+Dtinfo.query_editor.form.hform*sensitive: False
+Dtinfo.query_editor.form.hform.hist_prev.leftAttachment: attach_form
+Dtinfo.query_editor.form.hform.hist_prev.topAttachment: attach_form
+Dtinfo.query_editor.form.hform.hist_prev.bottomAttachment: attach_form
+Dtinfo.query_editor.form.hform.hist_prev.arrowDirection: arrow_left
+Dtinfo.query_editor.form.hform.hist_prev.shadowThickness: 0
+Dtinfo.query_editor.form.hform.hist_next.topAttachment: attach_form
+Dtinfo.query_editor.form.hform.hist_next.bottomAttachment: attach_form
+Dtinfo.query_editor.form.hform.hist_next.leftAttachment: attach_widget
+Dtinfo.query_editor.form.hform.hist_next.leftWidget: hist_prev
+Dtinfo.query_editor.form.hform.hist_next.arrowDirection: arrow_right
+Dtinfo.query_editor.form.hform.hist_next.shadowThickness: 0
+Dtinfo.query_editor.form.hform.hist_next.topOffset: -1
+Dtinfo.query_editor.form.hform.history.topAttachment: attach_form
+Dtinfo.query_editor.form.hform.history.bottomAttachment: attach_form
+Dtinfo.query_editor.form.hform.history.leftAttachment: attach_widget
+Dtinfo.query_editor.form.hform.history.leftWidget: hist_next
+Dtinfo.query_editor.form.hform.history.rightAttachment: attach_form
+Dtinfo.query_editor.form.hform.history.rightOffset: 3
+Dtinfo.query_editor.form.search.leftAttachment: attach_form
+Dtinfo.query_editor.form.search.leftOffset: 3
+Dtinfo.query_editor.form.search.rightAttachment: attach_position
+Dtinfo.query_editor.form.search.rightPosition: 20
+Dtinfo.query_editor.form.search.bottomAttachment: attach_form
+Dtinfo.query_editor.form.search.sensitive: False
+Dtinfo.query_editor.form.clear.leftAttachment: attach_position
+Dtinfo.query_editor.form.clear.leftPosition: 20
+Dtinfo.query_editor.form.clear.rightAttachment: attach_position
+Dtinfo.query_editor.form.clear.rightPosition: 40
+Dtinfo.query_editor.form.clear.bottomAttachment: attach_form
+Dtinfo.query_editor.form.scope.leftAttachment: attach_position
+Dtinfo.query_editor.form.scope.leftPosition: 40
+Dtinfo.query_editor.form.scope.rightAttachment: attach_position
+Dtinfo.query_editor.form.scope.rightPosition: 60
+Dtinfo.query_editor.form.scope.bottomAttachment: attach_form
+Dtinfo.query_editor.form.cancel.leftAttachment: attach_position
+Dtinfo.query_editor.form.cancel.leftPosition: 60
+Dtinfo.query_editor.form.cancel.rightAttachment: attach_position
+Dtinfo.query_editor.form.cancel.rightPosition: 80
+Dtinfo.query_editor.form.cancel.bottomAttachment: attach_form
+Dtinfo.query_editor.form.help.leftAttachment: attach_position
+Dtinfo.query_editor.form.help.leftPosition: 80
+Dtinfo.query_editor.form.help.rightAttachment: attach_form
+Dtinfo.query_editor.form.help.right_offset: 3
+Dtinfo.query_editor.form.help.bottomAttachment: attach_form
+Dtinfo.query_editor.form.help.sensitive: True
+
+! $XConsortium: QueryTermView.res /main/7 1996/10/11 21:10:29 cde-hal $
+
+Dtinfo.query_editor.form.pane.spacing: 14
+Dtinfo.query_editor.form.pane.query_area*qterm_view.leftAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.rightAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.select.leftAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.select.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.select.topOffset: 4
+!x          leftAttachment: attach_widget; leftWidget: select; topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.prefix.leftAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.prefix.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view*prefix_menu.tearOffModel: tear_off_disabled
+Dtinfo.query_editor.form.pane.query_area*qterm_view.term_text.resizable: true
+Dtinfo.query_editor.form.pane.query_area*qterm_view.term_text.leftAttachment: attach_widget
+Dtinfo.query_editor.form.pane.query_area*qterm_view.term_text.leftWidget: prefix
+Dtinfo.query_editor.form.pane.query_area*qterm_view.term_text.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.term_text.rightAttachment: attach_widget
+Dtinfo.query_editor.form.pane.query_area*qterm_view.term_text.rightWidget: pw_button
+Dtinfo.query_editor.form.pane.query_area*qterm_view.term_text.rightOffset: 4
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.height: 30
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.rightAttachment: attach_widget
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.rightWidget: connective
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.topOffset: 3
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.marginWidth: 3
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.marginHeight: 3
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.leftOffset: 4
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.arrowDirection: arrow_right
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pw_button.shadowThickness: 0
+Dtinfo.query_editor.form.pane.query_area*qterm_view.connective.rightAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.connective.topAttachment: attach_form
+!          labelString:
+Dtinfo.query_editor.form.pane.query_area*qterm_view.connective*entryAlignment: alignment_beginning
+Dtinfo.query_editor.form.pane.query_area*qterm_view.connective*alignment: alignment_beginning
+Dtinfo.query_editor.form.pane.query_area*qterm_view*connect_menu.tearOffModel: tear_off_disabled
+!!         leftAttachment: attach_widget; leftWidget: pw_button; rightAttachment: attach_widget; rightWidget: connective
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.leftAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.rightAttachment: attach_widget
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.rightWidget: connective
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.topAttachment: attach_widget
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.topWidget: prefix
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.topOffset: 2
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_label.leftAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_label.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_label.bottomAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_field.columns: 1
+!x           leftAttachment: attach_widget; leftWidget: weight_label; rightAttachment: attach_position; rightPosition: 33
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_field.leftAttachment: attach_widget
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_field.leftWidget: weight_label
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_field.rightAttachment: attach_position
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_field.rightPosition: 50
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_field.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_field.bottomAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.weight_field.maxLength: 3
+!x            leftAttachment: attach_position; leftPosition: 33; topAttachment: attach_form; bottomAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_label.leftAttachment: attach_position
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_label.leftPosition: 50
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_label.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_label.bottomAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_label.sensitive: False
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_field.columns: 1
+!x           leftAttachment: attach_widget; leftWidget: proximity_label; rightAttachment: attach_position; rightPosition: 66
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_field.leftAttachment: attach_widget
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_field.leftWidget: proximity_label
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_field.rightAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_field.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_field.bottomAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_field.maxLength: 5
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.proximity_field.sensitive: False
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_label.leftAttachment: attach_position
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_label.leftPosition: 66
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_label.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_label.bottomAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_label.sensitive: False
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_field.columns: 1
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_field.leftAttachment: attach_widget
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_field.leftWidget: scope_label
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_field.rightAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_field.topAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_field.bottomAttachment: attach_form
+Dtinfo.query_editor.form.pane.query_area*qterm_view.pws_form.scope_field.sensitive: False
+
+! $XConsortium: BookmarkEdit.res /main/8 1996/11/22 20:55:30 cde-hal $
+
+Dtinfo.bookmark_edit.deleteResponse: do_nothing
+Dtinfo.bookmark_edit.minHeight: 220
+Dtinfo.bookmark_edit.minWidth: 290
+Dtinfo.bookmark_edit.form.name.topAttachment: attach_form
+Dtinfo.bookmark_edit.form.name.leftAttachment: attach_form
+Dtinfo.bookmark_edit.form.name.leftOffset: 2
+Dtinfo.bookmark_edit.form.name_text.columns: 40
+Dtinfo.bookmark_edit.form.name_text.maxLength: 40
+Dtinfo.bookmark_edit.form.name_text.translations: #override <Key>Return: next-tab-group()
+Dtinfo.bookmark_edit.form.name_text.topAttachment: attach_widget
+Dtinfo.bookmark_edit.form.name_text.topWidget: name
+Dtinfo.bookmark_edit.form.name_text.leftAttachment: attach_form
+Dtinfo.bookmark_edit.form.name_text.leftOffset: 5
+Dtinfo.bookmark_edit.form.notes.topAttachment: attach_widget
+Dtinfo.bookmark_edit.form.notes.topWidget: name_text
+Dtinfo.bookmark_edit.form.notes.leftAttachment: attach_form
+Dtinfo.bookmark_edit.form.notes.leftOffset: 2
+Dtinfo.bookmark_edit.form.notes_textSW.notes_text.translations: #override <Key>Return: newline()
+Dtinfo.bookmark_edit.form.notes_textSW.notes_text.rows: 5
+Dtinfo.bookmark_edit.form.notes_textSW.notes_text.wordWrap: true
+Dtinfo.bookmark_edit.form.notes_textSW.notes_text.scrollHorizontal: false
+Dtinfo.bookmark_edit.form.notes_textSW.notes_text.editMode: multi_line_edit
+Dtinfo.bookmark_edit.form.notes_textSW.topAttachment: attach_widget
+Dtinfo.bookmark_edit.form.notes_textSW.topWidget: notes
+Dtinfo.bookmark_edit.form.notes_textSW.leftAttachment: attach_form
+Dtinfo.bookmark_edit.form.notes_textSW.leftOffset: 2
+Dtinfo.bookmark_edit.form.notes_textSW.rightAttachment: attach_form
+Dtinfo.bookmark_edit.form.notes_textSW.rightOffset: 3
+Dtinfo.bookmark_edit.form.notes_textSW.bottomAttachment: attach_widget
+Dtinfo.bookmark_edit.form.notes_textSW.bottomWidget: separator
+Dtinfo.bookmark_edit.form.notes_textSW.bottomOffset: 4
+Dtinfo.bookmark_edit.form.separator.leftAttachment: attach_form
+Dtinfo.bookmark_edit.form.separator.rightAttachment: attach_form
+Dtinfo.bookmark_edit.form.separator.bottomAttachment: attach_widget
+Dtinfo.bookmark_edit.form.separator.bottomWidget: ok
+Dtinfo.bookmark_edit.form.separator.bottomOffset: 2
+Dtinfo.bookmark_edit.form.separator.highlightThickness: 0
+Dtinfo.bookmark_edit.form.ok.leftAttachment: attach_form
+Dtinfo.bookmark_edit.form.ok.leftOffset: 3
+Dtinfo.bookmark_edit.form.ok.rightAttachment: attach_position
+Dtinfo.bookmark_edit.form.ok.rightPosition: 25
+Dtinfo.bookmark_edit.form.ok.bottomAttachment: attach_form
+Dtinfo.bookmark_edit.form.ok.sensitive: false
+Dtinfo.bookmark_edit.form.view.leftAttachment: attach_position
+Dtinfo.bookmark_edit.form.view.leftPosition: 25
+Dtinfo.bookmark_edit.form.view.rightAttachment: attach_position
+Dtinfo.bookmark_edit.form.view.rightPosition: 50
+Dtinfo.bookmark_edit.form.view.bottomAttachment: attach_form
+Dtinfo.bookmark_edit.form.cancel.leftAttachment: attach_position
+Dtinfo.bookmark_edit.form.cancel.leftPosition: 50
+Dtinfo.bookmark_edit.form.cancel.rightAttachment: attach_position
+Dtinfo.bookmark_edit.form.cancel.rightPosition: 75
+Dtinfo.bookmark_edit.form.cancel.bottomAttachment: attach_form
+Dtinfo.bookmark_edit.form.help.leftAttachment: attach_position
+Dtinfo.bookmark_edit.form.help.leftPosition: 75
+Dtinfo.bookmark_edit.form.help.rightAttachment: attach_form
+Dtinfo.bookmark_edit.form.help.rightOffset: 3
+Dtinfo.bookmark_edit.form.help.bottomAttachment: attach_form
+
+! $XConsortium: MarkList.res /main/6 1996/10/30 18:23:20 cde-hal $
+
+! Mark List Resources
+
+Dtinfo.mark_list.minWidth: 383
+Dtinfo.mark_list.minHeight: 225
+Dtinfo.mark_list.deleteResponse: unmap
+Dtinfo.mark_list.form.listSW.topAttachment: attach_form
+Dtinfo.mark_list.form.listSW.leftAttachment: attach_form
+Dtinfo.mark_list.form.listSW.rightAttachment: attach_form
+Dtinfo.mark_list.form.listSW.bottomAttachment: attach_widget
+Dtinfo.mark_list.form.listSW.bottomWidget: separator
+Dtinfo.mark_list.form.listSW.topOffset: 4
+Dtinfo.mark_list.form.listSW.leftOffset: 4
+Dtinfo.mark_list.form.listSW.rightOffset: 4
+Dtinfo.mark_list.form.listSW.bottomOffset: 6
+Dtinfo.mark_list.form.listSW.list.listSizePolicy: constant
+Dtinfo.mark_list.form.listSW.list.visibleItemCount: 10
+Dtinfo.mark_list.form.separator.highlightThickness: 0
+Dtinfo.mark_list.form.separator.bottomOffset: 4
+Dtinfo.mark_list.form.separator.leftAttachment: attach_form
+Dtinfo.mark_list.form.separator.rightAttachment: attach_form
+Dtinfo.mark_list.form.separator.bottomAttachment: attach_widget
+Dtinfo.mark_list.form.separator.bottomWidget: view
+Dtinfo.mark_list.form.XmPushButton.bottomAttachment: attach_form
+Dtinfo.mark_list.form.XmPushButton.leftAttachment: attach_position
+Dtinfo.mark_list.form.XmPushButton.rightAttachment: attach_position
+Dtinfo.mark_list.form.view.sensitive: False
+Dtinfo.mark_list.form.view.leftAttachment: attach_form
+Dtinfo.mark_list.form.view.leftOffset: 3
+Dtinfo.mark_list.form.view.rightAttachment: attach_position
+Dtinfo.mark_list.form.view.rightPosition: 20
+Dtinfo.mark_list.form.view.bottomAttachment: attach_form
+Dtinfo.mark_list.form.edit.sensitive: False
+Dtinfo.mark_list.form.edit.leftAttachment: attach_position
+Dtinfo.mark_list.form.edit.leftPosition: 20
+Dtinfo.mark_list.form.edit.rightAttachment: attach_position
+Dtinfo.mark_list.form.edit.rightPosition: 40
+Dtinfo.mark_list.form.edit.bottomAttachment: attach_form
+Dtinfo.mark_list.form.delete.sensitive: False
+Dtinfo.mark_list.form.delete.leftAttachment: attach_position
+Dtinfo.mark_list.form.delete.leftPosition: 40
+Dtinfo.mark_list.form.delete.rightAttachment: attach_position
+Dtinfo.mark_list.form.delete.rightPosition: 60
+Dtinfo.mark_list.form.delete.bottomAttachment: attach_form
+Dtinfo.mark_list.form.close.leftAttachment: attach_position
+Dtinfo.mark_list.form.close.leftPosition: 60
+Dtinfo.mark_list.form.close.rightAttachment: attach_position
+Dtinfo.mark_list.form.close.rightPosition: 80
+Dtinfo.mark_list.form.close.bottomAttachment: attach_form
+Dtinfo.mark_list.form.help.leftAttachment: attach_position
+Dtinfo.mark_list.form.help.leftPosition: 80
+Dtinfo.mark_list.form.help.rightAttachment: attach_form
+Dtinfo.mark_list.form.help.right_offset: 3
+Dtinfo.mark_list.form.help.bottomAttachment: attach_form
+
+Dtinfo*mark_chooser.minWidth: 200
+Dtinfo*mark_chooser.minHeight: 160
+Dtinfo*mark_chooser.deleteResponse: destroy
+Dtinfo*mark_chooser.form.dialogStyle: dialog_full_application_modal
+Dtinfo*mark_chooser.form.listSW.list.visibleItemCount: 5
+Dtinfo*mark_chooser.form.listSW.list.listSizePolicy: constant
+Dtinfo*mark_chooser.form.listSW.list.items: item1, item2, item3, item4
+Dtinfo*mark_chooser.form.listSW.list.itemCount: 4
+Dtinfo*mark_chooser.form.listSW.list.width: 300
+Dtinfo*mark_chooser.form.listSW.leftAttachment: attach_form
+Dtinfo*mark_chooser.form.listSW.leftOffset: 3
+Dtinfo*mark_chooser.form.listSW.rightAttachment: attach_form
+Dtinfo*mark_chooser.form.listSW.rightOffset: 3
+Dtinfo*mark_chooser.form.listSW.topAttachment: attach_form
+Dtinfo*mark_chooser.form.listSW.bottomAttachment: attach_widget
+Dtinfo*mark_chooser.form.listSW.bottomWidget: separator
+Dtinfo*mark_chooser.form.listSW.bottomOffset: 4
+Dtinfo*mark_chooser.form.separator.bottomAttachment: attach_widget
+Dtinfo*mark_chooser.form.separator.bottomWidget: ok
+Dtinfo*mark_chooser.form.separator.leftAttachment: attach_form
+Dtinfo*mark_chooser.form.separator.rightAttachment: attach_form
+Dtinfo*mark_chooser.form.separator.bottomOffset: 4
+Dtinfo*mark_chooser.form.separator.highlightThickness: 0
+Dtinfo*mark_chooser.form.ok.sensitive: False
+Dtinfo*mark_chooser.form.ok.leftAttachment: attach_form
+Dtinfo*mark_chooser.form.ok.leftOffset: 3
+Dtinfo*mark_chooser.form.ok.rightAttachment: attach_position
+Dtinfo*mark_chooser.form.ok.rightPosition: 33
+Dtinfo*mark_chooser.form.ok.bottomAttachment: attach_form
+Dtinfo*mark_chooser.form.ok.left_offset: 15
+Dtinfo*mark_chooser.form.ok.rightPosition: 50
+Dtinfo*mark_chooser.form.cancel.leftAttachment: attach_position
+Dtinfo*mark_chooser.form.cancel.leftPosition: 33
+Dtinfo*mark_chooser.form.cancel.rightAttachment: attach_position
+Dtinfo*mark_chooser.form.cancel.rightPosition: 67
+Dtinfo*mark_chooser.form.cancel.bottomAttachment: attach_form
+Dtinfo*mark_chooser.form.cancel.leftPosition: 50
+Dtinfo*mark_chooser.form.cancel.rightAttachment: attach_form
+Dtinfo*mark_chooser.form.cancel.right_offset: 15
+!      help
+!        leftAttachment: attach_position; leftPosition: 67; rightAttachment: attach_form; right_offset: 3; bottomAttachment: attach_form
+
+! $XConsortium: NodeHistoryAgent.res /main/5 1996/10/11 21:00:32 cde-hal $
+
+Dtinfo.node_hist.width: 400
+Dtinfo.node_hist.allowShellResize: false
+Dtinfo.node_hist.deleteResponse: unmap
+Dtinfo.node_hist.form.book.topAttachment: attach_form
+Dtinfo.node_hist.form.book.leftAttachment: attach_form
+Dtinfo.node_hist.form.section.topAttachment: attach_form
+Dtinfo.node_hist.form.listSW.topAttachment: attach_widget
+Dtinfo.node_hist.form.listSW.topWidget: book
+Dtinfo.node_hist.form.listSW.leftAttachment: attach_form
+Dtinfo.node_hist.form.listSW.rightAttachment: attach_form
+Dtinfo.node_hist.form.listSW.bottomAttachment: attach_widget
+Dtinfo.node_hist.form.listSW.bottomWidget: separator
+Dtinfo.node_hist.form.listSW.leftOffset: 4
+Dtinfo.node_hist.form.listSW.rightOffset: 4
+Dtinfo.node_hist.form.listSW.topOffset: 4
+Dtinfo.node_hist.form.listSW.bottomOffset: 6
+Dtinfo.node_hist.form.listSW.list.visibleItemCount: 10
+Dtinfo.node_hist.form.listSW.list.listSizePolicy: constant
+Dtinfo.node_hist.form.separator.leftAttachment: attach_form
+Dtinfo.node_hist.form.separator.rightAttachment: attach_form
+Dtinfo.node_hist.form.separator.bottomAttachment: attach_widget
+Dtinfo.node_hist.form.separator.bottomWidget: display
+Dtinfo.node_hist.form.separator.bottomOffset: 4
+Dtinfo.node_hist.form.separator.hightlightThickness: 0
+Dtinfo.node_hist.form.display.sensitive: false
+Dtinfo.node_hist.form.display.leftAttachment: attach_form
+Dtinfo.node_hist.form.display.leftOffset: 3
+Dtinfo.node_hist.form.display.rightAttachment: attach_position
+Dtinfo.node_hist.form.display.rightPosition: 33
+Dtinfo.node_hist.form.display.bottomAttachment: attach_form
+Dtinfo.node_hist.form.close.leftAttachment: attach_position
+Dtinfo.node_hist.form.close.leftPosition: 33
+Dtinfo.node_hist.form.close.rightAttachment: attach_position
+Dtinfo.node_hist.form.close.rightPosition: 67
+Dtinfo.node_hist.form.close.bottomAttachment: attach_form
+Dtinfo.node_hist.form.help.leftAttachment: attach_position
+Dtinfo.node_hist.form.help.leftPosition: 67
+Dtinfo.node_hist.form.help.rightAttachment: attach_form
+Dtinfo.node_hist.form.help.right_offset: 3
+Dtinfo.node_hist.form.help.bottomAttachment: attach_form
+
+! $XConsortium: SearchResultsAgent.res /main/9 1996/11/22 20:54:38 cde-hal $
+
+Dtinfo.results.deleteResponse: do_nothing
+Dtinfo.results.allowShellResize: false
+Dtinfo.results.width: 500
+Dtinfo.results.minWidth: 325
+Dtinfo.results.minHeight: 220
+Dtinfo.results.form.retain.topAttachment: attach_form
+Dtinfo.results.form.retain.rightAttachment: attach_form
+Dtinfo.results.form.retain.topOffset: 2
+Dtinfo.results.form.retain.labelType: pixmap
+Dtinfo.results.form.retain.indicatorSize: 15
+Dtinfo.results.form.retrieved.topAttachment: attach_form
+Dtinfo.results.form.retrieved.leftAttachment: attach_form
+Dtinfo.results.form.retrieved.topOffset: 2
+Dtinfo.results.form.retrieved.leftOffset: 3
+Dtinfo.results.form.num_hits.alignment: alignment_beginning
+Dtinfo.results.form.num_hits.topAttachment: attach_form
+Dtinfo.results.form.num_hits.leftAttachment: attach_widget
+Dtinfo.results.form.num_hits.leftWidget: retrieved
+Dtinfo.results.form.num_hits.rightAttachment: attach_widget
+Dtinfo.results.form.num_hits.rightWidget: retain
+Dtinfo.results.form.num_hits.topOffset: 2
+Dtinfo.results.form.num_hits.leftOffset: 8
+Dtinfo.results.form.scope.leftAttachment: attach_form
+Dtinfo.results.form.scope.topAttachment: attach_widget
+Dtinfo.results.form.scope.topWidget: retrieved
+Dtinfo.results.form.scope.leftOffset: 3
+Dtinfo.results.form.scope_name.leftAttachment: attach_opposite_widget
+Dtinfo.results.form.scope_name.leftWidget: num_hits
+Dtinfo.results.form.scope_name.topAttachment: attach_widget
+Dtinfo.results.form.scope_name.topWidget: num_hits
+Dtinfo.results.form.scope_name.rightAttachment: attach_form
+Dtinfo.results.form.scope_name.alignment: alignment_beginning
+Dtinfo.results.form.query_label.leftAttachment: attach_form
+Dtinfo.results.form.query_label.topAttachment: attach_widget
+Dtinfo.results.form.query_label.topWidget: scope
+Dtinfo.results.form.query_label.leftOffset: 3
+Dtinfo.results.form.pane.leftAttachment: attach_form
+Dtinfo.results.form.pane.rightAttachment: attach_form
+Dtinfo.results.form.pane.bottomAttachment: attach_widget
+Dtinfo.results.form.pane.bottomWidget: separator
+Dtinfo.results.form.pane.topOffset: 2
+Dtinfo.results.form.pane.bottomOffset: 4
+Dtinfo.results.form.pane.spacing: 20
+Dtinfo.results.form.pane.query_textSW.query_text.translations: #override <Key>Tab: next-tab-group()
+Dtinfo.results.form.pane.query_textSW.query_text.value: FILE A BUG REPORT
+!            editable: false
+Dtinfo.results.form.pane.query_textSW.query_text.editMode: multi_line_edit
+Dtinfo.results.form.pane.query_textSW.query_text.wordWrap: true
+Dtinfo.results.form.pane.query_textSW.query_text.scrollHorizontal: false
+! Have to turn the bell off or it beeps after dialog popped down.
+Dtinfo.results.form.pane.query_textSW.query_text.verifyBell: false
+Dtinfo.results.form.pane.query_textSW.query_text.traversalOn: false
+!            cursorPositionVisible: false
+Dtinfo.results.form.pane.listform.header.topAttachment: attach_form
+Dtinfo.results.form.pane.listform.header.leftAttachment: attach_form
+Dtinfo.results.form.pane.listform.header.rightAttachment: attach_form
+Dtinfo.results.form.pane.listform.header.rightOffset: 0
+Dtinfo.results.form.pane.listform.header.alignment: alignment_beginning
+Dtinfo.results.form.pane.listform.listSW.topAttachment: attach_form
+Dtinfo.results.form.pane.listform.listSW.leftAttachment: attach_form
+Dtinfo.results.form.pane.listform.listSW.rightAttachment: attach_form
+Dtinfo.results.form.pane.listform.listSW.bottomAttachment: attach_form
+Dtinfo.results.form.pane.listform.listSW.list.listSizePolicy: resize_if_possible
+Dtinfo.results.form.pane.listform.listSW.list.visibleItemCount: 8
+Dtinfo.results.form.separator.leftAttachment: attach_form
+Dtinfo.results.form.separator.rightAttachment: attach_form
+Dtinfo.results.form.separator.bottomAttachment: attach_widget
+Dtinfo.results.form.separator.bottomWidget: display
+Dtinfo.results.form.separator.bottomOffset: 4
+Dtinfo.results.form.separator.hightlightThickness: 0
+Dtinfo.results.form.display.sensitive: false
+Dtinfo.results.form.display.leftAttachment: attach_form
+Dtinfo.results.form.display.leftOffset: 3
+Dtinfo.results.form.display.rightAttachment: attach_position
+Dtinfo.results.form.display.rightPosition: 33
+Dtinfo.results.form.display.bottomAttachment: attach_form
+Dtinfo.results.form.close.leftAttachment: attach_position
+Dtinfo.results.form.close.leftPosition: 33
+Dtinfo.results.form.close.rightAttachment: attach_position
+Dtinfo.results.form.close.rightPosition: 67
+Dtinfo.results.form.close.bottomAttachment: attach_form
+Dtinfo.results.form.help.leftAttachment: attach_position
+Dtinfo.results.form.help.leftPosition: 67
+Dtinfo.results.form.help.rightAttachment: attach_form
+Dtinfo.results.form.help.right_offset: 3
+Dtinfo.results.form.help.bottomAttachment: attach_form
+Dtinfo.results.form.help.sensitive: true
+
+! $XConsortium: LibraryAgent.res /main/11 1996/11/20 18:28:21 cde-hal $
+
+!====== Book list
+!Dtinfo.doc_tree
+Dtinfo.deleteResponse: do_nothing
+Dtinfo.allowShellResize: false
+! geometry values are added to the min sizes!
+Dtinfo.geometry: 120x400
+Dtinfo.minWidth: 380
+Dtinfo.minHeight: 200
+!------ Menus
+Dtinfo.mainw.menu_bar*file_menu.view.sensitive: False
+Dtinfo.mainw.menu_bar*file_menu.detach.sensitive: False
+Dtinfo.mainw.menu_bar*file_menu.close.accelerator: Alt<Key>F4
+Dtinfo.mainw.menu_bar*file_menu.close.acceleratorText: Alt F4
+Dtinfo.mainw.menu_bar*edit_menu.copy.sensitive: False
+Dtinfo.mainw.menu_bar*edit_menu.remove.sensitive: False
+Dtinfo.mainw.menu_bar*options_menu.auto_track.set: on
+Dtinfo.mainw.menu_bar*options_menu.show_tool_bar.set: on
+Dtinfo.mainw.menu_bar*options_menu.show_search_area.set: on
+Dtinfo.mainw.menu_bar*options_menu.on_intro.labelString: Introduction...
+Dtinfo.mainw.menu_bar*options_menu.on_intro.mnemonic: I
+Dtinfo.mainw.menu_bar*options_menu.on_tasks.labelString: Tasks...
+Dtinfo.mainw.menu_bar*options_menu.on_tasks.mnemonic: T
+Dtinfo.mainw.menu_bar*options_menu.on_reference.labelString: Reference...
+Dtinfo.mainw.menu_bar*options_menu.on_reference.mnemonic: R
+Dtinfo.mainw.menu_bar*options_menu.on_item.labelString: On Item
+Dtinfo.mainw.menu_bar*options_menu.on_help.labelString: On Help...
+Dtinfo.mainw.menu_bar*options_menu.on_help.mnemonic: H
+Dtinfo.mainw.menu_bar*options_menu.on_about.labelString: About Information Manager...
+Dtinfo.mainw.menu_bar*options_menu.on_about.mnemonic: A
+!------ Tools
+Dtinfo.mainw.tool_bar.view.labelPixmap: Dtview.m.pm
+Dtinfo.mainw.tool_bar.view.labelInsensitivePixmap: Dtviewi.m.pm
+Dtinfo.mainw.tool_bar.view.labelType: pixmap
+Dtinfo.mainw.tool_bar.view.sensitive: False
+Dtinfo.mainw.tool_bar.detach.labelPixmap: Dtdetach.m.pm
+Dtinfo.mainw.tool_bar.detach.labelInsensitivePixmap: Dtdetachi.m.pm
+Dtinfo.mainw.tool_bar.detach.labelType: pixmap
+Dtinfo.mainw.tool_bar.detach.sensitive: False
+Dtinfo.mainw.tool_bar.print.labelPixmap: Dtinfopr.m.pm
+Dtinfo.mainw.tool_bar.print.labelInsensitivePixmap: Dtinfopri.m.pm
+Dtinfo.mainw.tool_bar.print.labelType: pixmap
+Dtinfo.mainw.tool_bar.print.sensitive: False
+Dtinfo.mainw.tool_bar.add.labelPixmap: Dtinfoadd.m.pm
+Dtinfo.mainw.tool_bar.add.labelInsensitivePixmap: Dtinfoaddi.m.pm
+Dtinfo.mainw.tool_bar.add.labelType: pixmap
+Dtinfo.mainw.tool_bar.remove.labelPixmap: Dtinfosub.m.pm
+Dtinfo.mainw.tool_bar.remove.labelInsensitivePixmap: Dtinfosubi.m.pm
+Dtinfo.mainw.tool_bar.remove.labelType: pixmap
+Dtinfo.mainw.tool_bar.remove.sensitive: False
+Dtinfo.mainw.tool_bar.query.labelPixmap: Dteditqry.m.pm
+Dtinfo.mainw.tool_bar.query.labelInsensitivePixmap: Dteditqryi.m.pm
+Dtinfo.mainw.tool_bar.query.labelType: pixmap
+Dtinfo.mainw.tool_bar.marks_list.labelPixmap: Dtbmark.m.pm
+Dtinfo.mainw.tool_bar.marks_list.labelInsensitivePixmap: Dtbmarki.m.pm
+Dtinfo.mainw.tool_bar.marks_list.labelType: pixmap
+!------ Search area
+Dtinfo.mainw.search_area.leftOffset: 3
+Dtinfo.mainw.search_area.rightOffset: 3
+Dtinfo.mainw.search_area.borderWidth: 1
+Dtinfo.mainw.search_area*topAttachment: attach_form
+Dtinfo.mainw.search_area*bottomAttachment: attach_form
+Dtinfo.mainw.search_area.scope.leftAttachment: attach_form
+! text's attachments are set in the code
+Dtinfo.mainw.search_area.text.rightOffset: 3
+Dtinfo.mainw.search_area.text.bottomOffset: 2
+Dtinfo.mainw.search_area.text.topOffset: 2
+Dtinfo.mainw.search_area.scope_editor.rightAttachment: attach_form
+Dtinfo.mainw.search_area.scope_editor.rightOffset: 2
+Dtinfo.mainw.search_area.scope_editor.bottomOffset: 3
+Dtinfo.mainw.search_area.scope_editor.topOffset: 3
+Dtinfo.mainw.search_area.scope_editor.sensitive: true
+!------ Message area
+Dtinfo.mainw*frame.topAttachment: attach_form
+Dtinfo.mainw*frame.leftAttachment: attach_form
+Dtinfo.mainw*frame.rightAttachment: attach_form
+Dtinfo.mainw*frame.bottomAttachment: attach_widget
+Dtinfo.mainw*frame.bottomWidget: message
+!------ List
+Dtinfo.mainw*frame*doc_list.listSizePolicy: constant
+Dtinfo.mainw*frame*doc_list.selectionPolicy: extended_select
+Dtinfo.mainw*frame*doc_list.visibleItemCount: 12
+Dtinfo.mainw*frame*doc_list.width: 400
+Dtinfo.mainw*frame*doc_list.translations: #override                           ~s ~c ~m ~a <Btn1Down>: OutlineListBeginSelect()\n                          ~s ~c ~m ~a <Btn1Up>: OutlineListEndSelect()
+
+Dtinfo.mainw*message.shadowThickness: 0
+Dtinfo.mainw*message.bottomAttachment: attach_form
+Dtinfo.mainw*message.leftAttachment: attach_form
+Dtinfo.mainw*message.rightAttachment: attach_form
+Dtinfo.mainw*message.topOffset: 2
+Dtinfo.mainw*message.bottomOffset: 2
+Dtinfo.mainw*message.leftOffset: 3
+Dtinfo.mainw*message.rightOffset: 2
+Dtinfo.mainw*message.text.marginWidth: 1
+Dtinfo.mainw*message.text.marginHeight: 1
+Dtinfo.mainw*message.text.editable: false
+Dtinfo.mainw*message.text.cursorPositionVisible: false
+Dtinfo.mainw*message.text.traversalOn: false
+Dtinfo.mainw*message.text.shadowThickness: 0
+
+! $XConsortium: NodeWindowAgent.res /main/10 1996/11/22 20:53:53 cde-hal $
+
+Dtinfo.nodeview.deleteResponse: do_nothing
+Dtinfo.nodeview.mainw.form.shadowThickness:                    0
+
+Dtinfo.nodeview.mainw.form.title.topAttachment:                ATTACH_FORM
+Dtinfo.nodeview.mainw.form.title.leftAttachment:               ATTACH_FORM
+Dtinfo.nodeview.mainw.form.title.rightAttachment:              ATTACH_FORM
+Dtinfo.nodeview.mainw.form.title*resizable: false
+
+Dtinfo.nodeview.mainw.form.tab_area.marginHeight: 0
+Dtinfo.nodeview.mainw.form.tab_area.spacing: 5
+Dtinfo.nodeview.mainw.form.tab_area.orientation: horizontal
+Dtinfo.nodeview.mainw.form.tab_area.leftAttachment: attach_form
+Dtinfo.nodeview.mainw.form.tab_area.rightAttachment: attach_form
+Dtinfo.nodeview.mainw.form.tab_area.topAttachment: attach_widget
+Dtinfo.nodeview.mainw.form.tab_area.topWidget: title
+Dtinfo.nodeview.mainw.form.tab_area.XyzTabButton.marginWidth: 8
+Dtinfo.nodeview.mainw.form.tab_area.XyzTabButton.radius: 12
+Dtinfo.nodeview.mainw.form.message.shadowThickness: 0
+Dtinfo.nodeview.mainw.form.message.bottomAttachment: attach_form
+Dtinfo.nodeview.mainw.form.message.leftAttachment: attach_form
+Dtinfo.nodeview.mainw.form.message.rightAttachment: attach_form
+Dtinfo.nodeview.mainw.form.message.topOffset: 2
+Dtinfo.nodeview.mainw.form.message.bottomOffset: 2
+Dtinfo.nodeview.mainw.form.message.leftOffset: 3
+Dtinfo.nodeview.mainw.form.message.rightOffset: 2
+!          background: lightslategrey
+Dtinfo.nodeview.mainw.form.message.text.marginWidth: 1
+Dtinfo.nodeview.mainw.form.message.text.marginHeight: 1
+Dtinfo.nodeview.mainw.form.message.text.editable: false
+Dtinfo.nodeview.mainw.form.message.text.cursorPositionVisible: false
+Dtinfo.nodeview.mainw.form.message.text.traversalOn: false
+Dtinfo.nodeview.mainw.form.message.text.shadowThickness: 0
+!          sensitive: false
+
+Dtinfo.nodeview.mainw.form.scrolledw.XmScrollBar.highlightThickness: 2
+Dtinfo.nodeview.mainw.form.scrolledw.XmScrollBar.traversalOn: true
+
+Dtinfo.nodeview.mainw.form.frame.inform.DisplayAreaForm.topAttachment: ATTACH_WIDGET
+Dtinfo.nodeview.mainw.form.frame.inform.DisplayAreaForm.leftAttachment: ATTACH_WIDGET
+Dtinfo.nodeview.mainw.form.frame.inform.DisplayAreaForm.rightAttachment: ATTACH_WIDGET
+Dtinfo.nodeview.mainw.form.frame.inform.DisplayAreaForm.bottomAttachment: ATTACH_WIDGET
+Dtinfo.nodeview.mainw.form.frame.inform.DisplayAreaForm.display_area.shadowThickness: 0
+Dtinfo.nodeview.mainw.form.frame.inform.DisplayAreaForm.leftOffset: 20
+Dtinfo.nodeview.mainw.form.frame.inform.shadowType: XmSHADOW_IN
+
+Dtinfo.nodeview.mainw.form.frame.topAttachment:            ATTACH_WIDGET
+Dtinfo.nodeview.mainw.form.frame.topWidget:                tab_area
+Dtinfo.nodeview.mainw.form.frame.leftAttachment:           ATTACH_FORM
+Dtinfo.nodeview.mainw.form.frame.leftOffset:               3
+Dtinfo.nodeview.mainw.form.frame.topOffset:                -4
+Dtinfo.nodeview.mainw.form.frame.rightOffset:              3
+Dtinfo.nodeview.mainw.form.frame.rightAttachment:          ATTACH_FORM
+Dtinfo.nodeview.mainw.form.frame.bottomAttachment:         ATTACH_WIDGET
+Dtinfo.nodeview.mainw.form.frame.bottomWidget:             message
+
+Dtinfo.nodeview.mainw.search_area.leftOffset: 3
+Dtinfo.nodeview.mainw.search_area.rightOffset: 3
+Dtinfo.nodeview.mainw.search_area.borderWidth: 1
+Dtinfo.nodeview.mainw.search_area*topAttachment: attach_form
+Dtinfo.nodeview.mainw.search_area*bottomAttachment: attach_form
+Dtinfo.nodeview.mainw.search_area.scope.leftAttachment: attach_form
+! text's attachments are set in the code
+Dtinfo.nodeview.mainw.search_area.text.rightOffset: 3
+Dtinfo.nodeview.mainw.search_area.text.bottomOffset: 2
+Dtinfo.nodeview.mainw.search_area.text.topOffset: 2
+Dtinfo.nodeview.mainw.search_area.scope_editor.rightAttachment: attach_form
+Dtinfo.nodeview.mainw.search_area.scope_editor.rightOffset: 2
+Dtinfo.nodeview.mainw.search_area.scope_editor.bottomOffset: 3
+Dtinfo.nodeview.mainw.search_area.scope_editor.topOffset: 3
+Dtinfo.nodeview.mainw.search_area.scope_editor.sensitive: true
+
+Dtinfo*title_menu.button.positionIndex: 0
+
+Dtinfo.nodeview.mainw.form.resizePolicy:                       resize_grow
+
+Dtinfo.nodeview.mainw.tool_bar.lock.indicatorSize: 15
+! Pixmaps are specified in the code since they are dynamic.
+! Place pixmaps named locked.xbm and unlocked.xbm in ~/bitmaps or
+! ~/bitmaps/Dtinfo to change the pixmaps used.
+
+Dtinfo.nodeview.mainw.menu_bar*tearOffModel: tear_off_disabled
+Dtinfo.nodeview.mainw.menu_bar*file_menu.close.accelerator: Alt<Key>F4
+Dtinfo.nodeview.mainw.menu_bar*file_menu.close.acceleratorText: Alt F4
+Dtinfo.nodeview.mainw.menu_bar*search_menu.clear_search.sensitive: false
+Dtinfo.nodeview.mainw.menu_bar*marks_menu.create_bmrk.sensitive: false
+Dtinfo.nodeview.mainw.menu_bar*marks_menu.create_anno.sensitive: false
+Dtinfo.nodeview.mainw.menu_bar*marks_menu.edit_mark.sensitive: false
+Dtinfo.nodeview.mainw.menu_bar*marks_menu.move_mark.sensitive: false
+Dtinfo.nodeview.mainw.menu_bar*marks_menu.delete_mark.sensitive: false
+Dtinfo.nodeview.mainw.menu_bar*options_menu.detach_graphic.sensitive: false
+Dtinfo.nodeview.mainw.menu_bar*options_menu.show_tool_bar.set: on
+Dtinfo.nodeview.mainw.menu_bar*options_menu.show_search_area.set: on
+Dtinfo.nodeview.mainw.menu_bar.debug.background: hot pink
+Dtinfo.nodeview.mainw.menu_bar*debug_menu*background: hot pink
+Dtinfo.nodeview.mainw.menu_bar*debug_menu.command_processor.sensitive: False
+Dtinfo.nodeview.mainw.menu_bar*debug_menu.on_item.labelString: On Item
+Dtinfo.nodeview.mainw.tool_bar.space.width: 5
+Dtinfo.nodeview.mainw.tool_bar.space.borderWidth: 0
+Dtinfo.nodeview.mainw.tool_bar.space.labelString:
+Dtinfo.nodeview.mainw.tool_bar.history_prev.labelPixmap: Dthistprev.m.pm
+Dtinfo.nodeview.mainw.tool_bar.history_prev.labelInsensitivePixmap: Dthistprevi.m.pm
+Dtinfo.nodeview.mainw.tool_bar.history_prev.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.history_next.labelPixmap: Dthistnext.m.pm
+Dtinfo.nodeview.mainw.tool_bar.history_next.labelInsensitivePixmap: Dthistnexti.m.pm
+Dtinfo.nodeview.mainw.tool_bar.history_next.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.section_prev.labelPixmap: Dtsectprev.m.pm
+Dtinfo.nodeview.mainw.tool_bar.section_prev.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.section_next.labelPixmap: Dtsectnext.m.pm
+Dtinfo.nodeview.mainw.tool_bar.section_next.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.search_prev.labelPixmap: Dtsrchprev.m.pm
+Dtinfo.nodeview.mainw.tool_bar.search_prev.labelInsensitivePixmap: Dtsrchprevi.m.pm
+Dtinfo.nodeview.mainw.tool_bar.search_prev.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.search_next.labelPixmap: Dtsrchnext.m.pm
+Dtinfo.nodeview.mainw.tool_bar.search_next.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.search_next.labelInsensitivePixmap: Dtsrchnexti.m.pm
+Dtinfo.nodeview.mainw.tool_bar.print.labelPixmap: Dtinfopr.m.pm
+Dtinfo.nodeview.mainw.tool_bar.print.labelInsensitivePixmap: Dtinfopri.m.pm
+Dtinfo.nodeview.mainw.tool_bar.print.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.print.sensitive: False
+Dtinfo.nodeview.mainw.tool_bar.booklist.labelPixmap: Dtbooklst.m.pm
+Dtinfo.nodeview.mainw.tool_bar.booklist.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.graphical_map.labelPixmap: Dtgraphmap.m.pm
+Dtinfo.nodeview.mainw.tool_bar.graphical_map.labelType: pixmap
+Dtinfo.nodeview.mainw.tool_bar.lock.set: off
+
+Dtinfo.nodeview.mainw.form.scrolledw.scrollingPolicy: APPLICATION_DEFINED
+Dtinfo.nodeview.mainw.form.scrolledw.hsb.orientation: HORIZONTAL
+Dtinfo.nodeview.mainw.form.scrolledw.frame.shadowType: SHADOW_IN
+Dtinfo.nodeview.mainw.form.scrolledw.spacing: 2
+Dtinfo.nodeview.mainw.form.scrolledw.bottomOffset: 4
+
+Dtinfo.nodeview.mainw.form.scrolledw.vsb.accelerators: <Key>d: PageDownOrRight(0)
+Dtinfo.nodeview.mainw.form.scrolledw.vsb.increment: 10
+Dtinfo.nodeview.mainw.form.scrolledw.vsb.pageIncrement: 100
+Dtinfo.nodeview.mainw.form.scrolledw.vsb.minimum: 0
+Dtinfo.nodeview.mainw.form.scrolledw.vsb.maximum: 100
+Dtinfo.nodeview.mainw.form.scrolledw.vsb.sliderSize: 100
+Dtinfo.nodeview.mainw.form.scrolledw.vsb.value: 0
+                                            
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.marginWidth: 0
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.marginHeight: 0
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.left.arrowDirection: ARROW_LEFT
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.right.arrowDirection: ARROW_RIGHT
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.fractionBase: 8
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.left.topAttachment: ATTACH_FORM
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.left.bottomAttachment: ATTACH_FORM
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.left.leftAttachment: ATTACH_POSITION
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.left.rightAttachment: ATTACH_POSITION
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.left.leftPosition: 1
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.left.rightPosition: 3
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.right.topAttachment: ATTACH_FORM
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.right.bottomAttachment: ATTACH_FORM
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.right.rightAttachment: ATTACH_POSITION
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.right.leftPosition: 5
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.XmForm.right.rightPosition: 7
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.sf.sleft.arrowDirection: ARROW_LEFT
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.sf.sright.arrowDirection: ARROW_RIGHT
+Dtinfo.nodeview.mainw.form.XmForm.XmFrame.title.marginHeight: 0
+
+! $XConsortium: PrintPanelAgent.res /main/6 1996/08/20 12:03:19 rcs $
+
+Dtinfo*perfmeter*symbolPixmap:	Dtinfopr.m.pm
+Dtinfo.print_panel.allowShellResize: true
+Dtinfo.print_panel.form.dialogStyle:      dialog_full_application_modal
+Dtinfo.print_panel.form.defaultPosition:  False
+Dtinfo.print_panel.form.autoUnmanage: false
+Dtinfo.print_panel.form.how_many_frame.leftAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.rightAttachment: attach_position
+Dtinfo.print_panel.form.how_many_frame.rightPosition: 49
+Dtinfo.print_panel.form.how_many_frame.topAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.topOffset: 2
+Dtinfo.print_panel.form.how_many_frame.leftOffset: 5
+Dtinfo.print_panel.form.how_many_frame.marginHeight: 2
+Dtinfo.print_panel.form.how_many_frame.how_many_title.childType: frame_title_child
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_label.topAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_label.leftAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_label.leftOffset: 4
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_label.topOffset: 2
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_field.alignment: alignment_end
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_field.rightAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_field.rightOffset: 2
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_field.topAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.how_many_form.selected_field.topOffset: 2
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_label.topAttachment: attach_widget
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_label.topWidget: selected_label
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_label.leftAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_label.bottomAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_label.leftOffset: 4
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_label.bottomOffset: 5
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_label.topOffset: 8
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_field.alignment: alignment_end
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_field.topAttachment: attach_widget
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_field.topWidget: selected_field
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_field.topOffset: 8
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_field.rightAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_field.rightOffset: 2
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_field.bottomAttachment: attach_form
+Dtinfo.print_panel.form.how_many_frame.how_many_form.to_print_field.bottomOffset: 5
+Dtinfo.print_panel.form.what_frame.leftAttachment: attach_position
+Dtinfo.print_panel.form.what_frame.leftPosition: 51
+Dtinfo.print_panel.form.what_frame.rightAttachment: attach_form
+Dtinfo.print_panel.form.what_frame.topAttachment: attach_form
+Dtinfo.print_panel.form.what_frame.topOffset: 2
+Dtinfo.print_panel.form.what_frame.rightOffset: 5
+!        bottomAttachment: attach_opposite_widget; bottomWidget: how_many_frame
+Dtinfo.print_panel.form.what_frame.what_title.childType: frame_title_child
+Dtinfo.print_panel.form.what_frame.what_form.print_nodes.set: true
+Dtinfo.print_panel.form.what_frame.what_form.print_nodes.alignment: alignment_beginning
+Dtinfo.print_panel.form.what_frame.what_form.print_nodes.indicatorType: one_of_many
+Dtinfo.print_panel.form.what_frame.what_form.print_nodes.leftAttachment: attach_form
+Dtinfo.print_panel.form.what_frame.what_form.print_nodes.rightAttachment: attach_form
+Dtinfo.print_panel.form.what_frame.what_form.print_nodes.topAttachment: attach_form
+Dtinfo.print_panel.form.what_frame.what_form.print_nodes.leftOffset: 4
+Dtinfo.print_panel.form.what_frame.what_form.print_nodes.rightOffset: 4
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.alignment: alignment_beginning
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.indicatorType: one_of_many
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.topAttachment: attach_widget
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.topWidget: print_nodes
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.bottomAttachment: attach_form
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.bottomOffset: 3
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.leftAttachment: attach_form
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.rightAttachment: attach_form
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.leftOffset: 4
+Dtinfo.print_panel.form.what_frame.what_form.print_hierarchy.rightOffset: 4
+Dtinfo.print_panel.form.separator.highlightThickness: 0
+Dtinfo.print_panel.form.separator.leftAttachment: attach_form
+Dtinfo.print_panel.form.separator.rightAttachment: attach_form
+Dtinfo.print_panel.form.separator.topAttachment: attach_widget
+Dtinfo.print_panel.form.separator.topWidget: where_frame
+Dtinfo.print_panel.form.separator.bottomAttachment: attach_widget
+Dtinfo.print_panel.form.separator.bottomWidget: ok
+Dtinfo.print_panel.form.separator.topOffset: 7
+Dtinfo.print_panel.form.separator.bottomOffset: 5
+Dtinfo.print_panel.form.ok.leftAttachment: attach_form
+Dtinfo.print_panel.form.ok.leftOffset: 3
+Dtinfo.print_panel.form.ok.rightAttachment: attach_position
+Dtinfo.print_panel.form.ok.rightPosition: 33
+Dtinfo.print_panel.form.ok.bottomAttachment: attach_form
+Dtinfo.print_panel.form.cancel.leftAttachment: attach_position
+Dtinfo.print_panel.form.cancel.leftPosition: 33
+Dtinfo.print_panel.form.cancel.rightAttachment: attach_position
+Dtinfo.print_panel.form.cancel.rightPosition: 67
+Dtinfo.print_panel.form.cancel.bottomAttachment: attach_form
+Dtinfo.print_panel.form.help.sensitive: True
+Dtinfo.print_panel.form.help.leftAttachment: attach_position
+Dtinfo.print_panel.form.help.leftPosition: 67
+Dtinfo.print_panel.form.help.rightAttachment: attach_form
+Dtinfo.print_panel.form.help.right_offset: 3
+Dtinfo.print_panel.form.help.bottomAttachment: attach_form
+
+! $XConsortium: FileSelect.res /main/3 1996/07/18 15:02:42 drk $
+
+Dtinfo*file_select_popup.title: Dtinfo: File Selector
+Dtinfo*file_select_popup.file_select.dialogStyle: dialog_full_application_modal
+Dtinfo*file_select_popup.file_select.autoUnmanage: True
+Dtinfo*file_select_popup.file_select.Help.sensitive: False
+
+! $XConsortium: Preferences.res /main/13 1996/11/22 20:54:23 cde-hal $
+
+Dtinfo.preferences.allowShellResize: true
+! really need to link to cancel cb for warning dialog
+Dtinfo.preferences.deleteResponse: unmap
+Dtinfo.preferences.form*XmTextField.editable: false
+Dtinfo.preferences.form.options.leftAttachment: attach_form
+Dtinfo.preferences.form.options.topAttachment: attach_form
+Dtinfo.preferences.form.frame.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.topAttachment: attach_widget
+Dtinfo.preferences.form.frame.topWidget: options
+Dtinfo.preferences.form.frame.bottomAttachment: attach_widget
+Dtinfo.preferences.form.frame.bottomWidget: ok
+Dtinfo.preferences.form.frame.bottomOffset: 6
+Dtinfo.preferences.form.frame.topOffset: 6
+Dtinfo.preferences.form.frame.leftOffset: 4
+Dtinfo.preferences.form.frame.rightOffset: 4
+Dtinfo.preferences.form.frame.marginWidth: 4
+Dtinfo.preferences.form.frame.marginHeight: 4
+Dtinfo.preferences.form.frame.container.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.topAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.topWidget: separator1
+Dtinfo.preferences.form.frame.container.browse_prefs.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.bottomAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_label.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_label.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.get_browse_geo.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.get_browse_geo.rightOffset: 15
+Dtinfo.preferences.form.frame.container.browse_prefs.get_browse_geo.bottomAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.get_browse_geo.bottomWidget: browse_label
+Dtinfo.preferences.form.frame.container.browse_prefs.get_browse_geo.marginHeight: 4
+Dtinfo.preferences.form.frame.container.browse_prefs.get_browse_geo.marginWidth: 4
+Dtinfo.preferences.form.frame.container.browse_prefs.get_browse_geo.fontList: -dt-application-bold-r-normal-serif-12-*-iso8859-1
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.leftPosition: 60
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.rightAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.rightWidget: get_browse_geo
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.rightOffset: 2
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.value: s_File_A_Bug
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.columns: 10
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.traversalOn: false
+Dtinfo.preferences.form.frame.container.browse_prefs.browse_geo.cursorPositionVisible: false
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_label.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_label.topAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_label.topWidget: browse_label
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_label.topOffset: 4
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.leftPosition: 60
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.bottomAttachment: attach_none
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.topAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.topWidget: fs_label
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_field.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_field.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_field.value: s_File_Bug
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_field.columns: 6
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_field.traversalOn: false
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_field.cursorPositionVisible: false
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_up.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_up.bottomAttachment: attach_position
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_up.bottomPosition: 50
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_up.leftAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_up.leftWidget: scale_field
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_up.arrowDirection: arrow_up
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_up.shadowThickness: 0
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_down.bottomAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_down.topAttachment: attach_position
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_down.topPosition: 50
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_down.leftAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_down.leftWidget: scale_field
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_down.arrowDirection: arrow_down
+Dtinfo.preferences.form.frame.container.browse_prefs.fs_form.scale_down.shadowThickness: 0
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_label.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_label.topAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_label.topWidget: fs_label
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_label.topOffset: 4
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.topAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.topWidget: lock_label
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.leftPosition: 60
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.rightOffset: 50
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.bottomAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.bottomWidget: lock_label
+Dtinfo.preferences.form.frame.container.browse_prefs.lock_toggle.alignment: alignment_beginning
+Dtinfo.preferences.form.frame.container.map_prefs.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.bottomAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.map_label.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.map_label.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.topAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.topWidget: map_label
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.leftPosition: 60
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.rightAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.rightWidget: get_map_geo
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.rightOffset: 2
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.value: s_File_A_Bug
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.columns: 10
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.traversalOn: false
+Dtinfo.preferences.form.frame.container.map_prefs.map_geo.cursorPositionVisible: false
+Dtinfo.preferences.form.frame.container.map_prefs.get_map_geo.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.get_map_geo.rightOffset: 15
+Dtinfo.preferences.form.frame.container.map_prefs.get_map_geo.bottomAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.map_prefs.get_map_geo.bottomWidget: map_label
+Dtinfo.preferences.form.frame.container.map_prefs.get_map_geo.marginHeight: 4
+Dtinfo.preferences.form.frame.container.map_prefs.get_map_geo.marginWidth: 4
+Dtinfo.preferences.form.frame.container.map_prefs.get_map_geo.fontList: -dt-application-bold-r-normal-serif-12-*-iso8859-1
+Dtinfo.preferences.form.frame.container.map_prefs.update_label.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.update_label.topAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.map_prefs.update_label.topWidget: map_label
+Dtinfo.preferences.form.frame.container.map_prefs.update_label.topOffset: 4
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.topAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.topWidget: update_label
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.leftPosition: 60
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.rightOffset: 50
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.bottomAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.bottomWidget: update_label
+Dtinfo.preferences.form.frame.container.map_prefs.update_toggle.alignment: alignment_beginning
+Dtinfo.preferences.form.frame.container.history_prefs.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.bottomAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.nh_label.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.nh_label.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.leftPosition: 70
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_field.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_field.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_field.columns: 6
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_field.value: s_File_Bug
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_field.traversalOn: false
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_field.cursorPositionVisible: false
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_up.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_up.bottomAttachment: attach_position
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_up.bottomPosition: 50
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_up.leftAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_up.leftWidget: nh_field
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_up.arrowDirection: arrow_up
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_up.shadowThickness: 0
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_down.bottomAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_down.topAttachment: attach_position
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_down.topPosition: 50
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_down.leftAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_down.leftWidget: nh_field
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_down.arrowDirection: arrow_down
+Dtinfo.preferences.form.frame.container.history_prefs.nh_form.nh_down.shadowThickness: 0
+Dtinfo.preferences.form.frame.container.history_prefs.sh_label.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.sh_label.topAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.history_prefs.sh_label.topWidget: nh_label
+Dtinfo.preferences.form.frame.container.history_prefs.sh_label.topOffset: 4
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.leftPosition: 70
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.topAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.topWidget: sh_label
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_field.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_field.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_field.columns: 6
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_field.value: s_File_Bug
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_field.traversalOn: false
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_field.cursorPositionVisible: false
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_up.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_up.bottomAttachment: attach_position
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_up.bottomPosition: 50
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_up.leftAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_up.leftWidget: sh_field
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_up.arrowDirection: arrow_up
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_up.shadowThickness: 0
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_down.bottomAttachment: attach_form
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_down.topAttachment: attach_position
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_down.topPosition: 50
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_down.leftAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_down.leftWidget: sh_field
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_down.arrowDirection: arrow_down
+Dtinfo.preferences.form.frame.container.history_prefs.sh_form.sh_down.shadowThickness: 0
+Dtinfo.preferences.form.frame.container.search_prefs.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.bottomAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.max_hits.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.max_hits.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.leftPosition: 70
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_field.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_field.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_field.columns: 6
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_field.value: s_File_Bug
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_field.traversalOn: false
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_field.cursorPositionVisible: false
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_up.topAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_up.bottomAttachment: attach_position
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_up.bottomPosition: 50
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_up.leftAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_up.leftWidget: hits_field
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_up.arrowDirection: arrow_up
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_up.shadowThickness: 0
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_down.bottomAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_down.topAttachment: attach_position
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_down.topPosition: 50
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_down.leftAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_down.leftWidget: hits_field
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_down.arrowDirection: arrow_down
+Dtinfo.preferences.form.frame.container.search_prefs.hits_form.hits_down.shadowThickness: 0
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_label.leftAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_label.topAttachment: attach_widget
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_label.topWidget: hits_form
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_label.topOffset: 4
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.topAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.topWidget: adisplay_label
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.leftAttachment: attach_position
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.leftPosition: 70
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.bottomAttachment: attach_opposite_widget
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.bottomWidget: adisplay_label
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.rightAttachment: attach_form
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.rightOffset: 30
+Dtinfo.preferences.form.frame.container.search_prefs.adisplay_toggle.alignment: alignment_beginning
+Dtinfo.preferences.form.ok.leftAttachment: attach_form
+Dtinfo.preferences.form.ok.leftOffset: 3
+Dtinfo.preferences.form.ok.rightAttachment: attach_position
+Dtinfo.preferences.form.ok.rightPosition: 20
+Dtinfo.preferences.form.ok.bottomAttachment: attach_form
+Dtinfo.preferences.form.ok.sensitive: false
+Dtinfo.preferences.form.apply.leftAttachment: attach_position
+Dtinfo.preferences.form.apply.leftPosition: 20
+Dtinfo.preferences.form.apply.rightAttachment: attach_position
+Dtinfo.preferences.form.apply.rightPosition: 40
+Dtinfo.preferences.form.apply.bottomAttachment: attach_form
+Dtinfo.preferences.form.apply.sensitive: false
+Dtinfo.preferences.form.reset.leftAttachment: attach_position
+Dtinfo.preferences.form.reset.leftPosition: 40
+Dtinfo.preferences.form.reset.rightAttachment: attach_position
+Dtinfo.preferences.form.reset.rightPosition: 60
+Dtinfo.preferences.form.reset.bottomAttachment: attach_form
+Dtinfo.preferences.form.reset.sensitive: false
+Dtinfo.preferences.form.cancel.leftAttachment: attach_position
+Dtinfo.preferences.form.cancel.leftPosition: 60
+Dtinfo.preferences.form.cancel.rightAttachment: attach_position
+Dtinfo.preferences.form.cancel.rightPosition: 80
+Dtinfo.preferences.form.cancel.bottomAttachment: attach_form
+Dtinfo.preferences.form.help.leftAttachment: attach_position
+Dtinfo.preferences.form.help.leftPosition: 80
+Dtinfo.preferences.form.help.rightAttachment: attach_form
+Dtinfo.preferences.form.help.right_offset: 3
+Dtinfo.preferences.form.help.bottomAttachment: attach_form
+Dtinfo.preferences.form.help.sensitive: true
+
+! Default Preference values.  These are only the initial values!
+! Once changed with the Preferences dialog they are no longer used.
+
+Dtinfo*BrowseGeometry:   640x720
+Dtinfo*FontScale:        1
+Dtinfo*BrowseLock:       off
+Dtinfo*MapGeometry:      520x350
+Dtinfo*MapAutoUpdate:    true
+Dtinfo*NodeHistSize:     100
+Dtinfo*SearchHistSize:   50
+Dtinfo*MaxSearchHits:    50
+
+Dtinfo.graphic.deleteResponse: destroy
+Dtinfo.graphic.minWidth: 220
+Dtinfo.graphic.minHeight: 170
+Dtinfo.graphic.form.menu_bar*tearOffModel: tear_off_disabled
+Dtinfo.graphic.form.menu_bar.topAttachment: attach_form
+Dtinfo.graphic.form.menu_bar.leftAttachment: attach_form
+Dtinfo.graphic.form.menu_bar.rightAttachment: attach_form
+Dtinfo.graphic.form.menu_bar*XmToggleButton.indicatorType: one_of_many
+Dtinfo.graphic.form.menu_bar*file_menu.print.sensitive: False
+Dtinfo.graphic.form.menu_bar*view_menu.z_100.set: True
+Dtinfo.graphic.form.menu_bar*view_menu.radioBehavior: true
+Dtinfo.graphic.form.menu_bar*panner_menu.radioBehavior: true
+Dtinfo.graphic.form.message.leftAttachment: attach_form
+Dtinfo.graphic.form.message.rightAttachment: attach_form
+Dtinfo.graphic.form.message.bottomAttachment: attach_form
+Dtinfo.graphic.form.message.alignment: alignment_beginning
+Dtinfo.graphic.form.sep2.leftAttachment: attach_form
+Dtinfo.graphic.form.sep2.rightAttachment: attach_form
+Dtinfo.graphic.form.sep2.bottomAttachment: attach_widget
+Dtinfo.graphic.form.sep2.bottomWidget: message
+Dtinfo.graphic.form.frame.topAttachment: attach_widget
+Dtinfo.graphic.form.frame.topWidget: menu_bar
+Dtinfo.graphic.form.frame.leftAttachment: attach_form
+Dtinfo.graphic.form.frame.rightAttachment: attach_form
+Dtinfo.graphic.form.frame.bottomAttachment: attach_widget
+Dtinfo.graphic.form.frame.bottomWidget: sep2
+Dtinfo.graphic.form.frame.topOffset: 2
+Dtinfo.graphic.form.frame.bottomOffset: 2
+Dtinfo.graphic.form.frame.leftOffset: 2
+Dtinfo.graphic.form.frame.rightOffset: 2
+Dtinfo.graphic.form.frame.shadowType: shadow_etched_in
+Dtinfo.graphic.form.frame.subform.porthole.borderWidth: 0
+Dtinfo.graphic.form.frame.subform.porthole.topAttachment: attach_form
+Dtinfo.graphic.form.frame.subform.porthole.leftAttachment: attach_form
+Dtinfo.graphic.form.frame.subform.porthole.rightAttachment: attach_form
+Dtinfo.graphic.form.frame.subform.porthole.bottomAttachment: attach_form
+Dtinfo.graphic.form.frame.subform.porthole.background: white
+Dtinfo.graphic.form.frame.subform.panner.internalSpace: 1
+
+! $XConsortium: ScopeEditor.res /main/9 1996/10/15 19:40:47 cde-hal $
+
+Dtinfo.scope_editor.deleteResponse: unmap
+Dtinfo.scope_editor.allowShellResize: false
+Dtinfo.scope_editor.minWidth: 500
+Dtinfo.scope_editor.minHeight: 245
+Dtinfo.scope_editor.form.fractionBase: 140
+Dtinfo.scope_editor.form.resizable: false
+Dtinfo.scope_editor.form.scope_option.navigationType: tab_group
+Dtinfo.scope_editor.form.scope_option.leftAttachment: attach_form
+Dtinfo.scope_editor.form.scope_option.topAttachment: attach_form
+!        OptionLabel
+!          fontList: -dt-application-bold-r-normal-sans-*-140-*-*-p-*-iso8859-1
+!        fontList: -dt-application-bold-r-normal-sans-*-140-*-*-p-*-iso8859-1
+Dtinfo.scope_editor.form.books.leftAttachment: attach_form
+Dtinfo.scope_editor.form.books.topAttachment: attach_widget
+Dtinfo.scope_editor.form.books.topWidget: scope_option
+Dtinfo.scope_editor.form.books.leftOffset: 5
+Dtinfo.scope_editor.form.infobasesSW.topAttachment: attach_widget
+Dtinfo.scope_editor.form.infobasesSW.topWidget: books
+Dtinfo.scope_editor.form.infobasesSW.leftAttachment: attach_form
+Dtinfo.scope_editor.form.infobasesSW.bottomAttachment: attach_widget
+Dtinfo.scope_editor.form.infobasesSW.bottomWidget: separator
+Dtinfo.scope_editor.form.infobasesSW.rightAttachment: attach_position
+Dtinfo.scope_editor.form.infobasesSW.rightPosition: 83
+Dtinfo.scope_editor.form.infobasesSW.leftOffset: 5
+Dtinfo.scope_editor.form.infobasesSW.bottomOffset: 6
+Dtinfo.scope_editor.form.infobasesSW.topOffset: 2
+Dtinfo.scope_editor.form.infobasesSW.infobases.listSizePolicy: constant
+Dtinfo.scope_editor.form.infobasesSW.infobases.visibleItemCount: 10
+Dtinfo.scope_editor.form.infobasesSW.infobases.translations: #override                         ~s ~c ~m ~a <Btn1Down>: OutlineListBeginSelect()\n                        ~s ~c ~m ~a <Btn1Up>: OutlineListEndSelect()
+
+Dtinfo.scope_editor.form.infobasesSW.infobases.selectionPolicy: multiple_select
+!        fontList: -dt-application-bold-r-normal-sans-*-140-*-*-p-*-iso8859-1
+Dtinfo.scope_editor.form.components.topAttachment: attach_opposite_widget
+Dtinfo.scope_editor.form.components.topWidget: books
+Dtinfo.scope_editor.form.components.leftAttachment: attach_position
+Dtinfo.scope_editor.form.components.leftPosition: 85
+Dtinfo.scope_editor.form.componentsSW.topAttachment: attach_widget
+Dtinfo.scope_editor.form.componentsSW.topWidget: components
+Dtinfo.scope_editor.form.componentsSW.rightAttachment: attach_form
+Dtinfo.scope_editor.form.componentsSW.leftAttachment: attach_position
+Dtinfo.scope_editor.form.componentsSW.leftPosition: 85
+Dtinfo.scope_editor.form.componentsSW.bottomAttachment: attach_widget
+Dtinfo.scope_editor.form.componentsSW.bottomWidget: separator
+Dtinfo.scope_editor.form.componentsSW.rightOffset: 5
+Dtinfo.scope_editor.form.componentsSW.bottomOffset: 6
+Dtinfo.scope_editor.form.componentsSW.topOffset: 2
+Dtinfo.scope_editor.form.componentsSW.components.listSizePolicy: constant
+Dtinfo.scope_editor.form.componentsSW.components.translations: #override                         ~s ~c ~m ~a <Btn1Down>: OutlineListBeginSelect()\n                        ~s ~c ~m ~a <Btn1Up>: OutlineListEndSelect()
+
+Dtinfo.scope_editor.form.componentsSW.components.selectionPolicy: multiple_select
+Dtinfo.scope_editor.form.separator.leftAttachment: attach_form
+Dtinfo.scope_editor.form.separator.rightAttachment: attach_form
+Dtinfo.scope_editor.form.separator.bottomAttachment: attach_widget
+Dtinfo.scope_editor.form.separator.bottomWidget: new
+Dtinfo.scope_editor.form.separator.bottomOffset: 5
+Dtinfo.scope_editor.form.separator.highlightThickness: 0
+Dtinfo.scope_editor.form.XmPushButton.bottomAttachment: attach_form
+Dtinfo.scope_editor.form.XmPushButton.bottomOffset: 4
+Dtinfo.scope_editor.form.XmPushButton.rightOffset: 3
+Dtinfo.scope_editor.form.new.leftAttachment: attach_form
+Dtinfo.scope_editor.form.new.leftOffset: 4
+Dtinfo.scope_editor.form.new.rightAttachment: attach_position
+Dtinfo.scope_editor.form.new.rightPosition: 20
+Dtinfo.scope_editor.form.save.leftAttachment: attach_position
+Dtinfo.scope_editor.form.save.leftPosition: 20
+Dtinfo.scope_editor.form.save.rightAttachment: attach_position
+Dtinfo.scope_editor.form.save.rightPosition: 40
+Dtinfo.scope_editor.form.rename.leftAttachment: attach_position
+Dtinfo.scope_editor.form.rename.leftPosition: 40
+Dtinfo.scope_editor.form.rename.rightAttachment: attach_position
+Dtinfo.scope_editor.form.rename.rightPosition: 60
+Dtinfo.scope_editor.form.delete.leftAttachment: attach_position
+Dtinfo.scope_editor.form.delete.leftPosition: 60
+Dtinfo.scope_editor.form.delete.rightAttachment: attach_position
+Dtinfo.scope_editor.form.delete.rightPosition: 80
+Dtinfo.scope_editor.form.reset.leftAttachment: attach_position
+Dtinfo.scope_editor.form.reset.leftPosition: 80
+Dtinfo.scope_editor.form.reset.rightAttachment: attach_position
+Dtinfo.scope_editor.form.reset.rightPosition: 100
+Dtinfo.scope_editor.form.reset.sensitive: false
+Dtinfo.scope_editor.form.close.leftAttachment: attach_position
+Dtinfo.scope_editor.form.close.leftPosition: 100
+Dtinfo.scope_editor.form.close.rightAttachment: attach_position
+Dtinfo.scope_editor.form.close.rightPosition: 120
+Dtinfo.scope_editor.form.help.leftAttachment: attach_position
+Dtinfo.scope_editor.form.help.leftPosition: 120
+Dtinfo.scope_editor.form.help.rightAttachment: attach_form
+Dtinfo.scope_editor.form.help.rightOffset: 4
+
+Dtinfo*add_library_agent.deleteResponse: destroy
+Dtinfo*add_library_agent.form.dialogStyle: dialog_full_application_modal
+Dtinfo*add_library_agent.form.autoUnmanage: False
+Dtinfo*add_library_agent.form.rightOffset: 10
+Dtinfo*add_library_agent.form.leftOffset: 10
+Dtinfo*add_library_agent.form.topOffset: 10
+Dtinfo*add_library_agent.form.bottomOffset: 10
+Dtinfo*add_library_agent.form.sub_form.topAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.leftAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.rightAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.theLabel.topAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.theLabel.bottomAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.theLabel.leftAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.theLabel.leftOffset: 5
+Dtinfo*add_library_agent.form.sub_form.theLabel.topOffset: 5
+Dtinfo*add_library_agent.form.sub_form.theLabel.bottomOffset: 5
+Dtinfo*add_library_agent.form.sub_form.theLabel.rightOffset: 5
+Dtinfo*add_library_agent.form.sub_form.pick.sensitive: True
+Dtinfo*add_library_agent.form.sub_form.pick.highlightThickness: 2
+Dtinfo*add_library_agent.form.sub_form.pick.marginLeft: 2
+Dtinfo*add_library_agent.form.sub_form.pick.marginRight: 2
+Dtinfo*add_library_agent.form.sub_form.pick.topAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.pick.bottomAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.pick.rightAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.pick.leftAttachment: attach_none
+Dtinfo*add_library_agent.form.sub_form.pick.rightOffset: 7
+Dtinfo*add_library_agent.form.sub_form.pick.topOffset: 5
+Dtinfo*add_library_agent.form.sub_form.pick.bottomOffset: 5
+Dtinfo*add_library_agent.form.sub_form.pick.fontList: -dt-application-bold-r-normal-serif-12-*-iso8859-1
+Dtinfo*add_library_agent.form.sub_form.text.width: 250
+Dtinfo*add_library_agent.form.sub_form.text.focus: True
+Dtinfo*add_library_agent.form.sub_form.text.topAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.text.bottomAttachment: attach_form
+Dtinfo*add_library_agent.form.sub_form.text.leftAttachment: attach_widget
+Dtinfo*add_library_agent.form.sub_form.text.leftWidget: theLabel
+Dtinfo*add_library_agent.form.sub_form.text.rightAttachment: attach_widget
+Dtinfo*add_library_agent.form.sub_form.text.rightWidget: pick
+Dtinfo*add_library_agent.form.sub_form.text.leftOffset: 5
+Dtinfo*add_library_agent.form.sub_form.text.rightOffset: 5
+Dtinfo*add_library_agent.form.sub_form.text.topOffset: 5
+Dtinfo*add_library_agent.form.sub_form.text.bottomOffset: 5
+Dtinfo*add_library_agent.form.separator.topAttachment: attach_widget
+Dtinfo*add_library_agent.form.separator.topWidget: sub_form
+Dtinfo*add_library_agent.form.separator.leftAttachment: attach_form
+Dtinfo*add_library_agent.form.separator.rightAttachment: attach_form
+Dtinfo*add_library_agent.form.ok.sensitive: False
+Dtinfo*add_library_agent.form.ok.leftAttachment: attach_form
+Dtinfo*add_library_agent.form.ok.leftOffset: 5
+Dtinfo*add_library_agent.form.ok.rightAttachment: attach_position
+Dtinfo*add_library_agent.form.ok.rightPosition: 25
+Dtinfo*add_library_agent.form.ok.rightOffset: 5
+Dtinfo*add_library_agent.form.ok.topAttachment: attach_widget
+Dtinfo*add_library_agent.form.ok.topWidget: separator
+Dtinfo*add_library_agent.form.ok.topOffset: 5
+Dtinfo*add_library_agent.form.ok.bottomAttachment: attach_form
+Dtinfo*add_library_agent.form.ok.bottomOffset: 5
+Dtinfo*add_library_agent.form.clear.sensitive: False
+Dtinfo*add_library_agent.form.clear.leftAttachment: attach_widget
+Dtinfo*add_library_agent.form.clear.leftWidget: ok
+Dtinfo*add_library_agent.form.clear.leftOffset: 5
+Dtinfo*add_library_agent.form.clear.rightAttachment: attach_position
+Dtinfo*add_library_agent.form.clear.rightPosition: 50
+Dtinfo*add_library_agent.form.clear.rightOffset: 5
+Dtinfo*add_library_agent.form.clear.topAttachment: attach_widget
+Dtinfo*add_library_agent.form.clear.topWidget: separator
+Dtinfo*add_library_agent.form.clear.topOffset: 5
+Dtinfo*add_library_agent.form.clear.bottomAttachment: attach_form
+Dtinfo*add_library_agent.form.clear.bottomOffset: 5
+Dtinfo*add_library_agent.form.cancel.sensitive: True
+Dtinfo*add_library_agent.form.cancel.leftAttachment: attach_widget
+Dtinfo*add_library_agent.form.cancel.leftWidget: clear
+Dtinfo*add_library_agent.form.cancel.leftOffset: 5
+Dtinfo*add_library_agent.form.cancel.rightAttachment: attach_position
+Dtinfo*add_library_agent.form.cancel.rightPosition: 75
+Dtinfo*add_library_agent.form.cancel.rightOffset: 5
+Dtinfo*add_library_agent.form.cancel.topAttachment: attach_widget
+Dtinfo*add_library_agent.form.cancel.topWidget: separator
+Dtinfo*add_library_agent.form.cancel.topOffset: 5
+Dtinfo*add_library_agent.form.cancel.bottomAttachment: attach_form
+Dtinfo*add_library_agent.form.cancel.bottomOffset: 5
+Dtinfo*add_library_agent.form.help.sensitive: True
+Dtinfo*add_library_agent.form.help.leftAttachment: attach_widget
+Dtinfo*add_library_agent.form.help.leftWidget: cancel
+Dtinfo*add_library_agent.form.help.leftOffset: 5
+Dtinfo*add_library_agent.form.help.rightOffset: 5
+Dtinfo*add_library_agent.form.help.rightAttachment: attach_form
+Dtinfo*add_library_agent.form.help.topAttachment: attach_widget
+Dtinfo*add_library_agent.form.help.topWidget: separator
+Dtinfo*add_library_agent.form.help.topOffset: 5
+Dtinfo*add_library_agent.form.help.bottomAttachment: attach_form
+Dtinfo*add_library_agent.form.help.bottomOffset: 5
+
+Dtinfo.open_url.allowShellResize: false
+Dtinfo.open_url.deleteResponse: unmap
+Dtinfo.open_url.form.autoUnmanage: False
+Dtinfo.open_url.form.the_label.topAttachment: attach_form
+Dtinfo.open_url.form.the_label.leftAttachment: attach_form
+Dtinfo.open_url.form.the_label.bottomAttachment: attach_widget
+Dtinfo.open_url.form.the_label.bottomWidget: text_field
+Dtinfo.open_url.form.the_label.topOffset: 4
+Dtinfo.open_url.form.the_label.leftOffset: 4
+Dtinfo.open_url.form.text_field.leftAttachment: attach_form
+Dtinfo.open_url.form.text_field.rightAttachment: attach_form
+Dtinfo.open_url.form.text_field.bottomAttachment: attach_widget
+Dtinfo.open_url.form.text_field.bottomWidget: separator
+Dtinfo.open_url.form.text_field.leftOffset: 4
+Dtinfo.open_url.form.text_field.rightOffset: 4
+Dtinfo.open_url.form.separator.leftAttachment: attach_form
+Dtinfo.open_url.form.separator.rightAttachment: attach_form
+Dtinfo.open_url.form.separator.bottomAttachment: attach_widget
+Dtinfo.open_url.form.separator.bottomWidget: ok
+Dtinfo.open_url.form.separator.bottomOffset: 4
+Dtinfo.open_url.form.separator.highlightThickness: 0
+Dtinfo.open_url.form.ok.sensitive: false
+Dtinfo.open_url.form.ok.leftAttachment: attach_form
+Dtinfo.open_url.form.ok.leftOffset: 3
+Dtinfo.open_url.form.ok.rightAttachment: attach_position
+Dtinfo.open_url.form.ok.rightPosition: 20
+Dtinfo.open_url.form.ok.bottomAttachment: attach_form
+Dtinfo.open_url.form.apply.sensitive: false
+Dtinfo.open_url.form.apply.leftAttachment: attach_position
+Dtinfo.open_url.form.apply.leftPosition: 20
+Dtinfo.open_url.form.apply.rightAttachment: attach_position
+Dtinfo.open_url.form.apply.rightPosition: 40
+Dtinfo.open_url.form.apply.bottomAttachment: attach_form
+Dtinfo.open_url.form.clear.sensitive: false
+Dtinfo.open_url.form.clear.leftAttachment: attach_position
+Dtinfo.open_url.form.clear.leftPosition: 40
+Dtinfo.open_url.form.clear.rightAttachment: attach_position
+Dtinfo.open_url.form.clear.rightPosition: 60
+Dtinfo.open_url.form.clear.bottomAttachment: attach_form
+Dtinfo.open_url.form.close.leftAttachment: attach_position
+Dtinfo.open_url.form.close.leftPosition: 60
+Dtinfo.open_url.form.close.rightAttachment: attach_position
+Dtinfo.open_url.form.close.rightPosition: 80
+Dtinfo.open_url.form.close.bottomAttachment: attach_form
+Dtinfo.open_url.form.help.leftAttachment: attach_position
+Dtinfo.open_url.form.help.leftPosition: 80
+Dtinfo.open_url.form.help.rightAttachment: attach_form
+Dtinfo.open_url.form.help.right_offset: 3
+Dtinfo.open_url.form.help.bottomAttachment: attach_form
+
+!	DtHelp dialog resources
+! DtHelp does not allow external resource control of initial dialog height
+!Dtinfo*helpdialog.height:		360
+!Dtinfo*helpdialog_popup.height:	360
+Dtinfo.helpdialog_popup.minHeight:	175
+Dtinfo.helpdialog_popup.minWidth:	300
+Dtinfo.helpdialog_popup*panedWindow.DisplayAreaForm.paneMinimum:	180
+! DtHelp does not allow pathForm initial height control, so default
+! paneMinimum for DisplayAreaForm is 180 instead of smaller...
+Dtinfo.helpdialog_popup*panedWindow.pathForm.height:			160
+Dtinfo.helpdialog_popup*panedWindow.pathForm.paneMinimum:		18
+
+Dtinfo*ExpandableMap:	False
+
+Dtinfo*messageDialogMinWidth: 350
+
+Dtinfo*MapHighlightBackground:        black
+Dtinfo*MapHighlightForeground:        white
+
+Dtinfo*display_area.searchColor:       blue
+
+Dtinfo*XmSeparatorGadget.highlightThickness: 0
+
+! Icons and icon names for iconified primary windows
+
+Dtinfo.node_hist.IconName: Section
+Dtinfo*node_hist.iconPixmap: Dthist.l.pm
+
+Dtinfo.doc_tree.IconName: Books
+Dtinfo*doc_tree.iconPixmap: Dtinfo.l.pm
+
+Dtinfo.mark_list.IconName: Marks
+Dtinfo*mark_list.iconPixmap: Dtbmark.l.pm
+
+Dtinfo.search_history.IconName: Search
+Dtinfo*search_history.iconPixmap: Dtsrch.l.pm
+
+Dtinfo.query_editor.IconName: Query
+Dtinfo*query_editor.iconPixmap: Dteditqry.l.pm
+
+Dtinfo.scope_editor.IconName: Scope
+Dtinfo*scope_editor.iconPixmap: Dtscope_editor.l.pm
+
+Dtinfo.node_view.IconName: Browser
+Dtinfo*node_view.iconPixmap: Dtview.l.pm
+
+Dtinfo.map.IconName: Map
+Dtinfo*map.iconPixmap: Dtgraphmap.l.pm
+
+! set printing background to white to get rid of 
+! unsightly grey square
+
+Dtinfo*page.background: white
+Dtinfo*page.DisplayArea.background: white
+Dtinfo*PrintShell*background: white
+
+Dtinfo*footer.bookname.fontList: -dt-interface user-medium-r-normal-xs*-*-*-*-*-*-*-*-*
+Dtinfo*footer.page_no.fontList: -dt-interface user-medium-r-normal-xs*-*-*-*-*-*-*-*-*
+
+! Dtinfo*KeyboardFocusPolicy:    Pointer
+
+!Dtinfo.title:                            Dtinfo
+!Dtinfo.deleteResponse:                   DO_NOTHING
+
+!Dtinfo.geometry:                         72x186
+! NOTE: For some reason Motif adds minHeight to geometry hight above...
+!Dtinfo.minHeight:                        102
+!Dtinfo.minWidth:                         0
+
+Dtinfo.MessageDialog.MessageDialog.defaultPosition:  False
+Dtinfo.MessageDialog.MessageDialog.dialogStyle:      dialog_full_application_modal
+Dtinfo.MessageDialog.MessageDialog.messageAlignment: alignment_center
+Dtinfo.MessageDialog.MessageDialog.Help.labelString:    Help
+Dtinfo.MessageDialog.MessageDialog.Help.sensitive:      False
+Dtinfo.MessageDialog.MessageDialog.text.verifyBell: on
+Dtinfo.MessageDialog.MessageDialog.text.maxLength: 40
+
+Dtinfo.core_dump*background: red
+Dtinfo.core_dump.core_dump.symbolPixmap: bomb32
+Dtinfo.core_dump.core_dump.messageAlignment: alignment_center
+  
+Dtinfo*PinForeground: white
+
+Dtinfo*RasterForeground: black
+Dtinfo*RasterBackground: white
+
+Dtinfo.map.deleteResponse: unmap
+Dtinfo.map.minWidth: 300
+Dtinfo.map.minHeight: 300
+Dtinfo.map*pane.spacing: 14
+Dtinfo.map*pane.topAttachment: attach_form
+Dtinfo.map*pane.leftAttachment: attach_form
+Dtinfo.map*pane.rightAttachment: attach_form
+Dtinfo.map*pane.bottomAttachment: attach_widget
+Dtinfo.map*pane.bottomWidget: bottomform
+Dtinfo.map*pane.allowResize: true
+Dtinfo.map*pane.topform*geoTattler: on
+Dtinfo.map*pane.topform.paneMinimum: 75
+Dtinfo.map*pane.topform.pframe.topAttachment: attach_form
+Dtinfo.map*pane.topform.pframe.bottomAttachment: attach_form
+Dtinfo.map*pane.topform.pframe.leftAttachment: attach_form
+Dtinfo.map*pane.topform.pframe.shadowType: shadow_in
+!            cursorName: FONT decw$cursor 40 41
+Dtinfo.map*pane.topform.pframe.panner.pointerColorBackground: white
+Dtinfo.map*pane.topform.pframe.panner.shadowThickness: 0
+Dtinfo.map*pane.topform.pframe.panner.borderWidth: 0
+Dtinfo.map*pane.topform.pframe.panner.internalSpace: 1
+!            foreground: #8db4e8
+Dtinfo.map*pane.topform.lock.topAttachment: attach_form
+Dtinfo.map*pane.topform.lock.bottomAttachment: attach_form
+Dtinfo.map*pane.topform.lock.rightAttachment: attach_form
+Dtinfo.map*pane.tframe.marginWidth: 2
+Dtinfo.map*pane.tframe.marginHeight: 2
+!          *background: lightsteelblue4
+Dtinfo.map*pane.tframe.porthole.borderWidth: 0
+Dtinfo.map*pane.tframe.porthole.tree.autoReconfigure: false
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmPushButton.shadowThickness: 0
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmPushButton.borderWidth: 0
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmPushButton.leftAttachment: attach_form
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmArrowButton.shadowThickness: 0
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmArrowButton.arrowDirection: arrow_right
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmArrowButton.width: 18
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmArrowButton.height: 18
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmArrowButton.topOffset: 2
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmArrowButton.rightAttachment: attach_form
+Dtinfo.map*pane.tframe.porthole.tree.XmForm.XmArrowButton.topAttachment: attach_form
+Dtinfo.map*bottomform.leftAttachment: attach_form
+Dtinfo.map*bottomform.rightAttachment: attach_form
+Dtinfo.map*bottomform.bottomAttachment: attach_form
+Dtinfo.map*bottomform.bottomOffset: 2
+Dtinfo.map*bottomform.close.bottomAttachment: attach_form
+Dtinfo.map*bottomform.close.leftAttachment: attach_position
+Dtinfo.map*bottomform.close.leftPosition: 33
+Dtinfo.map*bottomform.close.rightAttachment: attach_position
+Dtinfo.map*bottomform.close.rightPosition: 66
+Dtinfo.map*bottomform.close.rightOffset: 3
+Dtinfo.map*bottomform.help.leftAttachment: attach_position
+Dtinfo.map*bottomform.help.leftPosition: 66
+Dtinfo.map*bottomform.help.bottomAttachment: attach_form
+Dtinfo.map*bottomform.help.rightAttachment: attach_form
+Dtinfo.map*bottomform.help.rightOffset: 3
+
+!! Then: need to make sure that Frame recalcs title position on resize
+
+! *mark_icon.armColor: black
+Dtinfo*mark_icon.labelType: pixmap
+Dtinfo*mark_icon.shadowThickness: 1
+Dtinfo*mark_icon.marginHeight: 0
+Dtinfo*mark_icon.marginWidth: 0
+Dtinfo*mark_icon.highlightThickness: 1
+! *icon_popup.radioBehavior: true
+! *popup_icon_popup*tearOffModel: tear_off_disabled
+
+! Search History List Resources
+Dtinfo.search_history.width: 450
+Dtinfo.search_history.minWidth: 360
+Dtinfo.search_history.minHeight: 225
+Dtinfo.search_history.deleteResponse: do_nothing
+Dtinfo.search_history.allowShellResize: false
+Dtinfo.search_history.form.header.leftOffset: 4
+Dtinfo.search_history.form.header.rightOffset: 0
+Dtinfo.search_history.form.header.topAttachment: attach_form
+Dtinfo.search_history.form.header.leftAttachment: attach_form
+Dtinfo.search_history.form.header.rightAttachment: attach_form
+Dtinfo.search_history.form.header.alignment: alignment_beginning
+Dtinfo.search_history.form.listSW.topAttachment: attach_widget
+Dtinfo.search_history.form.listSW.topWidget: header
+Dtinfo.search_history.form.listSW.bottomAttachment: attach_widget
+Dtinfo.search_history.form.listSW.bottomWidget: separator
+Dtinfo.search_history.form.listSW.leftAttachment: attach_form
+Dtinfo.search_history.form.listSW.rightAttachment: attach_form
+Dtinfo.search_history.form.listSW.bottomOffset: 6
+Dtinfo.search_history.form.listSW.leftOffset: 4
+Dtinfo.search_history.form.listSW.rightOffset: 4
+Dtinfo.search_history.form.listSW.topOffset: 4
+Dtinfo.search_history.form.listSW.list.listSizePolicy: constant
+!          scrollBarDisplayPolicy: static
+Dtinfo.search_history.form.listSW.list.visibleItemCount: 10
+Dtinfo.search_history.form.separator.leftAttachment: attach_form
+Dtinfo.search_history.form.separator.rightAttachment: attach_form
+Dtinfo.search_history.form.separator.highlightThickness: 0
+Dtinfo.search_history.form.separator.bottomAttachment: attach_widget
+Dtinfo.search_history.form.separator.bottomWidget: activate
+Dtinfo.search_history.form.separator.bottomOffset: 4
+Dtinfo.search_history.form.activate.sensitive: false
+Dtinfo.search_history.form.activate.leftAttachment: attach_form
+Dtinfo.search_history.form.activate.leftOffset: 3
+Dtinfo.search_history.form.activate.rightAttachment: attach_position
+Dtinfo.search_history.form.activate.rightPosition: 33
+Dtinfo.search_history.form.activate.bottomAttachment: attach_form
+Dtinfo.search_history.form.close.leftAttachment: attach_position
+Dtinfo.search_history.form.close.leftPosition: 33
+Dtinfo.search_history.form.close.rightAttachment: attach_position
+Dtinfo.search_history.form.close.rightPosition: 67
+Dtinfo.search_history.form.close.bottomAttachment: attach_form
+Dtinfo.search_history.form.help.leftAttachment: attach_position
+Dtinfo.search_history.form.help.leftPosition: 67
+Dtinfo.search_history.form.help.rightAttachment: attach_form
+Dtinfo.search_history.form.help.right_offset: 3
+Dtinfo.search_history.form.help.bottomAttachment: attach_form
+
