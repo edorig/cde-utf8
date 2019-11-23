@@ -17,7 +17,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potrà essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potrÃ  essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -35,8 +35,8 @@ DATA_ATTRIBUTES DTHELP_VOL
         ICON		Dthvol
         NAME_TEMPLATE   %s.sdl
         MIME_TYPE	application/octet-stream
-        DESCRIPTION     Questo è un file di base di un volume dell'aiuto. \
-                        Il suo tipo di dati è denominato DTHELP_VOL. \
+        DESCRIPTION     Questo Ã¨ un file di base di un volume dell'aiuto. \
+                        Il suo tipo di dati Ã¨ denominato DTHELP_VOL. \
                         I file DTHELP_VOL terminano con l'estensione '.sdl' o '.hv'.
         TYPE_LABEL      DTHELP_VOL
 }
@@ -75,9 +75,9 @@ DATA_ATTRIBUTES DTHELP_HT
         ICON		Dthtop
         NAME_TEMPLATE   %s.ht
         MIME_TYPE	application/octet-stream
-        DESCRIPTION     Questo è un file di un argomento dell'aiuto compreso in un volume. \
-                        Per visualizzare l'argomento è necessario aprire il file \
-                        del volume principale. Il tipo di dati di questo file è \
+        DESCRIPTION     Questo Ã¨ un file di un argomento dell'aiuto compreso in un volume. \
+                        Per visualizzare l'argomento Ã¨ necessario aprire il file \
+                        del volume principale. Il tipo di dati di questo file Ã¨ \
                         denominato DTHELP_HT. I file DTHELP_HT terminano \
                         con l'estensione '.ht'.
         TYPE_LABEL      DTHELP_HT
@@ -97,10 +97,10 @@ DATA_ATTRIBUTES DTHELP_HVK
         ICON		Dthtop
         NAME_TEMPLATE   %s.hvk
         MIME_TYPE	application/octet-stream
-        DESCRIPTION     Questo file è associato a un volume di aiuto \
+        DESCRIPTION     Questo file Ã¨ associato a un volume di aiuto \
                         compilato. Per visualizzare il volume di aiuto \
-                        è necessario aprire il volume principale. Il tipo \
-                        di dati di questo file è denominato DTHELP_HVK. \
+                        Ã¨ necessario aprire il volume principale. Il tipo \
+                        di dati di questo file Ã¨ denominato DTHELP_HVK. \
                         I file DTHELP_HVK terminano con l'estensione '.hvk'.
         TYPE_LABEL      DTHELP_HVK
 }
@@ -119,10 +119,10 @@ DATA_ATTRIBUTES DTHELP_XRH
         ICON		Dthtop
         NAME_TEMPLATE   %s.xrh
         MIME_TYPE	application/octet-stream
-        DESCRIPTION     Questo è un file associato a un volume di aiuto \
+        DESCRIPTION     Questo Ã¨ un file associato a un volume di aiuto \
                         compilato. Per visualizzare il volume di aiuto \
-                        è necessario aprire il volume principale. Il tipo \
-                        di dati di questo file è denominato DTHELP_XRH. \
+                        Ã¨ necessario aprire il volume principale. Il tipo \
+                        di dati di questo file Ã¨ denominato DTHELP_XRH. \
                         I file DTHELP_XRH terminano con l'estensione '.xrh'.
         TYPE_LABEL      DTHELP_XRH
 }
@@ -149,7 +149,7 @@ ACTION Dthelpview
         EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen -dir $HOME/.dt/help/$DTUSERSESSION;                            /usr/dt/bin/dthelpview -helpVolume browser '
 
 	DESCRIPTION	L'azione Visualizzazione dell'aiuto (Dthelpview) visualizza il \
-                        livello più elevato dell'aiuto facendo doppio clic sull'icona. \
+                        livello piÃ¹ elevato dell'aiuto facendo doppio clic sull'icona. \
                         Trascinando sull'icona il file di un volume di aiuto, \
                         viene visualizzato quel volume.
 }
@@ -163,7 +163,7 @@ ACTION Dthelpview
 
 
 	DESCRIPTION	L'azione Visualizzazione dell'aiuto (Dthelpview) visualizza il \
-                        livello più elevato dell'aiuto facendo doppio clic sull'icona. \
+                        livello piÃ¹ elevato dell'aiuto facendo doppio clic sull'icona. \
                         Trascinando sull'icona il file di un volume di aiuto, \
                         viene visualizzato quel volume.
 }

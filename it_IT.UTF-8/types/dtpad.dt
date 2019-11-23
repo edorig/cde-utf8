@@ -17,7 +17,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -39,7 +39,7 @@ DATA_ATTRIBUTES TEXTFILE
         SUNV3_TYPE      text
         MEDIA           C_STRING
         DESCRIPTION     Questo file contiene testo normale. Il suo tipo di dati \
-                        Ë denominato TEXTFILE. Il nome di un \
+                        √® denominato TEXTFILE. Il nome di un \
                         TEXTFILE deve terminare con l'estensione '.txt'.
         TYPE_LABEL      TEXTFILE
 }
@@ -53,9 +53,9 @@ DATA_CRITERIA TEXTFILE1
 # 
 #  ATTENZIONE ATTENZIONE ATTENZIONE
 #
-# La seguente regola DATA_CRITERIA Ë utilizzata da dtmail per 
+# La seguente regola DATA_CRITERIA √® utilizzata da dtmail per 
 # identificare il TEXTFILE DATA_ATTRIBUTE del sistema. Se questa 
-# regola viene eliminata o modificata, dtmail non visualizzer‡ in modo 
+# regola viene eliminata o modificata, dtmail non visualizzer√† in modo 
 # corretto i messaggi di testo.
 # 
 # ##################################################################

@@ -17,7 +17,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -27,9 +27,9 @@ set DtDbVersion=1.0
 # ##########################################################################
 # 
 # I due tipi di dati contenuti in questo file (BM e PM) attivano icone 
-# "autorappresentative" dei file a mappa di bit e a mappa di pixel. CiÚ 
+# "autorappresentative" dei file a mappa di bit e a mappa di pixel. Ci√≤ 
 # significa che ogni file che contiene un'icona (estensione .bm o .pm) viene 
-# rappresentato usando il suo contenuto. In questo modo non Ë necessario aprire 
+# rappresentato usando il suo contenuto. In questo modo non √® necessario aprire 
 # i file singolarmente per visualizzare le icone disponibili.
 #
 # Per abilitare l'autorappresentazione delle icone, copiare questo file nella 
@@ -40,7 +40,7 @@ set DtDbVersion=1.0
 #
 #   NOTA:  A causa dell'elaborazione aggiuntiva richiesta per leggere e 
 #          visualizzare le icone personalizzate, l'attivazione di questi tipi 
-#          di dati puÚ penalizzare le prestazioni della Gestione di file.
+#          di dati pu√≤ penalizzare le prestazioni della Gestione di file.
 # Per visualizzare nuovamente le icone normali, cancellare il file dalla 
 # cartella secondaria personale .dt/types/ e ricaricare il database delle 
 # azioni e dei tipi di file.
@@ -61,7 +61,7 @@ DATA_ATTRIBUTES BM
         SUNV3_TYPE      xbm-file
         INSTANCE_ICON	%dir%/%name%
         DESCRIPTION     Questo file contiene dati nel formato X11 a mappa di bit. \
-                        Il suo tipo di dati Ë denominato BM. I file BM \
+                        Il suo tipo di dati √® denominato BM. I file BM \
                         terminano con le estensioni '.bm' o '.xbm'.
         TYPE_LABEL      BM
 }
@@ -102,8 +102,8 @@ DATA_ATTRIBUTES PM
         MIME_TYPE       text/plain
         SUNV3_TYPE      xpm-file
         INSTANCE_ICON	%dir%/%name%
-        DESCRIPTION     Questo Ë un file a mappa di pixel che contiene un'immagine a colori. \
-                        Il suo tipo di dati Ë denominato PM. I file PM terminano \
+        DESCRIPTION     Questo √® un file a mappa di pixel che contiene un'immagine a colori. \
+                        Il suo tipo di dati √® denominato PM. I file PM terminano \
                         con le estensioni '.pm' or '.xpm', o contengono i caratteri \
                         "! XPM2".
         TYPE_LABEL      PM

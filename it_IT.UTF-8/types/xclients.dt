@@ -18,7 +18,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -39,7 +39,7 @@ DATA_ATTRIBUTES XWD
         DESCRIPTION     Questo file contiene un'immagine grafica in formato XWD. \
                         In genere questi file vengono creati catturando \
                         un'immagine dallo schermo con l'azione Catturare Xwd. \
-                        Il suo tipo di dati Ë denominato XWD. I file XWD \
+                        Il suo tipo di dati √® denominato XWD. I file XWD \
                         terminano con l'estensione '.xwd' o '.wd'.
         TYPE_LABEL      XWD
 }
@@ -108,7 +108,7 @@ ACTION Bitmap
 	EXEC_STRING	bitmap 				"%(File)Arg_1"File da aprire:"%"
 
 	DESCRIPTION	L'azione Editare mappa di bit (Bitmap) esegue il client \
-                        'bitmap'. » possibile indicare un file come argomento, \
+                        'bitmap'. √à possibile indicare un file come argomento, \
                         diversamente verranno richieste la larghezza e l'altezza \
                         con cui visualizzare il nuovo file a mappa di bit.
 }
@@ -122,7 +122,7 @@ ACTION Bitmap
 
 
 	DESCRIPTION	L'azione Editare mappa di bit (Bitmap) esegue il client \
-                        'bitmap'. » possibile indicare un file come argomento, \
+                        'bitmap'. √à possibile indicare un file come argomento, \
                         diversamente verranno richieste la larghezza e l'altezza \
                         con cui visualizzare il nuovo file a mappa di bit.
 }
@@ -315,8 +315,8 @@ ACTION Xfd
 
 # ######
 
-# L'azione Informazioni sulla finestra (Xwininfo) non puÚ utilizzare 
-# la definizione '| ${PAGER:-more}', perchÈ questa impedisce la visualizzazione 
+# L'azione Informazioni sulla finestra (Xwininfo) non pu√≤ utilizzare 
+# la definizione '| ${PAGER:-more}', perch√© questa impedisce la visualizzazione 
 # del messaggio 'fare clic su una finestra'.
 ACTION Xwininfo
 {
@@ -379,7 +379,7 @@ ACTION Xlsfonts
         ARG_COUNT       0
         TYPE            COMMAND
         WINDOW_TYPE     PERM_TERMINAL
-        EXEC_STRING     sh -c '             echo "Ricerca dei font in corso. Attendere... \\n        NOTA: Il server di visualizzazione potr‡ restare bloccato per qualche secondo.";             xlsfonts | \${PAGER:-more};             echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
+        EXEC_STRING     sh -c '             echo "Ricerca dei font in corso. Attendere... \\n        NOTA: Il server di visualizzazione potr√† restare bloccato per qualche secondo.";             xlsfonts | \${PAGER:-more};             echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
 
 
 

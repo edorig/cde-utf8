@@ -17,7 +17,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -36,8 +36,8 @@ ACTION Xcalc
         WINDOW_TYPE     NO_STDIO
         EXEC_STRING     xcalc
 	DESCRIPTION	L'azione Calcolatrice X richiama il client X xcalc. \
-                        Il client xcalc Ë una calcolatrice scientifica \
-                        che puÚ emulare i sistemi TI-30 o HP-10C.
+                        Il client xcalc √® una calcolatrice scientifica \
+                        che pu√≤ emulare i sistemi TI-30 o HP-10C.
 }
 
 # #####
@@ -79,7 +79,7 @@ ACTION Xbiff
 	DESCRIPTION	L'azione Xbiff richiama il client X xbiff. \
                         Il programma xbiff visualizza un'immagine ridotta \
                         di una cassetta della posta. Quando non ci sono messaggi, \
-                        l'aletta della cassetta Ë abbassata. Quando arriva un \
+                        l'aletta della cassetta √® abbassata. Quando arriva un \
                         messaggio, l'aletta si alza e viene emesso un segnale acustico.
 }
 
@@ -96,7 +96,7 @@ ACTION Xcolor
                         xcolor visualizza tutti i 256 colori in una finestra. \
                         Spostando il puntatore nella finestra viene installata \
                         una mappa di colori contenente una scala di gradazioni \
-                        con saturazione e luminosit‡ costanti, mantenendo \
+                        con saturazione e luminosit√† costanti, mantenendo \
                         invariati il bianco e il nero.
 }
 
@@ -147,10 +147,10 @@ ACTION Xedit
                         che permette di uscire da xedit, salvare il file \
                         e caricare un nuovo file nella finestra di editazione. \
                         2. Finestra messaggi: visualizza i messaggi xedit \
-                        e puÚ essere usata come blocco note. \
+                        e pu√≤ essere usata come blocco note. \
                         3. Sezione del nome del file: mostra \
                         il nome del file corrente, e indica \
-                        se il file Ë abilitato in lettura/scrittura o solo \
+                        se il file √® abilitato in lettura/scrittura o solo \
                         in lettura. 4. Finestra di editazione: visualizza il \
                         testo del file corrente.
 }
@@ -166,7 +166,7 @@ ACTION Xlock
         EXEC_STRING     xlock
 	DESCRIPTION	L'azione Xlock richiama il client X xlock. \
                         Il client xlock blocca il display X locale \
-                        finchÈ non viene inserita una parola chiave.
+                        finch√© non viene inserita una parola chiave.
 }
 
 # #####
@@ -198,11 +198,11 @@ ACTION Xmag
                         specificata nessuna regione, viene visualizzato \
                         un riquadro con il puntatore nell'angolo superiore \
                         sinistro che permette di definire l'area da ingrandire. \
-                        L'area puÚ essere modificata fino alla \
+                        L'area pu√≤ essere modificata fino alla \
                         dimensione desiderata premendo il pulsante 2. \
                         Una volta selezionata la regione, viene visualizzata \
                         una finestra che mostra una versione "ingrandita" della \
-                        regione, in cui ogni pixel dell'immagine sorgente Ë \
+                        regione, in cui ogni pixel dell'immagine sorgente √® \
                         rappresentato da un piccolo riquadro dello stesso colore.
 }
 
@@ -232,7 +232,7 @@ ACTION Xmh
                         Il client xmh fornisce un'interfaccia utente grafica \
                         per l'MH Message Handling System. \
                         Per eseguire le operazioni sui messaggi, questo client \
-                        richiama il package MH. » possibile comporre \
+                        richiama il package MH. √à possibile comporre \
                         inviare, ricevere, rispondere, inoltrare, ordinare \
                         e memorizzare in cartelle i messaggi di posta \
                         elettronica. xmh comprende un meccanismo evoluto \
@@ -278,9 +278,9 @@ ACTION Xlsclients
         WINDOW_TYPE     NO_STDIO
         EXEC_STRING     xlsclients
 	DESCRIPTION	L'azione Elencare client (Xlsclients) richiama il \
-                        client X xlsclients. Questo client Ë uno strumento \
+                        client X xlsclients. Questo client √® uno strumento \
                         che elenca le informazioni sulle applicazioni client \
-                        eseguite su un display. PuÚ essere utilizzato per \
+                        eseguite su un display. Pu√≤ essere utilizzato per \
                         generare uno script che riproduca la \
                         sessione corrente dell'utente.
 }
@@ -295,7 +295,7 @@ ACTION Xpuzzle
         WINDOW_TYPE     NO_STDIO
         EXEC_STRING     xpuzzle
 	DESCRIPTION	L'azione Puzzle X (Xpuzzle) richiama il \
-                        client X xpuzzle. Questo client Ë un \
+                        client X xpuzzle. Questo client √® un \
                         puzzle 4x4 con 15 pezzi.
 }
 

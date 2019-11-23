@@ -1,0 +1,378 @@
+# ##########################################################################
+# 
+#      dtappman.dt
+# 
+#      DataType Definitions for the Application Manager
+# 
+#      Common Desktop Environment 1.0 
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dtappman.dt.src /main/4 1996/04/23 17:35:11 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# Dessa datatypdefinitioner tillämpas på objekten som finns under
+# användarens undermapp /var/dt/appconfig/appmanager/$LOGNAME.
+# 
+# ##################################################################
+
+# ##################################################################
+# 
+# Funktioner
+# 
+# ##################################################################
+ACTION OpenAppGroup
+{
+        LABEL           	Öppna
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtTools_Show
+        TT_FILE		   	%Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           -title
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE   	Programhanterare
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           -help_volume
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE   	Appmanager
+        TT_ARG2_MODE            TT_IN
+        TT_ARG2_VTYPE           -root
+        TT_ARG2_REP_TYPE        TT_REP_STRING
+        TT_ARG2_VALUE   	/var/dt/appconfig/appmanager/$DTUSERSESSION
+        TT_ARG3_MODE            TT_IN
+        TT_ARG3_VTYPE           -common_link_point
+        TT_ARG3_REP_TYPE        TT_REP_STRING
+        TT_ARG3_VALUE   	$LANG
+}
+ACTION OpenParentAppGroup
+{
+        LABEL           	OpenParent
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtTools_Show
+        TT_FILE		   	%Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           -title
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE   	Programhanterare
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           -help_volume
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE   	Appmanager
+        TT_ARG2_MODE            TT_IN
+        TT_ARG2_VTYPE           -root
+        TT_ARG2_REP_TYPE        TT_REP_STRING
+        TT_ARG2_VALUE   	/var/dt/appconfig/appmanager/$DTUSERSESSION
+        TT_ARG3_MODE            TT_IN
+        TT_ARG3_VTYPE           -common_link_point
+        TT_ARG3_REP_TYPE        TT_REP_STRING
+        TT_ARG3_VALUE   	$LANG
+        TT_ARG4_MODE            TT_IN
+        TT_ARG4_VTYPE           -user_install_point
+        TT_ARG4_REP_TYPE        TT_REP_STRING
+        TT_ARG4_VALUE   	.dt/appmanager
+}
+ACTION PrintAppGroup
+{
+        LABEL           	SkrivUt
+        TYPE                    MAP
+        MAP_ACTION              PrintFolderList
+}
+
+
+# ##################################################################
+# 
+# Dataattribut
+# 
+# ##################################################################
+DATA_ATTRIBUTES OPEN_AGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtagen
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES AGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtagen
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	Dubbelklicka på denna ikon för att visa den översta nivån \
+                        i programhanteraren.
+        TYPE_LABEL      AGROUP
+}
+DATA_CRITERIA AGROUP1
+{
+	DATA_ATTRIBUTES_NAME AGROUP
+        MODE            d
+        PATH_PATTERN    */appmanager/*
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        AGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        AGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_DTAPPS_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtadskt
+	LABEL		Skrivbordsprogram
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES DTAPPS_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtadskt
+	LABEL		Skrivbordsprogram
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	Dubbelklicka på denna ikon om du vill öppna \
+                        programgruppen Skrivbordsprogram.
+        TYPE_LABEL      DTAPPS_GROUP
+}
+DATA_CRITERIA DTAPPS_APPGROUP1
+{
+	DATA_ATTRIBUTES_NAME DTAPPS_APPGROUP
+	MODE		d
+	PATH_PATTERN	*/appmanager/*/Desktop_Apps
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        DTAPPS_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        DTAPPS_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_INFORMATION_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtainfo
+	LABEL		Information
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES INFORMATION_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtainfo
+	LABEL		Information
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	Dubbelklicka på denna ikon om du vill öppna \
+                        programgruppen Information.
+        TYPE_LABEL      INFORMATION_APPGROUP
+}
+DATA_CRITERIA INFORMATION_APPGROUP1
+{
+	DATA_ATTRIBUTES_NAME INFORMATION_APPGROUP
+	MODE		d
+	PATH_PATTERN	*/appmanager/*/Information
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        INFORMATION_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        INFORMATION_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_SYSTEM_ADMIN_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtasys
+	LABEL		Systemadministration
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES SYSTEM_ADMIN_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtasys
+	LABEL		Systemadministration
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	Dubbelklicka på denna ikon för att öppna \
+                        programgruppen Systemadministration. 
+        TYPE_LABEL      SYSTEM_ADMIN_APPGROUP
+}
+DATA_CRITERIA SYSTEM_ADMIN_APPGROUP1
+{
+	DATA_ATTRIBUTES_NAME SYSTEM_ADMIN_APPGROUP
+	MODE		d
+	PATH_PATTERN	*/appmanager/*/System_Admin
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        SYSTEM_ADMIN_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        SYSTEM_ADMIN_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_DTTOOLS_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtautil
+	LABEL		Skrivbordsverktyg
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES DTTOOLS_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtautil
+	LABEL		Skrivbordsverktyg
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	Dubbelklicka på denna ikon för att öppna \
+                        programgruppen Skrivbordsverktyg. 
+        TYPE_LABEL      DTTOOLS_APPGROUP
+}
+DATA_CRITERIA DTTOOLS_APPGROUP1
+{
+	DATA_ATTRIBUTES_NAME DTTOOLS_APPGROUP
+	MODE		d
+	PATH_PATTERN	*/appmanager/*/Desktop_Tools
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        DTTOOLS_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        DTTOOLS_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_AGUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtagup
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES AGUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtagup
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+        DESCRIPTION     Dubbelklicka på denna ikon för att flytta en nivå upp \
+                        i programhanteraren.
+        TYPE_LABEL      AGUP
+}
+DATA_CRITERIA AGUP1
+{
+	DATA_ATTRIBUTES_NAME AGUP
+        MODE            d
+        PATH_PATTERN    */appmanager/*/..
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        AGUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        AGUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ######################## EOF ############################################

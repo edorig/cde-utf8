@@ -1,0 +1,223 @@
+# ##########################################################################
+# 
+#      print.dt
+# 
+#      Action and DataType Definitions for the printing
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: print.dt.src /main/4 1996/04/23 17:36:13 drk $
+# 
+
+#  Le modèle d'imprimante du Bureau CDE est basé sur l'action Imprimer.
+#
+#  Vous pouvez définir plusieurs actions Imprimer, une pour chaque type de données.
+#  Si vous n'indiquez pas d'arguments pour l'action Imprimer, la commande
+#  dtprintinfo est appelée pour afficher l'état de l'imprimante et du travail.
+#
+#  'dtprintinfo -populate' est un outil de gestion permettant de créer les
+#  actions d'impression par défaut de la forme <nom_imprimante>_Print'.  
+#
+#  Lors de la création d'un fichier, une action Imprimer associée au type
+#  de données peut être créée ; elle sera utilisée à la place de l'action
+#  par défaut. Elle utilise dtlp ou ses propres fonctions d'impression
+#  pour identifier les arguments spécifiques de l'application.
+# 
+# ##########################################################################
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# MONITIO: Probabiliter hoc scapus contundus erit dum  
+#     institutione proxima mensae CDE. Oportet facere mutationes
+#     systemae in scapo receptaculi datorum 
+#     aequabili in indice /etc/dt/types.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# Attributs datorum
+# 
+# ##################################################################
+DATA_ATTRIBUTES PRINTER_UNKNOWN
+{
+        ACTIONS         PrinterUnconfigured
+        ICON		DtPrtun
+        IS_EXECUTABLE   true
+        DESCRIPTION     Haec icon exprimit machinam pressoriam non \
+                        jam definitam supra mensam.
+        TYPE_LABEL      PRINTER_UNKNOWN
+}
+DATA_CRITERIA PRINTER_UNKNOWN1
+{
+	DATA_ATTRIBUTES_NAME PRINTER_UNKNOWN
+	MODE		f&x
+        NAME_PATTERN    *_Print
+}
+
+# 
+# Action d'impression par défaut, appelée pour les ARG_TYPE génériques
+# (les fichiers pour lesquels aucune autre action d'impression n'est définie).
+# 
+ACTION Print
+{
+	LABEL		Exscribere
+	ARG_TYPE	*
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp "%(File)Arg_1%"
+	DESCRIPTION	Actio exscribendi cum machina pressoria absentem aliquid. Si scapus \
+                        indicatur, rogat optiones \
+                        machinae pressoriae antequam scapum \
+                        exscribet. Sine scapus, proponit fenestram \
+                        NOMEN FENESTRAE ?
+}
+ACTION PrintRaw
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp -w "%(File)Arg_1%"
+}
+
+# 
+#   Si aucun argument de fichier n'est indiqué, appel de
+#   l'action Dtprintinfo.
+# 
+ACTION Print
+{
+	LABEL			Exscribere
+	ARG_COUNT		0
+	TYPE			MAP
+	MAP_ACTION		Dtprintinfo
+}
+
+# 
+#   Actio Rector pressoriae (DtPrintManager) pellet
+#  mandatum dtprintinfo -all.
+# 
+ACTION DtPrintManager
+{
+	LABEL		Rector pressoriae
+        ICON            FpPrtmg
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -all
+	DESCRIPTION	Actio Rector pressoriae (DtPrintManager) permittit \
+                        noscere status de plusieurs machinarum pressoriarum, et propoenere \
+			muneres pressorias in effectu. Etiam permittit instruere \
+                        icones machinarum in spatium institutionis \
+			replorum secondariorum.
+}
+
+# 
+#  L'action Travaux d'impression (Dtprintinfo) appelle la commande 
+#  dtprintinfo ou dtprintinfo -p imprimante.
+# 
+ACTION Dtprintinfo
+{
+	LABEL		Muneres pressoriae
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -p "%(String)Arg_1%"
+	DESCRIPTION	Actio Muneres pressoriae (Dtprintinfo) permittit \
+                        noscere status machinae pressoriae et \
+                        muneres in effectu.
+}
+
+ACTION Dtprintinfo
+{
+	LABEL		Muneres pressoriae
+	ARG_COUNT	0
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo
+	DESCRIPTION	Actio Muneres pressoriae (Dtprintinfo) permittit \
+                        noscere status machinae pressoriae et \
+                        muneres in effectu.
+}
+
+# ###############################################################
+#  
+#   Actions associées à l'imprimante par défaut.
+#  
+# ###############################################################
+ 
+# 
+#   Si un argument de fichier est indiqué, appelle
+#   l'action Imprimer.
+# 
+ACTION DtPrint
+{
+	LABEL		Machina pressoriae absentem aliquid
+	ARG_TYPE	*
+        ICON		Fpprnt
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtaction Print "%(File)Arg_1%"
+	DESCRIPTION	Actio exscribendi cum machina pressoria absentem aliquid. Si scapus \
+                        indicatur, rogat optiones \
+                        machinae pressoriae antequam scapum \
+                        exscribet. Sine scapus, proponit fenestram \
+                        NOMEN FENESTRAE ?
+}
+
+# 
+#   Si aucun argument de fichier n'est indiqué, appelle
+#   l'action Dtprintinfo.
+# 
+ACTION DtPrint
+{
+	LABEL		Machina pressoriae absentem aliquid
+	ARG_COUNT	0
+        ICON		Fpprnt
+	TYPE		MAP
+	MAP_ACTION	Dtprintinfo
+	DESCRIPTION	Actio Muneres pressoriae (Dtprintinfo) permittit \
+                        noscere status machinae pressoriae et \
+                        muneres in effectu.
+}
+
+
+# 
+#   Il s'agit des actions et des attributs de données associés aux
+#   objets imprimantes inconnus et non configurés.
+# 
+ACTION PrinterUnconfigured
+{
+	LABEL		Machina_pressoria_sine_facies
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Haec custodia machinae pressoriae faciem non habet. \\nAd faciem instruendum, \
+                        selige Adjumentum et suivez\\nles instructions."                         "Machina pressoria sine facies"                         "Ita"                         "HELP"
+
+
+
+
+	DESCRIPTION	Actio  Machina_pressoria_sine_facies proponit \
+                        capsam dialogi quot indicat machina  \
+                        pressoria faciem non habet.
+}
+
+ACTION Printer_Trash
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Si conjices iconem machinae pressoriae in \\n\
+                        canistrum, machina sublata ab ordinatro non erit.\\n\
+                        Si vis tollere machinam pressoriam, lege enchiridium\\n\
+                        machinatoris systemae."                         "Tollere machinam pressoriae"                         "Ita"
+
+
+
+        DESCRIPTION     Actio Pressoria_canistrum proponit \
+                        capsam dialogi quot indicat conjicere \
+                        iconem machinae pressoriae in canistrum non  \
+                        tollet machinam ab ordinatro.
+}
+# ######################## EOF ############################################

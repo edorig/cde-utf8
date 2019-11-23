@@ -18,7 +18,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -37,9 +37,9 @@ DATA_ATTRIBUTES DT
         IS_TEXT		true
         NAME_TEMPLATE	%s.dt
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file del database del desktop che contiene le \
+        DESCRIPTION     Questo √® un file del database del desktop che contiene le \
                         definizioni delle azioni e dei tipi di dati. Il suo tipo di dati \
-                        Ë denominato DT. I nomi dei file DT terminano con l'estensione '.dt'.
+                        √® denominato DT. I nomi dei file DT terminano con l'estensione '.dt'.
         TYPE_LABEL      DT
 }
 DATA_CRITERIA DT1
@@ -90,9 +90,9 @@ DATA_ATTRIBUTES FP
         IS_TEXT		true
         NAME_TEMPLATE	%s.fp
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file del database del desktop che contiene le definizioni \
+        DESCRIPTION     Questo √® un file del database del desktop che contiene le definizioni \
                         per la configurazione del Pannello principale. Il suo tipo di dati \
-                        Ë denominato FP. I file FP terminano con l'estensione '.fp'.
+                        √® denominato FP. I file FP terminano con l'estensione '.fp'.
         TYPE_LABEL      FP
 }
 DATA_CRITERIA FP1
@@ -110,9 +110,9 @@ DATA_ATTRIBUTES DTFILE_FILE
         ACTIONS         Open,Print
         IS_TEXT         true
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file nascosto utilizzato dalla Gestione di file per conservare \
+        DESCRIPTION     Questo √® un file nascosto utilizzato dalla Gestione di file per conservare \
                         determinate informazioni di configurazione. Il suo tipo di dati \
-                        Ë denominato DTFILE_FILE.
+                        √® denominato DTFILE_FILE.
         TYPE_LABEL      DTFILE_FILE
 }
 DATA_CRITERIA DTFILE_FILE1
@@ -132,8 +132,8 @@ DATA_ATTRIBUTES DTKSH_SCRIPT
         COPY_TO_ACTION  Execute
         NAME_TEMPLATE	%s.ds
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file eseguibile che contiene uno script 'dtksh'. \
-                        Il suo tipo di dati Ë denominato DTKSH_SCRIPT.
+        DESCRIPTION     Questo √® un file eseguibile che contiene uno script 'dtksh'. \
+                        Il suo tipo di dati √® denominato DTKSH_SCRIPT.
         TYPE_LABEL      DTKSH_SCRIPT
 }
 DATA_CRITERIA DTKSH_SCRIPT1
@@ -170,9 +170,9 @@ DATA_ATTRIBUTES DTKSH_CONV
         ICON            Dtdtksh
         NAME_TEMPLATE	%s.dtsh
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo file contiene funzioni di utilit‡ che \
+        DESCRIPTION     Questo file contiene funzioni di utilit√† che \
                         possono essere usate dagli script 'dtksh'. Il suo \
-                        tipo di dati Ë denominato  DTKSH_CONV.
+                        tipo di dati √® denominato  DTKSH_CONV.
         TYPE_LABEL      DTKSH_CONV
 }
 DATA_CRITERIA DTKSH_CONV1
@@ -253,7 +253,7 @@ ACTION ExitSession
         TT_OPERATION	XSession_Exit
         DESCRIPTION     L'azione Uscire termina la sessione del desktop \
                         dell'utente e visualizza lo schermo di Login. \
-                        Effettuando il login si potr‡ iniziare una nuova sessione.
+                        Effettuando il login si potr√† iniziare una nuova sessione.
 }
 
 # ######
@@ -383,7 +383,7 @@ ACTION DtwmrcEdit
                         Se il file $HOME/.dt/dtwmrc non esiste, l'azione lo crea \
                         copiando il file /usr/dt/config/<lingua>/sys.dtwmrc. \
                         Dopo aver salvato il file ed essere usciti dall'editor, \
-                        Ë necessario riavviare la Gestione dello spazio di lavoro \
+                        √® necessario riavviare la Gestione dello spazio di lavoro \
                         scegliendo Riavviare gestione dello spazio di lavoro dal \
                         Menu dello spazio di lavoro.
 }
@@ -518,7 +518,7 @@ ACTION (None)
 
 
         DESCRIPTION     Questa azione (Nessuna) viene usata per indicare \
-                        che non Ë definita alcuna azione per un \
+                        che non √® definita alcuna azione per un \
                         determinato tipo di dati.
 }
 
@@ -538,7 +538,7 @@ ACTION DttermErrorlog
 
         DESCRIPTION     L'azione Controllo errori apre una finestra di terminale che \
                         visualizza continuamente il contenuto del file di log \
-                        degli errori $HOME/.dt/errorlog. Se la finestra Ë \
+                        degli errori $HOME/.dt/errorlog. Se la finestra √® \
                         ridotta a icona, essa si riapre automaticamente \
                         ogni volta che il sistema rileva un errore.
 }
@@ -572,7 +572,7 @@ ACTION Dttypes
 
 # #########################################################################
 # 
-#  Questa Ë l'azione predefinita 'Nessuna stampa'.
+#  Questa √® l'azione predefinita 'Nessuna stampa'.
 # 
 # #########################################################################
 ACTION NoPrint
@@ -580,19 +580,19 @@ ACTION NoPrint
 	LABEL		Nessuna stampa
         TYPE            COMMAND
         WINDOW_TYPE     NO_STDIO
-        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Non Ë possibile stampare questo tipo di dati."                        "Stampa impossibile"                        "OK"
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Non √® possibile stampare questo tipo di dati."                        "Stampa impossibile"                        "OK"
 
 
 
         DESCRIPTION    L'azione Nessuna stampa visualizza un riquadro di errore \
                        indicante che il file che si cerca di stampare \
-                       ha un tipo di dati a cui non Ë associata \
+                       ha un tipo di dati a cui non √® associata \
                        un'azione 'Stampare'.     
 }
 
 # #########################################################################
 # 
-#  Questa Ë l'azione predefinita 'Aprire'.
+#  Questa √® l'azione predefinita 'Aprire'.
 # 
 # #########################################################################
 ACTION Open

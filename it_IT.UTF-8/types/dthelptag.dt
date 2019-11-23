@@ -17,14 +17,14 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
 # 
 # ##########################################################################
 
-# PoichÈ il percorso in cui risiedono gli eseguibili dell'Aiuto, 
+# Poich√© il percorso in cui risiedono gli eseguibili dell'Aiuto, 
 # ../dt/bin, non sempre fa parte del percorso degli utenti, la stringa
 # seguente permette di aggiungerlo prima di richiamare il client. 
 
@@ -41,12 +41,12 @@ DATA_ATTRIBUTES DTHELP_HTG
         ICON            Dthsrc
         NAME_TEMPLATE   %s.htg
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file sorgente HelpTag per il \
+        DESCRIPTION     Questo √® un file sorgente HelpTag per il \
                         sistema di aiuto del desktop. Le informazioni contenute \
                         in questo file sono state formattate utilizzando il linguaggio \
                         di markup HelpTag, e per essere visualizzate devono essere compilate \
                         con il software HelpTag ('dthelptag'). Il nome del \
-                        tipo di dati Ë DTHELP_HTG. I file DTHELP_HTG terminano \
+                        tipo di dati √® DTHELP_HTG. I file DTHELP_HTG terminano \
                         con l'estensione '.htg'.
         TYPE_LABEL      DTHELP_HTG
 }
@@ -66,12 +66,12 @@ DATA_ATTRIBUTES DTHELP_CTG
         ICON            Dthsrc
         NAME_TEMPLATE   %s.ctg
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file sorgente canonico HelpTag SGML per \
+        DESCRIPTION     Questo √® un file sorgente canonico HelpTag SGML per \
                         il sistema di aiuto del desktop. Le informazioni contenute \
                         in questo file sono state formattate utilizzando il linguaggio \
                         di markup HelpTag, e per essere visualizzate devono essere \
                         compilate con il software HelpTag ('dthelptag') e l'opzione \
-                        '-canon'. Il nome del tipo di dati Ë DTHELP_CTG. \
+                        '-canon'. Il nome del tipo di dati √® DTHELP_CTG. \
                         I file DTHELP_CTG terminano con l'estensione '.ctg'.
         TYPE_LABEL      DTHELP_CTG
 }
@@ -95,7 +95,7 @@ DATA_ATTRIBUTES DTHELP_ERR
                         volume di aiuto compilato. Questo tipo di file viene generato \
                         dal sistema di analisi sintattica di dthelptag solo quando vengono \
                         rilevati errori di sintassi nella compilazione del volume \
-                        di aiuto. Il nome del tipo di dati Ë DTHELP_ERR. \
+                        di aiuto. Il nome del tipo di dati √® DTHELP_ERR. \
                         I file DTHELP_ERR terminano con l'estensione '.err'.
         TYPE_LABEL      DTHELP_ERR
 }

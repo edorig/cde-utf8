@@ -1,0 +1,196 @@
+###############################################################################
+#
+#
+#     @(#)dtbuilder.dt	1.3 23 Mar 1994
+#
+#     DataType Definitions for the Application Builder
+#
+#     Common Desktop Environment 1.0 
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+#     $TOG: dtbuilder.dt /main/5 1999/02/23 13:26:42 mgreess $
+#
+###############################################################################
+set DtDbVersion=1.0
+
+###############################################################################
+#
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+#
+###############################################################################
+
+###################################################################
+#
+# Dataattribut
+#
+###################################################################
+DATA_ATTRIBUTES BIP
+{
+	ACTIONS		Open
+	ICON		DtABbip
+	NAME_TEMPLATE	%s.bip
+        MIME_TYPE	text/plain
+        DESCRIPTION     Denna fil innehåller projektdata för \
+                        skrivbordets Programbyggare. Dess datatyp \
+                        heter BIP. BIP-filer har namn som slutar med '.bip'.
+}
+DATA_CRITERIA BIP1
+{
+	DATA_ATTRIBUTES_NAME BIP
+	MODE		f
+	NAME_PATTERN	*.bip
+}
+ACTION Open
+{
+        LABEL           Öppna
+	ARG_TYPE	BIP
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     Denna funktion öppnar en projektfil i Programbyggaren\
+                        (*.bip) genom att köra Programbyggaren \
+                        och ladda filen.
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        BIP
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+
+DATA_ATTRIBUTES BIL
+{
+	ACTIONS		Open
+	ICON		DtABbil
+	NAME_TEMPLATE	%s.bil
+        MIME_TYPE	text/plain
+        DESCRIPTION     Denna fil innehåller moduldata för \
+                        skrivbordets Programbyggare. Dess datatyp heter BIL. \
+                        BIL-filer har namn som slutar med '.bil'.
+}
+DATA_CRITERIA BIL1
+{
+	DATA_ATTRIBUTES_NAME BIL
+	MODE		f
+	NAME_PATTERN	*.bil
+}
+ACTION Open
+{
+        LABEL           Öppna
+	ARG_TYPE	BIL
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     Denna funktion öppnar en modulfil i Programbyggaren \
+                        (*.bil) genom att köra Programbyggaren \
+                        och ladda filen.
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        BIL
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+
+DATA_ATTRIBUTES BIX
+{
+	ACTIONS	        Open
+	ICON	        DtABbix
+	NAME_TEMPLATE	%s.bix
+        MIME_TYPE	text/plain
+        DESCRIPTION     Denna fil innehåller alla projekt- (BIP) och \
+                        modulfildata (BIL) för ett Programbyggar-\
+                        projekt på skrivbordet. Dess datatyp heter BIX. \
+                        BIX-filer har namn som slutar med .'bix'.
+}
+DATA_CRITERIA BIX1
+{
+	DATA_ATTRIBUTES_NAME BIX
+	MODE		f
+	NAME_PATTERN	*.bix
+}
+ACTION Open
+{
+        LABEL           Öppna
+	ARG_TYPE	BIX
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     Denna funktion öppnar en inkapslad projektfil i Programbyggaren \
+                        (*.bix) genom att köra Programbyggaren \
+                        och ladda filen.
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        BIX
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+###################################################################
+#
+# Funktioner
+#
+###################################################################
+ACTION Dtappbuild
+{
+        LABEL           Programbyggare
+        TYPE            COMMAND
+        EXEC_STRING     dtbuilder
+        ICON            DtBldr
+        WINDOW_TYPE     NO_STDIO
+        DESCRIPTION     Funktionen Programbyggare (Dtappbuild) kör \
+                        skrivbordets Programbyggare.
+}
+
+######
+
+ACTION CodeGen
+{
+        LABEL           Kodgenerator
+        TYPE            COMMAND
+        ARG_COUNT       0
+        EXEC_STRING     /bin/sh -c 'dtaction CodeGen \
+	   %(File)Arg_1"Projektfil (*.bip):"%'
+        ICON            DtBldr
+        WINDOW_TYPE     NO_STDIO
+        DESCRIPTION     Funktionen Kodgenerator (CodeGen) kör kodgeneratorn \
+                        för skrivbordets Programbyggare.
+}
+
+ACTION CodeGen
+{
+        LABEL           Kodgenerator
+        TYPE            COMMAND
+        ARG_TYPE        BIP
+        ARG_COUNT       >0
+        EXEC_STRING     /bin/sh -c ' \
+           DIR_NAME=`dirname %(File)Arg_1"Projektfil (*.bip):"%` ; \
+	   if [ ! -d "\$DIR_NAME" ] ; then \
+	       echo "FEL: \$DIR_NAME är inte en mapp."; \
+	   else \
+	       BIP_FILE=`basename "%(File)Arg_1%"` ; \
+	       ( cd \$DIR_NAME; dtcodegen -p \$BIP_FILE 2>&1; ) | \${PAGER:-more}; \
+	       echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"; \
+	   fi '
+        ICON            DtBldr
+        WINDOW_TYPE     PERM_TERMINAL
+        DESCRIPTION     Funktionen Kodgenerator (CodeGen) kör kodgeneratorn \
+                        för skrivbordets Programbyggare.
+}
+########################### EOF ##############################################

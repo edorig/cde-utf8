@@ -18,7 +18,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 #
-# ATTENZIONE: Questo file potrà essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potrÃ  essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -38,7 +38,7 @@ DATA_ATTRIBUTES MAN_PAGE
         ACTIONS         Open,Print
         MIME_TYPE	text/plain
 	DESCRIPTION	Questo file contiene una pagina di spiegazioni. Il suo tipo \
-                        di dati è denominato MAN_PAGE.
+                        di dati Ã¨ denominato MAN_PAGE.
         TYPE_LABEL      MAN_PAGE
 }
 DATA_CRITERIA MAN_PAGE1
@@ -77,8 +77,8 @@ DATA_ATTRIBUTES TAR
         ICON		Dtmagtp
         NAME_TEMPLATE	%s.tar
         MIME_TYPE	application/octet-stream
-	DESCRIPTION	Questo file è un archivio che contiene una \
-                        serie di file. Il suo tipo di dati è denominato \
+	DESCRIPTION	Questo file Ã¨ un archivio che contiene una \
+                        serie di file. Il suo tipo di dati Ã¨ denominato \
                         TAR. I file TAR terminano con l'estensione '.tar'.
         TYPE_LABEL      TAR
 }
@@ -150,9 +150,9 @@ DATA_ATTRIBUTES COMPRESSED
         NAME_TEMPLATE	%s.Z
         MIME_TYPE	application/octet-stream
         SUNV3_TYPE      compress
-	DESCRIPTION	Questo è un file compresso con il comando compress \
+	DESCRIPTION	Questo Ã¨ un file compresso con il comando compress \
                         per occupare meno spazio. Il suo tipo di dati \
-                        è denominato COMPRESSED. I file COMPRESSED \
+                        Ã¨ denominato COMPRESSED. I file COMPRESSED \
                         terminano con l'estensione '.Z'.
         TYPE_LABEL      COMPRESSED
 }
@@ -178,7 +178,7 @@ ACTION Uncompress
 
 
 
-	DESCRIPTION	L'azione Decomprimere file accetta uno o più file \
+	DESCRIPTION	L'azione Decomprimere file accetta uno o piÃ¹ file \
                         compressi con il comando 'compress' \
                         e li decomprime. Utilizza il \
                         comando 'uncompress'.
@@ -197,7 +197,7 @@ DATA_ATTRIBUTES SHELL
         SUNV3_TYPE      shell-script
         DESCRIPTION     Questo file contiene uno script eseguibile scritto con il \
                         linguaggio di script della BOURNE shell. Il suo tipo \
-                        di dati è denominato SHELL. I file SHELL terminano \
+                        di dati Ã¨ denominato SHELL. I file SHELL terminano \
                         con l'estensione '.sh', o contengono i caratteri \
                         "#!/bin/sh" o "#! /bin/sh".
         TYPE_LABEL      SHELL
@@ -241,7 +241,7 @@ DATA_ATTRIBUTES CSHELL
         SUNV3_TYPE      cshell-script
         DESCRIPTION     Questo file contiene uno script eseguibile scritto con il \
                         linguaggio di script della C-SHELL. Il suo tipo \
-                        di dati è denominato CSHELL. I file CSHELL \
+                        di dati Ã¨ denominato CSHELL. I file CSHELL \
                         terminano con l'estensione '.csh', o contengono \
                         i caratteri "#!/bin/csh" o "#! /bin/csh".
         TYPE_LABEL      CSHELL
@@ -284,7 +284,7 @@ DATA_ATTRIBUTES KSHELL
         MIME_TYPE	text/plain
         DESCRIPTION     Questo file contiene uno script eseguibile scritto con il \
                         linguaggio di script della K-SHELL. Il suo tipo \
-                        di dati è denominato KSHELL. I file KSHELL \
+                        di dati Ã¨ denominato KSHELL. I file KSHELL \
                         terminano con l'estensione '.ksh', o contengono \
                         i caratteri "#!/bin/ksh" o "#! /bin/ksh".
         TYPE_LABEL      KSHELL
@@ -335,9 +335,9 @@ DATA_ATTRIBUTES SHAR
         ICON 		Dtshar           
         NAME_TEMPLATE	%s.shar
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo file è uno archivio di shell. \
+        DESCRIPTION     Questo file Ã¨ uno archivio di shell. \
                         Gli archivi di shell sono utilizzati in genere per \
-                        trasmettere i file. Il loro tipo di dati è denominato \
+                        trasmettere i file. Il loro tipo di dati Ã¨ denominato \
                         SHAR. I file SHAR terminano con l'estensione '.shar'.
         TYPE_LABEL      SHAR
 }
@@ -375,9 +375,9 @@ DATA_ATTRIBUTES UUENCODE
         ICON            Dtuuncd
         NAME_TEMPLATE	%s.uu
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo è un file binario utilizzato per la trasmissione \
+        DESCRIPTION     Questo Ã¨ un file binario utilizzato per la trasmissione \
                         con un programma di gestione della posta. \
-                        Il suo tipo di dati è denominato UUENCODE. I file \
+                        Il suo tipo di dati Ã¨ denominato UUENCODE. I file \
                         UUENCODE terminano con l'estensione '.uu'.
         TYPE_LABEL      UUENCODE
 }
@@ -402,7 +402,7 @@ ACTION Uudecode
         EXEC_STRING     sh -c '                         uudecode "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
 
 
-        DESCRIPTION     L'azione Uudecode accetta un file che è stato \
+        DESCRIPTION     L'azione Uudecode accetta un file che Ã¨ stato \
                         codificato con il comando uuencode \
                         e lo decodifica.
 }
@@ -416,7 +416,7 @@ DATA_ATTRIBUTES MESSAGE_CAT
         NAME_TEMPLATE   %s.cat
         MIME_TYPE	application/octet-stream
         DESCRIPTION     Questo file contiene messaggi localizzati (tradotti) \
-                        per un eseguibile. Il suo tipo di dati è denominato \
+                        per un eseguibile. Il suo tipo di dati Ã¨ denominato \
                         MESSAGE_CAT. I file MESSAGE_CAT terminano \
                         con l'estensione '.cat'.
         TYPE_LABEL      MESSAGE_CAT
@@ -477,7 +477,7 @@ ACTION Vedit
 	TYPE		COMMAND
 	WINDOW_TYPE	TERMINAL
 	EXEC_STRING	vedit
-	DESCRIPTION	L'azione Vedit esegue il comando 'vi' in modalità \
+	DESCRIPTION	L'azione Vedit esegue il comando 'vi' in modalitÃ  \
                         'vedit' in una finestra di terminale, caricando \
                         eventualmente il file di dati specificato come argomento.
 }
@@ -487,7 +487,7 @@ ACTION Vedit
 	TYPE		COMMAND
 	WINDOW_TYPE	TERMINAL
 	EXEC_STRING	vedit "%(File)Arg_1"File da editare:"%"
-	DESCRIPTION	L'azione Vedit esegue il comando 'vi' in modalità \
+	DESCRIPTION	L'azione Vedit esegue il comando 'vi' in modalitÃ  \
                         'vedit' in una finestra di terminale, caricando \
                         eventualmente il file di dati specificato come argomento.
 }
@@ -519,7 +519,7 @@ ACTION Tar
         ICON		Dtmagtp
         TYPE            COMMAND
         WINDOW_TYPE     PERM_TERMINAL
-	EXEC_STRING		  sh -c '             if [ "%(File)Args%" = "" ] ; then 	        echo "ERRORE: \"%(File)Arg_1%\" non è una cartella.";             else 	    if [ ! -d "%(File)Arg_1"Cartella da archiviare:"%" ] ; then 	        echo "ERRORE: \"%(File)Arg_1%\" non è una cartella."; 	    else                 FOLDER="%(File)Arg_1%.tar"; 	        TAR_FILE=`basename "%(File)Arg_1%.tar"`;                 echo "Creazione di \$FOLDER in corso.";                 echo "[Attendere...]\\n"; 	        tar -cvf \$TAR_FILE `basename "%(File)Arg_1%"` 2>&1 | 	          \${PAGER:-more};                 echo "\\nIl file Archive è stato creato ed è stato memorizzato in \$FOLDER."; 	    fi; 	    fi; 	    echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
+	EXEC_STRING		  sh -c '             if [ "%(File)Args%" = "" ] ; then 	        echo "ERRORE: \"%(File)Arg_1%\" non Ã¨ una cartella.";             else 	    if [ ! -d "%(File)Arg_1"Cartella da archiviare:"%" ] ; then 	        echo "ERRORE: \"%(File)Arg_1%\" non Ã¨ una cartella."; 	    else                 FOLDER="%(File)Arg_1%.tar"; 	        TAR_FILE=`basename "%(File)Arg_1%.tar"`;                 echo "Creazione di \$FOLDER in corso.";                 echo "[Attendere...]\\n"; 	        tar -cvf \$TAR_FILE `basename "%(File)Arg_1%"` 2>&1 | 	          \${PAGER:-more};                 echo "\\nIl file Archive Ã¨ stato creato ed Ã¨ stato memorizzato in \$FOLDER."; 	    fi; 	    fi; 	    echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
 	DESCRIPTION	L'azione Archiviare (Tar) accetta come argomento una \
                         cartella e archivia tutti i file che essa contiene \
                         in un singolo file "tar". Questa azione utilizza \
@@ -570,7 +570,7 @@ ACTION Compress
 
 
 	DESCRIPTION	L'azione Comprimere file (Compress) accetta uno o \
-                        più file e li comprime utilizzando il comando \
+                        piÃ¹ file e li comprime utilizzando il comando \
                         'compress'.
 }
 
@@ -585,7 +585,7 @@ ACTION Uncompress
         WINDOW_TYPE     NO_STDIO
         EXEC_STRING     /usr/dt/bin/dtaction Uncompress                             "%(File)Arg_1"File da decomprimere:"%"
 
-        DESCRIPTION     L'azione Decomprimere file accetta uno o più file \
+        DESCRIPTION     L'azione Decomprimere file accetta uno o piÃ¹ file \
                         compressi con il comando 'compress' \
                         e li decomprime. Utilizza il \
                         comando 'uncompress'.
@@ -686,9 +686,9 @@ ACTION Df
 
 
 
-	DESCRIPTION	L'azione Occupazione del disco (Df) visualizza la quantità \
+	DESCRIPTION	L'azione Occupazione del disco (Df) visualizza la quantitÃ  \
                         di spazio libero presente su tutti i dischi \
-                        di cui è stato eseguito il mount. Utilizza il comando 'df'.
+                        di cui Ã¨ stato eseguito il mount. Utilizza il comando 'df'.
 }
 
 
@@ -699,7 +699,7 @@ ACTION DuSort
 	LABEL		Dimensione della cartella
         TYPE            COMMAND
         WINDOW_TYPE     PERM_TERMINAL
-        EXEC_STRING     sh -c ' 	    if [ ! -d "%(File)Arg_1"Nome della cartella:"%" ] ; then 	        echo "ERRORE: \"%(File)Arg_1%\" non è una cartella."; 	    else 	        echo "[Attendere...]\\n"; 	        (echo "Blocchi  File/Dir  - (blocchi di 512 byte)"; 	         echo "=========================================="; 	         du -s "%(File)Arg_1"Nome della cartella:"%" | sort -n) 2>&1 |                    \${PAGER:-more}; 	    fi; 	    echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
+        EXEC_STRING     sh -c ' 	    if [ ! -d "%(File)Arg_1"Nome della cartella:"%" ] ; then 	        echo "ERRORE: \"%(File)Arg_1%\" non Ã¨ una cartella."; 	    else 	        echo "[Attendere...]\\n"; 	        (echo "Blocchi  File/Dir  - (blocchi di 512 byte)"; 	         echo "=========================================="; 	         du -s "%(File)Arg_1"Nome della cartella:"%" | sort -n) 2>&1 |                    \${PAGER:-more}; 	    fi; 	    echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
 	DESCRIPTION	L'azione Dimensione della cartella (DuSort) visualizza \
                         le dimensioni di tutti i file e le cartelle secondarie \
                         di una cartella. Utilizza una combinazione dei comandi \
@@ -713,7 +713,7 @@ ACTION Grep
 	LABEL		Ricercare testo
         TYPE            COMMAND
         WINDOW_TYPE     PERM_TERMINAL
-        EXEC_STRING     sh -c '             SEARCH_FILE="%(File)Arg_1"File in cui cercare:"%";             if [ -d \$SEARCH_FILE ] ; then                 echo "ERRORE: \$SEARCH_FILE è una cartella \\nL'azione Ricercare testo non può essere eseguita su una cartella.";             else                grep %"Stringa da ricercare:"% \$SEARCH_FILE                                    %(File)Args% >/tmp/dtstrsearch 2>&1;                if [ \$? -eq 1 ] ; then                    echo "Stringa non trovata.";                else                   cat /tmp/dtstrsearch | \${PAGER:-more};                fi;                rm /tmp/dtstrsearch;             fi; 	    echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
+        EXEC_STRING     sh -c '             SEARCH_FILE="%(File)Arg_1"File in cui cercare:"%";             if [ -d \$SEARCH_FILE ] ; then                 echo "ERRORE: \$SEARCH_FILE Ã¨ una cartella \\nL'azione Ricercare testo non puÃ² essere eseguita su una cartella.";             else                grep %"Stringa da ricercare:"% \$SEARCH_FILE                                    %(File)Args% >/tmp/dtstrsearch 2>&1;                if [ \$? -eq 1 ] ; then                    echo "Stringa non trovata.";                else                   cat /tmp/dtstrsearch | \${PAGER:-more};                fi;                rm /tmp/dtstrsearch;             fi; 	    echo "\\n*** Selezionare Chiudere o Uscita dal menu di controllo della finestra \\n    per chiudere questa finestra ***"'
 	DESCRIPTION	L'azione Ricercare testo (Grep) ricerca tutte le \
                         occorrenze di una stringa entro un \
                         gruppo di file utilizzando il comando 'grep'.

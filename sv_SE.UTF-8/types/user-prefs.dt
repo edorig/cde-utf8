@@ -1,0 +1,84 @@
+# ##########################################################################
+# 
+#      user-prefs.dt
+# 
+#      Actions which define user preferences.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: user-prefs.dt.src /main/4 1996/04/23 17:36:30 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+# 
+# ##########################################################################
+
+# ##########################################################################
+# 
+# Definitioner för funktionsdatabasen i CDE (Common Desktop Environment) 
+#
+# Funktionerna som definieras i denna fil tilldelar förfrågningar för allmänna funktioner,
+# som "TextEditor", till specifika program, som "Vi". Om du vill anpassa
+# dessa tilldelningar kan du kopiera filen till
+# $HOME/.dt/types/user-prefs.dt och ändra de olika MAP_ACTION till de
+# funktioner som du vill köra.
+#
+# Du kan se vilka funktioner som finns tillgängliga för systemet genom att
+#  bläddra i programhanteraren, som du öppnar från frontpanelen.
+# 
+# ##########################################################################
+
+
+# Om du vill använda 'vi' som textredigerare ersätter du 'Dtpad'
+#  (den CDE Motif-baserade textredigeraren) med 'Vi'.
+
+ACTION TextEditor
+{
+        LABEL		Textredigerare
+        ICON            Dtpenpd
+	TYPE		MAP
+	MAP_ACTION	Dtpad
+        DESCRIPTION	Funktionen Textredigerare kör den textredigerare som \
+                         användaren har angivit.
+}
+
+# #####
+
+# Standardterminalen för CDE (Common Desktop Environment) är Dtterm.
+
+ACTION Terminal
+{
+        LABEL		Terminal
+        ICON            Dtterm
+	TYPE		MAP
+	MAP_ACTION	Dtterm
+        DESCRIPTION	Funktionen Terminal kör den terminalemulator som \
+                         användaren har angivit.
+}
+
+# #####
+
+# Standardpapperskorgen för CDE är Dttrash.
+
+ACTION Trash
+{
+        LABEL		Papperskorg
+        ICON		Dttrsh
+	TYPE		MAP
+	MAP_ACTION	Dttrash
+        DESCRIPTION	Funktionen Papperskorg kör den Trash-klient som \
+                        användaren har angivit.
+}
+
+# ###################### EOF ############################################

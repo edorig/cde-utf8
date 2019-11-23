@@ -18,7 +18,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -38,7 +38,7 @@ DATA_ATTRIBUTES BM
         MIME_TYPE	text/plain
         SUNV3_TYPE	xbm-file
         DESCRIPTION     Questo file contiene dati nel formato X11 a mappa di bit. \
-                        Il suo tipo di dati Ë denominato BM. I file BM \
+                        Il suo tipo di dati √® denominato BM. I file BM \
                         terminano con le estensioni '.bm' o '.xbm'.
         TYPE_LABEL      BM
 }
@@ -78,8 +78,8 @@ DATA_ATTRIBUTES PM
         NAME_TEMPLATE	%s.pm
         MIME_TYPE	text/plain
         SUNV3_TYPE	xpm-file
-        DESCRIPTION     Questo Ë un file a mappa di pixel che contiene un'immagine a colori. \
-                        Il suo tipo di dati Ë denominato PM. I file PM terminano \
+        DESCRIPTION     Questo √® un file a mappa di pixel che contiene un'immagine a colori. \
+                        Il suo tipo di dati √® denominato PM. I file PM terminano \
                         con le estensioni '.pm' or '.xpm', o contengono i caratteri \
                         "! XPM2".
         TYPE_LABEL      PM
@@ -126,7 +126,7 @@ DATA_ATTRIBUTES PCL
         NAME_TEMPLATE	%s.pcl
         MIME_TYPE	application/octet-stream
         DESCRIPTION     Questo file contiene dati in formato \
-                        Printer Control Language (PCL). Il suo tipo di dati Ë \
+                        Printer Control Language (PCL). Il suo tipo di dati √® \
                         denominato PCL. I file PCL terminano con l'estensione '.pcl'.
         TYPE_LABEL      PCL
 }
@@ -174,7 +174,7 @@ DATA_ATTRIBUTES POSTSCRIPT
         MIME_TYPE	application/postscript
         SUNV3_TYPE	postscript-file
         DESCRIPTION     Questo file contiene dati postscript. Il suo tipo di dati \
-                        Ë denominato PS. I file PS terminano con l'estensione '.ps' \
+                        √® denominato PS. I file PS terminano con l'estensione '.ps' \
                         or '.PS', o contengono i caratteri "%!".
         TYPE_LABEL      POSTSCRIPT
 }
@@ -228,7 +228,7 @@ DATA_ATTRIBUTES AUDIO_AU
         MIME_TYPE	audio/basic
         SUNV3_TYPE	audio-file
         DESCRIPTION     Questo file contiene dati audio (suoni). Questo tipo di dati \
-                        Ë denominato AUDIO. I file AUDIO terminano con \
+                        √® denominato AUDIO. I file AUDIO terminano con \
                         l'estensione '.snd', '.wav', '.au',  '.l16', '.lo8', '.al' \
                         o '.u',o contengono i caratteri ".snd".
         TYPE_LABEL      AUDIO
@@ -251,7 +251,7 @@ ACTION Open
         ARG_TYPE        AUDIO_AU
         TYPE            COMMAND
         WINDOW_TYPE     NO_STDIO
-        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Impossibile 'aprire o 'riprodurre' il file - Nessuna unit‡ di riproduzione Audio disponibile."                        "Informazioni"                        "OK"
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Impossibile 'aprire o 'riprodurre' il file - Nessuna unit√† di riproduzione Audio disponibile."                        "Informazioni"                        "OK"
 
 
 
@@ -263,7 +263,7 @@ ACTION Play
         ARG_TYPE        AUDIO_AU
         TYPE            COMMAND
         WINDOW_TYPE     NO_STDIO
-        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Impossibile 'aprire o 'riprodurre' il file - Nessuna unit‡ di riproduzione Audio disponibile."                         "Informazioni"                         "OK"
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Impossibile 'aprire o 'riprodurre' il file - Nessuna unit√† di riproduzione Audio disponibile."                         "Informazioni"                         "OK"
 
 
 
@@ -278,7 +278,7 @@ DATA_ATTRIBUTES AUDIO_SND
         NAME_TEMPLATE	%s.snd
         MIME_TYPE	audio/basic
         SUNV3_TYPE	audio-file
-        DESCRIPTION     Impossibile 'editare'  - Non Ë disponibile alcun editor audio.
+        DESCRIPTION     Impossibile 'editare'  - Non √® disponibile alcun editor audio.
         TYPE_LABEL      AUDIO
 }
 DATA_CRITERIA AUDIO_SND1
@@ -293,7 +293,7 @@ ACTION Open
         ARG_TYPE        AUDIO_SND
         TYPE            COMMAND
         WINDOW_TYPE     NO_STDIO
-        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Impossibile 'aprire o 'riprodurre' il file - Nessuna unit‡ di riproduzione Audio disponibile."                        "Informazioni"                        "OK"
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Impossibile 'aprire o 'riprodurre' il file - Nessuna unit√† di riproduzione Audio disponibile."                        "Informazioni"                        "OK"
 
 
 
@@ -330,7 +330,7 @@ ACTION Open
         ARG_TYPE        AUDIO_WAV
         TYPE            COMMAND
         WINDOW_TYPE     NO_STDIO
-        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Impossibile 'aprire o 'riprodurre' il file - Nessuna unit‡ di riproduzione Audio disponibile."                        "Informazioni"                        "OK"
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Impossibile 'aprire o 'riprodurre' il file - Nessuna unit√† di riproduzione Audio disponibile."                        "Informazioni"                        "OK"
 
 
 
@@ -362,7 +362,7 @@ DATA_ATTRIBUTES TIFF
         MIME_TYPE	image/tiff
         SUNV3_TYPE	tiff-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato TIFF. \
-                        Il suo tipo di dati Ë denominato TIFF. I file TIFF terminano \
+                        Il suo tipo di dati √® denominato TIFF. I file TIFF terminano \
                         con le estensioni '.TIFF', '.TIF', '.tiff' o '.tif'.
         TYPE_LABEL      TIFF
 }
@@ -434,7 +434,7 @@ DATA_ATTRIBUTES JPEG
         MIME_TYPE	image/jpeg
         SUNV3_TYPE	jpeg-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato JPEG \
-                        Interchange File Format. Il suo tipo di dati Ë denominato \
+                        Interchange File Format. Il suo tipo di dati √® denominato \
                         JPEG. I file JPEG terminano con l'estensione '.JPEG', \
                         '.jpg', '.jpeg' o '.JPG'.
         TYPE_LABEL      JPEG
@@ -506,7 +506,7 @@ DATA_ATTRIBUTES MPEG
         NAME_TEMPLATE	%s.mpg
         MIME_TYPE	video/mpeg
         DESCRIPTION     Questo file contiene un filmato grafico in formato MPEG \
-                        Interchange File Format. Il suo tipo di dati Ë \
+                        Interchange File Format. Il suo tipo di dati √® \
                         denominato MPEG. I file MPEG terminano con l'estensione \
                         '.MPEG', '.mpg', '.mpeg' o '.MPG'.
         TYPE_LABEL      MPEG
@@ -547,7 +547,7 @@ ACTION Open
         ARG_TYPE        MPEG
         TYPE            COMMAND
         WINDOW_TYPE     NO_STDIO
-        EXEC_STRING     /usr/dt/bin/dterror.ds                           "Impossibile aprire il file - Nessuna unit‡ di riproduzione MPEG disponibile."                           "Informazioni"                           "OK"
+        EXEC_STRING     /usr/dt/bin/dterror.ds                           "Impossibile aprire il file - Nessuna unit√† di riproduzione MPEG disponibile."                           "Informazioni"                           "OK"
 
 
 
@@ -573,7 +573,7 @@ DATA_ATTRIBUTES GIF
         MIME_TYPE	image/gif
         SUNV3_TYPE	gif-file
 	DESCRIPTION	Questo file contiene un'immagine grafica in formato GIF. \
-                        Il suo tipo di dati Ë denominato GIF. I file GIF terminano \
+                        Il suo tipo di dati √® denominato GIF. I file GIF terminano \
                         con le estensioni .gif o .GIF, o contengono i \
                         caratteri "GIF87a" o "GIF89a".
         TYPE_LABEL      GIF
@@ -633,8 +633,8 @@ DATA_ATTRIBUTES README
         IS_TEXT		true
         NAME_TEMPLATE	README
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file di testo che contiene informazioni sui file della \
-                        cartella corrente. Il suo tipo di dati Ë denominato \
+        DESCRIPTION     Questo √® un file di testo che contiene informazioni sui file della \
+                        cartella corrente. Il suo tipo di dati √® denominato \
                         README. I nomi dei file README iniziano con READ \
                         o terminano in ME, con o senza caratteri intermedi. \
                         Le lettere possono essere indifferentemente \
@@ -689,7 +689,7 @@ DATA_ATTRIBUTES HTML
         MIME_TYPE       text/html
         DESCRIPTION     Questo file contiene dati HTML (Hyper-Text Markup Language) \
                         provenienti dalla World Wide Web. Il suo tipo di \
-                        dati Ë denominato HTML. I file HTML terminano \
+                        dati √® denominato HTML. I file HTML terminano \
                         con '.html', o contengono i caratteri "<HTML>" \
                         o "<html>".
 }
@@ -758,7 +758,7 @@ DATA_ATTRIBUTES RICHTEXT
         NAME_TEMPLATE   %s.rt
         MIME_TYPE       text/richtext
         DESCRIPTION     Questo file di testo contiene, oltre al testo normale, varie \
-                        definizioni di font. Il suo tipo di dati Ë \
+                        definizioni di font. Il suo tipo di dati √® \
                         denominato RICHTEXT. I file RICHTEXT terminano \
                         con l'estensione '.rt'.
         TYPE_LABEL      RICHTEXT
@@ -786,7 +786,7 @@ DATA_ATTRIBUTES UIL
         ICON            Dtuil
         NAME_TEMPLATE	%s.uil
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file di testo con codice sorgente \
+        DESCRIPTION     Questo √® un file di testo con codice sorgente \
                         utilizzabile da un interprete UIL per creare \
                         un'interfaccia utente Motif. I nomi dei file UIL \
                         terminano in '.uil' o '.UIL'.
@@ -816,8 +816,8 @@ DATA_ATTRIBUTES MSDOS_EXE
         NAME_TEMPLATE	%s.exe
         MIME_TYPE	application/octet-stream
         SUNV3_TYPE	msdos-file
-        DESCRIPTION     Questo Ë un file eseguibile per personal computer \
-                        compatibili MSDOS. Il suo tipo di dati Ë denominato \
+        DESCRIPTION     Questo √® un file eseguibile per personal computer \
+                        compatibili MSDOS. Il suo tipo di dati √® denominato \
                         MSDOS_EXE. I file MSDOS_EXE terminano con le \
                         estensioni '.exe' o '.EXE'.
         TYPE_LABEL      MSDOS_EXE

@@ -1,0 +1,10 @@
+# Denna fil motsvarar en CDE-funktion (Common Desktop Environment).
+# Innehållet i filen har ingen betydelse, eftersom funktionen fungerar
+# även om filen är tom. Om denna fil är körbar och filnamnet matchar en 
+# post i funktionsdatabasen (*.dt-filer) kommer CDE-filhanteraren att 
+# behandla filen som en funktion.
+#
+# Mer information om funktioner finns i CDE-dokumentationen.
+#
+#
+echo "CDE-funktion (Common Desktop Environment). Körs via filhanteraren."

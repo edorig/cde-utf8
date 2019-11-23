@@ -1,0 +1,51 @@
+! $XConsortium: Backdrops.src /main/3 1995/12/05 10:11:06 rswiston $
+!######################################################################
+!#
+!#     Backdrops
+!#
+!#     Common Desktop Environment (CDE)
+!#
+!#     Backdrop file used for localization of backdrop names
+!#
+!#     (c) Copyright 1993, 1994 Hewlett-Packard Company
+!#     (c) Copyright 1993, 1994 International Business Machines Corp.
+!#     (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+!#     (c) Copyright 1993, 1994 Unix System Labs, Inc., a subsidiary 
+!#	   of Novell, Inc.
+!#
+!#
+!######################################################################
+
+!###
+!#
+!#   C backdrop names followed by message tags for the translated names 
+!#   
+!###
+
+Backdrops*Ankh.desc: Ankh
+Backdrops*Background.desc: Fundus
+Backdrops*BrickWall.desc: Later
+Backdrops*Concave.desc: Concavum
+Backdrops*Convex.desc: Convexum
+Backdrops*Corduroy.desc: Crassum et striatum
+Backdrops*Crochet.desc: Uncus
+Backdrops*Foreground.desc: Primus
+Backdrops*InlayColor.desc: Crustae coloris
+Backdrops*InlayPlain.desc: Crustae
+Backdrops*KnitLight.desc: Textrinum
+Backdrops*Lattice.desc: Reticulum
+Backdrops*LatticeBig.desc: Reticulum magnum
+Backdrops*Leaves.desc: Automnus
+Backdrops*NoBackdrop.desc: Nullus fundus
+Backdrops*OldChars.desc: Littera
+Backdrops*Paver.desc: Gradus Cani
+Backdrops*Pebbles.desc: Lapides Marini
+Backdrops*PinStripe.desc: Virgae
+Backdrops*RakedSand.desc: Arena radeta
+Backdrops*RicePaper.desc: Charta oryzae
+Backdrops*SkyDark.desc: Caerulum fuscum
+Backdrops*SkyLight.desc: Caerulum clarum
+Backdrops*Sprinkles.desc: Bullae
+Backdrops*Toronto.desc: Toronto
+Backdrops*WaterDrops.desc: Guttae
+Backdrops*Wooly.desc: Lana

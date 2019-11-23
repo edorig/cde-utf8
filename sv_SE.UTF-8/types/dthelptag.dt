@@ -1,0 +1,214 @@
+# ##########################################################################
+# 
+#      dthelptag.dt
+# 
+#      Actions and DataTypes for authoring Help information.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $TOG: dthelptag.dt.src /main/6 1998/07/29 17:08:50 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+# 
+# ##########################################################################
+
+# De körbara hjälpfilerna levereras i ../dt/bin, som kanske inte
+# finns i alla användares sökvägar. Därför har följande sträng definierats
+# för att lägga till den i sökvägen innan klienten anropas.
+
+set HELPTAG_PATH=\$PATH:/usr/dt/bin
+
+# ##################################################################
+# 
+# Dataattribut
+# 
+# ##################################################################
+DATA_ATTRIBUTES DTHELP_HTG
+{
+        ACTIONS         Open,Compile,CleanUp
+        ICON            Dthsrc
+        NAME_TEMPLATE   %s.htg
+        MIME_TYPE	text/plain
+        DESCRIPTION     Detta är en huvudkällfil av typen HelpTag för skrivbordets \
+                        hjälpsystem. Informationen i filen har \
+                        formaterats med kodningsspråket HelpTag, och \
+                        måste kompileras med HelpTag-programvaran \
+                        ('dthelptag') innan den kan läsas. Datatypen heter \
+                        DTHELP_HTG. DTHELP_HTG-filer har namn som slutar \
+                        med '.htg'.
+        TYPE_LABEL      DTHELP_HTG
+}
+
+DATA_CRITERIA DTHELP_HTG1
+{
+	DATA_ATTRIBUTES_NAME DTHELP_HTG
+        MODE            f
+        NAME_PATTERN    *.htg
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES DTHELP_CTG
+{
+        ACTIONS         Open,CompileCanon,CleanUp
+        ICON            Dthsrc
+        NAME_TEMPLATE   %s.ctg
+        MIME_TYPE	text/plain
+        DESCRIPTION     Detta är en källfil av typen canonical SGML master HelpTag \
+                        för skrivbordets hjälpsystem. Informationen i \
+                        filen har formaterats med formateringsspråket \
+                        canonical HelpTag, och måste kompileras med \
+                        HelpTag-programvaran ('dthelptag') via tillägget '-canon' \
+                        innan den kan läsas. Datatypen heter \
+                        DTHELP_CTG. DTHELP_CTG-filer har namn som slutar \
+                        med '.ctg'.
+        TYPE_LABEL      DTHELP_CTG
+}
+
+DATA_CRITERIA DTHELP_CTG1
+{
+	DATA_ATTRIBUTES_NAME DTHELP_CTG
+        MODE            f
+        NAME_PATTERN    *.ctg
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES DTHELP_ERR
+{
+        ACTIONS         Open
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.err
+        MIME_TYPE	text/plain
+        DESCRIPTION     Denna fil innehåller parserfel som är associerade med \
+                        en kompilerad hjälpvolym. Denna fil genereras \
+                        endast av dthelptag-parsern när parserfelen \
+                        upptäcks under kompileringen av hjälpvolymen. \
+                        Datatypen heter DTHELP_ERR. \
+                        DTHELP_ERR-filer har namn som slutar med '.err'.
+        TYPE_LABEL      DTHELP_ERR
+}
+
+DATA_CRITERIA DTHELP_ERR1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_ERR
+        NAME_PATTERN    *.err
+        MODE            f
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# Funktioner
+# 
+# ##################################################################
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        DTHELP_HTG,DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION      OpenHelpTag
+}
+
+# ######
+
+ACTION Compile
+{
+        LABEL           Kompilera
+        ARG_TYPE        DTHELP_HTG
+	TYPE		MAP
+        MAP_ACTION	HelpTag
+}
+
+# ######
+
+ACTION CompileCanon
+{
+        LABEL           KompileraCanon
+        ARG_TYPE        DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION	HelpTagCanon
+}
+
+# ######
+
+ACTION CleanUp
+{
+        LABEL           Rensa
+        ARG_TYPE        DTHELP_HTG,DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION	CleanHelpTag
+}
+
+# ######
+
+ACTION OpenHelpTag
+{
+        LABEL           OpenHelpTag
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtpad "%(File)Arg_1%"
+	DESCRIPTION	Funktionen OpenHelpTag öppnar en huvudfil av typen HelpTag \
+                        (en '.sdl'- eller '.hv'-fil) i en textredigerare.
+}
+
+# ######
+
+ACTION HelpTag
+{
+        LABEL           HelpTag
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag-fil:"%"`; 			       PATH=$HELPTAG_PATH dthelptag 				  `basename "%(File)Arg_1%"`'
+
+
+
+	DESCRIPTION	Funktionen HelpTag kompilerar en huvudfil av typen HelpTag \
+                        för att skapa temporära hjälpfiler. De temporära \
+                        filerna kan visas av ett program via \
+                        hjälpsystemet eller av programmet 'dthelpview'.
+}
+
+# ######
+
+ACTION HelpTagCanon
+{
+        LABEL           HelpTagCanon
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag-fil:"%"`; 			       PATH=$HELPTAG_PATH dthelptag -formal 				  `basename "%(File)Arg_1%"`'
+
+
+
+	DESCRIPTION	Funktionen HelpTagCanon kompilerar en fil av typen canonical SGML \
+                        master HelpTag för att skapa temporära hjälpfiler. \
+                        De temporära filerna kan visas av ett \
+                        program via hjälpsystemet eller av programmet \
+                        'dthelpview'.
+}
+
+# ######
+
+ACTION CleanHelpTag
+{
+        LABEL           RensaHelpTag
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag-fil:"%"`'
+
+	DESCRIPTION	Funktionen RensaHelpTag tar bort alla temporära hjälpfiler \
+                        som har skapats av funktionen HelpTag.
+}
+# ######################## EOF ############################################

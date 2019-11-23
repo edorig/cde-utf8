@@ -1,0 +1,316 @@
+# ##########################################################################
+# 
+#     miscActions.dt
+# 
+#     Examples of miscellaneous Actions (mostly for X clients).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: miscActions.dt.src /main/4 1996/04/23 17:36:05 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# Funktioner
+# 
+# ##################################################################
+ACTION Xcalc
+{
+        LABEL		X-kalkylator
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcalc
+	DESCRIPTION	Funktionen X-kalkylator anropar xcalc X-klienten. \
+                        Denna klient är ett tilläggsprogram på skrivbordet \
+                        som kan emulera en avancerad kalkylator av typen TI-30 eller HP-10C.
+}
+
+# #####
+
+ACTION Oclock
+{
+        LABEL		Oval klocka
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     oclock
+	DESCRIPTION	Funktionen Oval klocka (Oclock) anropar oclock X-\
+                        klienten. Denna klient visar den \
+                        aktuella tiden analogt.
+}
+
+# #####
+
+ACTION Xlsatoms
+{
+        LABEL		Lista atomer
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlsatoms
+	DESCRIPTION	Funktionen Lista atomer (Xlsatoms) anropar \
+                        xlsatoms X-klienten. Lista atomer listar internerade atomer.
+}
+
+# #####
+
+ACTION Xbiff
+{
+        LABEL		xbiff
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xbiff
+	DESCRIPTION	Funktionen xbiff anropar xbiff X-klienten. \
+                        Programmet xbiff visar en bild av en \
+                        brevlåda. När det inte finns någon post riktas \
+                        flaggan på brevlådan nedåt. När det kommer post \
+                        riktas flaggan uppåt och brevlådan ger ifrån sig en ljudsignal.
+}
+
+# #####
+
+ACTION Xcolor
+{
+        LABEL		xcolor
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcolor
+	DESCRIPTION	Funktionen xcolor anropar xcolor X-klienten. \
+                        Xcolor visar alla 256 färgerna i ett fönster. \
+                        När du flyttar pekaren till fönstret \
+                        installeras en färgpalett med en nyansskala \
+                        med konstant mättnad och klarhet, \
+                        medan svart och vitt behålls.
+}
+
+# #####
+
+ACTION Xcutsel
+{
+        LABEL		Klipp och markera
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcutsel
+	DESCRIPTION	Funktionen Klipp och markera (Xcutsel) anropar \
+                        xcutsel X-klienten. Denna klient används för att \
+                        kopiera den aktuella markeringen till en utklippsbuffert \
+                        och sedan skapa en markering som innehåller \
+                        buffertens aktuella innehåll. Den fungerar som en \
+                        brygga mellan program som inte stöder markeringar \
+                        och program som gör det.
+}
+
+# #####
+
+ACTION Xditview
+{
+        LABEL		xditview
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xditview
+	DESCRIPTION	Funktionen xditview anropar xditview X-klienten. \
+                        Programmet xditview visar ditroff-utdata \
+                        på en X-visningsenhet.
+}
+
+# #####
+
+ACTION Xedit
+{
+        LABEL		xedit
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xedit
+	DESCRIPTION	Funktionen xedit anropar xedit X-klienten. \
+                        Denna klient tillhandahåller ett fönster som består \
+                        av fyra områden: 1. Kommandosektionen: En uppsättning \
+                        kommandon som du kan använda för att avsluta xedit, spara filen \
+                        och ladda en ny fil i redigeringsfönstret. \
+                        2. Meddelandefönstret: Visar xedit-meddelanden. \
+                        Detta fönster kan också användas som ett \
+                        anteckningsblock. 3. Filnamnsrutan: Visar \
+                        namnet på den fil som redigeras för tillfället \
+                        och huruvida denna fil är skrivskyddad eller inte. \
+                        4. Redigeringsfönstret: Visar texten i den fil \
+                        som du redigerar eller skapar.
+}
+
+# #####
+
+ACTION Xlock
+{
+        LABEL		xlock
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlock
+	DESCRIPTION	Funktionen xlock anropar xlock X-klienten. \
+                        Denna klient låser den lokala X-visningsenheten \
+                        tills du anger ett lösenord.
+}
+
+# #####
+
+ACTION Xlogo
+{
+        LABEL		xlogo
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlogo
+	DESCRIPTION	Funktionen xlogo anropar xlogo X-klienten. \
+                        Denna klient visar logotypen för X Window \
+                        System.
+}
+
+# #####
+
+ACTION Xmag
+{
+        LABEL		Förstora
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xmag
+	DESCRIPTION	Funktionen Förstora (Xmag) anropar xmag X-klienten. \
+                        Denna klient medför att du kan förstora \
+                        delar av en X-skärm. Om du inte har markerat \
+                        något område visar en ruta i det övre vänstra \
+                        hörnet vilket område som kommer att förstoras. \
+                        Du kan dra området till önskad storlek genom att \
+                        trycka på knapp 2. När du har markerat ett område \
+                        visas ett fönster med en förstorad version av området, \
+                        där de enskilda bildpunkterna i den ursprungliga \
+                        bilden motsvaras av små rutor i samma färg.
+}
+
+# #####
+
+ACTION Xman
+{
+        LABEL		xman
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xman
+	DESCRIPTION	Funktionen xman anropar xman X-klienten. \
+                        Denna klient används för att bläddra i kommandobeskrivningarna.
+}
+
+# #####
+
+ACTION Xmh
+{
+        LABEL		X-posthanterare
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xmh
+	DESCRIPTION	Funktionen X-posthanterare (Xmh) anropar xmh X-klienten. \
+                        Denna klient tillhandahåller ett grafiskt \
+                        användargränssnitt till MH Message Handling System. \
+                        Funktionen anropar MH-paketet för att du ska kunna \
+                        använda ditt postprogram. Du kan skapa elektroniska \
+                        meddelanden och skicka, ta emot, svara på, \
+                        vidarebefordra, sortera och lagra dem i mappar. \
+                        Klienten ger dig stora möjligheter att anpassa \
+                        användargränssnittet.
+}
+
+# #####
+
+ACTION Xeyes
+{
+        LABEL		Ögon
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xeyes
+	DESCRIPTION	Funktionen Ögon (Xeyes) anropar xeyes X-klienten. \
+                        Denna klient visar ett par ögon som följer \
+                        pekaren efterhand som den flyttas runt på visningsenheten.
+}
+
+# #####
+
+ACTION Xauth
+{
+        LABEL		X-behörighet
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xauth
+	DESCRIPTION	Funktionen X-behörighet (Xauth) anropar xauth X-klienten. \
+                        Denna klient används för att redigera och \
+                        visa behörighetsinformationen som krävs för att \
+                        ansluta till X-hanteraren.
+}
+
+# #####
+
+ACTION Xlsclients
+{
+        LABEL		Lista klienter
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlsclients
+	DESCRIPTION	Funktionen Lista klienter (Xlsclients) anropar \
+                        xlsclients X-klienten. Denna klient är ett verktyg \
+                        för att lista information om de klientprogram \
+                        som körs på en viss visningsenhet. Den kan användas \
+                        för att generera skript som motsvarar \
+                        användarens aktuella session.
+}
+
+# #####
+
+ACTION Xpuzzle
+{
+        LABEL		X-pussel
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xpuzzle
+	DESCRIPTION	Funktionen X-pussel (Xpuzzle) anropar \
+                        xpuzzle X-klienten. Denna klient är ett \
+                        4x4-pussel med 15 bitar.
+}
+
+# #####
+
+ACTION Passwd
+{
+        LABEL           Ändra lösenord
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     dtterm -geometry 60x8 -xrm "*menuBar: False" -e sh -c '                                echo "Ändra lösenord";                                echo "--------------";                                passwd'
+
+
+
+        DESCRIPTION     Funktionen Ändra lösenord (Passwd) använder kommandot 'passwd' \
+                        för att ändra användarens lösenord.
+}
+
+# ######################## EOF ############################################

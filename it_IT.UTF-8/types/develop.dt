@@ -18,7 +18,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -37,7 +37,7 @@ DATA_ATTRIBUTES CORE
         MIME_TYPE	application/octet-stream
         SUNV3_TYPE      corefile
 	DESCRIPTION	Questo file contiene un'immagine core del processo che \
-                        Ë terminato in modo anomalo. Il suo tipo di dati Ë \
+                        √® terminato in modo anomalo. Il suo tipo di dati √® \
                         denominato CORE.
         TYPE_LABEL      CORE
 }
@@ -71,7 +71,7 @@ DATA_ATTRIBUTES OBJECT
         MIME_TYPE	application/octet-stream
         SUNV3_TYPE      o-file
 	DESCRIPTION	Questo file contiene dati binari che il compilatore ha prodotto \
-                        dal file sorgente. Il suo tipo di dati Ë denominato \
+                        dal file sorgente. Il suo tipo di dati √® denominato \
                          OBJECT. I nomi dei file OBJECT terminano \
                         con l'estensione '.o'.
         TYPE_LABEL      OBJECT
@@ -108,7 +108,7 @@ DATA_ATTRIBUTES ASSEMBLER
         MIME_TYPE	text/plain
         SUNV3_TYPE      text
 	DESCRIPTION	Questo file contiene il codice assembler per una data architettura. \
-                        Il suo tipo di dati Ë denominato ASSEMBLER. \
+                        Il suo tipo di dati √® denominato ASSEMBLER. \
                         I file ASSEMBLER terminano con l'estensione '.s'.
         TYPE_LABEL      ASSEMBLER
 }
@@ -127,7 +127,7 @@ DATA_ATTRIBUTES ARCH_LIB
         ICON		Dtbinml
         MIME_TYPE	application/octet-stream
 	DESCRIPTION	Questo file contiene una libreria d'archivio di file di oggetti. \
-                        Il suo tipo di dati Ë denominato ARCH_LIB. \
+                        Il suo tipo di dati √® denominato ARCH_LIB. \
                         I file ARCH_LIB terminano con l'estensione '.a'.
         TYPE_LABEL      ARCH_LIB
 }
@@ -160,7 +160,7 @@ DATA_ATTRIBUTES SHARED_LIB
         ICON		Dtbinml
         MIME_TYPE	application/octet-stream
 	DESCRIPTION	Questo file contiene una libreria condivisa di file di oggetti. \
-                        Il suo tipo di dati Ë denominato SHARED_LIB. \
+                        Il suo tipo di dati √® denominato SHARED_LIB. \
                         I file SHARD_LIB terminano con l'estensione '.sl' o '.so'.
         TYPE_LABEL      SHARED_LIB
 }
@@ -207,8 +207,8 @@ DATA_ATTRIBUTES C_SRC
         NAME_TEMPLATE	%s.c
         MIME_TYPE	text/plain
         SUNV3_TYPE      c-file
-	DESCRIPTION	Questo Ë un file sorgente nel linguaggio di programmazione C. \
-                        Il suo tipo di dati Ë denominato C_SRC. \
+	DESCRIPTION	Questo √® un file sorgente nel linguaggio di programmazione C. \
+                        Il suo tipo di dati √® denominato C_SRC. \
                          I file C_SRC terminano con l'estensione '.c'.
         TYPE_LABEL      C_SRC
 }
@@ -240,8 +240,8 @@ DATA_ATTRIBUTES CPLUSPLUS_SRC
         IS_TEXT         true
         NAME_TEMPLATE	%s.C
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un file sorgente nel linguaggio di programmazione C++. \
-                        Il suo tipo di dati Ë denominato CPLUSPLUS_SRC. \
+        DESCRIPTION     Questo √® un file sorgente nel linguaggio di programmazione C++. \
+                        Il suo tipo di dati √® denominato CPLUSPLUS_SRC. \
                         I file CPLUSPLUS_SRC terminano con l'estensione '.C' \
                         o '.cc'.
         TYPE_LABEL      CPLUSPLUS_SRC
@@ -285,8 +285,8 @@ DATA_ATTRIBUTES H_SRC
         NAME_TEMPLATE	%s.h
         MIME_TYPE	text/plain
         SUNV3_TYPE      h-file
-	DESCRIPTION	Questo Ë un file di intestazione in linguaggio C. Il suo \
-                        tipo di dati Ë denominato H_SRC. I file H_SRC \
+	DESCRIPTION	Questo √® un file di intestazione in linguaggio C. Il suo \
+                        tipo di dati √® denominato H_SRC. I file H_SRC \
                         terminano con le estensioni *.h.
         TYPE_LABEL      H_SRC
 }
@@ -307,10 +307,10 @@ DATA_ATTRIBUTES MAKEFILE
         NAME_TEMPLATE	Makefile
         MIME_TYPE	text/plain
         SUNV3_TYPE      Makefile
-	DESCRIPTION	Questo Ë un Makefile. Un Makefile contiene le descrizioni \
+	DESCRIPTION	Questo √® un Makefile. Un Makefile contiene le descrizioni \
                         per la generazione di un file eseguibile da un insieme \
                         di file sorgenti. Viene utilizzato dal comando make. \
-                        Il suo tipo di dati Ë denominato MAKEFILE. I file \
+                        Il suo tipo di dati √® denominato MAKEFILE. I file \
                         MAKEFILE devono essere denominati Makefile o \
                         makefile, o avere nomi che iniziano con Makefile o \
                         makefile, o terminare con l'estensione '.mk'.
@@ -353,10 +353,10 @@ DATA_ATTRIBUTES IMAKEFILE
         IS_TEXT         true
         NAME_TEMPLATE	Imakefile
         MIME_TYPE	text/plain
-        DESCRIPTION     Questo Ë un Imakefile. Un Imakefile descrive come \
+        DESCRIPTION     Questo √® un Imakefile. Un Imakefile descrive come \
                         generare un file eseguibile da un insieme di \
-                        file sorgenti. » utilizzato dal comando make. \
-                        Il suo tipo di dati Ë denominato IMAKEFILE. \
+                        file sorgenti. √à utilizzato dal comando make. \
+                        Il suo tipo di dati √® denominato IMAKEFILE. \
                         I file IMAKEFILE sono denominati imakefile o \
                         Imakefile, o iniziano con imakefile o Imakefile.
         TYPE_LABEL      IMAKEFILE

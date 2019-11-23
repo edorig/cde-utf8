@@ -18,7 +18,7 @@ set DtDbVersion=1.0
 
 ###############################################################################
 #
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -40,8 +40,8 @@ DATA_ATTRIBUTES DTMAIL_FILE
 	MEDIA		RFC_822_MESSAGE
         MIME_TYPE	message/rfc822
         SUNV3_TYPE      mail-message
-	DESCRIPTION	Questa Ë una cartella per la Gestione posta del desktop. Il suo \
-                        tipo di dati Ë denominato DTMAIL_FILE. I file \
+	DESCRIPTION	Questa √® una cartella per la Gestione posta del desktop. Il suo \
+                        tipo di dati √® denominato DTMAIL_FILE. I file \
                         DMMAIL_FILE contengono i caratteri "From".
 	TYPE_LABEL      DTMAIL_FILE
 }

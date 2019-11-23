@@ -1,0 +1,765 @@
+# ##########################################################################
+#
+#     uxstd.dt
+#
+#     Action and DataType definitions for standard operating system commands.
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+# $TOG: uxstd.dt.src /main/7 1998/07/29 17:09:27 mgreess $
+#
+# ##########################################################################
+
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+#
+# MONITIO: Probabiliter hoc scapus contundus erit dum  
+#     institutione proxima mensae CDE. Oportet facere mutationes
+#     systemae in scapo receptaculi datorum 
+#     aequabili in indice /etc/dt/types.
+#
+# ##########################################################################
+
+# ##########################################################################
+#
+# Attributs datorum
+# 
+# ##########################################################################
+DATA_ATTRIBUTES MAN_PAGE
+{
+        ACTIONS         Open,Print
+        ICON            Dtmanpg
+        IS_TEXT		true
+        ACTIONS         Open,Print
+        MIME_TYPE	text/plain
+	DESCRIPTION	Hoc scapus continet paginam enchiridii. \
+                        Ejus genus datorum MAN_PAGE est.
+        TYPE_LABEL      MAN_PAGE
+}
+DATA_CRITERIA MAN_PAGE1
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/man*/*.[1-9]*
+}
+DATA_CRITERIA MAN_PAGE2
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/cat*/*.[1-9]*
+}
+ACTION Open
+{
+        LABEL           Aperire
+        ARG_TYPE        MAN_PAGE
+        TYPE            MAP
+        MAP_ACTION	Dtmanpageview
+}
+ACTION Print
+{
+        LABEL           Exscribere
+        ARG_TYPE        MAN_PAGE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp -a "%Arg_1%"
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES TAR
+{
+        ACTIONS         Open,TarUnpack,Print
+        ICON		Dtmagtp
+        NAME_TEMPLATE	%s.tar
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	Scapus tabulini quod continet \
+                        scapos singulares est. Ejus genus datorum \
+                         TAR est  suffixus ejus, .tar.
+        TYPE_LABEL      TAR
+}
+DATA_CRITERIA TAR1
+{
+	DATA_ATTRIBUTES_NAME TAR
+        MODE            f
+	NAME_PATTERN	*.tar
+}
+ACTION Open
+{
+        LABEL           Aperire
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      TarList
+}
+ACTION Print
+{
+        LABEL           Exscribere
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      PrintTarList
+}
+ACTION TarList
+{
+	LABEL		Quot tabulinum continet
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+	DESCRIPTION	L'action Contenu de l'archive (TarList) affiche \
+                        la liste des fichiers qui composent un fichier archive TAR.
+}
+ACTION PrintTarList
+{
+	LABEL		Imprimer_liste_tar
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" |                            /usr/dt/bin/dtlp -u "Quot tabulinum continet"'
+
+
+	DESCRIPTION	L'action Imprimer_liste_tar imprime, sur l'imprimante \
+                        par défaut, la liste des fichiers qui composent \
+                        un fichier archive TAR.
+}
+ACTION TarUnpack
+{
+	LABEL		Décomprimer archive
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                tar -xvf "%(File)Arg_1"Nomen scapi:"%"                            2>&1 | \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+	DESCRIPTION	L'action Décomprimer archive (TarUnpack) \
+                        sépare les fichiers regroupés dans un \
+                        fichier archive TAR.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES COMPRESSED
+{
+        ACTIONS         Uncompress
+        ICON		Dtcmprs
+        NAME_TEMPLATE	%s.Z
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      compress
+	DESCRIPTION	Un fichier COMPRESSED a été comprimé à \
+                        l'aide de la commande compress afin d'occuper \
+                        moins d'espace. Ejus genus datorum est COMPRESSED \
+                        suffixus ejus, .Z.
+        TYPE_LABEL      COMPRESSED
+}
+DATA_CRITERIA COMPRESSED1
+{
+	DATA_ATTRIBUTES_NAME COMPRESSED
+        MODE            f
+        NAME_PATTERN    *.Z
+}
+ACTION Print
+{
+        LABEL           Exscribere
+        ARG_TYPE        COMPRESSED
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uncompress
+{
+	LABEL		Décomprimer fichier
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                uncompress -vf "%(File)Arg_1%" %(File)Args% 2>&1 |                            \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+	DESCRIPTION	L'action Décomprimer fichier décomprime \
+                        les fichiers comprimés à l'aide de la commande \
+                        compress. Elle utilise la commande uncompress.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtbshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.sh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      shell-script
+        DESCRIPTION     ce fichier contient un script exécutable \
+                        écrit à l'aide du langange de scriptage BOURNE. \
+                        Ejus genus datorum est SHELL suffixus ejus, \
+                        .sh. Il peut également contenir les caractères \
+                        "#!/bin/sh" ou "#! /bin/sh".
+        TYPE_LABEL      SHELL
+}
+DATA_CRITERIA SHELL1
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        MODE            f&x
+	NAME_PATTERN	*.sh
+}
+DATA_CRITERIA SHELL2
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #!/bin/sh
+        MODE            f&x
+}
+DATA_CRITERIA SHELL3
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #! /bin/sh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Pellere
+        ARG_TYPE        SHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES CSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtcshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.csh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      cshell-script
+        DESCRIPTION     Ce fichier contient un script exécutable \
+                        écrit à l'aide du langage de scriptage C-SHELL. \
+                        Ejus genus datorum est CSHELL suffixus ejus, \
+                        .csh. Il peut également contenir les caractères \
+                        "#!/bin/csh" ou "#! /bin/csh".
+        TYPE_LABEL      CSHELL
+}
+DATA_CRITERIA CSHELL1
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        MODE            f&x
+        NAME_PATTERN    *.csh
+}
+DATA_CRITERIA CSHELL2
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #!/bin/csh
+        MODE            f&x
+}
+DATA_CRITERIA CSHELL3
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #! /bin/csh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Pellere
+        ARG_TYPE        CSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES KSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtkshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.ksh
+        MIME_TYPE	text/plain
+        DESCRIPTION     Ce fichier contient un script exécutable écrit \
+                        à l'aide du langage de scriptage K-SHELL. \
+                        Ejus genus datorum est KSHELL suffixus ejus, \
+                        .ksh. Il peut également contenir les caractères \
+                        "#!/bin/ksh" ou "#! /bin/ksh".
+        TYPE_LABEL      KSHELL
+}
+DATA_CRITERIA KSHELL1
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        MODE            f&x
+        NAME_PATTERN    *.ksh
+}
+DATA_CRITERIA KSHELL2
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL3
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL4
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL5
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Pellere
+        ARG_TYPE        KSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHAR
+{
+        ACTIONS         Unshar
+        ICON 		Dtshar           
+        NAME_TEMPLATE	%s.shar
+        MIME_TYPE	text/plain
+        DESCRIPTION     Il s'agit d'un progiciel d'archive shell, \
+                        généralement utilisé pour l'expédition de fichiers. \
+                        Ejus genus datorum est SHAR suffixus ejus, \
+                        .shar.
+        TYPE_LABEL      SHAR
+}
+DATA_CRITERIA SHAR1
+{
+        DATA_ATTRIBUTES_NAME SHAR
+        MODE            f
+        NAME_PATTERN    *.shar
+}
+ACTION Print
+{
+        LABEL           Exscribere
+        ARG_TYPE        SHAR
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Unshar
+{
+        LABEL           Annuler_commande_shar
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         sh "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+        DESCRIPTION     L'action Annuler_commande_shar permet \
+                        d'annuler l'effet de la commande shar sur \
+                        un fichier.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES UUENCODE
+{
+        ACTIONS         Uudecode
+        ICON            Dtuuncd
+        NAME_TEMPLATE	%s.uu
+        MIME_TYPE	text/plain
+        DESCRIPTION     Il s'agit d'un fichier binaire utilisé \
+                        pour la transmission à l'aide d'un programme courrier. \
+                        Ejus genus datorum est UUENCODE suffixus ejus, .uu.
+        TYPE_LABEL      UUENCODE
+}
+DATA_CRITERIA UUENCODE1
+{
+        DATA_ATTRIBUTES_NAME UUENCODE
+        MODE            f
+        NAME_PATTERN    *.uu
+}
+ACTION Print
+{
+        LABEL           Exscribere
+        ARG_TYPE        UUENCODE
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uudecode
+{
+        LABEL           Uudecode
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         uudecode "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+        DESCRIPTION     L'action Uudecode permet de décoder \
+                        un fichier codé à l'aide de la commande uudecode.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES MESSAGE_CAT
+{
+        ACTIONS         (None)
+        ICON            Dtcat
+        NAME_TEMPLATE   %s.cat
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     Ce fichier contient des messages traduits \
+                        associés à un exécutable. Ejus genus datorum est \
+                        MESSAGE_CAT suffixus ejus, .cat.
+        TYPE_LABEL      MESSAGE_CAT
+}
+DATA_CRITERIA MESSAGE_CAT1
+{
+        DATA_ATTRIBUTES_NAME MESSAGE_CAT
+        MODE            f
+        NAME_PATTERN    *.cat
+}
+ACTION Print
+{
+        LABEL           Exscribere
+        ARG_TYPE        MESSAGE_CAT
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ##########################################################################
+# ##########################################################################
+#
+# Actiones
+# 
+# ##########################################################################
+# #####################
+#
+# Programmae texti editorii Unicis
+#
+# #####################
+ACTION Vi
+{
+        LABEL		Texti editorium (Vi)
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi
+	DESCRIPTION	Action texti editorium (Vi) pellet \
+                        mandatum vi in fenestra terminalis \
+                        et onerat, s'il y a lieu, scapum datorum.
+}
+ACTION Vi
+{
+        LABEL		Texti editorium (Vi)
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi "%(File)Arg_1"Scapus redigendum:"%"
+	DESCRIPTION	Action texti editorium (Vi) pellet \
+                        mandatum vi in fenestra terminalis \
+                        et onerat, s'il y a lieu, scapum datorum.
+}
+
+# ######
+
+ACTION Vedit
+{
+        LABEL		Vedit
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit
+	DESCRIPTION	Actio Vedit pellet mandatum vi \
+                        in modo vedit in fenestra terminalis \ 
+                        et onerat, s'il y a lieu, scapum datorum.
+}
+ACTION Vedit
+{
+        LABEL		Vedit
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit "%(File)Arg_1"Scapus redigendum:"%"
+	DESCRIPTION	Actio Vedit pellet mandatum vi \
+                        in modo vedit in fenestra terminalis \ 
+                        et onerat, s'il y a lieu, scapum datorum.
+}
+
+# #####################
+#
+# Mandati Unicis
+#
+# #####################
+# L'action suivante utilise l'argument 'true %(Fichier)Args%' de
+# l'instruction EXEC_STRING. Cette instruction permet, lors de
+# l'appel d'une action, de prendre en compte tous les arguments.
+ACTION Tar
+{
+	LABEL		Copiare in tabulino
+        ICON		Dtmagtp
+	ARG_COUNT	>1
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	          sh -c '            if [ "%(File)Args%" = "" ] ; then                 /usr/dt/bin/dterror.ds             "Actio Copiare in tabulino accipet solum unum argumentum,\\n \
+                        quam indicem esse debet."             "Argumenta vitiosa"             "Ita" ;            else            true %(File)Args%;            /usr/dt/bin/dterror.ds             "Actio Copiare in tabulino accipet solum unum argumentum,\\n \
+                        quam indicem esse debet."             "Argumenta vitiosa"             "Ita"            fi; '
+	DESCRIPTION	Actio Copiare in tabulino (Tar) permittit copiare \
+                        totos scapos in indice in uno scapo tabulini \
+                        "tar" ; mandatum Unicis  tar uti.
+}
+ACTION Tar
+{
+	LABEL		Copiare in tabulino
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+	EXEC_STRING		  sh -c '             if [ "%(File)Args%" = "" ] ; then 	        echo "ERROR: \"%(File)Arg_1%\" index non est.";             else 	    if [ ! -d "%(File)Arg_1"Index copiandum in tabulini:"%" ] ; then 	        echo "ERROR: \"%(File)Arg_1%\" index non est."; 	    else                 FOLDER="%(File)Arg_1%.tar"; 	        TAR_FILE=`basename "%(File)Arg_1%.tar"`;                 echo "Creatio indicis \$FOLDER in effectu.";                 echo "[Exspecta ...]\\n"; 	        tar -cvf \$TAR_FILE `basename "%(File)Arg_1%"` 2>&1 | 	          \${PAGER:-more};                 echo "\\nScapus tabulini creatus est ; in indice \$FOLDER adest."; 	    fi; 	    fi; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+	DESCRIPTION	Actio Copiare in tabulino (Tar) permittit copiare \
+                        totos scapos in indice in uno scapo tabulini \
+                        "tar" ; mandatum Unicis  tar uti.
+}
+
+# ######
+
+ACTION TarList
+{
+        LABEL           Quot tabulinum continet
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarList                             "%(File)Arg_1"Quot tabulinum continet:"%"
+
+        DESCRIPTION     L'action Contenu de l'archive (TarList) affiche \
+                        la liste des fichiers qui composent un fichier archive TAR.
+}
+
+# ######
+
+ACTION TarUnpack
+{
+        LABEL           Décomprimer archive
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarUnpack                             "%(File)Arg_1"Archive à décomprimer:"%"
+
+        DESCRIPTION     L'action Décomprimer archive (TarUnpack) \
+                        sépare les fichiers regroupés dans un \
+                        fichier archive TAR.
+}
+
+# ######
+
+ACTION Compress
+{
+	LABEL		Comprimere scapum
+        ICON		Dtcmprs
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                 compress -vf "%(File)Arg_1"Scapum comprimendum:"%"                          %(File)Args% 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+	DESCRIPTION	Actio Comprimere scapum (Compress) permittit \
+                        comprimere unum vel plures scapos \
+                        cum mandato compress.
+}
+
+# ######
+
+ACTION Uncompress
+{
+        LABEL           Décomprimer fichier
+        ICON		Dtcmprs
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction Uncompress                             "%(File)Arg_1"Scapus non jam compressus erit:"%"
+
+        DESCRIPTION     L'action Décomprimer fichier décomprime \
+                        les fichiers comprimés à l'aide de la commande \
+                        compress. Elle utilise la commande uncompress.
+}
+
+# ######
+
+ACTION Env
+{
+	LABEL		Variabiles ambitus
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                          env 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+	DESCRIPTION	Actio Variabiles ambitus (Env) \
+                        proponit variabiles ambitus usoris \
+                        cum mandato env.
+}
+
+# ######
+
+ACTION Diff
+{
+	LABEL		Comparare scapos
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file1="%(File)Arg_1"Primus scapus (<):"%" ;	    file2="%(File)Arg_2"Alterus scapus (>):"%" ;            cmp -s \$file1 \$file2 ;            if [ \$? -eq 0 ] ; then               echo "Scapi \$file1 et \$file2 nihil differunt." ;             else               diff \$file1 \$file2  | \${PAGER:-more} ;            fi ;	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+	DESCRIPTION	Actio Comparare scapos (Diff) permittit \
+                         comparare duos scapos cum mandato diff.
+}
+
+# ######
+
+ACTION Rm
+{
+	LABEL		Deterere scapum
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING		  sh -c ' 	    echo "[Induce i ad delendum scapum aut m ad condendum eum ...]\\n"; 	    rm -i "%(File)Arg_1"Scapus deterendus:"%" %(File)Args%; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+
+	DESCRIPTION	Actio Deterere scapum (Rm) permittit delere \
+                        scapos sine conjicere eos ad canistrum. \
+                        Mandatum rm -i uti. Quaeret \
+                        scapos delendos et confimationes aut \
+                        sublationes detritionis. SCAPOS DETRITOS  \
+                        RECUPERARE NON POTEST.
+}
+
+# ######
+
+ACTION Wc
+{
+	LABEL		Numerare verbos 
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    (echo "  lineae      verb  lit.scap."; 	     echo "  ============================"; 	     wc "%(File)Arg_1"Scapus numerandus:"%" %(File)Args%) 2>&1 | 	       \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+
+
+	DESCRIPTION	Actio Numerare verbos (Wc) uti mandatum Unicis \
+                        wc ad numerandum lineas, verbos litterasque in scapo.
+}
+
+# ######
+
+ACTION Spell
+{
+	LABEL		Verificare orthographium
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c ' 	    (echo "Verba vitiose scripta\\n========================\\n"; 	     spell "%(File)Arg_1"Verifica orthographium scapi:"%" %(File)Args%) 2>&1 |                \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+
+
+	DESCRIPTION	Actio Verificare orthographium (Spell) permittit \
+                        verificare orthographium verborum \
+                        scapi. Mandatum spell uti.
+}
+
+# ######
+
+ACTION Df
+{
+	LABEL		Occupatio discorum
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             df 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+	DESCRIPTION	Actio Occupatio discorum (Df) proponit \
+                        spatium paratum in omnis \
+                        discis astructis. Mandatum df ea uti.
+}
+
+
+# ######
+
+ACTION DuSort
+{
+	LABEL		Dimensio indicis
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    if [ ! -d "%(File)Arg_1"Dimensio indicis:"%" ] ; then 	        echo "ERROR: \"%(File)Arg_1%\" index non est."; 	    else 	        echo "[Exspecta ...]\\n"; 	        (echo "Truncos   Scap/Ind  - (1 truncum = 512 octetos)"; 	         echo "==============================================="; 	         du -s "%(File)Arg_1"Dimensio indicis:"%" | sort -n) 2>&1 |                    \${PAGER:-more}; 	    fi; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+	DESCRIPTION	Actio Dimensio indicis (DuSort) proponit dimensiones \
+                        scaporum subindiciumque in indice. \
+                        Mandatos unicis du et sort uti.
+}
+
+# ######
+
+ACTION Grep
+{
+	LABEL		Quaerere textum
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             SEARCH_FILE="%(File)Arg_1"Quaerere in scapum:"%";             if [ -d \$SEARCH_FILE ] ; then                 echo "ERROR: \$SEARCH_FILE indicem est.\\nOr, actionem Quaerere textum illi  generi rei pellere non potest.";             else                grep %"Verbum quaerendum:"% \$SEARCH_FILE                                    %(File)Args% >/tmp/dtstrsearch 2>&1;                if [ \$? -eq 1 ] ; then                    echo "Nihil casus invenitus.";                else                   cat /tmp/dtstrsearch | \${PAGER:-more};                fi;                rm /tmp/dtstrsearch;             fi; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+	DESCRIPTION	Actio Quaerere textum (Grep) permittet \
+                        quaerere totos casos verbi \
+                        in corpore scaporum, mandatum grep utens.
+}
+
+# ######
+
+ACTION File
+{
+	LABEL		Genus scapi
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file "%(File)Arg_1"Invenire generem scapi:"%" %(File)Args% 2>&1 |               \${PAGER:-more}; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+	DESCRIPTION	Actio Genus scapi (File) identificat \
+                        generem scapi mandatum file utens. \
+                        Generem scapi usus Mensa non est; \
+                        Ad inveniendum hoc generem, \
+                        selige scapum, deinde optiones \
+                        Insignes et Scapus in conspectu \
+                        Rectore scaporum.
+}
+
+# ######
+
+ACTION Execute
+{
+	LABEL		Pellere
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     	  "%(File)Arg_1"Scapus pellendus:"%" %"Optiones:"% %"Argumenti:"% %(File)Args%
+
+	DESCRIPTION	Actio Pellere permittit pellere programmam shell \
+                        aut binarem. Quaeret \
+                        optiones et argumentos, deinde \
+                        pellet mandatum in finestram terminalis.
+}
+
+# ######
+
+ACTION ExecuteCmd
+{
+	LABEL		Pellere mandatum
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	          %"Mandatum:"% %(File)Args%; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+	DESCRIPTION	Actio Pellere mandatum (ExecuteCmd) \
+                        quaeret mandatum, deinde pellet eam \
+                        scapis indicatis.
+}
+# ######################## EOF ############################################

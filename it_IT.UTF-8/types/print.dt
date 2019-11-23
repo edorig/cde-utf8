@@ -12,19 +12,19 @@
 #      $XConsortium: print.dt.src /main/4 1996/04/23 17:36:13 drk $
 # 
 
-#  Il modello di stampa del CDE è incentrato sull'azione 'Stampare'.
+#  Il modello di stampa del CDE Ã¨ incentrato sull'azione 'Stampare'.
 #
-#  È possibile definire più azioni 'Stampare' per i diversi tipi di dati.
+#  Ãˆ possibile definire piÃ¹ azioni 'Stampare' per i diversi tipi di dati.
 #  Se non vengono specificati argomenti, viene eseguito il comando
 #  dtprintinfo per mostrare lo stato della stampante e dei lavori.
 #
-#  'dtprintinfo -populate' è uno strumento di amministrazione utilizzato per creare
+#  'dtprintinfo -populate' Ã¨ uno strumento di amministrazione utilizzato per creare
 #  azioni di stampa predefinite del tipo '<nome stampante>_Print'.
 #
-#  Quando si aggiunge un nuovo tipo di file al sistema è possibile creare
+#  Quando si aggiunge un nuovo tipo di file al sistema Ã¨ possibile creare
 #  un'azione 'Stampare' specifica, da associare automaticamente a quel tipo di
-#  file al posto di quella predefinita. La nuova azione può utilizzare 'dtlp'
-#  o basarsi sulle proprie funzionalità di stampa per acquisire gli argomenti
+#  file al posto di quella predefinita. La nuova azione puÃ² utilizzare 'dtlp'
+#  o basarsi sulle proprie funzionalitÃ  di stampa per acquisire gli argomenti
 #  specifici richiesti per l'applicazione.
 # 
 # ##########################################################################
@@ -32,7 +32,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potrà essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potrÃ  essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -49,7 +49,7 @@ DATA_ATTRIBUTES PRINTER_UNKNOWN
         ACTIONS         PrinterUnconfigured
         ICON		DtPrtun
         IS_EXECUTABLE   true
-        DESCRIPTION     Questa icona rappresenta una stampante che non è più registrata \
+        DESCRIPTION     Questa icona rappresenta una stampante che non Ã¨ piÃ¹ registrata \
                         sul desktop.
         TYPE_LABEL      PRINTER_UNKNOWN
 }
@@ -71,7 +71,7 @@ ACTION Print
 	TYPE		COMMAND
 	WINDOW_TYPE	NO_STDIO
 	EXEC_STRING     /usr/dt/bin/dtlp "%(File)Arg_1%"
-	DESCRIPTION	Questa è l'azione di stampa predefinita. Quando viene specificato \
+	DESCRIPTION	Questa Ã¨ l'azione di stampa predefinita. Quando viene specificato \
                         un file come argomento, essa raccoglie le opzioni specifiche \
                         per la stampante e quindi stampa il file. Quando viene eseguita \
                         senza argomenti, visualizza la finestra 'Lavori di stampa'.
@@ -108,7 +108,7 @@ ACTION DtPrintManager
         EXEC_STRING     /usr/dt/bin/dtprintinfo -all
 	DESCRIPTION	L'azione Gestione della stampa (DtPrintManager) consente di \
                         determinare lo stato e visualizzare i lavori di stampa di \
-			più stampanti. Consente anche di trascinare le stampanti \
+			piÃ¹ stampanti. Consente anche di trascinare le stampanti \
                         sul controllo Installazione icona dei pannelli secondari.
 }
 
@@ -146,7 +146,7 @@ ACTION Dtprintinfo
 # ###############################################################
  
 # 
-#   Se è stato specificato un file come argomento, esegue l'azione 
+#   Se Ã¨ stato specificato un file come argomento, esegue l'azione 
 #   Stampare.
 # 
 ACTION DtPrint
@@ -157,7 +157,7 @@ ACTION DtPrint
 	TYPE		COMMAND
 	WINDOW_TYPE	NO_STDIO
 	EXEC_STRING	/usr/dt/bin/dtaction Print "%(File)Arg_1%"
-	DESCRIPTION	Questa è l'azione di stampa predefinita. Quando viene specificato \
+	DESCRIPTION	Questa Ã¨ l'azione di stampa predefinita. Quando viene specificato \
                         un file come argomento, essa raccoglie le opzioni specifiche \
                         per la stampante e quindi stampa il file. Quando viene eseguita \
                         senza argomenti, visualizza la finestra 'Lavori di stampa'.
@@ -188,7 +188,7 @@ ACTION PrinterUnconfigured
 	LABEL		Stampante non configurata
 	TYPE		COMMAND
 	WINDOW_TYPE	NO_STDIO
-        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Questo controllo della stampante non è configurato. \\nPer configurarlo, \
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Questo controllo della stampante non Ã¨ configurato. \\nPer configurarlo, \
 premere 'Aiuto' e seguire \\nle istruzioni."                         "Stampante non configurata"                         "OK"                         "HELP"
 
 
@@ -196,14 +196,14 @@ premere 'Aiuto' e seguire \\nle istruzioni."                         "Stampante 
 
 	DESCRIPTION	L'azione Stampante non configurata visualizza \
                         un riquadro di dialogo indicante \
-                        che la stampante non è ancora stata configurata.
+                        che la stampante non Ã¨ ancora stata configurata.
 }
 
 ACTION Printer_Trash
 {
         TYPE            COMMAND
         WINDOW_TYPE     NO_STDIO
-        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Non è possibile cancellare una stampante dal sistema \\n\
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Non Ã¨ possibile cancellare una stampante dal sistema \\n\
                         spostandola nel cestino. Per informazioni sulla \\n\
                         procedura da seguire, consultare la documentazione \\n\
                         sull'amministrazione del sistema."                         "Trasferimento di una stampante nel cestino"                         "OK"
@@ -211,7 +211,7 @@ ACTION Printer_Trash
 
 
         DESCRIPTION     Il trasferimento di una stampante nel cestino genera un messaggio \
-                        indicante che la stampante non verrà cancellata \
+                        indicante che la stampante non verrÃ  cancellata \
                         dal sistema.
 }
 # ######################## EOF ############################################

@@ -1,0 +1,116 @@
+# ##########################################################################
+# 
+#      dtpad.dt
+# 
+#      Actions used with the DT Text Editor (dtpad)
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dtpad.dt.src /main/4 1996/04/23 17:35:35 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# MONITIO: Probabiliter hoc scapus contundus erit dum  
+#     institutione proxima mensae CDE. Oportet facere mutationes
+#     systemae in scapo receptaculi datorum 
+#     aequabili in indice /etc/dt/types.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# Attributs datorum
+# 
+# ##################################################################
+DATA_ATTRIBUTES TEXTFILE
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.txt
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      text
+        MEDIA           C_STRING
+        DESCRIPTION     Ce fichier contient du texte normal. Son type \
+                        de données est TEXTFILE suffixus ejus, .txt.
+        TYPE_LABEL      TEXTFILE
+}
+DATA_CRITERIA TEXTFILE1
+{
+        DATA_ATTRIBUTES_NAME TEXTFILE
+        MODE            f&!x
+        NAME_PATTERN    *.txt
+}
+# ##################################################################
+# 
+#  MONITIO
+#
+# dtmail uti rationem DATA_CRITERIA sequentem ad inveniendum
+# rationem systemae TEXTFILE DATA_ATTRIBUTE. Si 
+# mutas vel tolles illam, probabiliter dtmail 
+# proponet vitiose epistulas.
+# 
+# ##################################################################
+DATA_CRITERIA TEXTFILE2
+{
+        DATA_ATTRIBUTES_NAME TEXTFILE
+        MODE            f&!x
+        NAME_PATTERN    text
+}
+ACTION Print
+{
+        LABEL           Exscribere
+        ARG_TYPE        TEXTFILE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# ##########################################################################
+# ##########################################################################
+# 
+# Actiones
+# 
+# ##########################################################################
+# ####################
+# 
+# Actiones exscribendas
+# 
+# ####################
+# 
+# Actio PRINT_DTPAD similis actione "Exscribere" est, sed
+# tollet scapum temporarum exscriptum. Programma dtpad uti
+# eam. 
+# 
+# ####################
+ACTION PRINT_DTPAD_TEMPFILE
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING 	/usr/dt/bin/dtlp -u "%(String)Arg_2%" -e "%(File)Arg_1%"
+}
+
+# #####################
+# 
+# Actiones redigendas
+# 
+# #####################
+ACTION Dtpad
+{
+	LABEL		Texti Editorium
+        ICON            Dtpenpd
+	TYPE		MAP
+	MAP_ACTION	DtTTMediaOpen
+	DESCRIPTION	Actio Texti editorium (Dtpad) permittit \
+                        aperire scapum indicatum in fenestra \
+                        Texti editorii Mensae.
+}
+
+# ######################## EOF ############################################

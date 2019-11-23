@@ -1,0 +1,215 @@
+# ##########################################################################
+# 
+#      print.dt
+# 
+#      Action and DataType Definitions for the printing
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: print.dt.src /main/4 1996/04/23 17:36:13 drk $
+# 
+
+#  Skrivarmodellen för CDE fokuseras på funktionen 'SkrivUt'.
+#
+#  Du kan definiera en utskriftsfunktion per datatyp.
+#  Om utskriftsfunktionen inte har några argument körs kommandot
+#  dtprintinfo för att hämta information om skrivar- och jobbstatus.
+#
+#  'dtprintinfo' är ett administrativt verktyg som används för att skapa
+#  funktioner i formatet '<skrivarnamn>_Print'. 
+#
+#  När en ny filtyp läggs till i systemet kan det hända att en filtypsspecifik
+#  utskriftsfunktion skapas, som funktionsmotorn använder automatiskt
+#  i stället för standardfunktionen. Denna nya funktion kan använda
+#  'dtlp' eller utnyttja sina egna utskriftsmöjligheter för att samla
+#   programspecifika argument.
+# 
+# ##########################################################################
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# Dataattribut
+# 
+# ##################################################################
+DATA_ATTRIBUTES PRINTER_UNKNOWN
+{
+        ACTIONS         PrinterUnconfigured
+        ICON		DtPrtun
+        IS_EXECUTABLE   true
+        DESCRIPTION     Denna ikon motsvarar en skrivare som inte längre finns \
+                        registrerad på skrivbordet.
+        TYPE_LABEL      PRINTER_UNKNOWN
+}
+DATA_CRITERIA PRINTER_UNKNOWN1
+{
+	DATA_ATTRIBUTES_NAME PRINTER_UNKNOWN
+	MODE		f&x
+        NAME_PATTERN    *_Print
+}
+
+# 
+# Standardutskriftsfunktionen som körs för generiska ARG_TYPEr, dvs
+# för filer som inte har andra definierade utskriftsfunktioner.
+# 
+ACTION Print
+{
+	LABEL		SkrivUt
+	ARG_TYPE	*
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp "%(File)Arg_1%"
+	DESCRIPTION	Detta är standardutskriftsfunktionen. När den körs \
+                        med ett filargument samlar den skrivarspecifika \
+                        inställningar och skriver sedan ut filen. När den körs \
+                        utan argument visas fönstret  'Utskrift'.
+}
+ACTION PrintRaw
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp -w "%(File)Arg_1%"
+}
+
+# 
+#   Om det inte finns några filargument bör du anropa funktionen Dtprintinfo.
+# 
+ACTION Print
+{
+	LABEL			SkrivUt
+	ARG_COUNT		0
+	TYPE			MAP
+	MAP_ACTION		Dtprintinfo
+}
+
+# 
+#   Funktionen Utskriftshanterare (DtPrintManager) kör
+#  kommandot 'dtprintinfo -all'.
+# 
+ACTION DtPrintManager
+{
+	LABEL		Utskriftshanterare
+        ICON            FpPrtmg
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -all
+	DESCRIPTION	Funktionen Utskriftshanterare (DtPrintManager) gör att du \
+                        bestämma status för och se utskriftsjobb på \
+			flera skrivare. Den gör också att du kan dra \
+                        skrivare till Installera ikon i underpaneler.
+}
+
+# 
+#   Utskriftsfunktionen (Dtprintinfo) anropar kommandot 'dtprintinfo'
+#   eller kommandot 'dtprintinfo -p printer'.
+# 
+ACTION Dtprintinfo
+{
+	LABEL		Utskrift
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -p "%(String)Arg_1%"
+	DESCRIPTION	Funktionen Utskrift (Dtprintinfo) gör det möjligt att \
+                        avgöra och visa skrivar- och jobbstatus.
+}
+
+ACTION Dtprintinfo
+{
+	LABEL		Utskrift
+	ARG_COUNT	0
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo
+	DESCRIPTION	Funktionen Utskrift (Dtprintinfo) gör det möjligt att \
+                        avgöra och visa skrivar- och jobbstatus.
+}
+
+# ###############################################################
+#  
+#   Funktioner för standardskrivaren
+#  
+# ###############################################################
+ 
+# 
+#   Om det finns ett filargument bör du anropa funktionen SkrivUt.
+# 
+ACTION DtPrint
+{
+	LABEL		Standardskrivare
+	ARG_TYPE	*
+        ICON		Fpprnt
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtaction Print "%(File)Arg_1%"
+	DESCRIPTION	Detta är standardutskriftsfunktionen. När den körs \
+                        med ett filargument samlar den skrivarspecifika \
+                        inställningar och skriver sedan ut filen. När den körs \
+                        utan argument visas fönstret  'Utskrift'.
+}
+
+# 
+#   Om det inte finns några filargument bör du anropa funktionen Dtprintinfo.
+# 
+ACTION DtPrint
+{
+	LABEL		Standardskrivare
+	ARG_COUNT	0
+        ICON		Fpprnt
+	TYPE		MAP
+	MAP_ACTION	Dtprintinfo
+	DESCRIPTION	Funktionen Utskrift (Dtprintinfo) gör det möjligt att \
+                        avgöra och visa skrivar- och jobbstatus.
+}
+
+
+# 
+#   Här finns funktioner och dataattribut eller okända och 
+#   okonfigurerade skrivarobjekt.
+# 
+ACTION PrinterUnconfigured
+{
+	LABEL		OkonfigureradSkrivare
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Denna skrivarinställning har inte konfigurerats.\\nDu konfigurerar den \
+              genom att välja 'Hjälp' och sedan \\nfölja instruktionerna."                         "Okonfigurerad skrivare"                         "OK"                         "HELP"
+
+
+
+
+	DESCRIPTION	Funktionen OkonfigureradSkrivare visar \
+                        en dialogruta som anger att skrivaren inte har \
+                        konfigurerats.
+}
+
+ACTION Printer_Trash
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "Du tar inte bort en skrivare från systemet\\n\
+                        genom att lägga den i papperskorgen.\\n\
+                        I dokumentationen för systemadministratören\\n\
+                        kan du läsa om hur du gör det."                         "Ta bort skrivare"                         "OK"
+
+
+
+        DESCRIPTION     Funktionen Printer_Trash visar en \
+                        dialogruta som talar om att det inte går att ta\
+                        bort skrivaren från systemet genom att lägga den i\
+                        papperskorgen.
+}
+# ######################## EOF ############################################

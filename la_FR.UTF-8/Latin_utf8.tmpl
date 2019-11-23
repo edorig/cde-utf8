@@ -1,0 +1,36 @@
+XCOMM $XConsortium: Latin.tmpl /main/1 2018/04/01 09:41:35 insanus $
+/*
+ * This file is a template for setting the platform-specific LANG 
+ * variable for the Latin locale.
+ */
+
+SOURCE_LANG=la_FR.UTF-8
+
+#ifdef AlphaArchitecture
+LANG=la_FR.UTF-8
+#endif
+
+#ifdef RsArchitecture
+SHELL=/bin/ksh
+LANG=la_FR
+#endif
+
+#ifdef SunArchitecture
+LANG=la
+#endif
+
+#ifdef HPArchitecture
+LANG=la_FR.utf8
+#endif
+
+#ifdef USLArchitecture
+LANG=la
+#endif
+
+#ifdef UXPArchitecture
+LANG=la
+#endif
+
+#if defined(LinuxArchitecture) || defined(BSDArchitecture)
+LANG=la_FR.UTF-8
+#endif

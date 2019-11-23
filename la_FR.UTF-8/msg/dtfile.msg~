@@ -1,0 +1,2167 @@
+$ "$TOG: dtfile.msg /main/11 1999/09/16 09:44:10 mgreess $"  
+$ *************************************<+>*************************************  
+$ *****************************************************************************  
+$ **  
+$ **  File:        dtfile.msg  
+$ **  
+$ **  Project:     Common Desktop Environment dtfile  
+$ **  
+$ **  Description:  
+$ **  -----------  
+$ **  This file is the source for the message catalog for dtfile  
+$ **  Any additional messages are to be added to this file by hand,  
+$ **  and the associated index number placed in the code.  
+$ **  
+$ *****************************************************************************  
+$ **  
+$ **     (c) Copyright 1990, 1991, 1992 Hewlett-Packard Company  
+$ **     All Rights reserved  
+$ **  
+$ **  
+$ *****************************************************************************  
+$ *************************************<+>*************************************  
+$ *************************************<L>*************************************  
+$ **  -----------------GENERAL LOCALIZATION NOTES SECTION---------------------  
+$ * Comment lines begin with a $ except $set which indicates the start of a  
+$ * new set.  
+$ *  
+$ * Do not delete any comments; you may add comments for your use.  
+$ *  
+$ **  ----------------GENERAL LOCALIZATION NOTES SECTION END------------------  
+$ *************************************<L>*************************************  
+$ *****************************************************************************  
+$   
+$ ***** NOTE FOR MESSAGE CATALOG TRANSLATORS *****  
+$   
+$ There may be three types of messages in this file:  
+$   
+$ 1. Messages that appear in dialogs or are displayed to the user.  
+$   
+$     These messages are the default and they should ALL BE LOCALIZED.  
+$     Note that these messages do NOT have any identification (see the  
+$     comments for type 2 and 3 below).  
+$   
+$ 2. Messages that only appear in the DT error log file ($HOME?.dt/errorlog).  
+$   
+$     The localization of these messages is OPTIONAL.  These messages are  
+$     identified by the following:  
+$   
+$     MESSAGES xx-yy WILL ONLY APPEAR IN THE DT ERRORLOG FILE  
+$   
+$ 3. Messages that should not be localized.  
+$   
+$     These messages are identified by the following:  
+$   
+$     DO NOT TRANSLATE or CHANGE or LOCALIZE MESSAGES xx-yy  
+$   
+$ ***** END (NOTE FOR MESSAGE CATALOG TRANSLATORS) *****  
+$   
+$ ********** PROLOGUE ****************  
+$  Date    Name               Note  
+$ ======== =================  ===============================================  
+$ 03/25/93 H. Amro            removed the guilty $ from message 30  
+$   
+$   
+$   
+$ *****************************************************************************  
+$quote "
+
+$set 2
+$ ****** Module: ChangeDir.c ****(developer comment only)********  
+$ Messages 3 and 10 are titles for the Change Folder dialog, Message 3 is  
+$   used when the user has specified a title for dtfile windows  
+$ Messages 2 and 4 are labels for the Change Folder dialog  
+$ Message 1 is the title for Change Folder errors  
+$ Messages 7, 8, 9, 11, and 12 are Change Folder error messages  
+
+1 "Error mutationis indicis"
+
+2 "Index novus:"
+
+3 "Mutare indicem"
+
+4 "Hospes:"
+
+7 "nomen indicis sequens non licet:\n\n\
+%s:%s"
+
+8 "Ire in hoc indicem non licet. Solum aspicere\n\
+indicem sub indico vertens\n\
+licet. Indicare itinerem\n\
+ absolutum ad novum indicem non licet."
+
+9 "Hoc conspectus modum circumscriptum habet. Ire in indicem specificatus\n\
+non potes quod id in itinere\n\
+ infra indicem circumscriptum non est.\n"
+
+10 "Mutatio indicis"
+
+11 "Impetrare novum nominem indicis non potest."
+
+12 "Induce nominem indicis, quaeso."
+
+13 "Ire ad errorem"
+
+14 "Index destinationis:"
+
+15 "Ire ad"
+
+16 "Nomen systemae:"
+
+17 "Rector scaporum - Ire"
+
+18 "Nomen indicis destinationis  deest.\n\
+   Induce nomen indicis aut selige indicem in indice."
+
+19 "Nomen indicis sequens vitiosus est.\n\n\
+%s"
+
+20 "Ire in indicem\n\n\
+%s non potest\n\n\
+Index circumscriptum est quod tibi videre\n\
+non licet."
+
+$set 3        Redefine set#
+
+$ ****** Module: ChangeDirP.c ****(developer comment only)********  
+$ Messages 2-6 are labels for the folder Status Line  
+$ Message 3 is required for SUN systems  
+$ Message 2-9 are obsolete  
+
+2 "%d Scapi %d Abditi"
+
+3 "%1$d Scapi %2$d Abditi"
+
+4 "%3d Scapi ..."
+
+5 "Lectio in effectu ..."
+
+6 "%d Abditus(i)"
+
+7 "%d Res %d Offactae"
+
+8 "%1$d Res %2$d Offactae"
+
+9 "%3d Res ..."
+
+10 "%d Res"
+
+11 "%d Res..."
+
+12 "%d Res %d Offacta(e)"
+
+$set 4        Redefine set#
+
+
+$set 5        Redefine set#
+
+
+$set 6        Redefine set#
+
+
+$set 7        Redefine set#
+
+
+$set 8        Redefine set#
+
+
+$set 9        Redefine set#
+
+$ ****** Module: File.c ****(developer comment only)********  
+$ Messages 6 and 7 are the title and text for an action error message  
+$ Messages 8 and 9 are rename error messages  
+$ Messages 11-19 are the title and text for warning messages displayed  
+$   when an object/set of objects is moved/copied/linked to a folder  
+$   containing object(s) with the same name  
+
+6 "Error actionis"
+
+7 "Nihil actio definita ut %s.\n"
+
+8 "Jam scapus cum hoc nomine in spatio negotio adest.\n\
+ Elege nominem alterum."
+
+9 "Scapus cum hoc nomine jam exstat.\n\
+Elege nominem alterum."
+
+11 "Movere/Copiare/Vincire - Monitio"
+$ Messages 12-15 deal with multiple files/folders  
+
+12 "Scapi vel indices\n\
+sequentes jam exstant in\n\
+%s:"
+
+13 "\n\
+Si copiam faces, hi scapi delebuntur.\n\
+          Visne continuare ?\n"
+
+14 "\n\
+Si motionem faces, hi scapi delebuntur.\n\
+          Visne continuare ?\n"
+
+15 "\n\
+Si vinculum faces, hi scapi delebubtur.\n\
+          Visne continuare ?\n"
+$ Messages 16&17 deal with a single file/folder  
+
+16 "Res vocata \n\
+%s \n\
+jam exstat in indice\n\
+%s"
+
+17 "Index vocatus\n\
+%s\n\
+jam exstat in indice\n\
+%s"
+$ Labels in rename/replace and merge/replace dialogs  
+
+20 "Quod facere mavis ?"
+
+21 "Substituere rem exstantem"
+
+22 "Vocare rem exstantem :"
+
+24 "Miscere quod in duobus indice est"
+
+25 "Susbstituere indicem exstantem"
+
+27 "Ita"
+
+28 "Relinquere"
+
+29 "Adjumentum"
+
+30 " Motio"
+
+31 "Relinquere copia"
+
+32 "Relinquere vinculum"
+$ Window title for overwrite dialogs  
+
+33 "Rector scaporum - Monitio movere/Copiare/Vincire"
+
+34 "Rector scaporum - Monitio movere"
+
+35 "Rector scaporum - Monitio copiare"
+
+36 "Rector scaporum - Monitio vincere"
+
+37 "Vocare rem - Error"
+
+38 "%s\n\
+jam adest: Elige nominem ceterum."
+
+39 "%s\n\
+vocare \n\
+%s\n\
+%s non potest"
+
+40 "Substituere rem - Error"
+
+$ 41 OBS- "L'icône de ce type de données est déjà affichée."
+
+51 "copia in effectu"
+
+52 "motio in effectu"
+
+53 "vinculum in effectu"
+
+54 "mutatio in effectu"
+
+56 "Substituere res exstantes"
+
+57 "Vocare res extantem addendo numerum"
+
+58 "Copia facta"
+
+59 "Motio facta"
+
+60 "Vinculum factum"
+
+61 "Mutatio facta"
+
+68 "1 res %s."
+
+69 "%d res %s."
+
+70 "%s\n\
+%d res habut eadem nomines  rerum indicis\n\
+%s"
+
+71 "%s\n\
+1 rem habet idem nominem rei indicis\n\
+%s"
+
+72 "Copiare"
+
+73 "Movere"
+
+74 "Vincire"
+
+75 "Opus"
+
+76 "Copiare"
+
+77 "Movere"
+
+78 "Vincire"
+
+79 "Opus"
+
+80 "%s rescissus - Index %s non erat.\n\n\
+Indicem substituendum tollere non potui nam rem \n\
+in hoc indico tollere non potest.\n\
+Quaedam res in hoc indico forsitan sublatae sunt \n\
+antequam opus %s obstaretur."
+
+81 "%s\n\n\
+Probabiliter licentiam scribendi in re \n\
+quem movere non potui non habes.\n\
+Muta licentias tuas vel voca manuu indicem cui\n\
+operem %s facenda est."
+
+82 "%s rescissus\n\n\
+%s\n\
+tollere non potest.\n\n\
+Probabiliter licentiam scribendi in hoc scapo non habes.\n\
+Muta licentias tuas vel voca\n\
+manuu scapum cui operem\n\
+%s facenda est."
+
+83 "%s rescissus - Nihil res operem %s protulerunt.\n\n\
+ Sequens rem vocare automate non potest\n\
+%s\n\n\
+%d rei vocatae sunt antequam opus %s obstata est."
+
+84 "%s\n\n\
+Probabiliter licentiam scribendi in rem indicatam supra non habes.\n\
+Muta licentias tuas vel voca \n\
+manuu rem cui operem %s facenda est."
+
+85 "%s rescissus -Nihil res operem  %s protulerunt.\n\n\
+ Sequens rem vocare automate non potest\n\
+%s\n\n\
+1 rem vocata est antequam opus %s obstata est."
+
+86 "%s rescissa - Nihil res operem %s protulerunt.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Quaedam res in indice sublatae sunt\n\
+antequam opus %s obstaretur.\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi in indice\n\
+supra non habes. Muta licentias tuas aut voca manuu\n\
+indicem cui opus %s fit."
+
+87 "%s rescissus - Nihil res operem %s protulerunt.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Quaedam res in indice sublatae sunt antequam\n\
+opus %s ne obstaretur.\n\n\
+Altera res sublata est.\n\n\
+Probabiliter licentiam scribendi in indice\n\
+supra non habes. Muta licentias tuas aut voca\n\
+manuu indicem cui opus %s fit."
+
+88 "%s rescissus - Nihil res operem %s protulerunt.\n\n\
+Un fichier substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi in scapo\n\
+supra non habes. Muta licentias tuas aut voca\n\
+manuu scapum cui opus %s fit."
+
+89 "%s rescissus - Nihil res operem %s protulerunt.\n\n\
+Un fichier substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+Altera res sublata est.\n\n\
+Probabiliter licentiam scribendi in scapo\n\
+supra non habes. Muta licentias tuas aut voca\n\
+manuu scapum cui opus %s fit."
+
+90 "Bellus nominum.\n\
+  Haec res in spatio negotii est.\n\
+  Altera res nominem idem quam hoc tentas\n\
+  inducere habet.\n\
+  Selige alium nominem."
+
+91 "Retentio copiae"
+
+92 "Retentio vinculi"
+
+93 "Retentio motionis"
+
+94 "Error"
+
+95 "Motio rescissa - index movetus non est.\n\n\
+Cum unam rem in indice tollere non potuit,\n\
+ea substituta non est.\n\
+Fortasse aliquot res indicis sublatas sunt\n\
+antequam motio obstata est.\n\n\
+Probabiliter licentiam scribendi in rem\n\
+quae tollere non potuit non habes.\n\
+Muta licentias tuas vel voca manibus\n\
+indicem movendum."
+
+96 "Copia rescissa - index copiatus non est.\n\n\
+Cum unam rem in indice tollere non potuit,\n\
+ea substituta non est.\n\
+Fortasse aliquot res indicis sublatas sunt\n\
+antequam copia obstata est.\n\n\
+Probabiliter licentiam scribendi in rem\n\
+quae tollere non potuit non habes.\n\
+Muta licentias tuas vel voca manibus\n\
+indicem copiandum."
+
+97 "Vinculum rescissus - index vinctus non est.\n\n\
+Cum unam rem in indice tollere non potuit,\n\
+ea substituta non est.\n\
+Fortasse aliquot res indicis sublatas sunt\n\
+antequam vinculum obstatum est.\n\n\
+Probabiliter licentiam scribendi in rem\n\
+quae tollere non potuit non habes.\n\
+Muta licentias tuas vel voca manibus\n\
+indicem vinciendum."
+
+98 "Opus rescissum - index mutatus non est.\n\n\
+Cum unam rem in indice tollere non potuit,\n\
+ea mutata non est.\n\
+Fortasse aliquot res indicis sublatas sunt\n\
+antequam vinculum obstatum est.\n\n\
+Probabiliter licentiam scribendi in rem\n\
+quae tollere non potuit non habes.\n\
+Muta licentias tuas vel voca manibus\n\
+indicem mutandum."
+
+99 "Motio rescissa.\n\n\
+%s\n\
+tollere non potui.\n\n\
+Probabiliter licentiam scribendi in hoc scapo\n\
+non habes.\n\
+Muta licentias tuas vel voca manibus\n\
+scapum movendum."
+
+100 "Copie rescissa.\n\n\
+%s\n\
+tollere non potui.\n\n\
+Probabiliter licentiam scribendi in hoc scapo\n\
+non habes.\n\
+Muta licentias tuas vel voca manibus\n\
+scapum copiandum."
+
+101 "Vinculum rescissa.\n\n\
+%s\n\
+tollere non potui.\n\n\
+Probabiliter licentiam scribendi in hoc scapo\n\
+non habes.\n\
+Muta licentias tuas vel voca manibus\n\
+scapum vincendum."
+
+102 "opus rescissum.\n\n\
+%s\n\
+tollere non potui.\n\n\
+Probabiliter licentiam scribendi in hoc scapo\n\
+non habes.\n\
+Muta licentias tuas vel voca manibus\n\
+scapum mutandum."
+
+103 "Motio rescissa - Nihil res moveta est.\n\n\
+Rem sequentem vocare automatice non potest:\n\
+%s\n\n\
+%d res vocatae sunt antequam motio obstata est.\n\n\
+Probabiliter licentiam scribendi in haec re\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus rem movendam."
+
+104 "Copia rescissa - nihil res copiata est.\n\n\
+Rem sequentem automatice vocare non potest:\n\
+%s\n\n\
+%d res vocatae sunt antequam copia obstata est.\n\n\
+Probabiliter licentiam scribendi in re supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus rem copiandam."
+
+105 "Vinculum rescissum - aucun des objets n'a été lié.\n\n\
+Rem sequentem automatice vocare non potest:\n\
+%s\n\n\
+%d res vocatae sunt antequam vinculum obstatum est.\n\n\
+Probabiliter licentiam scribendi in re supra\n\
+non habes. Muta licentias tuas vel voca \n\
+manibus rem vinciendam."
+
+106 "opus rescissum - nulla res mutata est.\n\n\
+Rem sequentem automatice vocare non potest:\n\
+%s\n\n\
+%d res vocatae sunt antequam opus obstatum est.\n\n\
+Probabiliter  licentiam scribendi in re supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus rem mutandam."
+
+107 "Motio rescissa - nulla res moveta est.\n\n\
+Rem sequentem automatice vocare non potest:\n\
+%s\n\n\
+1 res vocata est antequam motio obstata est.\n\n\
+Probabiliter licentiam scribendi in re supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus rem movendam."
+
+108 "Copia rescissa - nulla res copiata est.\n\n\
+Rem sequentem automatice vocare non potest:\n\
+%s\n\n\
+1 res vocata est antequam copia obstata est.\n\n\
+Probabiliter licentiam scribendi\n\
+in re supra non habes. Muta licentias tuas vel voca\n\
+manibus rem copiandam."
+
+109 "Vinculum rescissa - nulla res vincta est.\n\n\
+Rem sequentem automatice vocare non potest:\n\
+%s\n\n\
+1 res vocata est antequam vinculum obstatum est.\n\n\
+Probabiliter licentiam scribendi\n\
+in re supra non habes. Muta licentias tuas vel voca\n\
+manibus rem vinciendam."
+
+110 "Opus rescissum - nulla res mutata est.\n\n\
+Rem sequentem automatice vocare non potest:\n\
+%s\n\n\
+1 res vocata est antequam procesus obstatus est.\n\n\
+Probabiliter licentiam scribendi\n\
+in re supra non habes. Muta licentias tuas vel voca\n\
+manibus l'objet mutandum."
+
+111 "Motio rescissa - nulla res moveta est.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Fortasse quaedam res in indice sublatae sunt \n\
+antequam motio obstata est.\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi\n\
+in indice supra non habes. Muta licentias tuas vel voca\n\
+manibus le dossier movendum."
+
+112 "Copie rescissa - nulla res copiata est.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Fortasse quaedam res in indice sublatae sunt\n\
+antequam copia obstata est.\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi\n\
+in indice supra non habes. Muta licentias tuas vel voca\n\
+manibus indicem copiandum."
+
+113 "Vinculum rescissum - nulla res vincta est.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Fortasse quaedam res in indice sublatae sunt\n\
+antequam vinculum obstatum est.\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi\n\
+in indice supra non habes. Muta licentias tuas vel voca\n\
+manibus indicem vinciendum."
+
+114 "opus rescissum - nulla res mutata est.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Fortasse quaedam res in indice sublatae sunt\n\
+antequam opus obstatum est.\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi\n\
+in indice supra non habes. Muta licentias tuas vel \n\
+voca manibus indicem mutandum."
+
+115 "Motio rescissa - nulla res moveta est.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Fortasse quaedam res in indice sublatae sunt\n\
+antequam motio obstata est.\n\n\
+Altera res sublata est.\n\n\
+Probabiliter licentiam scribendi\n\
+in indice supra non habes. Muta licentias tuas vel voca\n\
+manibus indicem movendum."
+
+116 "Copia rescissa - nulla res copiata est.\n\n\
+Unum indicem substituendum tollere non potest. \n\
+   Index: %s\n\n\
+Fortasse quaedam res in indice sublatae sunt\n\
+antequam copia obstata est.\n\n\
+Altera res sublata est.\n\n\
+Probabiliter licentiam scribendi\n\
+in indicem supra non habes. Muta licentias tuas vel voca\n\
+manibus indicem copiandum."
+
+117 "Vinculum rescissum - nulla res vincta est.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Fortasse quaedam res in indice sublatae sunt\n\
+antequam vinculum obstatum est.\n\n\
+Altera res sublata est.\n\n\
+Probabiliter licentiam scribendi\n\
+in indice supra non habes. Muta licentias tuas vel voca\n\
+manibus indicem vinciendum."
+
+118 "Opus rescissum - nulla res mutata est.\n\n\
+Unum indicem substituendum tollere non potest.\n\
+   Index: %s\n\n\
+Fortasse quaedam res in indice sublatae sunt\n\
+antequam vinculum obstatum est.\n\n\
+Altera res sublata est.\n\n\
+Probabiliter  licentiam scribendi in indice supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus indicem mutandum."
+
+119 "Motio rescissa - nulla res moveta est.\n\n\
+Unum scapum substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi in scapo supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus scapum movendum."
+
+120 "Copia rescissa - nulla res copiata est.\n\n\
+Unum scapum substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi in scapo supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus scapum copiandum."
+
+121 "Vinculum rescissum - nulla res vincta est.\n\n\
+Unum scapum substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter licentiam scribendi in scapo supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus scapum vinciendum."
+
+122 "Opus rescissum - nulla res mutata est.\n\n\
+Unum scapum substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+%d aliae res sublatae sunt.\n\n\
+Probabiliter  licentiam scribendi in scapo supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus le fichier mutandum."
+
+123 "Motio rescissa - nulla res moveta est.\n\n\
+Unum scapum substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+Altera res sublata est.\n\n\
+Probabiliter  licentiam scribendi in scapo supra\n\
+non habes. Muta licentias tuas vel voca\n\
+manibus le fichier movendum."
+
+124 "Copia rescissa - Nulla res copiata est.\n\n\
+Unum scapum substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+Altera res sublata est.\n\n\
+Probabiliter licentiam scribendi in scapo supra non habes.\n\
+Muta licentias tuas vel voca\n\
+manibus scapum copiandum."
+
+125 "Vinculum rescissum - Nulla rem vincta est.\n\n\
+Unum scapum substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+Altera res sublata est.\n\n\
+Probabiliter licentiam scribendi in scapo supra non habes.\n\
+Muta licentias tuas vel voca\n\
+manibus scapum vinciendum."
+
+126 "Operatio rescissa - nulla res mutata est.\n\n\
+Scapum substituendum tollere non potest.\n\
+    Scapus: %s\n\n\
+Altera res sublata est.\n\n\
+Probabiliter licentia scribendi in scapo supra non habes.\n\
+Muta licentias tuas vel voca\n\
+manibus scapum mutandum."
+
+127 "1 res moveta."
+
+128 "%d res movetae."
+
+129 "1 res copiata."
+
+130 "%d res copiatae."
+
+131 "1 res vincta."
+
+132 "%d res vinctae."
+
+133 "1 res mutata."
+
+134 "%d res mutatae."
+
+135 "Movere rem %s ad ipsam non potest."
+
+136 "Copiare rem %s ad ipsam non potest."
+
+137 "Vincire rem %s ad ipsam non potest."
+
+138 "Vocare ho(ae)c rem(s):\n\n\
+%s\n\n\
+non potest. Probabiliter\n\
+vocare haec rem(s) tibi non licet."
+
+139 "Substituere rem(s) sequen(te)s non potest:\n\n\
+%s\n\n\
+Probabiliter tibi substituere \n\
+hanc(s) rem(s) non licet."
+140 "Vocare rem novam : "
+141 "Vocare res novas addendi numerum: "
+
+$set 10        Redefine set#
+
+$ ****** Module: FileDialog.c ****(developer comment only)********  
+$ Messages 1, 2, 20, and 21 are titles for error dialogs  
+$ Message 3 is an error message for dialogs requiring new file names  
+$ Messages 5 and 27 are titles for the Copy File dialog, Message 5 is used  
+$   when the user has specified a title for dtfile windows  
+$ Messages 6-9 are labels for the File Copy, New Dir, and New File dialogs  
+$ Messages 10-13 and 25 are error messages for the file copy operation  
+$ Messages 14 and 28 are titles for the New Folder dialog, Message 14 is  
+$   used when the user has specified a title for dtfile windows  
+$ Message 16 is a label for the New Folder dialog  
+$ Messages 22-24 are error messages for the New File/Folder operations  
+$ Messages 26 and 29 are titles for the New File dialog, Message 26 is used  
+$   when the user has specified a title for dtfile windows  
+$ Messages 30 and 31 are titles for the Move File dialog, Message 30 is used  
+$   when the user has specified a title for dtfile windows  
+$ Messages 32 and 33 are titles for the Link File dialog, Message 32 is used  
+$   when the user has specified a title for dtfile windows  
+
+1 "Error vocandi scapum"
+
+2 "Error copiae scapi"
+
+3 "Spatium in nomine scapi vel indicis non licet."
+
+5 "Copiare scapus"
+
+6 "Nomine scapi vertens:"
+
+7 "Novus nomine scapi:"
+
+8 "Genus scapi"
+
+9 "Aspicere Genum scapi"
+
+10 "Scapum selectum ab initio deest."
+
+11 "Inducere spatii in nomine scapi vel indicis non licet."
+
+13 "Nomen scapi vel indicis non licet."
+
+14 "Novus index"
+
+16 "Nomine indicis novi:"
+
+20 "Error creandi indicem"
+
+21 "Error creandi scapum"
+
+22 "Creare scapum vel indicem sine nomine non potest."
+
+23 "Indicis nomen non licet."
+
+24 "Scapi nomen non licet."
+
+25 "Utere mandatum Copiare ad copiandum\n\
+scapum in spatium negotii non licet. Debes utere\n\
+mandatum Proponere in spatium negotii indicis Scapus,\n\
+aut ponere scapum in spatium negotii."
+
+26 "Novus scapus"
+
+27 "Rector scaporum - Copiare scapum"
+
+28 "Rector scaporum - Novus index"
+
+29 "Rector scaporum - Novus scapus"
+
+30 "Scapum movere"
+
+31 "Rector scaporum - Movere scapum"
+
+32 "Vincire scapum"
+
+33 "Rector scaporum - Vincire scapos"
+
+34 "Index destinationis: "
+
+35 "Nomen rei:"
+
+36 "Proponere iconem"
+
+37 "Res selecta:"
+
+38 "Nomen copiae:"
+
+39 "Error mutationis nominis"
+
+40 "Haec res actionem est.\n\
+   Vocare iconem actionis directe non potest."
+
+41 "Icon recta generis datorum jam proposita est."
+
+42 "Movere rem"
+
+43 "Rector scaporum - Movere rem"
+
+44 "Copiare rem"
+
+45 "Rector scaporum - Copiare rem"
+
+46 "Vincire rem"
+
+47 "Rector scaporum - Vincire rem"
+
+48 "Novus nomen rei:"
+
+$set 11        Redefine set#
+
+$ ****** Module: FileManip.c ****(developer comment only)********  
+$ Message 6 is the title for an error dialog  
+$ Messages 9, 14, 16, 28, and 30-36 are file manipulation error messages  
+
+6 "Error operis scapi"
+
+9 "Emovere scapum ab canistrum\n\
+ ad spatium negotii non licet."
+
+14 "Invenire locum indicis non potest."
+
+16 "Copiare index ad ipsem non potest.\n\
+%s"
+
+28 "%s invenire non potest."
+
+$ 29 OBS- "Afficher également (facultatif):"
+$ la phrase était pour pouvoir déplacer...  
+30 "Movere vel vocare indicem %s non potest.\n\
+Debes claudere omnes indices vel sub-indices \n\
+propositos ad vocandum vel movendum id indicem."
+
+31 "Error legendo %s."
+
+32 "Vocare %s non potest."
+
+33 "Aperire %s non potest."
+
+34 "Movere %s non licet. Potes\n\
+tamen copiare scapum, id labi faciendo \n\
+dum clavem Ctrl figes."
+
+35 "Copiare index ad ipsem non potest."
+
+36 "Creare processum filium non potest."
+
+37 "Ponere scapos canistri supra \n\
+spatium negotii non potest.\n\
+Ad emovendum rem ab canistro,\n\
+   -Selige hanc rem et\n\
+   -Selige actionem 'Redéposer'\n\
+in indicem scapi vel in indicem contextuel rei.\n\
+Deinde potes fac labi rem extra Rectorem scaporum\n\
+et ponere eam supra ima spatii negotii."
+
+38 "Licentias movendi %s non habet.\n\
+Sed copiare hanc rem potes.\n\
+Ad copiandum rem:\n\
+  - Retine clavem <Ctrl> fixa et\n\
+  - fac labi rem cum globulo.\n\
+Ou\n\
+  - uti 'Copiare ad' in indicem 'Selectus' asseris indicum."
+
+39 "Creare processum filium non potest.\n\
+   Numero maximum processuum ordinatri est atteint.\n\
+   Obsta quoddam processus vel programmas in effectu deinde\n\
+   iterum incipe hanc functionem."
+
+40 "Les objets source et destination sont les mêmes.\n\
+%s"
+
+41 "Index \n\
+%s\n\
+deest."
+
+42 "Spatium deest\n\
+   in disce destinationis copiae."
+
+43 "Spatium deest\n\
+   in disce destinationis motionis."
+
+44 "Nullus opus motionis incipit \n\
+   rei %s. Movere rem in indicem jam adest\n\
+   non licet. Debes inducere destinationem alteram (nominem indicis)\n\
+   antequam movere hanc rem potes."
+
+45 "Nullus opus motionis incipit\n\
+   rei %s. Debes mutare indicem destionationis aut nominem copiae\n\
+   antequam copia creatur."
+
+46 "Nullus opus vinculi incipit rei %s.\n\
+   Debes mutare indicem destionationis aut nominem copiae\n\
+   antequam viculum creatur."
+
+47 "Movere indicem in ipsum non potest."
+
+48 "Copiare sequentes res in indice \"%s\":\n\n\
+%s non potest\n\n\
+Probabiliter licentiam scribendi in \n\
+indico destinationis non habes."
+
+49 "Copiare sequentes res in indice \"%s\":\n\n\
+%s non potest\n\n\
+Probabiliter licentiam scribendi in\n\
+indice destinationis non habes."
+
+50 "Copiare haec res in indice \"%s\":\n\n\
+%s non potest\n\n\
+Probabiliter tibi movere rem fons\n\
+non licet."
+$        
+$ Messages 51 - 56 are new since CDE/SI.          
+$        
+
+51 "Copiare scapum vel indicem non potest,\n\
+sous peine de dépasser le quota disci destinationis\n\
+copiae."
+
+52 "Movere scapum vel indicem non potest,\n\
+sous peine de dépasser le quota disci destinationis\n\
+motionis."
+
+53 "Copia scapi aut indicis offendit\n\
+causa erroris internae\n\
+sequentis:"
+
+54 "Copia scapi aut indicis offendit\n\
+causa erroris internae\n\
+sequentis:"
+
+55 "Voce machinatorem systemae."
+
+56 "(Ignotus(es)):"
+
+$quote
+
+57 Moveres scapum %s \n\
+tibi non licet\n\
+licentia scribendi obstringens est.
+
+58 Process Create Error
+59 Cannot create a child process to delete the dropped files.
+
+$set 12        Redefine set#
+
+$ ****** Module: FileMgr.c ****(developer comment only)********  
+$ Message 3 is a dialog title  
+$ Messages 4-6 are movement warning or error messages  
+$ Message 7 is the title for the folder popup menus  
+
+$quote "
+3 "Movere scapum/os"
+
+4 "Res %s in indice %s est.\n\
+Jussis movere eam in indicem %s.\n\
+Confirmasne operem ?"
+
+5 "Res %1$s in indice %2$s est.\n\
+Jussis movere eam in indicem %3$s.\n\
+Confirmasne operem ?"
+
+6 "Aliquis scapus movendum ad %s in eisdem\n\
+indice quam ceteri non est.\n\
+Confirmasne operem ?"
+
+7 "Rector scaporum"
+
+18 "Index %s vacuo est."
+
+19 "Index %s non continet sub-indices."
+
+$set 13        Redefine set#
+
+$ ****** Module: Filter.c ****(developer comment only)********  
+$ Messages 11 and 21-22 are button labels for the Modify Filter List dialog  
+$ Messages 19 and 24 are titles for the Link File dialog, Message 19 is used  
+$   when the user has specified a title for dtfile windows  
+$ Message 23 is a text field label for the Modify Filter List dialog  
+$ Message 25 is a label for the Modify Filter List dialog  
+
+11 "Absentem Aliquis"
+
+19 "Definire optiones percolationis"
+
+21 "seligere totum"
+
+22 "Selectionem rescindere"
+
+23 "Verbum percolationis (liber):"
+
+24 "Rector scaporum - Definitio optionium percolationis"
+
+25 "Seligere generum scaporum abdendi:"
+
+26 "Officere quoque (liber):"
+
+27 "Propositus"
+
+28 "Offactus"
+
+29 "Proponere quoque (liber):"
+
+30 "Selige generem datorum officendi."
+
+31 "Selige generem datorum ad:"
+
+$set 14        Redefine set#
+
+
+$set 15        Redefine set#
+
+$ ****** Module: Find.c ****(developer comment only)********  
+$ Message 1 is the title for an error dialog  
+$ Messages 14 and 15 are button labels for the Find Files dialog  
+$ Messages 23, 26, and 27 are Find Files error messages  
+$ Messages 29 and 41 are titles for the Find Files dialog, Message 29 is used  
+$   when the user has specified a title for dtfile windows  
+$ Messages 30-40 and 42 are labels for the Find Files dialog  
+
+1 "Error quaerando scapum"
+
+14 "Incipere"
+
+15 "Obstare"
+
+$ 18 OBS- "Le dossier %s est vide."
+
+$ 19 OBS- "Le dossier %s ne contient pas de sous-répertoire."
+
+23 "Datas investigationis mendosas.\n\n\
+Debes indicare indicem investigationis."
+
+26 "Datas investigationis mendosas.\n\n\
+Scapus selectus jam deest."
+
+27 "Nihil scapus datae investigationis congruit."
+
+29 "Quaerere scapi vel indices"
+
+30 "Comple una vel plures zonas indicans scapos quarerendos:"
+
+31 "Nomen scapi aut indicis:"
+
+32 "Quod inest:"
+$ Messages 33-35 are used on hpux systems  
+
+33 "Ita"
+
+34 "Minime"
+
+35 "Segui vinculos:"
+
+36 "Aperire in fenestra nova"
+
+37 "Proponere in spatio negotii"
+
+38 "Scapi inveniti (per quod inest):"
+
+39 "Scapi inveniti (per nominem et quod inest):"
+
+40 "Scapi inveniti (per nominem):"
+
+41 "Rector scaporum - Quarere scapos vel indices"
+
+42 "Index investigationis:"
+
+43 "Error investigationis"
+
+44 "Nomen indicis investigationis deest.\n\
+Induce nominem indicis ab quo investigationem incipere debet."
+
+45 "Scapus selectus jam non exstat.\n\n\
+Usor scapum tollit post fine processus investigationis."
+
+46 "Quaerere"
+
+47 "Implet unam vel plures zonas ad indicandum res quaeredae:"
+
+48 "Aperire indicem"
+
+49 "Rector scaporum - Quaerere"
+
+50 "Nomen indicis investigationis vel res invenienda in indice deest.\n\
+Induce nominem indicis ab quo investigationem incipere debet\n\
+ vel induce verbum inveniendum."
+
+$set 16        Redefine set#
+
+
+$set 17        Redefine set#
+
+
+$set 18        Redefine set#
+
+$ ****** Module: Main.c ****(developer comment only)********  
+$ Message 1 is a blank line  
+$ Messages 2, 6, 17-21 and 27-28 are error messages which will ONLY APPEAR  
+$   in the DT ERRORLOG FILE  
+$ above no longer true for message 2 - it will be displayed.
+$ Messages 16 and 32 are titles for the Save Settings dialog, Message 16 is  
+$   used when the user has specified a title for dtfile windows  
+$ Message 22 is the title for an error dialog  
+$ Messages 25 and 26 are usage strings  
+$ Messages 29 and 30 are text for the Save Settings dialog  
+$ Messages 34 and 35 are drag/drop error messages  
+$ DO NOT TRANSLATE or CHANGE or LOCALIZE MESSAGE 1  
+
+1 ""
+$ MESSAGE 2 WILL ONLY APPEAR IN THE DT ERRORLOG FILE  
+
+2 "Impossible de créer le dossier ou les sous-dossiers .dt."
+$ MESSAGE 6 WILL ONLY APPEAR IN THE DT ERRORLOG FILE, and stderr  
+
+6 "Error in X Toolkit... Exitus.\n"
+
+16 "Perscribere ut optiones absentem aliquid"
+$ MESSSAGES 17-21 WILL ONLY APPEAR IN THE DT ERRORLOG FILE  
+
+17 "Impossible de créer un fichier dans lequel stocker les options par défaut"
+
+18 "Aperire scapum sessionis non potest."
+
+19 "La spécification de dossier\n\
+%s ne correspond pas à un dossier."
+
+20 "La spécification de dossier\n\
+%s n'existe pas."
+
+21 "Spécification de dossier %s:%s non valide."
+
+22 "Error motionis"
+
+23 "\n\
+Syntaxis: %s...\n\n\
+   -noview\n\n\
+\tDtfile pulsus modo ministerio. \n\n\
+   -session nomen_scapi\n\n\
+\tDtfile pulsus cum scapo sessionis indicato in\n\
+\tparametro nomen_scapi.\n\n\
+   -folder index[,index,index]\n\
+   -dir index[,index,index]\n\n\
+\tDtfile proponit finestras pro omnibus indicibus indicatibus in\n\
+\tle parametro Index\n\
+\tVous pouvez indiquer une liste de noms de dossiers séparés\n\
+\tpar des espaces, in forma 'iter'.\n\n\
+   -title Titulus\n\n\
+\tDtfile utetur verbum indicatum ut titulo\n\
+\tfenestrarum.\n\n\
+   -help_volume volumen adjumenti\n\n\
+\tDtfile utetur voluminem adjumenti indicatum.\n\n\
+   -restricted\n\n\
+\tDtfile non proponet indices supra indico circumscripto\n\
+\ (hoc indicatur  ab optione -dir). Si eam optione specificata \n\
+\t non est, index circumsciptus indicem vertentem usoris\n\
+\t est.\n\n\
+   -grid on/off\n\n\
+\ton     = Scapi proponentur in reticulo.\n\
+\toff    = Scapi proponentur sine ordine.\n\n\
+   -tree on/off\n\n\
+\ton     = Scapi proponentur in indice soluo.\n"
+
+24 "\toff    = Scapi propoentur in modo arboris.\n\n\
+   -tree_files /never/always/choose\n\n\
+\tnever  = Duo statuum modi arboris sunt: extentus per partes\n\
+\taut minutus.\n\
+\talways = Duo statuum modi arboris sunt: extentus aut minutus.\n\
+\tchoose = Tres statuum modi arboris sunt: extentus per partes,\n\
+\textentus aut minutus.\n\n\
+   -order alphabetical/file_type/date/size\n\n\
+\tScapi proponentur in ordine indicato: per litterae,\n\
+\tgenere, die aut dimensione.\n\n\
+   -view no_icon/large_icon/small_icon/attributes\n\n\
+\tScapi proponentur in forma indicata: textus solum,\n\
+\ttextus et icones magnas, textus et icones minutas aut cum rebus ac scapis attributis.\n\n\
+   -direction ascending/descending\n\n\
+\tScapi proponentur in ordine indicato (crescens\n\
+\taur decrescens).\n\
+-large_icon_width <dimensio>\n\n\
+   -large_icon_height <dimensio>\n\n\
+   -small_icon_width  <dimensio>\n\n\
+   -small_icon_height <dimensio>\n\n\
+       Dimensiones zonae ad proponendum in Rectore scaporum.\n\
+       Imagines majores dimensionibus truncabuntur.\n\
+       Dimensio zonae ad proponendum absentem aliquid 38 (magna) aut 24 (parva) est.\n\n"
+
+26 "\n\
+Syntaxis (modus circumscriptus): %s...\n\n\
+   -folder index[,index,index]\n\
+   -dir index[,index,index]\n\n\
+\t'index' infra indicem\n\
+\thome usorum est vel continet illum.\n\n"
+$ MESSSAGES 27-28 WILL ONLY APPEAR IN THE DT ERRORLOG FILE  
+
+27 "Impossible de récupérer le fichier des paramètres par défaut \n\
+pour home, utilisation de default.\n"
+
+28 "Unable to recover the saved default tool settings file, will use default.\n"
+$ Messages 29-30 are the strings displayed in a question dialog  
+
+29 "Visne perscribere dimensiones fenestrae Rectoris\n\
+scaporum, praelationes et parametros percolationis ?\n\n\
+Omnes fenestrae Rectoris scaporum apertae ab tabula indicatoria \n\
+ utentur ipsis valores."
+
+30 "Visne perscribere dimensiones fenestrae Rectoris scaporum\n\
+restricti, praelationes et parametros percolationis ?\n\n\
+Omnes fenestrae Rectoris scaporum apertae ab tabula indicatoria \n\
+ utentur ipsis valores."
+
+32 "Rector scaporum - Perscribere optiones absentem aliquid"
+
+34 "Copiare aut vincire scapos aut\n\
+indices ad canistrum non potest."
+$ 35 You can't copy or link a file or 
+$ \
+
+$ folder out of the Trash Can.  
+
+35 "Visne perscribere conspectum, dimensiones fenestrae, \n\
+prealationes et parametros percolationis Rectoris programmorum ?\n\n\
+Omnes fenestrae Rectoris scaporum apertae ab tabula indicatoria \n\
+ utentur ipsis valores."
+
+36 "Copiare aut vincire scapum aut indicem ab canistro\n\
+non potest. Educe rem e canistro et pone eam \n\
+in Rectorem scaporum.\n\
+Deinde potes copiare aut vincire eam."
+
+37 "Copiare aut vincire scapum aut indicem ab canistro\n\
+non potest. Educe rem e canistro et pone eam\n\
+in Rectorem scaporum.\n\
+Vous pouvez alors effectuer la copie ou le lien."
+
+38 "Subjectio indicis %s vitiosa."
+
+$quote
+
+$ MESSSAGE 39 WILL ONLY APPEAR IN THE DT ERRORLOG FILE
+39 Impossible de lancer deuxième session du Gestionnaire de fichiers \n\
+car il est déjà ouvert sur le bureau. Pour lancer une nouvelle session \n\
+du Gestionnaire de fichiers, fermez toutes ses fenêtres en cours \n\
+et retirez tous ses objets de leurs espaces de travail.
+
+$ 
+$ "-NEW"
+40 "Conectere apud ToolTalk:\n%s non potest\nExitus ..."
+
+
+$set 19        Redefine set#
+
+
+$set 20        Redefine set#
+
+$ ****** Module: Menu.c ****(developer comment only)********  
+$ Messages 1-8, 123 and 9 are the text and mnemonics for the dtfile menu bar  
+$ Messages 10/11, 128/129, 124/125, 121/122, 126/127, 16/17, 18/19, 84/85,  
+$   90/91, 22/23, 117/118, are the text and mnemonics for the Fill   
+$   pulldown menu   
+$ Messages 10/11, 30/33, 92/93, 34/37, 38/41, 42/94, and 97/98 are the text  
+$   and mnemonics for the Folder pulldown menu  
+$ Messages 46/47, 99/100, 48/51, 52/55, 101/102, 103/104, 119/120, and   
+$   62/63 are the text and mnemonics for the View pulldown menu  
+$ Messages 105-116 are the text and mnemonics for the Help pulldown menu  
+
+$quote "
+1 "Scapus"
+
+2 "F"
+
+3 "Index"
+
+4 "D"
+
+5 "Conspectus"
+
+6 "V"
+
+7 "Selectus(i)"
+
+8 "S"
+
+9 "A"
+
+10 "Novus..."
+
+11 "N"
+
+16 "Insignes..."
+
+17 "C"
+
+18 "Quaerere..."
+
+19 "h"
+
+22 "proponere canistrum..."
+
+23 "i"
+
+30 "Redintegrare"
+
+33 "e"
+
+34 "Ire in..."
+
+37 "s"
+
+38 "Initio"
+
+41 "D"
+$ NOTE: The mnemonic for Up is Message 94 in this set.  
+
+42 "Pater"
+
+46 "Novus"
+
+47 "N"
+
+48 "Seligere totum"
+
+51 "T"
+
+52 "Seligere nullum"
+
+55 "o"
+
+62 "Perscribere omnes insignes..."
+
+63 "a"
+
+84 "Proponere in spatio negotii"
+
+85 "A"
+
+90 "injicere in canistrum"
+
+91 "M"
+
+92 "Transitio citata ad"
+
+93 "a"
+$ NOTE: Message 94 is the mnemonic for the "Up" menu item  
+
+94 "r"
+
+97 "Terminale"
+
+98 "T"
+
+99 "Ordinare"
+
+100 "R"
+
+101 "Proponere scapos abditos"
+
+102 "i"
+
+103 "Mutare indicem colorum..."
+
+104 "M"
+
+105 "Prooemium"
+
+106 "G"
+
+107 "Muneres"
+
+108 "T"
+
+109 "Relatio"
+
+110 "R"
+
+111 "De partem"
+
+112 "u"
+
+113 "Adjumentum adjumenti"
+
+114 "i"
+
+115 "De Rectore scaporum"
+
+116 "A"
+
+117 "Claudere"
+
+118 "F"
+
+119 "Definire insignes conspectus..."
+
+120 "D"
+
+121 "Copiare..."
+
+122 "o"
+
+123 "Adjumentum"
+
+124 "Movere..."
+
+125 "D"
+
+126 "Vincire..."
+
+127 "L"
+
+128 "Vocare"
+
+129 "R"
+
+130 "Index novus..."
+
+131 "N"
+
+132 "Scapus novus..."
+
+133 "f"
+
+134 "Ire ad..."
+
+135 "A"
+
+136 "Aperire canistrum"
+
+137 "Vocare..."
+
+138 "Aperire conspectum novum"
+
+139 "O"
+
+140 "Copiare in forma vinculi..."
+
+141 "Definire  optiones conspectus..."
+
+142 "Perscribere ut optiones absentem aliquid..."
+
+143 "S"
+
+144 "Definire  optiones coli..."
+
+145 "i"
+
+146 "Aperire terminalem"
+
+147 "O"
+
+148 "Index materiarum"
+
+149 "m"
+
+150 "Mutare licentias aditus..."
+
+151 "Injicere in canistrum"
+
+152 "Movere in..."
+
+153 "Copiare in..."
+
+154 "Copiare in forma vinculi..."
+
+155 "Scandere"
+
+156 "Proponere res abditas"
+
+157 "De Rectore programmarum"
+
+$set 21        Redefine set#
+
+$ ****** Module: ModAttr.c ****(developer comment only)********  
+$ Messages 1 and 21 are titles for the File Properties dialog, Message 1 is  
+$   used when the user has specified a title for dtfile windows  
+$ Messages 2-13 and 18 are labels for the File Properties dialog  
+$ Message 14 is the output of the file modification date; DO NOT LOCALIZE  
+$ Messages 15 and 16 are file properties error messages  
+$ Message 17 is the title for an error dialog  
+$ Message 19 is the default file owner/group, if real one can't be determined  
+$ Messages 22-28 are error messages that can be generated when dtfile  
+$   tries to use the dtfile.config configuration file, this file is  
+$   used to customize the File Properties dialog  
+
+1 "Licentiae aditus scapo"
+
+2 "Nomen scapi:"
+
+3 "Nomen possessoris:"
+
+4 "Nomen circuli:"
+
+5 "Licentiae:"
+
+6 "Legendi"
+
+7 "Scribendi"
+
+8 "Pellendi"
+
+9 "Possessor:"
+
+10 "Circulum:"
+
+11 "Neuter:"
+
+12 "Dimensio (in octeti):"
+
+13 "Dies mutat.:"
+$ DO NOT LOCALIZE MESSAGE 14  
+
+14 "%x %X"
+
+15 "Res ac scapi attributa non valida est.\n\n\
+Usor indicatus deest."
+
+16 "Res ac scapi attributa non valida est.\n\n\
+Circulus indicatus deest."
+
+17 "Error insignum"
+
+18 "Vinctum cum:"
+
+19 "Ignotus"
+
+21 "Rector scaporum - Licentiae aditus scapo"
+
+22 "Aperire scapum facei Rectoris scaporum non potest:"
+
+24 "Nomen zonae Ignotus in scapo facei Rectoris scaporum:"
+
+25 "Scapus facei du Rector scaporum percontinationes indicatoris systemae scaporum non continet."
+
+26 "Creare processus pro capsa dialogi systemae scaporum congruens non potest."
+
+27 "Error accidit dum capsa dialogi systemae scaporum congruens pelletur."
+
+28 "Conatus pellendi :"
+$ do not localize "fsDialog"  
+
+29 "Nulla valor indicata in zona fsDialog scapi facei rectoris scaporum."
+
+30 "Nomen:"
+
+31 "Nomen possessoris vitiosus est.\n\
+Usor  indicatus deest."
+
+32 "Nomen Circuli vitiosus est.\n\n\
+Nihil circulus usoris cum eam nominem creatus est in\n\
+ordinatrum.\n\
+Uti programma rector systemae ad creandum circulus usorum\n\
+hoc nominem habens."
+
+33 "Error licentiarum aditus"
+
+34 "Rector scaporum - Licentiae aditus"
+
+35 "Fenestra dialogi licentiarum rei\n\n\
+%s/%s\n\n\
+claudita est. Enim, res sublata\n\
+ex systema est."
+
+36 "Mutatio licentias - Monitio"
+
+37 "Si  novas licentias indici vertenti applicas,\n\
+ jam non aspicere eum potes.  \n\
+ Id automate claudetur  et aperire eum jam non \n\
+poteris.\n\n\
+Confirmasne mutationem ?"
+
+38 Error rectoris scaporum
+39 Error apertionis scapi
+
+$set 22        Redefine set#
+
+$ ****** Module: ModAttrP.c ****(developer comment only)********  
+$ Messages 1 and 3 are file properties error messages  
+$ Message 2 is the title for the properties error dialog  
+
+1 "Aperire scapum non potest, opus rescissum est."
+
+2 "Error insignium"
+
+3 "Mutare insignem apud %s non potest."
+
+4 "Aperire rem non potest."
+$ le sens du message en français "définir l'erreur de droit d'accès" est peu clair. 
+5 "Definire errorem licentiorum adituum"
+
+$set 23        Redefine set#
+
+$ ****** Module: Prefs.c ****(developer comment only)********  
+$ Messages 1 and 22 are titles for the Set Preferences dialog, Message 1 is  
+$   used when the user has specified a title for dtfile windows  
+$ Messages 2-20 and 23-29 are labels for the Set Preferences dialog  
+
+1 "Definire  optiones conspectus"
+
+2 "Conspectus"
+
+3 "Per nominem"
+
+4 "Per nominem et iconem"
+
+5 "Per nominem et parvum iconem"
+
+6 "Per nominem, dies, dimensio ..."
+
+7 "Proponere"
+
+8 "Per indicem"
+
+9 "Per structura arboris"
+
+10 "Selectio"
+
+11 "Per genum scapi"
+
+12 "Per litteram"
+
+13 "Per diem"
+
+14 "Per dimensionem"
+
+15 "Ordo"
+
+16 "Crescens"
+
+17 "Decrescens"
+
+18 "Positio"
+
+19 "Reticulum ordinatum"
+
+20 "Alea"
+
+22 "Rector scaporum - Definitio optionum conspectus"
+
+23 "Frons"
+
+24 "Iter iconium"
+
+25 "Index vertens"
+
+26 "Linea stati"
+
+27 "Indices solum"
+
+28 "Indices, deinde scapi"
+
+29 "Indices scapique"
+
+30 "Absentem aliquid"
+
+31 "Repraesentatio"
+
+32 "Per nominem solum"
+
+33 "Per magnae icones"
+
+34 "Per parvae icones"
+
+35 "Ordines et columnae"
+
+36 "Iter texti"
+
+37 "Linea nuntii"
+
+$set 24        Redefine set#
+
+
+$set 25        Redefine set#
+
+
+$set 26        Redefine set#
+
+
+$set 27        Redefine set#
+
+$ ****** Module: Trash.c ****(developer comment only)********  
+$ Messages 3, 4, and 81 are titles for error warning dialogs  
+$ Message 5-8, 56, 58, 78, 82, and 83 are trash error messages  
+$ Message 9 is the title of the trash container  
+$ Messages 24/26 and 28/30 are the text and mnemonics for the File pulldown  
+$   menu  
+$ Message 73 is an error dialog title  
+$ Messages 74, 75, 79, and 80 are trash warning messages  
+
+3 "Error - Canistrum"
+
+4 "Monitio - Canistrum"
+
+5 "Scapi vel indices sequentes in canistrum conjicere non potest:\n"
+
+6 "Indices non vacuos vel scapi\n\
+   licentiam scribendi in eos non \n\
+   habes sunt. Visne continuare ?\n"
+
+7 "Licentiam scribendi in illud scapum\n\
+    non habes. Visne continuare ?\n"
+
+8 "Indices sequentes vacui non sunt.\n\
+   Visne continuare ?\n"
+
+9 "Canistrum"
+
+24 "Recuperare"
+
+26 "R"
+
+28 "Deterere"
+
+30 "B"
+
+56 "Scapos sequentes recuperare non potuit:\n"
+$ Message 58 supplements Message 56  
+
+58 "(plus %d scapi)"
+
+73 "Deterere scapum(os)"
+
+74 "Ille scapus quoque in spatio negotii est:\n\
+   %s\n\
+Si eum in canistrum mittes, is\n\
+ tolletur ab spatio negotii."
+
+75 "Illi scapi quoque in spatio negotii sunt:\n\
+   %s\n\
+Si  eos mittet in canistrum, ei\n\
+tollentur ab spatio negotii."
+
+78 "Rector scaporum non accipet nomines \n\
+scapos vel indices cujus nomines \n\
+spatii continent; ergo tollere eos non potest.\n"
+
+79 "Scapum %s jam adest in systema\n\
+scaporum in:\n\
+   %s\n\
+Si eum conjices in canistrum, is tollebuntur \n\
+systema scaporum."
+
+80 "Les fichiers de l'espace de travail existent déjà\n\
+dans votre système de fichiers dans:\n\
+   %s\n\
+Si vous les amenez dans la corbeille, ils seront\n\
+supprimés du système de fichiers."
+
+81 "Error detritendi scapum/indicem"
+
+82 "Le fichier suivant n'a pas pu être supprimé du système de fichiers:\n"
+
+83 "Aperire scapus .trashinfo indicis$HOME/.dt/Trash non potest.\n\
+   Hoc scapus étant nécessaire1 opere\n\
+   canistri, vérifica licentias aditus ejus,\n\
+   indicisque quod id continet.\n"
+
+84 "Res detritae postremo deletae\n\
+   ab systema sunt.\n\n\
+   Confirmasne tritum ?\n"
+
+85 "Res quam tolles copia vincta rei initii \n\
+   Rectoris scaporum est\n\
+  (%s)\n\
+   Si globulum deprimes supra Profecto, copiam vinctam remque tollebuntur.\n\n\
+   Si vis solum copiam tollere,\n\
+      1) Globulum deprimas supra Relinquere in ipsa capsa dialogi\n\
+      2) Deinde selige 'Retirer de l'espace de travail'\n\
+         in indice contextuel rei."
+
+86 "Les objets que vous supprimez sont des copies liées à des objets originaux du\n\
+   Rector scaporum\n\
+  (%s)\n\
+   Si vous cliquez sur OK, les copies liées et les objets originaux seront supprimés.\n\
+     \n\
+   Si vous souhaitez supprimer les objets uniquement,\n\
+      1) cliquez sur Relinquere dans cette boîte de dialogue\n\
+      2) sélectez ensuite 'Retirer de l'espace de travail'dans le menu\n\
+      contextuel de l'objet."
+
+87 "Impossible d'ouvrir l'objet de la corbeille.\n\n\
+   Avant d'ouvrir un objet, utilisez l'option 'Redéposer' pour le\n\
+   remettre dans le Rector scaporum."
+
+88 "Impossible d'écrire dans un fichier temporaire.\n\
+   Le système de fichiers est peut-être saturé."
+
+89 "Aperire indicem Canistrum\n\
+   %s non potest\n\
+   (Authentification, error juris aditus)\n\n\
+   Les opérations sur la corbeille ne seront pas effectuées."
+
+90 " 'Canistrum' incipere non potest.\n\
+   Vérifica hoc res:\n\
+        1)$HOME/.dt/Trash ut licentia aditus.\n\
+        2)Spatium disce paratum.\n\
+        3)Auctoritatem."
+$ 91 is not used  
+
+91 "Une copie de l'objet suivant sur trouve sur le fond\n\
+de l'espace de travail:\n\
+Si vous déplacez cet objet dans la corbeille, il sera supprimé\n\
+dans le Rector scaporum et dans l'Espace de travail."
+$ 92 is not used  
+
+92 "Une copie des objets suivants se trouve également sur\n\
+le fond de l'espace de travail:\n\
+Si vous déplacez ces objets dans la corbeille, ils seront supprimés \n\
+du Rector scaporum et de l'Espace de travail."
+
+93 "Adire scapum percontationum canistri non potest:\n\
+   %s\n\
+   Operes canistri non facebuntur.\n\
+   Causas les plus probables sont les suivantes:\n\
+     - Auctoritatem retis.\n\
+     - Spatium disce nimis parvum.\n\
+     - Licentias aditus vitiosas in $HOME/.dt/Trash."
+
+94 "Rector scaporum non tractat res\n\
+cujus nominem continet spatium. Ergo has res\n\
+tollere non potest.\n\
+Ita fac:\n\
+  - selige 'Aperire Terminalem' in assere indicum Rectoris scaporum\n\
+  - jussi mandatum rm '[nomen rei]' in terminale."
+
+95 "Adire in indicem canistri non potest:\n\
+   %s\n\
+   Operes canistri non fiet.\n\
+   Causas probabilissimas sunt:\n\
+     - Auctoritas retis.\n\
+     - Spatium disce nimis parvus\n\
+     - Licentias aditus vitiosas."
+
+96 "Res sequentes tollere a systema scaporum non potest:   \n"
+
+97 "Res sequentes conjicere ad canistrum non potest:     \n"
+
+98 "(Et %d aliam(s) rem(s))"
+$ message 99 is not used  
+
+99 "Licentiam scribendi in scapo(is) sequente(ibus) non habes:\n\
+Visne continuare ?\n"
+
+100 "Index(ices) sequens(tes) vacuus(i) non est/sunt.\n\
+Visne continuare ?\n"
+
+101 "L'objet ou les objets suivant(s) n'a/n'ont pas pu être redéposé(s):\n"
+
+102 "Une copie liée de l'objet suivant se trouve sur le fond de\n\
+l'espace de travail:\n\
+%s\n\
+Si vous déplacez l'objet dans la corbeille, il sera supprimé\n\
+du Rector scaporum et de l'espace de travail."
+
+103 "Une copie liée des objets suivants se trouvent sur le fond\n\
+de l'espace de travail:\n\
+%s\n\
+Si vous déplacez les objets dans la corbeille, ils seront supprimés\n\
+du Rector scaporum et de l'espace de travail."
+
+104 "Vous ne disposez pas des droits d'accès en écriture pour le(s) fichier(s) suivant(s):\n\
+Visne continuare ?\n"
+
+105 "Actio absentem aliquid hujus rei in canistro non agebuntur.\n\n\
+    Ad pulsa actionem absentem aliquid hujus rei, uti\n\
+    'Redéposer' ad recuperandum eam in Rectorem scaporum\n\
+    deinde operem fac."
+
+106 "De canistro"
+
+107 "Au moins un objet du dossier suivant n'a pas pu être supprimé:\n\n\
+%s\n\n\
+Vous n'êtes probabiliter pas autorisé à supprimer\n\
+cet objet."
+
+108 "Tollere scapum sequentem non potest :\n\n\
+%s\n\n\
+Probabiliter tollere eum tibi\n\
+non licet."
+
+109 "Recuperare - Monitio"
+
+110 "Jam exstat res vocata:\n\n\
+    %s\n\n\
+Ad substituendum eam re canistri,\n\
+ selige Profecto.\n\n\
+Ad condendum eam, selige Relinquere.\n\
+Si vis  condere omnes rem, muta\n\
+nominem rei exstant deinde rursus jussit Redintegrare. "
+
+111 "Recuperare - Error"
+
+112 "Tollere Illa(s) rem(s)\n\
+non potest. Probabiliter jam sublata(e)\n\
+sunt.\n\n"
+
+113 "Au moins un objet du dossier suivant, ou le dossier\n\
+lui-même, ne peut pas être supprimé. Vous n'êtes\n\
+probabiliter pas autorisé à effectuer cette opération.\n\n"
+
+114 "Tollere illum(os) scapum(os) non potest. Hoc operem\n\
+fortasse tibi non licet.\n\n"
+
+115 "Le ou les objet(s) suivant(s), nécessaire(s) au fonctionnement\n\
+du Bureau, ne peu(ven)t pas être supprimé(s).\n\n"
+
+$set 28        Redefine set#
+
+$ ****** Module: Desktop.c ****(developer comment only)********  
+$ Messages 1-3 Workspace error messages  
+$ Message 4 is the title for the Workspace popup menus  
+$ Messages 5-8 are the labels and mnemonics for the Workspace obj popup menu  
+
+1 "Scapus ejusdem nominis jam exstat in spatium negotii.\n\
+Selige alium nominem."
+
+2 "Scapus ipsius nominis jam adest in\n\
+indice d'origine du fichier.\n\
+Selige alium nominem."
+
+3 "Scapus %s jam adest in hoc spatio negotii. Duo scapi\n\
+idem nominis in eodem spatio negotii coexstare dans non potest.\n\
+Ad condere simul duos scapos, nominem unius muta."
+
+4 "Res Spatium negotii"
+
+5 "Tollere ex spatio negotii"
+
+6 "S"
+
+7 "Aperire pater indicis"
+
+8 "O"
+
+9 "Res hoc nominem habens jam adest in spatium negotii.\n\
+Selige nominem alterum."
+
+10 "Un objet possédant ce nom existe déjà dans le dossier original\n\
+(le dossier d'origine de cet objet).\n\
+Selige alium nominem."
+
+11 "Res vocata %s jam adest in ima spatii negotii.\n\
+Ponere rem ejusdem nominis in spatio negotii non potest.\n\
+Si vis ponere eas duas res in spatio negotii, muta nominem (uter) de l'un d'eux."
+
+12 "Indicavis spatium negotii vitiosum. Absentem aliquid, spatium \n\
+negotii Unus utor. Tamen, res vocata:\n\
+   %s\n\
+jam adest in ima ejus spatii negotii. Ponere alteram \n\
+rem ejusdem nominis non potest.\n\
+Pour conserver les deux objets, renommez l'un d'entre eux."
+
+13 "Res:\n\
+   %s\n\
+in systema scaporum deest."
+
+$set 29        Redefine set#
+
+$ ****** Module: Help.c ****(developer comment only)********  
+$ Message 1 is the title for the dtfile help dialog  
+$ Messages 1 and 2 are titles for the Help dialog, Message 2 is  
+$   used when the user has specified a title for dtfile windows  
+$ Message 3 is the text for help on the "Open New View" action  
+$ Message 4 is the text for help on the "Open In Place" action  
+$ Messages 5-6 are help error messages  
+
+1 "Rector scaporum - Adjumentum"
+
+2 "%s Adjumentum"
+
+3 "Actio %s indicem indicatum aprit in fenestra nova Rectoris scaporum."
+
+4 "Actio %s indicem indicatum proponit in fenestra vertens Rectoris scaporum."
+
+5 "Adjumentum actionis %s deest."
+
+6 "Adjumentum generis scapi %s deest."
+
+7 "Actio `%s` aperit novam fenestram Rectoris scaporum\n\
+in indice indicato."
+
+8 "Actio `%s` proponit indicem indicatum in finestra\n\
+vertens Rectoris scaporum."
+
+9 "Adjumentum canistri"
+
+10 "L'aide n'est pas disponible lorsque plusieurs objets sont sélectionnés."
+
+$set 30        Redefine set#
+
+$ ****** Module: SharedMsgs.c ****(developer comment only)********  
+$ The following messages are used in more than one place within the  
+$ dtfile source.  Unless otherwise specified, they are error messages.  
+
+1 "Lectionem in %s non potest."
+$ Message 2 is used to format the file attributes in 'by attributes' mode  
+
+2 "%b %d %H:%M:%S %Y"
+
+3 "Movere aut copiare scapum %s ab hospite %s non potest.\n\
+Probabiliter systema scaporum tua in hospite %s astructa non est."
+
+4 "Movere aut copiare scapum %1$s ab hospite %2$s non potest.\n\
+ Probabiliter systema scaporum tua in hospite %3$s astructa non est."
+
+5 "Legere %s non potest."
+
+6 "Scribere in indice %s non potest."
+
+7 "Creare %s non potest."
+
+8 "Tollere %s non potest."
+
+9 "Index aut scapum vocatum\n\
+  %s\n\
+  jam exstat et delere eum non potest.\n\
+  Induce nominem alterum."
+$ Message 10 is the help topic string for help on a file icon or action  
+
+10 "Descriptio generis scapi aut actionis"
+
+11 "Indicare itinerem in nomine scapi non licet."
+
+12 "Percontationes investigationis validae non sunt.\n\n\
+Index sequens deest aut adire ad id non potest:\n\n\
+     %s\n"
+$ Messages 13-16 are dialog titles  
+
+13 "%s - Prooemium"
+
+14 "%s - Lectio"
+
+15 "De %s"
+
+16 "Rector scaporum"
+$ Message 18 is appended to ".." folders  
+
+18 "(superior)"
+$ Messages 19 and 20 are messages which appear when a user clicks item help  
+$ outside the application.  19 is the title, while 20 is the message.  
+
+19 "Adjumentum partis - Error"
+
+20 "Debes  seligere partem \n\
+in Rectore scaporum."
+$ Messages 21 and 22 are titles for error dialogs  
+
+21 "Error motionis scapi"
+
+22 "Error vinculi scapi"
+
+23 "Creare '%s' non potest.\n\n\
+Probabiliter non habes rectas licentias \n\
+aditus ad scapos vel \n\
+indices indicatos.\n\n\
+Ad aspicendum licentias adituum, selige rem,\n\
+deinde optionem 'Mutare licentias adituum...'"
+
+24 "Debes seligere partem  in Rectore scaporum.\n\
+Adjumentum 'De parte' solum aget in programma\n\
+qua id incipies."
+
+25 "Creare '%s' non potest\n\n\
+Probabiliter licentias adituum\n\
+ad scapos vel indices\n\
+concernés non habes.\n\n\
+Ad aspicendum licentias adituum, selige rem,\n\
+deinde optionem 'Mutare licentias adituum...' à partir de l'option\n\
+Selectus vel indicem contextuel."
+
+26 "Debes seligere rem in Rectore programmarum.\n\
+Adjumentum 'De partis' aget solum in programma\n\
+quo tu id incipit."
+
+$set 31        Redefine set#
+
+
+$set 32        Redefine set#
+
+$ ****** Module: dterror.src ****(developer comment only)********  
+$ Message 1 is a title for dterror  
+
+1 "Error dt"
+
+2 "Rector scaporum - Error apertionis indicis"
+
+$set 33        Redefine set#
+
+$ pas clair "objets multiples" 
+1 "Res multiples"
+
+2 "Index vertens"
+
+3 "Movere rem - Error"
+
+4 "Copiare rem - Error"
+
+5 "Vincire rem - Error"
+
+6 "Destinatio motionis:\n\n\
+   %s\n\n\
+in systema scaporum deest."
+
+7 "Destinatio copiae:\n\n\
+   %s\n\n\
+in systema scaporum deest."
+
+8 "Destinatio vinculi:\n\n\
+   %s\n\n\
+in systema scaporum deest."
+
+9 "Destinatio motionis:\n\n\
+   %s\n\n\
+indicem non est."
+
+10 "Destinatio copiae:\n\n\
+   %s\n\n\
+indicem non est."
+
+11 "Destinatio vinculi:\n\n\
+   %s\n\n\
+indicem non est."
+
+12 "Res quem tentas movere:\n\n\
+   %s\n\n\
+in systema scaporum deest."
+
+13 "Una res quem tentas movere:\n\n\
+   %s\n\n\
+in systema scaporum deest.\n\
+Nihil rem movebitur."
+
+14 "rem quem tentas copiare:\n\n\
+   %s\n\n\
+in systema scaporum deest."
+
+15 "Una res quem tentas movere:\n\n\
+   %s\n\n\
+in systema scaporum deest.\n\
+Nihil rem copiabitur."
+
+16 "Res quem tentas vincire:\n\n\
+   %s\n\n\
+in systema scaporum deest."
+
+17 "Una res quem tentas vincire:\n\n\
+   %s\n\n\
+in systema scaporum deest.\n\
+Nihil rem vincietur."
+
+$set 99        Redefine set#
+
+$ ****** Version Information ********  
+$ DO NOT TRANSLATE THESE MESSAGES  
+$ DO NOT CHANGE THESE MESSAGES  
+$ DO NOT LOCALIZE THESE MESSAGES  
+$ These messages are used for the version information.  
+
+1 "@(#)version_goes_here"
+
+2 "\n\
+@(#)_DtMessage catalog source $TOG: dtfile.msg /main/11 1999/09/16 09:44:10 mgreess $"

@@ -17,7 +17,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -35,7 +35,7 @@ DATA_ATTRIBUTES DTHELP_PRINT_FILE
         ICON		Dthvol
         NAME_TEMPLATE   _phlp%s
         DESCRIPTION     Questo file viene generato avviando una stampa dal \
-                        sistema di aiuto. Il suo tipo di dati Ë denominato \
+                        sistema di aiuto. Il suo tipo di dati √® denominato \
                         DTHELP_PRINT_FILE. I file DTHELP_PRINT_FILE \
                         iniziano con '_phlp'.
         TYPE_LABEL      DTHELP_PRINT_FILE

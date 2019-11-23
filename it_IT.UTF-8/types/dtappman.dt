@@ -19,7 +19,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potrà essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potrÃ  essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -123,7 +123,7 @@ DATA_ATTRIBUTES AGROUP
         COPY_TO_ACTION  FILESYSTEM_COPY
         LINK_TO_ACTION  FILESYSTEM_LINK
 	DESCRIPTION	Fare doppio clic su questa icona per visualizzare \
-                        il livello più elevato della Gestione di applicazioni.
+                        il livello piÃ¹ elevato della Gestione di applicazioni.
         TYPE_LABEL      AGROUP
 }
 DATA_CRITERIA AGROUP1

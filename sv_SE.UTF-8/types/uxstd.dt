@@ -1,0 +1,772 @@
+# ##########################################################################
+#
+#     uxstd.dt
+#
+#     Action and DataType definitions for standard operating system commands.
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+# $TOG: uxstd.dt.src /main/7 1998/07/29 17:09:27 mgreess $
+#
+# ##########################################################################
+
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+#
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+#
+# ##########################################################################
+
+# ##########################################################################
+#
+# Dataattribut
+# 
+# ##########################################################################
+DATA_ATTRIBUTES MAN_PAGE
+{
+        ACTIONS         Open,Print
+        ICON            Dtmanpg
+        IS_TEXT		true
+        ACTIONS         Open,Print
+        MIME_TYPE	text/plain
+	DESCRIPTION	Denna fil innehåller en kommandobeskrivning. Dess datatyp \
+                        heter MAN_PAGE.
+        TYPE_LABEL      MAN_PAGE
+}
+DATA_CRITERIA MAN_PAGE1
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/man*/*.[1-9]*
+}
+DATA_CRITERIA MAN_PAGE2
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/cat*/*.[1-9]*
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        MAN_PAGE
+        TYPE            MAP
+        MAP_ACTION	Dtmanpageview
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        MAN_PAGE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp -a "%Arg_1%"
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES TAR
+{
+        ACTIONS         Open,TarUnpack,Print
+        ICON		Dtmagtp
+        NAME_TEMPLATE	%s.tar
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	Denna fil är en arkivfil som innehåller \
+                        ett antal enskilda filer. Dess datatyp \
+                        heter TAR. TAR-filer har namn som slutar med '.tar'.
+        TYPE_LABEL      TAR
+}
+DATA_CRITERIA TAR1
+{
+	DATA_ATTRIBUTES_NAME TAR
+        MODE            f
+	NAME_PATTERN	*.tar
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      TarList
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      PrintTarList
+}
+ACTION TarList
+{
+	LABEL		Arkivlistans innehåll
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+	DESCRIPTION	Funktionen Arkivlistans innehåll (TarList) listar \
+                        filerna i en TAR-arkivfil.
+}
+ACTION PrintTarList
+{
+	LABEL		SkrivUtTarlista
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" |                            /usr/dt/bin/dtlp -u "Arkivlistans innehåll"'
+
+
+	DESCRIPTION	Funktionen SkrivUtTarlista skriver ut en lista med \
+                        filerna i en TAR-arkivfil \
+                        på standardskrivaren. 
+}
+ACTION TarUnpack
+{
+	LABEL		Packa upp arkiv
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                tar -xvf "%(File)Arg_1"Filnamn:"%"                            2>&1 | \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+	DESCRIPTION	Funktionen Packa upp arkiv (TarUnpack) tar emot \
+                        en TAR-fil som argument och skiljer ut \
+                        de arkiverade filerna till enskilda filer.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES COMPRESSED
+{
+        ACTIONS         Uncompress
+        ICON		Dtcmprs
+        NAME_TEMPLATE	%s.Z
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      compress
+	DESCRIPTION	Detta är en fil som har komprimerats av \
+                        kommandot compress för att ta mindre utrymme. Dess \
+                        datatyp heter COMPRESSED. COMPRESSED-filer \
+                        har namn som slutar med '.Z'.
+        TYPE_LABEL      COMPRESSED
+}
+DATA_CRITERIA COMPRESSED1
+{
+	DATA_ATTRIBUTES_NAME COMPRESSED
+        MODE            f
+        NAME_PATTERN    *.Z
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        COMPRESSED
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uncompress
+{
+	LABEL		DekomprimeraFil
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                uncompress -vf "%(File)Arg_1%" %(File)Args% 2>&1 |                            \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+	DESCRIPTION	Funktionen DekomprimeraFil tar emot en eller flera \
+                        filer som har komprimerats med \
+                        kommandot 'compress' och dekomprimerar dem. \
+                        Funktionen använder kommandot 'uncompress'.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtbshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.sh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      shell-script
+        DESCRIPTION     Denna fil innehåller ett körbart skript som har skrivits \
+                        med skalskriptspråket BOURNE. Dess \
+                        datatyp heter SHELL. SHELL-filer har namn \
+                        som slutar med '.sh' eller innehåller tecknen \
+                        "#!/bin/sh" eller "#! /bin/sh".
+        TYPE_LABEL      SHELL
+}
+DATA_CRITERIA SHELL1
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        MODE            f&x
+	NAME_PATTERN	*.sh
+}
+DATA_CRITERIA SHELL2
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #!/bin/sh
+        MODE            f&x
+}
+DATA_CRITERIA SHELL3
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #! /bin/sh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Kör
+        ARG_TYPE        SHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES CSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtcshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.csh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      cshell-script
+        DESCRIPTION     Denna fil innehåller ett körbart skript som har skrivits \
+                        med skriptspråket C-SHELL. \
+                        Dess datatyp heter CSHELL. CSHELL-filer har \
+                        namn som slutar med '.csh' eller innehåller \
+                        tecknen "#!/bin/csh" eller "#! /bin/csh".
+        TYPE_LABEL      CSHELL
+}
+DATA_CRITERIA CSHELL1
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        MODE            f&x
+        NAME_PATTERN    *.csh
+}
+DATA_CRITERIA CSHELL2
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #!/bin/csh
+        MODE            f&x
+}
+DATA_CRITERIA CSHELL3
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #! /bin/csh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Kör
+        ARG_TYPE        CSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES KSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtkshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.ksh
+        MIME_TYPE	text/plain
+        DESCRIPTION     Denna fil innehåller ett körbart skript som har skrivits \
+                        med skriptspråket K-SHELL. \
+                        Dess datatyp heter KSHELL. KSHELL-filer har \
+                        namn som slutar med '.ksh' eller innehåller \
+                        tecknen "#!/bin/ksh" eller "#! /bin/ksh".
+        TYPE_LABEL      KSHELL
+}
+DATA_CRITERIA KSHELL1
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        MODE            f&x
+        NAME_PATTERN    *.ksh
+}
+DATA_CRITERIA KSHELL2
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL3
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL4
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL5
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Kör
+        ARG_TYPE        KSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHAR
+{
+        ACTIONS         Unshar
+        ICON 		Dtshar           
+        NAME_TEMPLATE	%s.shar
+        MIME_TYPE	text/plain
+        DESCRIPTION     Denna fil är ett skalarkivpaket. \
+                        Denna typ av filer används oftast för att \
+                        skicka filer. Dess datatyp heter SHAR. \
+                        SHAR-filer har namn som slutar med '.shar'.
+        TYPE_LABEL      SHAR
+}
+DATA_CRITERIA SHAR1
+{
+        DATA_ATTRIBUTES_NAME SHAR
+        MODE            f
+        NAME_PATTERN    *.shar
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        SHAR
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Unshar
+{
+        LABEL           unshar
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         sh "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+        DESCRIPTION     Funktionen unshar tar emot en fil \
+                        som har bearbetats med kommandot 'shar' \
+                        och återställer dess ursprungliga format.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES UUENCODE
+{
+        ACTIONS         Uudecode
+        ICON            Dtuuncd
+        NAME_TEMPLATE	%s.uu
+        MIME_TYPE	text/plain
+        DESCRIPTION     Detta är en binärfil som används för att \
+                        överföra filer via elektronisk post. Dess datatyp \
+                        heter UUENCODE. UUENCODE-filer har namn som slutar med\
+                         '.uu'.
+        TYPE_LABEL      UUENCODE
+}
+DATA_CRITERIA UUENCODE1
+{
+        DATA_ATTRIBUTES_NAME UUENCODE
+        MODE            f
+        NAME_PATTERN    *.uu
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        UUENCODE
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uudecode
+{
+        LABEL           Uudecode
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         uudecode "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+        DESCRIPTION     Funktionen Uudecode tar emot en fil \
+                        som har bearbetats med kommandot 'uuencode' \
+                        och återställer dess ursprungliga format.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES MESSAGE_CAT
+{
+        ACTIONS         (None)
+        ICON            Dtcat
+        NAME_TEMPLATE   %s.cat
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     Denna fil innehåller ett lokaliserat meddelande \
+                        för en körbar fil. Dess datatyp heter \
+                        MESSAGE_CAT. MESSAGE_CAT-filer har namn som slutar med\
+                        '.cat'.
+        TYPE_LABEL      MESSAGE_CAT
+}
+DATA_CRITERIA MESSAGE_CAT1
+{
+        DATA_ATTRIBUTES_NAME MESSAGE_CAT
+        MODE            f
+        NAME_PATTERN    *.cat
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        MESSAGE_CAT
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ##########################################################################
+# ##########################################################################
+#
+# Funktioner
+# 
+# ##########################################################################
+# #####################
+#
+# Unix-redigerare
+#
+# #####################
+ACTION Vi
+{
+        LABEL		Textredigerare (Vi)
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi
+	DESCRIPTION	Funktionen Textredigerare (Vi) kör kommandot 'vi' \
+                        i ett terminalfönster och laddar en datafil \
+                        om du anger en sådan.
+}
+ACTION Vi
+{
+        LABEL		Textredigerare (Vi)
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi "%(File)Arg_1"Fil som ska redigeras:"%"
+	DESCRIPTION	Funktionen Textredigerare (Vi) kör kommandot 'vi' \
+                        i ett terminalfönster och laddar en datafil \
+                        om du anger en sådan.
+}
+
+# ######
+
+ACTION Vedit
+{
+        LABEL		vedit
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit
+	DESCRIPTION	Funktionen vedit kör kommandot 'vi' i \
+                        'vedit'-läge i ett terminalfönster. Den laddar \
+                        en datafil om du anger en sådan.
+}
+ACTION Vedit
+{
+        LABEL		vedit
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit "%(File)Arg_1"Fil som ska redigeras:"%"
+	DESCRIPTION	Funktionen vedit kör kommandot 'vi' i \
+                        'vedit'-läge i ett terminalfönster. Den laddar \
+                        en datafil om du anger en sådan.
+}
+
+# #####################
+#
+# Unix-kommandon
+#
+# #####################
+# Följande funktion använder 'true %(File)Args%' i EXEC_STRING.
+# Detta uttryck innebär att alla argumenten
+# 'används' via ett enda funktionsanrop.
+ACTION Tar
+{
+	LABEL		Arkivera
+        ICON		Dtmagtp
+	ARG_COUNT	>1
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	          sh -c '            if [ "%(File)Args%" = "" ] ; then                 /usr/dt/bin/dterror.ds             "Funktionen Arkivera godtar ett enstaka\\n \
+argument som måste vara en mapp."             "Ogiltiga argument"             "OK" ;            else            true %(File)Args%;            /usr/dt/bin/dterror.ds             "Funktionen Arkivera godtar ett enstaka\\n \
+argument som måste vara en mapp."             "Ogiltiga argument"             "OK"            fi; '
+	DESCRIPTION	Funktionen Arkivera (Tar) tar emot ett mappargument \
+                        och arkiverar alla dess filer i en enda \
+                        "tar"-fil. Den använder \
+                        kommandot 'tar'.
+}
+ACTION Tar
+{
+	LABEL		Arkivera
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+	EXEC_STRING		  sh -c '             if [ "%(File)Args%" = "" ] ; then 	        echo "FEL: %(File)Arg_1% är inte en mapp.";             else 	    if [ ! -d "%(File)Arg_1"Mapp som ska arkiveras:"%" ] ; then 	        echo "FEL: %(File)Arg_1% är inte en mapp."; 	    else                 FOLDER="%(File)Arg_1%.tar"; 	        TAR_FILE=`basename "%(File)Arg_1%.tar"`;                 echo "Skapar \$FOLDER.";                 echo "[Vänta ...]\\n"; 	        tar -cvf \$TAR_FILE `basename "%(File)Arg_1%"` 2>&1 | 	          \${PAGER:-more};                 echo "\\nArkivfilen har skapats och lagras i \$FOLDER."; 	    fi; 	    fi; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+	DESCRIPTION	Funktionen Arkivera (Tar) tar emot ett mappargument \
+                        och arkiverar alla dess filer i en enda \
+                        "tar"-fil. Den använder \
+                        kommandot 'tar'.
+}
+
+# ######
+
+ACTION TarList
+{
+        LABEL           Arkivlistans innehåll
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarList                             "%(File)Arg_1"Arkiv som ska listas:"%"
+
+        DESCRIPTION     Funktionen Arkivlistans innehåll (TarList) listar \
+                        filerna i en TAR-arkivfil.
+}
+
+# ######
+
+ACTION TarUnpack
+{
+        LABEL           Packa upp arkiv
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarUnpack                             "%(File)Arg_1"Arkiv som ska packas upp:"%"
+
+        DESCRIPTION     Funktionen Packa upp arkiv (TarUnpack) tar emot \
+                        en TAR-fil som argument och skiljer ut \
+                        de arkiverade filerna till enskilda filer.
+}
+
+# ######
+
+ACTION Compress
+{
+	LABEL		Komprimera fil
+        ICON		Dtcmprs
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                 compress -vf "%(File)Arg_1"Fil som ska komprimeras:"%"                          %(File)Args% 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+	DESCRIPTION	Funktionen Komprimera fil (Compress) tar emot \
+                        en eller flera filer och komprimerar dem med \
+                        kommandot 'compress'.
+}
+
+# ######
+
+ACTION Uncompress
+{
+        LABEL           DekomprimeraFil
+        ICON		Dtcmprs
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction Uncompress                             "%(File)Arg_1"Fil som ska dekomprimeras:"%"
+
+        DESCRIPTION     Funktionen DekomprimeraFil tar emot en eller flera \
+                        filer som har komprimerats med \
+                        kommandot 'compress' och dekomprimerar dem. \
+                        Funktionen använder kommandot 'uncompress'.
+}
+
+# ######
+
+ACTION Env
+{
+	LABEL		Miljövariabler
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                          env 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+	DESCRIPTION	Funktionen Miljövariabler (Env) visar \
+                        användarens miljövariabler med \
+                        kommandot 'env'.
+}
+
+# ######
+
+ACTION Diff
+{
+	LABEL		Jämför filer
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file1="%(File)Arg_1"Första filen (<):"%" ;	    file2="%(File)Arg_2"Andra filen (>):"%" ;            cmp -s \$file1 \$file2 ;            if [ \$? -eq 0 ] ; then               echo "Filerna \$file1 och \$file2 är likadana." ;             else               diff \$file1 \$file2  | \${PAGER:-more} ;            fi ;	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+	DESCRIPTION	Funktionen Jämför filer (Diff) jämför två filer \
+                        med kommandot 'diff'.
+}
+
+# ######
+
+ACTION Rm
+{
+	LABEL		Förstör fil
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING		  sh -c ' 	    echo "[Skriv j för att ta bort filen och n för att lämna kvar den ...]\\n"; 	    rm -i "%(File)Arg_1"Fil som ska förstöras:"%" %(File)Args%; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+
+	DESCRIPTION	Funktionen Förstör fil (Rm) använder kommandot 'rm -i' för att \
+                        ta bort filer utan att placera dem i papperskorgen. \
+                        Den visar de aktuella filnamnen och låter \
+                        dig ange om filen ska tas bort eller inte \
+                        filen ska tas bort eller inte. FILER SOM \
+                        HAR FÖRSTÖRTS KAN INTE ÅTERSTÄLLAS.
+}
+
+# ######
+
+ACTION Wc
+{
+	LABEL		Räkna ord 
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    (echo "    rader    ord  tecken filnamn"; 	     echo "  ==============================="; 	     wc "%(File)Arg_1"Fil som ska räknas:"%" %(File)Args%) 2>&1 | 	       \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+
+
+	DESCRIPTION	Funktionen Räkna ord (Wc) räknar raderna, orden \
+                        och tecknen i filen. Den använder kommandot 'wc'.
+}
+
+# ######
+
+ACTION Spell
+{
+	LABEL		Kontrollera stavning
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c ' 	    (echo "Felstavade ord\\n==============\\n"; 	     spell "%(File)Arg_1"Fil som ska stavningskontrolleras:"%" %(File)Args%) 2>&1 |                \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+
+
+	DESCRIPTION	Funktionen Kontrollera stavning (Spell) kontrollerar \
+                        stavningen i alla ord i filen. Den använder \
+                        kommandot 'spell'.
+}
+
+# ######
+
+ACTION Df
+{
+	LABEL		Diskutrymme
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             df 2>&1 | \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+	DESCRIPTION	Funktionen Diskutrymme (Df) visar andelen \
+                        ledigt utrymme på alla anslutna \
+                        diskar. Den använder kommandot 'df'.
+}
+
+
+# ######
+
+ACTION DuSort
+{
+	LABEL		Mappstorlek
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    if [ ! -d "%(File)Arg_1"Mapp som ska ändra storlek:"%" ] ; then 	        echo "FEL: %(File)Arg_1% är inte en mapp."; 	    else 	        echo "[Vänta ...]\\n"; 	        (echo "Block  Fil/kat  - (Blocken är 512 byte)"; 	         echo "=========================================="; 	         du -s "%(File)Arg_1"Mapp som ska ändra storlek:"%" | sort -n) 2>&1 |                    \${PAGER:-more}; 	    fi; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+	DESCRIPTION	Funktionen Mappstorlek (DuSort) visar \
+                        storleken på alla filer och undermappar i en \
+                        mapp. Den använder en kombination av kommandona 'du' \
+                        och 'sort'.
+}
+
+# ######
+
+ACTION Grep
+{
+	LABEL		Sök text
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             SEARCH_FILE="%(File)Arg_1"Fil som ska genomsökas:"%";             if [ -d \$SEARCH_FILE ] ; then                 echo "FEL: \$SEARCH_FILE är en mapp och funktionen \\nSök text söker inte efter strängar i mappar.";             else                grep %"Söksträng:"% \$SEARCH_FILE                                    %(File)Args% >/tmp/dtstrsearch 2>&1;                if [ \$? -eq 1 ] ; then                    echo "Hittade inga träffar.";                else                   cat /tmp/dtstrsearch | \${PAGER:-more};                fi;                rm /tmp/dtstrsearch;             fi; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+	DESCRIPTION	Funktionen Sök text (Grep) söker efter \
+                        alla förekomsterna av en sträng i en uppsättning filer\
+                        med kommandot 'grep'.
+}
+
+# ######
+
+ACTION File
+{
+	LABEL		Typbestäm fil
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file "%(File)Arg_1"Fil som ska typbestämmas:"%" %(File)Args% 2>&1 |               \${PAGER:-more}; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+	DESCRIPTION	Funktionen Typbestäm fil (File) avgör filens typ \
+                        med kommandot file. Detta är inte \
+                        samma sak som filens datatyp på skrivbordet. \
+                        Om du vill avgöra en fils datatyp på skrivbordet \
+                        markerar du filen och väljer menykommandot \
+                        Markerade->Ändra behörighet... i ett filhanterarfönster.
+}
+
+# ######
+
+ACTION Execute
+{
+	LABEL		Exekvera
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     	  "%(File)Arg_1"Fil som ska exekveras:"%" %"Alternativ:"% %"Argument:"% %(File)Args%
+
+	DESCRIPTION	Funktionen Exekvera kör ett skalskript eller en \
+                        körbar binärfil. Den frågar efter alternativ och \
+                        argument och exekverar sedan skriptet eller \
+                        den körbara filen i ett terminalfönster.
+}
+
+# ######
+
+ACTION ExecuteCmd
+{
+	LABEL		Exekvera kommando
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	          %"Kommando:"% %(File)Args%; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+	DESCRIPTION	Funktionen Exekvera kommando (ExecuteCmd) frågar \
+                        efter ett kommando och exekverar det sedan på någon \
+                        av filerna som anges som argument.
+}
+# ######################## EOF ############################################

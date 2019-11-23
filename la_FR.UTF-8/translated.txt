@@ -1,0 +1,29 @@
+dtact.msg
+dtcalc.msg
+dtcopy.msg
+dtcm.msg
+dtconfig.msg (translation is useless ) 
+dtfile.msg
+dthello.msg
+dthelpgen.msg
+DtHelp.msg
+dthelpprint.msg
+dticon.msg
+dtinfo_start.msg (nothing to translate)
+dtksh.msg (error messages only)
+dtlogin.msg
+dtlp.msg
+DtMail.msg
+dtmailopts.msg (except acronyms EF/HF = On/Off)
+dtpdm.msg (translation is too difficult)
+dtprintinfo.msg
+dtpad.msg
+DtPrint.msg
+dttypes.msg
+dtscreen.msg (error messages only)
+dtterm.msg
+dtucd* (Asian languages) 
+dtwm.msg
+libdtcm.msg (nothing to translate) 
+fmt_tbl.msg
+

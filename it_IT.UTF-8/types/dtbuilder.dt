@@ -19,7 +19,7 @@ set DtDbVersion=1.0
 
 ###############################################################################
 #
-# ATTENZIONE: Questo file potrà essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potrÃ  essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -38,7 +38,7 @@ DATA_ATTRIBUTES BIP
 	NAME_TEMPLATE	%s.bip
         MIME_TYPE	text/plain
         DESCRIPTION     Questo file contiene i dati di un progetto per il \
-                        Generatore di applicazioni del desktop. Il suo tipo di dati è \
+                        Generatore di applicazioni del desktop. Il suo tipo di dati Ã¨ \
                         denominato BIP. I file BIP terminano con l'estensione '.bip'.
 }
 DATA_CRITERIA BIP1
@@ -75,7 +75,7 @@ DATA_ATTRIBUTES BIL
 	NAME_TEMPLATE	%s.bil
         MIME_TYPE	text/plain
         DESCRIPTION     Questo file contiene i dati di un modulo per il Generatore \
-                        di applicazioni del desktop. Il suo tipo di dati è \
+                        di applicazioni del desktop. Il suo tipo di dati Ã¨ \
                         denominato BIL. I file BIL terminano con l'estensione '.bil'.
 }
 DATA_CRITERIA BIL1
@@ -113,7 +113,7 @@ DATA_ATTRIBUTES BIX
         MIME_TYPE	text/plain
         DESCRIPTION     Questo file contiene tutti i dati relativi al file di progetto \
                         (BIP) e al file dei moduli (BIL) di un progetto del \
-                        Generatore di applicazioni. Il suo tipo di dati è denominato \
+                        Generatore di applicazioni. Il suo tipo di dati Ã¨ denominato \
                         BIX. I file BIX terminano con l'estensione .'bix'.
 }
 DATA_CRITERIA BIX1
@@ -182,7 +182,7 @@ ACTION CodeGen
         EXEC_STRING     /bin/sh -c ' \
            DIR_NAME=`dirname %(File)Arg_1"File di progetto (*.bip):"%` ; \
 	   if [ ! -d "\$DIR_NAME" ] ; then \
-	       echo "ERRORE: \$DIR_NAME non è una cartella."; \
+	       echo "ERRORE: \$DIR_NAME non Ã¨ una cartella."; \
 	   else \
 	       BIP_FILE=`basename "%(File)Arg_1%"` ; \
 	       ( cd \$DIR_NAME; dtcodegen -p \$BIP_FILE 2>&1; ) | \${PAGER:-more}; \

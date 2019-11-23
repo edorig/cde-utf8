@@ -1,0 +1,428 @@
+$ $XConsortium: dtprintinfo.msg /main/6 1996/10/19 15:27:14 rws $
+$ 
+$   COMPONENT_NAME: desktop
+$ 
+$   FUNCTIONS: none
+$ 
+$   ORIGINS: 27,118,119,120,121
+$ 
+$   This module contains IBM CONFIDENTIAL code. -- (IBM
+$   Confidential Restricted when combined with the aggregated
+$   modules for this product)
+$   OBJECT CODE ONLY SOURCE MATERIALS
+$ 
+$   (C) COPYRIGHT International Business Machines Corp. 1995
+$   All Rights Reserved
+$   US Government Users Restricted Rights - Use, duplication or
+$   disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+$ 
+$ 
+$ +SNOTICE
+$ 
+$  $XConsortium: dtprintinfo.msg /main/6 1996/10/19 15:27:14 rws $
+$ 
+$  RESTRICTED CONFIDENTIAL INFORMATION:
+$ 
+$  The information in this document is subject to special
+$  restrictions in a confidential disclosure agreement between
+$  HP, IBM, Sun, USL, SCO and Univel.  Do not distribute this
+$  document outside HP, IBM, Sun, USL, SCO, or Univel without
+$  SunXSQUOTEs specific written approval.  This document and all copies
+$  and derivative works thereof must be returned or destroyed at
+$  SunXSQUOTEs request.
+$ 
+$  Copyright 1993, 1994, 1995 Sun Microsystems, Inc.  All rights reserved.
+$ 
+$ +ENOTICE
+$ 
+$		     Common Desktop Environment
+$ 
+$   (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+$   (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+$   (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+$   (c) Copyright 1993, 1994, 1995 Novell, Inc.
+$   (c) Copyright 1995 Digital Equipment Corp.
+$   (c) Copyright 1995 Fujitsu Limited
+$   (c) Copyright 1995 Hitachi, Ltd.
+$                                                                   
+$ 
+$                     RESTRICTED RIGHTS LEGEND                              
+$ 
+$ Use, duplication, or disclosure by the U.S. Government is subject to
+$ restrictions as set forth in subparagraph (c)(1)(ii) of the Rights in
+$ Technical Data and Computer Software clause in DFARS 252.227-7013.  Rights
+$ for non-DOD U.S. Government Departments and Agencies are as set forth in
+$ FAR 52.227-19(c)(1,2).
+$ 
+$ Hewlett-Packard Company, 3000 Hanover Street, Palo Alto, CA 94304 U.S.A.
+$ International Business Machines Corp., Route 100, Somers, NY 10589 U.S.A. 
+$ Sun Microsystems, Inc., 2550 Garcia Avenue, Mountain View, CA 94043 U.S.A.
+$ Novell, Inc., 190 River Road, Summit, NJ 07901 U.S.A.
+$ Digital Equipment Corp., 111 Powdermill Road, Maynard, MA 01754, U.S.A.
+$ Fujitsu Limited, 1015, Kamikodanaka Nakahara-Ku, Kawasaki 211, Japan
+$ Hitachi, Ltd., 6, Kanda Surugadai 4-Chome, Chiyoda-ku, Tokyo 101, Japan
+
+$quote XDQUOTE
+
+$set DTPRINTER_SET
+$ ----- These are the titles that appear on dialogs and the main window -----  
+
+ApplicationName1L "Rector exscriptionis"
+
+ApplicationName2L "Muneres pressoria"
+$ Do not translate ApplicationName3L for this release  
+
+ApplicationName3L "Machinae pressoriae mensae"
+$ ----- Common Dialog Buttons -----  
+
+YesL "Ita"
+
+NoL "Minime"
+
+OKL "Profecto"
+
+ApplyL "Applicare"
+
+CancelL "Rescindere"
+
+HelpL "Adjumentum"
+$ ----- Find dialog -----  
+
+FindTitleL "%s - Quarere muneres pressoria"
+
+MyJobNameL "Nomen muneris tui"
+
+OnlyRootJobsL "Muneres machinatoris solum"
+$ littera grandis/minuta
+IgnoreCaseL "Nulla distinctio inter litteram grande/minutam"
+
+ExactMatchL "Congruentia exacta"
+
+GotoL "Ire"
+
+CancelPrintJobsL "Rescindere muneres pressoria"
+
+PositionL "Situs"
+
+CloseL "Claudita"
+
+StartFindL "Incipere investigationem"
+
+StopFindL "Obstare investigationem"
+
+SearchL "Quaero %s...\n\n\
+Pulsa Obstare ad obstandum"
+$ Find Information dialog messages  
+
+NoMatchesL "Nihil munus congruens"
+
+NotFoundMessageL "Munus jam non est vel \n\
+machina pressoria obstata est."
+$ ----- Modify Show Dialog -----  
+
+ModifyShowTitleL "%s - Mutare indicem proponendi"
+
+SelectPrintersToBeShowL "Seligere machinas pressorias proponendi"
+
+SelectAllL "Totas seligere"
+
+DeselectAllL "Nihil Seligere"
+$ ----- Set Options Dialog -----  
+
+SetOptionsTitleL "%s - Optiones definire"
+
+RepresentationL "Représentation"
+
+LargeIconL "Magnae icones"
+
+SmallIconL "Parvae icones"
+
+NameOnlyL "Nomines solum"
+
+DetailsL "Percontationes"
+
+ShowLabelsL "Proponere libellés"
+
+JobsToShowL "Muneres proponendi"
+
+OnlyMineL "Muneres tui solum"
+
+EveryoneL "Totes muneres"
+
+StatusL "Status"
+
+ProblemFlagL "Signum erroris"
+
+InformationLineL "Linea nuntii"
+
+UpdateIntervalL "Novare"
+
+IntervalL "Tempus (secundas)"
+$ ----- Print Job Properties Dialog -----  
+
+PrintJobPropsTitleL "%s - Insignes muneris exscriptionis"
+
+PrinterL "Machina pressoria"
+
+JobName1L "Nomen muneris"
+
+SubmittedL "Soumis"
+
+BytesL "octeti"
+
+Position1L "Situs:"
+
+JobNameL "Nomen muneris:"
+
+JobNumberL "Numerus muneris:"
+
+OwnerL "Possessor:"
+
+DateL "Dies:"
+
+TimeL "Hora:"
+
+SizeL "Dimensio:"
+$ ----- Printer Properties Dialog -----  
+
+PrinterPropsTitleL "%s - Insignes machinae pressoriae"
+
+IconLabelL "Libellé iconis:"
+
+IconGroupTitleL "Icones:"
+
+FindSetL "Quaerere simul..."
+
+DescriptionL "Descriptio:"
+
+PrinterStatusL "Status:"
+
+PrintQueueL "Ordo exspectandum exscriptionis:"
+
+DeviceL "Nomen instrumenti:"
+
+DeviceNL "Instrumentum %d:"
+
+UpL "EF - En fonction"
+
+DownL "HF - Hors fonction"
+
+PrinterOnServerL "%1$s de %2$s"
+
+DefaultDescriptionL "Ordo exspectandum %s."
+$ %1 is the printer name and %2 is the server name, ex: "lp0 on warpspeed"  
+$ This is the value of the device field when the printer is on a remote system  
+$ ----- Find Set Dialog -----  
+
+FindSetTitleL "%s - Simul quaerere"
+
+IconFoldersL "Indices iconum:"
+
+IconTitleL "Icones"
+
+LoadingIconsL "Onero iconem %1$d de %2$d..."
+$ %1 is a counter and %2 is the total number of icons  
+$ ----- "Cancel" Print Job Confirmation Dialog -----  
+
+CancelTitleL "%s - Sublatio %s"
+
+CancelQuestionL "Visne rescindere %s?"
+$ ----- Printer "Status" Dialog -----  
+
+PrinterStatusTitleL "%s - Status machinae"
+
+PrinterDownL "Ordo exspectandum exscriptionis %s sopitum est."
+
+DeviceDownL "Instrumentum %s sopitum est."
+$ ----- Failed Action Dialog -----  
+
+FailedActionTitleL "%s - %s offendit"
+
+FailedMessageL "Applicare actionem '%s' ad \n\
+  %s. Vide code causae infra.\n\n\
+%s"
+$ ----- Main Window Information Line Messages -----  
+
+GettingHelpL "Obtentio adjumenti..."
+
+SearchingL "Investigatio machinarum..."
+
+ShowingMyJobsL "Aspicio munerum domesticorum solum"
+
+PrintersHiddenL "%d machinae %d abditae"
+
+JobsL "%d Muneres"
+
+UpdatingActionsL "Novo receptacultum datorum actionum..."
+
+UpdatingL "Novo %s..."
+$ Do not translate EditLangL for this release  
+
+EditLangL "Scribere /etc/dt/appconfig/types/%s"
+$ %s is the name of the printer  
+$ ----- Printer Menu Messages -----  
+
+PrinterMenuL "Machinae pressoriae"
+
+PrinterAcceleratorL "I"
+
+FindChoiceL "Investigatio..."
+
+FindMnemonicL "R"
+
+FindAcceleratorL "Ctrl+R"
+
+ExitChoiceL "Exire"
+
+ExitMnemonicL "t"
+
+ExitAcceleratorL "Alt+F4"
+$ ----- Selected Menu Messages -----  
+
+SelectedMenuL "Selectus(i)"
+
+SelectedAcceleratorL "S"
+$ For Print Jobs Only - "Rescindere" means to remove a print job from the printer.  
+$                       This choice pops up the "Rescindere" Print Job Confirmation  
+$                       Dialog.   
+
+CancelChoiceL "Rescindere"
+
+CancelMnemonicL "R"
+
+CancelAcceleratorL "Suppr"
+$ For Printers Only  
+
+OpenChoiceL "Aperire"
+
+OpenMnemonicL "A"
+
+CloseChoiceL "Claudere"
+
+CloseMnemonicL "C"
+
+HideChoiceL "Abdere"
+
+HideMnemonicL "b"
+$ Do not translate RenameChoiceL for this release  
+
+RenameChoiceL "Vocare"
+$ Do not translate RenameMnemonicL for this release  
+
+RenameMnemonicL "V"
+$ Do not translate StartChoiceL for this release  
+
+StartChoiceL "Incipere mise in ordine exspectandum"
+$ Do not translate StartMnemonicL for this release  
+
+StartMnemonicL "I"
+$ Do not translate StopChoiceL for this release  
+
+StopChoiceL "Obstare dispositionem in ordine exspectandum"
+$ Do not translate StopMnemonicL for this release  
+
+StopMnemonicL "b"
+$ Do not translate EnableChoiceL for this release  
+
+EnableChoiceL "Excitare exscriptionem"
+$ Do not translate EnableMnemonicL for this release  
+
+EnableMnemonicL "x"
+$ Do not translate DisableChoiceL for this release  
+
+DisableChoiceL "Sopire exscriptionem"
+$ Do not translate DisableMnemonicL for this release  
+
+DisableMnemonicL "S"
+$ For Both Printers and Print Jobs  
+
+PropertiesChoiceL "Insignes..."
+
+PropertiesMnemonicL "n"
+
+PropertiesAcceleratorL "Ctrl+Retour"
+
+HelpChoiceL "Adjumentum"
+
+HelpMnemonicL "j"
+$ ----- View Menu Messages -----  
+
+ViewMenuL "Videre"
+
+ViewAcceleratorL "V"
+
+SetOptionsChoiceL "Definire optiones..."
+
+SetOptionsMnemonicL "o"
+
+ModifyShowChoiceL "Mutare indicem proponendi..."
+
+ModifyShowMnemonicL "M"
+$ ----- Help Menu Messages -----  
+$ "Help" Menu uses the "HelpChoiceL" message  
+$ "Help" Accelerator uses the "HelpMnemonicL" message  
+
+OverviewChoiceL "Prooemium"
+
+OverviewMnemonicL "P"
+
+TaskChoiceL "Muneres"
+
+TaskMnemonicL "M"
+
+ReferenceChoiceL "Relatio"
+
+ReferenceMnemonicL "R"
+
+OnItemChoiceL "De parte"
+
+OnItemMnemonicL "p"
+
+UsingHelpChoiceL "Adjumentum Adjumenti"
+
+UsingHelpMnemonicL "j"
+
+AboutChoice1L "De rectore exscriptionis"
+
+AboutChoice2L "De muneribus exscriptionis"
+$ Do not translate AboutChoice3L for this release  
+
+AboutChoice3L "De machinarum pressoriarum mensae"
+
+AboutMnemonicL "m"
+$ ----- Misc Messages -----  
+
+EmptyL "[ Vacuo ]"
+
+FoundNoPrintersL "Nihil machina pressoria invenita."
+
+NotAvailableL "non parata"
+
+NoDefaultPrinter1L "Machina pressoria ordinatri absentem aliqua deest."
+
+NoDefaultPrinter2L "Lege librum utendi ad discendum\n\
+definire quantitatem variabilis ambitus exscriptionis absentem aliquid LPDEST."
+$ %1 is the name of the program, and %2 is either '-edit' or '-populate'.  
+
+RootUserL "%1$s: uti optionem %2$s machinatori solum licet."
+$ ----- Command Line Help -----  
+$ This message is show when the user enters 'dtprintinfo -help'  
+$ on the command line. The %s is a printer list generated by the program.  
+
+CommandLineHelpL "dtprintinfo\n\n\
+    Pellere dtprintinfo sine optio proponit machinam LPDEST\n\
+    aut machinam absentem aliqua si LPDEST definita non est.\n\n\
+dtprintinfo -p <imprimante>\n\n\
+    Ad aspicendum machinam spécifique, ute optionem -p et\n\
+    l'un des nomines ordinis exspectantium sequentes:\n\n\
+%s\n\
+dtprintinfo -all\n\n\
+    Ad aspicendum totas machinas, ute optionem -all.\n\n\
+dtprintinfo -populate\n\n\
+    Optionem -populate machinatori solum licet. Hanc \n\
+    optio creat actiones machinarum pressoriarum pro machinas in\n\
+    indico /etc/dt/appconfig/types/LANG. Si quantitas LANG definita non est, actiones\n\
+    creaturunt in indico /etc/dt/appconfig/types/C."
+
+NoRemoteCancelL "minister pressorius n'a pas donné le numéro de la tâche d'impression.\nCertains serveurs n'autorisent pas l'annulation éloignée.\n des tâches d'impression. Si c'est le cas, contactez \n l'administrateur du serveur."
+FindAcceleratorKeySeq "Ctrl+f"

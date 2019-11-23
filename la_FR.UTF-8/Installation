@@ -1,0 +1,98 @@
+Slackware instructions:
+-----------------------
+
+To install the Latin language for CDE do the following as root:
+
+1) move la_FR to /usr/share/i18n/locales 
+2) use localedef -f UTF-8 -c -v -i la_FR --no-archive la_FR
+3) cd /usr/lib/locale 
+4) ln -s la_FR la_FR.UTF-8
+
+This adds the Latin locale (for France) to the Linux locales. 
+
+5) Add the following  lines in /usr/share/X11/locale/locale.dir
+utf-8/XLC_LOCALE			la_FR.UTF-8
+utf-8/XLC_LOCALE:			la_FR.UTF-8
+
+6) Add the following lines in /usr/share/X11/locale/locale.alias
+la						la_FR.UTF-8
+la_FR						la_FR.UTF-8
+la_FR.utf-8					la_FR.UTF-8
+la_FR.UTF-8				la_FR.UTF-8
+la:
+						la_FR.UTF-8
+la_FR:						la_FR.UTF-8
+la_FR.iso8859-1:				la_FR.UTF-8
+la_FR.ISO-8859-1:				la_FR.UTF-8
+
+7) Add the following lines in /usr/share/X11/locale/compose.dir
+utf-8/Compose		la_FR.UTF-8
+utf-8/Compose:		la_FR.UTF-8
+
+This makes the X Window System aware of the new locale. 
+
+8) mkdir /usr/dt/lib/nls/msg/la_FR.UTF-8
+
+9) cp  msg/*.cat /usr/dt/lib/nls/msg/la_FR.UTF-8
+
+This is the last important step. All the translated messages
+for the applications will be available. The remaining steps
+install translated names for palettes and backdrops, and install
+Latin language configuration for some applications. One can skip directly to
+25) and test 10-24 later. 
+
+10) mkdir /etc/dt/appconfig/appmanager/la_FR.UTF-8
+
+11) mkdir /etc/dt/appconfig/types/la_FR.UTF-8
+
+12) mkdir /etc/dt/backdrops/ 
+
+13) cp backdrops/desc.la_FR.UTF-8 /etc/dt/backdrops/
+
+14) mkdir /etc/dt/palettes 
+
+15) cp palettes/desc.la_FR.UTF-8 to /etc/dt/share/palettes/
+
+16) cd app-defaults; cp Dt Dtcreate Dthelpview Dtinfo Dtpad    Dtstyle Dtcalc  Dtfile    Dticon      Dtlogin  Dtscreen   Dtterm Dtcm    Dthello   Dtimsstart  Dtmail   Dtsession  Dtwm /usr/dt/app-defaults/la_FR.UTF-8
+
+This step installs in the application manager Latin translations
+for the names of the usual CDE applications. It might cause some problems
+(no possibility to open application folders). One can skip 17-22 and test
+in  personal .dt/types directory and .dt/appmanager directory of a regular
+user at a later time.
+
+17) cd .. ; cp types/*.dt /etc/dt/appconfig/types/la_FR.UTF-8
+
+18) cd /etc/dt/appconfig/appmanager/la_FR.UTF-8 
+
+19) mkdir Desktop_Apps  Desktop_Tools  Information  System_Admin
+
+20) cd Desktop_Apps; touch Dtappbuild  Dtcreate    Dticon         Dtmanpageview   Dtstyle Dtcalc      Dtfile      DtLoadInfoLib  Dtpad           Dtterm Dtcm        Dthelpview  Dtmail        DtPrintManager  Dttrash ; chmod +x Dt* ; cd ..
+
+21) cd Desktop_Tools/; touch Bitmap Dttypes     ReloadActions    TarUnpack   Xlsfonts Compress        DtwmrcEdit  ReloadApps       Uncompress  Xprop Df              DuSort      ReloadResources  Vi          Xrefresh Diff            Env         RestorePanel     Wc          Xterm DtImsMode       ExecuteCmd  Rm             Xclipboard  XtermDtspcd DttermConsole   File        SaveSession      XclockDig   XtermRlogin DttermDtspcd    Grep        Spell            Xdpyinfo    Xwd Dtterm Errorlog Make        Tar              Xfd         Xwininfo DttermRlogin    Nm          TarList          Xload       Xwud
+chmod +x * ; cd .. 
+
+22) cd Information; touch OpenDtIntro chmod +x OpenDtIntro; cd ..
+
+23) mkdirhier /etc/dt/config/la_FR.UTF-8/Xresources.d/
+
+24) cd config; cp current.session home.session /etc/dt/config/la_FR.UTF-8/Xresources.d/ ; cp sys.font sys.session sys.dtwmrc sys.resources Xresources /etc/dt/config/la_FR.UTF-8/
+
+This is needed to have the messages in Latin. 
+
+25) edit .dtprofile and add the line: 
+export LANG=la_FR.UTF-8
+
+To check:
+========
+When logging in, you should see windows with titles and menu titles in latin as in the picture cdelatin.png. 
+
+If the app-defaults are correctly installed, the Workspace selector
+should show 'Primum' 'Secundum' Tertium' 'Quartum' as workspace names. 
+
+If the backdrops and palettes descriptions are correctly installed, the color and Ima menus of dtstyle should show the names of backdrops and palettes in Latin. 
+
+If the types are correctly included, the application manager shows Latin names
+'Curatio Systemae' 'Instrumenta_Mensae' 'Percontationes' etc... in the toolbox menu.
+
+

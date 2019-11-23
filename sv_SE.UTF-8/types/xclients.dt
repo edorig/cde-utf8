@@ -1,0 +1,392 @@
+# ##########################################################################
+# 
+#     xclients.dt
+# 
+#     Actions and DataTypes for integrating X clients into the Common
+#     Desktop Environment (CDE).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: xclients.dt.src /main/5 1996/04/23 20:26:44 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# Dataattribut
+# 
+# ##################################################################
+DATA_ATTRIBUTES XWD
+{
+        ACTIONS         Open,Print
+        ICON            Dtxwd
+        NAME_TEMPLATE   %s.xwd
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      xwd-file
+        DESCRIPTION     Denna fil innehåller en grafisk bild med XWD-format. \
+                        Dessa filer skapas vanligtvis genom att \
+                        funktionen XwdCapture tar en bild av ett fönster. \
+                        Dess datatyp heter XWD. XWD-filer \
+                        har namn som slutar med'.xwd' eller '.wd'.
+        TYPE_LABEL      XWD
+}
+DATA_CRITERIA XWD1
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.xwd
+}
+DATA_CRITERIA XWD2
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.wd
+}
+ACTION Open
+{
+        LABEL           Öppna
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      Xwud
+}
+ACTION Print
+{
+        LABEL           SkrivUt
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Xwud
+{
+        LABEL		Visa xwd
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwud -noclick -in                               "%(File)Arg_1"Xwd-fil som ska visas:"%"
+
+	DESCRIPTION	Funktionen Visa xwd (Xwud) visar en \
+                        xwd-fil som har skapats med funktionen \
+                        Xwd Capture (Xwd). Den använder \
+                        kommandot 'xwud'.
+}
+
+# ##########################################################################
+# 
+# Funktioner
+# 
+# ##########################################################################
+ACTION Xrefresh
+{
+        LABEL		Förnya skärmen
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xrefresh
+	DESCRIPTION	Funktionen Förnya skärmen (Xrefresh) medför \
+                        att hela skärmen förnyas med \
+                        kommandot 'xrefresh'.
+}
+
+# ######
+
+ACTION Bitmap
+{
+        LABEL		Redigera bitmapp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				"%(File)Arg_1"Fil som ska öppnas:"%"
+
+	DESCRIPTION	Funktionen Redigera bitmapp (Bitmap) kör \
+                        'bitmap'-klienten. Du kan själv ange ett filargument\
+                        eller låta funktionen fråga efter bredden och höjden\
+                        på den nya bitmappfilen.
+}
+ACTION Bitmap
+{
+        LABEL		Redigera bitmapp
+	ARG_COUNT	0	
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				-size %"Bredd:"%x%"Höjd:"% 				"%(File)Arg_1"Fil som ska öppnas:"%"
+
+
+	DESCRIPTION	Funktionen Redigera bitmapp (Bitmap) kör \
+                        'bitmap'-klienten. Du kan själv ange ett filargument\
+                        eller låta funktionen fråga efter bredden och höjden\
+                        på den nya bitmappfilen.
+}
+
+# ######
+
+ACTION DttermConsole
+{
+        LABEL		Terminalkonsol
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtterm -C -ls -name Konsol -title Konsol
+	DESCRIPTION	Funktionen Terminalkonsol startar \
+                        en 'dtterm'-terminalemulator som användarens konsol.
+}
+
+# ######
+
+ACTION Xterm
+{
+        LABEL		xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xterm
+	DESCRIPTION	Funktionen xterm startar en \
+                        'xterm'-terminalemulator.
+}
+
+# ######
+
+ACTION DttermDtspcd
+{
+        LABEL		Fjärrterminal
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"Värdnamn:"%
+	EXEC_STRING	/usr/dt/bin/dtterm
+	DESCRIPTION	Funktionen Fjärrterminal frågar användaren efter namnet på \
+                        ett system och startar en 'dtterm'- \
+                        terminalemulator på detta system. Systemet måste \
+                        konfigureras korrekt för att kunna fjärrexekveras.
+}
+
+# ######
+
+ACTION XtermDtspcd
+{
+        LABEL		Fjärr-xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"Värdnamn:"%
+	EXEC_STRING	xterm
+	DESCRIPTION	Funktionen Fjärr-xterm frågar användaren \
+                        efter namnet på ett system och startar en \
+                        'xterm'-terminalemulator på detta system. \
+                        Systemet måste konfigureras korrekt för att kunna fjärrexekveras.
+}
+
+# ######
+
+ACTION DttermRlogin
+{
+        LABEL		terminal rlogin
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"Värdnamn:"%";             /usr/dt/bin/dtterm -title "\$_title : Dtterm" -e KORNSHELL -c             "echo Försöker upprätta en anslutning till \$_title... Vänta.;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	Funktionen terminal rlogin frågar användaren efter \
+                        namnet på ett system, öppnar en 'dtterm'- \
+                        terminalemulator och utför en 'rlogin' på \
+                        detta system.
+}
+
+# ######
+
+ACTION XtermRlogin
+{
+        LABEL		xterm rlogin
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"Värdnamn:"%";             xterm -title "\$_title : Xterm" -e KORNSHELL -c             "echo Försöker upprätta en anslutning till \$_title... Vänta.;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	Funktionen xterm rlogin frågar användaren efter \
+                        namnet på ett system, öppnar en'xterm'- \
+                        terminalemulator och utför sedan en \
+                        'rlogin' på detta system.
+}
+
+# ######
+
+ACTION XclockDig
+{
+        LABEL		Digital klocka
+        ARG_COUNT	0
+        ICON		Dtdgclk
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xclock -name "Digital klocka"                                    -digital -update 1
+
+        DESCRIPTION     Funktionen Digital klocka (Xclock) visar \
+                        en digital klocka. Den använder kommandot 'xclock -digital'.
+}
+
+
+# ######
+
+ACTION Xload
+{
+        LABEL		Ladda system
+        ARG_COUNT	0
+        ICON		Dtload
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xload -name "Ladda system"                              -geometry 250x150 -xrm '*primaryColorSetId: 5'
+
+        DESCRIPTION     Funktionen Ladda system (Xload) visar en \
+                        grafisk representation av systemladdningen. Den använder \
+                        kommandot 'xload'.
+}
+
+# ######
+
+ACTION Xwd
+{
+        LABEL		Fånga xwd
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwd -out                              %(File)"Utdatafil (<namn>.xwd):"%
+
+	DESCRIPTION	Funktionen Fånga xwd (Xwd) tar en \
+                        bild av ett fönster och lagrar den i en grafikfil \
+                        med xwd-format. När du kör funktionen ändras \
+                        markören till ett hårkors, och du klickar då \
+                        på det fönster som du vill ta en bild av. \
+                        Funktionen använder kommandot 'xwd'. \
+$ 
+}
+
+# ######
+
+ACTION Xclipboard
+{
+        LABEL		Innehåll i urklippet
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xclipboard
+	DESCRIPTION	Funktionen Innehåll i urklippet (Xclipboard) visar \
+                        urklippet. Den använder kommandot 'xclipboard'. \
+$ 
+}
+
+# ######
+
+ACTION Xfd
+{
+        LABEL		Förgranska font
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'xfd -fn                 "%(String)Arg_1"Font som ska förgranskas:"%"; 	               if [ \$? -eq 1 ] ; then                          /usr/dt/bin/dterror.ds                           "Det går inte att hitta den angivna fonten.\\n\
+                           Kör funktionen Fontlista för att visa\\n\
+                           en lista över tillgängliga fonter."                           "Det går inte att hitta fontnamnet."                           "OK" ; 	                fi'
+
+
+
+
+
+
+
+	DESCRIPTION	Funktionen Förgranska font (Xfd) frågar efter ett fontnamn \
+                        och visar sedan alla tecknen i fonten. \
+                        Den använder kommandot 'xfd'.
+}
+
+# ######
+
+# Funktionen Fönsterinformation (Xwininfo) kan inte använda
+# definitionen '| ${PAGER:-more}' eftersom den medför att
+# meddelandet 'klicka på ett fönster' inte kan visas.
+ACTION Xwininfo
+{
+        LABEL		Fönsterinformation
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING	sh -c 'xwininfo; 	    echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+	DESCRIPTION	Funktionen Fönsterinformation (Xwininfo) visar \
+                        information om ett fönster. När du kör \
+                        Fönsterinformation ändras markören till ett hårkors, \
+                        och du kan då klicka på det aktuella fönstret.\
+                        Funktionen använder kommandot 'xwininfo'. \
+$ 
+}
+
+# ######
+
+ACTION Xprop
+{
+        LABEL           Fönsteregenskaper
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "[När markören ändras till ett hårkors klickar du på ett fönster ...]\\n";             xprop | \${PAGER:-more};             echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+        DESCRIPTION     Funktionen Fönsteregenskaper (Xprop) visar \
+                        de egenskaper som lagras för ett fönster. När \
+                        du kör Fönsteregenskaper ändras markören \
+                        till ett hårkors, och du kan då klicka på det aktuella\
+                        fönstret. Funktionen använder \
+                        kommandot 'xprop'.
+}
+
+# ######
+
+ACTION Xdpyinfo
+{
+        LABEL           X-hanterarinformation
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             xdpyinfo | \${PAGER:-more};             echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+        DESCRIPTION     Funktionen X-hanterarinformation (Xdpyinfo) visar \
+                        information om X-hanteraren och \
+                        visningssystemet. Den använder kommandot 'xdpyinfo'.
+}
+
+# ######
+
+ACTION Xlsfonts
+{
+        LABEL           Fontlista
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "Letar efter fonter, vänta...\\n        OBS! Detta kan medföra att visningshanteraren blockeras en kort stund.";             xlsfonts | \${PAGER:-more};             echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+
+        DESCRIPTION     Funktionen Fontlista (Xlsfonts) listar alla \
+                        fonterna som kan visas i systemet. \
+                        Den använder kommandot 'xlsfonts'.
+}
+
+# ######################## EOF ############################################

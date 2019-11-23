@@ -1,0 +1,15 @@
+#!/bin/sh
+# generates .cat files from a set of .msg files
+# Change the CDEROOT definition as needed 
+CDEROOT=$HOME/software/cdesktopenv/cde
+MERGE=$CDEROOT/programs/localized/util/merge
+echo $MERGE
+cd $1.UTF-8/types 
+for i in *.dt.nls; do
+    $MERGE -lang $1.UTF-8 <$i  _common.dt.tmsg >`basename $i .nls`;
+    # echo `basename $i .msg`.cat $i;
+done
+$MERGE -lang $1.UTF-8 <action.nls action.tmsg > action.dt
+$MERGE -lang $1.UTF-8 <dtwm.fp.nls dtwm.fp.tmsg > dtwm.fp
+
+cd ../..

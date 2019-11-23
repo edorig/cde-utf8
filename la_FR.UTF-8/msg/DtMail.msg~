@@ -1,0 +1,1434 @@
+$    
+$ +SNOTICE   
+$    
+$  $TOG: DtMail.msg /main/43 1999/09/14 15:45:19 mgreess $   
+$    
+$  RESTRICTED CONFIDENTIAL INFORMATION:   
+$    
+$  The information in this document is subject to special   
+$  restrictions in a confidential disclosure agreement between   
+$  HP, IBM, Sun, USL, SCO and Univel.  Do not distribute this   
+$  document outside HP, IBM, Sun, USL, SCO, or Univel without   
+$  Sun's specific written approval.  This document and all copies   
+$  and derivative works thereof must be returned or destroyed at   
+$  Sun's request.   
+$    
+$  Copyright 1993 Sun Microsystems, Inc.  All rights reserved.   
+$    
+$ +ENOTICE   
+$    
+$    
+$ Strings from dtmail/RoamApp.C   
+$quote "
+
+$set 1
+
+1 "Profecto"
+
+2 "Optiones cursualis..."
+
+3 "Ferias"
+
+4 "Refrico insignium..."
+$    
+$ Strings from dtmail/RoamMenuWindow.C   
+
+5 "Relinquere"
+
+6 "Programma cursualis"
+
+7 "Programma cursualis"
+
+8 "Programma cursualis"
+
+9 "Tollere"
+
+10 "Consecutus"
+
+11 "Superior"
+
+12 "Respondere cui misit"
+
+13 "Exscribere"
+
+14 "Mittens"
+
+15 "Rem"
+
+16 "Dies horaque"
+
+17 "Dimensio"
+
+18 "receptaculum epistularum"
+
+19 "Evolvere epistulas novas"
+
+20 "Aperire receptaculum epistularum accipens"
+
+21 "Aperire receptaculum epistularum accipens"
+
+22 "Novum.."
+
+23 "Programma cursualis - Nova"
+
+24 "Novum"
+
+25 "Aperire..."
+
+26 "Programma cursualis - Aperire"
+
+27 "Aperire"
+
+28 "Delere epistulas sublatas"
+
+29 "Claudere"
+
+30 "Aperire"
+
+31 "Perscrib. in forma texti..."
+
+32 "Programma - Epistulam - Perscrib. in forma texti"
+
+33 "Copiare in"
+
+34 "Exscribere..."
+
+35 "Quaerere..."
+
+36 "Seligere Omnis"
+
+37 "Tollere"
+
+38 "Relinquere ultimam detractionem"
+
+39 "Relinquere detractionem..."
+
+40 "Epistula"
+
+41 "Movere"
+
+42 "Programma cursualis - Epistulae"
+
+43 "Copiare"
+
+44 "Seligere Omnis"
+
+45 "Redigere"
+
+46 "Programma cursualis - Textus"
+
+47 "Consecutus"
+
+48 "Superior"
+
+49 "Principium conscriptum"
+
+50 "Per diem/horam"
+
+51 "Per mittentem"
+
+52 "Per rem"
+
+53 "Per dimensionem"
+
+54 "Per statum"
+
+55 "Aspicere"
+
+56 "Nova epistula"
+
+57 "Nova, includere totum"
+
+58 "Transmittere epistulam"
+
+59 "Respondere cui misit"
+
+60 "Respondere omnes"
+
+61 "Respondere cui misit, includere"
+
+62 "Respondere omnes, includere"
+
+63 "Scribere"
+
+64 "Movere"
+
+65 "Ceteriae receptaculae epistularum..."
+
+66 "Perscribere in..."
+$ Erreur Connections était utilisée pour inclusum
+67 "Programma cursualis - inclusum - Perscribere in"
+
+68 "Seligere Omnis"
+
+69 "inclusum"
+
+70 "Programma cursualis - inclusum"
+
+71 "Prooemium"
+
+72 "Muneres"
+
+73 "Relatio"
+
+74 "De partem"
+
+75 "Adjumentum Adjumenti"
+
+76 "Adjumentum"
+
+77 "De programma cursualis..."
+
+78 "programma cursualis  statum hujus receptaculi epistularum determinare\n\
+  non potest; claude eam optione Profecto et rursus incipie programma."
+
+79 "Conversio in effectu ... %d %% facta(e)"
+
+80 "Programma cursualis"
+$    
+$ Strings from dtmail/AttachArea.C   
+
+81 "Programma cursualis"
+
+82 "Programma cursualis"
+
+83 "Programma cursualis"
+$    
+$ Strings from dtmail/Attachment.C   
+
+84 "%s inclusum pulsabilis est. Numquid pellere id vis ?"
+
+85 "Programma cursualis"
+
+86 "Programma cursualis"
+
+87 "Programma cursualis"
+
+88 "Programma cursualis"
+$    
+$ Strings from dtmail/RoamCmds.C   
+
+89 "Programma cursualis - Ceteriae receptaculea epistularum"
+
+90 "Movere"
+
+91 "Exscribere in effectu..."
+
+92 "Profecto"
+
+93 "Perscribere"
+
+94 "Perscribere"
+
+95 "Perscribere"
+
+96 "Vacuare"
+
+97 "Vocare"
+
+98 "Programma cursualis - Vocare"
+
+99 "Programma cursualis - Claudere"
+
+100 "Profecto"
+
+101 "Relinquere"
+
+102 "La fonction de réacheminement est utilisée par un programme\n\
+différent de Congé. Si ce dernier est en cours d'exécution,\n\
+il sera ajouté à l'autre programme. Confirmez-vous le\n\
+lancement du programme Congé ?"
+
+103 "Programma cursualis"
+
+104 "Programma Ferias jam pelletur in scapo .forward. Ad discendum quomodo\n\
+obstare et tollere eam e scapo, legi adjumentum congruens.\n\
+Post haec operes factas, iterum pelle programmam.\0"
+
+105 "Aperire scapum .vacation.msg non potest. -- Licentiam scribendi non habes."
+
+106 "Scapus .vacation.msg jam adest. Visne id substituere ?"
+
+107 "Aperire scapum .vacation.msg. non potest -- Licentiam scribendi non habes."
+
+108 "Ferias ago."
+$ \t    /* NL_COMMENT   
+$ \t     * This is the default value of the subject field in the   
+$ \t     * message that gets returned to the sender when vacation   
+$ \t     * is turned on.   
+$ \t     */   
+
+109 "Ferias ago.\n\
+Legam epistulam tuam (Rem: \"$SUBJECT\") simul ac reditus mei.\n"
+$    
+$ Strings from dtmail/MsgScrollingList.C   
+
+110 "N"
+$ /* NL_COMMENT   
+$  * In a mailer container window's message scrolling list, a "N" appears   
+$  * to the left of a mail message header indicating that the mail message   
+$  * is "new" (just arrived and not yet viewed by the user).   
+$  * There is only space to display 1 character.  If "N" needs to be translated,   
+$  * please make sure the translation is only 1 character.   
+$  */   
+
+111 "N"
+$ /* NL_COMMENT   
+$  * In a mailer container window's message scrolling list, a "N" appears   
+$  * to the left of a mail message header indicating that the mail message   
+$  * is "new" (just arrived and not yet viewed by the user).   
+$  * There is only space to display 1 character.  If "N" needs to be translated,   
+$  * please make sure the translation is only 1 character.   
+$  */   
+
+112 "N"
+$ /* NL_COMMENT   
+$  * In a mailer container window's message scrolling list, a "N" appears   
+$  * to the left of a mail message header indicating that the mail message   
+$  * is "new" (just arrived and not yet viewed by the user).   
+$  * There is only space to display 1 character.  If "N" needs to be translated,   
+$  * please make sure the translation is only 1 character.   
+$  */   
+
+113 "N"
+$ /* NL_COMMENT   
+$  * In a mailer container window's message scrolling list, a "N" appears   
+$  * to the left of a mail message header indicating that the mail message   
+$  * is "new" (just arrived and not yet viewed by the user).   
+$  * There is only space to display 1 character.  If "N" needs to be translated,   
+$  * please make sure the translation is only 1 character.   
+$  */   
+
+114 "N"
+$    
+$ Strings from dtmail/Undelete.C   
+
+115 "Relinquere detractionem"
+
+116 "Claudere"
+$    
+$ Strings from dtmail/SendMsgDialog.C   
+
+117 "Transmittere"
+
+118 "Claudere"
+
+119 "Nova epistula"
+
+120 "Programma cursualis"
+
+121 "Scapus"
+
+122 "Includere..."
+
+123 "Programma cursualis - Includere"
+
+124 "Includere"
+
+125 "Perscr. in forma texti..."
+
+126 "Programma cursualis - Perscr. in forma texti"
+
+127 "Consigner epistulam"
+
+128 "Transmittere in forma :"
+
+129 "Claudere"
+
+130 "Redigere"
+
+131 "Rescindere"
+
+132 "Secare"
+
+133 "Copiare"
+
+134 "Glutinare"
+
+135 "Glutinare (specialis)"
+
+136 "Inter notas"
+
+137 "Reductus"
+
+138 "Expungere"
+
+139 "Tollere"
+
+140 "Seligere Omnis"
+
+141 "inclusum"
+
+142 "Addere scapum..."
+
+143 "Programma cursualis - Addere"
+
+144 "Addere"
+
+145 "Perscribere in..."
+
+146 "Programma cursualis - inclusum - Perscribere in"
+
+147 "Tollere"
+
+148 "relinquere detractionem"
+
+149 "Vocare"
+
+150 "Seligere Omnis"
+$       /* NL_COMMENT   
+$        * This is an obsolete message.  It is replaced by message 226   
+$        * in set 1.   
+$        */   
+
+151 "Proponere volet"
+
+152 "Formater"
+
+153 "Recursus carruli"
+
+154 "Parametri..."
+
+155 "Quaerere/Substituere..."
+
+156 "Verif. orthographiam..."
+
+157 "Exempla"
+
+158 "Programma cursualis - inclusum"
+
+159 "Programma cursualis - Scribere"
+
+160 "Nova epistula"
+$       /* NL_COMMENT   
+$        * This is the label for a toggle item in a menu.  When the item   
+$        * is set to "Show List", the Attachment List is mapped in the   
+$        * Compose Window.  This message replaces message 151 in set 1.   
+$        */   
+$    
+$ Strings from dtmail/ViewMsgDialog.C   
+
+161 "Copiare"
+
+162 "Seligere Omnis"
+
+163 "Redigere"
+
+164 "Perscribere in..."
+
+165 "Programma cursualis - inclusum - Perscribere in"
+
+166 "Seligere Omnis"
+
+167 "inclusum"
+
+168 "Programma cursualis - inclusum"
+
+169 "Programma cursualis - Textus"
+
+170 "Prooemium"
+
+171 "Muneres"
+
+172 "Relatio"
+
+173 "De partem"
+
+174 "Adjumentum Adjumenti"
+
+175 "Adjumentum"
+
+176 "De programma cursualis..."
+
+177 "Programma cursualis"
+$    
+$ Strings from dtmail/DtMailGenDialog.C   
+
+178 "Programma cursualis - A propos de Dtmail"
+
+179 "Dtmail versio 1.0"
+
+180 "Profecto"
+
+181 "Profecto"
+
+182 "relinquere"
+$    
+$ Strings from dtmail/FindDialog.C   
+
+183 "Quaerere"
+$  /* NL_COMMENT   
+$   * This is an obsolete message.  Replaced by message 220 in set 1   
+$   */   
+
+184 "Quaerere & seligere omnis"
+
+185 "Expungere"
+
+186 "Claudere"
+
+187 "Adjumentum"
+
+188 "Ad :"
+
+189 "Ab :"
+
+190 "Rem :"
+
+191 "Cc :"
+
+192 "Programma cursualis - Quaerere"
+
+193 "Posterus"
+
+194 "Superior"
+$  /* NL_COMMENT   
+$   * This message replaces message 184 in set 1   
+$   */   
+$    
+$ Strings from dtmail/Editor.C   
+$ transmettre = deferre 
+195 "------------- Initio epistulae transmissae -------------\n\n"
+
+196 "------------- Initio epistulae inclusae -------------\n\n"
+
+197 "------------- Finis epistulae transmissae -------------\n\n"
+
+198 "------------- Finis epistulae inclusae -------------\n\n"
+$    
+$ Strings from dtmail/XmTextEditor.C   
+
+199 "\n\
+------------- Initio nuntii inclusi -------------\n"
+
+200 "\n\
+------------- Fin nuntii inclusi -------------\n"
+$    
+$ Strings from dtmail/DtEditor.C   
+
+201 "\n\
+------------- Initio nuntii inclusi -------------\n"
+
+202 "\n\
+------------- Finis nuntii inclusi -------------\n"
+$    
+$ Strings from dtmail/ComposeCmds.C   
+
+203 "Programma cursualis "
+
+204 "Fenestram scriptionis creare non potest."
+
+205 "Programma cursualis"
+
+206 "Fenestram scriptionis creare non potest."
+
+207 "Programma cursualis"
+
+208 "Fenestram scriptionis creare non potest."
+
+209 "Programma cursualis"
+
+210 "Fenestram scriptionis creare non potest."
+
+211 "Programma cursualis"
+
+212 "Exemplum deest."
+
+213 "Programma cursualis"
+
+214 "Exemplum corruptum est."
+
+215 "Programma cursualis"
+
+216 "Memoria nimis parva ad onerandum examplum."
+
+217 "Programma cursualis"
+
+218 "Exemplum corruptum est."
+$    
+$ Strings from dtmail/SortCmd.C   
+
+219 "Ordo in effectu..."
+
+220 "Seligere Omnis"
+
+221 "receptaculum epistularum accipens"
+
+222 "%a %b %d %k:%M"
+$ /* NL_COMMENT   
+$  * The "%a %b %d %k:%M" is the time and date format, please refer to    
+$  * strftime man page for explanation of each format.   
+$  */   
+
+223 "%a %b %d %H:%M"
+$ /* NL_COMMENT   
+$  * The "%a %b %d %H:%M" is the time and date format, please refer to    
+$  * strftime man page for explanation of each format.   
+$  */   
+
+224 "%a %b %d %k:%M"
+$ /* NL_COMMENT   
+$  * The "%a %b %d %k:%M" is the time and date format, please refer to    
+$  * strftime man page for explanation of each format.   
+$  */   
+
+225 "%a %b %d %H:%M"
+$ /* NL_COMMENT   
+$  * The "%a %b %d %H:%M" is the time and date format, please refer to    
+$  * strftime man page for explanation of each format.   
+$  */   
+
+226 "Proponere indicem"
+
+$ String from Undelete.C, Deleted Messages window title
+227 "Programma cursualis - epistulas sublatas"
+
+$ Strings from SendMsgDialog.C, Add Bcc, Delete Bcc menu buttons
+228 "Addere"
+229 "Tollere"
+230 "Mittere"
+
+$  /* NL_COMMENT
+$   * This string is displayed on the find dialog status line
+$   * when searching for a matching message.
+$   */
+231 "Investigatio in effectu..."
+
+$        /* NL_COMMENT
+$         * These strings are displayed on the find dialog status line
+$         * when one or more matching messages are found.  The first
+$         * string is displayed when there is one matching message,
+$         * and the second string is displayed when there is more than
+$         * one.  The %d is the number of messages that matched.
+$         */
+232 "1 epistula selecta"
+233 "%d epistulae selectae "
+
+$  /* NL_COMMENT
+$   * This string is displayed on the find dialog status line when
+$   * no matching messages were found.
+$   */
+234 "Congruentiam invenire non potest"
+
+$  /* NL_COMMENT
+$   * These strings replace strings 178 and 179.  They are used in
+$   * the "About Mailer" dialog box.
+$   */
+235 "Programma cursualis - De  programma cursualis"
+236 "Programma cursualis Versio %d.%d.%d"
+$  /* NL_COMMENT
+$   * String 237 is the Copy button on Move Other Mailboxes dialog (from RoamCmds.C)
+$   */
+237 "Copiare"
+
+
+$ 
+$ DTMC_BADSTATE
+$ The mailbox is in a state which cannot be deciphered by the Mailer, i.e.
+$ portions of the file have been deleted by another process (the Mailer
+$ only knows how to handle other processes adding to the end of the mailbox.
+$ 
+$ "-NEW"
+238 "Programma cursualis statum hujus receptaculi epistularum intelligere non potest.\n Fortasse alius processus praeter exspectionem in eo receptaculo scribit.\n\nSelige Profecto ad programma cursualis claudendum et iterum aperiendum receptaculum.\nNOTA Mutationes factae in receptaculo post ultima perscriptione amissae esse potest."
+
+$ 
+$ DTMC_ACCESSFAILED
+$ The Mailer cannot perform routine file operations on the mailbox file,
+$ a.k.a. stat, fstat, write, ...
+$ 
+$ "-NEW"
+239 "Hoc receptaculum patens non jam est.\nFortasse alius processus scapum receptaculi deluit.\n\nSelige Profecto ad programma cursualis claudendum et iterum aperiendum receptaculum.\nNOTA  Mutationes factae in receptaculo post ultima perscriptione amissae esse potest.\n\nSelige RELINQUERE ad receptaculum non mutandum."
+
+$ 
+$ DTMC_INODECHANGED
+$ The mailbox has been rewritten by another process.
+$ 
+$ "-NEW"
+240 "Mailer can no longer access this mailbox.\nAnother process has rewritten the mailbox file changing the inode.\n\nSelecting OK will cause the Mailer to close and reopen the mailbox.\nNOTE that any changes made to the mailbox since the last save may be lost.\n\nSelecting CANCEL will leave the mailbox unchanged."
+
+$ 
+$ Messages 241-244 are header field labels for SendMsgDialog.
+$ 
+$ "-NEW"
+241 "Ad"
+$ "-NEW"
+242 "Rem"
+$ "-NEW"
+243 "Cc"
+$ "-NEW"
+244 "Bcc"
+
+$ 
+$ Message 245 is the label for the Open command in the File menu
+$ Message 246 is the label for the command in the OpenContainer menu
+$	which opens Mailboxes not in the users folder list.
+$ 
+$ "-NEW"
+245 "Aperire"
+$ "-NEW"
+246 "Receptacula epistularum altera..."
+
+$ 
+$ Message 247 is the label for the command in the Aliases menu
+$	which opens the MailOptions dialog allowing the user to create
+$	other aliases.
+$ Message 248 is the label for the Aliases popup menu
+$ 
+$ "-NEW"
+247 "Alterum Alias..."
+$ "-NEW"
+248 "Programma cursualis - Alias"
+
+$ 
+$ Messages 249-255 are strings used to generate attachment summaries
+$                  in included messages.
+$ 
+$ "-NEW"
+249 "------------- Begin Included Attachment -------------\n\n" 
+$ "-NEW"
+250 "------------- End Included Attachment -------------\n\n" 
+$ "-NEW"
+251 "       Attachment Name:  "
+$ "-NEW"
+252 "     Attachment DtType:  "
+$ "-NEW"
+253 "Attachment ContentType:  "
+$ "-NEW"
+254 "Attachment Description:  "
+$ "-NEW"
+255 "------------------ Attachments ------------------\n" 
+
+$ "-NEW"
+$ DTMC_SERVERACCESSFAILED:
+$ Mailer failed in attempt to retrieve messages from the mail server
+256 "Mail server access failed:\n%s"
+
+$ "-NEW"
+$ Label on the button which causes the "Mail Retrieval" options to be displayed
+257 "Optiones..."
+
+$ "-NEW"
+$ DTMC_GETMAILCOMMANDFAILED:
+$ Mailer failed in attempt to retrieve messages via custom getmail command
+258 "Mandatum Getmail usoris  offendit:\n%s"
+
+$ "-NEW"
+$ /* NL_COMMENT
+$  * The "%a %b %d %k:%M" is the time and date format, please refer to 
+$  * strftime man page for explanation of each format.
+$  */
+259 "%a %d %b %Y"
+260 "%a %d %b %k:%M"
+261 "%a %d %b %H:%M"
+
+
+$ "-NEW"
+262 "epistulae mortuae nuntius"
+
+$ "-NEW"
+263 "Inclusum '%s' %d kilooctetos est.\nAddere id ?"
+
+
+
+
+
+$set 2        Redefine set#
+
+
+1 "Programma cursualis"
+
+2 "ToolTalk non incipet ; Pellere programmam cursualis non potest.\n\
+Pelle /usr/dt/bin/dtsession vel voca machinator systema."
+
+3 "Impossible d'initialiser les fenêtres. Abandon en cours.\n"
+
+4 "Instutio programmae cursualis vitiosa\n\
+est ; programmam pellere\n\
+non potest nam circulus programmae emendatus est."
+
+5 "Visualisare %s tibi non licet."
+$ \t    /* NL_COMMENT   
+$ \t     * The %s is the name of the mailbox the user doesn't have   
+$ \t     * permission to view.   
+$ \t     */   
+
+6 "receptaculum epistularum %s indicem est ; aprire eum non potest."
+
+7 "Vacuare %s non potest (receptaculum deest)."
+
+8 "Receptaculum %s vacuatus est."
+
+9 "Error - %s vacuatus non est."
+
+10 "Programma cursualis"
+
+11 "%s"
+
+12 "Programma cursualis"
+
+13 "Programma cursualis"
+
+14 "Ante jubendum mandatum \"Perscribere in\",\n\
+debes seligere rem inclusam."
+
+15 "Error - aperire mailrc non potest."
+
+16 "Nihil epistula selecta."
+$ \t/* NL_COMMENT   
+$ \t * No mail message has been selected by the user.   
+$ \t */   
+
+17 "\"%s\" mutatus est. Confirmasne detractionem ?"
+
+18 "Error: Includere scapum %s non potest."
+
+19 "Ante jubendum mandatum \"Perscribere in\",\n\
+debes seligere rem inclusam."
+
+20 "Ante jubendum mandatum \"Perscribere in\",\n\
+debes seligere rem inclusam."
+
+21 "Programma cursualis"
+
+22 "Errores syntaxis inemendabiles in scapo ~/.mailrc sunt.\nVerifica alios nuntios terminal terminalis. Emenda errores et rursus pelle dtmail.\nSi continuas, forsitan perscribere mutationes factae  \n in capsa dialogi Optiones non poteris."
+23 "Continuare"
+24 "Exire"
+25 " Errores syntaxis inemedenabiles in scapo ~/.mailrc sunt.\n Potes applicare facies optionum cursualis in sessione vertente sed \n non poteris perscribere eas in scapo." 
+
+$ 
+$ Messages for file locking dialog displayed from the Advanced option pane.
+$ 
+$ "-NEW"
+26 "The value of the file locking option has changed.\nTo take immediate effect, folders need to be closed and reopened.\n  o Click on 'Reopen' to reopen folders,\n    making the new option take effect immediately.\n  o Click on 'Continue' to avoid reopening folders.\n    The new option will take effect the next time you open a folder.\n  o Click on 'Cancel' to cancel the Apply and return to editing options."
+$ "-NEW"
+27 "Iterum aprire"
+$ "-NEW"
+28 "Continuare"
+$ "-NEW"
+29 "Relinquere"
+
+$ 
+$ Messages for ToolTalk errors.
+$ 
+$ "-NEW"
+30 "%s returned ToolTalk error: %s\n"
+
+
+$set 3        Redefine set#
+
+
+1 "Perscriptio automata..."
+
+2 "Initio in effectu..."
+
+3 "Receptaculum epistularum %s deest.\n\
+Visne id creare ?"
+
+4 "Programma cursualis"
+
+5 "Profecto"
+
+6 "receptaculum epistularum %s obseratus est.\n\
+Deserare id manui et iterum \n\
+operem facere vel vocare machinatorem systemae potes."
+
+7 "Programma cursualis"
+
+8 "Profecto"
+
+9 "Profecto"
+
+10 "Profecto"
+
+11 "Profecto"
+
+12 "%s"
+
+13 "Epistula %d de %d, %d nova(e), %d sublata(e)."
+
+14 "Epistula %d de %d, %d nova(e), %d sublata(e)."
+$ \t/* NL_COMMENT   
+$ \t * The user will see the following message display as:   
+$ \t * "Message 3 of 10, 2 new, 6 deleted"   
+$ \t * This means ??? -- Explain to translator.   
+$ \t */   
+
+15 "Perscriptio in effectu..."
+
+16 "Programma cursualis"
+$ \t\t/* NL_COMMENT   
+$ \t\t * This dialog comes up when the user tries to quit the   
+$ \t\t * mailbox and the user is asked if he wants to destroy   
+$ \t\t * the messages marked for deletion.   
+$ \t\t */   
+
+17 "Visne delere epistulas selectas\n\
+ad detractionem in receptaculum epistularum ?"
+
+18 "Profecto"
+
+19 "relinquere"
+
+20 "Apertio receptaculi epistularum..."
+
+21 "%s jam adest.\n\
+Visne deterere id ?"
+
+22 "Programma cursualis"
+
+23 "Deterere %s non potest.\n\
+Verifica licentias aditus et iterum tenta."
+
+24 "Programma cursualis"
+
+25 "Receptaculum oneratur..."
+
+26 "Percontationes indicis"
+
+27 "Opus onerandi in effectu..."
+
+28 "Receptaculum vacuum"
+
+29 "Profecto"
+
+30 "Profecto"
+
+31 "Profecto"
+
+32 "Tritio epistularum sublatarum..."
+
+33 "Profecto"
+
+34 "%s deest."
+
+35 "Aperire %s non potest."
+
+36 "Tribuere memoriam non potest."
+
+37 "Enumeratio inclusorum"
+
+38 "inclusum"
+
+39 "inclusa"
+$ \t/* NL_COMMENT   
+$ \t * "attachments" is the plural form of "attachment".   
+$ \t */   
+
+40 "inclusa"
+
+41 "sublatum(i)"
+
+42 "%s jam ades. Confirmasne substitutionem ?"
+
+43 "Substituere %s non potest."
+
+44 "Creare %s non potest."
+
+45 "Creare %s non potest."
+
+46 "Receptaculum vacuum"
+
+47 "%s jam adest.\n\
+Visne deterere id ?"
+
+48 "Programma cursualis"
+
+49 "Deterere %s non potest.\n\
+Verifica licentias adituum et iterum tenta."
+
+50 "Programma cursualis"
+
+51 "Creare %s non potest."
+
+52 "Programma cursualis"
+
+53 "Scribere in %s non potest."
+
+54 "Programma cursualis"
+
+55 "Creare %s non potest."
+
+56 "Programma cursualis"
+
+57 "Vocare inclusos "
+
+58 "Fenestra scriptionis textum vel\n\
+inclusos quod ammitentur dum claudita\n\
+fenestrae continet.\n\
+Confirmasne clauditam ?"
+
+59 "Memoria nimis parva"
+
+60 "Memoria nimis parva ad onerandum scapum .vacation.msg exstans."
+
+61 "Programma cursualis"
+
+62 "Scapum .vacation.msg exstans corruptus est."
+
+63 "Selige epistulam movendum."
+
+64 "Selige epistulam copiandum."
+
+65 "%d epistulas movetas in %s."
+
+66 "%d epistulam movetam in %s."
+
+67 "%d epistulas copiatas in %s."
+
+68 "%d epistulam copiatam in %s."
+
+69 "Conspectus jam adest : motio in pars prima scrini in effectu."
+$ \t/* NL_COMMENT   
+$ \t* The current mail message selected is already displayed in a separate   
+$ \t* window.  Therefore this 'separate' window will be raised in front   
+$ \t* of existing windows so the user can see it.   
+$ \t*/   
+
+70 "Scriptio in scapo dead.letter..."
+
+71 "Programma cursualis"
+
+72 "Profecto"
+
+73 "relinquere"
+
+74 "Profecto"
+
+75 "Profecto"
+
+76 "Profecto"
+
+77 "Probabiliter mutationes in incluso non perscriptae sunt.\n Mittere epistulam conexus obstabit.\n. Mutationes non perscriptae in epistula non includebuntur\n. Uti Perscribere in ad prescribendum mutationes postquam finis conexus mais elles n'en feront pas partie \n."
+78 "Initio Optionum cursualis..."
+79 "Delere et Exire"
+80 "Haud delere et Exire"
+81 "Hoc inclusum continet mandatos quod pessimus problemas causam esse potiunt\n. Moneo tibi pellere id solum si vous\nêtes sûr que cela ne présente aucun danger.\n\nDans ce cas, appuyez sur OK,\nsinon appuyez sur relinquere."
+82 "Hoc receptaculum epistularum alterum usorem habet.\nVisne en demander l'accès exclusif ?"
+83 "Le programme courrier ne peut pas obtenir les droits exclusifs de cette receptaculum epistularum .\nVoulez-vous l'ouvrir en lecture seule ?"
+
+$            /* NL_COMMENT
+$             * The following sentence means %d number of mail messages have
+$             * been deleted from the mail folder.  This is the plural form
+$             * of the message that gets printed if more than one message
+$             * is moved.
+$             */
+84 "%d epistulas sublatas sunt"
+
+$            /* NL_COMMENT
+$             * The following sentence means %d number of mail messages have
+$             * been deleted from the mail folder.  This is the singular
+$             * form of the message that gets printed if only one message
+$             * is moved.
+$             */
+85 "%d epistulam sublatam est"
+86 "Investigatio novarum epistularum in effectu..."
+$		/* NL_COMMENT
+$		 * This dialog comes up when the user tries to quit the
+$		 * mailbox.  The user is asked if they want to destroy
+$		 * the deleted messages.
+$		 */
+87 "Programma cursualis - Claudere"
+88 "Delere epistulas sublatas et claudere hoc receptaculum epistularum ?"
+89 "Delere et Claudere"
+90 "Condere et Claudere"
+$        /* NL_COMMENT
+$         * Post a dialog explaining that the action was invalid
+$         */
+91 "Pellere actionem vitiosam non potest."
+$        /* NL_COMMENT
+$         * Post a dialog explaining that the action failed.
+$         */
+92 "Pellere actionem offendit !"
+93 "Icon selecta %s scapum pulsabilis est.\nClica supra Profecto si vis pellere eam aut supra Relinquere si non vis."
+
+94 " Le programme courrier ne peut pas obtenir les droits exclusifs de cette receptaculum epistularum parce que le système ne répond pas.\n\nDans ce cas seulement, vous pouvez choisir de l'ouvrir en lecture seule \n ou en lecture-écriture sans l'exclusivité du droit d'accès \n (Ceci n'est possible que si personne d'autre n'utilise la receptaculum epistularum)."
+95 "Legere solum"
+96 "Legere-Scribere"
+
+$ 
+$ "-NEW"
+$ 
+$ This message appears when dtmail tries to open a mailbox which has been
+$ opened by another dtmail process.
+$ 
+$ Parameters:
+$   1.  Error message saying that the <mailbox>.dtmail lockfile has been found.
+$   2.  The mailbox path.
+$   3.  "OK"
+$   4.  "Cancel"
+$   5.  The <mailbox>.dtmail lockfile path.
+$ 
+97 "%s\n\nThis may indicate that another Mailer has opened\n%s\n\nYou may open this mailbox READ ONLY by choosing '%s'.\n\nOtherwise, you may choose '%s',\nmake sure that another Mailer has not opened this mailbox,\ndelete %s,\nand reopen this mailbox."
+
+$ 
+$ "-NEW"
+$ 
+$ Messages 98-100 check for problems in the paths specified by users of
+$ the file selection box.
+$ 
+98 "Search permission denied on a component of the path prefix,\n'%s'."
+99 "A component of the path prefix is not a directory,\n'%s'."
+100 "A component of the path prefix does not exist,\n'%s'."
+
+
+
+$set 5        Redefine set#
+
+
+1 "Programma cursualis"
+
+2 "Programma cursualis"
+
+3 "Si mittas epistulam in haec forma,\n\
+\t    mutationes inclusorum\n\
+\t    amittentur."
+$    /* NL_COMMENT   
+$     * The user tried to send a messages without saving changes in   
+$     * some open attachments.  This warning makes sure that is what   
+$     * the user intended.   
+$     */   
+
+4 "Selige solum inclusum unum\n\
+\t    et iterum jube mandatum Vocare."
+$       /* NL_COMMENT   
+$        * Mailer ran out of memory.  Ask the user to quit some other   
+$        * applications so there will be more memory available.   
+$        */   
+
+5 "Certaines adresses indiquées dans le message sont incorrectes,\n\
+et ne font référence à aucun utilisateur connu. Assurez-vous que\n\
+toutes les adresses sont correctes et faites une nouvelle tentative."
+$       /* NL_COMMENT   
+$        * Mailer ran out of memory.  Ask the user to quit some other   
+$        * applications so there will be more memory available.   
+$        */   
+
+6 "Programma cursualis satis memoriam non habet\n\
+ad mittendum hanc epistulam.\n\
+Claude alias programmas\n\
+et iterum mitte."
+$       /* NL_COMMENT   
+$        * There was an error from the mail transport (sendmail).   
+$        */   
+
+7 "Error accidit dum missione epistulae.\n\
+Verifica eam destinationem advenit.\n\
+Si non advenit, iterum mitte."
+
+$       /* NL_COMMENT
+$        * User trying to send a message that has no addressed recipient.
+$        */
+8 "Essayer Mittere après avoir spécifié le ou les destinataires du message dans \nles zones A:, Cc:, ou Bcc:."
+
+
+$set 12        Redefine set#
+
+
+1 "inclusum"
+
+2 "inclusum"
+
+3 "AffichNombre"
+
+4 "Nequeo includere scapos generis FIFO sequentes: %s."
+
+5 "Nequeo includere les fichiers spéciaux par caractères suivants: %s."
+
+6 "Nequeo includere les répertoires suivants: %s."
+
+7 "Nequeo includere les fichiers spéciaux par blocs suivants: %s."
+
+8 "Nequeo includere les fichiers de prise suivants: %s."
+
+$set 13        Redefine set#
+
+
+1 "Creare non potest"
+
+2 "Scribere non potest"
+$    
+$ Strings from dtmail/AttachCmds.C   
+
+$set 14        Redefine set#
+
+
+1 "Addere une connexion"
+
+2 "Aperire %s non potest."
+
+3 "Nequeo includere scapos generis FIFO sequentes: %s."
+
+4 "Nequeo includere scapos speciales par caractères sequentes: %s."
+
+5 "Nequeo includere indices sequentes: %s."
+
+6 "Nequeo includere scapos speciales par blocs sequentes: %s."
+
+7 "Nequeo includere scapos contactuum sequentes: %s."
+
+8 "Aperire %s non potest."
+
+9 "Programma cursualis - Vocare includere"
+
+10 "Descriptio"
+
+11 "Perscribere inclusum in"
+
+
+
+
+$set 15
+1 "Mutationes perscriptae non sunt.\nPerscribere eas, tollere eas\naut redire loco superiore cum capsa dialogi potes."
+2 "Perscribere"
+3 "Tollere"
+$ 
+$ The followings are added by IBM for 41J release
+$ 
+$set 20
+1 "Receptaculum epistularum %s jam apertum est."
+$ The above message is used in RoamMenuWindow::open
+$ See AIXC cmvc defect 175920
+2 "Utere nominem proprium : "
+$ The above message is used in OptCmd::init_advanced_pane()
+$ see AIX cmvc defect 176608
+3 "Legere solum"
+$ The above message is used in RoamMenuWindow::mapnotify()
+$ see AIX cmvc defect 176608
+
+$ 
+$	SETS 21 - 25 WERE ADDED TO SUPPORT CDEnext PRINTING
+$ 
+$	The following set was added to support CDEnext printing based on
+$	the Xp Print Server.
+$ 
+$set 21
+$ 
+$	Messages 1 - 11 are used in DmxPrintJob.
+$ 
+$ 
+$	This is the status message that gets displayed in the MainWindow
+$	and RoamMenuWindow status lines when a print job is being executed.
+$	The '%s' is the name of the temporary file containing the message(s)
+$	to be printed.
+1 "Exscribo %s ..."
+
+$	Messages 2 - 4 are used in the error popup which gets displayed
+$	when an invalid margin specifier has been supplied by the user.
+$ 
+$	Message 2 is the actual error messagactual error message
+$	Message 3 is the title which is displayed in the error popup.
+$	Message 4 is the label on the OK button of the error popup.
+2 "Syntaxis d'un des indicateurs marginis sequentes vitiosa est : \n %s \n %s \n %s \n %s \nContinuare utendo margines ?"
+3 "Programma cursualis"
+4 "Profecto"
+
+$	Messages 5 - 11 are format string used to construct the header
+$	and footer strings which appear in the printing output.
+$ 
+$	Message 5 is the format string used to make a Cc header/footer.
+$	Message 6 is the format string used to make a Date header/footer.
+$	Message 7 is the format string used to make a From header/footer.
+$	Message 8 is the format string used to make a Subj't header/footer.
+$	Message 9 is the format string used to make a To header/footer.
+$	Message 10 is the format string used to make a Page# header/footer.
+$	Message 11 is the format string used to make a UserName header/footer.
+5 "Cc :  %s"
+6 "Dies :  %s"
+7 "Ab :  %s"
+8 "Rem :  %s"
+9 "Ad :  %s"
+10 "Pagina %d in %d"
+11 "Epistulam ad :  %s"
+
+$ 
+$	Messages 12 - 13, 20 are used in DmxPrintSetup to construct the
+$	app-specific printing options for DtMail which will be included
+$	in the DtPrintSetupBox.
+$ 
+$	Message 12 is the label used on the Toggle Button to indicate that
+$	multiple messages should be printed in separate spool jobs.
+$	Message 13 is the label used on the Toggle Button to indicate that
+$	lines which would extend beyond the edge of the printed page be 
+$	"wrapped" to the next line.
+12 "Exscribere separatim"
+13 "Uti Recursus carruli"
+
+
+$	Messages 14 - 15 are status messages for the PrintToFile function.
+$ 
+$	Message 14 indicates that the PrintToFile function was unsuccessful.
+$	Message 15 indicates that the PrintToFile function was successful.
+$       NOTE:  'Print to File' should be translated as in DtPrint.msg
+$               Set 1, Message 3.
+14 "'Exscribere in scapo' offendit."
+15 "'Exscribere in scapo ' succedit."
+
+$       NL_COMMENT 
+$          Messages 16 - 19 are obsolete, and have been replaced by 24
+$ 
+$	Messages 16 - 19 are status messages for the popup PDM function.
+$ 
+$	Message 16 indicates that there was no pdm deamon running.
+$	Message 17 indicates that the pdm deamon was unable to start a pdm.
+$	Message 18 indicates that the pdm couldnt connect to the video display.
+$	Message 19 indicates that the pdm couldnt connect to the print display.
+16 "PDM in ambitu deest."
+17 "Pellere PDM non potest."
+18 "Conexus autorisée inter PDM et scrinium visificum deest."
+19 " Conexus autorisée inter PDM et scrinium pressorium deest."
+
+$	Message 20 is the label used on the Push Button to bring up
+$	the printing options dialog from the DtPrintSetupDialog.
+20 "Consecutio ..."
+$       Message 21 is used for the title string on the DtPrintSetupDialog.
+21 "Programma Cursualis - Facies pressoriae"
+
+$       Message 22 is used to alert the user to the fact that the mailer
+$                  cannot close the mailer window until a task (usually
+$                  a print job) has terminated.
+22 "Claudita immines :  exspecta finem muneris..."
+
+$	Message 23 is used to alert the user to the fact that the X Print
+$		   Server cannot complete the print request due to a lack
+$		   of resources.
+23 "Minister pressorium X satis opes temporarie non habet."
+
+$       Messages 24 & 25 are used to handle errors from the PDM
+24	"Error rectoris pressoriae (PDM) - facies agere offendit."
+25	"Continuare"
+
+
+
+
+$ 
+$	The messages in this set are used in pulldown menu for the
+$	header/footer $	frame which is part of the "Printing" pane
+$	in the Options dialog.
+$ 
+$	Messages 1 - 8 are used in DmxPrintOptions.
+$ 
+$ 
+$	Message 1 specifies that the page header/footer field be empty.
+$	Message 2 put the Cc msg header in the page header/footer field.
+$	Message 3 put the Date msg header in the page header/footer field.
+$	Message 4 put the From msg header in the page header/footer field.
+$	Message 5 put the Subject msg header in the page header/footer field.
+$	Message 6 put the To msg header in the page header/footer field.
+$	Message 7 put the Page Nmbr msg header in the page header/footer field.
+$	Message 8 put the User Name msg header in the page header/footer field.
+$set 22
+1 "Vacuo"
+$ 
+2 "Frontis CC "
+3 "Frontis Dies "
+4 "Frontis Ab"
+5 "Frontis Rem"
+6 "Frontis Ad"
+7 "Numerus paginae"
+8 "Nomen usoris"
+
+$ 
+$	The messages in this set are used in pulldown menu for the
+$	Printed Message Headers option which is part of the "Printing" pane
+$	in the Options dialog.
+$ 
+$	Messages 1 - 4 are used in DmxPrintOptions.
+$ 
+$	Message 1 don't print any message headers.
+$	Message 2 print the "standard" msg headers (To, From, Subject, Cc).
+$	Message 3 print the "abbreviated" msg headers as defined by the user.
+$	Message 4 print all message headers.
+$ 
+$set 23
+
+1 "Nihil"
+2 "Usitatos"
+3 "Constrictos"
+4 "Totus"
+
+$ 
+$	The messages in this set are used in pulldown menu for the
+$	Printed Message Headers option which is part of the "Printing" pane
+$	in the Options dialog.
+$ 
+$	Messages 1 - 5 are used in DmxPrintOptions.
+$ 
+$	Message 1 use a New Line (CRLF) to separate multiple messages.
+$	Message 2 use a Blank Line (2xCRLF) to separate multiple messages.
+$	Message 3 use a Line of characters to separate multiple messages.
+$	Message 4 start each new message on a new page.
+$	Message 5 print each message in it's own spool job.
+$ 
+$set 24
+1 "Recursus Carruli"
+2 "Linea vacua"
+3 "Linea litterae "
+4 "Nova Pagina"
+5 "Novum munus"
+
+$ 
+$	The following set was added to support CDEnext printing based on
+$	the Xp Print Server.
+$ 
+$	Messages 1 - 2 are used in DmxPrintOptions.
+$ 
+$ 
+$set 25
+$ 
+$	Label for the option menu used to specify which message headers are
+$	printed.
+1 "Frontes epistularum exscriptarum :  "
+$ 
+$	Label for the option menu used to specify which how multiple messages
+$	are separated.
+2 "Separare epistulas multas cum :  "
+
+$ 
+$	The following set was added to support CDEnext printing based on
+$	the Xp Print Server.
+$ 
+$	Messages 1-4 are used in error dialogs to indicate an invalid
+$		     entry for margin specifiers in the printing options pane.
+$	Message 5 is the label string on the button to dismiss the error dialog.
+$ 
+$ 
+$set 26
+1 "Valor dimensionis marginis sursum vitiosa est:"
+2 " Valor dimensionis marginis dextrorsum vitiosa est:  "
+3 " Valor dimensionis marginis deorsum vitiosa est:  "
+4 " Valor dimensionis marginis sinistrosrum vitiosa est:  "
+5 "Continuare"
+
+$ 
+$	The following set was added to support the Mail Retrieval option pane.
+$ 
+$	Messages 1-5 Used in the Server Protocol option menu to indicate the
+$		     set of mail server network protocols which are supported.
+$	Messages 6-15 Are used to label the options in the pane.
+$ 
+$ "-NEW"
+$ 
+$set 27
+1 "Auto"
+2 "POP3"
+3 "APOP"
+4 "IMAP"
+5 "POP2"
+
+6 "Tabellarius (systemae) automatus"
+
+7 "Recuperatio ex ministro longino"
+8 "Protocole ministri:"
+9 "Nomen ministri:"
+10 "Nomen Usoris:"
+11 "Tessera:"
+12 "Meminisse tesseram"
+13 "Expungere e ministro post recuperationem"
+14 "Recuperare veteres epistulas"
+
+15 "Recuperatio privata"
+16 "mandatum pellendum:"
+
+17 "Iter ad receptaculum epistularum deest."
+18 "Iter ad receptaculum epistularum ordinatri :"
+

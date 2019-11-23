@@ -1,0 +1,677 @@
+# ##########################################################################
+# 
+#      dt.dt
+# 
+#      Action and DataType definitions for the Common Desktop Environment
+#      (CDE) DT components.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#     $TOG: dt.dt.src /main/13 1998/12/18 18:16:14 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# Dataattribut
+# 
+# ##################################################################
+DATA_ATTRIBUTES DT
+{
+        ACTIONS         Open,ReloadActions,Print
+        ICON		Dtdt
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.dt
+        MIME_TYPE	text/plain
+        DESCRIPTION     Detta är skrivbordets databasfil som innehåller \
+                        definitioner för funktioner och datatyper. Dess datatyp \
+                        heter DT. DT-filerna har namn som slutar med '.dt'.
+        TYPE_LABEL      DT
+}
+DATA_CRITERIA DT1
+{
+	DATA_ATTRIBUTES_NAME DT
+        MODE            f
+        NAME_PATTERN    *.dt
+}
+ACTION ReloadActionsNotice
+{
+        LABEL           Reload Notification
+        TYPE            TT_MSG
+        TT_CLASS	TT_NOTICE
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtTypes_Reloaded
+        DESCRIPTION     The ReloadActionsNotice action notifies 			applications of a rebuilt cache file database.
+
+}
+
+ACTION BuildDataBaseRequest
+{
+        LABEL           Rebuild Request
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtDtsCache
+        DESCRIPTION     The BuildDataBaseRequest action rebuilds the 			cache file database                         of action, data type and front panel definitions.
+
+
+}
+ACTION ReloadActions
+{
+        LABEL           Ladda om funktioner
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'dtaction BuildDataBaseRequest ;			dtaction ReloadActionsNotice'
+
+        DESCRIPTION     Funktionen Ladda om funktioner laddar om databasens \
+                        definitioner av funktioner, datatyper och frontpanelen.
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES FP
+{
+        ACTIONS         Open,Print
+        ICON		Dtfpcfg
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.fp
+        MIME_TYPE	text/plain
+        DESCRIPTION     Detta är skrivbordets databasfil som innehåller \
+                        definitioner för frontpanelens konfiguration. Dess datatyp \
+                        heter FP. FP-filerna har namn som slutar med '.fp'.
+        TYPE_LABEL      FP
+}
+DATA_CRITERIA FP1
+{
+	DATA_ATTRIBUTES_NAME FP
+        MODE            f
+        NAME_PATTERN    *.fp
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTFILE_FILE
+{
+        PROPERTIES      invisible
+        ACTIONS         Open,Print
+        IS_TEXT         true
+        MIME_TYPE	text/plain
+        DESCRIPTION     Detta är en dold fil som används av filhanteraren för \
+                        en viss typ av konfigurationsinformation. \
+                        Dess datatyp heter DTFILE_FILE.
+        TYPE_LABEL      DTFILE_FILE
+}
+DATA_CRITERIA DTFILE_FILE1
+{
+        DATA_ATTRIBUTES_NAME DTFILE_FILE
+        MODE            f
+        NAME_PATTERN    .\!*
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTKSH_SCRIPT
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtdtksh
+        IS_EXECUTABLE	true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.ds
+        MIME_TYPE	text/plain
+        DESCRIPTION     Detta är en körbar fil som innehåller ett 'dtksh'-skript. \
+                       Dess datatyp heter DTKSH_SCRIPT.
+        TYPE_LABEL      DTKSH_SCRIPT
+}
+DATA_CRITERIA DTKSH_SCRIPT1
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        NAME_PATTERN    *.ds
+}
+DATA_CRITERIA DTKSH_SCRIPT2
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        CONTENT		0 string #!/usr/dt/bin/dtksh
+}
+DATA_CRITERIA DTKSH_SCRIPT3
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        CONTENT		0 string #! /usr/dt/bin/dtksh
+}
+ACTION Run
+{
+        LABEL           Kör
+        ARG_TYPE        DTKSH_SCRIPT
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTKSH_CONV
+{
+        ACTIONS         Open,Print
+        ICON            Dtdtksh
+        NAME_TEMPLATE	%s.dtsh
+        MIME_TYPE	text/plain
+        DESCRIPTION     Denna fil innehåller specialfunktioner som \
+                        kan användas av 'dtksh'-skript. Dess datatyp \
+                        heter DTKSH_CONV.
+        TYPE_LABEL      DTKSH_CONV
+}
+DATA_CRITERIA DTKSH_CONV1
+{
+        DATA_ATTRIBUTES_NAME DTKSH_CONV
+        MODE            f
+        NAME_PATTERN    *.dtsh
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# Funktioner
+# 
+# ##################################################################
+ACTION Dtstyle
+{
+	LABEL		Arbetsinställningar
+        ARG_COUNT       0
+        ICON		Fpstyle
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtstyle
+        DESCRIPTION     Funktionen Arbetsinställningar (Dtstyle) startar \
+                        skrivbordets Arbetsinställningar.
+}
+
+# ######
+
+ACTION OpenDtIntro
+{
+	LABEL		Skrivbordsintroduktion
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dthelpview -helpVolume Intromgr
+        DESCRIPTION     Funktionen Skrivbordsintroduktion öppnar hjälpvolymen \
+                        med introduktion och grundläggande \
+                        information om skrivbordet. 
+}
+
+# ######
+
+ACTION FPHelp
+{
+	LABEL		FPHjälp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dthelpview -helpVolume FPanel
+        DESCRIPTION     Funktionen FPHjälp visar hjälpvolymen \
+                        om frontpanelen.
+}
+
+# ######
+
+ACTION LockDisplay
+{
+	LABEL		LåsSkärm
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	Display_Lock
+        DESCRIPTION     Funktionen LåsSkärm låser arbetsstationen. \
+                        Du måste känna till användarens eller rotens lösenord \
+                        för att låsa upp arbetsstationen igen.
+}
+
+# ######
+
+ACTION ExitSession
+{
+	LABEL		ExitSession
+        ARG_COUNT      	0
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	XSession_Exit
+        DESCRIPTION     Funktionen AvslutaSession avslutar användarens \
+                        skrivbordssession och visar inloggningsskärmen. \
+                        Användaren måste logga in för att påbörja en ny session.
+}
+
+# ######
+
+# ######
+
+ACTION SaveSession
+{
+	LABEL			Save Session
+	TYPE			TT_MSG
+	TT_CLASS		TT_REQUEST
+	TT_SCOPE		TT_SESSION
+	TT_OPERATION		Save_Session
+
+	#
+	# The legal values for save_type are: Local, Global and Both
+	#
+	TT_ARG0_MODE		TT_IN
+	TT_ARG0_VTYPE		save_type
+	TT_ARG0_REP_TYPE	TT_REP_STRING	
+	TT_ARG0_VALUE		Local
+
+	#
+	# The legal values for shutdown are: True and False
+	#
+	TT_ARG1_MODE		TT_IN
+	TT_ARG1_VTYPE		shutdown
+	TT_ARG1_REP_TYPE	TT_REP_STRING	
+	TT_ARG1_VALUE		False
+
+	#
+	# The legal values for interact_style are: None, Errors and Any
+	#
+	TT_ARG2_MODE		TT_IN
+	TT_ARG2_VTYPE		interact_style
+	TT_ARG2_REP_TYPE	TT_REP_STRING	
+	TT_ARG2_VALUE		None
+
+	#
+	# The legal values for fast are: True and False
+	#
+	TT_ARG3_MODE		TT_IN
+	TT_ARG3_VTYPE		fast
+	TT_ARG3_REP_TYPE	TT_REP_STRING	
+	TT_ARG3_VALUE		True
+
+	#
+	# The legal values for global are: True and False
+	#
+	TT_ARG4_MODE		TT_IN
+	TT_ARG4_VTYPE		global
+	TT_ARG4_REP_TYPE	TT_REP_STRING	
+	TT_ARG4_VALUE		True
+
+	#
+	# The num_sessions_backedup field can be any positive
+	#   number.  If it is 0, the default number of sessions
+	#   will be backedup.
+	#
+	TT_ARG5_MODE		TT_IN
+	TT_ARG5_VTYPE		num_sessions_backedup
+	TT_ARG5_REP_TYPE	TT_REP_STRING	
+	TT_ARG5_VALUE		0
+
+	DESCRIPTION		The Save Session action causes the currently \
+                                running session to be saved.
+} 
+
+# ######
+
+ACTION ReloadResources
+{
+        LABEL           Ladda om resurser
+        ARG_COUNT       0
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	Resources_Reload
+        DESCRIPTION     Funktionen Ladda om resurser laddar om \
+                        X-resursdatabasen med resursfilerna på skrivbordet \
+                        och infogar alla eventuella ändringar som \
+                        har införts i dem sedan du loggade in.
+}
+
+# ######
+
+ACTION ReloadApps
+{
+	LABEL		Ladda om program
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dtaction ReloadActions;                            /usr/dt/bin/dtappgather -r; 			   /usr/dt/bin/dthelpgen -dir $HOME/.dt/help '
+
+
+        DESCRIPTION     Funktionen om program laddar om \
+                        databasens definitioner av funktioner, datatyper och \
+                        frontpanelen.
+}
+
+# ######
+
+ACTION Dtcreate
+{
+	LABEL		Skapa funktion
+        ICON		Dtrunpn
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtcreate "%Arg_1%"
+        DESCRIPTION     Funktionen Skapa funktion (Dtcreate) kör programmet \
+                        Skapa funktion som du använder för att skapa \
+                        definitioner av programfunktioner och -datatyper.
+}
+
+# ######
+
+ACTION DtwmrcEdit
+{
+	LABEL		Redigera Dtwmrc
+        ICON            Fppenpd
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c 'if [ ! -f $HOME/.dt/dtwmrc ] ; then                                   if [ ! -f /etc/dt/config/sys.dtwmrc ] ; then                                     cp /usr/dt/config/$LANG/sys.dtwmrc                                                             $HOME/.dt/dtwmrc;                                   else                                     cp /etc/dt/config/sys.dtwmrc                                                             $HOME/.dt/dtwmrc;                                   fi;                                   chmod u+w $HOME/.dt/dtwmrc;                                fi;                                /usr/dt/bin/dtaction Open $HOME/.dt/dtwmrc'
+        DESCRIPTION     Funktionen Redigera Dtwmrc (DtwmrcEdit) öppnar en \
+                        kopia av $HOME/.dt/dtwmrc i systemets redigerare \
+                        (den redigerare som anges av EDITOR- \
+                        miljövariabeln). Om $HOME/.dt/dtwmrc inte finns kommer \
+                        funktionen att skapa filen genom att kopiera \
+                        /usr/dt/config/<språk>/sys.dtwmrc. När du \
+                        sparar filen och avslutar redigeraren måste du \
+                        starta om arbetsytehanteraren genom att välja \
+                        Starta om arbetsytehanteraren på menyn Arbetsyta.
+}
+
+# ######
+
+ACTION RestorePanel
+{
+	LABEL		Återställ frontpanelen
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtPanel_Restore
+        DESCRIPTION     Funktionen Återställ frontpanelen återställer \
+                        frontpanelen till standardläge.
+}
+
+# ######
+
+ACTION Dtmail
+{
+	LABEL		Elektronisk post
+        ICON		DtMail
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Display
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	RFC_822_MESSAGE
+	TT_ARG0_VALUE	DTMAIL_INBOX
+        DESCRIPTION     Funktionen Elektronisk post (Dtmail) kör skrivbordets elektroniska \
+                        postprogram.
+}
+
+# ######
+
+ACTION Dtcalc
+{
+	LABEL		Kalkylator
+        ICON            Dtcalc
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtcalc
+        DESCRIPTION     Funktionen Kalkylator (Dtcalc) kör skrivbordets \
+                        Kalkylator.
+}
+
+# ######
+
+ACTION Dtterm
+{
+	LABEL		Terminal
+        ARG_COUNT       0
+        ICON            Dtterm
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtterm
+        DESCRIPTION     Funktionen Terminal (Dtterm) kör skrivbordets \
+                        terminalemulatorprogram.
+}
+
+# 
+#  The following action is used to start a terminal emulator
+#  via the desktop's messaging system.  If a terminal emumaltor
+#  server is not running when this action is invoked, a server
+#  will be started.  Once the server is started, subsequent
+#  invocations of this action will not start a new process but
+#  instead, a message will be sent to the server and a new
+#  terminal emulator window will be mapped.
+# 
+#  Note that all shells started via the server will run on the
+#  server's host, regardless of the host where the action is
+#  invoked.
+ACTION DttermServer
+{
+	LABEL			Terminal
+	ARG_COUNT		0
+	ICON			Dtterm
+	TYPE			TT_MSG
+	TT_CLASS		TT_REQUEST
+	TT_SCOPE		TT_SESSION
+	TT_OPERATION		DtTerminal_New
+	TT_ARG0_MODE		TT_IN
+	TT_ARG0_VTYPE		-display
+	TT_ARG0_REP_TYPE	TT_REP_STRING
+	TT_ARG0_VALUE		$DISPLAY
+	TT_ARG1_MODE		TT_IN
+	TT_ARG1_VTYPE		-display
+	TT_ARG1_REP_TYPE	TT_REP_STRING
+	TT_ARG1_VALUE		$DISPLAY
+	DESCRIPTION		Funktionen Terminal (Dtterm) kör skrivbordets \
+                        terminalemulatorprogram.
+}
+
+# ######
+
+ACTION Dticon
+{
+	LABEL		Ikonredigerare
+        ICON		Dtpaint
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dticon
+        DESCRIPTION     Funktionen Ikonredigerare (Dticon) kör skrivbordets \
+                        ikonredigerare som du använder för att skapa och \
+                        redigera bildfiler med bitmappar och bildpunktsmönster.
+}
+ACTION Dticon
+{
+	LABEL		Ikonredigerare
+        ICON		Dtpaint
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dticon -file                           "%(File)Arg_1"Ikonfil som ska redigeras:"%"
+
+        DESCRIPTION     Funktionen Ikonredigerare (Dticon) kör skrivbordets \
+                        ikonredigerare som du använder för att skapa och \
+                        redigera bildfiler med bitmappar och bildpunktsmönster.
+}
+
+# ######
+
+ACTION (None)
+{
+	LABEL		(Ingen)
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Det finns inga tillgängliga funktioner \\n för denna typ av fil."                        "Inga funktioner"                        "OK"
+
+
+
+        DESCRIPTION     Funktionen (Ingen) är en specialfunktion som används för att \
+                        rapportera att det inte finns några tillgängliga \
+                        funktioner för en viss datatyp.
+}
+
+# ######
+
+ACTION DttermErrorlog
+{
+	LABEL		Visa fel
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/sh -c 'if [ ! -f $HOME/.dt/errorlog ] ; then                                       /bin/touch $HOME/.dt/errorlog;                                      fi;                         /usr/dt/bin/dtterm -map -title 			     "Visa fel"                              -e tail -f $HOME/.dt/errorlog'
+
+
+
+
+
+        DESCRIPTION     Funktionen Visa fel öppnar ett terminalfönster \
+                        som löpande visar innehållet i \
+                        felloggfilen $HOME/.dt/errorlog. Om fönstret \
+                        är minimerat kommer det automatiskt \
+                        att återfå normal storlek när ett fel tas emot.
+}
+
+# ######
+
+ACTION Dttypes
+{
+        LABEL           Typer och funktioner
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         /usr/dt/bin/dttypes | \${PAGER:-more};             echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+
+        DESCRIPTION     Funktionen Typer och funktioner (Dttypes) kör verktyget \
+                        'dttypes', som tillhandahåller information för \
+                        felsökning i databasen med funktioner och datatyper.
+}
+ACTION Dttypes
+{
+        LABEL           Typer och funktioner
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '/usr/dt/bin/dttypes -type "%(File)Arg_1%";                  echo "\\n*** Välj Stäng eller Avbryt på fönstermenyn för att stänga fönstret ***"'
+
+        DESCRIPTION     Funktionen Typer och funktioner (Dttypes) kör verktyget \
+                        'dttypes', som tillhandahåller information för \
+                        felsökning i databasen med funktioner och datatyper.
+}
+
+# #########################################################################
+# 
+#  Detta är standardfunktionen 'NoPrint'.
+# 
+# #########################################################################
+ACTION NoPrint
+{
+	LABEL		IngenUtskrift
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Det går inte att skriva ut denna datatyp."                        "Det går inte att skriva ut"                        "OK"
+
+
+
+        DESCRIPTION    Funktionen IngenUtskrift visar ett felmeddelande \
+                       som anger att filen som användaren försöker \
+                       skriva ut är av en datatyp som saknar en definierad \
+                       utskriftsfunktion.     
+}
+
+# #########################################################################
+# 
+#  Detta är standardfunktionen 'Öppna'.
+# 
+# #########################################################################
+ACTION Open
+{
+        LABEL           Öppna
+        TYPE            MAP
+        MAP_ACTION      TextEditor
+}
+
+# #########################################################################
+# 
+# 
+# #########################################################################
+ACTION DtTTMediaOpen
+{
+	ARG_COUNT	0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Instantiate
+
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	C_STRING
+	TT_ARG0_REP_TYPE TT_REP_STRING
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	BUFFER
+	ARG_MODE	w
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Edit
+
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_VALUE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_BUFFER
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	BUFFER
+	ARG_MODE	!w
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Display
+
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_VALUE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_BUFFER
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	FILE
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Edit
+	TT_FILE		%Arg_1%
+
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_STRING
+}
+
+# ######################## EOF ############################################

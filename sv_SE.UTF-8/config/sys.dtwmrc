@@ -1,0 +1,192 @@
+# #################################################################
+#
+#    Original copy: /usr/dt/config/C/sys.dtwmrc
+#
+#    The Resource Description File for the CDE Window Manager dtwm
+#
+#    (c) Copyright 1993, 1994 Hewlett-Packard Company.
+#    (c) Copyright 1993, 1994 International Business Machines Corp. 
+#    (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994 Unix System Labs, Inc., a subsidiary
+#        of Novell, Inc.
+#
+# $XConsortium: sys.dtwmrc.src /main/4 1996/04/21 19:51:58 drk $
+#
+# #################################################################
+
+# ###
+#
+#  Please make a COPY of this file before editing it.
+#
+#  Personalized copies typically exist as:
+#
+#       $HOME/.dt/dtwmrc
+#
+# ###
+
+# ###
+#
+# Root Menu Description
+#
+# ###
+
+Menu DtRootMenu
+{
+    "Menyn Arbetsyta"			f.title
+    "Lägg överst"			f.circle_up
+    "Lägg underst"			f.circle_down
+    "Förnya"				f.refresh
+    "Minimera/återställ frontpanelen"	f.toggle_frontpanel
+     no-label				f.separator
+    "Starta om arbetsytehanteraren..."	f.restart
+     no-label				f.separator
+    "Logga ut..."			f.action ExitSession
+}
+
+
+# ###
+#
+# Front panel Manu Description
+#
+# ###
+
+Menu DtPanelMenu
+{
+    Återställ			_Å	f.normalize
+    Flytta			_F	f.move
+    Minimera			_n	f.minimize
+    Lägg underst		_L	f.lower
+    Förnya			_f	f.refresh
+     no-label				f.separator
+    "Logga ut..."		_o	f.action ExitSession
+}
+
+
+# ###
+#
+# Sample Window Menu Description
+# This menu description exists as a sample only.
+# The normal window manager menu is built in.
+#
+# ###
+
+Menu SampleWindowMenu
+{
+    "Återställ"			_Å			f.normalize
+    "Flytta"			_F			f.move
+    "Ändra storlek"		_Ä			f.resize
+    "Minimera"			_n			f.minimize
+    "Maximera"			_x			f.maximize
+    "Lägg underst"		_L			f.lower
+     no-label						f.separator
+    "Lägg på arbetsytan..."	_y			f.workspace_presence
+    "Lägg på alla arbetsytor"	_A			f.occupy_all
+    "Ta bort från arbetsytan"	_b			f.remove
+     no-label						f.separator
+    "Stäng"			_S	Alt<Key>F4	f.kill
+}
+
+# ###
+#
+# Alternate Window Menu Description without accelerators
+#
+# ###
+
+Menu NoAcceleratorWindowMenu
+{
+    "Återställ"			_Å 	f.normalize
+    "Flytta"			_F 	f.move
+    "Ändra storlek"		_Ä 	f.resize
+    "Minimera"			_n	f.minimize
+    "Maximera"			_x	f.maximize
+    "Lägg underst"		_L	f.lower
+     no-label				f.separator
+    "Lägg på arbetsytan..."	_y 	f.workspace_presence
+    "Lägg på alla arbetsytor"	_A	f.occupy_all
+    "Ta bort från arbetsytan"	_b 	f.remove
+     no-label				f.separator
+    "Stäng"			_S 	f.kill
+}
+
+# ###
+#
+# Key Bindings Description
+#
+# ###
+
+Keys DtKeyBindings
+{
+
+
+
+
+#   Alt<Key>Menu		root|icon|window	f.toggle_frontpanel 
+
+    Skift<Key>Escape		icon|window		f.post_wmenu
+    Alt<Key>mellanslag		icon|window		f.post_wmenu
+    Alt<Key>Tab			root|icon|window	f.next_key
+    Alt Skift<Key>Tab		root|icon|window	f.prev_key
+    Alt<Key>Es			root|icon|window	f.next_key
+    Alt Skift<Key>Es		root|icon|window	f.prev_key
+    Alt<Key>Down		root|icon|window	f.circle_down
+    Alt<Key>Up			root|icon|window	f.circle_up
+    Alt Ctrl Skift<Key>utrop	root|icon|window	f.set_behavior
+    Alt<Key>F6			window			f.next_key transient
+    Alt<Key>F10			root|icon|window	f.menu DtRootMenu
+
+}
+
+# ###
+#
+# Mouse Button Bindings Description
+#
+# ###
+
+Buttons DtButtonBindings
+{
+    <Btn1Down>		root			f.marquee_selection
+    <Btn3Down>		root			f.menu  DtRootMenu
+    <Btn1Down>		frame|icon		f.raise
+    <Btn3Down>		frame|icon		f.post_wmenu
+    Alt<Btn1Down>	icon|window		f.move
+    Alt<Btn3Down>	window			f.minimize
+}
+
+
+# ###
+#
+# Defaults:   Window menus, key bindings, and mouse button bindings
+#
+# ###
+
+Menu DefaultWindowMenu
+{
+    "Återställ"		_Å 	Alt<Key>F5	f.normalize
+    "Flytta"		_F 	Alt<Key>F7	f.move
+    "Ändra storlek"	_Ä 	Alt<Key>F8	f.resize
+    "Minimera"		_n	Alt<Key>F9	f.minimize
+    "Maximera"		_x	Alt<Key>F10	f.maximize
+    "Lägg underst"	_L	Alt<Key>F3	f.lower
+    no-label					f.separator
+    "Stäng"		_S 	Alt<Key>F4	f.kill
+}
+
+Keys DefaultKeyBindings
+{
+    Skift<Key>Esc		icon|window		f.post_wmenu
+    Alt<Key>mellanslag		icon|window		f.post_wmenu
+    Alt<Key>Tab			root|icon|window	f.next_key
+    Alt Skift<Key>Tab		root|icon|window	f.prev_key
+    Alt<Key>Esc			root|icon|window	f.next_key
+    Alt Skift<Key>Esc		root|icon|window	f.prev_key
+    Alt Ctrl Skift<Key>utrop	root|icon|window	f.set_behavior
+    Alt<Key>F6			window			f.next_key transient
+}
+
+Buttons DefaultButtonBindings
+{
+    <Btn1Down>		frame|icon	f.raise
+    <Btn3Down>		icon		f.post_wmenu
+}
+
+# ################  End of the dtwmrc file   ################

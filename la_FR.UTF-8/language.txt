@@ -1,0 +1,103 @@
+0) Why a Latin translation
+   ======================= 
+
+
+Linux lacks a Latin locale due to decisions made by developpers of the C library who treat modern Latin as an artificial language on the same footing as Esperanto or Interlingua. This makes the creation of a Latin translation more difficult than in the case of even a regional language such as Occitan for which a local oc_FR already exists.
+So that translation is useful 
+to understand the steps to add support for a language in the C library (see file Installation).  
+
+
+Also, the documentation that comes with CDE is a bit limited on the 
+translation of messages. It explains mainly where to put translated files on the system, but it gives little description of the vocabulary used by the desktop. 
+The translation in Latin yields a lexicon of terms frequently used by the desktop (see file latin3.txt) . Having such lexicon will help to make translations in more common languages. 
+
+Currently, CDE lacks translations in 
+- All Eastern European languages
+- Vietnamese and Thai languages and all languages of India
+- All African languages 
+- Portuguese and Dutch 
+- Basque, Corsican, Breton, Alsatian, Catalan (just for French regional languages) 
+
+The current Latin translation, even if very imperfect should be viewed as a template for these more important translations. 
+
+1) Spelling:
+   ========
+
+I use a modern spelling distinguishing 'i' from 'j' and 'u' from 'v',
+and using uppercase and lowercase letters.
+I don't use diacritic signs to distinguish long and short vowels, and
+I also don't use ligatures. This is the result of limitations of
+ISO8859-1 encoding: while all the letters of the modern latin alphabet are
+represented, macron and other diacritic sign are not available in that
+encoding. Moreover, while the æ Æ (AE) ligatures are available in
+ISO-8859-1, the oe ligature is defined only in ISO8859-15, an extension
+of ISO8859-1 that also provide the € (Euro) sign.
+
+With UTF-8, adding ligatures and diacritic signs is possible. However, I have kept the ASCII compatible text so that there will be no difficulty to recreate a la_FR.ISO8859-1 locale if needed. 
+
+2) Sources:
+   =======
+
+I have translated the French message catalog in Latin. For that
+purpose, I used: 
+   
+Dictionnaire Français-Latin Henri Goelzer (1906)
+Dictionnaire Français-Latin Louis Quicherat (Hachette,1858)
+Dictionnaire Français-Latin-Chinois Paul Perny (Firmin-Didot,1869)
+
+The first two are classical Latin dictionaries. The last one was
+written by a Catholic priest living in China and is a French
+(ecclesiastic) Latin Chinese dictionary. I have also used:
+
+F. Gaffiot Dictionnaire Latin-Français (2016, electronic edition)
+Dictionnaire Latin-Français Quicherat-Daveluy (Hachette, 1910)
+
+to verify some translations. For modern latin, I used:
+
+Le Latin sans peine C. Desessard (Assimil, 1966)
+Lexicon Latinum David Morgan
+(http://alpha.furman.edu/~dmorgan/lexicon/silva.htm)
+Vocabula computatralia Konrad Kokoszkiewicz
+(http://www.culturaclasica.com/lingualatina/vocabula_computatralia.pdf)
+FJ Goebel Elementa, geometriae in usum praelectionum novo ordine
+         digesta (for definitions of angle units)  pp. 138-139.
+
+For grammar, I have used:
+Grammaire Latine Ch. Maquet et M. Roger (Hachette, 1949)
+Cours complet de grammaire latine E. Sommer (Hachette, 1872)
+
+3) Style:
+   =====
+
+The computer is talking to the user using the second person
+singular. If something must be done by the user, the computer
+will use a present imperative. When the computer does something, it
+uses the first person singular. General instructions are given using
+an impersonal form (debet, oportet ...).
+
+I have tried to avoid imprecisions by using a lexicon (see file
+latin3.txt) so that the same words are used to describe the same
+operations in all the Desktop applications. I have often recycled
+parts of sentences in error messages that describe similar problems.
+
+I have also tried to make the messages as simple and direct as I
+could. Because of that, I may have used indicative mode where the
+subjunctive mode is grammatically more correct.
+
+4) Errors:
+   =======
+
+There are certainly plenty of errors in the translations. 
+If you wish to send corrections, please follow the template: 
+
+Program Name: (dtfile, dtcm, dtpad, dtinfo, etc...) 
+Incorrect text: 
+Type of error: grammatical (verb conjugation, declension, etc...) 
+spelling (indicate wrong spelling and correct one) translation (indicate 
+bad translation for the English word and correct one/ check file latin3.txt first) sentence that makes no sense. 
+Faulty file: (if you can locate it, indicate path types/ app-defaults/ and filename) 
+
+Use email address edmond [dot] orignac [Arobabe] wanadoo [Dot] fr
+
+
+

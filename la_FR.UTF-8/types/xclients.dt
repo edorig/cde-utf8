@@ -1,0 +1,393 @@
+# ##########################################################################
+# 
+#     xclients.dt
+# 
+#     Actions and DataTypes for integrating X clients into the Common
+#     Desktop Environment (CDE).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: xclients.dt.src /main/5 1996/04/23 20:26:44 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# MONITIO: Probabiliter hoc scapus contundus erit dum  
+#     institutione proxima mensae CDE. Oportet facere mutationes
+#     systemae in scapo receptaculi datorum 
+#     aequabili in indice /etc/dt/types.
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# Attributs datorum
+# 
+# ##################################################################
+DATA_ATTRIBUTES XWD
+{
+        ACTIONS         Open,Print
+        ICON            Dtxwd
+        NAME_TEMPLATE   %s.xwd
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      xwd-file
+        DESCRIPTION     Hoc scapus imaginem in forma XWD continet. \
+                        Saepe Imagines fenestrarum  \
+                        factae actione Scrutari xwd sunt. \
+                        Genus datorum ejus XWD est, suffixus, .xwd vel .wd.
+        TYPE_LABEL      XWD
+}
+DATA_CRITERIA XWD1
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.xwd
+}
+DATA_CRITERIA XWD2
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.wd
+}
+ACTION Open
+{
+        LABEL           Aperire
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      Xwud
+}
+ACTION Print
+{
+        LABEL           Exscribere
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Xwud
+{
+        LABEL		Proponere scapum xwd
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwud -noclick -in                               "%(File)Arg_1"Scapum xwd proponitum:"%"
+
+	DESCRIPTION	Actio Proponere xwd (Xwud) \
+                        proponit scapum xwd cratum \
+                        actione Scrutari xwd (Xwd). Mandatum \
+                        xwud uti.
+}
+
+# ##########################################################################
+# 
+# Actiones
+# 
+# ##########################################################################
+ACTION Xrefresh
+{
+        LABEL		Redintegrare scrinium
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xrefresh
+	DESCRIPTION	Actio Redintegrare scrinium (Xrefresh) redintegrat \
+                        scrinium ; mandatum \
+                        xrefresh uti.
+}
+
+# ######
+
+ACTION Bitmap
+{
+        LABEL		Delineare bitmap
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				"%(File)Arg_1"Scapus aperiendum:"%"
+
+	DESCRIPTION	Actio delineare bitmap (Bitmap) pellet \
+                        programmam bitmap. Si non indicas \
+                        scapum, debes indicare \
+                        latitudinem et altitudinem  novi scapi bitmap.
+}
+ACTION Bitmap
+{
+        LABEL		Delineare bitmap
+	ARG_COUNT	0	
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				-size %"Latitudinem:"%x%"Altitudinem:"% 				"%(File)Arg_1"Scapus aperiendum:"%"
+
+
+	DESCRIPTION	Actio delineare bitmap (Bitmap) pellet \
+                        programmam bitmap. Si non indicas \
+                        scapum, debes indicare \
+                        latitudinem et altitudinem  novi scapi bitmap.
+}
+
+# ######
+
+ACTION DttermConsole
+{
+        LABEL		Console
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtterm -C -ls -name Console -title Console
+	DESCRIPTION	L'action Console permet de lancer un émulateur \
+                        de terminal dtterm comme console utilisateur.
+}
+
+# ######
+
+ACTION Xterm
+{
+        LABEL		Xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xterm
+	DESCRIPTION	Actio Xterm pellet \
+                        programmam terminalis xterm.
+}
+
+# ######
+
+ACTION DttermDtspcd
+{
+        LABEL		Terminale remotus
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"Nomen hospitis:"%
+	EXEC_STRING	/usr/dt/bin/dtterm
+	DESCRIPTION	Actio Terminale remotus quaeret usori \
+                        nominem hospitis remoti et pellet terminalem \
+                        connectum huic. Facies \
+                        systemae licentiam pellendi remotae dare debet.
+}
+
+# ######
+
+ACTION XtermDtspcd
+{
+        LABEL		Xterm remotus
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"Nomen hospitis:"%
+	EXEC_STRING	xterm
+	DESCRIPTION	Actio Xterm remotus quaeret usori \
+                        nominem hospitis remoti et pellet terminalem \
+                        xterm connectum huic. Facies \
+                        systemae licentiam pellendi remotae dare debet.
+}
+
+# ######
+
+ACTION DttermRlogin
+{
+        LABEL		Conexus remotus terminale
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"Nomen hospitis:"%";             /usr/dt/bin/dtterm -title "\$_title : Dtterm" -e KORNSHELL -c             "echo Tento conectere apud \$_title... Exspecta.;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	Actio Connexus remotus terminale quaeret \
+                        usori nominem systemae, aperit \
+                        fenestram terminalis dtterm, deinde \
+                        pellet mandatum rlogin apud hoc systemam.
+}
+
+# ######
+
+ACTION XtermRlogin
+{
+        LABEL		Conexus remotus terminale Xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"Nomen hospitis:"%";             xterm -title "\$_title : Xterm" -e KORNSHELL -c             "echo Tento conectere apud \$_title... Exspecta.;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	Actio Connexus remotus terminale Xterm quaeret \
+                        usori nominem systemae, aperit \
+                        fenestram terminalis xterm, deinde \
+                        pellet mandatum rlogin apud hoc systemam.
+}
+
+# ######
+
+ACTION XclockDig
+{
+        LABEL		Horologium numerorum
+        ARG_COUNT	0
+        ICON		Dtdgclk
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xclock -name "Horologium numerorum"                                    -digital -update 1
+
+        DESCRIPTION     Actio horologim numerorum (Xclock) \
+                        proponit horologium numerorum, cum mandato xclock -digital.
+}
+
+
+# ######
+
+ACTION Xload
+{
+        LABEL		Onus systemae
+        ARG_COUNT	0
+        ICON		Dtload
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xload -name "Onus systemae"                              -geometry 250x150 -xrm '*primaryColorSetId: 5'
+
+        DESCRIPTION     Actim Onus systemae (Xload) proponit \
+                        lineam curvam quam exprimit onerem \
+                        systemae, cum mandato xload.
+}
+
+# ######
+
+ACTION Xwd
+{
+        LABEL		Scrutari xwd
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwd -out                              %(File)"Scapus eductionis (<nomen>.xwd):"%
+
+	DESCRIPTION	Actio scrutari xwd (Xwd) permittit \
+                        scrutari fenestram cum mandato xwd et  \
+                        perscribere in scapo xwd. \
+                        Dum pelles eam, indicium forma crucis \
+                        habet ; nunc crepita in fenestra quam \
+                        vis scrutari.
+}
+
+# ######
+
+ACTION Xclipboard
+{
+        LABEL		Sententiae copiatae
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xclipboard
+	DESCRIPTION	Actio Sententiae copiatae (Xclipboard) \
+                        proponit sententias copiatas vel secatas cum globulo, \
+                        mandatum xclipboard uti.
+}
+
+# ######
+
+ACTION Xfd
+{
+        LABEL		Aspicere typum
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'xfd -fn                 "%(String)Arg_1"Typus aspicendus:"%"; 	               if [ \$? -eq 1 ] ; then                          /usr/dt/bin/dterror.ds                           "Typum indicatum invenire non potest.\\n\
+                           Pelle actionem Index typorum\\n\
+                           ad aspicendum indicem typorum rectorum."                           "Nominem typi invenire non potest"                           "Ita" ; 	                fi'
+
+
+
+
+
+
+
+	DESCRIPTION	Actio Aspicere typum (Xfd)  \
+                        quaeret nominem typi et proponit \
+                        litteras ejus,  \
+                        cum mandato xfd.
+}
+
+# ######
+
+# L'action Informations sur la fenêtre (Xwininfo) ne peut pas
+# utiliser la définition "| ${PAGER:-more}" ; en effet, celle-ci
+# empêche l'affichage du message "Cliquez sur une fenêtre".
+ACTION Xwininfo
+{
+        LABEL		Percontationes fenestrae
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING	sh -c 'xwininfo; 	    echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+	DESCRIPTION	Actio Percontationes fenestrae (Xwininfo) \
+                        proponit percontationes fenestrae. \
+                        Dum pelles eam, indicium formam crucis \
+                        habet ; nunc crepita in fenestra \
+                        quo vis percontationes habere. Haec \
+                        actio mandatum xwininfo uti.
+}
+
+# ######
+
+ACTION Xprop
+{
+        LABEL           Insignes fenestrae
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "[Dum indicium forma crucis habet, crepita in fenestra...]";             xprop | \${PAGER:-more};             echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+        DESCRIPTION     Actio Insignes fenestrae (Xprop) \
+                        proponit insignes fenestrae. \
+                        Dum pelles eam, indicium forma crucis habet;  \
+                        nunc crepita in fenestra quo vis proponere \
+                        insignes. Haec actionem uti \
+                        mandatum xprop.
+}
+
+# ######
+
+ACTION Xdpyinfo
+{
+        LABEL           Percontationes ministri X
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             xdpyinfo | \${PAGER:-more};             echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+        DESCRIPTION     Actio Percontationes ministri X (Xdpyinfo) \
+                        proponit percontationes ministri X et \
+                        scrinii. Mandatum xdpyinfo uti.
+}
+
+# ######
+
+ACTION Xlsfonts
+{
+        LABEL           Index typorum
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "Investigatio typorum in effectu. Exspecta......\
+                      MONITIO: Fortasse minister X  obserabuntur \
+                      dum non minimus tempus.";             xlsfonts | \${PAGER:-more};             echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+
+        DESCRIPTION     Actio Index typorum (Xlsfonts)  \
+                        proponit indicem typorum scrinio propositus posse. \
+                        Ea uti mandatum xlsfonts.
+}
+
+# ######################## EOF ############################################

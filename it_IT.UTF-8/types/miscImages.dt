@@ -17,7 +17,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -37,7 +37,7 @@ DATA_ATTRIBUTES pict-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      pict-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
-                        Macintosh PICT.  Il suo tipo di dati Ë denominato pict-file. \
+                        Macintosh PICT.  Il suo tipo di dati √® denominato pict-file. \
                         I file pict-file terminano con le estensioni '.PICT' \
                         o '.pict'.
         TYPE_LABEL      pict-file
@@ -76,7 +76,7 @@ DATA_ATTRIBUTES ppm-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      ppm-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
-                        Poskanser Portable Pixmap. Il suo tipo di dati Ë denominato \
+                        Poskanser Portable Pixmap. Il suo tipo di dati √® denominato \
                         ppm-file. I file ppm-file contengono i caratteri "P6" \
                         o "P3".
         TYPE_LABEL      ppm-file
@@ -115,7 +115,7 @@ DATA_ATTRIBUTES pj-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      pj-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato HP PaintJet. \
-                        Il suo tipo di dati Ë denominato pj-file. I file pj-file \
+                        Il suo tipo di dati √® denominato pj-file. I file pj-file \
                         terminano con l'estensione '.pj'.
         TYPE_LABEL      pj-file
 }
@@ -147,7 +147,7 @@ DATA_ATTRIBUTES pgm-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      pgm-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato Portable \
-                        Graymap. Il suo tipo di dati Ë denominato pgm-file. \
+                        Graymap. Il suo tipo di dati √® denominato pgm-file. \
                         I file pgm-file contengono i caratteri "P5" o "P2".
         TYPE_LABEL      pgm-file
 }
@@ -185,7 +185,7 @@ DATA_ATTRIBUTES pbm-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      pbm-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato Poskanser \
-                        Portable Bitmap. Il suo tipo di dati Ë denominato \
+                        Portable Bitmap. Il suo tipo di dati √® denominato \
                         pbm-file. I file pbm-file contengono i caratteri "P4" \
                         o "P1".
         TYPE_LABEL      pbm-file
@@ -224,7 +224,7 @@ DATA_ATTRIBUTES ilbm-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      ilbm-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato IFF \
-                        ILBM Amiga. Il suo tipo di dati Ë denominato ilbm-file. \
+                        ILBM Amiga. Il suo tipo di dati √® denominato ilbm-file. \
                         I file ilbm-file terminano con l'estensione '.ilbm', o \
                         contengono i caratteri "ILBM".
         TYPE_LABEL      ilbm-file
@@ -263,7 +263,7 @@ DATA_ATTRIBUTES pi1-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      pi1-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato Atari \
-                        Degas pi1. Il suo tipo di dati Ë denominato pi1-file. \
+                        Degas pi1. Il suo tipo di dati √® denominato pi1-file. \
                         I file pi1-file terminano con l'estensione '.pi1'.
         TYPE_LABEL      pi1-file
 }
@@ -295,7 +295,7 @@ DATA_ATTRIBUTES pcx-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      pcx-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato PC \
-                        Paintbrush PCX. Il suo tipo di dati Ë denominato pcx-file. \
+                        Paintbrush PCX. Il suo tipo di dati √® denominato pcx-file. \
                         I file pcx-file terminano con l'estensione '.pcx'.
         TYPE_LABEL      pcx-file
 }
@@ -327,7 +327,7 @@ DATA_ATTRIBUTES tga-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      tga-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
-                        TrueVision Targa. Il suo tipo di dati Ë denominato tga-file. \
+                        TrueVision Targa. Il suo tipo di dati √® denominato tga-file. \
                         I file tga-file terminano con l'estensione '.tga'.
         TYPE_LABEL      tga-file
 }
@@ -359,7 +359,7 @@ DATA_ATTRIBUTES xim-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      xim-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato xim. \
-                        Il suo tipo di dati Ë denominato xim-file. I file \
+                        Il suo tipo di dati √® denominato xim-file. I file \
                         xim-file terminano con l'estensione '.xim'.
         TYPE_LABEL      xim-file
 }
@@ -391,7 +391,7 @@ DATA_ATTRIBUTES mtv-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      mtv-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato MTV/PRT \
-                        ray-tracer output. Il suo tipo di dati Ë denominato \
+                        ray-tracer output. Il suo tipo di dati √® denominato \
                         mtv-file. I file mtv-file terminano con l'estensione \
                         '.mtv'.
         TYPE_LABEL      mtv-file
@@ -424,7 +424,7 @@ DATA_ATTRIBUTES qrt-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      qrt-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato QRT \
-                        ray-tracer output. Il suo tipo di dati Ë denominato \
+                        ray-tracer output. Il suo tipo di dati √® denominato \
                         qrt-file. I file qrt-file terminano con l'estensione '.qrt'.
         TYPE_LABEL      qrt-file
 }
@@ -456,7 +456,7 @@ DATA_ATTRIBUTES imgw-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      imgw-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
-                        Img-whatnot. Il suo tipo di dati Ë denominato imgw-file. \
+                        Img-whatnot. Il suo tipo di dati √® denominato imgw-file. \
                         I file imgw-file terminano con l'estensione '.imgw'.
         TYPE_LABEL      imgw-file
 }
@@ -488,7 +488,7 @@ DATA_ATTRIBUTES sld-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      sld-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato AutoCAD \
-                        slide. Il suo tipo di dati Ë denominato sld-file. \
+                        slide. Il suo tipo di dati √® denominato sld-file. \
                         I file sld-file terminano con l'estensione '.sld'.
         TYPE_LABEL      sld-file
 }
@@ -521,7 +521,7 @@ DATA_ATTRIBUTES spc-file
 	SUNV3_TYPE      spc-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
                         Atari compressed Spectrum. Il suo tipo di dati \
-                        Ë denominato spc-file. I file spc-file terminano \
+                        √® denominato spc-file. I file spc-file terminano \
                         con l'estensione '.spc'.
         TYPE_LABEL      spc-file
 }
@@ -554,7 +554,7 @@ DATA_ATTRIBUTES spu-file
 	SUNV3_TYPE      spu-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato Atari \
                         uncompress Spectrum. Il suo tipo di dati \
-                        Ë denominato spu-file. I file spu-file terminano \
+                        √® denominato spu-file. I file spu-file terminano \
                         con l'estensione '.spu'.
         TYPE_LABEL      spu-file
 }
@@ -586,7 +586,7 @@ DATA_ATTRIBUTES gould-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      gould-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato Gould \
-                        scanner. Il suo tipo di dati Ë denominato gould-file. \
+                        scanner. Il suo tipo di dati √® denominato gould-file. \
                         I file gould-file terminano con l'estensione '.gould'.
         TYPE_LABEL      gould-file
 }
@@ -618,7 +618,7 @@ DATA_ATTRIBUTES fs-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      fs-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
-                        Usenix FaceSaver. Il suo tipo di dati Ë denominato fs-file. \
+                        Usenix FaceSaver. Il suo tipo di dati √® denominato fs-file. \
                         I file fs-file terminano con l'estensione '.fs'.
         TYPE_LABEL      fs-file
 }
@@ -650,7 +650,7 @@ DATA_ATTRIBUTES fits-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      fits-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato FITS. \
-                        Il suo tipo di dati Ë denominato fits-file. I file fits-file \
+                        Il suo tipo di dati √® denominato fits-file. I file fits-file \
                         terminano con l'estensione '.fits'.
         TYPE_LABEL      fits-file
 }
@@ -683,7 +683,7 @@ DATA_ATTRIBUTES lispm-file
 	SUNV3_TYPE      lispm-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato Lisp \
                         Machine bit-array-file. Il suo tipo di dati \
-                        Ë denominato lispm-file. I file lispm-file terminano \
+                        √® denominato lispm-file. I file lispm-file terminano \
                         con l'estensione '.lispm', o contengono \
                         i caratteri "This is a BitMap file".
         TYPE_LABEL      lispm-file
@@ -722,7 +722,7 @@ DATA_ATTRIBUTES hips-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      hips-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato HIPS. \
-                        Il suo tipo di dati Ë denominato hips-file. I file hips-file \
+                        Il suo tipo di dati √® denominato hips-file. I file hips-file \
                         terminano con l'estensione '.hips'.
         TYPE_LABEL      hips-file
 }
@@ -754,7 +754,7 @@ DATA_ATTRIBUTES mac-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      mac-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
-                        MacPaint. Il suo tipo di dati Ë denominato mac-file. \
+                        MacPaint. Il suo tipo di dati √® denominato mac-file. \
                         I file mac-file terminano con l'estensione '.mac'.
         TYPE_LABEL      mac-file
 }
@@ -786,7 +786,7 @@ DATA_ATTRIBUTES atk-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      atk-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
-                        Andrew Toolkit raster. Il suo tipo di dati Ë denominato \
+                        Andrew Toolkit raster. Il suo tipo di dati √® denominato \
                         atk-file. I file atk-file terminano con l'estensione '.atk'.
         TYPE_LABEL      atk-file
 }
@@ -818,7 +818,7 @@ DATA_ATTRIBUTES brush-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      brush-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato \
-                        doodle brush. Il suo tipo di dati Ë denominato brush-file. \
+                        doodle brush. Il suo tipo di dati √® denominato brush-file. \
                         I file brush-file terminano con l'estensione '.brush'.
         TYPE_LABEL      brush-file
 }
@@ -850,7 +850,7 @@ DATA_ATTRIBUTES cmu-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      cmu-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato CMU \
-                        window manager bitmap. Il suo tipo di dati Ë denominato \
+                        window manager bitmap. Il suo tipo di dati √® denominato \
                         cmu-file. I file cmu-file terminano con l'estensione \
                         '.cmu', o contengono i caratteri "\361\0\100\273".
         TYPE_LABEL      cmu-file
@@ -889,7 +889,7 @@ DATA_ATTRIBUTES mgr-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      mgr-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato MGR \
-                        bitmap. Il suo tipo di dati Ë denominato mgr-file. \
+                        bitmap. Il suo tipo di dati √® denominato mgr-file. \
                         I file mgr-file terminano con l'estensione '.mgr', \
                         o contengono i caratteri "yz".
         TYPE_LABEL      mgr-file
@@ -928,7 +928,7 @@ DATA_ATTRIBUTES g3-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      g3-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato fax Gruppo 3. \
-                        Il suo tipo di dati Ë denominato g3-file. I file g3-file \
+                        Il suo tipo di dati √® denominato g3-file. I file g3-file \
                         terminano con l'estensione '.g3'.
         TYPE_LABEL      g3-file
 }
@@ -960,7 +960,7 @@ DATA_ATTRIBUTES img-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      img-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato GEM IMG. \
-                        Il suo tipo di dati Ë denominato img-file. I file img-file \
+                        Il suo tipo di dati √® denominato img-file. I file img-file \
                         terminano con l'estensione '.img'.
         TYPE_LABEL      img-file
 }
@@ -992,7 +992,7 @@ DATA_ATTRIBUTES pi3-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      pi3-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato Atari Degas \
-                        pi3. Il suo tipo di dati Ë denominato pi3-file. \
+                        pi3. Il suo tipo di dati √® denominato pi3-file. \
                         I file pi3-file terminano con l'estensione '.pi3'.
 }
 DATA_CRITERIA pi3-file1
@@ -1023,7 +1023,7 @@ DATA_ATTRIBUTES ybm-file
 	MIME_TYPE       application/octet-stream
 	SUNV3_TYPE      ybm-file
         DESCRIPTION     Questo file contiene un'immagine grafica in formato Benet \
-                         Yee's face. Il suo tipo di dati Ë denominato ybm-file. \
+                         Yee's face. Il suo tipo di dati √® denominato ybm-file. \
                          I file ybm-file terminano con l'estensione '.ybm', o \
                          contengono i caratteri "!!".
         TYPE_LABEL      ybm-file
@@ -1061,7 +1061,7 @@ DATA_ATTRIBUTES photocd-file
 		MIME_TYPE       application/octet-stream
 		SUNV3_TYPE      photocd-file
 	DESCRIPTION     Questo file contiene un'immagine grafica in formato CD foto. \
-			Il suo tipo di dati Ë denominato photocd-file.  \
+			Il suo tipo di dati √® denominato photocd-file.  \
 		 	I file photocd-file terminano con l'estensione '.pcd' o '.PCD'.
 }
 DATA_CRITERIA photocd-file1
@@ -1082,7 +1082,7 @@ ACTION Open
 	ARG_TYPE        photocd-file
 	TYPE            COMMAND
 	WINDOW_TYPE     NO_STDIO
-	EXEC_STRING     /usr/dt/bin/dterror.ds 			"Impossibile aprire il file - Nessuna unit‡  di visualizzazione disponibile per photocd-file." 			"Informazioni" 			"OK"
+	EXEC_STRING     /usr/dt/bin/dterror.ds 			"Impossibile aprire il file - Nessuna unit√†  di visualizzazione disponibile per photocd-file." 			"Informazioni" 			"OK"
 
 
 

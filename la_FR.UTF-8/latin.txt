@@ -1,0 +1,527 @@
+Sources: Dictionnaire Français-Latin Henri Goelzer (1906)
+	 Dictionnaire Français-Latin-Chinois Paul Perny (Firmin-Didot,1869)
+	 Dictionnaire Français-Latin Louis Quicherat (Hachette,1858) 
+	 Dictionnaire Latin-Français Quicherat-Daveluy (Hachette, 1910)
+Grammaire Latine Ch. Maquet et M. Roger (Hachette, 1949)			     
+	 [lat. class. et mod.] 
+	 Le Latin sans peine C. Desessard (Assimil, 1966)
+	 [lat. mod.]
+	 Lexicon D. Morgan
+	 voccomp.html 
+	 [vocabulaire informatique lat.  mod.] 
+FJ Goebel Elementa, geometriae in usum praelectionum novo ordine
+	 digesta pour les unités d'angle pp. 138-139. 
+
+Français	Latin
+
+Action 		Actio, onis, f. 
+Abrégé		Constrictus,a,um adj.
+Abréger		Breviare, tr. (non-classique) Contrahere tr. artare/coartare tr.
+Absolu		Absolutus, a, um adj. (opp. à relatif)
+Accelerer	Accelerare, citare (souvent au p. p.)
+Accolades {}	uncîni alati
+Activer		Excitare, tr.
+Désactiver	Sopire (endormir dans Goelzer) sopitum
+Accélération	Acceleratio,onis f. 
+Accès		Aditus, us m. 
+Accessible	patens, entis p. adj. 
+Accusé de Réception confirmatio acceptionis
+Adresse     inscriptio cursualis (courrier)
+Agenda		Libellus, i, m.
+Agrandir	Ampliare/Amplificare/dilatare
+Aide		Adjumentum
+Ajouter 	Addere (addo, addidi, additum)
+Allocation	Attributum, i n.
+Altérer		Corrumpere, corrumpo, corrumpi, corruptum
+Année       	Annus,i, m.
+Annulation	Sublatio, onis, f. (aussi annulatio, mais non classique) 
+Annuler		Rescindere, tr. (annulare, mais bas latin) 
+Aller		Ire 
+Appliquer	Applicare
+Après-midi 	postmeridie
+Analyser	Dividere, tr.
+Analyse		Analytice, es
+Analytique	Analyticus, a, um adj. 
+Analytiquement Analytice adv. 
+Annuler		Relinquere
+Aucun		Nullus, a, um, adj.
+Authenticité	Auctoritas, atis f. 
+Automatique	Automatus,a,um adj. Automate: Automatum,i,n.
+Automatiquement Automate (Maquet et Roger p. 106) 
+Archives	tabulinum, i ou tablinum, i n. 
+Arrêt		Retentio, onis, f.
+Arrêter		Sistere/Obsistere/Obstare
+Arrière-plan 	ima,orum n. (mettre une fenêtre à l'arr.-pl. :
+fenestram in ima reponere. un processus: in ima mittere)
+Arrière-plan 	 recessus, us, m. (fig.) / pars posterior
+Assigner	 tribuere, tribuo, tribui, tributum
+Associer	 sociare, consociare, jungere, conjungere, conjungo,
+conjuxi, conjuctum
+Attendre		Exspectare, tr. 
+Audible			audibilis (Gaffiot) 
+Avant-plan	 pars prior/prima
+Avancé		 peritus,a,um (utilisateur) 
+Afficher         proponere,propositum (supin cf. Goelzer) 
+Avertissement   Monitio,onis f. 
+Avancer		producere (faire avancer) proficere (j'avance)
+Bannière	Vexillum, i, n. 
+Barre		Asser,eris m. 
+Base		basis,is (base mais pas forcément arithmetique) 
+Base de données receptaculum datorum
+Bienvenue	Optato advenis 
+Binaire 	binaris,e
+Bip 		Tinnitus, us, m. (tintement) 
+Bloc		Per saturam (en bloc) 
+Boite à lettres receptaculum epistularum
+Boite			Capsa, ae f.
+Boucle			ambitus, us m. 
+Bouton		pulsorium(- n.)
+Bouton (radio)  pulsabula(-ae f.) 
+Bureau 		mensa, ae f. (scriptoria)
+Broyage		Tritus, us m. 
+Broyer		deterere 
+Cacher		Abdere (caché=abditus) 
+Calcul		Computatio, onis f. 
+Calendrier 	  calendarium (-i n.)
+Caractéristique  Insigne, is n. subst. / Insignis, e adj.
+Catégorie	 Species, ei, f. 
+Centrer		In medio/centro ponere 
+Chaîne de caractères litterarum series
+Chaque		Omnis, Omnis, Omne (se décline sur fortis)
+Changer	 	Mutare
+Charger	 	Onerare
+Chercher	Quaerere
+Chemin		Iter,ineris
+Cible		Scopus, i m. (sens propre) 
+Ci-dessus	supra
+Ci-dessous  infra 
+Clavier		* subst. claviatura,ae f.
+Clé USB 	Clavis memorialis USB
+Clignotement	Palpebration, onis f. / Nictatio, onis f.
+Clignoter	Nictari dep. intr. / palpebrare intr. 
+Cliquer		globulum deprimere
+Colorer		Colorare
+Couleur		Color, oris
+Couleur dynamique      Color mobilis,e
+Couleur statique       Color stativus,a,um
+Commencer	Incipere (incipio, incipis, cepi, ceptum)/ Coepisse
+Commande	Mandatum, i, n.
+Commentaire	Commentarium,ii n. 
+Comportement	       Factum,a (cf. Gaffiot)  / Instituta
+Composition	       Scriptio, onis f. / Compositio, onis f. 
+Compte		       Ratio ordinatri
+Commutation	       Permutatio,onis,f. 
+Commutateur	mutatrum (-i n.)
+Confidentialité	Arcanum, i n.  
+Confidentiel Arcanus, a, um adj. 
+Confidentiellement Arcano, adv. 
+Confirmer	Confirmare
+Configuration Facies, ei, f.
+Consulter     evolvere,evolvo,evolvi,evolutum
+Contenir 	Continere
+Contenu		quod inest
+Continuer	Persequi/ exsequi, dép. tr. /continuâre, tr.
+Connaître	Cognoscere/Noscere/Scire
+Connecter	 *vt. conectere
+Connexion 	 conexus,us m. (entre 2 ordis)
+Consigner	 referre in tabulas (Log files en franglais...) 
+Constante 	 constans,ntis m.
+Contexte 	contextus, us, m
+Couper		Secare, tr.
+Copier	 	Copiare
+Copie carbone (Cc) Exemplar transcriptum/antigraphum
+Coller 		Agglutinare
+Corbeille	canistrum (-i n.)
+Correct		Rectus, a, um adj. / emendatus, a, um adj.
+Correspondance	Congruentia, ae f. 
+Correspondant 	congruens (cum) 
+Correspondre	congruere, intr. 
+Corriger	Emendare
+Corrompre	corrumpere, corrumpo, corrupi, corruptum
+Cours		In effectu esse (être en cours)
+Courant     	Vertens (part.) [session courante] 
+Courrier électr. epistula ēlectronica, f / cursus ēlectronicus, m 
+Corriger	Corrigere, tr.
+Créer	 	Creare
+Crochets []	uncîni angulati
+Croissant	Crescens, p. adj. 
+Décroissant	Decrescens, p. adj. 
+Curseur        *subst. indicium,i n.
+Date		Dies, Diei m. et f.
+Début		Initium,ii n. 
+Daemon 		*subst. daemon,onis m.
+Date limite     (praestituta) summa dies
+*decimal* adj. 	decimalis,e
+Défaut	 	Absentem Aliquis (par défaut)
+Défilement	Decursus, us m. 
+Définir		definire, tr
+Degré		Gradus sexagesimalis (angles, Goebel)
+Grade		Gradus centesimalis (100 gr = 90°=pi/2 radians,
+Goebel)
+Radian		Gradus eulerianus (douteux, mais L. Euler utilise
+implicitement les radians pour définir les fonctions trig.
+le mot Radian est dû à Thomas Muir v. 1871)  
+Dernier		Ultimus, a, um adj. / Extremus, a, um adj. (extremus mensis anni = dernier mois de l'année) 
+            le plus récent = propior, us adj.
+Délai	       Intervallum, i n. 	    
+Déplacer        Movere
+Déplacement	Motio,onis f. 
+Destinataire 	Accipiens, p. / Accipturus,a,um (qui recevra) 
+Destination	Destinatio, onis f. 
+Expéditeur	Mittens, p.
+Dialogue	Dialogus, i m.
+Différent	dissimilis, e adj. 
+Dimension	Dimensio,onis
+Disponible	paratus, a, um adj. / disponibilis (scholast.) 
+Disque		discus,i m.
+Disquette 	disculus,i
+CD-Rom		discus compactus
+DVD		Discus versatilis digitalis
+Distance	intervallum, i n. 
+Distribution 	perlatio cursualis (courrier) 
+Donnée 		subst. data,orum n.
+Document	Documentum,i n. 
+Droit		Jus, Juris, n. 
+Droite		Dextra, ae
+Gauche		Sinistra, ae
+Durée		Tempus, oris n. 
+Echeance	summa dies 
+Echelle		Gradus
+Echouer		Offendere tr. / Corruere intr. 
+Echec		Offensio, onis f. 
+Editeur		Editor texti
+Enfoncer	Figere, figo, fixi, fixum
+Entrée 		initus,us m.
+Effacer		Expungere
+Envoyer     	Mittere, mitto, misi, missum
+Entier		integer,gra,grum adj. 
+Ecoute		Auscultatio, onis, f. 
+Ecran		scrinium,i n.; quadrum,i n.; umbellla,ae f. (Perny
+mais cet écran est pour faire de l'ombre) 
+Editer	 	Conscribere (rédiger) 
+Editeur		(programma) editorium
+Element		pars,partis f.
+Ellipse		ellipsis, is f. 
+Eloigné		longinquus, a, um / remotus, a, um adj. 
+Entrer		inducere
+Entrée		initus,us m.
+En-tête		tête=caput,itis,n. / début: frons, frontis f. ou
+principium, ii n.
+Environnement  ambitus, us m. 
+Enregister(sous) 	Perscribere (in)
+Enregister (un service, daemon...) referre (Maquet Roget p. 78) 
+Error 		Error, oris m. 
+Espace		Spatium,i n.
+Essai 		Conatus, us m. (faire une première fois) 
+Essayer		Tentare, tento, tentas,tentavi,tentatum tr. 
+Etat		status, us m.
+Etendu 		extentus
+Etendre		extendere
+Exact		exactus,a,um p. adj. 
+Executer 	Pellere
+Exemplaire	Exemplar,aris n. (se décline comme mare,maris)/ Exemplum, i, n. 
+Exister		Exstare, intr.
+Expirer		in exitu esse (prendre fin) 
+Expression 	Enuntiatio, onis f. 
+Expression rationelle Enuntiatio rationalis
+Facultatif	Liber,era,erum adj. 
+Faire		facere, facio, facis,feci, factum (supin) factus (p.p.) fac (imp.)
+Faux		falsus,a,um
+Favori		Dilectissimus, a, um
+Fenêtre 	fenestra (-ae f.)
+Fichier 	scapus, i
+File d'attente ordo exspectantium (Morgan) 
+Film 		pellicula, ae f. 
+Filtrer		Percolare
+Filtre		Colum, i n. 
+Filtrage	Percolatio, onis, f. 
+Fin		Finis, is, m
+Fin de ligne	Nova linea (new line) 
+Fois		Une (seule) fois: semel, adv. /
+Fonction	Functio, onis, f.
+En fonction	in officio
+Hors fonction   extra officium
+Format 		(data representation) subst. forma,ae f.; compositio,onis
+Frequence	Frequentia, ae, f. / Crebritas, atis, f. 
+Fuseau Horaire  circulus temporalis ou zona horaria
+Fusionner	Coalescere / Miscere (mêler)
+Général		Generalis, e adj. 
+Genéralités     Prooemium, ii n. 
+Gestionnaire 	Rector
+Glisser		labi, dep.
+Global		Universus, a, um adj. 
+Gras		Pinguis, e 
+Gris		Cinereus/Cineraceus
+Grille		Reticulum,i n. 
+Deposer         ponere 
+Groupe 		Circulus, i
+Hauteur		Altitudo,inis f. 
+Haut		Altus,a,um en haut, vers le haut sursum, adv.
+Bas		le bas: ima en bas deorsum, adv. 
+Hebdomadaire	hebdomādālis
+Heure		Hora,ae f.
+Heure d'hiver 	hōra hiemālis, f
+Heure locale	tempus regionale
+Hexadecimal  	Sedecimalis
+Hiérarchiquement per gradus
+Historique	 Colligatio, onis f. 
+Hôte	 	Hospes, itis
+Horizontal	Directus,a,um
+Vertical	Ad perpendiculum (lat. class.) ou verticalis (lat. med.) 
+Horloge 	hōrologium, iī, n
+Historique	ordo seriesque rerum
+Icone 		subst. icon,onis f.
+Ignorer	 	Contemnere 
+Image		Imago,inis f.
+Imminent	Imminens p. adj. (nuance négative selon Goelzer) 
+Impossible	Non postest / Nequeo + inf.
+Imprimer	Exscribere
+Imprimante	instrumentum pressorium
+Incompatible	alienus,a,um adj. /contraria, orum n. (nom) 
+Inconnu		ignotus,a,um adj. / incognitus,a,um adj. 
+Inclure		includere (inclusus) 
+Incorrect 	Vitiosus, a, um, adj. / Mendosus, a, am, adj.
+Indenté		reductus, a, um (renfoncé) 
+Indiquer	Indicare
+Ingénieur	Machinator, oris m. (Desessard) 
+Information 	Percontatio, onis f.
+Initial		Initialis, e (ou initii/principii pour Goelzer)
+Insérer		Inserere
+Installer	Instruere, tr.
+Installation	Instructio,onis,f.
+Interne		Internus,a,um adj. 
+Interruption	Intermissio, onis, f.
+Inverse		Diversus,a,um adj. 
+Invite			Invitatio, onis f.
+Irréparable		Inemendabilis, e adj. 
+Justifié	à droite/gauche: ad dextram/sinistram ordinatus-
+Joystick 	subst. manipulus,i m.*
+Kilogramme	kilogramma,atis, n. (ou chilogramma)
+Kilometre	Kilometrum
+Centimetre	Centimetrum
+Pouce		Uncia,ae
+Once		Uncia,ae 
+Jusqu'à 	Usque
+Lâcher		Laxare
+Largeur		latitudo, dinis f. 
+Lien 		Vinculum,i,n. 
+Lier		Vincire,vincio, vinxi, vinctum  
+Lire 		Legere
+Ligne de texte	Versus, us, m. 
+Ligne (hors) 	extra systêma 
+Ligne (en) 	systemati conexus
+Logiciel	partes programmationes
+Login		* (enter a network) vt. inire
+Logout		* (exit from network) vt. exire
+Manuel		Enchiridion, ii
+Manquant	? (deest) 
+Maintenir	Retinere/Tenere
+Masquer		Officere, offuxi, offactum, officio
+Marge		margo,inis m. et f. 
+Mélanger	miscere, misceo, misces, miscui, mixtum
+Mémoire 	conditorium
+Message instantané nuntius,ii subitus,a,um
+Méthode		   methodus, i
+Mode		   modus, i, n.
+Modèle		   exemplum, i, n. 
+Modifier	mutare, tr.
+Modification	mutation, onis, f.
+Mot		verbum, i,n. / vocabulum, i, n. 
+Mot de passe	tessera, ae f. 
+Minute          minuta, ae f. 
+Mois		Mensis, is m.
+Monochrome	Unicolor, adj.
+Monter		Scandere (aller vers le haut) /Astruere (assembler)
+astruo, astruxi, astructum
+Multiple	 multiples, adj. 
+Navigateur 	navigatrum,i n.
+Niveau		libra, ae, f. 
+Nom			Nomen, Nominis, n. 
+Nombre		Numerus, i, m. 
+Numéro		Numerus, i m.
+Numérique	Goelzer conseille d'utiliser le génitif Numeri/Numerorum
+Nouveau 	Novus, a, um
+Normal		Rectus, a,um/ Justus,a,um / Sanus (bon état) / Normalis, e (fait à
+l'équerre)  
+Objet		Res,rei f. (chose, élement etc...)
+Obligatoire	Obstringens p. adj. 
+Obtenir		Impetrare (obtenir qq ch.) / Obtinere (non classique) 
+Occurrence	Casus, us m. 
+Octet		octetus,i m
+OK		profecto
+Ombre		Umbra, ae, f
+Ordinateur	ordinatrum,i n. adj: ordinatralis,e
+Ordonner	jubere
+Ordre 		Ordo, Ordinis, m. (dans le sens classement) 
+Operation	Opus,peris, n. 
+Options 	Optio, onis f. 
+Orthographe	Orthographia, ae f. 
+Ouvrir		Aperire, aperio, aperis, aperui, apertum
+Niveau		Libella, ae, f. 
+Ouverture	Apertio, onis, f. (action d'ouvrir) 
+Page		Pagina, ae
+Palette		quadra chromatica (Morgan) 
+Panneau		Replum,i n. 
+Paragraphe 	 paragraphus (-i m.)
+Paramètre	 parametrum, i
+Parenthèses	 lunulae f. pl	 
+Parcourir 	Perlustrare
+Partiellement	per partes
+Passage		Transitio, onis f. 
+Peintre		Pictor, oris m. 
+Perdre 		amittere
+Périphérique	appârâtus, ûs, m / machina, ae. f.
+Perimer		Abolere, tr. 
+Personnelle Domestica (session personnelle) 
+Pièces jointes quod epistulae additur (v. additus est) [Georges]; inclusum
+Police	 	Typus, i
+Préférence	Praelatio, onis f.  
+Prévoir		Conjicere, tr. / prévu = praemeditatus, a, um
+permettre	permittere, tr. 
+Permission	permissus, abl. u, m. / Licentia, ae, f. 
+Pile		Strues, is f. / Acervus, i m. 
+Pivoter		versari, pass. moy.
+Point de repère signum, i n.  
+Positif 		positivus, a, um. adj. 
+Negatif		negativus, a, um adj. 
+Position    Situs,us m. (lieu) / Positio,onis f. (manière)
+Principal   Praecipuus,a,um
+Privé 	 	privatus,a,um adj. 
+Précédent	superior,us adj. 
+Précision	justa rei ratio / Accuratio, onis f.
+Probable	Probabilis, e, adj.
+Probabilité 	Probabilitas, atis f.
+Probablement	Probabilitater, adv. 
+Processus	processus,us m.
+Produire (se)	Accidere
+Propriétaire	possessor,oris,m.  
+Prévoir		praevidere, praevidi, praevisum 
+Programme 	Programma,ae f.
+Rafraîchir	Novare/Integrare/Redintegrare
+Raison		Ratio,  onis f.
+Ranger		Ordinare
+Rangée		Ordo,inis m.
+Rapport		Relatio, onis f. 
+Rationnel   Rationalis, e adj. 
+Récemment	Nuperrime, adv. 
+Recherche	Investigatio, onis f. 
+Recommencer	Redintegrare
+Reconnaitre	Noscere
+Récupérer	Recuperare
+Réduire		Minuere, minuo, minuis, minutum
+Réference	Relatio, onis f. 
+Regulier	Dispositus, a, um / Descriptus, a, um
+Réseau	 	Rete, is (ex: rēte īnformātiōnis, n) 
+Remplacer	Substituere
+Renommer 	Vocare
+Représentation  Repraesentatio, onis f. (verifier genre) 
+Répeter		Iterare, tr.
+Répétition	Iteratio, onis f. 
+Répeté		Creber,Crebra, Crebrum adj.
+Repèrer		? 
+Répertoire 	Index, icis m. 
+Répondre	respondere,respondeo, respondi, responsum
+Representer	Exprimere / fingere
+Restaurer	Restituere, tr. 
+Restreint	Circumscriptus, a, um, adj. 
+Ressource	Ops, Opis f. 
+Retour		Reditus,us, m.
+Réussite	successus, ûs, m.
+Réussir		Succedere, intr. 
+Rendez-Vous 	Constitutum, i, n.
+Recevoir        Accipere
+Annuler un rdv  Constitutum revocare (tollere)
+Refuser	   	negare
+Reprendre  	Resumere, tr (une tâche)
+Répondre	Respondere
+Revenir	   	redire, intr. 
+Rester		Manere, maneo, manes, mansi, mansum intr. 
+Réunion 	conventus, ûs, m. / congregatio, onis, f.
+Registre	rĕgesta, ōrum, n
+Retour Chariot	recursus,us,m. carruli (carriage return)
+Sans doute	haud dubie 
+Scan/capturer scrûtor, âris, âtus sum, âri;
+Secondaire	Secundarius,a,um
+Seconde		Secunda, ae f. (unité de temps) 
+Selectionner 	Seligere
+Séparer		Separare
+Séparément	Separatim/seorsum/disjuncte advs. 
+Séquence	Series, ei f. (seriem acc. serie abl.)  
+Serveur		Minister, tri m.
+Service		Ministerium, ii n.
+En service	Usitatus, a, um adj. 
+Session		Sessio,onis f.
+Semaine		Hebdomas, Hebdomadis, f.
+Seuil		Limen, inis, n. 
+Signaler	Significare, tr.
+Signal		Signum, i n. / significatio, onis f. 
+Solution	Solutio, onis f. 
+Son		Sonus, i, m. 
+Souris		globulus
+Sortie		eductio, onis (Quicherat)
+Sortir		(qq chose) educere
+Souligner	sublineare (Morgan) 
+Special		Specialis, e, adj.
+Spécification   Subjectio, onis f. 
+Série		Series,ei f.
+Standard	? 
+Structure	Structura,ae f. / Constructio, onis f. 
+Suppression	detractio, onis f. 
+Supprimer       Tollere, tr. (tollo, tollis, sustuli, sublatum)
+Succès		Successus,us,m.
+Suffixe		suffixus / postspositus, a, um p. adj. 
+Suite		consecutio,onis,f. 
+Suivant		sequens p. adj. /Posterus,a,um adj. /Consecutus,a,um
+adj./ quae sequuntur
+Suivre		sequi, dep., tr.
+Sujet		Res,Rei f. / Argumentum, i n. / propositum, i n. 
+Supplementaire	adventicius,a,um adj. 
+Syntaxe		Syntaxis, is. f.
+Tableau de Bord	tabula indicatoria
+Tâche 		Pensum, i n. / Munus, eris, n.
+Traiter		Curare,curo,avi,atum / Tractare, tracto,avi,atum
+Travail     	Negotium, ii
+Transparent	Translucens, adv.
+Tranmsettre	Transmittere / Tradere (faire passer d'un lieu à un
+autre) 
+Transmettre	deferre (pour une lettre)
+Tronquer	Truncare
+Tous		Omnis ou Totus, Tota, Totium
+Température 	 caelum (-i n.)
+Temporaire	 Temporalis, e / Temporarius,a,um
+Temporairement	 Temporarie
+Terminal	 terminale,is n.
+Terminer	 terminare
+Texte 		Textus
+Tonalité	Tonus, i m. 
+Touche	 	Clavis, is
+Tuer		vt. occidere (kill -9 etc...) 
+Type 		Genus, neris
+Utilisateur 	Usor,oris (or Usuarius)
+Utiliser	uti,utor,usus sum, pas de supin
+Valider 	Validare
+Valeur 		Valor, oris
+Valide		Validus, a, um (sens légal) 
+Vérifier	Verificare (Perny) 
+Version		Versatio,onis f. (Quicherat Daveluy Latin-Français
+p. 1479) Versio, onis f. (Perny)
+Verrouiller	 obserare,tr.
+Verrou		 pessalus, i, m
+Déverrouiller	 deserare, tr. 
+Vide		vacuus,a,um adj. 
+Video		pellicula, ae, f
+Virgule		virgula, ae, f. (Parny) 
+Visualiser 	Aspicere
+Visible		Aspectabilis, e
+Volume		Magnitudo vocis (de la voix) 
+Programme pour visualiser du texte (less, more...):
+subst. exhibitrum,i n.
+Volume 		    volumen, inis, n.
+Vue 		Conspectus,us m. 
+Week-end 	exiens hebdomada
+Zone		zona,ae,f.
+
+date: Solis die 25 mensis Junii 2017  
+ Le nom radian est inventé vers 1871 par T. Muir, mais L. Euler
+dans "Introductio in analysin infinitorum" utilise déjà implicitement les radians. On pourrait donc appeler radian "gradus eulerianis"
+  

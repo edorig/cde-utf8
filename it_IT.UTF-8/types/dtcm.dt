@@ -16,7 +16,7 @@ set DtDbVersion=1.0
 
 ###############################################################################
 #
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -37,7 +37,7 @@ DATA_ATTRIBUTES DtcmAppointmentAttrs
         SUNV3_TYPE      ae-file
 	MEDIA		DT_APPOINTMENT
 	DESCRIPTION	Questo file contiene informazioni relative agli appuntamenti \
-                        dell'Agenda. Il suo tipo di dati Ë denominato \
+                        dell'Agenda. Il suo tipo di dati √® denominato \
                         CalendarAppointmentAttrs. I file CalendarAppointmentAttrs \
                         terminano con l'estensione '.appt'.
 	TYPE_LABEL      DtcmAppointmentAttrs
@@ -110,9 +110,9 @@ ACTION DtcmInsert
 	EXEC_STRING     sh -c '/usr/dt/bin/dtcm_insert  -a "%(File)Arg_1%" ;\
 			if [ \$? -ne 0 ] ; then \
 			  /usr/dt/bin/dterror.ds \
-			    "L'appuntamento non Ë stato fissato nell'agenda \
+			    "L'appuntamento non √® stato fissato nell'agenda \
 a causa di un errore.\\n\
-» possibile che il formato \
+√à possibile che il formato \
 dell'appuntamento non sia corretto\\n\
 o che l'agenda non sia accessibile." \
 			    "Agenda : Errore - Fissare l'appuntamento" \

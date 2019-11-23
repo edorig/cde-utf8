@@ -18,7 +18,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -41,7 +41,7 @@ DATA_ATTRIBUTES TRASH_FOLDER
         ICON            DtdirR
         MEDIA           FILE_NAME
         MOVE_TO_ACTION  FILESYSTEM_MOVE
-	DESCRIPTION	Questa cartella Ë un contenitore temporaneo per i file da cancellare.
+	DESCRIPTION	Questa cartella √® un contenitore temporaneo per i file da cancellare.
         TYPE_LABEL      TRASH_FOLDER
 }
 DATA_CRITERIA TRASH_FOLDER1
@@ -87,7 +87,7 @@ DATA_ATTRIBUTES PARENT_FOLDER
 	DESCRIPTION	L'icona '..' rappresenta la cartella precedente a quella \
                         corrente. Aprendola, si passa al livello \
                         superiore dell'albero delle cartelle. Il suo tipo \
-                        di dati Ë denominato PARENT_FOLDER.
+                        di dati √® denominato PARENT_FOLDER.
         TYPE_LABEL      PARENT_FOLDER
 }
 DATA_CRITERIA PARENT_FOLDER1
@@ -131,7 +131,7 @@ DATA_ATTRIBUTES CURRENT_FOLDER
         COPY_TO_ACTION	FILESYSTEM_COPY
         LINK_TO_ACTION	FILESYSTEM_LINK
 	DESCRIPTION	L'icona '.' rappresenta la cartella corrente. \
-                        Il suo tipo di dati Ë denominato CURRENT_FOLDER.
+                        Il suo tipo di dati √® denominato CURRENT_FOLDER.
         TYPE_LABEL      CURRENT_FOLDER
 }
 DATA_CRITERIA CURRENT_FOLDER1
@@ -165,7 +165,7 @@ DATA_ATTRIBUTES DOT_FOLDER
         MOVE_TO_ACTION	FILESYSTEM_MOVE
         COPY_TO_ACTION	FILESYSTEM_COPY
         LINK_TO_ACTION	FILESYSTEM_LINK
-	DESCRIPTION	Il tipo di dati di questa cartella Ë denominato DOT_FOLDER. \
+	DESCRIPTION	Il tipo di dati di questa cartella √® denominato DOT_FOLDER. \
                         Il nome di una cartella DOT_FOLDER inizia generalmente con \
                         un punto (.). Le cartelle DOT_FOLDER in genere sono nascoste.
         TYPE_LABEL      DOT_FOLDER
@@ -201,9 +201,9 @@ DATA_ATTRIBUTES FOLDER_LOCK
         MOVE_TO_ACTION	FILESYSTEM_MOVE
         COPY_TO_ACTION	FILESYSTEM_COPY
         LINK_TO_ACTION	FILESYSTEM_LINK
-	DESCRIPTION	Questa Ë una cartella per la quale l'utente non ha accesso \
+	DESCRIPTION	Questa √® una cartella per la quale l'utente non ha accesso \
                         in scrittura. Questo impedisce di aggiungere o eliminare file \
-                        dal suo contenuto. Il suo tipo di dati Ë denominato FOLDER_LOCK.
+                        dal suo contenuto. Il suo tipo di dati √® denominato FOLDER_LOCK.
         TYPE_LABEL      FOLDER_LOCK
 }
 DATA_CRITERIA FOLDER_LOCK1
@@ -233,9 +233,9 @@ DATA_ATTRIBUTES NON_WRITABLE_FOLDER
         MOVE_TO_ACTION  FILESYSTEM_MOVE
         COPY_TO_ACTION  FILESYSTEM_COPY
         LINK_TO_ACTION  FILESYSTEM_LINK
-        DESCRIPTION     Questa Ë una cartella per la quale l'utente non ha accesso \
+        DESCRIPTION     Questa √® una cartella per la quale l'utente non ha accesso \
                         in scrittura. Questo impedisce di aggiungere o eliminare file \
-                        dal suo contenuto. Il suo tipo di dati Ë denominato FOLDER_LOCK.
+                        dal suo contenuto. Il suo tipo di dati √® denominato FOLDER_LOCK.
         TYPE_LABEL      NON_WRITABLE_FOLDER
 }
 DATA_CRITERIA NON_WRITABLE_FOLDER1
@@ -277,9 +277,9 @@ DATA_ATTRIBUTES FOLDER
         MOVE_TO_ACTION	FILESYSTEM_MOVE
         COPY_TO_ACTION	FILESYSTEM_COPY
         LINK_TO_ACTION	FILESYSTEM_LINK
-	DESCRIPTION	Questa Ë una cartella. Una cartella Ë un raccoglitore \
+	DESCRIPTION	Questa √® una cartella. Una cartella √® un raccoglitore \
                         che contiene file o altre cartelle. \
-                        Il suo tipo di dati Ë denominato FOLDER.
+                        Il suo tipo di dati √® denominato FOLDER.
         TYPE_LABEL      FOLDER
 }
 DATA_CRITERIA FOLDER1
@@ -314,7 +314,7 @@ DATA_ATTRIBUTES RECURSIVE_LINK
 	ICON		Dtinf
 	DESCRIPTION	Questa icona rappresenta un collegamento simbolico \
                         che punta a se stesso, direttamente o tramite \
-                        altri collegamenti intermedi. Il suo tipo di dati Ë \
+                        altri collegamenti intermedi. Il suo tipo di dati √® \
                         denominato RECURSIVE_LINK.
         TYPE_LABEL      RECURSIVE_LINK
 }
@@ -326,7 +326,7 @@ DATA_ATTRIBUTES BROKEN_LINK
         ICON            Dtblink
         DESCRIPTION     Questa icona rappresenta un collegamento simbolico che \
                         punta a un file che non esiste. Il suo tipo di dati \
-                        Ë denominato BROKEN_LINK.
+                        √® denominato BROKEN_LINK.
         TYPE_LABEL      BROKEN_LINK
 }
 
@@ -339,7 +339,7 @@ DATA_ATTRIBUTES DOT_FILE
         IS_TEXT		true
         MIME_TYPE	text/plain
         MEDIA           C_STRING
-	DESCRIPTION	Questo tipo di dati Ë denominato DOT_FILE. \
+	DESCRIPTION	Questo tipo di dati √® denominato DOT_FILE. \
                         Il nome di un file DOT_FILE inizia con un \
                         punto (.). I file DOT_FILE sono in genere nascosti.
         TYPE_LABEL      DOT_FILE
@@ -363,8 +363,8 @@ DATA_ATTRIBUTES EXECUTABLE
 	SUNV3_TYPE	default-app
         MEDIA           _DT_DATA
 	DESCRIPTION	Questo file contiene uno script di shell o un programma \
-                        compilato che puÚ essere eseguito. Il suo tipo \
-                        di dati Ë denominato EXECUTABLE.
+                        compilato che pu√≤ essere eseguito. Il suo tipo \
+                        di dati √® denominato EXECUTABLE.
         TYPE_LABEL      EXECUTABLE
 }
 DATA_CRITERIA EXECUTABLE1
@@ -389,7 +389,7 @@ DATA_ATTRIBUTES UNKNOWN
         MIME_TYPE	application/octet-stream
         MEDIA           _DT_DATA
 	DESCRIPTION	Questo file non corrisponde ad alcun tipo di dati definito, \
-                        e quindi Ë stato assegnato al tipo di dati UNKNOWN.
+                        e quindi √® stato assegnato al tipo di dati UNKNOWN.
         TYPE_LABEL      UNKNOWN
 }
 
@@ -402,7 +402,7 @@ DATA_ATTRIBUTES DATA
         MIME_TYPE	text/plain
         MEDIA           _DT_DATA
 	DESCRIPTION	Questo file non corrisponde ad alcun tipo di dati definito, \
-                        e quindi Ë stato assegnato al tipo di dati DATA.
+                        e quindi √® stato assegnato al tipo di dati DATA.
         TYPE_LABEL      DATA
 }
 DATA_CRITERIA DATA1
@@ -576,7 +576,7 @@ ACTION PutOnWorkspace
         TT_ARG2_VTYPE   	string
         TT_ARG2_REP_TYPE	TT_REP_STRING
 	TT_ARG2_VALUE		%Arg_3%
-	DESCRIPTION		L'azione Collocare nello spazio di lavoro (DtPutOnWorkspace) metter‡  l'oggetto nello spazio di lavoro.
+	DESCRIPTION		L'azione Collocare nello spazio di lavoro (DtPutOnWorkspace) metter√†  l'oggetto nello spazio di lavoro.
 }
 
 # #####

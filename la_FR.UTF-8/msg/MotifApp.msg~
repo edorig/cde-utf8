@@ -1,0 +1,43 @@
+$   
+$ +SNOTICE  
+$   
+$  $XConsortium: MotifApp.msg /main/5 1996/10/19 15:26:10 rws $  
+$   
+$  RESTRICTED CONFIDENTIAL INFORMATION:  
+$   
+$  The information in this document is subject to special  
+$  restrictions in a confidential disclosure agreement between  
+$  HP, IBM, Sun, USL, SCO and Univel.  Do not distribute this  
+$  document outside HP, IBM, Sun, USL, SCO, or Univel without  
+$  Sun's specific written approval.  This document and all copies  
+$  and derivative works thereof must be returned or destroyed at  
+$  Sun's request.  
+$   
+$  Copyright 1993 Sun Microsystems, Inc.  All rights reserved.  
+$   
+$ +ENOTICE  
+$   
+
+$quote "
+
+$set 1
+1 "Num vis jubere istium mandatum ?"
+2 "Ita"
+3 "Relinquere"
+4 "Version de DtMail"
+5 "Version de DtMail"
+6 "Vous devez sélectionner un élément de l'application.\n"
+7 "DtMail - Adjumentum"
+8 "DtMail - Adjumentum"
+9 "Visne claudere hoc indicem ?"
+10 "Non potes relinquere hoc mandatum. Visne continuare ?"
+
+11 "Aspicere indices et scapos absconditos"
+$ /* NL_COMMENT
+$  * This message replaces messages 7 and 8.
+$  */
+12 "Programma epistulae : Adjumentum"
+
+$set 2        Redefine set#
+1 "Erreur de sélection, impossible de continuer.\n"
+2 "Sélection interrompue par l'utilisateur.\n"

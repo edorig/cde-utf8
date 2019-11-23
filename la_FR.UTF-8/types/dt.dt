@@ -1,0 +1,679 @@
+# ##########################################################################
+# 
+#      dt.dt
+# 
+#      Action and DataType definitions for the Common Desktop Environment
+#      (CDE) DT components.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#     $TOG: dt.dt.src /main/13 1998/12/18 18:16:14 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# MONITIO: Probabiliter hoc scapus contundus erit dum  
+#     institutione proxima mensae CDE. Oportet facere mutationes
+#     systemae in scapo receptaculi datorum 
+#     aequabili in indice /etc/dt/types.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# Attributs datorum
+# 
+# ##################################################################
+DATA_ATTRIBUTES DT
+{
+        ACTIONS         Open,ReloadActions,Print
+        ICON		Dtdt
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.dt
+        MIME_TYPE	text/plain
+        DESCRIPTION     Hoc scapus est receptaculum datorum quot \
+                          actionorum definitiones et datorum generes continet. Ejus \
+                          genus datorum  DT est et ejus suffixus .dt est.
+        TYPE_LABEL      DT
+}
+DATA_CRITERIA DT1
+{
+	DATA_ATTRIBUTES_NAME DT
+        MODE            f
+        NAME_PATTERN    *.dt
+}
+ACTION ReloadActionsNotice
+{
+        LABEL           Reload Notification
+        TYPE            TT_MSG
+        TT_CLASS	TT_NOTICE
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtTypes_Reloaded
+        DESCRIPTION     The ReloadActionsNotice action notifies 			applications of a rebuilt cache file database.
+
+}
+
+ACTION BuildDataBaseRequest
+{
+        LABEL           Rebuild Request
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtDtsCache
+        DESCRIPTION     The BuildDataBaseRequest action rebuilds the 			cache file database                         of action, data type and front panel definitions.
+
+
+}
+ACTION ReloadActions
+{
+        LABEL           Iterum onerare actiones
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'dtaction BuildDataBaseRequest ;			dtaction ReloadActionsNotice'
+
+        DESCRIPTION     Actio Iterum onerare actiones permittit iterum legere \
+                        receptaculum datorum actionum, generes datorum \
+                        et definitiones tabulae indicatoriae.
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES FP
+{
+        ACTIONS         Open,Print
+        ICON		Dtfpcfg
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.fp
+        MIME_TYPE	text/plain
+        DESCRIPTION     Hoc scapus est receptaculum datorum quot percontationes \
+                         facei tabulae indicatoriae continet. \
+                        Ejus genus datorum FP est  et ejus suffixus .fp est.
+        TYPE_LABEL      FP
+}
+DATA_CRITERIA FP1
+{
+	DATA_ATTRIBUTES_NAME FP
+        MODE            f
+        NAME_PATTERN    *.fp
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTFILE_FILE
+{
+        PROPERTIES      invisible
+        ACTIONS         Open,Print
+        IS_TEXT         true
+        MIME_TYPE	text/plain
+        DESCRIPTION     Scapus aditus usus Rectore scaporum est; \
+                        Percontationes facei continet. Genus datorum \
+                        ejus DTFILE_FILE est.
+        TYPE_LABEL      DTFILE_FILE
+}
+DATA_CRITERIA DTFILE_FILE1
+{
+        DATA_ATTRIBUTES_NAME DTFILE_FILE
+        MODE            f
+        NAME_PATTERN    .\!*
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTKSH_SCRIPT
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtdtksh
+        IS_EXECUTABLE	true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.ds
+        MIME_TYPE	text/plain
+        DESCRIPTION     Scapus pelletabilis quot dtksh programmam continet. \
+                        Ejus genus datorum DTKSH_SCRIPT est.
+        TYPE_LABEL      DTKSH_SCRIPT
+}
+DATA_CRITERIA DTKSH_SCRIPT1
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        NAME_PATTERN    *.ds
+}
+DATA_CRITERIA DTKSH_SCRIPT2
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        CONTENT		0 string #!/usr/dt/bin/dtksh
+}
+DATA_CRITERIA DTKSH_SCRIPT3
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        CONTENT		0 string #! /usr/dt/bin/dtksh
+}
+ACTION Run
+{
+        LABEL           Pellere
+        ARG_TYPE        DTKSH_SCRIPT
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTKSH_CONV
+{
+        ACTIONS         Open,Print
+        ICON            Dtdtksh
+        NAME_TEMPLATE	%s.dtsh
+        MIME_TYPE	text/plain
+        DESCRIPTION     Ce fichier contient des fonctions pouvant être utilisées par \
+                        les scripts dtksh. Ejus genus datorum \
+                        DTKSH_CONV est.
+        TYPE_LABEL      DTKSH_CONV
+}
+DATA_CRITERIA DTKSH_CONV1
+{
+        DATA_ATTRIBUTES_NAME DTKSH_CONV
+        MODE            f
+        NAME_PATTERN    *.dtsh
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# Actiones
+# 
+# ##################################################################
+ACTION Dtstyle
+{
+	LABEL		Rector Facei
+        ARG_COUNT       0
+        ICON		Fpstyle
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtstyle
+        DESCRIPTION     Actio Rector Facei (Dtstyle) permittit \
+                        pellere Rectorem facei mensae.
+}
+
+# ######
+
+ACTION OpenDtIntro
+{
+	LABEL		Prooemium Mensae
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dthelpview -helpVolume Intromgr
+        DESCRIPTION     Actio Prooemium proponit volumen \
+                        adjumenti quot continet adjumenti mensae \
+                        et definitiones ad usum usoris.
+}
+
+# ######
+
+ACTION FPHelp
+{
+	LABEL		Adjumentum_TI
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dthelpview -helpVolume FPanel
+        DESCRIPTION     Actio Adjumentum_TI proponit voluminem adjumenti \
+                         Tabulae indicatoriae.
+}
+
+# ######
+
+ACTION LockDisplay
+{
+	LABEL		Obserare_scrinium
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	Display_Lock
+        DESCRIPTION     Actio Obserare_scrinium permittit obserare \
+                        ordinatrum. Ad deserandum, debes \
+                        cognoscere tesseram usoris vel machinatoris systemae.
+}
+
+# ######
+
+ACTION ExitSession
+{
+	LABEL		Exire_sessione
+        ARG_COUNT      	0
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	XSession_Exit
+        DESCRIPTION     Actio Exire_sessione permittit terminare sessionem mensae \
+                        usoris et proponere scrinium connexus. Ad \
+                        incipiendum sessionem novam, usor connexum facere debet.
+}
+
+# ######
+
+# ######
+
+ACTION SaveSession
+{
+	LABEL			Perscribere Sessionem
+	TYPE			TT_MSG
+	TT_CLASS		TT_REQUEST
+	TT_SCOPE		TT_SESSION
+	TT_OPERATION		Save_Session
+
+	#
+	# The legal values for save_type are: Local, Global and Both
+	#
+	TT_ARG0_MODE		TT_IN
+	TT_ARG0_VTYPE		save_type
+	TT_ARG0_REP_TYPE	TT_REP_STRING	
+	TT_ARG0_VALUE		Local
+
+	#
+	# The legal values for shutdown are: True and False
+	#
+	TT_ARG1_MODE		TT_IN
+	TT_ARG1_VTYPE		shutdown
+	TT_ARG1_REP_TYPE	TT_REP_STRING	
+	TT_ARG1_VALUE		False
+
+	#
+	# The legal values for interact_style are: None, Errors and Any
+	#
+	TT_ARG2_MODE		TT_IN
+	TT_ARG2_VTYPE		interact_style
+	TT_ARG2_REP_TYPE	TT_REP_STRING	
+	TT_ARG2_VALUE		None
+
+	#
+	# The legal values for fast are: True and False
+	#
+	TT_ARG3_MODE		TT_IN
+	TT_ARG3_VTYPE		fast
+	TT_ARG3_REP_TYPE	TT_REP_STRING	
+	TT_ARG3_VALUE		True
+
+	#
+	# The legal values for global are: True and False
+	#
+	TT_ARG4_MODE		TT_IN
+	TT_ARG4_VTYPE		global
+	TT_ARG4_REP_TYPE	TT_REP_STRING	
+	TT_ARG4_VALUE		True
+
+	#
+	# The num_sessions_backedup field can be any positive
+	#   number.  If it is 0, the default number of sessions
+	#   will be backedup.
+	#
+	TT_ARG5_MODE		TT_IN
+	TT_ARG5_VTYPE		num_sessions_backedup
+	TT_ARG5_REP_TYPE	TT_REP_STRING	
+	TT_ARG5_VALUE		0
+
+	DESCRIPTION		Actio Perscribere sessionem sessionem vertentem \
+                                condit.
+} 
+
+# ######
+
+ACTION ReloadResources
+{
+        LABEL           Iterum onerare opes
+        ARG_COUNT       0
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	Resources_Reload
+        DESCRIPTION     Actio Iterum onerare opes permittit rursus onerare \
+                        receptaculum datorum opis X  \
+                        et de scapos opis Mensae, et \
+                        includere mutationes factae post \
+                         conexu.
+}
+
+# ######
+
+ACTION ReloadApps
+{
+	LABEL		Iterum onerare programmas
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dtaction ReloadActions;                            /usr/dt/bin/dtappgather -r; 			   /usr/dt/bin/dthelpgen -dir $HOME/.dt/help '
+
+
+        DESCRIPTION     Actio Iterum onerare programmas permittit rursus onerare  \
+                        receptaculum definitionis actionorum, generorum \
+                        et tabulae indicatoriae.
+}
+
+# ######
+
+ACTION Dtcreate
+{
+	LABEL		Creare actionem
+        ICON		Dtrunpn
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtcreate "%Arg_1%"
+        DESCRIPTION     Actio Creare actionem (Dtcreate) permittit pellere programmam \
+                        ad definiendum \
+                        actiones et generes datorum programmarum.
+}
+
+# ######
+
+ACTION DtwmrcEdit
+{
+	LABEL		Mutare Dtwmrc
+        ICON            Fppenpd
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c 'if [ ! -f $HOME/.dt/dtwmrc ] ; then                                   if [ ! -f /etc/dt/config/sys.dtwmrc ] ; then                                     cp /usr/dt/config/$LANG/sys.dtwmrc                                                             $HOME/.dt/dtwmrc;                                   else                                     cp /etc/dt/config/sys.dtwmrc                                                             $HOME/.dt/dtwmrc;                                   fi;                                   chmod u+w $HOME/.dt/dtwmrc;                                fi;                                /usr/dt/bin/dtaction Open $HOME/.dt/dtwmrc'
+        DESCRIPTION     Actio Mutare Dtwmrc (DtwmrcEdit) aperit copiam scapi \
+                        $HOME/.dt/dtwmrc in editorio texti systemae (indicatus \
+                        a variabile ambitus EDITOR). Si \
+                        $HOME/.dt/dtwmrc deest, haec actio id \
+                        creat, copiando scapum /usr/dt/config/<langue>/sys.dtwmrc. \
+                        Dum perscribes scapum et exis editore, \
+                        debet rursus pellere Rectorem spatii negotii \
+                        cum optione Rursus incipere Rectorem spatii negotii \
+                        indicis Spatium negotii.
+}
+
+# ######
+
+ACTION RestorePanel
+{
+	LABEL		Restituere Tabulam Indicatoriam
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtPanel_Restore
+        DESCRIPTION     Actio Restituere Tabulam Indicatoriam  permittit \
+                        restituere statum absentem aliquid tabulae indicatoriae.
+}
+
+# ######
+
+ACTION Dtmail
+{
+	LABEL		Programma_cursualis
+        ICON		DtMail
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Display
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	RFC_822_MESSAGE
+	TT_ARG0_VALUE	DTMAIL_INBOX
+        DESCRIPTION     Actio Programma_cursualis (Dtmail) permittit pellere  \
+                        programmam cursualis supra Mensam.
+}
+
+# ######
+
+ACTION Dtcalc
+{
+	LABEL		Machina_calculatoria
+        ICON            Dtcalc
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtcalc
+        DESCRIPTION     Actio Machina_calculatoria (Dtcalc) permittit \
+                        pellere Machinam calculatoriam supra Mensam.
+}
+
+# ######
+
+ACTION Dtterm
+{
+	LABEL		Terminale
+        ARG_COUNT       0
+        ICON            Dtterm
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtterm
+        DESCRIPTION     Actio Terminale (Dtterm) permittit pellere \
+                        fenestram terminalis supra Mensam.
+}
+
+# 
+#  The following action is used to start a terminal emulator
+#  via the desktop's messaging system.  If a terminal emumaltor
+#  server is not running when this action is invoked, a server
+#  will be started.  Once the server is started, subsequent
+#  invocations of this action will not start a new process but
+#  instead, a message will be sent to the server and a new
+#  terminal emulator window will be mapped.
+# 
+#  Note that all shells started via the server will run on the
+#  server's host, regardless of the host where the action is
+#  invoked.
+ACTION DttermServer
+{
+	LABEL			Terminale
+	ARG_COUNT		0
+	ICON			Dtterm
+	TYPE			TT_MSG
+	TT_CLASS		TT_REQUEST
+	TT_SCOPE		TT_SESSION
+	TT_OPERATION		DtTerminal_New
+	TT_ARG0_MODE		TT_IN
+	TT_ARG0_VTYPE		-display
+	TT_ARG0_REP_TYPE	TT_REP_STRING
+	TT_ARG0_VALUE		$DISPLAY
+	TT_ARG1_MODE		TT_IN
+	TT_ARG1_VTYPE		-display
+	TT_ARG1_REP_TYPE	TT_REP_STRING
+	TT_ARG1_VALUE		$DISPLAY
+	DESCRIPTION		Actio Terminale (Dtterm) permittit pellere \
+                        fenestram terminalis supra Mensam.
+}
+
+# ######
+
+ACTION Dticon
+{
+	LABEL		Pictor iconis
+        ICON		Dtpaint
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dticon
+        DESCRIPTION     Actio Pictor iconis  (Dticon) permittit pellere Pictorem \
+                        iconis supra Mensa ; eam permittit creare \
+                        vel mutare scapos imaginorum (vulgo bitmaps et pixmaps).
+}
+ACTION Dticon
+{
+	LABEL		Pictor iconis
+        ICON		Dtpaint
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dticon -file                           "%(File)Arg_1"scapum iconis mutanda:"%"
+
+        DESCRIPTION     Actio Pictor iconis  (Dticon) permittit pellere Pictorem \
+                        iconis supra Mensa ; eam permittit creare \
+                        vel mutare scapos imaginorum (vulgo bitmaps et pixmaps).
+}
+
+# ######
+
+ACTION (None)
+{
+	LABEL		(Nihil)
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Nihil actio parata \\n ad hoc genere scapi adest."                        "Nihil actio"                        "Ita"
+
+
+
+        DESCRIPTION     Actio (Nihil)  actionem specialem est: Indicat \
+                         actio parata ad genere \
+                        datorum deest.
+}
+
+# ######
+
+ACTION DttermErrorlog
+{
+	LABEL		Errores
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/sh -c 'if [ ! -f $HOME/.dt/errorlog ] ; then                                       /bin/touch $HOME/.dt/errorlog;                                      fi;                         /usr/dt/bin/dtterm -map -title 			     "Errores"                              -e tail -f $HOME/.dt/errorlog'
+
+
+
+
+
+        DESCRIPTION     Actio Errores permittit aperire fenestram \
+                        terminalis in quo scapus $HOME/.dt/errorlog \
+                        adsidue proponitus est. Si errores accidiunt \
+                        dum fenestra minuta in icone, dimensiones eam \
+                        restituntur.
+}
+
+# ######
+
+ACTION Dttypes
+{
+        LABEL           Generes et actiones
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         /usr/dt/bin/dttypes | \${PAGER:-more};             echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+
+        DESCRIPTION     Actio Generes et actiones (Dttypes) programmam \
+                        dttypes pellet, quam permittit  de résoudre les incidents \
+                        liés à receptaculum datorum generum datorum.
+}
+ACTION Dttypes
+{
+        LABEL           Generes et actiones
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '/usr/dt/bin/dttypes -type "%(File)Arg_1%";                  echo "\\n*** Seligere Claudere aut Relinquere in indico ad claudendum finestram. ***"'
+
+        DESCRIPTION     Actio Generes et actiones (Dttypes) programmam \
+                        dttypes pellet, quam permittit  de résoudre les incidents \
+                        liés à receptaculum datorum generum datorum.
+}
+
+# #########################################################################
+# 
+#  Actio NoPrint absentem aliquid.
+# 
+# #########################################################################
+ACTION NoPrint
+{
+	LABEL		Nulla_pressoria
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "Functio pressoriae ut hoc genere datorum deest."                        "Exscribere non potest"                        "Ita"
+
+
+
+        DESCRIPTION    Actio Nulla_pressoria proponit nuntium erroris \
+                       quot indicat scapus exscribendus habet generum \
+                       datorum cum nihil actione pressoriae \
+                       definita.     
+}
+
+# #########################################################################
+# 
+#  Actio Aperire absentem aliquid.
+# 
+# #########################################################################
+ACTION Open
+{
+        LABEL           Aperire
+        TYPE            MAP
+        MAP_ACTION      TextEditor
+}
+
+# #########################################################################
+# 
+# 
+# #########################################################################
+ACTION DtTTMediaOpen
+{
+	ARG_COUNT	0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Instantiate
+
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	C_STRING
+	TT_ARG0_REP_TYPE TT_REP_STRING
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	BUFFER
+	ARG_MODE	w
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Edit
+
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_VALUE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_BUFFER
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	BUFFER
+	ARG_MODE	!w
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Display
+
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_VALUE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_BUFFER
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	FILE
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Edit
+	TT_FILE		%Arg_1%
+
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_STRING
+}
+
+# ######################## EOF ############################################

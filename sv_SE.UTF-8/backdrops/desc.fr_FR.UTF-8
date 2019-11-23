@@ -1,0 +1,51 @@
+! $XConsortium: Backdrops.src /main/3 1995/12/05 10:11:06 rswiston $
+!######################################################################
+!#
+!#     Backdrops
+!#
+!#     Common Desktop Environment (CDE)
+!#
+!#     Backdrop file used for localization of backdrop names
+!#
+!#     (c) Copyright 1993, 1994 Hewlett-Packard Company
+!#     (c) Copyright 1993, 1994 International Business Machines Corp.
+!#     (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+!#     (c) Copyright 1993, 1994 Unix System Labs, Inc., a subsidiary 
+!#	   of Novell, Inc.
+!#
+!#
+!######################################################################
+
+!###
+!#
+!#   C backdrop names followed by message tags for the translated names 
+!#   
+!###
+
+Backdrops*Ankh.desc: Ankh
+Backdrops*Background.desc: Bakgrund
+Backdrops*BrickWall.desc: Tegelvägg
+Backdrops*Concave.desc: Konkav
+Backdrops*Convex.desc: Konvex
+Backdrops*Corduroy.desc: Manchester
+Backdrops*Crochet.desc: Virkning
+Backdrops*Foreground.desc: Förgrund
+Backdrops*InlayColor.desc: Inläggsfärg
+Backdrops*InlayPlain.desc: Enfärgat inlägg
+Backdrops*KnitLight.desc: Ljust stickat
+Backdrops*Lattice.desc: Galler
+Backdrops*LatticeBig.desc: Stort galler
+Backdrops*Leaves.desc: Löv
+Backdrops*NoBackdrop.desc: Ingen bakgrund
+Backdrops*OldChars.desc: Gamla tecken
+Backdrops*Paver.desc: Gatsten
+Backdrops*Pebbles.desc: Grus
+Backdrops*PinStripe.desc: Kritstreck
+Backdrops*RakedSand.desc: Sanddyner
+Backdrops*RicePaper.desc: Rispapper
+Backdrops*SkyDark.desc: Mörk himmel
+Backdrops*SkyLight.desc: Ljus himmel
+Backdrops*Sprinkles.desc: Stänk
+Backdrops*Toronto.desc: Toronto
+Backdrops*WaterDrops.desc: Vattendroppar
+Backdrops*Wooly.desc: Ull

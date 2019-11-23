@@ -1,0 +1,4 @@
+CDEROOT=$HOME/software/cdesktopenv-code/cde
+for i in $CDEROOT/programs/localized/*.ISO-8859-1 ; do
+    echo $i
+    done

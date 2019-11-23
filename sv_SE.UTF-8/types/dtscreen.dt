@@ -1,0 +1,121 @@
+# ##########################################################################
+# 
+#      dtscreen.dt
+# 
+#      Actions for defining screen savers to the Common Desktop Environment.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dtscreen.dt.src /main/4 1996/04/23 17:35:39 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# VARNING:  Denna fil kan skrivas över i senare installationer av
+#     CDE (Common Desktop Environment). Det innebär att alla
+#     systemgenerella ändringar bör göras i en motsvarande databasfil i
+#     /etc/dt/types och inte i denna fil.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# Funktioner
+# 
+# ##################################################################
+ACTION StartDtscreenHop
+{
+        LABEL           StartaSlumpvistMönster
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode hop
+        DESCRIPTION     Slumpvist skärmmönster
+}
+
+ACTION StartDtscreenQix
+{
+        LABEL           StartaSnurrandeLinjer
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode qix
+        DESCRIPTION     Snurrande linjer
+}
+
+ACTION StartDtscreenImage
+{
+        LABEL           StartaStudsandeMönster
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode image
+        DESCRIPTION     Studsande mönster
+}
+
+ACTION StartDtscreenLife
+{
+        LABEL           StartaConway
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode life
+        DESCRIPTION     Conway's game of Life
+}
+
+ACTION StartDtscreenSwarm
+{
+        LABEL           StartaBisvärm
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode swarm
+        DESCRIPTION     Bisvärm
+}
+
+ACTION StartDtscreenRotor
+{
+        LABEL           StartaRotor
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode rotor
+        DESCRIPTION     Rotor
+}
+
+ACTION StartDtscreenPyro
+{
+        LABEL           StartaFyrverkeri
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode pyro
+        DESCRIPTION     Fyrverkeri
+}
+
+ACTION StartDtscreenFlame
+{
+        LABEL           StartaKosmisktMönster
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode flame
+        DESCRIPTION     Kosmiskt eldmönster
+}
+
+ACTION StartDtscreenWorm
+{
+        LABEL           StartaKrälandeMaskar
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode worm
+        DESCRIPTION     Krälande maskar
+}
+
+ACTION StartDtscreenBlank
+{
+        LABEL           StartaSvartSkärm
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtscreen -mode blank
+        DESCRIPTION     Svart skärm
+}
+# ######################## EOF ############################################

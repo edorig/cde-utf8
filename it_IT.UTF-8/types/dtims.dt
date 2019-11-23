@@ -21,7 +21,7 @@ set DtDbVersion=1.0
 
 # ##########################################################################
 # 
-# ATTENZIONE: Questo file potr‡ essere sovrascritto in una successiva 
+# ATTENZIONE: Questo file potr√† essere sovrascritto in una successiva 
 #     installazione del Common Desktop Environment (CDE). Di conseguenza, 
 #     le modifiche a livello di sistema dovranno essere apportate nei 
 #     file di database equivalenti in /etc/dt/types, e non su questo file.
@@ -42,7 +42,7 @@ ACTION DtImsMode
         ARG_CLASS       *
         ARG_MODE        *
         EXEC_STRING     dtimsstart -mode -window  %Args%
-        DESCRIPTION     "L'azione DtImsMode imposta la modalit‡ di selezione del metodo di input.
+        DESCRIPTION     "L'azione DtImsMode imposta la modalit√† di selezione del metodo di input.
 }
 
 
