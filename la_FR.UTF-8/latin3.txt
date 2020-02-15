@@ -56,6 +56,7 @@ Binary		 Binaire 	binaris,e
 Block		 Bloc		Truncus, i m. 
 Block device	 Bloc		Per saturam (en bloc) 
 Bold (font)	Gras		Pinguis, e 
+Bookmark	Signet/Marque-Page	signaculum,i,n.
 Box		 Boite			Capsa, ae f.
 Braces	{}	Accolades 	uncîni alati
 Brackets ()	Parenthèses	 lunulae f. pl	 
@@ -161,7 +162,7 @@ Editor		Editeur		(programma) editorium
 Editor (icon) 	Peintre		Pictor, oris m. 
 Element		Element		pars,partis f.
 Ellipse		Ellipse		ellipsis, is f. 
-Email		Courrier électr. epistula ēlectronica, f / cursus ēlectronicus, m 
+Email		Courrier électr. epistula electronica, f / cursus electronicus, m 
 Empty		 Vide		vacuus,a,um adj. 
 End		  Fin		Finis, is, m
 Enter		Entrer		inducere
@@ -360,7 +361,7 @@ Positive 	Positif 		positivus, a, um. adj.
 Precision	Précision	justa rei ratio / Accuratio, onis f.
 Preference	Préférence	Praelatio, onis f.  
 Press		Enfoncer	Figere, figo, fixi, fixum
-Previous	Précédent	superior,us adj. 
+Previous	Précédent	superior,us adj./prior(M/F),prius(N) adj. 
 Prévoir		praevidere, praevidi, praevisum 
 principium, ii n.
 Printer		Imprimante	instrumentum pressorium
@@ -412,6 +413,7 @@ Rights (legal)	Droit		Jus, Juris, n.
 Rotate		Pivoter		versari, pass. moy.
 Row		Rangée		Ordo,inis m.
 Save	       Enregister(sous) 	Perscribere (in)
+Scale	       Echelle			Mensura, ae t. 
 Scan		capturer 	scrûtor, âris, âtus sum, âri;
 Screen		Ecran		scrinium,i n.; quadrum,i n.; umbellla,ae f. (Perny mais cet écran est pour faire de l'ombre) 
 Scrolling	Défilement	Decursus, us m. 
@@ -481,6 +483,7 @@ Tool		Outil		Instrumentum, i n.
 Transmit	Transmettre	Transmittere / Tradere 
 Transparent	Transparent	Translucens, adv.
 Trash can	Corbeille	canistrum (-i n.)
+Tree-shaped	Arborescent     arborescens, adj. 
 Truncate	Tronquer	Truncare
 Try (to)       Essayer		Tentare, tento, tentas,tentavi,tentatum tr. 
 Type		Type 		Genus, neris

@@ -109,16 +109,16 @@ $ LANG=Fi_FI
 108 "Finnois - IBM-850"
 $ LANG=Fr_BE   
 
-109 "Français (Belgique) - IBM-850"
+109 "FranÃ§ais (Belgique) - IBM-850"
 $ LANG=Fr_CA   
 
-110 "Français (Canada) - IBM-850"
+110 "FranÃ§ais (Canada) - IBM-850"
 $ LANG=Fr_CH   
 
-111 "Français (Suisse) - IBM-850"
+111 "FranÃ§ais (Suisse) - IBM-850"
 $ LANG=Fr_FR   
 
-112 "Français - IBM-850"
+112 "FranÃ§ais - IBM-850"
 $ LANG=Is_IS   
 
 113 "Islandais - IBM-850"
@@ -127,7 +127,7 @@ $ LANG=It_IT
 114 "Italien - IBM-850"
 $ LANG=Iw_IL   
 
-115 "Hébreu(PC) - IBM-856"
+115 "HÃ©breu(PC) - IBM-856"
 $ LANG=Ja_JP   
 
 116 "Japonais(PC) - IBM-932"
@@ -136,13 +136,13 @@ $ LANG=Jp_JP
 117 "Japonais(Compat. PC) - IBM-932"
 $ LANG=Nl_BE   
 
-118 "Néerlandais (Belgique) - IBM-850"
+118 "NÃ©erlandais (Belgique) - IBM-850"
 $ LANG=Nl_NL   
 
-119 "Néerlandais - IBM-850"
+119 "NÃ©erlandais - IBM-850"
 $ LANG=No_NO   
 
-120 "Novégien - IBM-850"
+120 "NovÃ©gien - IBM-850"
 $ LANG=POSIX   
 
 121 "C (POSIX) - ISO8859-1"
@@ -151,7 +151,7 @@ $ LANG=Pt_PT
 122 "Portugais - IBM-850"
 $ LANG=Sv_SE   
 
-123 "Suédois - IBM-850"
+123 "SuÃ©dois - IBM-850"
 $ LANG=UNIVERSAL   
 
 124 "Universel/Unicode - UTF-8"
@@ -163,7 +163,7 @@ $ LANG=bg_BG
 126 "Bulgare - ISO8859-5"
 $ LANG=cs_CS   
 
-127 "Tchèque - ISO8859-2"
+127 "TchÃ¨que - ISO8859-2"
 $ LANG=da_DK   
 
 128 "Danois - ISO8859-1"
@@ -190,16 +190,16 @@ $ LANG=fi_FI
 135 "Finnois - ISO8859-1"
 $ LANG=fr_BE   
 
-136 "Français (Belgique) - ISO8859-1"
+136 "FranÃ§ais (Belgique) - ISO8859-1"
 $ LANG=fr_CA   
 
-137 "Français (Canada) - ISO8859-1"
+137 "FranÃ§ais (Canada) - ISO8859-1"
 $ LANG=fr_CH   
 
-138 "Français (Suisse) - ISO8859-1"
+138 "FranÃ§ais (Suisse) - ISO8859-1"
 $ LANG=fr_FR   
 
-139 "Français - ISO8859-1"
+139 "FranÃ§ais - ISO8859-1"
 $ LANG=hr_HR   
 
 140 "Croate - ISO8859-2"
@@ -214,25 +214,25 @@ $ LANG=it_IT
 143 "Italien - ISO8859-1"
 $ LANG=iw_IL   
 
-144 "Hébreu(ISO) - ISO8859-8"
+144 "HÃ©breu(ISO) - ISO8859-8"
 $ LANG=ja_JP   
 
 145 "Japonais(EUC) - IBM-eucJP"
 $ LANG=ko_KR   
 
-146 "Coréen - IBM-eucKR"
+146 "CorÃ©en - IBM-eucKR"
 $ LANG=mk_MK   
 
-147 "Macédonien - ISO8859-5"
+147 "MacÃ©donien - ISO8859-5"
 $ LANG=nl_BE   
 
-148 "Néerlandais (Belgique) - ISO8859-1"
+148 "NÃ©erlandais (Belgique) - ISO8859-1"
 $ LANG=nl_NL   
 
-149 "Néerlandais - ISO8859-1"
+149 "NÃ©erlandais - ISO8859-1"
 $ LANG=no_NO   
 
-150 "Norvégien - ISO8859-1"
+150 "NorvÃ©gien - ISO8859-1"
 $ LANG=pl_PL   
 
 151 "Polonais - ISO8859-2"
@@ -250,7 +250,7 @@ $ LANG=sh_YU
 155 "Serbe (latin) - ISO8859-2"
 $ LANG=si_SI   
 
-156 "Slovène - ISO8859-2"
+156 "SlovÃ¨ne - ISO8859-2"
 $ LANG=sk_SK   
 
 157 "Slovaque - ISO8859-2"
@@ -259,7 +259,7 @@ $ LANG=sp_YU
 158 "Serbe (cyrillique) - ISO8859-5"
 $ LANG=sv_SE   
 
-159 "Suédois - ISO8859-1"
+159 "SuÃ©dois - ISO8859-1"
 $ LANG=tr_TR   
 
 160 "Turc - ISO8859-9"
@@ -290,13 +290,13 @@ $ LANG=de
 201 "de ------- Allemand"
 $ LANG=fr   
 
-202 "fr ------- Français"
+202 "fr ------- FranÃ§ais"
 $ LANG=it   
 
 203 "it ------- Italien"
 $ LANG=sv   
 
-204 "sv ------- Suédois"
+204 "sv ------- SuÃ©dois"
 $ LANG=es   
 
 205 "es ------- Espagnol (latin)"
@@ -311,16 +311,16 @@ $ LANG=japanese
 208 "japanese - Japonais"
 $ LANG=ko   
 
-209 "ko ------- Coréen"
+209 "ko ------- CorÃ©en"
 $ LANG=korean   
 
-210 "korean --- Coréen"
+210 "korean --- CorÃ©en"
 $ LANG=zh   
 
-211 "zh ------- Chinois simplifié"
+211 "zh ------- Chinois simplifiÃ©"
 $ LANG=chinese   
 
-212 "chinese -- Chinois simplifié"
+212 "chinese -- Chinois simplifiÃ©"
 $ LANG=zh_TW   
 
 213 "zh_TW ---- Chinois traditionnel"
@@ -334,7 +334,7 @@ $ LANG=ca
 216 "en_AU ---- Australie"
 217 "en_CA ---- Canada"
 218 "en_IE ---- Irelande"
-219 "en_NZ ---- Nouvelle Zélande"
+219 "en_NZ ---- Nouvelle ZÃ©lande"
 220 "en_UK ---- Grande-Bretagne"
 221 "da ------- Danemark"
 222 "nl ------- Pays-Bas"
@@ -344,7 +344,7 @@ $ LANG=ca
 226 "fr_BE ---- Belgique francophone"
 227 "fr_CH ---- Suisse francophone"
 228 "de_CH ---- Suisse allemande"
-229 "no ------- Norvège"
+229 "no ------- NorvÃ¨ge"
 230 "pt ------- Portugal"
 231 "es_AR ---- Argentine"
 232 "es_BO ---- Bolivie"
@@ -353,15 +353,15 @@ $ LANG=ca
 235 "es_CR ---- Costa Rica"
 236 "es_EC ---- Equateur"
 237 "es_SV ---- El Salvador"
-238 "es_GT ---- Guatémala"
+238 "es_GT ---- GuatÃ©mala"
 239 "es_MX ---- Mexique"
 240 "es_NI ---- Nicaragua"
 241 "es_PA ---- Panama"
 242 "es_PY ---- Paraguay"
-243 "es_PE ---- Pérou"
+243 "es_PE ---- PÃ©rou"
 244 "es_UY ---- Uruguay"
-245 "es_VE ---- Vénézuela"
-246 "pt_BR ---- Brésil"
+245 "es_VE ---- VÃ©nÃ©zuela"
+246 "pt_BR ---- BrÃ©sil"
 
 $ ----------------------------------------------------------------------------
 $ Sun Desktop Names
@@ -393,7 +393,7 @@ $ LANG=POSIX
 302 "POSIX"
 $ LANG=arabic-w   
 
-303 "Algérien.Arabic8"
+303 "AlgÃ©rien.Arabic8"
 $ LANG=arabic   
 
 304 "Arabe.Arabic8"
@@ -405,7 +405,7 @@ $ LANG=bulgarian
 306 "Bulgare.ISO8859-5"
 $ LANG=czech   
 
-307 "Tchèque.ISO8859-2"
+307 "TchÃ¨que.ISO8859-2"
 $ LANG=danish.iso88591   
 
 308 "Danois.ISO8859-1"
@@ -450,16 +450,16 @@ $ LANG=finnish
 321 "Finnois.Roman8"
 $ LANG=c-french.iso88591   
 
-322 "Français-Canadien.ISO8859-1"
+322 "FranÃ§ais-Canadien.ISO8859-1"
 $ LANG=c-french   
 
-323 "Français-Canadien.Roman8"
+323 "FranÃ§ais-Canadien.Roman8"
 $ LANG=french.iso88591   
 
-324 "Français.ISO8859-1"
+324 "FranÃ§ais.ISO8859-1"
 $ LANG=french   
 
-325 "Français.Roman8"
+325 "FranÃ§ais.Roman8"
 $ LANG=serbocroatian   
 
 326 "Croate.ISO8859-2"
@@ -480,10 +480,10 @@ $ LANG=italian
 331 "Italien.Roman8"
 $ LANG=hebrew   
 
-332 "Hébreu.Hebrew8"
+332 "HÃ©breu.Hebrew8"
 $ LANG=hebrew.iso88598   
 
-333 "Hébreu.ISO8859-8"
+333 "HÃ©breu.ISO8859-8"
 $ LANG=japanese   
 
 334 "Japonais.SJIS"
@@ -495,19 +495,19 @@ $ LANG=katakana
 336 "Japonais.KANA8"
 $ LANG=korean   
 
-337 "Coréen.EUC"
+337 "CorÃ©en.EUC"
 $ LANG=dutch.iso88591   
 
-338 "Néerlandais.ISO8859-1"
+338 "NÃ©erlandais.ISO8859-1"
 $ LANG=dutch   
 
-339 "Néerlandais.Roman8"
+339 "NÃ©erlandais.Roman8"
 $ LANG=norwegian.iso88591   
 
-340 "Norvégien.ISO8859-1"
+340 "NorvÃ©gien.ISO8859-1"
 $ LANG=norwegian   
 
-341 "Norvégien.Roman8"
+341 "NorvÃ©gien.Roman8"
 $ LANG=polish   
 
 342 "Polonais.ISO8859-2"
@@ -528,13 +528,13 @@ $ LANG=slovak
 347 "Slovaque.ISO8859-2"
 $ LANG=slovene   
 
-348 "Slovène.ISO8859-2"
+348 "SlovÃ¨ne.ISO8859-2"
 $ LANG=swedish.iso88591   
 
-349 "Suédois.ISO8859-1"
+349 "SuÃ©dois.ISO8859-1"
 $ LANG=swedish   
 
-350 "Suédois.Roman8"
+350 "SuÃ©dois.Roman8"
 $ LANG=thai   
 
 351 "Thai.TIS620"
@@ -585,39 +585,39 @@ $ LANG=zh_HK.dechanyu
 $ LANG=zh_HK.dechanzi
 407 Chinois-Hong Kong (DEC Hanzi)
 $ LANG=zh_TW
-408 Chinois-Taïwan
+408 Chinois-TaÃ¯wan
 $ LANG=zh_TW.big5
-409 Chinois-Taïwan (Big5)
+409 Chinois-TaÃ¯wan (Big5)
 $ LANG=zh_TW.dechanyu
-410 Chinois-Taïwan (DEC Hanyu)
+410 Chinois-TaÃ¯wan (DEC Hanyu)
 $ LANG=zh_TW.eucTW
-411 Chinois-Taïwan (EUC)
+411 Chinois-TaÃ¯wan (EUC)
 $ LANG=cs_CZ.ISO8859-2
-412 Tchèque
+412 TchÃ¨que
 $ LANG=da_DK.ISO8859-1
 413 Danois
 $ LANG=nl_NL.ISO8859-1
-414 Néerlandais
+414 NÃ©erlandais
 $ LANG=nl_BE.ISO8859-1
-415 Néerlandais (Belgique)
+415 NÃ©erlandais (Belgique)
 $ LANG=en_GB.ISO8859-1
 416 Anglais britannique
 $ LANG=en_US.ISO8859-1
-417 Anglais américain
+417 Anglais amÃ©ricain
 $ LANG=fi_FI.ISO8859-1
 418 Finnois
 $ LANG=fr_FR.ISO8859-1
-419 Français
+419 FranÃ§ais
 $ LANG=fr_CA.ISO8859-1
-420 Français canadien
+420 FranÃ§ais canadien
 $ LANG=fr_BE.ISO8859-1
-421 Français (Belgique)
+421 FranÃ§ais (Belgique)
 $ LANG=de_DE.ISO8859-1
 422 Allemand
 $ LANG=el_GR.ISO8859-7
 423 Grec
 $ LANG=iw_IL.ISO8859-8
-424 Hébreu
+424 HÃ©breu
 $ LANG=hu_HU.ISO8859-2
 425 Hongrois
 $ LANG=is_IS.ISO8859-1
@@ -635,13 +635,13 @@ $ LANG=ja_JP.sdeckanji
 $ LANG=ja_JP.SJIS
 432 Japonais (Shift JIS)
 $ LANG=ko_KR
-433 Coréen
+433 CorÃ©en
 $ LANG=ko_KR.deckorean
-434 Coréen (DEC Korean)
+434 CorÃ©en (DEC Korean)
 $ LANG=ko_KR.eucKR
-435 Coréen (EUC)
+435 CorÃ©en (EUC)
 $ LANG=no_NO.ISO8859-1
-436 Norvégien
+436 NorvÃ©gien
 $ LANG=pl_PL.ISO8859-2
 437 Polonais
 $ LANG=pt_PT.ISO8859-1
@@ -653,21 +653,21 @@ $ LANG=sk_SK.ISO8859-2
 $ LANG=es_ES.ISO8859-1
 441 Espagnol
 $ LANG=sv_SE.ISO8859-1
-442 Suédois
+442 SuÃ©dois
 $ LANG=fr_CH.ISO8859-1
-443 Suisse français
+443 Suisse franÃ§ais
 $ LANG=de_CH.ISO8859-1
 444 Suisse allemand
 $ LANG=th_TH
-445 Thaï
+445 ThaÃ¯
 $ LANG=th_TH.TACTIS
-446 Thaï (TACTIS)
+446 ThaÃ¯ (TACTIS)
 $ LANG=tr_TR.ISO8859-9
 447 Turc
 $ LANG=ca_ES.ISO8859-1
 448 Catalan
 $ LANG=sl_SI.ISO8859-2
-449 Slovène
+449 SlovÃ¨ne
 $ LANG=lt_LT.ISO8859-4
 450 Lithuanien
 
@@ -751,7 +751,7 @@ $ LANG=de_CH.437
 $ LANG=de_CH.850
 613 Allemand (Suisse) - PC 850
 $ LANG=el
-614 Grec (Grèce) - ISO 8859/7
+614 Grec (GrÃ¨ce) - ISO 8859/7
 
 $ LANG=en
 $ 615 Anglais (Royaume-Uni) - ISO
@@ -796,19 +796,19 @@ $ LANG=en_IR.646
 630 Anglais (Irelande) - ISO 646
 
 $ LANG=en_NZ
-$ 631 Anglais (Nouvelle-Zélande) -  ISO
+$ 631 Anglais (Nouvelle-ZÃ©lande) -  ISO
 $ 631 NEW-
 631 English (New Zealand) - ISO 8859/1
 $ LANG=en_NZ.437
-$ 632 Anglais (Nouvelle-Zélande) PC
+$ 632 Anglais (Nouvelle-ZÃ©lande) PC
 $ 632 NEW-
 632 English (New Zealand) - PC 437
 $ LANG=en_NZ.850
-$ 633 Anglais (Nouvelle-Zélande) PC
+$ 633 Anglais (Nouvelle-ZÃ©lande) PC
 $ 633 NEW-
 633 English (New Zealand) - PC 850
 $ LANG=en_NZ.646
-$ 634 Anglais (Nouvelle-Zélande) PC
+$ 634 Anglais (Nouvelle-ZÃ©lande) PC
 $ 634 NEW-
 634 English (New Zealand) - PC 646
 $ LANG=en_US
@@ -853,11 +853,11 @@ $ LANG=es_MX.437
 $ LANG=es_MX.850
 650 Espagnol (Mexique) - PC 850
 $ LANG=es_VE
-651 Espagnol (Vénézuela) - ISO 8859/1
+651 Espagnol (VÃ©nÃ©zuela) - ISO 8859/1
 $ LANG=es_VE.437
-652 Espagnol (Vénézuela) - PC 437
+652 Espagnol (VÃ©nÃ©zuela) - PC 437
 $ LANG=es_VE.850
-653 Espagnol (Vénézuela) - PC 850
+653 Espagnol (VÃ©nÃ©zuela) - PC 850
 $ LANG=fi
 654 Finnois (Finlande) - ISO 8859/1
 $ LANG=fi_FI.437
@@ -865,29 +865,29 @@ $ LANG=fi_FI.437
 $ LANG=fi_FI.850
 656 Finnois (Finlande) - PC 850
 $ LANG=fr
-657 Français (France) - ISO 8859/1
+657 FranÃ§ais (France) - ISO 8859/1
 $ LANG=fr_FR.437
-658 Français (France) - PC 437
+658 FranÃ§ais (France) - PC 437
 $ LANG=fr_FR.850
-659 Français (France) - PC 850
+659 FranÃ§ais (France) - PC 850
 $ LANG=fr_BE
-660 Français (Belgique) - ISO 8859/1
+660 FranÃ§ais (Belgique) - ISO 8859/1
 $ LANG=fr_BE.437
-661 Français (Belgique) - PC 437
+661 FranÃ§ais (Belgique) - PC 437
 $ LANG=fr_BE.850
-662 Français (Belgique) - PC 850
+662 FranÃ§ais (Belgique) - PC 850
 $ LANG=fr_CA
-663 Français (Canada) - ISO 8859/1
+663 FranÃ§ais (Canada) - ISO 8859/1
 $ LANG=fr_CA.850
-664 Français (Canada) - PC 850
+664 FranÃ§ais (Canada) - PC 850
 $ LANG=fr_CA.863
-665 Français (Canada) - PC 863
+665 FranÃ§ais (Canada) - PC 863
 $ LANG=fr_CH
-666 Français (Suisse) - ISO 8859/1
+666 FranÃ§ais (Suisse) - ISO 8859/1
 $ LANG=fr_CH.437
-667 Français (Suisse) - PC 437
+667 FranÃ§ais (Suisse) - PC 437
 $ LANG=fr_CH.850
-668 Français (Suisse) - PC 850
+668 FranÃ§ais (Suisse) - PC 850
 $ LANG=is
 669 Icelandais (Icelande) - ISO 8859/1
 $ LANG=is_IS.850
@@ -909,34 +909,34 @@ $ LANG=ja
 $ LANG=ja_JP.EUC
 678 Japonais (Japon) - JIS X
 $ LANG=nl
-679 Néerlandais (Pays-Bas) - ISO 8859/1
+679 NÃ©erlandais (Pays-Bas) - ISO 8859/1
 $ LANG=nl_NL.437
-680 Néerlandais (Pays-Bas) - PC 437
+680 NÃ©erlandais (Pays-Bas) - PC 437
 $ LANG=nl_NL.850
-681 Néerlandais (Pays-Bas) - PC 850
+681 NÃ©erlandais (Pays-Bas) - PC 850
 $ LANG=nl_BE
-682 Néerlandais (Belgique) - ISO 8859/1
+682 NÃ©erlandais (Belgique) - ISO 8859/1
 $ LANG=nl_BE.437
-683 Néerlandais (Belgique) - PC 437
+683 NÃ©erlandais (Belgique) - PC 437
 $ LANG=nl_BE.850
-684 Néerlandais (Belgique) - PC 850
+684 NÃ©erlandais (Belgique) - PC 850
 $ LANG=no
-685 Norvégien (Norvège) - ISO 8859/1
+685 NorvÃ©gien (NorvÃ¨ge) - ISO 8859/1
 $ LANG=no_NO.850
-686 Norvégien (Norvège) - PC 850
+686 NorvÃ©gien (NorvÃ¨ge) - PC 850
 $ LANG=no_NO.865
-687 Norvégien (Norvège) - PC 865
+687 NorvÃ©gien (NorvÃ¨ge) - PC 865
 $ LANG=pt
 688 Portuguais (Portugal) - ISO 8859/1
 $ LANG=pt_BR
-689 Portuguais (Brésil) - ISO 8859/1
+689 Portuguais (BrÃ©sil) - ISO 8859/1
 $ LANG=pt_PT.850
 690 Portuguais (Portugal) - PC 850
 $ LANG=pt_PT.860
 691 Portuguais (Portugal) - PC 860
 $ LANG=sv
-692 Suédois (Suède) - ISO 8859/1
+692 SuÃ©dois (SuÃ¨de) - ISO 8859/1
 $ LANG=sv_SE.437
-693 Suédois (Suède) - PC 437
+693 SuÃ©dois (SuÃ¨de) - PC 437
 $ LANG=sv_SE.850
-694 Suédois (Suède) - PC 850
+694 SuÃ©dois (SuÃ¨de) - PC 850

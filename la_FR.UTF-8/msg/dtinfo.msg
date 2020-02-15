@@ -29,16 +29,16 @@ $
 3 "importance"
 4 "proximité"
 $       5       "xor" == Exclusive OR (Boolean)
-5 "xor"
+5 "aut"
 
 
 $set	4
 $ 
 $ messages specific to booklist window
 $ 
-3 "Dtinfo: Liste des livres Biblinfo"
-63 "Bienvenue à Dtinfo!"
-65 "Section en cours"
+3 "Dtinfo: Index librorum Biblinfo"
+63 "Optato advenis in Dtinfo!"
+65 "Sectio vertens"
 
 
 $set	5
@@ -47,7 +47,7 @@ $ messages specific to browser window
 $ 
 1 "Dtinfo: Explorateur"
 2 "Pour visusaliser la destination du lien, cliquez sur celui-ci et maintenez-le enfoncé."
-3 "Bibliothèque d'informations "
+3 "Bibliotheca percontationum "
 
 $       4       "The locator for this section is %s"
 $       This message is the result of the "Show Locator" operation.
@@ -68,46 +68,46 @@ $ messages specific to add information library dialog
 $ Note: "Infolib" is a CDE glossary term.
 $ 
 
-1 "Dtinfo: Ajouter la bibliothèque de documents "
+1 "Dtinfo: Addere bibliothecam documentorum"
 
 $ 2     "Please enter an absolute path to the Infolib."
 $       (Path must exist and include "/".)
-2 "Entrez le chemin absolu de la Biblinfo."
+2 "Induce itinerem absolutum ad bibliothecam."
 
 $ 3     "Infolib open failed. Check the path specified."
 $	(Path passed basic format check, but could not open target found.)
-3 "L'ouverture de la Biblinfo a échoué. Vérifiez le chemin spécifié."
+3 "Apertio bibliotecae offendit. Verifica itinerem indicatum."
 
 $ 4     "Infolib open failed. Check entry syntax or Infolib integrity."
 $       (An unidentified error occurred on attempt to open.)
-4 " L'ouverture de la Biblinfo a échoué. Vérifiez la syntaxe de l'entrée ou l'intégrité de Biblinfo."
+4 "Apertio bibliotecae offendit. Verifica la syntaxe de l'entrée ou l'intégrité de Biblinfo."
 
 $ 5     "Infolib specification format error."
 5 "Erreur du format de spécification de Biblinfo."
 
 $ 6     "No Infolib specified."
-6 "Aucune Biblinfo spécifiée."
+6 "Nulla bibliotheca indicata."
 
 $ 7     "No Infolib found or specified."
-7 "Aucune Biblinfo trouvée ou spécifiée."
+7 "Nulla bibliotheca invenita vel indicata."
 
 $ 10    "Dtinfo: Infolib Selection"
 $       (For title to the File Selection Dialog)
-10 "Dtinfo: Sélection Biblinfo"
+10 "Dtinfo: Selectio bibliothecae"
 
 $ 11    "No Infolibs Present"
 $       (This string will be shown in a directory listing where there
 $        are no Infolibs found in the directory.)
-11 "Pas de biblinfo"
+11 "Nulla bibliotheca"
 
 
 $set	7
 $ 
 $ dtinfo GUI label strings
 $ 
-1 "Fichier"
+1 "Scapus"
 2 "F"
-4 "Visualiser"
+4 "Aspicere"
 5 "V"
 
 $	6	"Clone"
@@ -120,74 +120,74 @@ $ [Currently, this functionality is deferred beyond CDE 2.0.]
 $	7	"N" for "N" in "Clone"
 7 "N"
 
-8 "Imprimer"
+8 "Exscribere"
 9 "r"
-10 "Imprimer..."
+10 "Exscribere..."
 11 "p"
-12 "Fermer"
+12 "Claudere"
 13 "e"
-14 "Quitter"
+14 "Exire"
 15 "Q"
-16 "Editer"
+16 "Redigere"
 17 "E"
-18 "Copier"
+18 "Copiare"
 19 "C"
-20 "Ajouter... "
+20 "Addere... "
 21 "j"
-22 "Supprimer"
+22 "Tollere"
 23 "i"
-24 "Options"
+24 "Optiones"
 25 "O"
-26 "Préférences..."
+26 "Praelationes..."
 27 "c"
-28 "Historique automatique"
+28 "Historique automatus,a,um"
 29 "m"
-30 "Afficher la barre d'outils"
+30 "Aspicere asserem instrumentorum"
 31 "b"
-32 "Afficher la zone de recherche"
+32 "Aspicere zonam investigationum"
 33 "z"
-34 "Fenêtres"
+34 "Fenestrae"
 35 "r"
-36 "Carte graphique"
+36 "Mappa arborescens"
 37 "G"
-38 "Section Historique"
+38 "Sectio colligationum"
 39 "H"
-40 "Liste des signets"
+40 "Index signaculorum"
 41 "n"
 
 $	42	"Search History " presents a dialog listing
 $ a history of prior search results, as provided in the Search
 $ Results Dialog.
-42 "Historique de la recherche"
+42 "Colligation investigationum"
 43 "q"
 44 "Editeur de requêtes"
 45 "s"
 46 "Editeur d'étendue"
 47 "u"
-48 "Aide"
+48 "Adjumentum"
 49 "A"
 50 "Sur l'élément..."
 51 "t"
-59 "Rechercher:"
+59 "Quaerere:"
 61 "Editeur d'étendue"
 
 $  Messages 62-77 for "Browser" pulldown menu entries
 $ 
 62 "Explorateur"
 63 "E"
-64 "Nouvelle fenêtre "
+64 "Nova Fenestra "
 65 "N"
-66 "Ouvrir le point d'implantation..."
+66 "Aperire le point d'implantation..."
 67 "v"
-68 "Afficher le point d'implantation"
+68 "Aspicere le point d'implantation"
 69 "f"
-70 "Imprimer"
+70 "Exscribere"
 71 "r"
-72 "Imprimer..."
+72 "Exscribere..."
 73 "p"
-74 "Fermer"
+74 "Claudere"
 75 "e"
-76 "Quitter"
+76 "Exire"
 77 "Q"
 
 $	78	"On Selection", where selection is a text
@@ -199,19 +199,19 @@ $ selection that will be used directly as a search query string
 81 "E"
 82 "Editeur d'étendue"
 83 "l"
-84 "Historique de la recherche"
+84 "Colligatio investigationum"
 85 "H"
 86 "Effacer correspondances"
 87 "f"
-88 "Précédent (Historique)"
+88 "Prior (Colligatione)"
 89 "t"
-90 "Suivant (Historique)"
+90 "Sequens (Colligatione)"
 91 "s"
-92 "Historique..."
+92 "Colligatio..."
 93 "q"
-94 "Section précédente"
+94 "Sectio prior"
 95 "p"
-96 "Section suivante"
+96 "Sectio sequens"
 97 "v"
 
 $   Messages 98-101 are for traversal of the document view in order
@@ -220,43 +220,43 @@ $ in the section. Presumably, all search hits have already been
 $ highlighted to some degree, and this will add the equivalent of a
 $ keyboard traversal highlight to the appropriate one when brought
 $ into view.
-98 "Recherche précédente"
+98 "Investigatio prior"
 99 "R"
-100 "Recherche suivante"
+100 "Investigatio sequens"
 101 "n"
 
-102 "Rechercher"
+102 "Quaerere"
 103 "R"
 
 $	104	"Go" is a pulldown menu label, where menu items are
 $ various methods by which the user may "go" to a specific document.
-104 "Aller"
+104 "Ire"
 105 "l"
 
 $   Message 106-119 are for the "Marks" pulldown menu
-106 "Repères"
+106 "Signa"
 107 "R"
-108 "Créer un signet"
+108 "Signaculum creare"
 109 "t"
-110 "Créer une note..."
+110 "Notam creare..."
 111 "é"
 
 $	112	"List Marks" means to show all saved Marks as a list
 $ in a separate dialog window.
-112 "Lister les signets"
+112 "Signacula proponere"
 113 "L"
 
-114 "Modifier la sélection..."
+114 "Mutare selectionem..."
 115 "M"
-116 "Déplacer la sélection"
+116 "Movere selectionem"
 117 "D"
-118 "Supprimer la sélection"
+118 "Tollere selectionem"
 119 "u"
 
 $   Messages 120-129 are for "Options" pulldown menu entries
-120 "Options"
+120 "Optiones"
 121 "O"
-122 "Préférences..."
+122 "Praelationes..."
 123 "c"
 
 $	124	"Detach Graphic" removes a selected graphic from the
@@ -265,17 +265,17 @@ $ remains in the document where the graphic originally appeared.
 124 "Détacher le graphique"
 125 "h"
 
-126 "Afficher la barre d'outils"
+126 "Aspicere asserem instrumentorum"
 127 "b"
-128 "Afficher la zone de recherche"
+128 "Aspicere zonam investigationum"
 129 "z"
 
 $   Messages 130-135 are for "Windows" pulldown menu entries
-130 "Fenêtres"
+130 "Fenestrae"
 131 "F"
-132 "Liste des livres"
+132 "Index librorum"
 133 "l"
-134 "Carte graphique"
+134 "Mappa arborescens"
 135 "C"
 
 $   Messages 136-142	are believed to be *unused*/obsolete
@@ -291,7 +291,7 @@ $   Messages 143-158 are Help pulldown menu entries, and
 $ should of course read the same across all CDE applications,
 $ within a localization. They always mean the same thing:
 $ provide "help On []"
-143 "Aide"
+143 "Adjumentum"
 144 "A"
 145 "Sur de l'élément..."
 146 "m"
@@ -301,7 +301,7 @@ $ provide "help On []"
 150 "n"
 151 "Index"
 152 "I"
-153 "A propos de l'aide"
+153 "Adjumentum adjument"
 154 "d"
 155 "A propos des clés"
 156 "o"
@@ -311,12 +311,12 @@ $ provide "help On []"
 $	159	"Retain" is believed to be unused
 159 "Conserver"
 
-160 "Chemin Biblinfo:"
-161 "Ok"
-162 "Annuler"
-163 "Nom"
-164 "Notes"
-165 "Afficher"
+160 "Iter ad bibliothecam:"
+161 "Profecto"
+162 "Rescindere"
+163 "Nomen"
+164 "Notae"
+165 "Aspicere"
 
 $	166	"Panner" is a graphical user interface control for
 $ selecting that part of a larger area which the associated view
@@ -324,7 +324,7 @@ $ window is to display.
 166 "Case panoramique"
 
 167 "Attacher"
-168 "Afficher la section"
+168 "Aspicere sectionem"
 
 $   Messages 169-182 are for the window which is used to present a
 $ detached graphic.
@@ -350,51 +350,51 @@ $ feminine ? "Beats" me ;-).
 181 "Coin inférieur gauche"
 182 "Coin inférieur droit"
 
-183 "Supprimer"
-184 "Livre"
-185 "Section"
-186 "Préférences:"
+183 "Tollere"
+184 "Liber"
+185 "Sectio"
+186 "Praelationes:"
 187 "Exploration "
-188 "Carte"
-189 "Recherche "
-190 "Géométrie de l'explorateur"
+188 "Mappa"
+189 "Investigatio "
+190 "Dimensiones de l'explorateur"
 191 ". . ."
-192 "Echelle de la police"
+192 "Mensura typi"
 
 $	193	"Pin []" is a verb
-193 "Ancrer la fenêtre"
-194 "Enregistrer une erreur"
-195 "Géométrie de la carte"
+193 "Ancrer fenestram"
+194 "Perscribere errorem"
+195 "Dimensiones mappae"
 196 "Mise à jour automatique"
-197 "Taille de l'historique de la section"
-198 "Taille de l'historique de la recherche"
+197 "Mensura colligationis sectionum"
+198 "Mensura colligationis investigationum"
 199 "Maximum  de correspondances"
 200 "Affichage automatique de la première correspondance"
-201 "Appliquer"
-202 "Restaurer"
-203 "En fonction"
-204 "Hors fonction"
-205 "Nombre de sections"
-206 "Sélectionné:"
-207 "A imprimer:"
+201 "Applicare"
+202 "Restituere"
+203 "In officio"
+204 "Extra officium"
+205 "Numerus sectionum"
+206 "Selectus:"
+207 "Exscribendus:"
 208 "Erreur."
-209 "A imprimer"
-210 "Sections"
+209 "Exscribendus"
+210 "Sectiones"
 211 "Hiérarchie"
 212 "Nom de l'étendue"
 213 "Sans nom"
 214 "Livres"
-215 "Eléments"
-216 "Nouveau"
-217 "Sauvegarder"
-218 "Renommer"
+215 "Res"
+216 "Novus"
+217 "Perscribere"
+218 "Nominem mutare"
 219 "Extrait:"
 220 "Etendue:"
 221 "Requête:"
 222 "Entrer un point d'implantation unique:"
-223 "Supprimer"
-224 "Couper"
-225 "Coller"
+223 "Tollere"
+224 "Secare"
+225 "Agglutinare"
 226 "Grouper"
 227 "Dégrouper"
 228 "Défaire"
@@ -412,9 +412,9 @@ $           be compared exactly to find a search index database entry.
 234 "Commence par"
 235 "Ne commence pas par"
 $	236	Boolean operator OR
-236 "Ou"
+236 "Vel"
 $	237	"Xor" is for Boolean logic "Exclusive OR"
-237 "Xor"
+237 "Aut"
 $	238	Boolean operator AND
 238 "Et"
 239 "Près"
@@ -422,24 +422,24 @@ $	238	Boolean operator AND
 241 "Importance"
 242 "Proximité"
 243 "Etendue"
-244 "Oui"
-245 "Non"
+244 "Ita"
+245 "Minime"
 246 "Correspondances"
 247 "Généralités"
 248 "t"
-249 "Tâches"
+249 "Munus"
 250 "T"
 251 "Référence"
 252 "R"
-253 "Utiliser l'aide"
+253 "Adjumentum adjumenti"
 254 "U"
 255 "A propos du Gestionnaire des informations"
 256 "i"
 257 "Généralités"
 258 "G"
 259 "o"
-260 "Historique"
-261 "Liste de l'historique"
+260 "Colligatio"
+261 "Index colligationis"
 262 "La section n'est plus disponible."
 263 "Cliquez sur un graphique pour le détacher."
 264 "Elever le graphique"
@@ -461,31 +461,31 @@ $set	8
 $ 
 $ dtinfo quick help messages (to be exhibited on status display area)
 $ 
-1 "Vers la section précédente de l'historique"
-2 "Vers la section suivante de l'historique"
-3 "Vers la section précédente du document"
-4 "Vers la section suivante du document"
+1 "Ad sectionem priorem colligationis"
+2 "Ad sectionem sequentem colligationis"
+3 "Ad sectionem priorem documenti"
+4 "Ad sectionem sequentem documenti"
 
 $ A search "match" is the same as a search "hit". "Match" is more
 $ descriptive.
 5 "Vers la correspondance précédente"
 6 "Vers la correspondance suivante"
 
-7 "Imprimer la section en cours"
-8 "Afficher la liste des livres"
-9 "Afficher la carte graphique"
+7 "Exscribere sectionem vertentem"
+8 "Proponere indicem librorum"
+9 "Proponere mappam"
 10 "Ancrer (détacher) cette fenêtre pour empêcher (permettre) l'utilisation de nouveaux documents."
 11 "Spécifier l'étendue de recherche à l'aide de l'Editeur d'étendue"
-52 "Afficher la section sélectionnée"
-53 " Afficher la section sélectionnée dans une liste de livres séparée"
-54 "Imprimer la section sélectionnée"
-55 "Ouvrir une bibliothèque d'informations supplémentaire"
-56 "Fermer la bibliothèque d'informations sélectionnée"
+52 "Proponere sectionem selectam"
+53 " Proponere sectionem selectam in listam librorum alteram"
+54 "Exscribere sectionem selectam"
+55 "Aperire bibliothecam percontationum supplémentaire"
+56 "Claudere bibliothecam percontationum selectam"
 57 "Effectuer une recherche à l'aide de l'Editeur de requêtes"
-58 "Afficher la liste des signets et des notes"
+58 "Proponere indicem signaculorum notarumque"
 60 "Spécifier l'étendue de recherche"
 62 " Spécifier l'étendue de  recherche à l'aide de l'Editeur d'étendue"
-64 "Rechercher %s"
+64 "Quaerere %s"
 
 
 $set	9
@@ -525,7 +525,7 @@ $
 
 $	1 is the title of a window containing a list of the
 $ user's bookmarks
-1 "Dtinfo: Liste des signets de l'utilisateur"
+1 "Dtinfo: Index signaculorum usoris"
 
 
 $set	12
@@ -533,15 +533,15 @@ $
 $ messages specific to mark selection dialog
 $ 
 $   Messages 1 & 2: "Select" and "Edit" are verbs
-1 "Dtinfo: Sélectionner le signet"
-2 "Dtinfo: Modifier le signet"
+1 "Dtinfo: Seligere signaculum"
+2 "Dtinfo: Mutare signaculum"
 
 
 $set	13
 $ 
 $ messages specific to section history window
 $ 
-1 "Dtinfo: Historique de la section"
+1 "Dtinfo: Colligatio sectionis"
 
 
 $set	14
@@ -556,7 +556,7 @@ $set	15
 $ 
 $ messages specific to printing
 $ 
-1 "Dtinfo: Imprimer"
+1 "Dtinfo: Exscribere"
 $          Messages 2 - 5 are obsolete, and have been replaced by 12
 2 Impossible de trouver un Gestionnaire de boîte de dialogue d'impression dans l'environement
 3 Impossible de lancer le Gestionnaire de boîtes de dialogue d'impression
@@ -653,11 +653,11 @@ $
 $ Dtinfo*AbandonBookmarks
 $ 
 5 "Des signets ouverts ne sont pas enregistrés.\n\
-Quitter sans les enregistrer ?"
+Exire sans les enregistrer ?"
 $ 
 $ Dtinfo*ConfirmQuit
 $ 
-6 "Quitter Dtinfo?"
+6 "Exire Dtinfo?"
 $ 
 $ Dtinfo*BadTocHierarchy
 $ 
@@ -665,38 +665,38 @@ $
 $ 
 $ Dtinfo*LinkToBookTitle
 $ 
-8 "Lier à %s: %s"
+8 "Vincire cum %s: %s"
 $ 
 $ Dtinfo*LinkToTitle
 $ 
-9 "Lier à %s"
+9 "Vincire cum %s"
 $ 
 $ Dtinfo*MarkCreateFailed
 $ 
-10 "Dtinfo ne peut pas créer ce signet."
+10 "Creare hoc signaculum non potest."
 $ 
 $ Dtinfo*MarkDeleteFailed
 $ 
-11 "Dtinfo ne peut pas supprimer ce signet."
+11 "Delere hoc signaculum non potest."
 $ 
 $ Dtinfo*MarkMoveFailed
 $ 
-12 "Dtinfo ne peut pas déplacer ce signet."
+12 "Movere hoc signaculum non potest."
 $ 
 $ Dtinfo*MaxDepthExceeded
 $ 
-13 "Enregistrer une erreur"
+13 "Perscribere errorem"
 $ 
 $ Dtinfo*MarkIconInvisible
 $ 
-14 "Impossible d'afficher le signet sélectionné.\n\
+14 "Proponere signaculum selectum non potest.\n\
 Il est hors de la région de visualisation de cette section."
 $ 
 $ Dtinfo*MViewNoBase
 $ 
-15 "Impossible d'accéder au signet\n\
-sélectionné.\n\
-Chargez la Biblinfo correcte."
+15 "Ire ad signaculum selectum\n\
+non potest.\n\
+Onera bibliothecam rectam."
 $ 
 $ Dtinfo*GetGeometry
 $ 
@@ -735,16 +735,16 @@ $
 $ 
 $ Dtinfo*Titles
 $ 
-23 "Titres"
+23 "Tituli"
 $ 
 $ Dtinfo*Body
 $	24	"Body" as in the body of text.
 $ 
-24 "Corps"
+24 "Corpus"
 $ 
 $ Dtinfo*Examples
 $ 
-25 "Exemples"
+25 "Exempla"
 $ 
 $ Dtinfo*Index
 $ 
@@ -752,7 +752,7 @@ $
 $ 
 $ Dtinfo*Tables
 $ 
-27 "Tables"
+27 "Tabulae"
 $ 
 $ Dtinfo*Graphics
 $ 
@@ -763,8 +763,8 @@ $
 29 "Supprimer l'étendue affichée?"
 $ 
 $ Dtinfo*CurrentSection
-$ 
-30 "Section en cours"
+$  verifier declinaison de vertens 
+30 "Sectio vertens"
 $ 
 $ Dtinfo*IgnoredScopes
 $ 
@@ -891,15 +891,15 @@ $
 $ 
 $ Dtinfo*InformationLibrary
 $ 
-63 "Bibliothèque d'Informations"
+63 "Bibliotheca percontationum"
 $ 
 $ Dtinfo*en fonction
 $ 
-64 "On"
+64 "In officio"
 $ 
 $ Dtinfo*hors fonction
 $ 
-65 "Hors fonction"
+65 "Extra officium"
 $ 
 67 "Impossible de créer la Biblinfo."
 
@@ -911,7 +911,7 @@ $	70	The "qualified locator" is a "fully qualified
 $		locator" as opposed to the simple format.
 70 "Méthode d'accès incorrecte dans le point d'implantation qualified  (URL)."
 
-71 "la création du document a échoué."
+71 "creatio documenti offendit."
 
 72 "Dtinfo: Détacher le graphique"
 73 "Cliquez sur un graphique pour le détacher."
@@ -948,7 +948,7 @@ $ Dtinfo*QuestionDialogTitle
 $ 
 6 "Dtinfo: Question"
 $ 
-7 "Dtinfo: Enregistrer une erreur"
+7 "Dtinfo: Perscibere errorem"
 
 
 $set	22

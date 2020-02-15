@@ -11,23 +11,21 @@ To install the Latin language for CDE do the following as root:
 This adds the Latin locale (for France) to the Linux locales. 
 
 5) Add the following  lines in /usr/share/X11/locale/locale.dir
-utf-8/XLC_LOCALE			la_FR.UTF-8
-utf-8/XLC_LOCALE:			la_FR.UTF-8
+en_US.UTF-8/XLC_LOCALE			la_FR.UTF-8
+en_US.UTF-8/XLC_LOCALE:			la_FR.UTF-8
 
 6) Add the following lines in /usr/share/X11/locale/locale.alias
-la						la_FR.UTF-8
-la_FR						la_FR.UTF-8
-la_FR.utf-8					la_FR.UTF-8
-la_FR.UTF-8				la_FR.UTF-8
-la:
-						la_FR.UTF-8
-la_FR:						la_FR.UTF-8
-la_FR.iso8859-1:				la_FR.UTF-8
-la_FR.ISO-8859-1:				la_FR.UTF-8
 
+la_FR.utf-8					la_FR.UTF-8
+la_FR.UTF-8				    la_FR.UTF-8
+la_FR.UTF-8@euro		    la_FR.UTF-8
+
+la_FR.utf-8:					la_FR.UTF-8
+la_FR.UTF-8:				    la_FR.UTF-8
+la_FR.UTF-8@euro:				la_FR.UTF-8
 7) Add the following lines in /usr/share/X11/locale/compose.dir
-utf-8/Compose		la_FR.UTF-8
-utf-8/Compose:		la_FR.UTF-8
+en_US.UTF-8/Compose		la_FR.UTF-8
+en_US.UTF-8/Compose:	la_FR.UTF-8
 
 This makes the X Window System aware of the new locale. 
 
