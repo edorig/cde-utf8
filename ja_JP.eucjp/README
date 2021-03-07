@@ -1,0 +1,37 @@
+By default, the Japanese messages are not compiled and installed 
+by the CDE build process. 
+With GNU gencat, it is possible to build post-installation the 
+Japanese messages for the ja_JP.eucjp locale and install them 
+in the appropriate directory. 
+
+To do that, make sure the ja_JP.eucjp locale is installed with
+
+ locale -a |grep ja_JP
+
+If yes, check that the JIS fonts are present with 
+ 
+ xlsfonts | grep jis
+ 
+The result of that command should show fonts 
+ -misc-fixed-medium-r-normal--10-96-75-75-c-120-jisx0208.1983-0
+ -sony-fixed-medium-r-normal--16-120-100-100-c-80-jisx0201.1976-0
+ 
+Finally, check that the directory /usr/dt/config/xfonts/ja_JP contains
+the two files fonts.alias and fonts.dir 
+
+ ls  /usr/dt/config/xfonts/ja_JP/fonts.*
+
+Then copy catgen-jp.sh in a directory such as $HOME/bin and make it
+executable 
+
+ chmod +x $HOME/bin/catgen-jp.sh 
+ cd $CDEROOT/programs/localized/ja_JP.eucjp/msg 
+ $HOME/bin/catgen-jp.sh 
+
+The program will ask your password to copy the .cat files in the /usr/dt/lib/nls/msg
+directory. This works on Ubuntu, but with Slackware or other systems not using
+sudo you may need to remove the sudo command in the last line and become root
+before running the script. 
+
+Once it it done, add the two lines in dtprofile to $HOME/.dtprofile to see
+the CDE menus in Japanese. 

@@ -1,0 +1,96 @@
+By default, the Chinese messages are not compiled and installed 
+by the CDE build process. 
+Using GNU gencat, it is possible to build post-installation the 
+Chinese messages. However, the process is more complicated than
+in the case of Korean or Japanese language. 
+For traditional Chinese, the messages are under zh_TW.dt-euctw. 
+With gencat, the messages can be turned into .cat files for the
+zh_TW.euctw but installing the .cat files and using LANG=zh_TW.euctw 
+only gives English messages. 
+For simplified Chinese, there is no zh_CN.euccn locale on Linux. 
+Instead, one must use the zh_CN.gbk locale, which is the closest to euccn. 
+
+Translating the messages 
+------------------------
+
+To proceed, some checks are necessary. 
+
+First, make sure zh_CN.gbk locale is installed with
+
+ locale -a |grep zh_CN 
+
+If yes, check that the gb2312 fonts are present with 
+ 
+ xlsfonts | grep gb2312 
+ 
+The result of that command should show fonts such as 
+-isas-song ti-medium-r-normal--16-160-72-72-c-160-gb2312.1980-0
+ 
+
+
+Then copy catgen-zh.sh in a directory such as $HOME/bin and make it
+executable 
+
+ chmod +x $HOME/bin/catgen-zh.sh 
+ cd $CDEROOT/programs/localized/zh_CN.dt-eucCN/msg 
+ $HOME/bin/catgen-sh.sh 
+
+The program will ask your password to copy the .cat files in the /usr/dt/lib/nls/msg
+directory. This works on Ubuntu, but with Slackware or other systems not using
+sudo you may need to remove the sudo command in the last line and become root
+before running the script. 
+
+
+Once it it done, add the line 
+
+export LANG=zh_CN.gbk 
+
+ to $HOME/.dtprofile and restart CDE. 
+ 
+ Issues with fonts
+ ------------------
+ 
+ You may see instead of Chinese characters in the menus some garbled text 
+formed of European characters. This indicates that CDE does not find appropriate
+gb2312 fonts and falls back to iso8859-1. 
+
+To solve that problem, one needs to create a fonts.alias file using the template
+fonts.alias. 
+
+One must have fonts in gb2312  encoding of sizes 10,12,14,16,18,20,24.
+For each size xxs (10), xs (12), s (14), m (16), l (18), xl (20), xxl (24) 
+one needs to alias the fonts of type 
+-dt-interface user-*
+-dt-interface system-*
+-dt-interface terminal-*
+in both medium and bold to the correspondent system font in gb2312 encoding. 
+
+Then, the aliasing is done in the fonts.alias file by writing on the left the name
+of the CDE font, on the right the appropriate name for the system font. 
+One example is: 
+   CDE font                                                                   Chinese system font
+ "-dt-interface terminal-medium-r-normal-s-14-130-75-75-m-140-gb2312.1980-0" "-misc-fixed-medium-r-normal--14-130-75-75-c-140-gb2312.1980-0"
+ 
+The file fonts.alias under /usr/dt/config/xfonts/ja_JP shows the pattern to follow. 
+
+Once this is done, create a directory 
+
+sudo mkdir /usr/dt/config/xfonts/zh_CN
+sudo cp fonts.alias /usr/dt/config/xfonts/zh_CN
+echo "0" > /usr/dt/config/xfonts/zh_CN/fonts.dir 
+
+In $HOME/.dtprofile, add xset fp+ /usr/dt/config/xfonts/zh_CN and restart CDE. 
+This should produce a correct display of simplified Chinese messages. 
+
+I haven't been able to test that solution as my version of Linux does not
+have all the necessary sizes in bitmapped fonts. 
+
+An alternative untested solution would be to use OpenType Noto fonts via XFT 
+https://sourceforge.net/p/cdesktopenv/wiki/FontsWithXFT/
+mkfontscale and mkfontdir should be used to create a XLFD name for these
+fonts, then the dt-interface fonts should be aliased to these scalable fonts
+using the XLFD name. This is more complicated than the bitmapped font solution
+and should be tried only if the former fails. 
+
+
+

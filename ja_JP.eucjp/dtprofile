@@ -1,0 +1,3 @@
+# Add these lines to $HOME/.dtprofile to see the CDE messages in Japanese 
+xset fp+ /usr/dt/config/xfonts/ja_JP/
+export LANG=ja_JP.eucjp

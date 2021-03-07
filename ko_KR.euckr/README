@@ -1,0 +1,75 @@
+By default, the Korean messages are not compiled and installed 
+by the CDE build process. 
+With GNU gencat, it is possible to build post-installation the 
+Korean messages for the ko_KR.euckr locale and install them 
+in the appropriate directory. With the right fonts, it should 
+be possible to have the menus in Korean language in CDE. 
+
+Installation of the messages 
+----------------------------
+
+To do that, make sure the ko_KR.euckr locale is installed with
+
+ locale -a |grep ko_KR
+
+If yes, check that the ksc5601.1987 fonts are present with 
+ 
+ xlsfonts | grep ksc5601
+ 
+The result of that command should show fonts such as 
+ -daewoo-mincho-medium-r-normal--16-120-100-100-c-160-ksc5601.1987-0
+ 
+
+
+Then copy catgen-kr.sh in a directory such as $HOME/bin and make it
+executable 
+
+ chmod +x $HOME/bin/catgen-kr.sh 
+ cd $CDEROOT/programs/localized/ko_KR.euckr/msg 
+ $HOME/bin/catgen-kr.sh 
+
+The program will ask your password to copy the .cat files in the /usr/dt/lib/nls/msg
+directory. This works on Ubuntu, but with Slackware or other systems not using
+sudo you may need to remove the sudo command in the last line and become root
+before running the script. 
+
+
+Once it it done, add the two lines in dtprofile to $HOME/.dtprofile and restart 
+CDE. 
+
+Issue with fonts
+-----------------
+
+You may see instead of Korean characters in the menus some garbled text 
+formed of European characters. This indicates that CDE does not find appropriate
+fonts ksc5601.1987-0 and falls back to iso8859-1. 
+
+To solve that problem, one needs to create a fonts.alias file using the template
+fonts.alias. 
+
+One must have bitmapped fonts in ksc5601.1987-0 encoding with sizes 10,12,14,16,18,20,24.
+For each size xxs (10), xs (12), s (14), m (16), l (18), xl (20), xxl (24) 
+one needs to alias the fonts of type 
+-dt-interface user-*
+-dt-interface system-*
+-dt-interface terminal-*
+in both medium and bold to the correspondent system font in ksc5601.1987-0 encoding. 
+
+Then, the aliasing is done in the fonts.alias by writing on the left the (XLFD) name
+of the CDE font, on the right the appropriate (XLFD) name for the system font. 
+One example is: 
+   CDE font                                                                   Korean system font
+ "-dt-interface terminal-medium-r-normal-s-14-130-75-75-m-140-ksc5601.1987-0" "-misc-fixed-medium-r-normal--14-130-75-75-c-140-ksc5601.1987-0"
+ 
+The file fonts.alias under /usr/dt/config/xfonts shows the pattern to follow
+
+
+I haven't been able to test that solution as my version of Linux does not
+have all the necessary sizes in bitmapped fonts. 
+
+A more complicated way, if the above does not work, is to try to use XFT with CDE 
+
+https://sourceforge.net/p/cdesktopenv/wiki/FontsWithXFT/
+
+One will still need to alias all the -dt-interface fonts to the corresponding 
+scalable TrueType/OpenType fonts 
