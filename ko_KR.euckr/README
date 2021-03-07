@@ -33,6 +33,12 @@ directory. This works on Ubuntu, but with Slackware or other systems not using
 sudo you may need to remove the sudo command in the last line and become root
 before running the script. 
 
+Then, copy the font aliases file 
+
+ sudo mkdir -p /usr/dt/config/xfonts/ko_KR/  
+ sudo cp $CDEROOT/cdesktopenv-code/cde/programs/fontaliases/linux/ko_KR/fonts.alias /usr/dt/config/xfonts/zh_CH/ 
+ sudo echo "0" > /usr/dt/config/xfonts/ko_KR/fonts.dir
+
 
 Once it it done, add the two lines in dtprofile to $HOME/.dtprofile and restart 
 CDE. 
