@@ -8,14 +8,13 @@ With gencat, the messages can be turned into .cat files for the
 zh_TW.euctw but installing the .cat files and using LANG=zh_TW.euctw 
 only gives English messages. 
 For simplified Chinese, there is no zh_CN.euccn locale on Linux. 
-Instead, one must use the zh_CN.gbk locale, which is the closest to euccn. 
-
+Instead, one must use the zh_CN locale, which is the closest to eucCN. 
 Translating the messages 
 ------------------------
 
 To proceed, some checks are necessary. 
 
-First, make sure zh_CN.gbk locale is installed with
+First, make sure zh_CN locale is installed with
 
  locale -a |grep zh_CN 
 
@@ -33,19 +32,24 @@ executable
 
  chmod +x $HOME/bin/catgen-zh.sh 
  cd $CDEROOT/programs/localized/zh_CN.dt-eucCN/msg 
- $HOME/bin/catgen-sh.sh 
+ $HOME/bin/catgen-zh.sh 
 
 The program will ask your password to copy the .cat files in the /usr/dt/lib/nls/msg
 directory. This works on Ubuntu, but with Slackware or other systems not using
 sudo you may need to remove the sudo command in the last line and become root
 before running the script. 
+Then, copy the font aliases file 
 
+ sudo mkdir -p /usr/dt/config/xfonts/zh_CH/  
+ cp $CDEROOT/cdesktopenv-code/cde/programs/fontaliases/linux/zh_CN/fonts.alias /usr/dt/config/xfonts/zh_CH/ 
+ sudo echo "0" > /usr/dt/config/xfonts/zh_CN/fonts.dir 
 
-Once it it done, add the line 
-
+Once this is done, add the lines 
+xset fp+ /usr/dt/config/xfonts/zh_CH/ 
 export LANG=zh_CN.gbk 
 
- to $HOME/.dtprofile and restart CDE. 
+ to $HOME/.dtprofile and restart CDE. You should see the menus of applications
+ and the window titles in Chinese. 
  
  Issues with fonts
  ------------------
@@ -54,8 +58,8 @@ export LANG=zh_CN.gbk
 formed of European characters. This indicates that CDE does not find appropriate
 gb2312 fonts and falls back to iso8859-1. 
 
-To solve that problem, one needs to create a fonts.alias file using the template
-fonts.alias. 
+To solve that problem, one needs to modify the fonts.alias file 
+in /usr/dt/config/xfonts/zh_CH/ . 
 
 One must have fonts in gb2312  encoding of sizes 10,12,14,16,18,20,24.
 For each size xxs (10), xs (12), s (14), m (16), l (18), xl (20), xxl (24) 
@@ -63,33 +67,24 @@ one needs to alias the fonts of type
 -dt-interface user-*
 -dt-interface system-*
 -dt-interface terminal-*
-in both medium and bold to the correspondent system font in gb2312 encoding. 
+in both medium and bold to the corresponding system font in gb2312 encoding. 
 
-Then, the aliasing is done in the fonts.alias file by writing on the left the name
-of the CDE font, on the right the appropriate name for the system font. 
+Then, the aliasing is done in the fonts.alias file by writing on the left the XLFD name
+of the CDE font, on the right the appropriate XLFD name for the system font. 
 One example is: 
    CDE font                                                                   Chinese system font
  "-dt-interface terminal-medium-r-normal-s-14-130-75-75-m-140-gb2312.1980-0" "-misc-fixed-medium-r-normal--14-130-75-75-c-140-gb2312.1980-0"
  
-The file fonts.alias under /usr/dt/config/xfonts/ja_JP shows the pattern to follow. 
+The file fonts.alias under /usr/dt/config/xfonts/sh_CN shows the pattern to follow. 
 
-Once this is done, create a directory 
-
-sudo mkdir /usr/dt/config/xfonts/zh_CN
-sudo cp fonts.alias /usr/dt/config/xfonts/zh_CN
-echo "0" > /usr/dt/config/xfonts/zh_CN/fonts.dir 
-
-In $HOME/.dtprofile, add xset fp+ /usr/dt/config/xfonts/zh_CN and restart CDE. 
-This should produce a correct display of simplified Chinese messages. 
-
-I haven't been able to test that solution as my version of Linux does not
-have all the necessary sizes in bitmapped fonts. 
+With the right bitmap fonts, the Chinese messages will become visible. 
 
 An alternative untested solution would be to use OpenType Noto fonts via XFT 
 https://sourceforge.net/p/cdesktopenv/wiki/FontsWithXFT/
+
 mkfontscale and mkfontdir should be used to create a XLFD name for these
 fonts, then the dt-interface fonts should be aliased to these scalable fonts
-using the XLFD name. This is more complicated than the bitmapped font solution
+using the XLFD name as above. This is more complicated than the bitmapped font solution
 and should be tried only if the former fails. 
 
 
