@@ -1,0 +1,68 @@
+# ##########################################################################
+# 
+#      dtims.dt
+# 
+#      Action definitions for the Common Desktop Environment
+#      dtimsstart application.
+# 
+#  (c) Copyright 1996 Digital Equipment Corporation.
+#  (c) Copyright 1996 Hewlett-Packard Company.
+#  (c) Copyright 1996 International Business Machines Corp.
+#  (c) Copyright 1996 Sun Microsystems, Inc.
+#  (c) Copyright 1996 Novell, Inc. 
+#  (c) Copyright 1996 FUJITSU LIMITED.
+#  (c) Copyright 1996 Hitachi.
+# 
+#     $XConsortium: dtims.dt.src /main/2 1996/04/23 17:35:29 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+%|nls-10-## WARNING:...#|
+# 
+# ##########################################################################
+# ##################################################################
+# 
+%|nls-12-## Actions#|
+# 
+# ##################################################################
+
+ACTION DtImsMode
+{
+        LABEL           %|nls-31300-#DtImsMode#|
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -mode -window  %Args%
+        DESCRIPTION     %|nls-31301-#The DtimsMode ...#|
+}
+
+
+ACTION DtImsGetRemoteConf
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -remoteconf %(String)Args%
+        DESCRIPTION     %|nls-31302-#This action ...#|
+}
+
+
+ACTION DtImsRunRemoteIms
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -remoterun %(String)Args%
+        DESCRIPTION     %|nls-31303-#This action ...#|
+}
+

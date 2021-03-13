@@ -1,0 +1,393 @@
+# ##########################################################################
+# 
+#     xclients.dt
+# 
+#     Actions and DataTypes for integrating X clients into the Common
+#     Desktop Environment (CDE).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: xclients.dt.src /main/5 1996/04/23 20:26:44 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES XWD
+{
+        ACTIONS         Open,Print
+        ICON            Dtxwd
+        NAME_TEMPLATE   %s.xwd
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      xwd-file
+        DESCRIPTION     このファイルは、XWD 形式のグラフィック・イメージを\
+                        格納しています。このファイルは一般的にはスナップ\
+                        ショットを取るために xwd取込みアクションを使用して\
+                        作成されます。\
+                        データ型は XWD です。XWD ファイルの名前は '.xwd' \
+                        または '.wd' で終わります。
+        TYPE_LABEL      XWD
+}
+DATA_CRITERIA XWD1
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.xwd
+}
+DATA_CRITERIA XWD2
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.wd
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      Xwud
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Xwud
+{
+        LABEL		Xwd の表示
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwud -noclick -in                               "%(File)Arg_1"表示する Xwd ファイル:"%"
+
+	DESCRIPTION	Xwd の表示 (Xwud) アクションは、xwd取込み (Xwd)\
+                        アクションを使用して作成した xwd ファイルを表示\
+                        します。これは 'xwud' コマンドを使用します。
+}
+
+# ##########################################################################
+# 
+# アクション
+# 
+# ##########################################################################
+ACTION Xrefresh
+{
+        LABEL		画面の再表示
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xrefresh
+	DESCRIPTION	画面の再表示 (Xrefresh) アクションは、画面全体を \
+                        'xrefresh' コマンドを使用して、再表示します。
+}
+
+# ######
+
+ACTION Bitmap
+{
+        LABEL		ビットマップの編集
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				"%(File)Arg_1"開くファイル:"%"
+
+	DESCRIPTION	ビットマップの編集 (Bitmap) アクションは、\
+                        'bitmap' クライアントを起動します。ファイル引き数\
+                        を指定できます。ファイル引き数を指定しない場合には、\
+                        このアクションは新規ビットマップ・ファイルの幅と\
+                        高さの入力を要求します。
+}
+ACTION Bitmap
+{
+        LABEL		ビットマップの編集
+	ARG_COUNT	0	
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				-size %"幅:"%x%"高さ:"% 				"%(File)Arg_1"開くファイル:"%"
+
+
+	DESCRIPTION	ビットマップの編集 (Bitmap) アクションは、\
+                        'bitmap' クライアントを起動します。ファイル引き数\
+                        を指定できます。ファイル引き数を指定しない場合には、\
+                        このアクションは新規ビットマップ・ファイルの幅と\
+                        高さの入力を要求します。
+}
+
+# ######
+
+ACTION DttermConsole
+{
+        LABEL		端末コンソール
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtterm -C -ls -name コンソール -title コンソール
+	DESCRIPTION	端末コンソール・アクションは、'dtterm' 端末\
+                        エミュレータをユーザのコンソールとして起動します。
+}
+
+# ######
+
+ACTION Xterm
+{
+        LABEL		Xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xterm
+	DESCRIPTION	Xterm アクションは、'xterm' 端末エミュレータを\
+                        起動します。
+}
+
+# ######
+
+ACTION DttermDtspcd
+{
+        LABEL		リモート端末
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"ホスト名:"%
+	EXEC_STRING	/usr/dt/bin/dtterm
+	DESCRIPTION	リモート端末アクションは、システムの名前の入力を\
+                        ユーザに要求し、そのシステム上で 'dtterm' 端末\
+                        エミュレータを起動します。システムは、リモート\
+                        実行に関して適切に構成されていなければなりません。
+}
+
+# ######
+
+ACTION XtermDtspcd
+{
+        LABEL		リモート Xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"ホスト名:"%
+	EXEC_STRING	xterm
+	DESCRIPTION	リモート Xterm アクションは、システムの名前の\
+                        入力をユーザに要求し、そのシステム上で 'xterm' 端末\
+                        エミュレータを起動します。システムは、リモート\
+                        実行に関して適切に構成去れていなければなりません。
+}
+
+# ######
+
+ACTION DttermRlogin
+{
+        LABEL		端末へのリモート・ログイン
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"ホスト名:"%";             /usr/dt/bin/dtterm -title "\$_title : Dtterm" -e KORNSHELL -c             "echo \$_title に接続しようとしています... しばらくお待ちください。;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	端末へのリモート・ログイン・アクションは、\
+                        システムの名前の入力をユーザに要求し、そのシステム\
+                        への 'rlogin' を実行します。
+}
+
+# ######
+
+ACTION XtermRlogin
+{
+        LABEL		Xterm へのリモート・ログイン
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"ホスト名:"%";             xterm -title "\$_title : Xterm" -e KORNSHELL -c             "echo \$_title に接続しようとしています... しばらくお待ちください。;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	Xterm へのリモート・ログイン・アクションは、\
+                        システム名の入力をユーザに要求し、'xterm' 端末\
+                        エミュレータ・ウィンドウを開いて、そのシステムへの \
+                        'rlogin' を実行します。
+}
+
+# ######
+
+ACTION XclockDig
+{
+        LABEL		デジタル時計
+        ARG_COUNT	0
+        ICON		Dtdgclk
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xclock -name "デジタル時計"                                    -digital -update 1
+
+        DESCRIPTION     デジタル時計 (Xclock) アクションは、デジタル時計を\
+                        表示します。これは 'xclock -digital' コマンドを使用\
+                        します。
+}
+
+
+# ######
+
+ACTION Xload
+{
+        LABEL		システム負荷
+        ARG_COUNT	0
+        ICON		Dtload
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xload -name "システム負荷"                              -geometry 250x150 -xrm '*primaryColorSetId: 5'
+
+        DESCRIPTION     システム負荷 (Xload) アクションは、システムの\
+                        負荷のグラフィカル表示を表示します。これは \
+                        xload コマンドを使用します。
+}
+
+# ######
+
+ACTION Xwd
+{
+        LABEL		xwd 取込み
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwd -out                              %(File)"出力ファイル (<名前>.xwd):"%
+
+	DESCRIPTION	xwd 取込み (Xwd) アクションは、ウィンドウの\
+                        スナップショットを取り、xwd グラフィック・ファイル\
+                        に格納します。アクションを実行すると、カーソルが\
+                        十字形に変わります。その後で、取り込みたいウィン\
+                        ドウの上をクリックしてください。\
+                        このアクションは、xwd コマンドを使用します。\
+                        xwd は 'X Window Dump' という意味です。
+}
+
+# ######
+
+ACTION Xclipboard
+{
+        LABEL		クリップボードの内容
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xclipboard
+	DESCRIPTION	クリップボードの内容 (Xclipboard) アクションは、\
+                        ユーザのクリップボードを表示します。これは \
+                        'xclipboard'\
+ コマンドを使用します。
+}
+
+# ######
+
+ACTION Xfd
+{
+        LABEL		フォントのプレビュー
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'xfd -fn                 "%(String)Arg_1"プレビューするフォント:"%"; 	               if [ \$? -eq 1 ] ; then                          /usr/dt/bin/dterror.ds                           "指定のフォントが見つかりません。\\n\
+                        フォント・リスト・アクションを実行して、有効な\\n\
+                        フォント名を表示してください。"                           "見つからないフォント名"                           "了解" ; 	                fi'
+
+
+
+
+
+
+
+	DESCRIPTION	フォントのプレビュー (Xfd) アクションは、\
+                        フォント名の入力を要求し、そのフォントのすべての\
+                        文字を表示します。これは 'xfd' コマンドを使用します。
+}
+
+# ######
+
+# ウィンドウ情報 (Xwininfo) アクションでは
+# '| ${PAGER:-more}' 定義を使用できません。これは、
+# 'click on a window' メッセージを表示しないように
+# していることが原因です。
+ACTION Xwininfo
+{
+        LABEL		ウィンドウ情報
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING	sh -c 'xwininfo; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+	DESCRIPTION	ウィンドウ情報 (Xwininfo) アクションは、ウィンドウ\
+                        に関する情報を表示します。ユーザがウィンドウ情報の\
+                        リストを実行すると、カーソルが十字形に変わります。\
+                        その後で、情報を表示したいウィンドウをクリックして\
+                        下さい。このアクションは 'xwininfo' コマンドを使用します。
+}
+
+# ######
+
+ACTION Xprop
+{
+        LABEL           ウィンドウ属性
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "[カーソルが十字形に変わったら、ウィンドウをクリックしてください...]\\n";             xprop | \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+        DESCRIPTION     ウィンドウ属性 (Xprop) アクションは、ウィンドウの\
+                        属性を表示します。ウィンドウ属性を実行すると、\
+                        カーソルが十字形に変わります。その後で、情報を表示\
+                        したいウィンドウをクリックしてください。\
+                        このアクションは 'xprop' コマンドを使用します。
+}
+
+# ######
+
+ACTION Xdpyinfo
+{
+        LABEL           Ｘサーバ情報
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             xdpyinfo | \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+        DESCRIPTION     Ｘサーバ情報 (Xdpyinfo) アクションは、\
+                        Ｘサーバと表示システムの情報を表示します。\
+                        これは、'xdpyinfo' コマンドを使用します。
+}
+
+# ######
+
+ACTION Xlsfonts
+{
+        LABEL           フォント・リスト
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "フォントを探しています。しばらくお待ちください。\\n        注意: 少しのあいだディスプレイ・サーバがロックするかもしれません。";             xlsfonts | \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+        DESCRIPTION     フォント・リスト (Xlsfonts) アクションは、\
+                        ご利用のシステム上で表示可能なすべてのフォントを\
+                        一覧表示します。これは 'xlsfonts' コマンドを使用します。
+}
+
+# ######################## EOF ############################################

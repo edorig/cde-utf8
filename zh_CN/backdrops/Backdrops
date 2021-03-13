@@ -1,0 +1,51 @@
+! $XConsortium: Backdrops.src /main/3 1995/12/05 10:11:06 rswiston $
+!######################################################################
+!#
+!#     Backdrops
+!#
+!#     Common Desktop Environment (CDE)
+!#
+!#     Backdrop file used for localization of backdrop names
+!#
+!#     (c) Copyright 1993, 1994 Hewlett-Packard Company
+!#     (c) Copyright 1993, 1994 International Business Machines Corp.
+!#     (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+!#     (c) Copyright 1993, 1994 Unix System Labs, Inc., a subsidiary 
+!#	   of Novell, Inc.
+!#
+!#
+!######################################################################
+
+!###
+!#
+!#   C backdrop names followed by message tags for the translated names 
+!#   
+!###
+
+Backdrops*Ankh.desc: 古埃及
+Backdrops*Background.desc: 背景
+Backdrops*BrickWall.desc: 砖墙
+Backdrops*Concave.desc: 凹面
+Backdrops*Convex.desc: 凸面
+Backdrops*Corduroy.desc: 灯芯绒
+Backdrops*Crochet.desc: 钩针织品
+Backdrops*Foreground.desc: 前景
+Backdrops*InlayColor.desc: 彩色镶嵌
+Backdrops*InlayPlain.desc: 素色镶嵌
+Backdrops*KnitLight.desc: 柔色织物
+Backdrops*Lattice.desc: 格子
+Backdrops*LatticeBig.desc: 大格子
+Backdrops*Leaves.desc: 叶子
+Backdrops*NoBackdrop.desc: 无背景
+Backdrops*OldChars.desc: 古字
+Backdrops*Paver.desc: 磁砖
+Backdrops*Pebbles.desc: 卵石
+Backdrops*PinStripe.desc: 条纹
+Backdrops*RakedSand.desc: 耙过的沙滩
+Backdrops*RicePaper.desc: 宣纸
+Backdrops*SkyDark.desc: 黑暗天空
+Backdrops*SkyLight.desc: 明亮天空
+Backdrops*Sprinkles.desc: 毛毛雨
+Backdrops*Toronto.desc: 多伦多
+Backdrops*WaterDrops.desc: 水滴
+Backdrops*Wooly.desc: 绒毛

@@ -1,0 +1,186 @@
+###############################################################################
+#
+#
+#     @(#)dtbuilder.dt	1.3 23 Mar 1994
+#
+#     DataType Definitions for the Application Builder
+#
+#     Common Desktop Environment 1.0 
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+#     $TOG: dtbuilder.dt /main/5 1999/02/23 13:26:42 mgreess $
+#
+###############################################################################
+set DtDbVersion=1.0
+
+###############################################################################
+#
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+#
+###############################################################################
+
+###################################################################
+#
+# 数据属性
+#
+###################################################################
+DATA_ATTRIBUTES BIP
+{
+	ACTIONS		Open
+	ICON		DtABbip
+	NAME_TEMPLATE	%s.bip
+        MIME_TYPE	text/plain
+        DESCRIPTION     这个文件包含桌面应用程序生成器的项目数据。它的数据类型称为 \
+                        BIP。BIP 文件的文件名以 '.bip' 结尾。
+}
+DATA_CRITERIA BIP1
+{
+	DATA_ATTRIBUTES_NAME BIP
+	MODE		f
+	NAME_PATTERN	*.bip
+}
+ACTION Open
+{
+        LABEL           打开
+	ARG_TYPE	BIP
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     这个动作通过运行应用程序生成器打开一个应用程序生成器项目文件 \
+                        (*.bip)，并装入该文件。
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        BIP
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+
+DATA_ATTRIBUTES BIL
+{
+	ACTIONS		Open
+	ICON		DtABbil
+	NAME_TEMPLATE	%s.bil
+        MIME_TYPE	text/plain
+        DESCRIPTION     这个文件包含桌面应用程序生成器的模数据。它的数据类型称为 BIL。\
+                        BIL 文件的文件名以 '.bil' 结尾。
+}
+DATA_CRITERIA BIL1
+{
+	DATA_ATTRIBUTES_NAME BIL
+	MODE		f
+	NAME_PATTERN	*.bil
+}
+ACTION Open
+{
+        LABEL           打开
+	ARG_TYPE	BIL
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     这个动作通过运行应用程序生成器打开一个应用程序生成器模文件\
+                        (*.bil)，并装入该文件。
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        BIL
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+
+DATA_ATTRIBUTES BIX
+{
+	ACTIONS	        Open
+	ICON	        DtABbix
+	NAME_TEMPLATE	%s.bix
+        MIME_TYPE	text/plain
+        DESCRIPTION     这个文件包含一个桌面应用程序生成器项目的所有项目 (BIP) 和 \
+                        模 (BIL) 文件数据。它的数据类型称为 BIX。\
+                        BIX 文件的文件名以 '.bix' 结尾。
+}
+DATA_CRITERIA BIX1
+{
+	DATA_ATTRIBUTES_NAME BIX
+	MODE		f
+	NAME_PATTERN	*.bix
+}
+ACTION Open
+{
+        LABEL           打开
+	ARG_TYPE	BIX
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     这个动作通过运行应用程序生成器打开一个应用程序生成器压缩\
+                        项目文件 (*.bix), 并装入该文件。
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        BIX
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+###################################################################
+#
+# 动作
+#
+###################################################################
+ACTION Dtappbuild
+{
+        LABEL           应用程序生成器
+        TYPE            COMMAND
+        EXEC_STRING     dtbuilder
+        ICON            DtBldr
+        WINDOW_TYPE     NO_STDIO
+        DESCRIPTION     应用程序生成器 (Dtappbuild) 动作运行桌面应用程序生成器。
+}
+
+######
+
+ACTION CodeGen
+{
+        LABEL           代码发生器
+        TYPE            COMMAND
+        ARG_COUNT       0
+        EXEC_STRING     /bin/sh -c 'dtaction CodeGen \
+	   %(File)Arg_1"项目文件 (*.bip):"%'
+        ICON            DtBldr
+        WINDOW_TYPE     NO_STDIO
+        DESCRIPTION     '代码发生器'(CodeGen) 动作对桌面应用程序生成器运行代码发生器。
+}
+
+ACTION CodeGen
+{
+        LABEL           代码发生器
+        TYPE            COMMAND
+        ARG_TYPE        BIP
+        ARG_COUNT       >0
+        EXEC_STRING     /bin/sh -c ' \
+           DIR_NAME=`dirname %(File)Arg_1"项目文件 (*.bip):"%` ; \
+	   if [ ! -d "\$DIR_NAME" ] ; then \
+	       echo "错误: \$DIR_NAME 不是一个文件夹。"; \
+	   else \
+	       BIP_FILE=`basename "%(File)Arg_1%"` ; \
+	       ( cd \$DIR_NAME; dtcodegen -p \$BIP_FILE 2>&1; ) | \${PAGER:-more}; \
+	       echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"; \
+	   fi '
+        ICON            DtBldr
+        WINDOW_TYPE     PERM_TERMINAL
+        DESCRIPTION     '代码发生器'(CodeGen) 动作对桌面应用程序生成器运行代码发生器。
+}
+########################### EOF ##############################################

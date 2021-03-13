@@ -1,0 +1,719 @@
+# ##########################################################################
+# 
+#      dtfile.dt
+# 
+#      Actions for interfacing to the Common Desktop Environment 
+#      File Manager.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $TOG: dtfile.dt.src /main/5 1997/03/28 14:46:11 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性 - 主にファイル・マネージャが\
+                       使用します。
+# 
+# ##################################################################
+# ###########################################################
+# 
+# フォルダ
+# 
+# ###########################################################
+DATA_ATTRIBUTES TRASH_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON            DtdirR
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+	DESCRIPTION	このフォルダは、ごみ箱用の一時的なものです。
+        TYPE_LABEL      TRASH_FOLDER
+}
+DATA_CRITERIA TRASH_FOLDER1
+{
+        DATA_ATTRIBUTES_NAME TRASH_FOLDER
+        MODE            d
+        PATH_PATTERN    */.dt/Trash
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        TRASH_FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        TRASH_FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES OPEN_PARENT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtdirup
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES PARENT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtdirup
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	'..' アイコンは、現在のフォルダの親フォルダ\
+                       を表します。フォルダ・ツリーを 1 レベル上がるには\
+                       親フォルダを開いてください。\
+                       データ型は PARENT_FOLDER です。
+        TYPE_LABEL      PARENT_FOLDER
+}
+DATA_CRITERIA PARENT_FOLDER1
+{
+	DATA_ATTRIBUTES_NAME PARENT_FOLDER
+	MODE		d
+	NAME_PATTERN	..
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        PARENT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        PARENT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES OPEN_CURRENT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirB
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES CURRENT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirB
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	'.' アイコンは、現在のフォルダを表します。\
+                       データ型は CURRENT_FOLDER です。
+        TYPE_LABEL      CURRENT_FOLDER
+}
+DATA_CRITERIA CURRENT_FOLDER1
+{
+	DATA_ATTRIBUTES_NAME CURRENT_FOLDER
+	MODE		d
+	NAME_PATTERN	.
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        CURRENT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        CURRENT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES DOT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirB
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	フォルダのデータ型は DOT_FOLDER です。 \
+                       DOT_FOLDER フォルダは、名前がドット (.) で始まる\
+                       フォルダです。DOT_FOLDER は通常隠れています。
+        TYPE_LABEL      DOT_FOLDER
+}
+DATA_CRITERIA DOT_FOLDER1
+{
+	DATA_ATTRIBUTES_NAME DOT_FOLDER
+	MODE		d
+	NAME_PATTERN	.*
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        DOT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        DOT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES FOLDER_LOCK
+{
+	ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtdirlk
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	これは、ユーザが書き込み権を持たないフォルダです。\
+                       ファイルを追加または削除できません。データ型は \
+                       FOLDER_LOCK です。
+        TYPE_LABEL      FOLDER_LOCK
+}
+DATA_CRITERIA FOLDER_LOCK1
+{
+	DATA_ATTRIBUTES_NAME FOLDER_LOCK
+	MODE            d&!r
+}
+DATA_CRITERIA FOLDER_LOCK2
+{
+	DATA_ATTRIBUTES_NAME FOLDER_LOCK
+	MODE            d&!x
+}
+DATA_ATTRIBUTES OPEN_NON_WRITABLE_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON            DtdirBO
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES NON_WRITABLE_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON            Dtdirnw
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+        DESCRIPTION     これは、ユーザが書き込み権を持たないフォルダです。\
+                       ファイルを追加または削除できません。データ型は \
+                       FOLDER_LOCK です。
+        TYPE_LABEL      NON_WRITABLE_FOLDER
+}
+DATA_CRITERIA NON_WRITABLE_FOLDER1
+{
+	DATA_ATTRIBUTES_NAME NON_WRITABLE_FOLDER
+	MODE            d&!w
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        FOLDER_LOCK
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        FOLDER_LOCK
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES OPEN_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirBO
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirB
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	これは、フォルダです。フォルダはファイルまたは\
+                       フォルダを保持するコンテナです。\
+                       データ型は FOLDER です。
+        TYPE_LABEL      FOLDER
+}
+DATA_CRITERIA FOLDER1
+{
+	DATA_ATTRIBUTES_NAME FOLDER
+	MODE		d
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+# ###########################################################
+# 
+# データ属性
+# 
+# ###########################################################
+
+DATA_ATTRIBUTES RECURSIVE_LINK
+{
+	ICON		Dtinf
+	DESCRIPTION	このアイコンは、フォルダの場合でも、一連の中間\
+                       シンボリック・リンクを解する場合でも、それ自体を\
+                       指すシンボリック・リンクを表します。データ型は \
+                       RECURSIVE_LINK です。
+        TYPE_LABEL      RECURSIVE_LINK
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES BROKEN_LINK
+{
+        ICON            Dtblink
+        DESCRIPTION     このアイコンは、存在しないファイルを指す\
+                       シンボリック・リンクを表します。データ型は\
+                       BROKEN_LINK です。
+        TYPE_LABEL      BROKEN_LINK
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES DOT_FILE
+{
+        ACTIONS         Open,Print
+        ICON		Dtdata
+        IS_TEXT		true
+        MIME_TYPE	text/plain
+        MEDIA           C_STRING
+	DESCRIPTION	このファイルのデータ型は DOT_FILE です。\
+                       DOT_FILE ファイルは、名前がドット (.) で始まる\
+                       ファイルです。A DOT_FILE ファイルは通常隠れています。
+        TYPE_LABEL      DOT_FILE
+}
+DATA_CRITERIA DOT_FILE1
+{
+	DATA_ATTRIBUTES_NAME DOT_FILE
+        MODE            f
+	NAME_PATTERN	.*
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES EXECUTABLE
+{
+	ACTIONS		Run,Open
+        ICON		Dtexec
+        IS_EXECUTABLE	true
+        COPY_TO_ACTION  Execute
+        MIME_TYPE	application/octet-stream
+	SUNV3_TYPE	default-app
+        MEDIA           _DT_DATA
+	DESCRIPTION	このファイルは、実行可能なシェル・スクリプト\
+                       またはコンパイル・プログラムを格納しています。\
+                       データ型は EXECUTABLE です。
+        TYPE_LABEL      EXECUTABLE
+}
+DATA_CRITERIA EXECUTABLE1
+{
+	DATA_ATTRIBUTES_NAME EXECUTABLE
+	MODE		f&x
+}
+ACTION Run
+{
+        LABEL           実行
+        ARG_TYPE        EXECUTABLE
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES UNKNOWN
+{
+	ACTIONS		Open,Print
+        ICON		Dtdata
+        MIME_TYPE	application/octet-stream
+        MEDIA           _DT_DATA
+	DESCRIPTION	このファイルは、他のどのデータ型とも一致しません。\
+                        従って、このファイルのデータ型は UNKNOWN としました。
+        TYPE_LABEL      UNKNOWN
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES DATA
+{
+	ACTIONS		Open,Print
+        ICON		Dtdata
+        MIME_TYPE	text/plain
+        MEDIA           _DT_DATA
+	DESCRIPTION	このファイルは、他のどのデータ型とも一致しません。\
+                       したがって、データ型は DATA にします。
+        TYPE_LABEL      DATA
+}
+DATA_CRITERIA DATA1
+{
+	DATA_ATTRIBUTES_NAME DATA
+	MODE		f&!x
+}
+
+# ###################################################################
+# ###################################################################
+# 
+#  共通デスクトップ環境ファイル・マネージャが\
+                        提供するアクション。
+# 
+# ###################################################################
+ACTION DtfileHome
+{
+        LABEL           	ファイル・マネージャ - ホーム
+        ARG_COUNT		0
+        ICON			Fphome
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtHome_Show
+        DESCRIPTION     	ファイル・マネージャ - ホーム (DtfileHome) \
+                        アクションは、ユーザのホーム・ディレクトリの\
+                        ファイル・マネージャ表示を開きます。
+}
+
+# #####
+
+ACTION Dtfile
+{
+        LABEL           	ファイル・マネージャ
+        ICON			Fphome
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		Edit
+        TT_FILE		   	%Arg_1"開くフォルダ:"%
+        TT_ARG0_MODE		TT_INOUT
+        TT_ARG0_VTYPE   	FILE_NAME
+        DESCRIPTION     	ファイル・マネージャ (Dtfile) アクションは、指定\
+                        されたフォルダのファイル・マネージャ表示を開きます。
+}
+
+# #####
+
+ACTION Dtappmgr
+{
+        LABEL           	アプリケーション・マネージャ
+        ICON			Fpapps
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtTools_Show
+        TT_FILE			/var/dt/appconfig/appmanager/$DTUSERSESSION
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           -title
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE   	アプリケーション・マネージャ
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           -help_volume
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE   	Appmanager
+        DESCRIPTION     	アプリケーション・マネージャ (Dtappmgr) \
+                        アクションは、アプリケーション・マネージャの\
+                        ファイル・マネージャ表示を開きます。
+}
+
+# #####
+
+ACTION DtEmptyTrash
+{
+        LABEL           Empty Trash Can
+        ARG_COUNT	      0
+        ICON            Dtshred
+        TYPE           	TT_MSG
+        TT_CLASS        TT_REQUEST
+        TT_SCOPE        TT_SESSION
+        TT_OPERATION    DtTrash_Empty
+	DESCRIPTION     The Empty Trash Can (DtEmptyTrash) action empties the desktop Trash \
+                        Can window when the action icon is double-clicked.
+}
+ACTION Dttrash
+{
+        LABEL           ごみ箱
+        ARG_COUNT	0
+        ICON		Dttrsh
+        TYPE           	TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtTrash_Show
+	DESCRIPTION	ごみ箱 (Dttrash) アクションは、アクション・\
+                        アイコンをダブルクリックした時にデスクトップ\
+                        ごみ箱ウィンドウを開きます。ファイルをアイコン上に\
+                        ドロップすると、そのファイルをごみ箱に移動します。
+}
+ACTION Dttrash
+{
+        LABEL           	ごみ箱
+        ARG_COUNT		>0
+        ICON			Dttrsh
+        TYPE            	TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtTrash_Remove
+        TT_ARG0_MODE		TT_IN
+        TT_ARG0_VTYPE		string
+        TT_ARG1_MODE		TT_IN
+        TT_ARG1_VTYPE		string
+        TT_ARG1_REP_TYPE	TT_REP_STRING
+        TT_ARG1_VALUE		%Arg_1%
+	DESCRIPTION		ごみ箱 (Dttrash) アクションは、アクション・\
+                        アイコンをダブルクリックした時にデスクトップ\
+                        ごみ箱ウィンドウを開きます。ファイルをアイコン上に\
+                        ドロップすると、そのファイルをごみ箱に移動します。
+}
+ACTION DtUnlink
+{
+        LABEL           	ごみ箱
+        ARG_COUNT		2
+        ICON			Dttrsh
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtTrash_Remove
+        TT_FILE			%Arg_1%
+        TT_ARG0_MODE		TT_IN
+        TT_ARG0_VTYPE   	string
+        TT_ARG1_MODE		TT_IN
+        TT_ARG1_VTYPE   	string
+        TT_ARG1_REP_TYPE	TT_REP_STRING
+	TT_ARG1_VALUE		%Arg_2%
+	DESCRIPTION	ごみ箱 (Dttrash) アクションは、アクション・\
+                        アイコンをダブルクリックした時にデスクトップ\
+                        ごみ箱ウィンドウを開きます。ファイルをアイコン上に\
+                        ドロップすると、そのファイルをごみ箱に移動します。
+}
+ACTION DtUnlink
+{
+        LABEL           	ごみ箱
+        ARG_COUNT		>2
+        ICON			Dttrsh
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtTrash_Remove
+        TT_FILE			%Arg_1%
+        TT_ARG0_MODE		TT_IN
+        TT_ARG0_VTYPE   	string
+        TT_ARG0_REP_TYPE	TT_REP_STRING
+	TT_ARG0_VALUE		%Args%
+	DESCRIPTION		ごみ箱 (Dttrash) アクションは、アクション・\
+                        アイコンをダブルクリックした時にデスクトップ\
+                        ごみ箱ウィンドウを開きます。ファイルをアイコン上に\
+                        ドロップすると、そのファイルをごみ箱に移動します。
+}
+
+ACTION PutOnWorkspace
+{
+        LABEL           	Put On Workspace
+        ICON			Dtpodt
+        TYPE			TT_MSG
+        TT_CLASS			TT_REQUEST
+        TT_SCOPE			TT_SESSION
+        TT_OPERATION		DtFile_PutOnWorkspace
+        TT_FILE			%Arg_3%
+        TT_ARG0_MODE		TT_IN
+        TT_ARG0_VTYPE   	-workspace
+        TT_ARG0_REP_TYPE      	TT_REP_STRING
+	TT_ARG0_VALUE		%Arg_2%
+        TT_ARG2_MODE		TT_IN
+        TT_ARG2_VTYPE   	string
+        TT_ARG2_REP_TYPE	TT_REP_STRING
+	TT_ARG2_VALUE		%Arg_3%
+	DESCRIPTION		This action (DtPutOnWorkspace) will place an object on the workspace
+}
+
+# #####
+
+ACTION FILESYSTEM_MOVE
+{
+        LABEL                   Move To Directory
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtFile_Move
+        TT_FILE                 %Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           string
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE           %Arg_1%
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           string
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE           %Args%
+        DESCRIPTION             The FILESYSTEM_MOVE action allows an Common                                Desktop Environment compliant application                                 to run an action to which causes the File                                 Manager to preform a move on the file(s)                                 passed in.  The format for this action is:                                 'FILESYSTEM_MOVE <folder_name_to> <files>'                                 where files is a full path name list of files                                 separated by spaces.
+
+
+
+
+
+
+
+}
+
+# #####
+
+ACTION FILESYSTEM_COPY
+{
+        LABEL                   Copy To Directory
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtFile_Copy
+        TT_FILE                 %Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           string
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE           %Arg_1%
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           string
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE           %Args%
+        DESCRIPTION             The FILESYSTEM_COPY action allows an Common                                Desktop Environment compliant application                                 to run an action to which causes the File                                 Manager to preform a copy on the file(s)                                 passed in.  The format for this action is:                                 'FILESYSTEM_COPY <folder_name_to> <files>'                                 where files is a full path name list of files                                 separated by spaces.
+
+
+
+
+
+
+
+}
+
+# #####
+
+ACTION FILESYSTEM_LINK
+{
+        LABEL                   Link To Directory
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtFile_Link
+        TT_FILE                 %Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           string
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE           %Arg_1%
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           string
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE           %Args%
+        DESCRIPTION             The FILESYSTEM_LINK action allows an Common                                Desktop Environment compliant application                                 to run an action to which causes the File                                 Manager to preform a link on the file(s)                                 passed in.  The format for this action is:                                 'FILESYSTEM_LINK <folder_name_to> <files>'                                 where files is a full path name list of files                                 separated by spaces.
+
+
+
+
+
+
+
+}
+
+# #####
+
+ACTION OpenFolder
+{
+        LABEL           	開く
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		Edit
+        TT_FILE		   	%Arg_1"開くフォルダ:"%
+        TT_ARG0_MODE		TT_INOUT
+        TT_ARG0_VTYPE   	FILE_NAME
+        DESCRIPTION		新しいウィンドウに表示アクションは、指定した\
+                        フォルダのファイル・マネージャ表示を新しい\
+                        ファイル・マネージャ・ウィンドウに表示します。
+}
+
+# #####
+
+ACTION OpenNewView
+{
+        LABEL           新しいウィンドウに表示
+        TYPE            MAP
+	MAP_ACTION      Open
+}
+
+# #####
+
+ACTION OpenInPlace
+{
+        LABEL           現在のウィンドウに表示
+        TYPE            MAP
+	MAP_ACTION      Open
+}
+
+# #####
+
+ACTION PrintFolderList
+{
+        LABEL           PrintFolderList
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c '                         ls -aLlF "%(File)Arg_1%" |                         /usr/dt/bin/dtlp -u "%(File)Arg_1%"'
+
+
+        DESCRIPTION     PrintFolderList アクションは、フォルダの内容を\
+                        デフォルト・プリンタに印刷します。
+}
+
+# ######################## EOF ############################################

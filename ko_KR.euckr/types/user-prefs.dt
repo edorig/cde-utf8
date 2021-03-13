@@ -1,0 +1,84 @@
+# ##########################################################################
+# 
+#      user-prefs.dt
+# 
+#      Actions which define user preferences.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: user-prefs.dt.src /main/4 1996/04/23 17:36:30 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# ##########################################################################
+# 
+# Common Desktop Environment (CDE) 활동 데이타베이스 정의
+#
+# 이 파일 맵에서 정의된 활동은 "Vi"같은 특별 응용프로그램을 위해  
+# "TextEditor" 같은 일반 활동을 요구합니다. 이 대응의 개인 사용자 정의를 
+# 만들기 위해 이 파일을 $HOME/.dt/types/user-prefs.dt 로 복사하고,
+# MAP_ACTION을 사용자가 실행을 원하는 활동으로 
+# 바꾸십시오. 
+#
+# 사용자의 시스템에서 사용가능한 활동을 결정하기 위해서 프론트 패널 
+# 과 훑어보기에서 응용프로그램 관리자를 여십시오.
+# 
+# ##########################################################################
+
+
+# 문서 편집기로 'vi' 사용하려면, 'Dtpad'(CDE Motif-based 문서 편집기)를 
+# 'Vi'로 대체하십시오.
+
+ACTION TextEditor
+{
+        LABEL		문서 편집기
+        ICON            Dtpenpd
+	TYPE		MAP
+	MAP_ACTION	Dtpad
+        DESCRIPTION	문서 편집기 활동은 사용자가 선호하는 \
+문서 편집기를 실행합니다..
+}
+
+# #####
+
+# Common Desktop Environment (CDE) 의 기본 단말기는 Dtterm입니다.
+
+ACTION Terminal
+{
+        LABEL		단말기
+        ICON            Dtterm
+	TYPE		MAP
+	MAP_ACTION	Dtterm
+        DESCRIPTION	단말기 활동은 사용자가 선호하는 \
+단말기 에뮬레이터를 실행합니다.
+}
+
+# #####
+
+# Common Desktop Environment (CDE) 의 기본 휴지통은 Dttrash입니다.
+
+ACTION Trash
+{
+        LABEL		Trash
+        ICON		Dttrsh
+	TYPE		MAP
+	MAP_ACTION	Dttrash
+        DESCRIPTION	Trash 활동은 사용자가 선호하는 \
+휴지통 클라이언트를 실행합니다.
+}
+
+# ###################### EOF ############################################

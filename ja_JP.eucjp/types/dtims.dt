@@ -1,0 +1,72 @@
+# ##########################################################################
+# 
+#      dtims.dt
+# 
+#      Action definitions for the Common Desktop Environment
+#      dtimsstart application.
+# 
+#  (c) Copyright 1996 Digital Equipment Corporation.
+#  (c) Copyright 1996 Hewlett-Packard Company.
+#  (c) Copyright 1996 International Business Machines Corp.
+#  (c) Copyright 1996 Sun Microsystems, Inc.
+#  (c) Copyright 1996 Novell, Inc. 
+#  (c) Copyright 1996 FUJITSU LIMITED.
+#  (c) Copyright 1996 Hitachi.
+# 
+#     $XConsortium: dtims.dt.src /main/2 1996/04/23 17:35:29 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# アクション
+# 
+# ##################################################################
+
+ACTION DtImsMode
+{
+        LABEL           DtImsMode
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -mode -window  %Args%
+        DESCRIPTION     DtimsModeはインプット・メソッドの選択を設定します。
+}
+
+
+ACTION DtImsGetRemoteConf
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -remoteconf %(String)Args%
+        DESCRIPTION     このアクションはリモートシステム上の
+IMSコンフィギュレーションデータを得ます。
+}
+
+
+ACTION DtImsRunRemoteIms
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -remoterun %(String)Args%
+        DESCRIPTION     このアクションはリモートシステム上のIMSを起動します。
+}
+

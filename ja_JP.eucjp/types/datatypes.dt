@@ -1,0 +1,859 @@
+# ##########################################################################
+# 
+#      datatypes.dt
+# 
+#      Action and DataType definitions for the Common Desktop Environment
+#      (CDE) DT components.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#     $TOG: datatypes.dt.src /main/6 1997/05/28 11:43:48 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES BM
+{
+        ACTIONS         Open,Print
+        ICON		Dtbitmp
+        NAME_TEMPLATE	%s.bm
+        MIME_TYPE	text/plain
+        SUNV3_TYPE	xbm-file
+        DESCRIPTION     これは、X11 ビットマップ形式のデータのファイル\
+                        です。データ型は BM です。BM ファイルの名前は \
+                        '.bm' または '.xbm' で終ります。
+        TYPE_LABEL      BM
+}
+DATA_CRITERIA BM1
+{
+	DATA_ATTRIBUTES_NAME BM
+        MODE            f
+        NAME_PATTERN    *.bm
+}
+DATA_CRITERIA BM2
+{
+	DATA_ATTRIBUTES_NAME BM
+        MODE            f
+        NAME_PATTERN    *.xbm
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        BM
+        TYPE            MAP
+        MAP_ACTION	Dticon
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        BM
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES PM
+{
+        ACTIONS         Open,Print
+        ICON		Dtpixmp
+        NAME_TEMPLATE	%s.pm
+        MIME_TYPE	text/plain
+        SUNV3_TYPE	xpm-file
+        DESCRIPTION     これはマルチカラー・イメージのピックスマップ・\
+                        ファイルです。データ型は PM です。PM ファイルは\
+                        名前が '.pm' または '.xpm' で終るか、その内容に \
+                        "! XPM2" を含んでいます。
+        TYPE_LABEL      PM
+}
+DATA_CRITERIA PM1
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            f
+        NAME_PATTERN    *.pm
+}
+DATA_CRITERIA PM2
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            f
+        NAME_PATTERN    *.xpm
+}
+DATA_CRITERIA PM3
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            f
+        CONTENT 	0 string ! XPM2
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        PM
+        TYPE            MAP
+        MAP_ACTION	Dticon
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        PM
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES PCL
+{
+        ACTIONS         Open,Print
+        ICON            Dtpcl
+        NAME_TEMPLATE	%s.pcl
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     これは、プリンタ・コントロール言語 (Printer \
+                        Control Language (PCL)) 形式のデータ・ファイル\
+                       です。データ型は PCL です。PCL ファイルの名前は \
+                       '.pcl' で終ります。
+        TYPE_LABEL      PCL
+}
+DATA_CRITERIA PCL1
+{
+        DATA_ATTRIBUTES_NAME    PCL
+        CONTENT		0 byte 033 0105
+        MODE            f
+}
+DATA_CRITERIA PCL2
+{
+        DATA_ATTRIBUTES_NAME    PCL
+        NAME_PATTERN    *.pcl
+        MODE            f
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        PCL
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                           "開くことができません。使用可能な \
+                       PCL ビューアがありません。"                           "インフォメーション"                           "了解"
+
+
+
+        DESCRIPTION     ご利用のシステムには、PCL ファイルのビューアは\
+                       ありません。このファイルを開こうとすると、エラー・\
+                       ダイアログ・ボックスが表示されます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        PCL
+        TYPE            MAP
+        MAP_ACTION	PrintRaw
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES POSTSCRIPT
+{
+        ACTIONS         Open,Print
+        ICON		Dtps
+        NAME_TEMPLATE	%s.ps
+        MIME_TYPE	application/postscript
+        SUNV3_TYPE	postscript-file
+        DESCRIPTION     このファイルにはポストスクリプト・データが\
+                       あります。データ型は PS です。PS ファイルは、\
+                       名前が '.ps' または '.PS' で終るか、その内容に\
+                       文字列 "%!" を含んでいます。
+        TYPE_LABEL      POSTSCRIPT
+}
+DATA_CRITERIA POSTSCRIPT1
+{
+        DATA_ATTRIBUTES_NAME POSTSCRIPT
+        MODE            f
+        NAME_PATTERN    *.ps
+}
+DATA_CRITERIA POSTSCRIPT2
+{
+        DATA_ATTRIBUTES_NAME POSTSCRIPT
+        MODE            f
+        NAME_PATTERN    *.PS
+}
+DATA_CRITERIA POSTSCRIPT3
+{
+        DATA_ATTRIBUTES_NAME    POSTSCRIPT
+        CONTENT 	0 string %!
+        MODE            f
+}
+ACTION Open
+{
+	LABEL		開く
+        ARG_TYPE        POSTSCRIPT
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。使用可能な\
+                       ポストスクリプト・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+        DESCRIPTION     ご利用のシステムにはポストスクリプト・ビューアは\
+                       ありません。このファイルを開こうとすると、エラー・\
+                       ダイアログ・ボックスが表示されます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        POSTSCRIPT
+        TYPE            MAP
+        MAP_ACTION	PrintRaw
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES AUDIO_AU
+{
+        ACTIONS         Open,Play
+        ICON            Dtaudio
+        NAME_TEMPLATE	%s.au
+        MIME_TYPE	audio/basic
+        SUNV3_TYPE	audio-file
+        DESCRIPTION     このファイルはオーディオ(サウンド)データです。\
+                       データ型は AUDIO です。AUDIO ファイルは、名前が \
+                       '.snd'、'.wav' または '.au' で終るか、その内容に\
+                       文字列 ".snd" を含んでいます。
+        TYPE_LABEL      AUDIO
+}
+DATA_CRITERIA AUDIO_AU1
+{
+        DATA_ATTRIBUTES_NAME AUDIO_AU
+        MODE            f
+        NAME_PATTERN    *.au
+}
+DATA_CRITERIA AUDIO_AU2
+{
+        DATA_ATTRIBUTES_NAME AUDIO_AU
+        CONTENT         0 string \.snd
+        MODE            f
+}
+ACTION Open
+{
+	LABEL		開く
+        ARG_TYPE        AUDIO_AU
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "'開く' または '再生' ができません。\
+                       使用可能なオーディオ・プレーヤがありません。"                        "インフォメーション"                        "了解"
+
+
+
+        DESCRIPTION     このアクションはサウンド・ファイルを再生します。
+}
+ACTION Play
+{
+        LABEL           再生
+        ARG_TYPE        AUDIO_AU
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "'開く' または '再生' ができません。\
+                       使用可能なオーディオ・プレーヤがありません。"                         "インフォメーション"                         "了解"
+
+
+
+        DESCRIPTION     このアクションはサウンド・ファイルを再生します。
+}
+
+
+DATA_ATTRIBUTES AUDIO_SND
+{
+        ACTIONS         Open,Play
+        ICON            Dtaudio
+        NAME_TEMPLATE	%s.snd
+        MIME_TYPE	audio/basic
+        SUNV3_TYPE	audio-file
+        DESCRIPTION     This file contains Macintosh audio (sound) data. Its data type \
+                        is named AUDIO_SND. AUDIO_SND files have names \
+                        ending with '.snd'.
+        TYPE_LABEL      AUDIO
+}
+DATA_CRITERIA AUDIO_SND1
+{
+        DATA_ATTRIBUTES_NAME AUDIO_SND
+        MODE            f
+        NAME_PATTERN    *.snd
+}
+ACTION Open
+{
+	LABEL		開く
+        ARG_TYPE        AUDIO_SND
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "'開く' または '再生' ができません。\
+                       使用可能なオーディオ・プレーヤがありません。"                        "インフォメーション"                        "了解"
+
+
+
+        DESCRIPTION     このアクションはサウンド・ファイルを再生します。
+}
+ACTION Play
+{
+        LABEL           再生
+        ARG_TYPE        AUDIO_SND
+        TYPE            MAP
+	MAP_ACTION	Open
+        DESCRIPTION     このアクションはサウンド・ファイルを再生します。
+}
+
+DATA_ATTRIBUTES AUDIO_WAV
+{
+        ACTIONS         Open,Play
+        ICON            Dtaudio
+        NAME_TEMPLATE	%s.wav
+        MIME_TYPE	audio/basic
+        SUNV3_TYPE	audio-file
+        DESCRIPTION     This file contains Microsoft Windows audio (sound) data. Its data \
+                        type is named AUDIO_WAV. AUDIO_WAV files have names \
+                        ending with '.wav'.
+        TYPE_LABEL      AUDIO
+}
+DATA_CRITERIA AUDIO_WAV1
+{
+        DATA_ATTRIBUTES_NAME AUDIO_WAV
+        MODE            f
+        NAME_PATTERN    *.wav
+}
+ACTION Open
+{
+	LABEL		開く
+        ARG_TYPE        AUDIO_WAV
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "'開く' または '再生' ができません。\
+                       使用可能なオーディオ・プレーヤがありません。"                        "インフォメーション"                        "了解"
+
+
+
+        DESCRIPTION     このアクションはサウンド・ファイルを再生します。
+}
+ACTION Play
+{
+        LABEL           再生
+        ARG_TYPE        AUDIO_WAV
+        TYPE            MAP
+	MAP_ACTION	Open
+        DESCRIPTION     このアクションはサウンド・ファイルを再生します。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        AUDIO_AU,AUDIO_SND,AUDIO_WAV
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES TIFF
+{
+        ACTIONS         Open
+        ICON            Dttif
+        NAME_TEMPLATE	%s.tif
+        MIME_TYPE	image/tiff
+        SUNV3_TYPE	tiff-file
+        DESCRIPTION     このファイルは TIFF 形式のグラフィック・イメージ\
+                       です。データ型は TIFF です。TIFF ファイルの名前は、\
+                       '.TIFF'、'.TIF'、'.tiff'、または '.tif' で終ります。
+        TYPE_LABEL      TIFF
+}
+DATA_CRITERIA TIFF1
+{
+        DATA_ATTRIBUTES_NAME TIFF
+        MODE            f
+        NAME_PATTERN    *.TIFF
+}
+DATA_CRITERIA TIFF2
+{
+        DATA_ATTRIBUTES_NAME TIFF
+        MODE            f
+        NAME_PATTERN    *.TIF
+}
+DATA_CRITERIA TIFF3
+{
+        DATA_ATTRIBUTES_NAME TIFF
+        MODE            f
+        NAME_PATTERN    *.tiff
+}
+DATA_CRITERIA TIFF4
+{
+        DATA_ATTRIBUTES_NAME TIFF
+        MODE            f
+        NAME_PATTERN    *.tif
+}
+DATA_CRITERIA TIFF5
+{
+	DATA_ATTRIBUTES_NAME TIFF
+	CONTENT    0 byte 0115 0115
+	MODE            f
+}
+DATA_CRITERIA TIFF6
+{
+	DATA_ATTRIBUTES_NAME TIFF
+	CONTENT    0 byte 0111 0111
+	MODE            f
+}
+ACTION Open
+{
+	LABEL		開く
+        ARG_TYPE        TIFF
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                       使用可能な TIFF ファイル・ビューアがありません。"                            "インフォメーション"                            "了解"
+
+
+
+        DESCRIPTION     ご利用のシステムには、TIFF ビューアがありません。\
+                       このファイルを開こうとすると、エラー・ダイアログ・\
+                       ボックスが表示されます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        TIFF
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES JPEG
+{
+        ACTIONS         Open
+        ICON            Dtjpeg
+        NAME_TEMPLATE	%s.jpg
+        MIME_TYPE	image/jpeg
+        SUNV3_TYPE	jpeg-file
+        DESCRIPTION     このファイルは JPEG 交換ファイル形式です。\
+                       データ型は JPEG です。JPEG ファイルの名前は \
+                       '.JPEG'、'.jpg'、'.jpeg'、または '.JPG' で終ります。
+        TYPE_LABEL      JPEG
+}
+DATA_CRITERIA JPEG1
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        NAME_PATTERN    *.JPEG
+}
+DATA_CRITERIA JPEG2
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        NAME_PATTERN    *.jpg
+}
+DATA_CRITERIA JPEG3
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        NAME_PATTERN    *.jpeg
+}
+DATA_CRITERIA JPEG4
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        NAME_PATTERN    *.JPG
+}
+DATA_CRITERIA JPEG5
+{
+	DATA_ATTRIBUTES_NAME JPEG
+	CONTENT    0 byte 0377 0330 0377
+	MODE            f
+}
+DATA_CRITERIA JPEG6
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        CONTENT         0 short 0xffd8
+}
+ACTION Open
+{
+	LABEL		開く
+        ARG_TYPE        JPEG
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                       使用可能な JPEG ファイル・ビューアがありません。"                            "インフォメーション"                            "了解"
+
+
+
+        DESCRIPTION     ご利用のシステムには JPEG ビューアはありません。\
+                       このファイルを開こうとすると、エラー・ダイアログ・\
+                       ボックスが表示されます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        JPEG
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES MPEG
+{
+        ACTIONS         Open
+        ICON            Dtmpeg
+        NAME_TEMPLATE	%s.mpg
+        MIME_TYPE	video/mpeg
+        DESCRIPTION     このファイルは、MPEG 交換ファイル形式の\
+                       グラフィック・イメージ・ムービです。データ型は \
+                       MPEG です。MPEG ファイルの名前は '.MPEG'、'.mpg'、\
+                       '.mpeg'、または '.MPG' で終ります。
+        TYPE_LABEL      MPEG
+}
+DATA_CRITERIA MPEG1
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        NAME_PATTERN    *.MPEG
+}
+DATA_CRITERIA MPEG2
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        NAME_PATTERN    *.mpg
+}
+DATA_CRITERIA MPEG3
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        NAME_PATTERN    *.mpeg
+}
+DATA_CRITERIA MPEG4
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        NAME_PATTERN    *.MPG
+}
+DATA_CRITERIA MPEG5
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        CONTENT         0 long 0x000001b3
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        MPEG
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                           "開くことができません。\
+                       使用可能な MPEG プレーヤはありません。"                           "インフォメーション"                           "了解"
+
+
+
+        DESCRIPTION     ご利用のシステムには MPEG ビューアはありません。\
+                       このファイルを開こうとすると、エラー・ダイアログ・\
+                       ボックスが表示されます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        MPEG
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES GIF
+{
+        ACTIONS         Open
+        ICON		Dtgif
+        NAME_TEMPLATE	%s.gif
+        MIME_TYPE	image/gif
+        SUNV3_TYPE	gif-file
+	DESCRIPTION	このファイルは GIF 形式のグラフィック・イメージ\
+                       です。データ型は GIF です。GIF ファイルは名前が \
+                       '.gif' または '.GIF' で終るか、その内容に文字列 \
+                       "GIF87a" または "GIF89a" を含んでいます。
+        TYPE_LABEL      GIF
+}
+DATA_CRITERIA GIF1
+{
+	DATA_ATTRIBUTES_NAME GIF
+        MODE            f
+	NAME_PATTERN	*.gif
+}
+DATA_CRITERIA GIF2
+{
+	DATA_ATTRIBUTES_NAME GIF
+        MODE            f
+	NAME_PATTERN	*.GIF
+}
+DATA_CRITERIA GIF3
+{
+	DATA_ATTRIBUTES_NAME GIF
+        CONTENT		0 string GIF87a
+        MODE            f
+}
+DATA_CRITERIA GIF4
+{
+	DATA_ATTRIBUTES_NAME GIF
+        CONTENT		0 string GIF89a
+        MODE            f
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        GIF
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                       使用可能な GIF ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+        DESCRIPTION     ご利用のシステムには GIF ビューアがありません。\
+                       このファイルを開こうとすると、エラー・ダイアログ・\
+                       ボックスが表示されます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        GIF
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES README
+{
+        ACTIONS         Open,Print
+        ICON            DtRdMe
+        IS_TEXT		true
+        NAME_TEMPLATE	README
+        MIME_TYPE	text/plain
+        DESCRIPTION     このファイルは、現在のフォルダにあるファイルに\
+                       関する情報を格納しているテキスト・ファイルです。\
+                       データ型は README です。README ファイルの名前は \
+                       READ で始まり ME で終り、間には 0 以上の文字が\
+                       入ります。文字は大文字でも小文字でも構いません。
+        TYPE_LABEL      README
+}
+DATA_CRITERIA README1
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    README
+}
+DATA_CRITERIA README2
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    README.*
+}
+DATA_CRITERIA README3
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    Read.*.Me
+}
+DATA_CRITERIA README4
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    read.*.me
+}
+DATA_CRITERIA README5
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    READ.*.ME
+}
+DATA_CRITERIA README6
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    readme
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES HTML
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.html
+        MIME_TYPE       text/html
+        DESCRIPTION     このファイルは、World Wide Web からのハイパー\
+                       テキスト・マークアップ言語を格納しているテキスト・\
+                       ファイルです。データ型は HTML です。HTML \
+                       ファイルは、名前が '.html' で終るか、その内容に\
+                       文字列 "<HTML>" または "<html>" を含んでいます。  
+}
+DATA_CRITERIA HTML1
+{
+        DATA_ATTRIBUTES_NAME    HTML
+        MODE                    f
+        NAME_PATTERN            *.html
+}
+DATA_CRITERIA HTML2
+{
+        DATA_ATTRIBUTES_NAME    HTML
+        MODE                    f
+        CONTENT                 0 string <HTML>
+}
+DATA_CRITERIA HTML3
+{
+        DATA_ATTRIBUTES_NAME    HTML
+        MODE                    f
+        CONTENT                 0 string <html>
+}
+
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        HTML
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES ENRICHED_TEXT
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.rt
+        MIME_TYPE       text/enriched
+        DESCRIPTION     オーディオ
+        TYPE_LABEL      ENRICHED_TEXT
+}
+DATA_CRITERIA ENRICHED_TEXT1
+{
+        DATA_ATTRIBUTES_NAME    ENRICHED_TEXT
+        MODE                    f
+        NAME_PATTERN            *.ert
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        ENRICHED_TEXT
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES RICHTEXT
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.rt
+        MIME_TYPE       text/richtext
+        DESCRIPTION     このファイルは、複数フォント定義をプレーン・\
+                       テキストとして格納しているテキスト・ファイルです。\
+                       データ型は RICHTEXT です。RICHTEXT の名前は '.rt' \
+                       で終ります。
+        TYPE_LABEL      RICHTEXT
+}
+DATA_CRITERIA RICHTEXT1
+{
+        DATA_ATTRIBUTES_NAME    RICHTEXT
+        MODE                    f
+        NAME_PATTERN            *.rt
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        RICHTEXT
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES UIL
+{
+        ACTIONS         Open,Print
+        ICON            Dtuil
+        NAME_TEMPLATE	%s.uil
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、UIL インタプリタが使用して、Motif \
+                       ユーザ・インタフェースを構築するソース・コードを\
+                       格納するテキスト・ファイルです。UIL ファイルの\
+                       名前には、'.uil' または '.UIL' が付きます。
+        TYPE_LABEL      UIL
+}
+DATA_CRITERIA UIL1
+{
+        DATA_ATTRIBUTES_NAME 	UIL
+        MODE            	!d
+        NAME_PATTERN    	*.uil
+}
+DATA_CRITERIA UIL2
+{
+        DATA_ATTRIBUTES_NAME	UIL
+        MODE            	!d
+        NAME_PATTERN    	*.UIL
+}
+
+
+# #######################################################
+
+DATA_ATTRIBUTES MSDOS_EXE
+{
+        ACTIONS         (None)
+        ICON            Dtexec
+        IS_EXECUTABLE   true
+        NAME_TEMPLATE	%s.exe
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE	msdos-file
+        DESCRIPTION     これは、MSDOS 互換のパーソナル・コンピュータ上で\
+                       動作する実行形式ファイルです。データ型は MSDOS_EXE \
+                       です。MSD0S_EXE ファイルの名前は '.exe' または \
+                       '.EXE' で終ります。
+        TYPE_LABEL      MSDOS_EXE
+}
+DATA_CRITERIA MSDOS_EXE1
+{
+        DATA_ATTRIBUTES_NAME MSDOS_EXE
+        MODE            f&x
+        NAME_PATTERN    *.exe
+}
+DATA_CRITERIA MSDOS_EXE2
+{
+        DATA_ATTRIBUTES_NAME MSDOS_EXE
+        MODE            f&x
+        NAME_PATTERN    *.EXE
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        MSDOS_EXE
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# ######################## EOF ############################################

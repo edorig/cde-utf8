@@ -1,0 +1,137 @@
+###############################################################################
+#
+#     dtcm.dt
+#
+#     Action and DataType definitions for the Common Desktop Environment
+#     (CDE) Calendar Component.
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+#
+###############################################################################
+set DtDbVersion=1.0
+
+###############################################################################
+#
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+#
+###############################################################################
+
+###################################################################
+#
+# 数据属性
+#
+###################################################################
+DATA_ATTRIBUTES DtcmAppointmentAttrs
+{
+	ACTIONS		Open,Insert,Print
+	ICON		DtCMapt
+	NAME_TEMPLATE	%s.appt
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      ae-file
+	MEDIA		DT_APPOINTMENT
+	DESCRIPTION	这个文件包含有关日历管理程序日程的信息。它的数据类型称为 \
+                        CalendarAppointmentAttrs。CalendarAppointmentAttrs \
+                        文件的文件名以 '.appt' 结尾。
+	TYPE_LABEL      DtcmAppointmentAttrs
+}
+DATA_CRITERIA DtcmAppointmentAttrs1
+{
+	DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+	MODE 		fr
+	NAME_PATTERN	*.appt
+}
+DATA_CRITERIA DtcmAppointmentAttrs2
+{
+	DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+	MODE 		fr
+	CONTENT		3 string ** Calendar Appointment **
+}
+DATA_CRITERIA DtcmAppointmentAttrs3
+{
+        DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+        MODE            fr
+        CONTENT         3 string ** Calendar To Do Item **
+}
+ACTION Open
+{
+        LABEL		打开
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      DtcmEdit
+}
+ACTION Insert
+{
+        LABEL		插入
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      DtcmInsert
+}
+ACTION Print
+{
+        LABEL		打印
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+
+###################################################################
+###################################################################
+#
+# 动作
+#
+###################################################################
+ACTION Dtcm
+{
+        LABEL		日历
+        ICON            DtCM
+	TYPE		COMMAND
+	EXEC_STRING	/usr/dt/bin/dtcm
+	WINDOW_TYPE	NO_STDIO
+	DESCRIPTION	'日历'(Dtcm) 动作启动桌面日历管理程序。
+}
+
+######
+
+ACTION DtcmInsert
+{
+        LABEL		日历插入
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     sh -c '/usr/dt/bin/dtcm_insert  -a "%(File)Arg_1%" ;\
+			if [ \$? -ne 0 ] ; then \
+			  /usr/dt/bin/dterror.ds \
+			    "The appointment was not scheduled in your \
+                             calendar\\n\
+                             due to an error.  The appointment may not be \
+                             formatted\\n\
+                             correctly or your calendar may not be \
+                             accessible." \
+			    "日历 : 错误 - 日程" \
+			    "确定" ; \
+			fi'
+	DESCRIPTION	'日历插入'(DtcmInsert) 动作在用户默认日历中插入一个日程。
+}
+
+######
+
+ACTION DtcmEdit
+{
+        LABEL		日历编辑
+        TYPE            TT_MSG
+	TT_SCOPE	TT_SESSION
+	TT_CLASS	TT_REQUEST
+	TT_OPERATION	Edit
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_FILE		%Arg_1"....Missing message #20011"%
+	DESCRIPTION	'日历编缉'(DtcmEdit) 动作在一个日历日程上运行独立日程编缉器。
+}
+
+########################### EOF ##############################################

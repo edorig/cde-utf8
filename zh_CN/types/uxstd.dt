@@ -1,0 +1,717 @@
+# ##########################################################################
+#
+#     uxstd.dt
+#
+#     Action and DataType definitions for standard operating system commands.
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+# $TOG: uxstd.dt.src /main/7 1998/07/29 17:09:27 mgreess $
+#
+# ##########################################################################
+
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+#
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+#
+# ##########################################################################
+
+# ##########################################################################
+#
+# 数据属性
+# 
+# ##########################################################################
+DATA_ATTRIBUTES MAN_PAGE
+{
+        ACTIONS         Open,Print
+        ICON            Dtmanpg
+        IS_TEXT		true
+        ACTIONS         Open,Print
+        MIME_TYPE	text/plain
+	DESCRIPTION	这个文件包含一个联机手册。它的数据类型称为 MAN_PAGE。
+        TYPE_LABEL      MAN_PAGE
+}
+DATA_CRITERIA MAN_PAGE1
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/man*/*.[1-9]*
+}
+DATA_CRITERIA MAN_PAGE2
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/cat*/*.[1-9]*
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        MAN_PAGE
+        TYPE            MAP
+        MAP_ACTION	Dtmanpageview
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        MAN_PAGE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp -a "%Arg_1%"
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES TAR
+{
+        ACTIONS         Open,TarUnpack,Print
+        ICON		Dtmagtp
+        NAME_TEMPLATE	%s.tar
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	这个文件是一个归档文件，它包含大量个别文件。它的数据类型称为\
+                        TAR。TAR 文件的文件名以 '.tar' 结尾。
+        TYPE_LABEL      TAR
+}
+DATA_CRITERIA TAR1
+{
+	DATA_ATTRIBUTES_NAME TAR
+        MODE            f
+	NAME_PATTERN	*.tar
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      TarList
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      PrintTarList
+}
+ACTION TarList
+{
+	LABEL		归档列表内容
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+	DESCRIPTION	'归档列表内容'(TarList) 动作列出包含在一个 TAR 归档文件中的文件.
+}
+ACTION PrintTarList
+{
+	LABEL		打印Tar文件列表
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" |                            /usr/dt/bin/dtlp -u "归档列表内容"'
+
+
+	DESCRIPTION	'打印Tar文件列表' 动作打印出在默认打印机上包含在 TAR 档\
+                                案文件中的文件清单。
+}
+ACTION TarUnpack
+{
+	LABEL		分离归档
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                tar -xvf "%(File)Arg_1"文件名:"%"                            2>&1 | \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+	DESCRIPTION	'分离归档'(TarUnpack) 动作接收一个 'TAR' 文件作为变量，并将归档文件\
+                        分隔成分离的文件。
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES COMPRESSED
+{
+        ACTIONS         Uncompress
+        ICON		Dtcmprs
+        NAME_TEMPLATE	%s.Z
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      compress
+	DESCRIPTION	这是一个为了占用少量的空间由压缩命令压缩了的文件。它的数\
+                        据类型称为 COMPRESSED。COMPRESSED 文件的文件名以 '.Z' 结尾。
+        TYPE_LABEL      COMPRESSED
+}
+DATA_CRITERIA COMPRESSED1
+{
+	DATA_ATTRIBUTES_NAME COMPRESSED
+        MODE            f
+        NAME_PATTERN    *.Z
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        COMPRESSED
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uncompress
+{
+	LABEL		解压缩文件
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                uncompress -vf "%(File)Arg_1%" %(File)Args% 2>&1 |                            \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+	DESCRIPTION	'解压缩文件' 动作接收一个或多个用 'compress' 命令压缩的文件\
+                        并解压缩，它使用 'uncompress' 命令。
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtbshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.sh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      shell-script
+        DESCRIPTION     这个文件包含用 BOURNE shell 语言编写的可执行脚本。它的\
+                        数据类型称为 SHELL。SHELL 文件的文件名以 '.sh'\
+                        结尾，或包含符号 "#!/bin/sh" 或 "#! /bin/sh"。
+        TYPE_LABEL      SHELL
+}
+DATA_CRITERIA SHELL1
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        MODE            f&x
+	NAME_PATTERN	*.sh
+}
+DATA_CRITERIA SHELL2
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #!/bin/sh
+        MODE            f&x
+}
+DATA_CRITERIA SHELL3
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #! /bin/sh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           运行
+        ARG_TYPE        SHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES CSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtcshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.csh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      cshell-script
+        DESCRIPTION     这个文件包含一个用 C-SHELL 语言编写的可执行脚本。它的数据类型\
+                        称为 CSHELL。CSHELL 文件的文件名以 '.csh' 结尾，\
+                        或包含符号 "#!/bin/csh" 或 "#! /bin/csh"。
+        TYPE_LABEL      CSHELL
+}
+DATA_CRITERIA CSHELL1
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        MODE            f&x
+        NAME_PATTERN    *.csh
+}
+DATA_CRITERIA CSHELL2
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #!/bin/csh
+        MODE            f&x
+}
+DATA_CRITERIA CSHELL3
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #! /bin/csh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           运行
+        ARG_TYPE        CSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES KSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtkshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.ksh
+        MIME_TYPE	text/plain
+        DESCRIPTION     这个文件包含一个用 K-SHELL 语言编写的可执行脚本。它的数据类型\
+                        称为 KSHELL。KSHELL 文件的文件名以 '.ksh' 结尾，\
+                        或包含符号 "#!/bin/ksh" 或 "#! /bin/ksh"。
+        TYPE_LABEL      KSHELL
+}
+DATA_CRITERIA KSHELL1
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        MODE            f&x
+        NAME_PATTERN    *.ksh
+}
+DATA_CRITERIA KSHELL2
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL3
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL4
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL5
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           运行
+        ARG_TYPE        KSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHAR
+{
+        ACTIONS         Unshar
+        ICON 		Dtshar           
+        NAME_TEMPLATE	%s.shar
+        MIME_TYPE	text/plain
+        DESCRIPTION     这个文件是一个 shell 归档打包。Shell 归档打包一般用于邮\
+                        寄文件。它的数据类型称为 SHAR。SHAR 文件的文件名以\
+                        '.shar' 结尾。
+        TYPE_LABEL      SHAR
+}
+DATA_CRITERIA SHAR1
+{
+        DATA_ATTRIBUTES_NAME SHAR
+        MODE            f
+        NAME_PATTERN    *.shar
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        SHAR
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Unshar
+{
+        LABEL           解文档包 
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         sh "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+        DESCRIPTION     解文档包动作接收一个用 shar 命令已归档打\
+                           包的文件并解开文档包。
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES UUENCODE
+{
+        ACTIONS         Uudecode
+        ICON            Dtuuncd
+        NAME_TEMPLATE	%s.uu
+        MIME_TYPE	text/plain
+        DESCRIPTION     这是一个二进制的文件，用于邮件传输。它的数据类型称为\
+                        UUENCODE。UUENCODE 文件的文件名以 '.uu' 结尾。
+        TYPE_LABEL      UUENCODE
+}
+DATA_CRITERIA UUENCODE1
+{
+        DATA_ATTRIBUTES_NAME UUENCODE
+        MODE            f
+        NAME_PATTERN    *.uu
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        UUENCODE
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uudecode
+{
+        LABEL           Unix译码器
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         uudecode "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+        DESCRIPTION     'Unix译码器' 动作接受一个用 uuencode 命令译成电码的\
+                        文件并译码。
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES MESSAGE_CAT
+{
+        ACTIONS         (None)
+        ICON            Dtcat
+        NAME_TEMPLATE   %s.cat
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     这个文件包含一个可执行的本地化信息。它的数据类型称为\
+                        MESSAGE_CAT。MESSAGE_CAT 文件的文件名以 '.cat' \
+                        结尾。
+        TYPE_LABEL      MESSAGE_CAT
+}
+DATA_CRITERIA MESSAGE_CAT1
+{
+        DATA_ATTRIBUTES_NAME MESSAGE_CAT
+        MODE            f
+        NAME_PATTERN    *.cat
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        MESSAGE_CAT
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ##########################################################################
+# ##########################################################################
+#
+# 动作
+# 
+# ##########################################################################
+# #####################
+#
+# Unix 编辑器
+#
+# #####################
+ACTION Vi
+{
+        LABEL		文本编辑器 (Vi)
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi
+	DESCRIPTION	文本编缉器 (Vi) 动作在一个终端窗口运行 'vi' 命令，并装入您所提供的\
+                        一个数据文件。
+}
+ACTION Vi
+{
+        LABEL		文本编辑器 (Vi)
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi "%(File)Arg_1"要编辑的文件:"%"
+	DESCRIPTION	文本编缉器 (Vi) 动作在一个终端窗口运行 'vi' 命令，并装入您所提供的\
+                        一个数据文件。
+}
+
+# ######
+
+ACTION Vedit
+{
+        LABEL		Vi编辑器
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit
+	DESCRIPTION	'Vi编辑器' 动作在一个终端窗口的 'vedit' 模式下运行 'vi' 命\
+                        令。它装入一个您所提供的数据文件。
+}
+ACTION Vedit
+{
+        LABEL		Vi编辑器
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit "%(File)Arg_1"要编辑的文件:"%"
+	DESCRIPTION	'Vi编辑器' 动作在一个终端窗口的 'vedit' 模式下运行 'vi' 命\
+                        令。它装入一个您所提供的数据文件。
+}
+
+# #####################
+#
+# Unix 命令
+#
+# #####################
+# 下面的动作使用EXEC_STRING中的 'true %(File)Args%'。
+# 该语句的唯一效果是使所有的变量用于单一的动作调用。
+ACTION Tar
+{
+	LABEL		归档
+        ICON		Dtmagtp
+	ARG_COUNT	>1
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	          sh -c '            if [ "%(File)Args%" = "" ] ; then                 /usr/dt/bin/dterror.ds             "归档动作只接收一个变量，它必须是一个文件夹。"             "无效的变量"             "确定" ;            else            true %(File)Args%;            /usr/dt/bin/dterror.ds             "归档动作只接收一个变量，它必须是一个文件夹。"             "无效的变量"             "确定"            fi; '
+	DESCRIPTION	归档 (Tar) 动作接收一个文件夹变量，并将所有的文件归档\
+                        到一个 "tar" 文件中。它使用'tar'命令。
+}
+ACTION Tar
+{
+	LABEL		归档
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+	EXEC_STRING		  sh -c '             if [ "%(File)Args%" = "" ] ; then 	        echo "错误: %(File)Arg_1% 不是一个文件夹。";             else 	    if [ ! -d "%(File)Arg_1"要归档的文件夹:"%" ] ; then 	        echo "错误: %(File)Arg_1% 不是一个文件夹。"; 	    else                 FOLDER="%(File)Arg_1%.tar"; 	        TAR_FILE=`basename "%(File)Arg_1%.tar"`;                 echo "创建 \$FOLDER.";                 echo "[请稍候...]\\n"; 	        tar -cvf \$TAR_FILE `basename "%(File)Arg_1%"` 2>&1 | 	          \${PAGER:-more};                 echo "\\n归档文件已被创建并存储在 \$FOLDER中。"; 	    fi; 	    fi; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+	DESCRIPTION	归档 (Tar) 动作接收一个文件夹变量，并将所有的文件归档\
+                        到一个 "tar" 文件中。它使用'tar'命令。
+}
+
+# ######
+
+ACTION TarList
+{
+        LABEL           归档列表内容
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarList                             "%(File)Arg_1"要列表的归档:"%"
+
+        DESCRIPTION     '归档列表内容'(TarList) 动作列出包含在一个 TAR 归档文件中的文件.
+}
+
+# ######
+
+ACTION TarUnpack
+{
+        LABEL           分离归档
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarUnpack                             "%(File)Arg_1"要打开的归档:"%"
+
+        DESCRIPTION     '分离归档'(TarUnpack) 动作接收一个 'TAR' 文件作为变量，并将归档文件\
+                        分隔成分离的文件。
+}
+
+# ######
+
+ACTION Compress
+{
+	LABEL		压缩文件
+        ICON		Dtcmprs
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                 compress -vf "%(File)Arg_1"要压缩的文件:"%"                          %(File)Args% 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+	DESCRIPTION	压缩文件 (Compress) 动作接收一个或多个文件，并用'compress' 命令进行压缩。
+}
+
+# ######
+
+ACTION Uncompress
+{
+        LABEL           解压缩文件
+        ICON		Dtcmprs
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction Uncompress                             "%(File)Arg_1"要解压缩的文件:"%"
+
+        DESCRIPTION     '解压缩文件' 动作接收一个或多个用 'compress' 命令压缩的文件\
+                        并解压缩，它使用 'uncompress' 命令。
+}
+
+# ######
+
+ACTION Env
+{
+	LABEL		环境变量
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                          env 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+	DESCRIPTION	环境变量 (Env) 动作显示用 'env' 命令设定的用户环境变量。
+}
+
+# ######
+
+ACTION Diff
+{
+	LABEL		比较文件
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file1="%(File)Arg_1"第一个文件 (<):"%" ;	    file2="%(File)Arg_2"第二个文件 (>):"%" ;            cmp -s \$file1 \$file2 ;            if [ \$? -eq 0 ] ; then               echo "文件 \$file1 与 \$file2 相同。" ;             else               diff \$file1 \$file2  | \${PAGER:-more} ;            fi ;	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+	DESCRIPTION	比较文件 (Diff) 动作用'diff' 命令比较两个文件。
+}
+
+# ######
+
+ACTION Rm
+{
+	LABEL		删除文件
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING		  sh -c ' 	    echo "[输入 y 删除文件, n 保留 ...]\\n"; 	    rm -i "%(File)Arg_1"要删除的文件:"%" %(File)Args%; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+
+	DESCRIPTION	'删除文件'(Rm) 动作用 'rm -i' 命令删除文件，而不是将它\
+                        们放入废物箱中。它提示您每个文件名，并允许您指出该文件\
+                        是否被删除。被销毁的文件不能被覆盖。
+}
+
+# ######
+
+ACTION Wc
+{
+	LABEL		计数 
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    (echo "  行数   字数  字符数 文件名"; 	     echo "  ============================"; 	     wc "%(File)Arg_1"要计数的文件:"%" %(File)Args%) 2>&1 | 	       \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+
+
+	DESCRIPTION	'计数'(Wc) 动作计算文件中的行数，字数和字符数。它使用 'wc' 命令。
+}
+
+# ######
+
+ACTION Spell
+{
+	LABEL		检验拼写
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c ' 	    (echo "拼错的字\\n================\\n"; 	     spell "%(File)Arg_1"要进行拼写检验的文件:"%" %(File)Args%) 2>&1 |                \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+
+
+	DESCRIPTION	'检验拼写'(Spell) 动作检验一个文件中所有字的拼写。它\
+                        使用 'spell' 命令。
+}
+
+# ######
+
+ACTION Df
+{
+	LABEL		磁盘使用
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             df 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+	DESCRIPTION	磁盘使用 (Df) 动作显示所有装载磁盘上的可用的自由空间\
+                            数。它使用'df'命令。
+}
+
+
+# ######
+
+ACTION DuSort
+{
+	LABEL		文件夹大小
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    if [ ! -d "%(File)Arg_1"要测定大小的文件夹:"%" ] ; then 	        echo "错误: %(File)Arg_1% 不是一个文件夹。"; 	    else 	        echo "[请稍候...]\\n"; 	        (echo "数据块  文件/目录 - (一个数据块有512-字节)"; 	         echo "=========================================="; 	         du -s "%(File)Arg_1"要测定大小的文件夹:"%" | sort -n) 2>&1 |                    \${PAGER:-more}; 	    fi; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+	DESCRIPTION	'文件夹大小'(DuSort) 动作显示文件夹中的每个文件和子文件\
+                        夹的大小。它使用 'du' 命令与 'sort' 命令的组合。
+}
+
+# ######
+
+ACTION Grep
+{
+	LABEL		搜索文本
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             SEARCH_FILE="%(File)Arg_1"要搜索的文件:"%";             if [ -d \$SEARCH_FILE ] ; then                 echo "错误: \$SEARCH_FILE 是一个文件夹，搜索文本动作不\
+                        搜索文件夹内的字符串。";             else                grep %"搜索字符串:"% \$SEARCH_FILE                                    %(File)Args% >/tmp/dtstrsearch 2>&1;                if [ \$? -eq 1 ] ; then                    echo "没有发现匹配的字符串。";                else                   cat /tmp/dtstrsearch | \${PAGER:-more};                fi;                rm /tmp/dtstrsearch;             fi; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+	DESCRIPTION	'搜索文本'(Grep) 动作用 'grep' 命令搜索所有在一组文件中\
+                                 出现的一个字符串。
+}
+
+# ######
+
+ACTION File
+{
+	LABEL		文件类型
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file "%(File)Arg_1"要确定类型的文件:"%" %(File)Args% 2>&1 |               \${PAGER:-more}; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+	DESCRIPTION	文件类型 (File) 动作确定所使用的文件命令的文件类型。它\
+                        与文件的桌面数据类型不同。为确定一个文件的桌面数据\
+                        类型，从一个文件管理程序视图中挑选文件并选择菜单命\
+                        令特性->文件。
+}
+
+# ######
+
+ACTION Execute
+{
+	LABEL		执行
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     	  "%(File)Arg_1"要执行的文件:"%" %"选项:"% %"变量:"% %(File)Args%
+
+	DESCRIPTION	执行动作运行一个 shell 脚本或可执行二进制文件。它提示选\
+                        项和变量，然后在一个终端窗口中执行脚本或可执行文件。
+}
+
+# ######
+
+ACTION ExecuteCmd
+{
+	LABEL		执行命令
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	          %"命令:"% %(File)Args%; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+	DESCRIPTION	'执行命令'(ExecuteCmd) 动作提示一个命令，然后在作为变量\
+                                的文件上执行。
+}
+# ######################## EOF ############################################

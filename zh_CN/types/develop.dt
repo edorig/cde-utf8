@@ -1,0 +1,412 @@
+# ##########################################################################
+# 
+#      develop.dt
+# 
+#      Action and DataType definitions for the Common Desktop Environment
+#      (CDE) components.  This file contains common datatypes for developers.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#     $XConsortium: develop.dt.src /main/5 1996/04/23 17:35:01 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 数据属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES CORE
+{
+        ACTIONS         (None)
+        ICON		Dtcore
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      corefile
+	DESCRIPTION	这个文件包含一个非正常终止的进程的核心图象。它的数据类型称为CORE。
+        TYPE_LABEL      CORE
+}
+DATA_CRITERIA CORE1
+{
+	DATA_ATTRIBUTES_NAME CORE
+        MODE            f
+	NAME_PATTERN	core
+}
+DATA_CRITERIA CORE2
+{
+	DATA_ATTRIBUTES_NAME CORE
+        MODE            f
+	NAME_PATTERN	core*
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        CORE
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES OBJECT
+{
+        ACTIONS         Open,Print
+        ICON		Dtbin
+        NAME_TEMPLATE	%s.o
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      o-file
+	DESCRIPTION	这个文件包含一个编译器从一个源文件生成的二进制文件。\
+                        它的数据类型称为 OBJECT。OBJECT 文件的\
+                        文件名以 '.o' 结尾。
+        TYPE_LABEL      OBJECT
+}
+DATA_CRITERIA OBJECT1
+{
+	DATA_ATTRIBUTES_NAME OBJECT
+        MODE            f
+	NAME_PATTERN	*.o
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        OBJECT
+        TYPE            MAP
+        MAP_ACTION      Nm
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        OBJECT
+        TYPE            MAP
+        MAP_ACTION      PrintNm
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES ASSEMBLER
+{
+        ACTIONS         Open,Print
+        ICON            Dtbin
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.s
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      text
+	DESCRIPTION	这个文件包含给定结构的汇编程序码。它的数据类型称为 ASSEMBER。\
+                        ASSEMBLER 文件的文件名以 '.s' 结尾。
+        TYPE_LABEL      ASSEMBLER
+}
+DATA_CRITERIA ASSEMBLER1
+{
+        DATA_ATTRIBUTES_NAME ASSEMBLER
+        MODE            f
+        NAME_PATTERN    *.s
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES ARCH_LIB
+{
+        ACTIONS         Open,Print
+        ICON		Dtbinml
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	这个文件包含一个对象文件的档案库。它的数据类型称为 ARCH_LIB。\
+                        ARCH_LIB 文件的文件名以 '.a' 结尾。
+        TYPE_LABEL      ARCH_LIB
+}
+DATA_CRITERIA ARCH_LIB1
+{
+	DATA_ATTRIBUTES_NAME ARCH_LIB
+        MODE            f
+	NAME_PATTERN	*.a
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        ARCH_LIB
+        TYPE            MAP
+        MAP_ACTION      Nm
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        ARCH_LIB
+        TYPE            MAP
+        MAP_ACTION      PrintNm
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES SHARED_LIB
+{
+        ACTIONS         Open,Print
+        ICON		Dtbinml
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	这些文件包含一个对象文件的共享库。它的数据类型称为 SHARED_LIB。\
+                        SHARD_LIB 文件的文件名以 '.sl' 或 '.so' 结尾。
+        TYPE_LABEL      SHARED_LIB
+}
+DATA_CRITERIA SHARED_LIB1
+{
+	DATA_ATTRIBUTES_NAME SHARED_LIB
+        MODE            f
+	NAME_PATTERN	*.sl
+}
+DATA_CRITERIA SHARED_LIB2
+{
+	DATA_ATTRIBUTES_NAME SHARED_LIB
+        MODE            f
+	NAME_PATTERN	*.so
+}
+DATA_CRITERIA SHARED_LIB3
+{
+	DATA_ATTRIBUTES_NAME SHARED_LIB
+        MODE            f
+	NAME_PATTERN	*.so*
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        SHARED_LIB
+        TYPE            MAP
+        MAP_ACTION      Nm
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        SHARED_LIB
+        TYPE            MAP
+        MAP_ACTION      PrintNm
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES C_SRC
+{
+        ACTIONS         Open,Make,Print
+        ICON		DtdotC
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.c
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      c-file
+	DESCRIPTION	这个文件是一个 C 编程语言的源文件。它的数据类型称为 \
+                        C_SRC。C_SRC 文件的文件名以 '.c' 结尾。
+        TYPE_LABEL      C_SRC
+}
+DATA_CRITERIA C_SRC1
+{
+	DATA_ATTRIBUTES_NAME C_SRC
+        MODE            f
+	NAME_PATTERN	*.c
+}
+ACTION Make
+{
+        LABEL           执行
+        TYPE            COMMAND
+        ARG_TYPE        C_SRC
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             make `basename "%(File)Arg_1%" .c`.o 2>&1 | \${PAGER:-more};             echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+        DESCRIPTION     执行 C_SRC 文件的命令使用 Unix 的 'make' 命令执行相关的对象文件。
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES CPLUSPLUS_SRC
+{
+        ACTIONS         Open,Make,Print
+        ICON            DtC++
+        IS_TEXT         true
+        NAME_TEMPLATE	%s.C
+        MIME_TYPE	text/plain
+        DESCRIPTION     这是一个用 C++ 编程语言编写的源文件。它的数据类型称\
+                        为 CPLUSPLUS_SRC。CPLUSPLUS_SRC 文件的文件名以 '.C' \
+                        或 '.cc' 结尾。
+        TYPE_LABEL      CPLUSPLUS_SRC
+}
+DATA_CRITERIA C_PLUSPLUS1
+{
+        DATA_ATTRIBUTES_NAME CPLUSPLUS_SRC
+        MODE            f
+        NAME_PATTERN    *.C
+}
+DATA_CRITERIA C_PLUSPLUS2
+{
+        DATA_ATTRIBUTES_NAME CPLUSPLUS_SRC
+        MODE            f
+        NAME_PATTERN    *.cc
+}
+ACTION Make
+{
+        LABEL           执行
+        TYPE            COMMAND
+        ARG_TYPE        CPLUSPLUS_SRC
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             if [ -r "%(File)Arg_1%.C" ]; then                make `basename "%(File)Arg_1%" .C`.o 2>&1 | \${PAGER:-more};             else                make `basename "%(File)Arg_1%" .cc`.o 2>&1 | \${PAGER:-more};             echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+
+
+        DESCRIPTION     执行CPLUSPLUS_SRC 文件的命令使用Unix的 'make' 命令执行相关的文件。
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES H_SRC
+{
+        ACTIONS         Open,Print
+        ICON		DtdotH
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.h
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      h-file
+	DESCRIPTION	这是一个 C 语言程序的头栏文件。它的 \
+                        数据类型称为 H_SRC。 H_SRC 文件的文件名以 \
+                        *.h 结尾。
+        TYPE_LABEL      H_SRC
+}
+DATA_CRITERIA H_SRC1
+{
+	DATA_ATTRIBUTES_NAME H_SRC
+        MODE            f
+	NAME_PATTERN	*.h
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES MAKEFILE
+{
+        ACTIONS         Open,Make,Print
+        ICON		DtbigM
+        IS_TEXT		true
+        NAME_TEMPLATE	Makefile
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      Makefile
+	DESCRIPTION	这是一个 Makefile。Makefile 描述\
+                        如何从一组源文件产生一个可执行文件。\
+                        它被用于执行命令。它的数据类型称为 MAKEFILE。\
+                        MAKEFILE 文件必须以 Makefile 或 makefile 命名，\
+                        或者它的名字以 Makefile 或 makefile 开始，或者以 \
+                        '.mk' 结尾。
+        TYPE_LABEL      MAKEFILE
+}
+DATA_CRITERIA MAKEFILE1
+{
+	DATA_ATTRIBUTES_NAME MAKEFILE
+        MODE            f
+        NAME_PATTERN    [Mm]akefile*
+}
+DATA_CRITERIA MAKEFILE2
+{
+	DATA_ATTRIBUTES_NAME MAKEFILE
+        MODE            f
+        NAME_PATTERN    *.mk
+}
+ACTION Make
+{
+        LABEL           执行
+        TYPE            COMMAND
+        ARG_TYPE        MAKEFILE
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             make -f "%(File)Arg_1%" %"执行的目标:"% 2>&1 | \${PAGER:-more};             echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+        DESCRIPTION     执行 Makefiles 动作提示要执行的目标，然后使用 Unix \
+                        的 'make' 命令来执行它。如果目标的左边为空，\
+                        命令执行当前文件夹中的 '所有' 目标。
+}
+
+
+# ###########################################################
+
+DATA_ATTRIBUTES IMAKEFILE
+{
+        ACTIONS         Open,Make,Print
+        ICON            Dtimake
+        IS_TEXT         true
+        NAME_TEMPLATE	Imakefile
+        MIME_TYPE	text/plain
+        DESCRIPTION     这是一个 Imakefile。Imakefile 描述 \
+                        如何从一组源文件中产生一个可执行文件。\
+                        它被用于执行命令。\
+                        它的数据类型称为 IMAKEFILE。 IMAKEFILE 文件 \
+                        以 imakefile 或 Imakefile 命名，或者它的名字 \
+                        以 imakefile 或 Imakefile 开始。
+        TYPE_LABEL      IMAKEFILE
+}
+DATA_CRITERIA IMAKEFILE1
+{
+        DATA_ATTRIBUTES_NAME IMAKEFILE
+        MODE            f
+        NAME_PATTERN    [Ii]makefile*
+}
+ACTION Make
+{
+        LABEL           执行
+        TYPE            COMMAND
+        ARG_TYPE        IMAKEFILE
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             make Makefile 2>&1 | \${PAGER:-more};             echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+        DESCRIPTION     执行 Imakefile 文件命令使用 Unix 的 'make' 命令执\
+                            行相关的 Makefile。
+}
+
+# ##########################################################################
+# ##########################################################################
+# 
+# 动作
+# 
+# ##########################################################################
+
+ACTION Nm
+{
+        LABEL           符号列表
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                  nm "%(File)Arg_1"文件名:"%" 2>&1 | \${PAGER:-more};                  echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+        DESCRIPTION     符号列表 (Nm) 动作列出一个对象文件或库文件的符号表。\
+                           它使用 'nm' 命令。
+}
+ACTION PrintNm
+{
+        LABEL           打印符号列表
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/sh -c ' nm "%(File)Arg_1%" |                         /usr/dt/bin/dtlp -u "符号列表"'
+
+        DESCRIPTION     打印符号列表(PrintNm)动作在默认打印机上，根据 'nm' 命令打印输出。
+}
+
+
+ACTION Make
+{
+        LABEL           执行
+        TYPE            COMMAND
+        ARG_COUNT       0
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             make -f "%(File)Arg_1"执行文件:"%" %"执行的目标:"% 2>&1 |               \${PAGER:-more};             echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+
+        DESCRIPTION     无参数的执行命令提示一个 Makefile 和目标，然后用 Unix 的 \
+                        'make' 命令执行它。
+}
+# ######################## EOF ############################################

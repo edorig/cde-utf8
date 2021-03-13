@@ -1,0 +1,688 @@
+# ##########################################################################
+# 
+#      dt.dt
+# 
+#      Action and DataType definitions for the Common Desktop Environment
+#      (CDE) DT components.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#     $TOG: dt.dt.src /main/13 1998/12/18 18:16:14 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES DT
+{
+        ACTIONS         Open,ReloadActions,Print
+        ICON		Dtdt
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.dt
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、アクションとデータ型定義を格納するデスクトップ・\
+                        データベース・ファイルです。データ型は DT です。\
+                        DT ファイルの名前は、'.dt' で終ります。
+        TYPE_LABEL      DT
+}
+DATA_CRITERIA DT1
+{
+	DATA_ATTRIBUTES_NAME DT
+        MODE            f
+        NAME_PATTERN    *.dt
+}
+ACTION ReloadActionsNotice
+{
+        LABEL           Reload Notification
+        TYPE            TT_MSG
+        TT_CLASS	TT_NOTICE
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtTypes_Reloaded
+        DESCRIPTION     The ReloadActionsNotice action notifies 			applications of a rebuilt cache file database.
+
+}
+
+ACTION BuildDataBaseRequest
+{
+        LABEL           Rebuild Request
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtDtsCache
+        DESCRIPTION     The BuildDataBaseRequest action rebuilds the 			cache file database                         of action, data type and front panel definitions.
+
+
+}
+ACTION ReloadActions
+{
+        LABEL           アクションの再読込み
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'dtaction BuildDataBaseRequest ;			dtaction ReloadActionsNotice'
+
+        DESCRIPTION     アクションの再読込みアクションは、アクション、\
+                        データ型、およびフロントパネル定義のデータベースを\
+                        再読み込みします。
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES FP
+{
+        ACTIONS         Open,Print
+        ICON		Dtfpcfg
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.fp
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、フロントパネル構成の定義を格納する\
+                        デスクトップ・データベース・ファイルです。\
+                        データ型は FP です。FP ファイルの名前は '.fp' 終ります。
+        TYPE_LABEL      FP
+}
+DATA_CRITERIA FP1
+{
+	DATA_ATTRIBUTES_NAME FP
+        MODE            f
+        NAME_PATTERN    *.fp
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTFILE_FILE
+{
+        PROPERTIES      invisible
+        ACTIONS         Open,Print
+        IS_TEXT         true
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、ファイル・マネージャが特定の構成情報を\
+                        保持するのに使用する隠しファイルです。データ型は \
+                        DTFILE_FILE です。
+        TYPE_LABEL      DTFILE_FILE
+}
+DATA_CRITERIA DTFILE_FILE1
+{
+        DATA_ATTRIBUTES_NAME DTFILE_FILE
+        MODE            f
+        NAME_PATTERN    .\!*
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTKSH_SCRIPT
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtdtksh
+        IS_EXECUTABLE	true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.ds
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、'dtksh' スクリプトを格納する起動可能\
+                        ファイルです。データ型は、DTKSH_SCRIPT です。
+        TYPE_LABEL      DTKSH_SCRIPT
+}
+DATA_CRITERIA DTKSH_SCRIPT1
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        NAME_PATTERN    *.ds
+}
+DATA_CRITERIA DTKSH_SCRIPT2
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        CONTENT		0 string #!/usr/dt/bin/dtksh
+}
+DATA_CRITERIA DTKSH_SCRIPT3
+{
+        DATA_ATTRIBUTES_NAME DTKSH_SCRIPT
+	MODE		f&x
+        CONTENT		0 string #! /usr/dt/bin/dtksh
+}
+ACTION Run
+{
+        LABEL           実行
+        ARG_TYPE        DTKSH_SCRIPT
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ######################################################
+
+DATA_ATTRIBUTES DTKSH_CONV
+{
+        ACTIONS         Open,Print
+        ICON            Dtdtksh
+        NAME_TEMPLATE	%s.dtsh
+        MIME_TYPE	text/plain
+        DESCRIPTION     このファイルは、'dtksh' スクリプトで使用可能な\
+                        簡易機能を格納しています。このデータ型は \
+                        DTKSH_CONV です。
+        TYPE_LABEL      DTKSH_CONV
+}
+DATA_CRITERIA DTKSH_CONV1
+{
+        DATA_ATTRIBUTES_NAME DTKSH_CONV
+        MODE            f
+        NAME_PATTERN    *.dtsh
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# アクション
+# 
+# ##################################################################
+ACTION Dtstyle
+{
+	LABEL		スタイル・マネージャ
+        ARG_COUNT       0
+        ICON		Fpstyle
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtstyle
+        DESCRIPTION     スタイル・マネージャ(Dtstyle)アクションは、\
+                        デスクトップ・スタイル・マネージャを起動します。
+}
+
+# ######
+
+ACTION OpenDtIntro
+{
+	LABEL		デスクトップの紹介
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dthelpview -helpVolume Intromgr
+        DESCRIPTION     デスクトップの紹介 アクションは、デスクトップについての\
+                        紹介および基本スキル情報のヘルプ・ボリュームを\
+                        表示します。
+}
+
+# ######
+
+ACTION FPHelp
+{
+	LABEL		FPHelp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dthelpview -helpVolume FPanel
+        DESCRIPTION     FPHelp アクション・アイコンは、\
+                        フロントパネル・ヘルプ・ボリュームを表示します。
+}
+
+# ######
+
+ACTION LockDisplay
+{
+	LABEL		LockDisplay
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	Display_Lock
+        DESCRIPTION     LockDisplay アクションは、ワークステーションを\
+                        ロックします。ワークステーションのロックを解除する\
+                        には、ユーザまたは root のパスワードを知らなければ\
+                        なりません。
+}
+
+# ######
+
+ACTION ExitSession
+{
+	LABEL		ExitSession
+        ARG_COUNT      	0
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	XSession_Exit
+        DESCRIPTION     ExitSession アクションはユーザのデスクトップ・\
+                        セッションを終了し、ログイン画面を表示します。\
+                        別のセッションを開始するには、ユーザはログイン\
+                        しなければなりません。
+}
+
+# ######
+
+# ######
+
+ACTION SaveSession
+{
+	LABEL			セッション保存
+	TYPE			TT_MSG
+	TT_CLASS		TT_REQUEST
+	TT_SCOPE		TT_SESSION
+	TT_OPERATION		Save_Session
+
+	#
+	# The legal values for save_type are: Local, Global and Both
+	#
+	TT_ARG0_MODE		TT_IN
+	TT_ARG0_VTYPE		save_type
+	TT_ARG0_REP_TYPE	TT_REP_STRING	
+	TT_ARG0_VALUE		Local
+
+	#
+	# The legal values for shutdown are: True and False
+	#
+	TT_ARG1_MODE		TT_IN
+	TT_ARG1_VTYPE		shutdown
+	TT_ARG1_REP_TYPE	TT_REP_STRING	
+	TT_ARG1_VALUE		False
+
+	#
+	# The legal values for interact_style are: None, Errors and Any
+	#
+	TT_ARG2_MODE		TT_IN
+	TT_ARG2_VTYPE		interact_style
+	TT_ARG2_REP_TYPE	TT_REP_STRING	
+	TT_ARG2_VALUE		None
+
+	#
+	# The legal values for fast are: True and False
+	#
+	TT_ARG3_MODE		TT_IN
+	TT_ARG3_VTYPE		fast
+	TT_ARG3_REP_TYPE	TT_REP_STRING	
+	TT_ARG3_VALUE		True
+
+	#
+	# The legal values for global are: True and False
+	#
+	TT_ARG4_MODE		TT_IN
+	TT_ARG4_VTYPE		global
+	TT_ARG4_REP_TYPE	TT_REP_STRING	
+	TT_ARG4_VALUE		True
+
+	#
+	# The num_sessions_backedup field can be any positive
+	#   number.  If it is 0, the default number of sessions
+	#   will be backedup.
+	#
+	TT_ARG5_MODE		TT_IN
+	TT_ARG5_VTYPE		num_sessions_backedup
+	TT_ARG5_REP_TYPE	TT_REP_STRING	
+	TT_ARG5_VALUE		0
+
+	DESCRIPTION		セッションの保存では、現在のセッションが保存されます。
+} 
+
+# ######
+
+ACTION ReloadResources
+{
+        LABEL           リソースの再読込み
+        ARG_COUNT       0
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	Resources_Reload
+        DESCRIPTION     リソースの再読込みアクションは、ユーザの\
+                        デスクトップのリソースとＸのリソース・データベース\
+                        を再度読み込んで、ログイン後に発生した変更を取り込\
+                        みます。
+}
+
+# ######
+
+ACTION ReloadApps
+{
+	LABEL		アプリケーションの再読込み
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dtaction ReloadActions;                            /usr/dt/bin/dtappgather -r; 			   /usr/dt/bin/dthelpgen -dir $HOME/.dt/help '
+
+
+        DESCRIPTION     アプリケーションの再読込みアクションは、\
+                        アクションのデータベース、データ、およびフロント\
+                        パネル定義を再読み込みします。
+}
+
+# ######
+
+ACTION Dtcreate
+{
+	LABEL		アクション作成
+        ICON		Dtrunpn
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtcreate "%Arg_1%"
+        DESCRIPTION     アクション作成(Dtcreate)アクションは、アクション\
+                        作成アプリケーションを起動します。\
+                        アプリケーションのアクションおよびデータ型を作成\
+                        するには、アクション作成を使用してください。
+}
+
+# ######
+
+ACTION DtwmrcEdit
+{
+	LABEL		Dtwmrc の編集
+        ICON            Fppenpd
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c 'if [ ! -f $HOME/.dt/dtwmrc ] ; then                                   if [ ! -f /etc/dt/config/sys.dtwmrc ] ; then                                     cp /usr/dt/config/$LANG/sys.dtwmrc                                                             $HOME/.dt/dtwmrc;                                   else                                     cp /etc/dt/config/sys.dtwmrc                                                             $HOME/.dt/dtwmrc;                                   fi;                                   chmod u+w $HOME/.dt/dtwmrc;                                fi;                                /usr/dt/bin/dtaction Open $HOME/.dt/dtwmrc'
+        DESCRIPTION     Dtwmrc の編集 (DtwmrcEdit) アクションは、\
+                        $HOME/.dt/dtwmrc のコピーをユーザのシステム・\
+                        エディタ (環境変数 EDITOR で指定したエディタ) で\
+                        開きます。$HOME/.dt/dtwmrc が存在しない場合には、\
+                        アクションはファイルを \
+                        /usr/dt/config/<language>/sys.dtwmrc からコピー\
+                        します。ファイルを保存してエディタを終了した時は、\
+                        ワークスペース・メニューで \
+                        [ワークスペースマネージャの再起動] を選択して、\
+                        ワークスペース・マネージャを再起動しなければなりません。
+}
+
+# ######
+
+ACTION RestorePanel
+{
+	LABEL		フロントパネルの復元
+        TYPE            TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtPanel_Restore
+        DESCRIPTION     フロントパネルの復元アクションは、フロントパネル\
+                        をデフォルト状態に復元します。
+}
+
+# ######
+
+ACTION Dtmail
+{
+	LABEL		メール・プログラム
+        ICON		DtMail
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Display
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	RFC_822_MESSAGE
+	TT_ARG0_VALUE	DTMAIL_INBOX
+        DESCRIPTION     メール・プログラム (Dtmail) アクションは、\
+                        デスクトップ・メール・アプリケーションを起動します。
+}
+
+# ######
+
+ACTION Dtcalc
+{
+	LABEL		電卓
+        ICON            Dtcalc
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtcalc
+        DESCRIPTION     電卓 (Dtcalc) アクションは、デスクトップ電卓\
+                        アプリケーションを起動します。
+}
+
+# ######
+
+ACTION Dtterm
+{
+	LABEL		端末エミュレータ
+        ARG_COUNT       0
+        ICON            Dtterm
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtterm
+        DESCRIPTION     端末エミュレータ (Dtterm) アクションは、\
+                        デスクトップ端末エミュレータ・アプリケーションを\
+                        起動します。
+}
+
+# 
+#  The following action is used to start a terminal emulator
+#  via the desktop's messaging system.  If a terminal emumaltor
+#  server is not running when this action is invoked, a server
+#  will be started.  Once the server is started, subsequent
+#  invocations of this action will not start a new process but
+#  instead, a message will be sent to the server and a new
+#  terminal emulator window will be mapped.
+# 
+#  Note that all shells started via the server will run on the
+#  server's host, regardless of the host where the action is
+#  invoked.
+ACTION DttermServer
+{
+	LABEL			端末エミュレータ
+	ARG_COUNT		0
+	ICON			Dtterm
+	TYPE			TT_MSG
+	TT_CLASS		TT_REQUEST
+	TT_SCOPE		TT_SESSION
+	TT_OPERATION		DtTerminal_New
+	TT_ARG0_MODE		TT_IN
+	TT_ARG0_VTYPE		-display
+	TT_ARG0_REP_TYPE	TT_REP_STRING
+	TT_ARG0_VALUE		$DISPLAY
+	TT_ARG1_MODE		TT_IN
+	TT_ARG1_VTYPE		-display
+	TT_ARG1_REP_TYPE	TT_REP_STRING
+	TT_ARG1_VALUE		$DISPLAY
+	DESCRIPTION		端末エミュレータ (Dtterm) アクションは、\
+                        デスクトップ端末エミュレータ・アプリケーションを\
+                        起動します。
+}
+
+# ######
+
+ACTION Dticon
+{
+	LABEL		アイコン・エディタ
+        ICON		Dtpaint
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dticon
+        DESCRIPTION     アイコン・エディタ (Dticon) アクションは、\
+                        デスクトップ・アイコン・エディタを起動します。\
+                        ビットマップおよびピックスマップのイメージ・\
+                        ファイルを作成および編集するには、アイコン・\
+                        エディタを使用してください。
+}
+ACTION Dticon
+{
+	LABEL		アイコン・エディタ
+        ICON		Dtpaint
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dticon -file                           "%(File)Arg_1"編集するアイコン・ファイル:"%"
+
+        DESCRIPTION     アイコン・エディタ (Dticon) アクションは、\
+                        デスクトップ・アイコン・エディタを起動します。\
+                        ビットマップおよびピックスマップのイメージ・\
+                        ファイルを作成および編集するには、アイコン・\
+                        エディタを使用してください。
+}
+
+# ######
+
+ACTION (None)
+{
+	LABEL		(None)
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "このタイプのファイルに対して適用可能な\\nアクションはありません。"                        "アクションなし"                        "了解"
+
+
+
+        DESCRIPTION     この (None) アクションは、特定のデータ型に対する\
+                        使用可能なアクションがないことを示す\
+                        特別なアクションです。
+}
+
+# ######
+
+ACTION DttermErrorlog
+{
+	LABEL		エラーの監視
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/sh -c 'if [ ! -f $HOME/.dt/errorlog ] ; then                                       /bin/touch $HOME/.dt/errorlog;                                      fi;                         /usr/dt/bin/dtterm -map -title 			     "エラーの監視"                              -e tail -f $HOME/.dt/errorlog'
+
+
+
+
+
+        DESCRIPTION     エラーの監視アクションは、エラー・ログ・ファイル\
+                        $HOME/.dt/errorlog の内容を継続的に表示する端末\
+                        エミュレータ・ウィンドウを開きます。ウィンドウを\
+                        アイコン化している場合に、エラーを受信するとこの\
+                        ウィンドウは自動的に通常表示されます。
+}
+
+# ######
+
+ACTION Dttypes
+{
+        LABEL           型とアクション
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         /usr/dt/bin/dttypes | \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+        DESCRIPTION     型とアクション (Dttypes) アクションは、\
+                        アクションおよびデータ型データベースに関する\
+                        トラブルシューティング情報を提供する 'dttypes' \
+                        ユーティリティを起動します。
+}
+ACTION Dttypes
+{
+        LABEL           型とアクション
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '/usr/dt/bin/dttypes -type "%(File)Arg_1%";                  echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+        DESCRIPTION     型とアクション (Dttypes) アクションは、\
+                        アクションおよびデータ型データベースに関する\
+                        トラブルシューティング情報を提供する 'dttypes' \
+                        ユーティリティを起動します。
+}
+
+# #########################################################################
+# 
+#  これは、デフォルト 'NoPrint' アクションです。
+# 
+# #########################################################################
+ACTION NoPrint
+{
+	LABEL		NoPrint
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "このデータベースには、印刷機能はありません。"                        "印刷できません。"                        "了解"
+
+
+
+        DESCRIPTION    NoPrint アクションは、ユーザが印刷しようとした\
+                        ファイルのデータ型に、'印刷' アクションが定義されて\
+                        いないこと示すエラー・ダイアログを表示します。     
+}
+
+# #########################################################################
+# 
+#  これは、デフォルトの '開く' アクションです。
+# 
+# #########################################################################
+ACTION Open
+{
+        LABEL           開く
+        TYPE            MAP
+        MAP_ACTION      TextEditor
+}
+
+# #########################################################################
+# 
+# 
+# #########################################################################
+ACTION DtTTMediaOpen
+{
+	ARG_COUNT	0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Instantiate
+
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	C_STRING
+	TT_ARG0_REP_TYPE TT_REP_STRING
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	BUFFER
+	ARG_MODE	w
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Edit
+
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_VALUE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_BUFFER
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	BUFFER
+	ARG_MODE	!w
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Display
+
+	TT_ARG0_MODE	TT_IN
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_VALUE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_BUFFER
+}
+
+ACTION DtTTMediaOpen
+{
+	ARG_CLASS	FILE
+	ARG_COUNT	>0
+
+	ICON		Fppenpd
+	TYPE		TT_MSG
+	TT_CLASS	TT_REQUEST
+	TT_SCOPE	TT_SESSION
+	TT_OPERATION	Edit
+	TT_FILE		%Arg_1%
+
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_ARG0_REP_TYPE TT_REP_STRING
+}
+
+# ######################## EOF ############################################

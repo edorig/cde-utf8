@@ -1,0 +1,140 @@
+# ##########################################################################
+# 
+#      IconBrowse.dt
+# 
+#      DataType definitions for instance-based icons.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp. 
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.   
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#    $XConsortium: IconBrowse.dt.src /main/4 1996/04/23 20:23:49 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##########################################################################
+# 
+# このファイルの 2 つのデータ型 (BM および PM) は、ビットマップおよび
+# ピックスマップ・ファイルに対する"インスタンス・ベース"アイコンを可能に
+# します。すなわち、各アイコン・ファイル (.bm および .pm という拡張子付き) は
+# それ自体がアイコンであることを表しています。これは、アイコンのフォルダを
+# ブラウズするのに役立ちます。なぜなら、アイコンがそれ自体を表示するので、
+# どのように見えるかを確認するために各ファイルを開く必要がないからです。
+#
+# インスタンス・ベース・アイコンを可能にするには、このファイルをユーザの
+# ホーム・フォルダの .dt/types サブフォルダにコピーした後で、アクション
+# およびデータ型データベースを再読込みしてください。(ログアウトしてから
+# 再度ログインすることによって、あるいは、アプリケーション・マネージャの
+# DtTools フォルダでアプリケーション情報の再読込みアクションを実行すること
+# によって、アクションおよびデータ型データベースの再読込みができます。)
+#
+#   注意:  カスタム・アイコンを読み取って表示する追加作業が必要なので、
+#          これらのデータ型を可能にすると、ファイル・マネージャの実行速度が
+#          遅くなります。
+#
+# これらのデータ型をデフォルト・アイコンに戻すには、ユーザ個人の .dt/types
+# サブフォルダからこのファイルを削除した後で、アクションおよびデータ型
+# データベースを再読込みしてください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES BM
+{
+        ACTIONS         Open,Print
+        ICON		Dtbitmp
+        NAME_TEMPLATE  	%s.bm
+        MIME_TYPE       text/plain
+        SUNV3_TYPE      xbm-file
+        INSTANCE_ICON	%dir%/%name%
+        DESCRIPTION     これは、X11 ビットマップ形式のデータのファイル\
+                        です。データ型は BM です。BM ファイルの名前は \
+                        '.bm' または '.xbm' で終ります。
+        TYPE_LABEL      BM
+}
+DATA_CRITERIA BM1
+{
+	DATA_ATTRIBUTES_NAME BM
+        MODE            	f
+        NAME_PATTERN    	*.bm
+}
+DATA_CRITERIA BM2
+{
+	DATA_ATTRIBUTES_NAME BM
+        MODE            	f
+        NAME_PATTERN    	*.xbm
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        BM
+        TYPE            MAP
+        MAP_ACTION      Dticon
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        BM
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES PM
+{
+        ACTIONS         Open,Print
+        ICON		Dtpixmp
+        NAME_TEMPLATE  	%s.pm
+        MIME_TYPE       text/plain
+        SUNV3_TYPE      xpm-file
+        INSTANCE_ICON	%dir%/%name%
+        DESCRIPTION     これはマルチカラー・イメージのピックスマップ・\
+                        ファイルです。データ型は PM です。PM ファイルは\
+                        名前が '.pm' または '.xpm' で終るか、その内容に \
+                        "! XPM2" を含んでいます。
+        TYPE_LABEL      PM
+}
+DATA_CRITERIA PM1
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            	f
+        NAME_PATTERN    	*.pm
+}
+DATA_CRITERIA PM2
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            	f
+        NAME_PATTERN    	*.xpm
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        PM
+        TYPE            MAP
+        MAP_ACTION      Dticon
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        PM
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+# ######################## EOF ############################################

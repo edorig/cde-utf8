@@ -1,3 +1,6 @@
+Messages 
+========
+
 By default, the Korean messages are not compiled and installed 
 by the CDE build process. 
 With GNU gencat, it is possible to build post-installation the 
@@ -40,8 +43,35 @@ Then, copy the font aliases file
  sudo echo "0" > /usr/dt/config/xfonts/ko_KR/fonts.dir
 
 
-Once it it done, add the two lines in dtprofile to $HOME/.dtprofile and restart 
-CDE. 
+Once it it done, add the two lines
+xset fp+ /usr/dt/config/xfonts/ko_KR/
+export LANG=ko_KR.euckr
+
+to $HOME/.dtprofile and restart CDE. With a default Slackware installation, messages and menubars appear in Korean. 
+
+Action definitions, application defaults, configuration files
+-------------------------------------------------------------
+These files have to be produced by the merge program in 
+$CDEROOT/programs/localized/util
+from .nls files that contain the template, and .tmsg files 
+that contain the Japanese text to fill that template. 
+For convenience, the present directory contains all necessary files 
+to regenerate the action definitions, application defaults and configuration
+files as well as the generated files. 
+
+To regenerate these files, edit genfiles.sh to point to the correct
+CDEROOT location. Then, make the file executable and install it 
+in $HOME/bin and run it in the present directory. 
+
+If you want to regenerate from the CDE source
+tree, you need first to create the .nls template files by symlink from
+one of the default locales, following the model in the present directory. 
+Then, you will have to run the script in the appropriate subdirectory. 
+
+To install the action definitions, application defaults and config, use 
+  sudo install.sh 
+ in the present directory. 
+
 
 Issue with fonts
 -----------------
@@ -50,10 +80,12 @@ You may see instead of Korean characters in the menus some garbled text
 formed of European characters. This indicates that CDE does not find appropriate
 fonts ksc5601.1987-0 and falls back to iso8859-1. 
 
-To solve that problem, one needs to create a fonts.alias file using the template
-fonts.alias. 
+You could also have only
+a single possible size for the CDE fonts (this happens on Slackware). 
 
-One must have bitmapped fonts in ksc5601.1987-0 encoding with sizes 10,12,14,16,18,20,24.
+To solve that problem, you need to create/modify the fonts.alias file. 
+
+You must have bitmapped fonts in ksc5601.1987-0 encoding with sizes 10,12,14,16,18,20,24.
 For each size xxs (10), xs (12), s (14), m (16), l (18), xl (20), xxl (24) 
 one needs to alias the fonts of type 
 -dt-interface user-*
@@ -61,7 +93,7 @@ one needs to alias the fonts of type
 -dt-interface terminal-*
 in both medium and bold to the correspondent system font in ksc5601.1987-0 encoding. 
 
-Then, the aliasing is done in the fonts.alias by writing on the left the (XLFD) name
+The aliasing is done in the fonts.alias by writing on the left the (XLFD) name
 of the CDE font, on the right the appropriate (XLFD) name for the system font. 
 One example is: 
    CDE font                                                                   Korean system font
@@ -70,12 +102,9 @@ One example is:
 The file fonts.alias under /usr/dt/config/xfonts shows the pattern to follow
 
 
-I haven't been able to test that solution as my version of Linux does not
-have all the necessary sizes in bitmapped fonts. 
-
 A more complicated way, if the above does not work, is to try to use XFT with CDE 
 
 https://sourceforge.net/p/cdesktopenv/wiki/FontsWithXFT/
 
 One will still need to alias all the -dt-interface fonts to the corresponding 
-scalable TrueType/OpenType fonts 
+scalable TrueType/OpenType fonts.  

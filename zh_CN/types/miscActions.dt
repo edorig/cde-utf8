@@ -1,0 +1,283 @@
+# ##########################################################################
+# 
+#     miscActions.dt
+# 
+#     Examples of miscellaneous Actions (mostly for X clients).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: miscActions.dt.src /main/4 1996/04/23 17:36:05 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# 动作
+# 
+# ##################################################################
+ACTION Xcalc
+{
+        LABEL		X 计算器
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcalc
+	DESCRIPTION	'X 计算器' 动作调用 xcalc X 客户程序。\
+                        xcalc 客户程序是一个科学计算器桌面附件，\
+                        可模拟一个 TI-30 或一个 HP-10C。
+}
+
+# #####
+
+ACTION Oclock
+{
+        LABEL		椭园形时钟
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     oclock
+	DESCRIPTION	'椭圆形时钟'(Oclock) 动作调用时钟 X 客户程序。时钟客户程序在模\
+                        拟显示方式简单地显示当前时间。
+}
+
+# #####
+
+ACTION Xlsatoms
+{
+        LABEL		列原子
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlsatoms
+	DESCRIPTION	'列原子'(Xlsatoms) 动作调用 xlsatoms X 客户程序。Xlsatoms 列\
+                      出驻留的原子。
+}
+
+# #####
+
+ACTION Xbiff
+{
+        LABEL		Xbiff
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xbiff
+	DESCRIPTION	'Xbiff' 动作调用 xbiff X 客户程序。xbiff 程序显示一个小\
+                        的邮箱图象。当没有邮件时，在邮箱上的标志下降。当邮件\
+                        到来时，标志上升，邮箱蜂鸣。
+}
+
+# #####
+
+ACTION Xcolor
+{
+        LABEL		Xcolor
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcolor
+	DESCRIPTION	'Xcolor' 动作调用xcolor X 客户程序。xcolor 显示窗口\
+                        中所有256种颜色。当您将箭头移入窗口，在保持黑白\
+                        的同时，安装带有不变的纯度和亮度的包含色调坡度的色图。
+}
+
+# #####
+
+ACTION Xcutsel
+{
+        LABEL		剪切和选择
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcutsel
+	DESCRIPTION	'剪切和选择'(Xcutsel) 动作调用 xcutsel X 客户程序。xcutsel 被用\
+                    于将当前的选择拷贝到一个剪切缓冲区，并且选择包含在剪切缓冲区\
+                    的当前内容。它的作用相当于在不支持选择的应用程序和支持选择的\
+                    应用程序之间的桥梁。
+}
+
+# #####
+
+ACTION Xditview
+{
+        LABEL		Xditview
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xditview
+	DESCRIPTION	'Xditview' 动作调用 xditview X 客户程序。xditview 程序显\
+                        示在一个 X 显示上的 ditroff 输出。
+}
+
+# #####
+
+ACTION Xedit
+{
+        LABEL		Xedit
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xedit
+	DESCRIPTION	Xedit 动作调用 xedit X 客户程序。xedit 客户程序提供由\
+                     四个区域组成的一个窗口: 1. 命令选择: 一个命令集，\
+                     允许您退出 xedit, 保存文件, 或在编缉窗口中装入一个\
+                     新的文件。2. 信息窗口: 显示 xedit 信息。另外，该窗口\
+                     可被用作一个便笺簿。3. 文件名显示: 显示当前正在编缉\
+                     的文件的名字，及是否该文件可读写或只读。4. 编缉窗口:\
+                     显示您正在编缉或创建的文件的文本。
+}
+
+# #####
+
+ACTION Xlock
+{
+        LABEL		Xlock
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlock
+	DESCRIPTION	'Xlock' 动作调用 xlock X 客户程序。xlock 客户关闭本地 X 显示，\
+                       直到输入一个口令。
+}
+
+# #####
+
+ACTION Xlogo
+{
+        LABEL		Xlogo
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlogo
+	DESCRIPTION	'Xlogo' 动作调用 xlogo X 客户程序。xlogo 客户程序显示 X 窗\
+                       口系统标识。
+}
+
+# #####
+
+ACTION Xmag
+{
+        LABEL		放大
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xmag
+	DESCRIPTION	'放大'(Xmag) 动作调用 xmag X 客户程序。xmag 客户程序允许您\
+                   放大 X 屏幕部分。如果没有指定的显式区域，将显\
+                   示箭头左上角的矩形区，该区域被放大。按下按纽 2\
+                   可将该区域拖成所希望的大小。 一旦一个区域被选择，\
+                   将弹出一个窗口，显示该区域放大的版本，在该区域\
+                   中，源图象的每个象素点由一个同样颜色的小矩形代表。
+}
+
+# #####
+
+ACTION Xman
+{
+        LABEL		Xman
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xman
+	DESCRIPTION	'Xman' 动作调用 xman X 客户程序。xman 客户程序\
+                          是一个联机手册浏览程序。
+}
+
+# #####
+
+ACTION Xmh
+{
+        LABEL		X 邮件处理程序
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xmh
+	DESCRIPTION	'X 邮件处理程序'(Xmh) 动作调用 xmh X 客户程序。xmh 客户程\
+                    序为 MH 信息处理系统提供一个图形用户界面。对于实际的邮\
+                    件处理，它调用 MH 包。电子邮件信息可被书写、发送、接收、\
+                    回答、转发、分类及存放在文件夹中。xmh 为用户界面的定制\
+                     提供附加的途径。
+}
+
+# #####
+
+ACTION Xeyes
+{
+        LABEL		X 眼睛
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xeyes
+	DESCRIPTION	'X 眼睛'(Xeyes) 动作调用 xeyes X 客户程序。xeyes 客户程序显\
+                        示一对在屏幕上跟随您的指针移动的眼睛。
+}
+
+# #####
+
+ACTION Xauth
+{
+        LABEL		X 权限
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xauth
+	DESCRIPTION	'X 权限'(Xauth) 动作调用 xauth X 客户程序。xauth 客户程序被用\
+                       于编缉和显示与 X 服务器相联时所用的权限信息。
+}
+
+# #####
+
+ACTION Xlsclients
+{
+        LABEL		列客户程序
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlsclients
+	DESCRIPTION	'列客户程序' (Xlsclients) 动作调用 xlsclients X 客户程序。\
+                     xlsclients 客户程序是一个列在屏幕上运行的客户程序应用\
+                     程序信息的公用程序。它可被用于生成代表用户当前会话快照\
+                     的脚本。
+}
+
+# #####
+
+ACTION Xpuzzle
+{
+        LABEL		X 拼图
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xpuzzle
+	DESCRIPTION	'X 拼图'(Xpuzzle) 动作产生一个 xpuzzle X 客户程序。xpuzzle 客户\
+                        程序是 4x4 的有 15 块的拼图。
+}
+
+# #####
+
+ACTION Passwd
+{
+        LABEL           变更口令
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     dtterm -geometry 60x8 -xrm "*menuBar: False" -e sh -c '                                echo "正在变更口令";                                echo "-----------------";                                passwd'
+
+
+
+        DESCRIPTION     '变更口令'(Passwd) 动作用 'passwd' 命令变更用户口令。
+}
+
+# ######################## EOF ############################################

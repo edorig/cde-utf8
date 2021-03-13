@@ -1,0 +1,216 @@
+# ##########################################################################
+# 
+#      dthelptag.dt
+# 
+#      Actions and DataTypes for authoring Help information.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $TOG: dthelptag.dt.src /main/6 1998/07/29 17:08:50 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# 도움말 실행은 ../dt/bin에서 형성됩니다. 이것은 
+# 사용자의 경로가 아닐 수도 있습니다. 그러므로 크라이언트를 
+# 호출하기 전에 다음 문자열이 경로에 추가되도록 정의됩니다.
+
+set HELPTAG_PATH=\$PATH:/usr/dt/bin
+
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES DTHELP_HTG
+{
+        ACTIONS         Open,Compile,CleanUp
+        ICON            Dthsrc
+        NAME_TEMPLATE   %s.htg
+        MIME_TYPE	text/plain
+        DESCRIPTION     이 파일은 데스크탑 도움말 시스템을 위한\
+마스터 HelpTag 원시 파일 입니다. 이 파일의 정보는 \
+HelpTag 마크업 언어를 사용해 서식화되며, \
+열람전에 HelpTag 소프트웨어 ('dthelptag')로 \
+컴파일해야 합니다. 이 데이타 유형을 DTHELP_HTG 라고 합니다. \
+DTHELP_HTG 파일은 파일 이름끝에 '.htg'의 확장 \
+이름을 갖습니다. 
+        TYPE_LABEL      DTHELP_HTG
+}
+
+DATA_CRITERIA DTHELP_HTG1
+{
+	DATA_ATTRIBUTES_NAME DTHELP_HTG
+        MODE            f
+        NAME_PATTERN    *.htg
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES DTHELP_CTG
+{
+        ACTIONS         Open,CompileCanon,CleanUp
+        ICON            Dthsrc
+        NAME_TEMPLATE   %s.ctg
+        MIME_TYPE	text/plain
+        DESCRIPTION     이 파일은 데스크탑 도움말 시스템을 위한\
+표준 SGML 마스터 HelpTag 원시 파일 입니다. \
+이 파일의 정보는 표준 HelpTag 마크업 언어를 사용해\
+서식화되며, 열람전에 '-canon' 선택사항을 사용해 \
+HelpTag 소프트웨어('dthelptag')로 컴파일해야 \
+합니다. 이 데이타 유형을 DTHELP_CTG 라고  \
+합니다. DTHELP_CTG파일은 파일 이름 끝에  \
+\
+'.ctg'의 확장 이름을 갖습니다. \
+$ 
+        TYPE_LABEL      DTHELP_CTG
+}
+
+DATA_CRITERIA DTHELP_CTG1
+{
+	DATA_ATTRIBUTES_NAME DTHELP_CTG
+        MODE            f
+        NAME_PATTERN    *.ctg
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES DTHELP_ERR
+{
+        ACTIONS         Open
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.err
+        MIME_TYPE	text/plain
+        DESCRIPTION     이 파일은 컴파일된 도움말 볼륨과 관련해 \
+파서 오류를 갖습니다. 이 파일은  \
+도움말 볼륨을 컴파일 하는 도중, 파서 오류가 발견될때만 \
+dthelptag 파서에 의해서 생성됩니다.  \
+이 데이타 유형을 DTHELP_ERR 라고 합니다.  \
+DTHELP_ERR 파일은 파일 이름끝에 '.err'의 확장 이름을 갖습니다.
+        TYPE_LABEL      DTHELP_ERR
+}
+
+DATA_CRITERIA DTHELP_ERR1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_ERR
+        NAME_PATTERN    *.err
+        MODE            f
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# 활동
+# 
+# ##################################################################
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        DTHELP_HTG,DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION      OpenHelpTag
+}
+
+# ######
+
+ACTION Compile
+{
+        LABEL           Compile
+        ARG_TYPE        DTHELP_HTG
+	TYPE		MAP
+        MAP_ACTION	HelpTag
+}
+
+# ######
+
+ACTION CompileCanon
+{
+        LABEL           CompileCanon
+        ARG_TYPE        DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION	HelpTagCanon
+}
+
+# ######
+
+ACTION CleanUp
+{
+        LABEL           Cleanup
+        ARG_TYPE        DTHELP_HTG,DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION	CleanHelpTag
+}
+
+# ######
+
+ACTION OpenHelpTag
+{
+        LABEL           OpenHelpTag
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtpad "%(File)Arg_1%"
+	DESCRIPTION	OpenHelpTag 활동은 문서편집기안에 \
+마스터 HelpTag 파일 (a '.sdl' 또는 '.hv' 파일)을 엽니다.
+}
+
+# ######
+
+ACTION HelpTag
+{
+        LABEL           HelpTag 
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag 파일:"%"`; 			       PATH=$HELPTAG_PATH dthelptag 				  `basename "%(File)Arg_1%"`'
+
+
+
+	DESCRIPTION	HelpTag 활동은 실행시 도움말 파일을 \
+만들기 위해 마스터 HelpTag 파일을 컴파일합니다. \
+실행시 파일은 도움말 시스템을 사용하는 응용프로그램 또는 \
+'dthelpview' 프로그램을 사용해서 볼수 있습니다.
+}
+
+# ######
+
+ACTION HelpTagCanon
+{
+        LABEL           HelpTagCanon 
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag 파일:"%"`; 			       PATH=$HELPTAG_PATH dthelptag -formal 				  `basename "%(File)Arg_1%"`'
+
+
+
+	DESCRIPTION	HelpTagCanon 활동은 실행시 도움말 파일을  \
+만들기 위해 표준 SGML 마스터 HelpTag 파일을 컴파일합니다. \
+실행시 파일은 도움말 시스템을 사용하는 또는\
+'dthelpview'프로그램을 사용하는 응용프로그램으로 \
+볼 수 있습니다.
+}
+
+# ######
+
+ACTION CleanHelpTag
+{
+        LABEL           CleanHelpTag
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag 파일:"%"`'
+
+	DESCRIPTION	CleanHelpTag 활동은 HelpTag 활동에 의해 \
+만들어진 모든 실행시 도움말 파일을 없앱니다.
+}
+# ######################## EOF ############################################

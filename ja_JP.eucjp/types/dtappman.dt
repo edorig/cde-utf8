@@ -1,0 +1,378 @@
+# ##########################################################################
+# 
+#      dtappman.dt
+# 
+#      DataType Definitions for the Application Manager
+# 
+#      Common Desktop Environment 1.0 
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dtappman.dt.src /main/4 1996/04/23 17:35:11 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# これらのデータ型定義は、/var/dt/appconfig/appmanager/$LOGNAME 
+# サブフォルダの下にあるオブジェクトに適用されます。
+# 
+# ##################################################################
+
+# ##################################################################
+# 
+# アクション
+# 
+# ##################################################################
+ACTION OpenAppGroup
+{
+        LABEL           	開く
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtTools_Show
+        TT_FILE		   	%Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           -title
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE   	アプリケーション・マネージャ
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           -help_volume
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE   	Appmanager
+        TT_ARG2_MODE            TT_IN
+        TT_ARG2_VTYPE           -root
+        TT_ARG2_REP_TYPE        TT_REP_STRING
+        TT_ARG2_VALUE   	/var/dt/appconfig/appmanager/$DTUSERSESSION
+        TT_ARG3_MODE            TT_IN
+        TT_ARG3_VTYPE           -common_link_point
+        TT_ARG3_REP_TYPE        TT_REP_STRING
+        TT_ARG3_VALUE   	$LANG
+}
+ACTION OpenParentAppGroup
+{
+        LABEL           	OpenParent
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtTools_Show
+        TT_FILE		   	%Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           -title
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE   	アプリケーション・マネージャ
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           -help_volume
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE   	Appmanager
+        TT_ARG2_MODE            TT_IN
+        TT_ARG2_VTYPE           -root
+        TT_ARG2_REP_TYPE        TT_REP_STRING
+        TT_ARG2_VALUE   	/var/dt/appconfig/appmanager/$DTUSERSESSION
+        TT_ARG3_MODE            TT_IN
+        TT_ARG3_VTYPE           -common_link_point
+        TT_ARG3_REP_TYPE        TT_REP_STRING
+        TT_ARG3_VALUE   	$LANG
+        TT_ARG4_MODE            TT_IN
+        TT_ARG4_VTYPE           -user_install_point
+        TT_ARG4_REP_TYPE        TT_REP_STRING
+        TT_ARG4_VALUE   	.dt/appmanager
+}
+ACTION PrintAppGroup
+{
+        LABEL           	印刷
+        TYPE                    MAP
+        MAP_ACTION              PrintFolderList
+}
+
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES OPEN_AGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtagen
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES AGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtagen
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	このアイコンをダブルクリックすると、\
+                        アプリケーション・マネージャのトップレベルを表示します。
+        TYPE_LABEL      AGROUP
+}
+DATA_CRITERIA AGROUP1
+{
+	DATA_ATTRIBUTES_NAME AGROUP
+        MODE            d
+        PATH_PATTERN    */appmanager/*
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        AGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        AGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_DTAPPS_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtadskt
+	LABEL		デスクトップアプリケーション
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES DTAPPS_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtadskt
+	LABEL		デスクトップアプリケーション
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	このアイコンをダブルクリックすると、Desktop_Apps \
+                        アプリケーション・グループを開きます。
+        TYPE_LABEL      DTAPPS_GROUP
+}
+DATA_CRITERIA DTAPPS_APPGROUP1
+{
+	DATA_ATTRIBUTES_NAME DTAPPS_APPGROUP
+	MODE		d
+	PATH_PATTERN	*/appmanager/*/Desktop_Apps
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        DTAPPS_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        DTAPPS_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_INFORMATION_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtainfo
+	LABEL		インフォメーション
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES INFORMATION_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtainfo
+	LABEL		インフォメーション
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	このアイコンをダブルクリックすると、インフォ\
+                        メーション・アプリケーション・グループを開きます。
+        TYPE_LABEL      INFORMATION_APPGROUP
+}
+DATA_CRITERIA INFORMATION_APPGROUP1
+{
+	DATA_ATTRIBUTES_NAME INFORMATION_APPGROUP
+	MODE		d
+	PATH_PATTERN	*/appmanager/*/Information
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        INFORMATION_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        INFORMATION_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_SYSTEM_ADMIN_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtasys
+	LABEL		システム管理
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES SYSTEM_ADMIN_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtasys
+	LABEL		システム管理
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	このアイコンをダブルクリックすると、システム管理\
+                        アプリケーション・グループを開きます。
+        TYPE_LABEL      SYSTEM_ADMIN_APPGROUP
+}
+DATA_CRITERIA SYSTEM_ADMIN_APPGROUP1
+{
+	DATA_ATTRIBUTES_NAME SYSTEM_ADMIN_APPGROUP
+	MODE		d
+	PATH_PATTERN	*/appmanager/*/System_Admin
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        SYSTEM_ADMIN_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        SYSTEM_ADMIN_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_DTTOOLS_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtautil
+	LABEL		デスクトップツール
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES DTTOOLS_APPGROUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtautil
+	LABEL		デスクトップツール
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+	DESCRIPTION	このアイコンをダブルクリックすると、デスクトップ\
+                        ツール・アプリケーション・グループを開きます。
+        TYPE_LABEL      DTTOOLS_APPGROUP
+}
+DATA_CRITERIA DTTOOLS_APPGROUP1
+{
+	DATA_ATTRIBUTES_NAME DTTOOLS_APPGROUP
+	MODE		d
+	PATH_PATTERN	*/appmanager/*/Desktop_Tools
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        DTTOOLS_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        DTTOOLS_APPGROUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ############################################################
+
+DATA_ATTRIBUTES OPEN_AGUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtagup
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES AGUP
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+	ICON		Dtagup
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+        DESCRIPTION     このアイコンをダブルクリックすると、\
+                        アプリケーション・マネージャ内のレベルを上位にします。
+        TYPE_LABEL      AGUP
+}
+DATA_CRITERIA AGUP1
+{
+	DATA_ATTRIBUTES_NAME AGUP
+        MODE            d
+        PATH_PATTERN    */appmanager/*/..
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        AGUP
+        TYPE            MAP
+        MAP_ACTION      OpenAppGroup
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        AGUP
+        TYPE            MAP
+        MAP_ACTION      PrintAppGroup
+}
+
+# ######################## EOF ############################################

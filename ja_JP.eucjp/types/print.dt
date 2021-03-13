@@ -1,0 +1,221 @@
+# ##########################################################################
+# 
+#      print.dt
+# 
+#      Action and DataType Definitions for the printing
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: print.dt.src /main/4 1996/04/23 17:36:13 drk $
+# 
+
+#  CDE のプリンタ・モデルは '印刷' アクションに集中しています。
+#
+#  複数の '印刷' アクションを、データ型毎に 1 つ定義できます。'印刷' 
+#  アクションに引き数を指定しない場合には、dtprintinfo コマンドを起動して、
+#  プリンタおよびジョブ・ステータスを表示します。
+#
+#  'dtprintinfo -populate'は、'<プリンタ名>_Print' 形式の
+#  デフォルト・プリンタ・アクションを作成する管理ツールです。
+#
+#  新規ファイル・タイプをシステムに追加した場合は、デスクトップ・
+#  アクション・エンジンがデフォルトの代わりに自動的に使用する
+#  ファイルタイプ固有の '印刷' アクションを作成します。この新規
+#  アクションは、'dtlp'またはそれ自体の印刷機能を使用して、
+#  アプリケーション固有の引き数を収集します。
+# 
+# ##########################################################################
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES PRINTER_UNKNOWN
+{
+        ACTIONS         PrinterUnconfigured
+        ICON		DtPrtun
+        IS_EXECUTABLE   true
+        DESCRIPTION     このアイコンは、デスクトップにもはや登録されて\
+                       いないプリンタを表します。
+        TYPE_LABEL      PRINTER_UNKNOWN
+}
+DATA_CRITERIA PRINTER_UNKNOWN1
+{
+	DATA_ATTRIBUTES_NAME PRINTER_UNKNOWN
+	MODE		f&x
+        NAME_PATTERN    *_Print
+}
+
+# 
+# 一般的な ARG_TYPE のデフォルト印刷アクション、すなわち
+#  他の印刷アクションが定義されていないファイルに対する印刷アクション。
+# 
+ACTION Print
+{
+	LABEL		印刷
+	ARG_TYPE	*
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp "%(File)Arg_1%"
+	DESCRIPTION	これはデフォルト印刷アクションです。\
+                       ファイル引き数付きで実行した場合は、プリンタ固有\
+                       のオプションを収集してファイルを印刷します。\
+                       引き数なしで実行した場合は、\
+                       'プリンタ・ジョブ' ウィンドウを表示します。
+}
+ACTION PrintRaw
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp -w "%(File)Arg_1%"
+}
+
+# 
+#   ファイル引き数が指定されていない場合は、DtPrintinfo 
+#  アクションを起動します。
+# 
+ACTION Print
+{
+	LABEL			印刷
+	ARG_COUNT		0
+	TYPE			MAP
+	MAP_ACTION		Dtprintinfo
+}
+
+# 
+#   印刷マネージャ (DtPrintManager) アクションは、
+#  'dtprintinfo -all' コマンドを起動します。
+# 
+ACTION DtPrintManager
+{
+	LABEL		印刷マネージャ
+        ICON            FpPrtmg
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -all
+	DESCRIPTION	印刷マネージャ (DtPrintManager) アクションは、\
+                       複数のプリンタのステータスをユーザが判断できる\
+                       ように印刷ジョブを表示します。また、プリンタを\
+                       サブパネル上のアイコンのインストール・コントロール\
+                       にドラッグできます。
+}
+
+# 
+#   印刷ジョブ (Dtprintinfo)アクションは 'dtprintinfo' コマンド
+#  または 'dtprintinfo -p printer' コマンドを起動します。
+# 
+ACTION Dtprintinfo
+{
+	LABEL		印刷ジョブ
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -p "%(String)Arg_1%"
+	DESCRIPTION	印刷ジョブ (Dtprintinfo) アクションは、1 台の\
+                       プリンタのステータスをユーザが判断できるように、\
+                       印刷ジョブを表示します。
+}
+
+ACTION Dtprintinfo
+{
+	LABEL		印刷ジョブ
+	ARG_COUNT	0
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo
+	DESCRIPTION	印刷ジョブ (Dtprintinfo) アクションは、1 台の\
+                       プリンタのステータスをユーザが判断できるように、\
+                       印刷ジョブを表示します。
+}
+
+# ###############################################################
+#  
+#   デフォルト・プリンタのアクション
+#  
+# ###############################################################
+ 
+# 
+#   ファイル引き数が指定された場合は、印刷アクションを
+#   起動します。
+# 
+ACTION DtPrint
+{
+	LABEL		デフォルト・プリンタ
+	ARG_TYPE	*
+        ICON		Fpprnt
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtaction Print "%(File)Arg_1%"
+	DESCRIPTION	これはデフォルト印刷アクションです。\
+                       ファイル引き数付きで実行した場合は、プリンタ固有\
+                       のオプションを収集してファイルを印刷します。\
+                       引き数なしで実行した場合は、\
+                       'プリンタ・ジョブ' ウィンドウを表示します。
+}
+
+# 
+#   ファイル引き数が指定されていない場合は、DtPrintinfo
+#   アクションを起動します。
+# 
+ACTION DtPrint
+{
+	LABEL		デフォルト・プリンタ
+	ARG_COUNT	0
+        ICON		Fpprnt
+	TYPE		MAP
+	MAP_ACTION	Dtprintinfo
+	DESCRIPTION	印刷ジョブ (Dtprintinfo) アクションは、1 台の\
+                       プリンタのステータスをユーザが判断できるように、\
+                       印刷ジョブを表示します。
+}
+
+
+# 
+#   ここには、未知で未構成のプリンタ・オブジェクトに対する
+#  アクションおよびデータ属性があります。
+# 
+ACTION PrinterUnconfigured
+{
+	LABEL		PrinterUnconfigured
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "このプリンタ制御は構成されていません。\\n                       構成するには、'ヘルプ' を押して、指示に従ってください。"                         "未構成のプリンタ"                         "了解"                         "HELP"
+
+
+
+
+	DESCRIPTION	PrinterUnconfigured アクションは、プリンタが\
+                       まだ構成されていないことを示すダイアログを表示します。
+}
+
+ACTION Printer_Trash
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "プリンタをごみ箱に捨てても、システムから\\n\
+                       プリンタは削除されません。システムからプリンタ\\n\
+                       を削除するには、システム管理マニュアルを参照\\n\
+                       してください。"                         "プリンタの削除"                         "了解"
+
+
+
+        DESCRIPTION     Printer_Trash アクションは、プリンタをごみ箱に\
+                       捨てても、システムからプリンタを削除しないことを\
+                       知らせるダイアログを表示します。
+}
+# ######################## EOF ############################################

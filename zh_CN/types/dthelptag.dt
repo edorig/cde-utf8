@@ -1,0 +1,199 @@
+# ##########################################################################
+# 
+#      dthelptag.dt
+# 
+#      Actions and DataTypes for authoring Help information.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $TOG: dthelptag.dt.src /main/6 1998/07/29 17:08:50 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+
+# 可执行的提示被送到 ../dt/bin中，它不是所有用户路径的一部分。
+# 因此在调用客户程序时，下面定义的字符串被加到路径中。
+set HELPTAG_PATH=\$PATH:/usr/dt/bin
+
+# ##################################################################
+# 
+# 数据属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES DTHELP_HTG
+{
+        ACTIONS         Open,Compile,CleanUp
+        ICON            Dthsrc
+        NAME_TEMPLATE   %s.htg
+        MIME_TYPE	text/plain
+        DESCRIPTION     这是一个桌面提示系统的基本HelpTag源文件。要用HelpTag标识语言格式化\
+                        该文件信息，显示前必须用 HelpTag 软件(`dthelptag')\
+                        编译。该数据类型称为DTHELP_HTG。DTHELP_HTG 文件\
+                        的文件名以 '.htg' 结尾。
+        TYPE_LABEL      DTHELP_HTG
+}
+
+DATA_CRITERIA DTHELP_HTG1
+{
+	DATA_ATTRIBUTES_NAME DTHELP_HTG
+        MODE            f
+        NAME_PATTERN    *.htg
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES DTHELP_CTG
+{
+        ACTIONS         Open,CompileCanon,CleanUp
+        ICON            Dthsrc
+        NAME_TEMPLATE   %s.ctg
+        MIME_TYPE	text/plain
+        DESCRIPTION     这是一个桌面提示系统的规范 SGML 基本 HelpTag 源文件。\
+                       该文件中的信息被用规范的HelpTag标识语言格式化，显示\
+                       前必须用 HelpTag 软件 ('dthelptag') 使用 '-canon' \
+                       选项编译。该数据类型称为DTHELP_CTG。DTHELP_CTG 文件\
+                       的文件名以 '.ctg' 结尾。
+        TYPE_LABEL      DTHELP_CTG
+}
+
+DATA_CRITERIA DTHELP_CTG1
+{
+	DATA_ATTRIBUTES_NAME DTHELP_CTG
+        MODE            f
+        NAME_PATTERN    *.ctg
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES DTHELP_ERR
+{
+        ACTIONS         Open
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.err
+        MIME_TYPE	text/plain
+        DESCRIPTION     这个文件包含与经过编译的提示卷相关的分析程序错误。这\
+                       个文件是在编译提示卷时检测到分析程序错误时由\
+                       dthelptag 分析程序产生的。它的数据类型称为 DTHELP_ERR。\
+                        DTHELP_ERR 文件的文件名以 '.err' 结尾。
+        TYPE_LABEL      DTHELP_ERR
+}
+
+DATA_CRITERIA DTHELP_ERR1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_ERR
+        NAME_PATTERN    *.err
+        MODE            f
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# 动作
+# 
+# ##################################################################
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        DTHELP_HTG,DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION      OpenHelpTag
+}
+
+# ######
+
+ACTION Compile
+{
+        LABEL           编译
+        ARG_TYPE        DTHELP_HTG
+	TYPE		MAP
+        MAP_ACTION	HelpTag
+}
+
+# ######
+
+ACTION CompileCanon
+{
+        LABEL           编译规范
+        ARG_TYPE        DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION	HelpTagCanon
+}
+
+# ######
+
+ACTION CleanUp
+{
+        LABEL           清除
+        ARG_TYPE        DTHELP_HTG,DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION	CleanHelpTag
+}
+
+# ######
+
+ACTION OpenHelpTag
+{
+        LABEL           打开提示标记
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtpad "%(File)Arg_1%"
+	DESCRIPTION	打开提示标记动作打开一个文本编缉器中的基本 HelpTag 文件 \
+                        (一个 '.sdl' 或 '.hv' 文件)。
+}
+
+# ######
+
+ACTION HelpTag
+{
+        LABEL           提示标记
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"提示标记文件:"%"`; 			       PATH=$HELPTAG_PATH dthelptag 				  `basename "%(File)Arg_1%"`'
+
+
+
+	DESCRIPTION	提示标记动作编译一个基本提示标记文件来创建运行时提示文件。运行\
+                        时的文件可以使用提示系统的一个应用程序或使用\
+                        'dthelpview' 程序来显示。
+}
+
+# ######
+
+ACTION HelpTagCanon
+{
+        LABEL           提示标记规范
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"提示标记文件:"%"`; 			       PATH=$HELPTAG_PATH dthelptag -formal 				  `basename "%(File)Arg_1%"`'
+
+
+
+	DESCRIPTION	提示标记规范动作编译一个规范 SGML 基本提示标记文件来创\
+                        建运行时的提示文件。运行时的文件可通过使用提示系统\
+                        的应用程序或使用 'dthelpview' 程序来显示。
+}
+
+# ######
+
+ACTION CleanHelpTag
+{
+        LABEL           清除提示标记
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"提示标记文件:"%"`'
+
+	DESCRIPTION	清除提示标记动作删除所有由提示标记动作创建的运行时提示文件。
+}
+# ######################## EOF ############################################

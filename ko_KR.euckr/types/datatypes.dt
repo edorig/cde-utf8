@@ -1,0 +1,844 @@
+# ##########################################################################
+# 
+#      datatypes.dt
+# 
+#      Action and DataType definitions for the Common Desktop Environment
+#      (CDE) DT components.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#     $TOG: datatypes.dt.src /main/6 1997/05/28 11:43:48 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES BM
+{
+        ACTIONS         Open,Print
+        ICON		Dtbitmp
+        NAME_TEMPLATE	%s.bm
+        MIME_TYPE	text/plain
+        SUNV3_TYPE	xbm-file
+        DESCRIPTION     이 파일은 X11 비트맵 형식의 데이타를 가지고 있습니다. \
+이 데이타 유형을 BM이라고 합니다. BM 파일은 파일 이름 \
+끝에 '.bm' 또는 '.xbm'의 확장 이름을 갖습니다.
+        TYPE_LABEL      BM
+}
+DATA_CRITERIA BM1
+{
+	DATA_ATTRIBUTES_NAME BM
+        MODE            f
+        NAME_PATTERN    *.bm
+}
+DATA_CRITERIA BM2
+{
+	DATA_ATTRIBUTES_NAME BM
+        MODE            f
+        NAME_PATTERN    *.xbm
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        BM
+        TYPE            MAP
+        MAP_ACTION	Dticon
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        BM
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES PM
+{
+        ACTIONS         Open,Print
+        ICON		Dtpixmp
+        NAME_TEMPLATE	%s.pm
+        MIME_TYPE	text/plain
+        SUNV3_TYPE	xpm-file
+        DESCRIPTION     이 파일은 여러 색상으로된 이미지를 가지고 있는 픽스맵 \
+파일입니다. 이 데이타 유형을 PM이라고 합니다. PM 파일은 \
+파일 이름 끝에 '.pm' 또는 '.xpm'의 확장 이름을 갖거나 \
+내용 중에 "! XPM2" 문자가 들어 있습니다.
+        TYPE_LABEL      PM
+}
+DATA_CRITERIA PM1
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            f
+        NAME_PATTERN    *.pm
+}
+DATA_CRITERIA PM2
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            f
+        NAME_PATTERN    *.xpm
+}
+DATA_CRITERIA PM3
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            f
+        CONTENT 	0 string ! XPM2
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        PM
+        TYPE            MAP
+        MAP_ACTION	Dticon
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        PM
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES PCL
+{
+        ACTIONS         Open,Print
+        ICON            Dtpcl
+        NAME_TEMPLATE	%s.pcl
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     이 파일은 프린터 제어 언어 (PCL) 형식의 데이타를 가지고 \
+있습니다. 이 데이타 유형을 PCL이라고 합니다. PCL 파일은 \
+파일 이름 끝에 '.pcl'의 확장 이름을 갖고 있습니다.
+        TYPE_LABEL      PCL
+}
+DATA_CRITERIA PCL1
+{
+        DATA_ATTRIBUTES_NAME    PCL
+        CONTENT		0 byte 033 0105
+        MODE            f
+}
+DATA_CRITERIA PCL2
+{
+        DATA_ATTRIBUTES_NAME    PCL
+        NAME_PATTERN    *.pcl
+        MODE            f
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        PCL
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                           "열 수 없음 - 사용할 수 있는 PCL 열람기가 없습니다."                           "정보"                           "예"
+
+
+
+        DESCRIPTION     사용자의 시스템에는 PCL 열람기가 없습니다. \
+PCL 파일을 열려고 하면 오류 대화상자가 나타납니다.
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        PCL
+        TYPE            MAP
+        MAP_ACTION	PrintRaw
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES POSTSCRIPT
+{
+        ACTIONS         Open,Print
+        ICON		Dtps
+        NAME_TEMPLATE	%s.ps
+        MIME_TYPE	application/postscript
+        SUNV3_TYPE	postscript-file
+        DESCRIPTION     이 파일은 포스트스크립트 데이타를 가지고 있습니다. \
+이 데이타 유형을 PS라고 합니다. PS 파일은 파일 이름 끝에 \
+'.ps' 또는  .PS'의 확장 이름을 갖거나 내용 중에 "%!" 문자가 들어 있습니다.
+        TYPE_LABEL      POSTSCRIPT
+}
+DATA_CRITERIA POSTSCRIPT1
+{
+        DATA_ATTRIBUTES_NAME POSTSCRIPT
+        MODE            f
+        NAME_PATTERN    *.ps
+}
+DATA_CRITERIA POSTSCRIPT2
+{
+        DATA_ATTRIBUTES_NAME POSTSCRIPT
+        MODE            f
+        NAME_PATTERN    *.PS
+}
+DATA_CRITERIA POSTSCRIPT3
+{
+        DATA_ATTRIBUTES_NAME    POSTSCRIPT
+        CONTENT 	0 string %!
+        MODE            f
+}
+ACTION Open
+{
+	LABEL		Open
+        ARG_TYPE        POSTSCRIPT
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열 수 없음 - 사용할 수 있는 포스트스크립트 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+        DESCRIPTION     사용자의 시스템에는 포스트스크립트 열람기가 없습니다. \
+포스트스크립트 파일을 열려고 하면 오류 대화상자가 나타납니다.
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        POSTSCRIPT
+        TYPE            MAP
+        MAP_ACTION	PrintRaw
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES AUDIO_AU
+{
+        ACTIONS         Open,Play
+        ICON            Dtaudio
+        NAME_TEMPLATE	%s.au
+        MIME_TYPE	audio/basic
+        SUNV3_TYPE	audio-file
+        DESCRIPTION     이 파일은 오디오 (소리) 데이타를 가지고 있습니다. \
+이 데이타 유형을 AUDIO라고 합니다. AUDIO 파일은 파일 이름 \
+끝에 '.snd', '.wav', '.au', '.l16', '.lo8', '.al' 또는 '.u'의\
+확장 이름을 갖거나 내용 중에 ".snd" 문자가 들어 있습니다.
+        TYPE_LABEL      AUDIO
+}
+DATA_CRITERIA AUDIO_AU1
+{
+        DATA_ATTRIBUTES_NAME AUDIO_AU
+        MODE            f
+        NAME_PATTERN    *.au
+}
+DATA_CRITERIA AUDIO_AU2
+{
+        DATA_ATTRIBUTES_NAME AUDIO_AU
+        CONTENT         0 string \.snd
+        MODE            f
+}
+ACTION Open
+{
+	LABEL		Open
+        ARG_TYPE        AUDIO_AU
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "'open' 또는 'play'할 수 없음 - 사용할 수 있는 오디오 재생기가 없습니다."                        "정보"                        "예"
+
+
+
+        DESCRIPTION     사용자의 시스템에는 오디오 재생기가 없습니다. \
+오디오 파일을 열려고 하면 오류 대화상자가 나타납니다.
+}
+ACTION Play
+{
+        LABEL           Play
+        ARG_TYPE        AUDIO_AU
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "'open' 또는 'play'할 수 없음 - 사용할 수 있는 오디오 재생기가 없습니다."                         "정보"                         "예"
+
+
+
+        DESCRIPTION     이 활동은 오디오 파일을 재생합니다.
+}
+
+
+DATA_ATTRIBUTES AUDIO_SND
+{
+        ACTIONS         Open,Play
+        ICON            Dtaudio
+        NAME_TEMPLATE	%s.snd
+        MIME_TYPE	audio/basic
+        SUNV3_TYPE	audio-file
+        DESCRIPTION     이 파일은 매킨토시 오디오 (사운드) 자료를 가지고 있습니다. \
+데이타 유형은 AUDIO_SND 입니다. AUDIO_SND 파일은 파일 이름 끝에 \
+'.snd'를 가집니다.
+        TYPE_LABEL      AUDIO
+}
+DATA_CRITERIA AUDIO_SND1
+{
+        DATA_ATTRIBUTES_NAME AUDIO_SND
+        MODE            f
+        NAME_PATTERN    *.snd
+}
+ACTION Open
+{
+	LABEL		Open
+        ARG_TYPE        AUDIO_SND
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "'open' 또는 'play'할 수 없음 - 사용할 수 있는 오디오 재생기가 없습니다."                        "정보"                        "예"
+
+
+
+        DESCRIPTION     이 활동은 오디오 파일을 재생합니다.
+}
+ACTION Play
+{
+        LABEL           Play
+        ARG_TYPE        AUDIO_SND
+        TYPE            MAP
+	MAP_ACTION	Open
+        DESCRIPTION     이 활동은 오디오 파일을 재생합니다.
+}
+
+DATA_ATTRIBUTES AUDIO_WAV
+{
+        ACTIONS         Open,Play
+        ICON            Dtaudio
+        NAME_TEMPLATE	%s.wav
+        MIME_TYPE	audio/basic
+        SUNV3_TYPE	audio-file
+        DESCRIPTION     이 파일은 마이크로소프트 윈도우즈 오디오 (사운드) 자료를 가지고 \
+있습니다. 데이타 유형은 AUDIO_WAV 입니다. AUDIO_WAV 파일은 파일 \
+이름 끝에 '.wav'를 가집니다.
+        TYPE_LABEL      AUDIO
+}
+DATA_CRITERIA AUDIO_WAV1
+{
+        DATA_ATTRIBUTES_NAME AUDIO_WAV
+        MODE            f
+        NAME_PATTERN    *.wav
+}
+ACTION Open
+{
+	LABEL		Open
+        ARG_TYPE        AUDIO_WAV
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                        "'open' 또는 'play'할 수 없음 - 사용할 수 있는 오디오 재생기가 없습니다."                        "정보"                        "예"
+
+
+
+        DESCRIPTION     이 활동은 오디오 파일을 재생합니다.
+}
+ACTION Play
+{
+        LABEL           Play
+        ARG_TYPE        AUDIO_WAV
+        TYPE            MAP
+	MAP_ACTION	Open
+        DESCRIPTION     이 활동은 오디오 파일을 재생합니다.
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        AUDIO_AU,AUDIO_SND,AUDIO_WAV
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES TIFF
+{
+        ACTIONS         Open
+        ICON            Dttif
+        NAME_TEMPLATE	%s.tif
+        MIME_TYPE	image/tiff
+        SUNV3_TYPE	tiff-file
+        DESCRIPTION     이 파일은 TIFF 형식의 그래픽 이미지를 가지고 \
+있습니다. 이 데이타 유형을 TIFF라고 합니다. \
+TIFF 파일은 파일 이름 끝에 '.TIFF', '.TIF', '.tiff', \
+또는 '.tif'의 확장 이름을 갖고 있습니다.
+        TYPE_LABEL      TIFF
+}
+DATA_CRITERIA TIFF1
+{
+        DATA_ATTRIBUTES_NAME TIFF
+        MODE            f
+        NAME_PATTERN    *.TIFF
+}
+DATA_CRITERIA TIFF2
+{
+        DATA_ATTRIBUTES_NAME TIFF
+        MODE            f
+        NAME_PATTERN    *.TIF
+}
+DATA_CRITERIA TIFF3
+{
+        DATA_ATTRIBUTES_NAME TIFF
+        MODE            f
+        NAME_PATTERN    *.tiff
+}
+DATA_CRITERIA TIFF4
+{
+        DATA_ATTRIBUTES_NAME TIFF
+        MODE            f
+        NAME_PATTERN    *.tif
+}
+DATA_CRITERIA TIFF5
+{
+	DATA_ATTRIBUTES_NAME TIFF
+	CONTENT    0 byte 0115 0115
+	MODE            f
+}
+DATA_CRITERIA TIFF6
+{
+	DATA_ATTRIBUTES_NAME TIFF
+	CONTENT    0 byte 0111 0111
+	MODE            f
+}
+ACTION Open
+{
+	LABEL		Open
+        ARG_TYPE        TIFF
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열 수 없음 - 사용할 수 있는 TIFF 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+        DESCRIPTION     사용자의 시스템에는 TIFF 열람기가 없습니다. \
+TIFF 파일을 열려고 하면 오류 대화상자가 표시됩니다.
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        TIFF
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES JPEG
+{
+        ACTIONS         Open
+        ICON            Dtjpeg
+        NAME_TEMPLATE	%s.jpg
+        MIME_TYPE	image/jpeg
+        SUNV3_TYPE	jpeg-file
+        DESCRIPTION     이 파일은 JPEG 호환 형식의 그래픽 이미지를 가지고 \
+있습니다. 이 데이타 유형을 JPEG라고 합니다. \
+JPEG 파일은 파일 이름 끝에 '.JPEG', '.jpg', '.jpeg', \
+또는 '.JPG'의 확장 이름을 갖고 있습니다.
+        TYPE_LABEL      JPEG
+}
+DATA_CRITERIA JPEG1
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        NAME_PATTERN    *.JPEG
+}
+DATA_CRITERIA JPEG2
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        NAME_PATTERN    *.jpg
+}
+DATA_CRITERIA JPEG3
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        NAME_PATTERN    *.jpeg
+}
+DATA_CRITERIA JPEG4
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        NAME_PATTERN    *.JPG
+}
+DATA_CRITERIA JPEG5
+{
+	DATA_ATTRIBUTES_NAME JPEG
+	CONTENT    0 byte 0377 0330 0377
+	MODE            f
+}
+DATA_CRITERIA JPEG6
+{
+        DATA_ATTRIBUTES_NAME JPEG
+        MODE            f
+        CONTENT         0 short 0xffd8
+}
+ACTION Open
+{
+	LABEL		Open
+        ARG_TYPE        JPEG
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열 수 없음 - 사용할 수 있는 JPEG 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+        DESCRIPTION     사용자의 시스템에는 JPEG 열람기가 없습니다. \
+JPEG 파일을 열려고 하면 오류 대화상자가 표시됩니다.
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        JPEG
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES MPEG
+{
+        ACTIONS         Open
+        ICON            Dtmpeg
+        NAME_TEMPLATE	%s.mpg
+        MIME_TYPE	video/mpeg
+        DESCRIPTION     이 파일은 MPEG 호환 형식의 그래픽 이미지를 가지고 \
+있습니다. 이 데이타 유형을 MPEG라고 합니다. \
+MPEG 파일은 파일 이름 끝에 '.MPEG', '.mpg', '.mpeg' \
+또는 '.MPG'의 확장 이름을 갖고 있습니다.
+        TYPE_LABEL      MPEG
+}
+DATA_CRITERIA MPEG1
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        NAME_PATTERN    *.MPEG
+}
+DATA_CRITERIA MPEG2
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        NAME_PATTERN    *.mpg
+}
+DATA_CRITERIA MPEG3
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        NAME_PATTERN    *.mpeg
+}
+DATA_CRITERIA MPEG4
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        NAME_PATTERN    *.MPG
+}
+DATA_CRITERIA MPEG5
+{
+        DATA_ATTRIBUTES_NAME MPEG
+        MODE            f
+        CONTENT         0 long 0x000001b3
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        MPEG
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                           "열 수 없음 - 사용할 수 있는 MPEG 재생기가 없습니다."                           "정보"                           "예"
+
+
+
+        DESCRIPTION     사용자의 시스템에는 MPEG 열람기가 없습니다. \
+MPEG 파일을 열려고 하면 오류 대화상자가 표시됩니다.
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        MPEG
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES GIF
+{
+        ACTIONS         Open
+        ICON		Dtgif
+        NAME_TEMPLATE	%s.gif
+        MIME_TYPE	image/gif
+        SUNV3_TYPE	gif-file
+	DESCRIPTION	이 파일은 GIF 형식의 그래픽 이미지를 가지고 \
+있습니다. 이 데이타 유형을 GIF라고 합니다. \
+GIF 파일은 파일 이름 끝에 '.gif' 또는 '.GIF'의 \
+확장 이름을 갖거나 내용 중에 "GIF87a"나 "GIF89a" \
+문자가 들어 있습니다.
+        TYPE_LABEL      GIF
+}
+DATA_CRITERIA GIF1
+{
+	DATA_ATTRIBUTES_NAME GIF
+        MODE            f
+	NAME_PATTERN	*.gif
+}
+DATA_CRITERIA GIF2
+{
+	DATA_ATTRIBUTES_NAME GIF
+        MODE            f
+	NAME_PATTERN	*.GIF
+}
+DATA_CRITERIA GIF3
+{
+	DATA_ATTRIBUTES_NAME GIF
+        CONTENT		0 string GIF87a
+        MODE            f
+}
+DATA_CRITERIA GIF4
+{
+	DATA_ATTRIBUTES_NAME GIF
+        CONTENT		0 string GIF89a
+        MODE            f
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        GIF
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열 수 없음 - 사용할 수 있는 GIF 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+        DESCRIPTION     사용자의 시스템에는 GIF 열람기가 없습니다. \
+GIF 파일을 열려고 하면 오류 대화상자가 표시됩니다.
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        GIF
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES README
+{
+        ACTIONS         Open,Print
+        ICON            DtRdMe
+        IS_TEXT		true
+        NAME_TEMPLATE	README
+        MIME_TYPE	text/plain
+        DESCRIPTION     이 문자 파일은 현재 폴더에 있는 파일에 대한 정보를 \
+가지고 있습니다. 이 데이타 유형을 README라고 합니다. \
+README 파일은 파일 이름 시작에 READ, 끝에 ME, 그 사이에 문자가 \
+없거나 몇개의 문자가 포함된 이름을 사용합니다. 이 문자는 \
+대소문자를 모두 사용할 수 있습니다.
+        TYPE_LABEL      README
+}
+DATA_CRITERIA README1
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    README
+}
+DATA_CRITERIA README2
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    README.*
+}
+DATA_CRITERIA README3
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    Read.*.Me
+}
+DATA_CRITERIA README4
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    read.*.me
+}
+DATA_CRITERIA README5
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    READ.*.ME
+}
+DATA_CRITERIA README6
+{
+        DATA_ATTRIBUTES_NAME README
+        MODE            f
+        NAME_PATTERN    readme
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES HTML
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.html
+        MIME_TYPE       text/html
+        DESCRIPTION     이 문자 파일은 World Wide Web의 하이퍼-텍스트 마크업 언어를 \
+가지고 있습니다. 이 데이타 유형을 HTML이라고 합니다. \
+HTML 파일은 파일 이름 끝에 '.html'의 확장 이름을 갖거나 \
+내용 중에 "<HTML>"이나 "<html>" 문자가 들어 있습니다.
+}
+DATA_CRITERIA HTML1
+{
+        DATA_ATTRIBUTES_NAME    HTML
+        MODE                    f
+        NAME_PATTERN            *.html
+}
+DATA_CRITERIA HTML2
+{
+        DATA_ATTRIBUTES_NAME    HTML
+        MODE                    f
+        CONTENT                 0 string <HTML>
+}
+DATA_CRITERIA HTML3
+{
+        DATA_ATTRIBUTES_NAME    HTML
+        MODE                    f
+        CONTENT                 0 string <html>
+}
+
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        HTML
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES ENRICHED_TEXT
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.rt
+        MIME_TYPE       text/enriched
+        DESCRIPTION     ....Missing message #3035
+        TYPE_LABEL      ....Missing message #31108
+}
+DATA_CRITERIA ENRICHED_TEXT1
+{
+        DATA_ATTRIBUTES_NAME    ENRICHED_TEXT
+        MODE                    f
+        NAME_PATTERN            *.ert
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        ENRICHED_TEXT
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES RICHTEXT
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.rt
+        MIME_TYPE       text/richtext
+        DESCRIPTION     이 문자 파일은 일반 문자뿐만 아니라 여러 개의 \
+글꼴 정의를 가지고 있습니다. 이 데이타 유형을 \
+RICHTEXT라고 합니다. RICHTEXT 파일은 파일 이름 끝에 \
+'.rt'의 확장 이름을 갖고 있습니다.
+        TYPE_LABEL      RICHTEXT
+}
+DATA_CRITERIA RICHTEXT1
+{
+        DATA_ATTRIBUTES_NAME    RICHTEXT
+        MODE                    f
+        NAME_PATTERN            *.rt
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        RICHTEXT
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES UIL
+{
+        ACTIONS         Open,Print
+        ICON            Dtuil
+        NAME_TEMPLATE	%s.uil
+        MIME_TYPE	text/plain
+        DESCRIPTION     이 파일은 UIL 해석기가 모티프 사용자 인터페이스를 \
+만드는데 사용할 수 있는 원시 코드를 포함한 텍스트 \
+파일입니다. UIL 파일은 파일 이름에 '.uil' 또는 '.UIL'을 \
+갖고 있습니다.
+        TYPE_LABEL      UIL
+}
+DATA_CRITERIA UIL1
+{
+        DATA_ATTRIBUTES_NAME 	UIL
+        MODE            	!d
+        NAME_PATTERN    	*.uil
+}
+DATA_CRITERIA UIL2
+{
+        DATA_ATTRIBUTES_NAME	UIL
+        MODE            	!d
+        NAME_PATTERN    	*.UIL
+}
+
+
+# #######################################################
+
+DATA_ATTRIBUTES MSDOS_EXE
+{
+        ACTIONS         (None)
+        ICON            Dtexec
+        IS_EXECUTABLE   true
+        NAME_TEMPLATE	%s.exe
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE	msdos-file
+        DESCRIPTION     이 파일은 MSDOS 호환 PC에서 실행할 수 있는 \
+실행 파일입니다. 이 데이타 유형을 MSDOS_EXE라고 \
+합니다. MSDOS_EXE 파일은 파일 이름 끝에 '.exe' \
+또는 '.EXE'의 확장 이름을 갖습니다.
+        TYPE_LABEL      MSDOS_EXE
+}
+DATA_CRITERIA MSDOS_EXE1
+{
+        DATA_ATTRIBUTES_NAME MSDOS_EXE
+        MODE            f&x
+        NAME_PATTERN    *.exe
+}
+DATA_CRITERIA MSDOS_EXE2
+{
+        DATA_ATTRIBUTES_NAME MSDOS_EXE
+        MODE            f&x
+        NAME_PATTERN    *.EXE
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        MSDOS_EXE
+        TYPE            MAP
+        MAP_ACTION	NoPrint
+}
+
+# ######################## EOF ############################################

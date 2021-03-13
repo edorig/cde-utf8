@@ -1,0 +1,694 @@
+# ##########################################################################
+# 
+#      dtfile.dt
+# 
+#      Actions for interfacing to the Common Desktop Environment 
+#      File Manager.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $TOG: dtfile.dt.src /main/5 1997/03/28 14:46:11 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 数据属性 - 主要由文件管理程序使用
+# 
+# ##################################################################
+# ###########################################################
+# 
+# 文件夹
+# 
+# ###########################################################
+DATA_ATTRIBUTES TRASH_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON            DtdirR
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+	DESCRIPTION	这个文件夹是一个废物临时存放位置。
+        TYPE_LABEL      TRASH_FOLDER
+}
+DATA_CRITERIA TRASH_FOLDER1
+{
+        DATA_ATTRIBUTES_NAME TRASH_FOLDER
+        MODE            d
+        PATH_PATTERN    */.dt/Trash
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        TRASH_FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        TRASH_FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES OPEN_PARENT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtdirup
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES PARENT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtdirup
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	 `..' 图标代表当前文件夹的父文件夹。打开它可以在文件夹树中向\
+                        上移动一个层次。它的数据类型称为 PARENT_FOLDER。
+        TYPE_LABEL      PARENT_FOLDER
+}
+DATA_CRITERIA PARENT_FOLDER1
+{
+	DATA_ATTRIBUTES_NAME PARENT_FOLDER
+	MODE		d
+	NAME_PATTERN	..
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        PARENT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        PARENT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES OPEN_CURRENT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirB
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES CURRENT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirB
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	 `.' 图标代表当前文件夹。它的数据类型称为 CURRENT_FOLDER。
+        TYPE_LABEL      CURRENT_FOLDER
+}
+DATA_CRITERIA CURRENT_FOLDER1
+{
+	DATA_ATTRIBUTES_NAME CURRENT_FOLDER
+	MODE		d
+	NAME_PATTERN	.
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        CURRENT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        CURRENT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES DOT_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirB
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	这个文件夹的数据类型称为 DOT_FOLDER。\
+                        DOT_FOLDER 文件夹是一个文件名以一个点(.)开始的\
+                        文件夹。DOT_FOLDER 通常是隐含的。
+        TYPE_LABEL      DOT_FOLDER
+}
+DATA_CRITERIA DOT_FOLDER1
+{
+	DATA_ATTRIBUTES_NAME DOT_FOLDER
+	MODE		d
+	NAME_PATTERN	.*
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        DOT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        DOT_FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES FOLDER_LOCK
+{
+	ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		Dtdirlk
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	这是一个您没有写权限的文件夹。您不能增加或删除文件。它的数据类型\
+                        称为 FOLDER_LOCK。
+        TYPE_LABEL      FOLDER_LOCK
+}
+DATA_CRITERIA FOLDER_LOCK1
+{
+	DATA_ATTRIBUTES_NAME FOLDER_LOCK
+	MODE            d&!r
+}
+DATA_CRITERIA FOLDER_LOCK2
+{
+	DATA_ATTRIBUTES_NAME FOLDER_LOCK
+	MODE            d&!x
+}
+DATA_ATTRIBUTES OPEN_NON_WRITABLE_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON            DtdirBO
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES NON_WRITABLE_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON            Dtdirnw
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION  FILESYSTEM_MOVE
+        COPY_TO_ACTION  FILESYSTEM_COPY
+        LINK_TO_ACTION  FILESYSTEM_LINK
+        DESCRIPTION     这是一个您没有写权限的文件夹。您不能增加或删除文件。它的数据类型\
+                        称为 FOLDER_LOCK。
+        TYPE_LABEL      NON_WRITABLE_FOLDER
+}
+DATA_CRITERIA NON_WRITABLE_FOLDER1
+{
+	DATA_ATTRIBUTES_NAME NON_WRITABLE_FOLDER
+	MODE            d&!w
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        FOLDER_LOCK
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        FOLDER_LOCK
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES OPEN_FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirBO
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+}
+DATA_ATTRIBUTES FOLDER
+{
+        ACTIONS         OpenInPlace,OpenNewView,Print
+        ICON		DtdirB
+        MEDIA           FILE_NAME
+        MOVE_TO_ACTION	FILESYSTEM_MOVE
+        COPY_TO_ACTION	FILESYSTEM_COPY
+        LINK_TO_ACTION	FILESYSTEM_LINK
+	DESCRIPTION	这是一个文件夹。一个文件夹是保存文件或其它文件夹的容器。\
+                        它的数据类型称为 FOLDER。
+        TYPE_LABEL      FOLDER
+}
+DATA_CRITERIA FOLDER1
+{
+	DATA_ATTRIBUTES_NAME FOLDER
+	MODE		d
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        FOLDER
+        TYPE            MAP
+        MAP_ACTION      OpenFolder
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        FOLDER
+        TYPE            MAP
+        MAP_ACTION      PrintFolderList
+}
+
+# ###########################################################
+# ###########################################################
+# 
+# 数据属性
+# 
+# ###########################################################
+
+DATA_ATTRIBUTES RECURSIVE_LINK
+{
+	ICON		Dtinf
+	DESCRIPTION	这个图标代表一个指向自己的符号连接，可以是文件夹或通过一系列\
+                        中间层的符号连接。它的数据类型称为 RECURSIVE_LINK。
+        TYPE_LABEL      RECURSIVE_LINK
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES BROKEN_LINK
+{
+        ICON            Dtblink
+        DESCRIPTION     这个图标代表一个符号连接，它指向一个不存在的文件。它的数据类型\
+                        称为 BROKEN_LINK。
+        TYPE_LABEL      BROKEN_LINK
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES DOT_FILE
+{
+        ACTIONS         Open,Print
+        ICON		Dtdata
+        IS_TEXT		true
+        MIME_TYPE	text/plain
+        MEDIA           C_STRING
+	DESCRIPTION	这个文件的数据类型称为 DOT_FILE。\
+                        DOT_FILE 是一个文件名以一个点(.)开始的文件。\
+                        DOT_FILE 通常是隐含的。
+        TYPE_LABEL      DOT_FILE
+}
+DATA_CRITERIA DOT_FILE1
+{
+	DATA_ATTRIBUTES_NAME DOT_FILE
+        MODE            f
+	NAME_PATTERN	.*
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES EXECUTABLE
+{
+	ACTIONS		Run,Open
+        ICON		Dtexec
+        IS_EXECUTABLE	true
+        COPY_TO_ACTION  Execute
+        MIME_TYPE	application/octet-stream
+	SUNV3_TYPE	default-app
+        MEDIA           _DT_DATA
+	DESCRIPTION	这个文件包含一个 shell 脚本或一个可执行的编译程序。\
+                        它的数据类型称为 EXECUTABLE。
+        TYPE_LABEL      EXECUTABLE
+}
+DATA_CRITERIA EXECUTABLE1
+{
+	DATA_ATTRIBUTES_NAME EXECUTABLE
+	MODE		f&x
+}
+ACTION Run
+{
+        LABEL           运行
+        ARG_TYPE        EXECUTABLE
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES UNKNOWN
+{
+	ACTIONS		Open,Print
+        ICON		Dtdata
+        MIME_TYPE	application/octet-stream
+        MEDIA           _DT_DATA
+	DESCRIPTION	这个文件与其它任何数据类型不匹配，所以指定其数据类\
+                           型为 UNKNOWN。
+        TYPE_LABEL      UNKNOWN
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES DATA
+{
+	ACTIONS		Open,Print
+        ICON		Dtdata
+        MIME_TYPE	text/plain
+        MEDIA           _DT_DATA
+	DESCRIPTION	这个文件与其它任何数据类型不匹配，所以指定其数据类\
+                           型为 DATA。
+        TYPE_LABEL      DATA
+}
+DATA_CRITERIA DATA1
+{
+	DATA_ATTRIBUTES_NAME DATA
+	MODE		f&!x
+}
+
+# ###################################################################
+# ###################################################################
+# 
+#  动作由公用桌面环境文件管理程序提供。
+# 
+# ###################################################################
+ACTION DtfileHome
+{
+        LABEL           	文件管理程序 - 起始
+        ARG_COUNT		0
+        ICON			Fphome
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtHome_Show
+        DESCRIPTION     	文件管理程序 - 起始 (DtfileHome) 动作打开一个用户起\
+                        始文件夹的文件管理程序视图。
+}
+
+# #####
+
+ACTION Dtfile
+{
+        LABEL           	文件管理程序
+        ICON			Fphome
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		Edit
+        TT_FILE		   	%Arg_1"打开的文件夹:"%
+        TT_ARG0_MODE		TT_INOUT
+        TT_ARG0_VTYPE   	FILE_NAME
+        DESCRIPTION     	文件管理程序 (Dtfile) 打开一个特定文件夹的文件管\
+                                理程序视图。
+}
+
+# #####
+
+ACTION Dtappmgr
+{
+        LABEL           	应用管理程序
+        ICON			Fpapps
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtTools_Show
+        TT_FILE			/var/dt/appconfig/appmanager/$DTUSERSESSION
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           -title
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE   	应用管理程序
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           -help_volume
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE   	Appmanager
+        DESCRIPTION     	应用管理程序 (Dtappmgr) 动作打开一个应用管理程序的\
+                              文件管理程序视图。
+}
+
+# #####
+
+ACTION DtEmptyTrash
+{
+        LABEL           Empty Trash Can
+        ARG_COUNT	      0
+        ICON            Dtshred
+        TYPE           	TT_MSG
+        TT_CLASS        TT_REQUEST
+        TT_SCOPE        TT_SESSION
+        TT_OPERATION    DtTrash_Empty
+	DESCRIPTION     The Empty Trash Can (DtEmptyTrash) action empties the desktop Trash \
+                        Can window when the action icon is double-clicked.
+}
+ACTION Dttrash
+{
+        LABEL           废物箱
+        ARG_COUNT	0
+        ICON		Dttrsh
+        TYPE           	TT_MSG
+        TT_CLASS	TT_REQUEST
+        TT_SCOPE	TT_SESSION
+        TT_OPERATION	DtTrash_Show
+	DESCRIPTION	当连按两下废物箱 (Dttrash) 动作图标时将打开桌面废物箱窗口。\
+                        当一个文件被放置到图标上时，该文件被移到废物箱中。
+}
+ACTION Dttrash
+{
+        LABEL           	废物箱
+        ARG_COUNT		>0
+        ICON			Dttrsh
+        TYPE            	TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtTrash_Remove
+        TT_ARG0_MODE		TT_IN
+        TT_ARG0_VTYPE		string
+        TT_ARG1_MODE		TT_IN
+        TT_ARG1_VTYPE		string
+        TT_ARG1_REP_TYPE	TT_REP_STRING
+        TT_ARG1_VALUE		%Arg_1%
+	DESCRIPTION		当连按两下废物箱 (Dttrash) 动作图标时将打开桌面废物箱窗口。\
+                        当一个文件被放置到图标上时，该文件被移到废物箱中。
+}
+ACTION DtUnlink
+{
+        LABEL           	废物箱
+        ARG_COUNT		2
+        ICON			Dttrsh
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtTrash_Remove
+        TT_FILE			%Arg_1%
+        TT_ARG0_MODE		TT_IN
+        TT_ARG0_VTYPE   	string
+        TT_ARG1_MODE		TT_IN
+        TT_ARG1_VTYPE   	string
+        TT_ARG1_REP_TYPE	TT_REP_STRING
+	TT_ARG1_VALUE		%Arg_2%
+	DESCRIPTION	当连按两下废物箱 (Dttrash) 动作图标时将打开桌面废物箱窗口。\
+                        当一个文件被放置到图标上时，该文件被移到废物箱中。
+}
+ACTION DtUnlink
+{
+        LABEL           	废物箱
+        ARG_COUNT		>2
+        ICON			Dttrsh
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		DtTrash_Remove
+        TT_FILE			%Arg_1%
+        TT_ARG0_MODE		TT_IN
+        TT_ARG0_VTYPE   	string
+        TT_ARG0_REP_TYPE	TT_REP_STRING
+	TT_ARG0_VALUE		%Args%
+	DESCRIPTION		当连按两下废物箱 (Dttrash) 动作图标时将打开桌面废物箱窗口。\
+                        当一个文件被放置到图标上时，该文件被移到废物箱中。
+}
+
+ACTION PutOnWorkspace
+{
+        LABEL           	Put On Workspace
+        ICON			Dtpodt
+        TYPE			TT_MSG
+        TT_CLASS			TT_REQUEST
+        TT_SCOPE			TT_SESSION
+        TT_OPERATION		DtFile_PutOnWorkspace
+        TT_FILE			%Arg_3%
+        TT_ARG0_MODE		TT_IN
+        TT_ARG0_VTYPE   	-workspace
+        TT_ARG0_REP_TYPE      	TT_REP_STRING
+	TT_ARG0_VALUE		%Arg_2%
+        TT_ARG2_MODE		TT_IN
+        TT_ARG2_VTYPE   	string
+        TT_ARG2_REP_TYPE	TT_REP_STRING
+	TT_ARG2_VALUE		%Arg_3%
+	DESCRIPTION		This action (DtPutOnWorkspace) will place an object on the workspace
+}
+
+# #####
+
+ACTION FILESYSTEM_MOVE
+{
+        LABEL                   Move To Directory
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtFile_Move
+        TT_FILE                 %Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           string
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE           %Arg_1%
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           string
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE           %Args%
+        DESCRIPTION             The FILESYSTEM_MOVE action allows an Common                                Desktop Environment compliant application                                 to run an action to which causes the File                                 Manager to preform a move on the file(s)                                 passed in.  The format for this action is:                                 'FILESYSTEM_MOVE <folder_name_to> <files>'                                 where files is a full path name list of files                                 separated by spaces.
+
+
+
+
+
+
+
+}
+
+# #####
+
+ACTION FILESYSTEM_COPY
+{
+        LABEL                   Copy To Directory
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtFile_Copy
+        TT_FILE                 %Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           string
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE           %Arg_1%
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           string
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE           %Args%
+        DESCRIPTION             The FILESYSTEM_COPY action allows an Common                                Desktop Environment compliant application                                 to run an action to which causes the File                                 Manager to preform a copy on the file(s)                                 passed in.  The format for this action is:                                 'FILESYSTEM_COPY <folder_name_to> <files>'                                 where files is a full path name list of files                                 separated by spaces.
+
+
+
+
+
+
+
+}
+
+# #####
+
+ACTION FILESYSTEM_LINK
+{
+        LABEL                   Link To Directory
+        TYPE                    TT_MSG
+        TT_CLASS                TT_REQUEST
+        TT_SCOPE                TT_SESSION
+        TT_OPERATION            DtFile_Link
+        TT_FILE                 %Arg_1%
+        TT_ARG0_MODE            TT_IN
+        TT_ARG0_VTYPE           string
+        TT_ARG0_REP_TYPE        TT_REP_STRING
+        TT_ARG0_VALUE           %Arg_1%
+        TT_ARG1_MODE            TT_IN
+        TT_ARG1_VTYPE           string
+        TT_ARG1_REP_TYPE        TT_REP_STRING
+        TT_ARG1_VALUE           %Args%
+        DESCRIPTION             The FILESYSTEM_LINK action allows an Common                                Desktop Environment compliant application                                 to run an action to which causes the File                                 Manager to preform a link on the file(s)                                 passed in.  The format for this action is:                                 'FILESYSTEM_LINK <folder_name_to> <files>'                                 where files is a full path name list of files                                 separated by spaces.
+
+
+
+
+
+
+
+}
+
+# #####
+
+ACTION OpenFolder
+{
+        LABEL           	打开
+        TYPE            	TT_MSG
+        TT_CLASS		TT_REQUEST
+        TT_SCOPE		TT_SESSION
+        TT_OPERATION		Edit
+        TT_FILE		   	%Arg_1"打开的文件夹:"%
+        TT_ARG0_MODE		TT_INOUT
+        TT_ARG0_VTYPE   	FILE_NAME
+        DESCRIPTION		打开新的视图动作显示一个在新的文件管理程序窗口中的\
+                        特定文件夹的管理程序视图。
+}
+
+# #####
+
+ACTION OpenNewView
+{
+        LABEL           打开新的视图
+        TYPE            MAP
+	MAP_ACTION      Open
+}
+
+# #####
+
+ACTION OpenInPlace
+{
+        LABEL           在适当的位置打开
+        TYPE            MAP
+	MAP_ACTION      Open
+}
+
+# #####
+
+ACTION PrintFolderList
+{
+        LABEL           打印文件夹表
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c '                         ls -aLlF "%(File)Arg_1%" |                         /usr/dt/bin/dtlp -u "%(File)Arg_1%"'
+
+
+        DESCRIPTION     打印文件夹表动作在默认打印机上打印一个文件夹的内容。
+}
+
+# ######################## EOF ############################################

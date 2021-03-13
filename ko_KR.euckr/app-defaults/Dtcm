@@ -1,0 +1,230 @@
+! $TOG: Dtcm.ad /main/8 1998/08/10 15:44:34 mgreess $
+!
+!   COMPONENT_NAME: desktop
+!
+!   FUNCTIONS: none
+!
+!   ORIGINS: 27,118,119,120,121
+!
+!   This module contains IBM CONFIDENTIAL code. -- (IBM
+!   Confidential Restricted when combined with the aggregated
+!   modules for this product)
+!   OBJECT CODE ONLY SOURCE MATERIALS
+!
+!   (C) COPYRIGHT International Business Machines Corp. 1995
+!   All Rights Reserved
+!   US Government Users Restricted Rights - Use, duplication or
+!   disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+!
+!######################################################################
+!# (c) Copyright 1993, 1994 Hewlett-Packard Company
+!# (c) Copyright 1993, 1994 International Business Machines Corp.
+!# (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+!# (c) Copyright 1993, 1994 Unix System Labs, Inc., a subsidiary of
+!#     Novell, Inc.
+!######################################################################
+#include "Dt"
+!
+! Dtcm - Application defaults file for CDE Calendar
+! Last updated: 9 Dec 1994
+!
+!------------------------------------
+! Mnemonics for Menu Items
+!------------------------------------
+! Menu Bar
+Dtcm*menuBar.file.mnemonic:		F
+Dtcm*menuBar.edit.mnemonic:		E
+Dtcm*menuBar.view.mnemonic:		V
+Dtcm*menuBar.browse.mnemonic:		B
+Dtcm*menuBar.help.mnemonic:		H
+! File menu
+Dtcm*fileMenu.printCurrent.mnemonic:	C
+Dtcm*fileMenu.print.mnemonic:		P
+Dtcm*fileMenu.options.mnemonic:		O
+Dtcm*fileMenu.exit.mnemonic:		x
+! Edit menu
+Dtcm*editMenu.appt.mnemonic:		A
+Dtcm*editMenu.toDo.mnemonic:		T
+! View menu
+Dtcm*viewMenu.day.mnemonic:		D
+Dtcm*viewMenu.week.mnemonic:		W
+Dtcm*viewMenu.month.mnemonic:		M
+Dtcm*viewMenu.year.mnemonic:		Y
+Dtcm*viewMenu.apptList.mnemonic:		A
+Dtcm*viewMenu.toDoList.mnemonic:		T
+Dtcm*viewMenu.find.mnemonic:		F
+Dtcm*viewMenu.goTo.mnemonic:		G
+Dtcm*viewMenu.timeZone.mnemonic:		Z
+! Browse menu
+Dtcm*browseMenu.showOther.mnemonic:	O
+Dtcm*browseMenu.compare.mnemonic:		C
+Dtcm*browseMenu.editMenu.mnemonic:	M
+! Help menu
+Dtcm*helpMenu.overview.mnemonic:		O
+Dtcm*helpMenu.tasks.mnemonic:		T
+Dtcm*helpMenu.reference.mnemonic:		R
+Dtcm*helpMenu.onItem.mnemonic:		I
+Dtcm*helpMenu.using.mnemonic:		U
+Dtcm*helpMenu.about.mnemonic:		A
+
+!------------------------------------
+! Accelerator text 
+!------------------------------------
+Dtcm*day.acceleratorText:     Ctrl+D
+Dtcm*week.acceleratorText:    Ctrl+W
+Dtcm*month.acceleratorText:   Ctrl+M
+Dtcm*year.acceleratorText:    Ctrl+Y
+Dtcm*options.acceleratorText: Ctrl+I
+Dtcm*appt.acceleratorText:    Ctrl+A
+Dtcm*toDo.acceleratorText:    Ctrl+T
+Dtcm*find.acceleratorText:    Ctrl+F
+Dtcm*print.acceleratorText:   Ctrl+P
+Dtcm*exit.acceleratorText:    Alt+F4
+Dtcm*onItem.accelerator:	    F1
+
+!----------------------------------------------------
+! Accelerators for selected commands with text above
+!----------------------------------------------------
+Dtcm*day.accelerator:     Ctrl<Key>D
+Dtcm*week.accelerator:    Ctrl<Key>W
+Dtcm*month.accelerator:   Ctrl<Key>M
+Dtcm*year.accelerator:    Ctrl<Key>Y
+Dtcm*options.accelerator: Ctrl<Key>I
+Dtcm*appt.accelerator:    Ctrl<Key>A
+Dtcm*toDo.accelerator:    Ctrl<Key>T
+Dtcm*find.accelerator:    Ctrl<Key>F
+Dtcm*print.accelerator:   Ctrl<Key>P
+Dtcm*exit.accelerator:	<Meta>F4
+Dtcm*onItem.accelerator:	<Key>F1
+
+Dtcm*fileMenu.tearOffModel: tear_off_disabled
+Dtcm*editMenu.tearOffModel: tear_off_disabled
+Dtcm*viewMenu.tearOffModel: tear_off_disabled
+Dtcm*browseMenu.tearOffModel: tear_off_disabled
+Dtcm*helpMenu.tearOffModel: tear_off_disabled
+
+!------------------------------------
+! Programmable date formats
+!------------------------------------
+Dtcm*XmMonthPanel.titleFormat: %Y³â %b
+Dtcm*yearForm.XmMonthPanel.titleFormat: %b
+
+!------------------------------------
+! Miscellaneous
+!------------------------------------
+Dtcm*labelForm*fontList: -dt-interface system-medium-r-normal-m*ksc*:
+Dtcm*XmMonthPanel*fontList: -dt-interface system-medium-r-normal-m*ksc*:
+Dtcm*canvas*XmPushButton.fontList: -dt-interface system-medium-r-normal-m*ksc*:
+Dtcm*XmMonthPanel.activeHeader: True
+Dtcm*XmMonthPanel*recomputeSize: False
+Dtcm*lastMonth.activeDays: True
+Dtcm*thisMonth.activeDays: True
+Dtcm*nextMonth.activeDays: True
+Dtcm.iconFont:  -dt-interface system-medium-r-normal-m*ksc*:
+
+! Font family to use for Dtcm's views: ``application'' for C locale
+! ``mincho'' for ja locale, etc.
+Dtcm.applicationFontFamily:  -dt-interface system-medium-normal-r-m*ksc*:
+
+!------------------------------------
+! Images for toolbar buttons
+!------------------------------------
+! Removed for time being until problem with HP and IBM not reading these
+! is fixed
+! Dtcm*XmForm.appt.labelType: pixmap
+! Dtcm*XmForm.todo.labelType: pixmap
+! Dtcm*XmForm.day.labelType: pixmap
+! Dtcm*XmForm.month.labelType: pixmap
+! Dtcm*XmForm.week.labelType: pixmap
+! Dtcm*XmForm.year.labelType: pixmap
+! Dtcm*XmForm.appt.labelPixmap: /usr/dt/appconfig/icons/C/DtCMapt.m.pm
+! Dtcm*XmForm.todo.labelPixmap: /usr/dt/appconfig/icons/C/DtCMtdo.m.pm
+! Dtcm*XmForm.day.labelPixmap: /usr/dt/appconfig/icons/C/DtCMday.m.pm
+! Dtcm*XmForm.week.labelPixmap: /usr/dt/appconfig/icons/C/DtCMwk.m.pm
+! Dtcm*XmForm.month.labelPixmap: /usr/dt/appconfig/icons/C/DtCMmth.m.pm
+! Dtcm*XmForm.year.labelPixmap: /usr/dt/appconfig/icons/C/DtCMyr.m.pm
+!
+! The followings are added by IBM
+Dtcm.frame.outerPane.innerPane.upperForm.text_field_form.dataText.columns: "5"
+Dtcm*dssw_form_mgr.start_text.columns: "3"
+Dtcm*dssw_form_mgr.stop_text.columns: "3"
+Dtcm*dssw_form_mgr.what_text.columns: "10"
+Dtcm*repeat_popup_frame.form_mgr_text_field.columns: "3"
+Dtcm.frame.form.appt.columns: "30"
+Dtcm.frame.form.search_from.columns: "8"
+Dtcm.frame.form.search_to.columns: "8"
+Dtcm*dp_form_mgr.dp_loc_text.columns: "8"
+Dtcm*dp_form_mgr.dp_init_view_text.columns: "13"
+Dtcm*gap_form_mgr.gap_user_text.columns: "12"
+Dtcm*pop_form_mgr.pop_printer_text.columns: "10"
+Dtcm*pop_form_mgr.pop_directory_text.columns: "10"
+Dtcm*pop_form_mgr.pop_options_text.columns: "10"
+Dtcm*pop_form_mgr.pop_file_text.columns: "10"
+Dtcm*pop_form_mgr.pop_width_text.columns: "5"
+Dtcm*pop_form_mgr.pop_height_text.columns: "5"
+Dtcm*pop_form_mgr.pop_pos_left_text.columns: "5"
+Dtcm*pop_form_mgr.pop_pos_bottom_text.columns: "5"
+Dtcm*pop_form_mgr.unitsSpin.columns: "1"
+Dtcm*pop_form_mgr.copiesSpin.columns: "1"
+Dtcm*bfpm_form_mgr.beep_text.columns: "3"
+Dtcm*bfpm_form_mgr.flash_text.columns: "3"
+Dtcm*bfpm_form_mgr.popup_text.columns: "3"
+Dtcm*bfpm_form_mgr.mail_text.columns: "3"
+Dtcm*control.printerText.columns: "15"
+Dtcm*control.copiesSpin.columns: "1"
+Dtcm*control.fromText.columns: "15"
+Dtcm*control.toText.columns: "15"
+Dtcm*control.argsText.columns: "15"
+Dtcm*control.fileText.columns: "15"
+Dtcm*gap2_form_mgr.gap2_text_user_name.columns: "18"
+
+!------------------------------------
+! Fonts for printing
+!------------------------------------
+! Day View
+Dtcm*dvpTitleFont: ....Missing message #122
+Dtcm*dvpHeaderFont:....Missing message #123
+Dtcm*dvpApptFont:  ....Missing message #124
+Dtcm*dvpTimeFont:  ....Missing message #125
+
+! Week View
+Dtcm*wvpTitleFont: ....Missing message #126
+Dtcm*wvpHeaderFont:....Missing message #127
+Dtcm*wvpApptFont:  ....Missing message #128
+Dtcm*wvpDayFont:   ....Missing message #129
+Dtcm*wvpBoxFont:   ....Missing message #130
+
+! Month View
+Dtcm*mvpTitleFont: ....Missing message #131
+Dtcm*mvpHeaderFont:....Missing message #132
+Dtcm*mvpApptFont:  ....Missing message #133
+Dtcm*mvpDayFont:   ....Missing message #134
+Dtcm*mvpDateFont:  ....Missing message #135
+Dtcm*mvpTinyTitleFont:....Missing message #136
+Dtcm*mvpTinyDayFont:....Missing message #137
+Dtcm*mvpTinyDateFont:....Missing message #138
+
+! Year View
+Dtcm*yvpTitleFont: ....Missing message #139
+Dtcm*yvpHeaderFont:....Missing message #140
+Dtcm*yvpTinyTitleFont:....Missing message #141
+Dtcm*yvpTinyDayFont:....Missing message #142
+Dtcm*yvpTinyDateFont:....Missing message #143
+
+! Appt List View
+Dtcm*avpTitleFont: ....Missing message #144
+Dtcm*avpHeaderFont:....Missing message #145
+Dtcm*avpApptFont:  ....Missing message #146
+Dtcm*avpItemFont:  ....Missing message #147
+Dtcm*avpTinyTitleFont:....Missing message #148
+Dtcm*avpTinyDayFont:....Missing message #149
+Dtcm*avpTinyDateFont:....Missing message #150
+
+! To Do List View
+Dtcm*tvpTitleFont: ....Missing message #151
+Dtcm*tvpHeaderFont:....Missing message #152
+Dtcm*tvpApptFont:  ....Missing message #153
+Dtcm*tvpItemFont:  ....Missing message #154
+Dtcm*tvpTinyTitleFont:....Missing message #155
+Dtcm*tvpTinyDayFont:....Missing message #156
+Dtcm*tvpTinyDateFont:....Missing message #157

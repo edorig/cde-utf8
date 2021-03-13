@@ -1,0 +1,219 @@
+# #######################################################################
+# 
+#      dthelp.dt
+# 
+#      Actions and filetypes for Help files.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dthelp.dt.src /main/4 1996/04/23 17:35:19 drk $
+# 
+# #####################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES DTHELP_VOL
+{
+        ACTIONS         Open,Print
+        ICON		Dthvol
+        NAME_TEMPLATE   %s.sdl
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     이것은 도움말 볼륨을 위한 마스터 볼륨 파일\
+입니다. 이 데이타 유형은 DTHELP_VOL라고 합니다. \
+DTHELP_VOL 파일은 파일 이름 끝에 '.sdl' 또는 \
+'.hv'의 확장 이름을 갖습니다.
+        TYPE_LABEL      DTHELP_VOL
+}
+DATA_CRITERIA DTHELP_VOL1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_VOL
+        MODE            f
+        NAME_PATTERN    *.sdl
+}
+DATA_CRITERIA DTHELP_VOL2
+{
+        DATA_ATTRIBUTES_NAME DTHELP_VOL
+        MODE            f
+        NAME_PATTERN    *.hv
+}
+ACTION Open
+{
+        LABEL           Open
+	ARG_TYPE 	DTHELP_VOL
+	TYPE		MAP
+        MAP_ACTION	Dthelpview
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        DTHELP_VOL
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_HT
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.ht
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     이 도움말 주제 파일은 도움말 볼륨의 일부분 입니다. \
+도움말 주제를 열람하려면, 마스터 볼륨 파일을 열어야 \
+합니다. 이 데이타 유형은 DTHELP_HVK라고 합니다. \
+DTHELP_HT 파일은 파일 이름 끝에 '.hvk'의  \
+확장 이름을 갖습니다. 
+        TYPE_LABEL      DTHELP_HT
+}
+DATA_CRITERIA DTHELP_HT1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_HT
+        NAME_PATTERN    *.ht
+        MODE            f
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_HVK
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.hvk
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     이 파일은 컴파일한 도움말 볼륨과 연관된 파일입니다. \
+도움말 볼륨을 열람하려면, 마스터 볼륨 파일을 열어야 \
+합니다. 이 데이타 유형은 DTHELP_HVK 라고 합니다. \
+DTHELP_HVK 파일은 파일 이름 끝에 '.hvk'의 \
+확장 이름을 갖습니다. 
+        TYPE_LABEL      DTHELP_HVK
+}
+DATA_CRITERIA DTHELP_HVK1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_HVK
+        NAME_PATTERN    *.hvk
+        MODE            f
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_XRH
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.xrh
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     이 파일은 컴파일한 도움말 볼륨과 연관된 파일입니다. \
+도움말 볼륨을 열람하려면, 마스터 볼륨 파일을 열어야 \
+합니다. 이 데이타 유형은 DTHELP_XRH라고 합니다. \
+DTHELP_XRH 파일은 파일 이름 끝에 '.xrh'의 \
+확장 이름을 갖습니다. 
+        TYPE_LABEL      DTHELP_XRH
+}
+DATA_CRITERIA DTHELP_XRH
+{
+        DATA_ATTRIBUTES_NAME DTHELP_XRH
+        NAME_PATTERN    *.xrh
+        MODE            f
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# 활동
+# 
+# ##################################################################
+ACTION Dthelpview
+{
+        LABEL           도움말 열람기
+	ARG_COUNT	0
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen -dir $HOME/.dt/help/$DTUSERSESSION;                            /usr/dt/bin/dthelpview -helpVolume browser '
+
+	DESCRIPTION	도움말 열람기 (Dthelpview) 활동은 아이콘을  \
+두번 누를때 도움말 대주제를 보여줍니다.  \
+아이콘에 도움말 볼륨 파일을 놓으면 \
+그 볼륨이 나타납니다.
+}
+ACTION Dthelpview
+{
+        LABEL           도움말 열람기
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen 				    -dir $HOME/.dt/help/$DTUSERSESSION;                             /usr/dt/bin/dthelpview -helpVolume "%(File)Arg_1%" '
+
+
+	DESCRIPTION	도움말 열람기 (Dthelpview) 활동은 아이콘을  \
+두번 누를때 도움말 대주제를 보여줍니다.  \
+아이콘에 도움말 볼륨 파일을 놓으면 \
+그 볼륨이 나타납니다.
+}
+
+# #######
+
+ACTION Dthelpgen
+{
+        LABEL           Help Generator
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen -dir                          "%(File)Arg_1"생성된 도움말 파일을 놓을 위치:"%"'
+
+	DESCRIPTION	Help Generator (Dthelpgen) 활동은 사용자에 대한 \
+온라인 도움말을 생성하는 dthelpgen을 실행합니다. \
+또한 실행중에 "열람기 정보 생성중.기다리십시오."대화를 \
+나타냅니다. 이 활동은 사용자가 Common Desktop Environment에 \
+처음으로 로그인 할 때 \
+실행됩니다.
+}
+ACTION Dthelpgen_delay
+{
+        LABEL           Help Generator
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c 'sleep 15; /usr/dt/bin/dthelpgen -dir                          $HOME/.dt/help/$DTUSERSESSION'
+
+	DESCRIPTION	Help Generator (Dthelpgen) 활동은 사용자에 대한 \
+온라인 도움말을 생성하는 dthelpgen을 실행합니다. \
+또한 실행중에 "열람기 정보 생성중.기다리십시오."대화를 \
+나타냅니다. 이 활동은 사용자가 Common Desktop Environment에 \
+처음으로 로그인 할 때 \
+실행됩니다.
+}
+
+# #######
+
+ACTION Dtmanpageview 
+{
+        LABEL           온라인 설명서 열람기
+        ICON		Dthover
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     sh -c ' /usr/dt/bin/dthelpview -manPage               `basename "%(File)Arg_1"온라인 설명서:"%" | sed /[.].*/s///`               -xrm "Dthelpview*manBox*columns: 50"'
+
+
+	DESCRIPTION	온라인 설명서 열람기 (Dtmanpageview) 활동은 \
+빠른 도움말 열람기 창에서 온라인 설명서를 보여줍니다.
+}
+# ######################## EOF ############################################

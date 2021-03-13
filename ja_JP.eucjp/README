@@ -1,3 +1,5 @@
+Messages:
+--------
 By default, the Japanese messages are not compiled and installed 
 by the CDE build process. 
 With GNU gencat, it is possible to build post-installation the 
@@ -35,3 +37,26 @@ before running the script.
 
 Once it it done, add the two lines in dtprofile to $HOME/.dtprofile to see
 the CDE menus in Japanese. 
+
+Action definitions, application defaults, configuration files
+-------------------------------------------------------------
+These files have to be produced by the merge program in 
+$CDEROOT/programs/localized/util
+from .nls files that contain the template, and .tmsg files 
+that contain the Japanese text to fill that template. 
+For convenience, the present directory contains all necessary files 
+to regenerate the action definitions, application defaults and configuration
+files as well as the generated files. 
+
+To regenerate these files, edit genfiles.sh to point to the correct
+CDEROOT location. Then, make the file executable and install it 
+in $HOME/bin and run it in the present directory. 
+
+If you want to regenerate from the CDE source
+tree, you need first to create the .nls template files by symlink from
+one of the default locales, following the model in the present directory. 
+Then, you will have to run the script in the appropriate subdirectory. 
+
+To install the messages, use 
+  sudo install.sh 
+  

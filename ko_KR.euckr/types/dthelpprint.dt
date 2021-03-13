@@ -1,0 +1,56 @@
+# ##########################################################################
+# 
+#      dthelpprint.dt
+# 
+#      Actions and filetypes for dthelpprint files.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dthelpprint.dt.src /main/4 1996/04/23 17:35:22 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES DTHELP_PRINT_FILE
+{
+        ACTIONS         Print
+        ICON		Dthvol
+        NAME_TEMPLATE   _phlp%s
+        DESCRIPTION     이 파일은 사용자가 도움말 시스템에서 \
+인쇄할 때 생성됩니다. 이 데이타 유형은 DTHELP_PRINT_FILE \
+라고 합니다. DTHELP_PRINT_FILE 파일은 \
+앞에 '_phlp'로 시작하는 이름을 갖습니다.
+        TYPE_LABEL      DTHELP_PRINT_FILE
+}
+DATA_CRITERIA DTHELP_PRINT_FILE1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_PRINT_FILE
+        MODE            f
+        NAME_PATTERN    _phlp*
+}
+ACTION Print
+{
+	ARG_TYPE 	DTHELP_PRINT_FILE
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtlp -f "%(File)Arg_1%"                 ${LPDEST:+-d} ${LPDEST:+$LPDEST}                 -n "${DTPRINTCOPYCOUNT:-1}"                 -b "${DTPRINTBANNERTITLE:-CDE Help}"                 "${DTPRINTCOMMAND:+-m}"                         "${DTPRINTCOMMAND:+$DTPRINTCOMMAND}"                 "${DTPRINTFROMCODESET:+-c}"                         "${DTPRINTFROMCODESET:+$DTPRINTFROMCODESET}"                 "${DTPRINTCODESET:+-t}" "${DTPRINTCODESET:+$DTPRINTCODESET}"                 -u "${DTPRINTUSERFILENAME:-Help Information}"                 -w "${DTPRINTRAW:-$FALSE}"                 -s "${DTPRINTSILENT:-$TRUE}"                 -e "${DTPRINTFILEREMOVE:-$TRUE}";
+}
+# ######################## EOF ############################################

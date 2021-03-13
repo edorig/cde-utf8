@@ -1,0 +1,317 @@
+# ##########################################################################
+# 
+#     miscActions.dt
+# 
+#     Examples of miscellaneous Actions (mostly for X clients).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: miscActions.dt.src /main/4 1996/04/23 17:36:05 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# 활동
+# 
+# ##################################################################
+ACTION Xcalc
+{
+        LABEL		X Calculator
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcalc
+	DESCRIPTION	Xcalc 활동은 xcalc X 클라이언트를 호출합니다. \
+xcalc 클라이언트는 TI-30 또는  HP-10C를 에뮬레이트 \
+할 수 있는 과학 계산기 데스크탑 부속품입니다.
+}
+
+# #####
+
+ACTION Oclock
+{
+        LABEL		Oval Clock
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     oclock
+	DESCRIPTION	Oval Clock (Oclock) 활동은 oclock X 클라이언트를 \
+호출합니다. oclock 클라이언트는 현재 시간을 \
+아나로그 방식으로 보여줍니다.
+}
+
+# #####
+
+ACTION Xlsatoms
+{
+        LABEL		List Atoms
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlsatoms
+	DESCRIPTION	List Atoms (Xlsatoms) 활동은 xlsatoms X 클라이언트를 \
+호출합니다. Xlsatoms은 interned atoms을 나열합니다.
+}
+
+# #####
+
+ACTION Xbiff
+{
+        LABEL		Xbiff
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xbiff
+	DESCRIPTION	Xbiff 활동은 xbiff X 클라이언트를 호출합니다. \
+xbiff 프로그램은 우편함의 이미지를 약간 보여줍니다. \
+우편이 없으면, 우편함의 기는 내려갑니다. \
+우편이 도착하면,  기는 다시 올라가고 \
+우편함에서 삐소리가 납니다.
+}
+
+# #####
+
+ACTION Xcolor
+{
+        LABEL		Xcolor
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcolor
+	DESCRIPTION	Xcolor 활동은 xcolor X 클라이언트를 호출합니다. \
+xcolor는 창에서 256가지의 색을 보여줍니다. \
+가리키개를 창 안으로 옮기면,  \
+햐안색과 까만색을 잘 유지하면서, 일정한 채도와 \
+일정한 밝기로 색조 램프를 가진 색상맵을\
+설치합니다.
+}
+
+# #####
+
+ACTION Xcutsel
+{
+        LABEL		Cut and Select
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcutsel
+	DESCRIPTION	Cut and Select (Xcutsel) 활동은 xcutsel X 클라이언트를 \
+호출합니다. xcutsel 클라이언트는 현재 선택된 부분을 \
+자르기 버퍼로 복사하고, 자르기 버퍼의 \
+현재 내용을 포함하는 선택부분을 만드는데 사용됩니다. \
+이것은 선택을 지원하는 응용프로그램과 지원하지않는 \
+응용프로그램사이의 다리와 같은 역활을 합니다.
+}
+
+# #####
+
+ACTION Xditview
+{
+        LABEL		Xditview
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xditview
+	DESCRIPTION	Xditview 활동은  xditview X 클라이언트를 호출합니다. \
+xditview 프로그램은 X 디스플레이에서 ditroff \
+출력을 보여줍니다.
+}
+
+# #####
+
+ACTION Xedit
+{
+        LABEL		Xedit
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xedit
+	DESCRIPTION	Xedit 활동은 xedit X 클라이언트를 호출합니다. \
+xedit 클라이언트는 다음의 네가지 영역으로 구성되는 창을 \
+제공합니다.  1. 명령 선택: 사용자가 파일을 저장하고 \
+xedit를 끝낼때, 또는 편집창으로 새 파일을 로드할때 \
+쓰이는 명령들 \
+2. 메세지 창: xedit 메세지를 보여줍니다. \
+또한, 이 창은 scratch pad로써 사용됩니다. \
+3. 파일 이름 보여주기: 현재 편집중인  \
+파일 이름과 이 파일이 읽고 쓸 수 있는 것인지, \
+읽기 전용인지를 보여줍니다. \
+4. 편집 창: 사용자가 편집하거나 \
+만들려는 파일의 문자를 보여줍니다.
+}
+
+# #####
+
+ACTION Xlock
+{
+        LABEL		Xlock
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlock
+	DESCRIPTION	Xlock 활동은 xlock X 클라이언트를 호출합니다. \
+xlock 클라이언트는 암호가 입력 될때까지 \
+로컬 X 디스플레이를 잠급니다.
+}
+
+# #####
+
+ACTION Xlogo
+{
+        LABEL		Xlogo
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlogo
+	DESCRIPTION	Xlogo 활동은 xlogo X 클라이언트를 호출합니다. \
+xlogo 클라이언트는 X 창 시스템 로고를 \
+보여줍니다.
+}
+
+# #####
+
+ACTION Xmag
+{
+        LABEL		Magnify
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xmag
+	DESCRIPTION	Magnify (Xmag) 활동은 xmag X 클라이언트를 호출합니다. \
+xmag 클라이언트는 사용자가 X 화면의 \
+영역을 확대하게합니다.  영역이 명백하게 \
+구분되지 않으면, 위쪽 왼쪽 구석에 있는 \
+가리키개가 있는 스퀘어는 영역이 \
+커지도록 표시해줍니다. 단추2를 누르면서  \
+영역이 커지기 원하는 만큼만 끌으십시오. \
+한번 영역이 선택되면, 원본 이미지의 각 픽셀은  \
+같은 색깔의 작은 스퀘어로 표시되고 \
+영역의 버전의 확대가 느려지면서  \
+\
+창이 돌출된다.
+}
+
+# #####
+
+ACTION Xman
+{
+        LABEL		Xman
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xman
+	DESCRIPTION	Xman 활동은 xman X 클라이언트를 호출합니다. \
+                        xman 클라이언트는 온라인 설명서 훑어보기입니다.
+}
+
+# #####
+
+ACTION Xmh
+{
+        LABEL		X Mail Handler
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xmh
+	DESCRIPTION	X Mail Handler (Xmh) 활동은 xmh \
+X 클라이언트를 호출합니다. xmh 클라이언트는  \
+그래픽 사용자 인터페이스를 MH 메세지 처리 시스템에 \
+제공합니다. 실제로 사용자 우편에 \
+다루기위해, 그것은 MH 패키지를 호출합니다. \
+전자 우편 메세지는 폴더에서 작성되고, 보내고, \
+받고, 응답하고, 전달하고, 분류하고, 저장합니다. \
+xmh는 사용자 인터페이스의 사용자 정의를 위해  \
+확장 메카니즘을 제공합니다.
+}
+
+# #####
+
+ACTION Xeyes
+{
+        LABEL		Eyes
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xeyes
+	DESCRIPTION	Eyes (Xeyes) 활동은 xeyes X 클라이언트를 호출합니다. \
+xeyes 클라이언트는 가리키개가 디스플레이에서 움직이는 대로 \
+따라 움직이는 한 쌍의 눈모양을 보여줍니다.
+}
+
+# #####
+
+ACTION Xauth
+{
+        LABEL		X Authority
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xauth
+	DESCRIPTION	X Authority (Xauth) 활동은 xauth X클라이언트를 \
+호출합니다. xauth 클라이언트는 X 서버를  \
+연결할때 사용하던 공인 정보를 보여주고 \
+편집하는데 사용합니다.
+}
+
+# #####
+
+ACTION Xlsclients
+{
+        LABEL		List Clients
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlsclients
+	DESCRIPTION	List Clients (Xlsclients) 활동은 xlsclients \
+X 클라이언트를 호출합니다. xlsclients 클라이언트는 \
+디스플레이에서 실행하던 클라이언트 응용프로그램에 대한 \
+정보 목록을 위한 유틸리티이다. 이것은 사용자의 \
+현재 세션의 스냅 사진을 나타내는 스크립트를 생성할 때 \
+사용됩니다.
+}
+
+# #####
+
+ACTION Xpuzzle
+{
+        LABEL		X Puzzle
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xpuzzle
+	DESCRIPTION	X Puzzle (Xpuzzle) 활동은 xpuzzle X 클라이언트를 \
+호출합니다. xpuzzle 클라이언트는 4x4 15 조각의 \
+퍼즐입니다.
+}
+
+# #####
+
+ACTION Passwd
+{
+        LABEL           Change Password
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     dtterm -geometry 60x8 -xrm "*menuBar: False" -e sh -c '                                echo "암호 바꾸기";                                echo "-----------";                                passwd'
+
+
+
+        DESCRIPTION     Change Password (Passwd) 활동은 사용자의  \
+암호를 바꾸기 위해 'passwd'명령을 사용합니다.
+}
+
+# ######################## EOF ############################################

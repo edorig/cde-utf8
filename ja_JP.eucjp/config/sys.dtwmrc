@@ -1,0 +1,192 @@
+# #################################################################
+#
+#    Original copy: /usr/dt/config/C/sys.dtwmrc
+#
+#    The Resource Description File for the CDE Window Manager dtwm
+#
+#    (c) Copyright 1993, 1994 Hewlett-Packard Company.
+#    (c) Copyright 1993, 1994 International Business Machines Corp. 
+#    (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994 Unix System Labs, Inc., a subsidiary
+#        of Novell, Inc.
+#
+# $XConsortium: sys.dtwmrc.src /main/4 1996/04/21 19:51:58 drk $
+#
+# #################################################################
+
+# ###
+#
+#  Please make a COPY of this file before editing it.
+#
+#  Personalized copies typically exist as:
+#
+#       $HOME/.dt/dtwmrc
+#
+# ###
+
+# ###
+#
+# Root Menu Description
+#
+# ###
+
+Menu DtRootMenu
+{
+    "ワークスペース・メニュー"			f.title
+    "奥のウィンドウを手前へ"			f.circle_up
+    "手前のウィンドウを奥へ"			f.circle_down
+    "再表示"					f.refresh
+    "フロントパネルのアイコン化/復元"		f.toggle_frontpanel
+     no-label					f.separator
+    "ワークスペース・マネージャの再起動..."	f.restart
+     no-label					f.separator
+    "ログアウト..."				f.action ExitSession
+}
+
+
+# ###
+#
+# Front panel Manu Description
+#
+# ###
+
+Menu DtPanelMenu
+{
+    "復元(R)"			_R	f.normalize
+    "移動(M)"			_M	f.move
+    "アイコン化(n)"		_n	f.minimize
+    "奥へ(L)"			_L	f.lower
+    "再表示(f)"			_f	f.refresh
+     no-label				f.separator
+    "ログアウト(o)..."		_o	f.action ExitSession
+}
+
+
+# ###
+#
+# Sample Window Menu Description
+# This menu description exists as a sample only.
+# The normal window manager menu is built in.
+#
+# ###
+
+Menu SampleWindowMenu
+{
+    "復元(R)"				_R		f.normalize
+    "移動(M)"				_M		f.move
+    "サイズ(S)"				_S		f.resize
+    "アイコン化(n)"			_n		f.minimize
+    "最大表示(x)"			_x		f.maximize
+    "奥へ(L)"				_L		f.lower
+     no-label						f.separator
+    "配置するワークスペース(O)..."	_O		f.workspace_presence
+    "すべてのワークスペースに配置(A)"	_A		f.occupy_all
+    "このワークスペースから消去(U)"	_U		f.remove
+     no-label						f.separator
+    "閉じる(C)"			_C	Alt<Key>F4	f.kill
+}
+
+# ###
+#
+# Alternate Window Menu Description without accelerators
+#
+# ###
+
+Menu NoAcceleratorWindowMenu
+{
+    "復元(R)"				_R	f.normalize
+    "移動(M)"				_M	f.move
+    "サイズ(S)"				_S	f.resize
+    "アイコン化(n)"			_n	f.minimize
+    "最大表示(x)"			_x	f.maximize
+    "奥へ(L)"				_L	f.lower
+     no-label					f.separator
+    "配置するワークスペース(O)..."	_O	f.workspace_presence
+    "すべてのワークスペースに配置(A)"	_A	f.occupy_all
+    "このワークスペースから消去(U)"	_U	f.remove
+     no-label					f.separator
+    "閉じる(C)"				_C	f.kill
+}
+
+# ###
+#
+# Key Bindings Description
+#
+# ###
+
+Keys DtKeyBindings
+{
+
+
+
+
+#   Alt<Key>Menu		root|icon|window	f.toggle_frontpanel 
+
+    Shift<Key>Escape		icon|window		f.post_wmenu
+    Alt<Key>space		icon|window		f.post_wmenu
+    Alt<Key>Tab			root|icon|window	f.next_key
+    Alt Shift<Key>Tab		root|icon|window	f.prev_key
+    Alt<Key>Escape		root|icon|window	f.next_key
+    Alt Shift<Key>Escape	root|icon|window	f.prev_key
+    Alt<Key>Down		root|icon|window	f.circle_down
+    Alt<Key>Up			root|icon|window	f.circle_up
+    Alt Ctrl Shift<Key>exclam	root|icon|window	f.set_behavior
+    Alt<Key>F6			window			f.next_key transient
+    Alt<Key>F10			root|icon|window	f.menu DtRootMenu
+
+}
+
+# ###
+#
+# Mouse Button Bindings Description
+#
+# ###
+
+Buttons DtButtonBindings
+{
+    <Btn1Down>		root			f.marquee_selection
+    <Btn3Down>		root			f.menu  DtRootMenu
+    <Btn1Down>		frame|icon		f.raise
+    <Btn3Down>		frame|icon		f.post_wmenu
+    Alt<Btn1Down>	icon|window		f.move
+    Alt<Btn3Down>	window			f.minimize
+}
+
+
+# ###
+#
+# Defaults:   Window menus, key bindings, and mouse button bindings
+#
+# ###
+
+Menu DefaultWindowMenu
+{
+    "復元(R)"		_R	Alt<Key>F5	f.normalize
+    "移動(M)"		_M	Alt<Key>F7	f.move
+    "サイズ(S)"		_S	Alt<Key>F8	f.resize
+    "アイコン化(n)"	_n	Alt<Key>F9	f.minimize
+    "最大表示(x)"	_x	Alt<Key>F10	f.maximize
+    "奥へ(L)"		_L	Alt<Key>F3	f.lower
+    no-label					f.separator
+    "閉じる(C)"		_C	Alt<Key>F4	f.kill
+}
+
+Keys DefaultKeyBindings
+{
+    Shift<Key>Escape		icon|window		f.post_wmenu
+    Alt<Key>space		icon|window		f.post_wmenu
+    Alt<Key>Tab		root|icon|window	f.next_key
+    Alt Shift<Key>Tab		root|icon|window	f.prev_key
+    Alt<Key>Escape		root|icon|window	f.next_key
+    Alt Shift<Key>Escape	root|icon|window	f.prev_key
+    Alt Ctrl Shift<Key>exclam	root|icon|window	f.set_behavior
+    Alt<Key>F6			window			f.next_key transient
+}
+
+Buttons DefaultButtonBindings
+{
+    <Btn1Down>		frame|icon	f.raise
+    <Btn3Down>		icon		f.post_wmenu
+}
+
+# ################  End of the dtwmrc file   ################

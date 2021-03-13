@@ -1,0 +1,202 @@
+# #######################################################################
+# 
+#      dthelp.dt
+# 
+#      Actions and filetypes for Help files.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dthelp.dt.src /main/4 1996/04/23 17:35:19 drk $
+# 
+# #####################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 数据属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES DTHELP_VOL
+{
+        ACTIONS         Open,Print
+        ICON		Dthvol
+        NAME_TEMPLATE   %s.sdl
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     这是一个提示卷的基本卷。它的数据类型称为 DTHELP_VOL。\
+                        DTHELP_VOL 文件的文件名以 '.sdl' 或 '.hv' 结尾。
+        TYPE_LABEL      DTHELP_VOL
+}
+DATA_CRITERIA DTHELP_VOL1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_VOL
+        MODE            f
+        NAME_PATTERN    *.sdl
+}
+DATA_CRITERIA DTHELP_VOL2
+{
+        DATA_ATTRIBUTES_NAME DTHELP_VOL
+        MODE            f
+        NAME_PATTERN    *.hv
+}
+ACTION Open
+{
+        LABEL           打开
+	ARG_TYPE 	DTHELP_VOL
+	TYPE		MAP
+        MAP_ACTION	Dthelpview
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        DTHELP_VOL
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_HT
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.ht
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     这是一个提示题目文件，它是提示卷的一部分。为了显示帮\
+                        助题目, 您必须打开基本卷文件。这个文件的数据类型称为 \
+                        DTHELP_HT。DTHELP_HT 文件的文件名以 '.ht' 结尾。
+        TYPE_LABEL      DTHELP_HT
+}
+DATA_CRITERIA DTHELP_HT1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_HT
+        NAME_PATTERN    *.ht
+        MODE            f
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_HVK
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.hvk
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     这是一个与经过编译的提示卷相关的文件。为显示提示卷，您\
+                        必须打开基本卷文件。这个文件的数据类型称为 DTHELP_HVK。\
+                        DTHELP_HVK 文件的文件名以 '.hvk' 结尾。
+        TYPE_LABEL      DTHELP_HVK
+}
+DATA_CRITERIA DTHELP_HVK1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_HVK
+        NAME_PATTERN    *.hvk
+        MODE            f
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_XRH
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.xrh
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     这是一个与经过编译的提示卷相关的文件。为显示提示卷，您\
+                        必须打开基本卷文件。这个文件的数据类型称为DTHELP_XRH。\
+                        DTHELP_XRH 文件的文件名以 '.xrh' 结尾。
+        TYPE_LABEL      DTHELP_XRH
+}
+DATA_CRITERIA DTHELP_XRH
+{
+        DATA_ATTRIBUTES_NAME DTHELP_XRH
+        NAME_PATTERN    *.xrh
+        MODE            f
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# 动作
+# 
+# ##################################################################
+ACTION Dthelpview
+{
+        LABEL           提示显示程序
+	ARG_COUNT	0
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen -dir $HOME/.dt/help/$DTUSERSESSION;                            /usr/dt/bin/dthelpview -helpVolume browser '
+
+	DESCRIPTION	当两次点按图标时，提示显示程序 (Dthelpview) 动作显示提示\
+                        的顶层。如果您将图标放到一个提示卷文件上，将显示该卷。
+}
+ACTION Dthelpview
+{
+        LABEL           提示显示程序
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen 				    -dir $HOME/.dt/help/$DTUSERSESSION;                             /usr/dt/bin/dthelpview -helpVolume "%(File)Arg_1%" '
+
+
+	DESCRIPTION	当两次点按图标时，提示显示程序 (Dthelpview) 动作显示提示\
+                        的顶层。如果您将图标放到一个提示卷文件上，将显示该卷。
+}
+
+# #######
+
+ACTION Dthelpgen
+{
+        LABEL           求助生成器
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen -dir                          "%(File)Arg_1"放置所生成的求助文件的位置:"%"'
+
+	DESCRIPTION	求助生成器 (Dthelpgen) 动作运行 dthelpgen，它为一个用户\
+                        生成在线求助。它还在运行中显示 '正在生成浏览程序\
+                        信息，请稍等' 对话。当一个用户第一次进入公用桌面\
+                        环境时，该动作被执行。
+}
+ACTION Dthelpgen_delay
+{
+        LABEL           求助生成器
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c 'sleep 15; /usr/dt/bin/dthelpgen -dir                          $HOME/.dt/help/$DTUSERSESSION'
+
+	DESCRIPTION	求助生成器 (Dthelpgen) 动作运行 dthelpgen，它为一个用户\
+                        生成在线求助。它还在运行中显示 '正在生成浏览程序\
+                        信息，请稍等' 对话。当一个用户第一次进入公用桌面\
+                        环境时，该动作被执行。
+}
+
+# #######
+
+ACTION Dtmanpageview 
+{
+        LABEL           联机手册查看程序
+        ICON		Dthover
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     sh -c ' /usr/dt/bin/dthelpview -manPage               `basename "%(File)Arg_1"联机手册:"%" | sed /[.].*/s///`               -xrm "Dthelpview*manBox*columns: 100"'
+
+
+	DESCRIPTION	联机手册检看程序 (Dtmanpageview) 动作在一个快\
+                        速提示查看程序窗口中显示联机手册。
+}
+# ######################## EOF ############################################

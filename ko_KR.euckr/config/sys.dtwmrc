@@ -1,0 +1,192 @@
+# #################################################################
+#
+#    Original copy: /usr/dt/config/C/sys.dtwmrc
+#
+#    The Resource Description File for the CDE Window Manager dtwm
+#
+#    (c) Copyright 1993, 1994 Hewlett-Packard Company.
+#    (c) Copyright 1993, 1994 International Business Machines Corp. 
+#    (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994 Unix System Labs, Inc., a subsidiary
+#        of Novell, Inc.
+#
+# $XConsortium: sys.dtwmrc.src /main/4 1996/04/21 19:51:58 drk $
+#
+# #################################################################
+
+# ###
+#
+#  Please make a COPY of this file before editing it.
+#
+#  Personalized copies typically exist as:
+#
+#       $HOME/.dt/dtwmrc
+#
+# ###
+
+# ###
+#
+# Root Menu Description
+#
+# ###
+
+Menu DtRootMenu
+{
+    "작업장 메뉴"			f.title
+    "위로"			f.circle_up
+    "아래로"			f.circle_down
+    "다시 그리기"				f.refresh
+    "아이콘/원상태 프론트 패널"	f.toggle_frontpanel
+     no-label				f.separator
+    "작업장 관리자 다시 시작..."	f.restart
+     no-label				f.separator
+    "로그아웃..."			f.action ExitSession
+}
+
+
+# ###
+#
+# Front panel Manu Description
+#
+# ###
+
+Menu DtPanelMenu
+{
+    "이전 상태로R"	_R	f.normalize
+   옮기기M		_M	f.move
+    아이콘으로n		_n	f.minimize
+    "뒤로 보내기L"		_L	f.lower
+    "다시 그리기f"		_f	f.refresh
+     no-label				f.separator
+    "로그아웃o..."		_o	f.action ExitSession
+}
+
+
+# ###
+#
+# Sample Window Menu Description
+# This menu description exists as a sample only.
+# The normal window manager menu is built in.
+#
+# ###
+
+Menu SampleWindowMenu
+{
+    "이전 상태로R"		_R			f.normalize
+    "옮기기M"			_M			f.move
+    "크기 바꾸기S"		_S			f.resize
+    "아이콘으로n"		_n			f.minimize
+    "가장 크게x"		_x			f.maximize
+    "뒤로 보내기L"		_L			f.lower
+     no-label						f.separator
+    "표시할 작업장O..."		_O			f.workspace_presence
+    "모든 작업장에 표시A"	_A			f.occupy_all
+    "작업장 표시 지우기U"	_U			f.remove
+     no-label						f.separator
+    "닫기C"			_C	Alt<Key>F4	f.kill
+}
+
+# ###
+#
+# Alternate Window Menu Description without accelerators
+#
+# ###
+
+Menu NoAcceleratorWindowMenu
+{
+    "이전 상태로R"		_R	f.normalize
+    "옮기기M"			_M	f.move
+    "크기 바꾸기S"		_S	f.resize
+    "아이콘으로n"		_n	f.minimize
+    "가장 크게x"		_x	f.maximize
+    "뒤로 보내기L"		_L	f.lower
+     no-label				f.separator
+    "표시할 작업장O..."		_O	f.workspace_presence
+    "모든 작업장에 표시A"	_A	f.occupy_all
+    "작업장 표시 지우기U"	_U	f.remove
+     no-label				f.separator
+    "닫기C"			_C	f.kill
+}
+
+# ###
+#
+# Key Bindings Description
+#
+# ###
+
+Keys DtKeyBindings
+{
+
+
+
+
+#   Alt<Key>Menu		root|icon|window	f.toggle_frontpanel 
+
+    Shift<Key>Escape		icon|window		f.post_wmenu
+    Alt<Key>space		icon|window		f.post_wmenu
+    Alt<Key>Tab			root|icon|window	f.next_key
+    Alt Shift<Key>Tab		root|icon|window	f.prev_key
+    Alt<Key>Escape		root|icon|window	f.next_key
+    Alt Shift<Key>Escape	root|icon|window	f.prev_key
+    Alt<Key>Down		root|icon|window	f.circle_down
+    Alt<Key>Up			root|icon|window	f.circle_up
+    Alt Ctrl Shift<Key>exclam	root|icon|window	f.set_behavior
+    Alt<Key>F6			window			f.next_key transient
+    Alt<Key>F10			root|icon|window	f.menu DtRootMenu
+
+}
+
+# ###
+#
+# Mouse Button Bindings Description
+#
+# ###
+
+Buttons DtButtonBindings
+{
+    <Btn1Down>		root			f.marquee_selection
+    <Btn3Down>		root			f.menu  DtRootMenu
+    <Btn1Down>		frame|icon		f.raise
+    <Btn3Down>		frame|icon		f.post_wmenu
+    Alt<Btn1Down>	icon|window		f.move
+    Alt<Btn3Down>	window			f.minimize
+}
+
+
+# ###
+#
+# Defaults:   Window menus, key bindings, and mouse button bindings
+#
+# ###
+
+Menu DefaultWindowMenu
+{
+    "원래 상태로R"	_R	Alt<Key>F5	f.normalize
+    "옮기기M"		_M	Alt<Key>F7	f.move
+    "크기 바꾸기S"	_S	Alt<Key>F8	f.resize
+    "아이콘으로n"	_n	Alt<Key>F9	f.minimize
+    "가장 크게x"	_x	Alt<Key>F10	f.maximize
+    "뒤로 보내기L"	_L	Alt<Key>F3	f.lower
+    no-label					f.separator
+    "닫기C"		_C	Alt<Key>F4	f.kill
+}
+
+Keys DefaultKeyBindings
+{
+    Shift<Key>Escape		icon|window		f.post_wmenu
+    Alt<Key>space		icon|window		f.post_wmenu
+    Alt<Key>Tab		root|icon|window	f.next_key
+    Alt Shift<Key>Tab		root|icon|window	f.prev_key
+    Alt<Key>Escape		root|icon|window	f.next_key
+    Alt Shift<Key>Escape	root|icon|window	f.prev_key
+    Alt Ctrl Shift<Key>exclam	root|icon|window	f.set_behavior
+    Alt<Key>F6			window			f.next_key transient
+}
+
+Buttons DefaultButtonBindings
+{
+    <Btn1Down>		frame|icon	f.raise
+    <Btn3Down>		icon		f.post_wmenu
+}
+
+# ################  End of the dtwmrc file   ################

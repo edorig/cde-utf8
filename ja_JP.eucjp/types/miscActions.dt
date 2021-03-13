@@ -1,0 +1,317 @@
+# ##########################################################################
+# 
+#     miscActions.dt
+# 
+#     Examples of miscellaneous Actions (mostly for X clients).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: miscActions.dt.src /main/4 1996/04/23 17:36:05 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# アクション
+# 
+# ##################################################################
+ACTION Xcalc
+{
+        LABEL		Ｘ電卓
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcalc
+	DESCRIPTION	Xcalc アクションは xcalc Ｘクライアントを起動\
+                        します。xcalc クライアントは、TI-30 および HP-10C \
+                        をエミュレートできる科学電卓デスクトップ・アクセサリです。
+}
+
+# #####
+
+ACTION Oclock
+{
+        LABEL		丸時計
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     oclock
+	DESCRIPTION	丸時計 (Oclock) アクションは oclock Ｘクライアント\
+                        を起動します。oclock クライアントは、アナログ\
+                        表示で、現在の時刻を簡単に表示します。
+}
+
+# #####
+
+ACTION Xlsatoms
+{
+        LABEL		アトムのリスト
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlsatoms
+	DESCRIPTION	アトムのリスト (Xlsatoms) アクションは、xlsatoms\
+                        Ｘクライアントを起動します。Xlsatoms は内部アトム\
+                        を一覧表示します。
+}
+
+# #####
+
+ACTION Xbiff
+{
+        LABEL		Xbiff
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xbiff
+	DESCRIPTION	Xbiff アクションは xbiff Ｘクライアントを起動\
+                        します。xbiff プログラムはメールボックスの小さな\
+                        イメージを表示します。メールがない場合には、メール\
+                        ボックスの旗は下がっています。メールが到着すると、\
+                        旗が上がり、メールボックスのビープ音が鳴ります。
+}
+
+# #####
+
+ACTION Xcolor
+{
+        LABEL		Ｘカラー
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcolor
+	DESCRIPTION	Ｘカラー・アクションは xcolor Ｘクライアントを\
+                        起動します。xcolor は、全 256 色のカラーをウィン\
+                        ドウに表示します。ポインタをウィンドウ内に移動する\
+                        と、色合いランプを一定の彩度と一定の明るさで含む\
+                        カラーマップを、黒と白を保持しながらインストールします。
+}
+
+# #####
+
+ACTION Xcutsel
+{
+        LABEL		カットと選択
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xcutsel
+	DESCRIPTION	カットと選択 (Xcutsel) アクションは xcutsel \
+                        Ｘクライアントを起動します。xcutsel クライアントは、\
+                        現在の選択をカット・バッファにコピーし、カット・\
+                        バッファに現在含まれている内容を選択するのに使用\
+                        します。これは、選択をサポーとしていないアプリケー\
+                        ション間で選択ができるように橋渡しをします。
+}
+
+# #####
+
+ACTION Xditview
+{
+        LABEL		Xditview
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xditview
+	DESCRIPTION	Xditview アクションは xditview Ｘクライアントを\
+                        起動します。xditview プログラムは ditroff 出力を\
+                        Ｘディスプレイ上に表示します。
+}
+
+# #####
+
+ACTION Xedit
+{
+        LABEL		Xedit
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xedit
+	DESCRIPTION	Xedit アクションは xedit Ｘクライアントを起動\
+                        します。xedit クライアントは 4 つの領域を持つ\
+                        ウィンドウを提供します。\
+                        1. コマンド・セクション: xedit の編集、ファイルの\
+                        保存、または新規ファイルの編集ウィンドウへの読み込\
+                         みを可能にするコマンドのセット。\
+                        2. メッセージ・ウィンドウ: xedit メッセージを表示\
+                        します。さらに、このウィンドウはスクラッチ・パッド\
+                        として使用できます。\
+                        3. ファイル名表示: 現在編集中のファイル名およびこの\
+                        ファイルのアクセス権が読み書き可能であるか、それと\
+                        も読み取り専用であるかを表示します。\
+                        4. 編集ウィンドウ: 編集中または作成中のファイルの\
+                        テキストを表示します。
+}
+
+# #####
+
+ACTION Xlock
+{
+        LABEL		Ｘロック
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlock
+	DESCRIPTION	Ｘロック・アクションは、xlock Ｘクライアントを\
+                        起動します。xlock クライアントはローカルＸディスプ\
+                        レイを、パスワードが入力されるまでロックします。
+}
+
+# #####
+
+ACTION Xlogo
+{
+        LABEL		Ｘロゴ
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlogo
+	DESCRIPTION	Ｘロゴ・アクションは xlogo Ｘクライアントを\
+                        起動します。xlogo クライアントは、Ｘウィンドウ・\
+                        システム・ロゴを表示します。
+}
+
+# #####
+
+ACTION Xmag
+{
+        LABEL		拡大
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xmag
+	DESCRIPTION	拡大 (Xmag) アクションは xmag Ｘクライアントを\
+                        起動します。xmag クライアントは、Ｘ画面の一部を拡大\
+                        します。領域を明示的に指定しない場合は、左上隅に拡\
+                        大する領域を示すポインタ付きの矩形が表示されます。\
+                        領域は、ボタン 2 を押しながらドラッグすることに\
+                        よって、必要なサイズに変更できます。領域を選択する\
+                        と、ウィンドウがポップアップされ、領域を拡大した\
+                        バージョンをソース・イメージの各ピクセルを同色の\
+                        小さな矩形で表します。
+}
+
+# #####
+
+ACTION Xman
+{
+        LABEL		Xman
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xman
+	DESCRIPTION	Xman アクションは、xman Ｘクライアントを起動\
+                        します。xman クライアントはマニュアル・ページ・\
+                        ブラウザです。
+}
+
+# #####
+
+ACTION Xmh
+{
+        LABEL		Ｘメール・ハンドラ
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xmh
+	DESCRIPTION	Ｘメール・ハンドラ (Xmh) アクションは、xmh \
+                        Ｘクライアントを起動します。xmh クライアントは、\
+                        MH メッセージ・ハンドリング・システムに対するグラ\
+                        フィカル・ユーザ・インタフェースを提供します。\
+                        実際には、メールについて MH パッケージへの呼び出し\
+                        を行います。電子メール・メッセージの作成、送信、\
+                        受信、返信、転送、ソート、およびフォルダへの格納が\
+                        できます。xmh はユーザ・インタフェースの拡張カスタ\
+                        マイズ機能を提供します。
+}
+
+# #####
+
+ACTION Xeyes
+{
+        LABEL		目
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xeyes
+	DESCRIPTION	目 (Xeyes) アクションは xeyes Ｘクライアントを\
+                        起動します。xeyes クライアントは 1 組の目を表示し、\
+                        それは、ディスプレイ上を移動するポインタを追います。
+}
+
+# #####
+
+ACTION Xauth
+{
+        LABEL		Ｘオーソリティ
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xauth
+	DESCRIPTION	Ｘオーソリティ (Xauth) アクションは xauth \
+                        Ｘクライアントを起動します。xauth クライアントを\
+                        使用して、Ｘサーバに接続するのに使用する権限情報を\
+                        編集または表示します。
+}
+
+# #####
+
+ACTION Xlsclients
+{
+        LABEL		クライアントのリスト
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xlsclients
+	DESCRIPTION	クライアントのリスト (Xlsclients) アクションは、\
+                        xlsclients Ｘクライアントを起動します。xlsclients \
+                       クライアントは、実行中のクライアント・アプリケーショ\
+                       ンに関する情報をディスプレイ上に一覧表示します。\
+                       これを使用して、ユーザの現在のセッションのスナップ\
+                       ショットを示すスクリプトを出力します。
+}
+
+# #####
+
+ACTION Xpuzzle
+{
+        LABEL		Ｘパズル 
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xpuzzle
+	DESCRIPTION	Ｘパズル (Xpuzzle) アクションは xpuzzle \
+                        Ｘクライアントを起動します。xpuzzle クライアントは\
+                        数字パズルです。
+}
+
+# #####
+
+ACTION Passwd
+{
+        LABEL           パスワードの変更
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     dtterm -geometry 60x8 -xrm "*menuBar: False" -e sh -c '                                echo "パスワードの変更";                                echo "----------------";                                passwd'
+
+
+
+        DESCRIPTION     パスワードの変更 (Passwd) アクションは 'passwd' \
+                       コマンドを使用して、ユーザのパスワードを変更します。
+}
+
+# ######################## EOF ############################################

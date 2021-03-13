@@ -1,0 +1,117 @@
+# ##########################################################################
+# 
+#      dtpad.dt
+# 
+#      Actions used with the DT Text Editor (dtpad)
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dtpad.dt.src /main/4 1996/04/23 17:35:35 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES TEXTFILE
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.txt
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      text
+        MEDIA           C_STRING
+        DESCRIPTION     このファイルは、プレーン・テキスト・データを\
+                        格納しています。データ型は TEXTFILE です。\
+                        TEXTFILE の名前は '.txt' で終ります。
+        TYPE_LABEL      TEXTFILE
+}
+DATA_CRITERIA TEXTFILE1
+{
+        DATA_ATTRIBUTES_NAME TEXTFILE
+        MODE            f&!x
+        NAME_PATTERN    *.txt
+}
+# ##################################################################
+# 
+#  警告  警告  警告
+#
+# 以下の DATA_CRITERIA 規則は dtmail がシステム
+# TEXTFILE DATA_ATTRIBUTE を識別するのに使用します。
+# この規則を削除または変更すると、dtmail でテキスト・
+# メッセージを適切に表示できなくなります。
+# 
+# ##################################################################
+DATA_CRITERIA TEXTFILE2
+{
+        DATA_ATTRIBUTES_NAME TEXTFILE
+        MODE            f&!x
+        NAME_PATTERN    text
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        TEXTFILE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# ##########################################################################
+# ##########################################################################
+# 
+# アクション
+# 
+# ##########################################################################
+# ####################
+# 
+# PRINT アクション
+# 
+# ####################
+# 
+# PRINT_DTPAD アクションは、印刷される一時ファイルを
+# 削除する点を除いて、"印刷" アクションを模倣します。
+# このアクションは、クライアント 'dtpad' が使用します。 
+# 
+# ####################
+ACTION PRINT_DTPAD_TEMPFILE
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING 	/usr/dt/bin/dtlp -u "%(String)Arg_2%" -e "%(File)Arg_1%"
+}
+
+# #####################
+# 
+# 編集アクション
+# 
+# #####################
+ACTION Dtpad
+{
+	LABEL		テキスト・エディタ
+        ICON            Dtpenpd
+	TYPE		MAP
+	MAP_ACTION	DtTTMediaOpen
+	DESCRIPTION	テキスト・エディタ (Dtpad) アクションは、指定した\
+                        ファイルをデスクトップ・テキスト・エディタ・\
+                        ウィンドウに開きます。
+}
+
+# ######################## EOF ############################################

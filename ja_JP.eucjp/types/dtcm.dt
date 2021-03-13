@@ -1,0 +1,144 @@
+###############################################################################
+#
+#     dtcm.dt
+#
+#     Action and DataType definitions for the Common Desktop Environment
+#     (CDE) Calendar Component.
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+#
+###############################################################################
+set DtDbVersion=1.0
+
+###############################################################################
+#
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+#
+###############################################################################
+
+###################################################################
+#
+# データ属性
+#
+###################################################################
+DATA_ATTRIBUTES DtcmAppointmentAttrs
+{
+	ACTIONS		Open,Insert,Print
+	ICON		DtCMapt
+	NAME_TEMPLATE	%s.appt
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      ae-file
+	MEDIA		DT_APPOINTMENT
+	DESCRIPTION	このファイルは、カレンダ・マネージャ・\
+                        アポイントに関する情報を格納しています。\
+                        データ型は CalendarAppointmentAttrs です。\
+                        CalendarAppointmentAttrs ファイルの名前は '.appt' \
+                        で終わります。
+	TYPE_LABEL      DtcmAppointmentAttrs
+}
+DATA_CRITERIA DtcmAppointmentAttrs1
+{
+	DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+	MODE 		fr
+	NAME_PATTERN	*.appt
+}
+DATA_CRITERIA DtcmAppointmentAttrs2
+{
+	DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+	MODE 		fr
+	CONTENT		3 string ** Calendar Appointment **
+}
+DATA_CRITERIA DtcmAppointmentAttrs3
+{
+        DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+        MODE            fr
+        CONTENT         3 string ** Calendar To Do Item **
+}
+ACTION Open
+{
+        LABEL		開く
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      DtcmEdit
+}
+ACTION Insert
+{
+        LABEL		挿入
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      DtcmInsert
+}
+ACTION Print
+{
+        LABEL		印刷
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+
+###################################################################
+###################################################################
+#
+# アクション
+#
+###################################################################
+ACTION Dtcm
+{
+        LABEL		カレンダ
+        ICON            DtCM
+	TYPE		COMMAND
+	EXEC_STRING	/usr/dt/bin/dtcm
+	WINDOW_TYPE	NO_STDIO
+	DESCRIPTION	カレンダ (Dtcm) アクションは、デスクトップ・\
+                        カレンダ・マネージャを起動します。
+}
+
+######
+
+ACTION DtcmInsert
+{
+        LABEL		カレンダ挿入
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     sh -c '/usr/dt/bin/dtcm_insert  -a "%(File)Arg_1%" ;\
+			if [ \$? -ne 0 ] ; then \
+			  /usr/dt/bin/dterror.ds \
+			    "The appointment was not scheduled in your \
+			     calendar\\n\
+			     due to an error.  The appointment may not be \
+			     formatted\\n\
+			     correctly or your calendar may not be \
+			     accessible." \
+			    "Calendar : Error - Schedule" \
+			    "了解" ; \
+			fi'
+	DESCRIPTION	カレンダ挿入 (DtcmInsert) アクションは、ユーザの\
+                        デフォルト・カレンダにアポイントを挿入します。
+}
+
+######
+
+ACTION DtcmEdit
+{
+        LABEL		カレンダ編集
+        TYPE            TT_MSG
+	TT_SCOPE	TT_SESSION
+	TT_CLASS	TT_REQUEST
+	TT_OPERATION	Edit
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_FILE		%Arg_1"Appointment File:"%
+	DESCRIPTION	カレンダ編集 (DtcmEdit) アクションは、\
+                        カレンダ・アポイントのスタンドアロン・\
+                        アポイント・エディタを起動します。
+}
+
+########################### EOF ##############################################

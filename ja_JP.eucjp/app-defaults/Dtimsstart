@@ -1,0 +1,58 @@
+!# @(#)$XConsortium: Dtimsstart /main/3 1996/09/20 18:08:17 cde-hp $
+!	dtimsstart
+
+*fontList:	-dt-interface user-medium-r-normal-m*-*-*-*-*-m-*:
+
+! title on title bar
+Dtimsstart*title:			dtimsstart
+
+! title
+Dtimsstart*Selection*title.labelString:	入力メソッド選択
+Dtimsstart*Host*title.labelString:	ホスト変更
+Dtimsstart*Mode*title.labelString:	入力メソッド選択モード
+
+! button label
+Dtimsstart*OK.labelString:		了解
+Dtimsstart*Clear.labelString:		消去
+Dtimsstart*Cancel.labelString:		取消し
+Dtimsstart*ChangeHost.labelString:	ホスト変更
+Dtimsstart*Help.labelString:		ヘルプ
+
+! border width (selection dialog appears without window manager)
+Dtimsstart*Selection.borderWidth:	3
+Dtimsstart*Host.borderWidth:		3
+Dtimsstart*XmDialogShell.borderWidth:	0
+
+! default spacing
+Dtimsstart*cmd_rc.marginWidth:		10
+Dtimsstart*cmd_rc.spacing:		10
+
+! ims selection dialog
+Dtimsstart*Selection*cmd_rc.spacing:	4
+Dtimsstart*Selection*cmd_rc.OK.marginWidth:	16
+Dtimsstart*Selection*select_rc.marginWidth:	40
+
+! change host dialog
+Dtimsstart*host_label.labelString:	Hostname:
+Dtimsstart*Host*host_desc.alignment:	XmALIGNMENT_BEGINNING
+Dtimsstart*Host*host_desc.marginLeft:	20
+Dtimsstart*Host*host_desc.marginRight:	20
+Dtimsstart*Host*host_desc.labelString:	 登録されている入力メソッドのサーバが示されて\n いるところにホスト名を入力してください。\n 空のホスト名はローカル・ホストを意味します。
+Dtimsstart*Host*host_text.maxLength:	63
+Dtimsstart*Host*host_text.columns:	14
+Dtimsstart*Host*host_rc.marginWidth:	60
+Dtimsstart*Host*cmd_rc.marginWidth:	20
+Dtimsstart*Host*cmd_rc.spacing:		90
+
+! selection mode dialog
+Dtimsstart*Mode*button_0.labelString:	Ask at login
+Dtimsstart*Mode*button_1.labelString:	Resume current input method
+Dtimsstart*Mode*cmd_rc.spacing:		50
+Dtimsstart*Mode*cmd_rc.marginWidth:	20
+
+! help message
+Dtimsstart.selectionHelpMsg:	\n         入力メソッド選択\n \n     リストから入力メソッドをひとつ選択し、[了解]ボタンをクリックして\n     ください。選択された入力メソッドの構成が実行されます。\n \n       [了解]:      選択を有効にし、ウィンドウを閉じます。\n \n       [ホスト変更]: ホスト名を指定します。ホストに登録されている\n 		   入力メソッドが表示されます。\n \n       [取消し]:    選択を無効にし、ウィンドウを閉じます。\n \n       [ヘルプ]:    このメッセージを表示します。\n \n \n        注記:  システムにインストールされていない入力メソッドはかすれた\n 	      状態で表示され、選択することはできません。\n \n     入力メソッド選択モードの変更方法:\n\n 	選択ウィンドウは通常各ログイン時に現われます。\n 	ウィンドウを操作せずに、前回選択したものと同じ入力メソッドを選択\n 	することができます。そのためには、アプリケーション・マネージャの\n 	デスクトップ・ツールにある 'DtImsMode' を実行し、ダイアログ・ウィン\n         ドウの [現在の入力メソッドの回復] を選択します。\n $ 
+
+Dtimsstart.modeHelpMsg:	\n 	入力メソッド選択モード\n \n     次のいずれかを選択し、[了解]ボタンをクリックしてください。\n \n         ログイン時に問い合わせる:\n 	    ログインするごとに入力メソッドの選択を促すために選択ウィンドウ\n 	    が表示されます。\n \n         現在の入力メソッドを回復する:\n 	    一度入力メソッドを選択すると、その後のログイン時にウィンドウの\n 	    操作をしなくても同じ入力メソッドが自動的に選択されます。\n \n       [了解]:      変更を有効にし、ウィンドウを閉じます。\n \n       [取消し];    変更を無効にし、ウィンドウを閉じます。\n \n       [ヘルプ]:    このメッセージを表示します。\n $ 
+
+!#

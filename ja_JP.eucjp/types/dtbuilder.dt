@@ -1,0 +1,201 @@
+###############################################################################
+#
+#
+#     @(#)dtbuilder.dt	1.3 23 Mar 1994
+#
+#     DataType Definitions for the Application Builder
+#
+#     Common Desktop Environment 1.0 
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+#     $TOG: dtbuilder.dt /main/5 1999/02/23 13:26:42 mgreess $
+#
+###############################################################################
+set DtDbVersion=1.0
+
+###############################################################################
+#
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+#
+###############################################################################
+
+###################################################################
+#
+# データ属性
+#
+###################################################################
+DATA_ATTRIBUTES BIP
+{
+	ACTIONS		Open
+	ICON		DtABbip
+	NAME_TEMPLATE	%s.bip
+        MIME_TYPE	text/plain
+        DESCRIPTION     このファイルは、デスクトップ・アプリケーション・\
+                        ビルダのプロジェクト・データを含んでいます。\
+                        データ型は BIP です。BIP ファイルの名前は '.bip' \
+                        で終わります。
+}
+DATA_CRITERIA BIP1
+{
+	DATA_ATTRIBUTES_NAME BIP
+	MODE		f
+	NAME_PATTERN	*.bip
+}
+ACTION Open
+{
+        LABEL           開く
+	ARG_TYPE	BIP
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     このアクションは、アプリケーション・ビルダを\
+                        起動して、アプリケーション・ビルダ・ファイル \
+                        (*.bip) を読み込んで開きます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        BIP
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+
+DATA_ATTRIBUTES BIL
+{
+	ACTIONS		Open
+	ICON		DtABbil
+	NAME_TEMPLATE	%s.bil
+        MIME_TYPE	text/plain
+        DESCRIPTION     このファイルはデスクトップ・アプリケーション・\
+                        ビルダのモジュール・データを含んでいます。\
+                        データ型は BIL です。BIL ファイルの名前は '.bil' \
+                        で終わります。
+}
+DATA_CRITERIA BIL1
+{
+	DATA_ATTRIBUTES_NAME BIL
+	MODE		f
+	NAME_PATTERN	*.bil
+}
+ACTION Open
+{
+        LABEL           開く
+	ARG_TYPE	BIL
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     このアクションは、アプリケーション・ビルダを\
+                        起動して、アプリケーション・ビルダ・モジュール・\
+                        ファイル (*.bil) を読み込んで開きます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        BIL
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+
+DATA_ATTRIBUTES BIX
+{
+	ACTIONS	        Open
+	ICON	        DtABbix
+	NAME_TEMPLATE	%s.bix
+        MIME_TYPE	text/plain
+        DESCRIPTION     このファイルは、デスクトップ・アプリケーション・\
+                        ビルダ・プロジェクトのすべてのプロジェクト (BIP) \
+                        およびモジュール (BIL) ファイル・データを含んでい\
+                        ます。データ型は BIX です。BIX ファイルの名前は \
+                        '.bix' で終わります。
+}
+DATA_CRITERIA BIX1
+{
+	DATA_ATTRIBUTES_NAME BIX
+	MODE		f
+	NAME_PATTERN	*.bix
+}
+ACTION Open
+{
+        LABEL           開く
+	ARG_TYPE	BIX
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	dtbuilder "%(File)Arg_1%"
+        DESCRIPTION     このアクションは、アプリケーション・ビルダを\
+                        起動して、アプリケーション・ビルダ・カプセル化\
+                        プロジェクト・ファイルを (*.bix) を読み込んで開きます。
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        BIX
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+###################################################################
+###################################################################
+#
+# アクション
+#
+###################################################################
+ACTION Dtappbuild
+{
+        LABEL           アプリケーション・ビルダ
+        TYPE            COMMAND
+        EXEC_STRING     dtbuilder
+        ICON            DtBldr
+        WINDOW_TYPE     NO_STDIO
+        DESCRIPTION     アプリケーション・ビルダ (Dtappbuild) アクション\
+                        は、デスクトップ・アプリケーション・ビルダを起動します。
+}
+
+######
+
+ACTION CodeGen
+{
+        LABEL           コード・ジェネレータ
+        TYPE            COMMAND
+        ARG_COUNT       0
+        EXEC_STRING     /bin/sh -c 'dtaction CodeGen \
+	   %(File)Arg_1"プロジェクト・ファイル (*.bip):"%'
+        ICON            DtBldr
+        WINDOW_TYPE     NO_STDIO
+        DESCRIPTION     コード・ジェネレータ (CodeGen) アクションは、\
+                        デスクトップ・アプリケーション・ビルダのコード・\
+                        ジェネレータを起動します。
+}
+
+ACTION CodeGen
+{
+        LABEL           コード・ジェネレータ
+        TYPE            COMMAND
+        ARG_TYPE        BIP
+        ARG_COUNT       >0
+        EXEC_STRING     /bin/sh -c ' \
+           DIR_NAME=`dirname %(File)Arg_1"プロジェクト・ファイル (*.bip):"%` ; \
+	   if [ ! -d "\$DIR_NAME" ] ; then \
+	       echo "エラー: \$DIR_NAME はフォルダではありません。"; \
+	   else \
+	       BIP_FILE=`basename "%(File)Arg_1%"` ; \
+	       ( cd \$DIR_NAME; dtcodegen -p \$BIP_FILE 2>&1; ) | \${PAGER:-more}; \
+	       echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"; \
+	   fi '
+        ICON            DtBldr
+        WINDOW_TYPE     PERM_TERMINAL
+        DESCRIPTION     コード・ジェネレータ (CodeGen) アクションは、\
+                        デスクトップ・アプリケーション・ビルダのコード・\
+                        ジェネレータを起動します。
+}
+########################### EOF ##############################################

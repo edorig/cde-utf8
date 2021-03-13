@@ -1,0 +1,213 @@
+# ##########################################################################
+# 
+#      print.dt
+# 
+#      Action and DataType Definitions for the printing
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: print.dt.src /main/4 1996/04/23 17:36:13 drk $
+# 
+
+#  CDE 프린터 모델은 'Print' 활동에 중요합니다.
+#
+#  데이타 유형별로 한개씩 여러개의 'Print' 활동을 정의할 수 있습니다.
+#  'Print' 활동에 인수가 없으면 dtprintinfo 명령으로 프린터와
+#  작업 상태를 보여줍니다.
+#
+#  'dtprintinfo -populate' 명령은 '<printer name>_Print' 형식의 
+#  기본 프린터 활동을 만들 때 사용하는 관리 도구입니다.
+#
+#  시스템에 새 파일 유형이 추가될 때는 파일 유형 특정의 'Print'
+#  활동이 정의될 수도 있습니다. 데스크탑 활동 관리자가 자동으로 
+#  기본 활동대신 정의된 활동을 실행합니다. 새 활동은 'dtlp'를 
+#  사용하거나 응용프로그램 특정의 인수를 얻는 자체 인쇄 기능에 
+#  응답할 수 있습니다. 
+# 
+# ##########################################################################
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES PRINTER_UNKNOWN
+{
+        ACTIONS         PrinterUnconfigured
+        ICON		DtPrtun
+        IS_EXECUTABLE   true
+        DESCRIPTION     이 아이콘은 사용자 데스크탑에 더 이상 등록되어 있지 않은 \
+프린터를 나타냅니다.
+        TYPE_LABEL      PRINTER_UNKNOWN
+}
+DATA_CRITERIA PRINTER_UNKNOWN1
+{
+	DATA_ATTRIBUTES_NAME PRINTER_UNKNOWN
+	MODE		f&x
+        NAME_PATTERN    *_Print
+}
+
+# 
+#  일반 ARG_TYPE들, 즉 다른 인쇄 활동이 정의되지 않은 파일들에 
+#  대해  default print 활동이 실행됩니다. 
+# 
+ACTION Print
+{
+	LABEL		Print
+	ARG_TYPE	*
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp "%(File)Arg_1%"
+	DESCRIPTION	이것은 기본 프린터 활동입니다. 파일 인수와 함께 \
+실행하면 프린터 특성 선택항목을 사용하여 그 파일을 \
+인쇄합니다. 파일 인수 없이 실행하면 '프린터 작업' \
+창이 나타납니다.
+}
+ACTION PrintRaw
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp -w "%(File)Arg_1%"
+}
+
+# 
+#   파일 인수가 입력되지 않으면, Dtprintinfo 활동이 호출됩니다.
+# 
+ACTION Print
+{
+	LABEL			Print
+	ARG_COUNT		0
+	TYPE			MAP
+	MAP_ACTION		Dtprintinfo
+}
+
+# 
+#  인쇄 관리자 (DtPrintManager) 활동은
+#  'dtprintinfo -all' 명령을 호출합니다.
+# 
+ACTION DtPrintManager
+{
+	LABEL		인쇄 관리자
+        ICON            FpPrtmg
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -all
+	DESCRIPTION	인쇄 관리자 (DtPrintManager) 활동은 사용자가 여러 프린터의 인쇄 \n작업을 보거나 상태를 결정하도록 합니다.  또한 사용자가 \
+부속 패널의 아이콘 설치 조절기구로 프린터를 끌수 있게 \
+합니다.
+}
+
+# 
+#   Print Jobs (Dtprintinfo) 활동은 'dtprintinfo' 명령이나 
+#  'dtprintinfo -p printer' 명령을 호출합니다.
+# 
+ACTION Dtprintinfo
+{
+	LABEL		Print Jobs 
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -p "%(String)Arg_1%"
+	DESCRIPTION	Print Jobs (Dtprintinfo) 활동은 프린터의 인쇄 작업을  \
+보거나 상태를 결정하도록 해줍니다.
+}
+
+ACTION Dtprintinfo
+{
+	LABEL		Print Jobs 
+	ARG_COUNT	0
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo
+	DESCRIPTION	Print Jobs (Dtprintinfo) 활동은 프린터의 인쇄 작업을  \
+보거나 상태를 결정하도록 해줍니다.
+}
+
+# ###############################################################
+#  
+#   기본 프린터에 대한 활동
+#  
+# ###############################################################
+ 
+# 
+#   파일 인수가 입력되지 않으면 Print 활동이 호출됩니다.
+# 
+ACTION DtPrint
+{
+	LABEL		기본 프린터
+	ARG_TYPE	*
+        ICON		Fpprnt
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtaction Print "%(File)Arg_1%"
+	DESCRIPTION	이것은 기본 프린터 활동입니다. 파일 인수와 함께 \
+실행하면 프린터 특성 선택항목을 사용하여 그 파일을 \
+인쇄합니다. 파일 인수 없이 실행하면 '프린터 작업' \
+창이 나타납니다.
+}
+
+# 
+#   파일 인수가 입력되지 않으면, Dtprintinfo 활동이 호출됩니다.
+# 
+ACTION DtPrint
+{
+	LABEL		기본 프린터
+	ARG_COUNT	0
+        ICON		Fpprnt
+	TYPE		MAP
+	MAP_ACTION	Dtprintinfo
+	DESCRIPTION	Print Jobs (Dtprintinfo) 활동은 프린터의 인쇄 작업을  \
+보거나 상태를 결정하도록 해줍니다.
+}
+
+
+# 
+#   알 수 없는 그리고 구성되지 않은 프린터 오브젝트에 대한 
+#   활동과 데이타 특성이 있습니다.
+# 
+ACTION PrinterUnconfigured
+{
+	LABEL		PrinterUnconfigured
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "프린터 조절도구가 구성되지 않았습니다. \\n프린터 조절도구를 구성하려면 '도움말'을 누르고\
+작업 내용을 참조하십시오."                         "Unconfigured Printer"                         "예"                         "HELP"
+
+
+
+
+	DESCRIPTION	PrinterUnconfigured 활동은 프린터가 아직 \
+구성되지 않았다는 대화를 \
+보여줍니다..
+}
+
+ACTION Printer_Trash
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "휴지통에 프린터를 놓아도 시스템에서 \\n\
+없어지지 않습니다. 시스템에서 프린터를 없애려면 \\n\
+사용자의 시스템 관리 설명서를 참조하십시오."                         "Delete Printer"                         "예"
+
+
+
+        DESCRIPTION     Printer_Trash 활동은 프린터를 휴지통에 \
+놓으면 사용자의 시스템으로부터 프린터를 \
+\
+없애지 못한다는 대화를 나타냅니다.
+}
+# ######################## EOF ############################################

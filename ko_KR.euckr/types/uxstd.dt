@@ -1,0 +1,761 @@
+# ##########################################################################
+#
+#     uxstd.dt
+#
+#     Action and DataType definitions for standard operating system commands.
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+# $TOG: uxstd.dt.src /main/7 1998/07/29 17:09:27 mgreess $
+#
+# ##########################################################################
+
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+#
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+#
+# ##########################################################################
+
+# ##########################################################################
+#
+# 데이타 특성
+# 
+# ##########################################################################
+DATA_ATTRIBUTES MAN_PAGE
+{
+        ACTIONS         Open,Print
+        ICON            Dtmanpg
+        IS_TEXT		true
+        ACTIONS         Open,Print
+        MIME_TYPE	text/plain
+	DESCRIPTION	이 파일은 온라인 설명서를 갖고 있습니다. \
+이 데이타 유형은 MAN_PAGE라고 합니다.
+        TYPE_LABEL      MAN_PAGE
+}
+DATA_CRITERIA MAN_PAGE1
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/man*/*.[1-9]*
+}
+DATA_CRITERIA MAN_PAGE2
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/cat*/*.[1-9]*
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        MAN_PAGE
+        TYPE            MAP
+        MAP_ACTION	Dtmanpageview
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        MAN_PAGE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp -a "%Arg_1%"
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES TAR
+{
+        ACTIONS         Open,TarUnpack,Print
+        ICON		Dtmagtp
+        NAME_TEMPLATE	%s.tar
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	이 파일은 하나의 개별 파일을 갖는 아카이브\
+파일 입니다.  이 데이타 유형은 TAR라고 합니다. \
+TAR 파일은 파일 이름 끝에 '.tar'의 확장 이름을 갖습니다.
+        TYPE_LABEL      TAR
+}
+DATA_CRITERIA TAR1
+{
+	DATA_ATTRIBUTES_NAME TAR
+        MODE            f
+	NAME_PATTERN	*.tar
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      TarList
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      PrintTarList
+}
+ACTION TarList
+{
+	LABEL		Archive List Contents
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+	DESCRIPTION	Archive List Contents (TarList) 활동은 TAR 아카이브 \
+파일 안에 포함된 파일을 보여줍니다.
+}
+ACTION PrintTarList
+{
+	LABEL		PrintTarList
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" |                            /usr/dt/bin/dtlp -u "Archive List Contents"'
+
+
+	DESCRIPTION	PrintTarList 활동은 TAR 아카이브 파일에\
+\
+포함된 파일 목록을 기본 프린터로 인쇄합니다. 
+}
+ACTION TarUnpack
+{
+	LABEL		Archive Unpack
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                tar -xvf "%(File)Arg_1"파일 이름:"%"                            2>&1 | \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+	DESCRIPTION	Archive Unpack (TarUnpack) 활동은 \
+TAR 파일을 인수로 받아서 아카이브\
+파일을 각각의 파일로 분리합니다. 
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES COMPRESSED
+{
+        ACTIONS         Uncompress
+        ICON		Dtcmprs
+        NAME_TEMPLATE	%s.Z
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      compress
+	DESCRIPTION	이 파일은 공간을 덜 차지하기 위해 compress명령으로 \
+압축되어 있습니다. 이 데이타 유형은 \
+COMPRESSED 라고 합니다. COMPRESSED 파일은 \
+파일 이름끝에 '.Z'의 확장 이름을 갖습니다.
+        TYPE_LABEL      COMPRESSED
+}
+DATA_CRITERIA COMPRESSED1
+{
+	DATA_ATTRIBUTES_NAME COMPRESSED
+        MODE            f
+        NAME_PATTERN    *.Z
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        COMPRESSED
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uncompress
+{
+	LABEL		Uncompress File
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                uncompress -vf "%(File)Arg_1%" %(File)Args% 2>&1 |                            \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+	DESCRIPTION	Uncompress File 활동은 'compress' 명령을 \
+사용해 압축한 하나 이상의 파일을 받아 \
+압축을 풉니다. 이 때 'uncompress' 명령을 사용합니다.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtbshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.sh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      shell-script
+        DESCRIPTION     이 파일은 BOURNE 쉘 스크립팅 언어를 사용해 \
+써둔 실행 스크립트를 가지고 있습니다. 이 데이타 유형을 SHELL \
+이라 합니다. SHELL 파일은 파일 이름 끝에 '.sh'의 확장 이름을 가지며, \
+내용중에 "#!/bin/sh" 또는 "#! /bin/sh" 문자를 갖습니다.
+        TYPE_LABEL      SHELL
+}
+DATA_CRITERIA SHELL1
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        MODE            f&x
+	NAME_PATTERN	*.sh
+}
+DATA_CRITERIA SHELL2
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #!/bin/sh
+        MODE            f&x
+}
+DATA_CRITERIA SHELL3
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #! /bin/sh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Run
+        ARG_TYPE        SHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES CSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtcshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.csh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      cshell-script
+        DESCRIPTION     이 파일은 C-SHELL 스크립팅 언어를 사용해 쓰여진 \
+실행 스크립트를 가지고 있습니다. 이 데이타 유형은 CSHELL이라 합니다. \
+CSHELL 파일은 파일 이름 끝에 '.csh' 라는 확장 이름을 갖거나 \
+내용 중에 "#!/bin/csh" or "#! /bin/csh" 문자를 갖습니다.
+        TYPE_LABEL      CSHELL
+}
+DATA_CRITERIA CSHELL1
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        MODE            f&x
+        NAME_PATTERN    *.csh
+}
+DATA_CRITERIA CSHELL2
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #!/bin/csh
+        MODE            f&x
+}
+DATA_CRITERIA CSHELL3
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #! /bin/csh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Run
+        ARG_TYPE        CSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES KSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtkshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.ksh
+        MIME_TYPE	text/plain
+        DESCRIPTION     이 파일은 K-SHELL 스크립트 언어로 쓰여진 \
+실행 스크립트를 가지고 있습니다. 이 데이타 유형은 KSHELL이라고 합니다. \
+KSHELL 파일은 파일 이름 끝에 '.ksh'의 확장 이름을 갖거나 \
+내용중에 "#!/bin/ksh" 또는 "#! /bin/ksh" 문자를 갖습니다.
+        TYPE_LABEL      KSHELL
+}
+DATA_CRITERIA KSHELL1
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        MODE            f&x
+        NAME_PATTERN    *.ksh
+}
+DATA_CRITERIA KSHELL2
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL3
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL4
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL5
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           Run
+        ARG_TYPE        KSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHAR
+{
+        ACTIONS         Unshar
+        ICON 		Dtshar           
+        NAME_TEMPLATE	%s.shar
+        MIME_TYPE	text/plain
+        DESCRIPTION     이 파일은 쉘 아카이브 패키지입니다. \
+쉘 아카이브 패키지는 일반적으로 우편 파일에서 \
+사용됩니다. 이 데이타 유형은 SHAR이라 합니다.\
+SHAR 파일은 파일 이름 끝에 '.shar'의 확장 이름을 갖습니다.
+        TYPE_LABEL      SHAR
+}
+DATA_CRITERIA SHAR1
+{
+        DATA_ATTRIBUTES_NAME SHAR
+        MODE            f
+        NAME_PATTERN    *.shar
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        SHAR
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Unshar
+{
+        LABEL           Unshar 
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         sh "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+        DESCRIPTION     Unshar 활동은 shar 명령을 사용해 shar된 파일을\n\
+받아서 unshar합니다. 
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES UUENCODE
+{
+        ACTIONS         Uudecode
+        ICON            Dtuuncd
+        NAME_TEMPLATE	%s.uu
+        MIME_TYPE	text/plain
+        DESCRIPTION     이 이진 파일은 우편 시스템으로 전달에 사용됩니다. \
+이 데이타 유형은 UUENCODE 라고 합니다.  \
+UUENCODE 파일은 파일 이름 끝에 '.uu'의 확장 \
+이름을 갖습니다.
+        TYPE_LABEL      UUENCODE
+}
+DATA_CRITERIA UUENCODE1
+{
+        DATA_ATTRIBUTES_NAME UUENCODE
+        MODE            f
+        NAME_PATTERN    *.uu
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        UUENCODE
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uudecode
+{
+        LABEL           Uudecode
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         uudecode "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+        DESCRIPTION     Uudecode 활동은 uuencode 명령을 사용해 \
+코드화 처리한 파일을 받아, uudecode 합니다.
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES MESSAGE_CAT
+{
+        ACTIONS         (None)
+        ICON            Dtcat
+        NAME_TEMPLATE   %s.cat
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     이 파일은 실행할 수 있도록 지역화된 메세지를 \
+갖고 있습니다. 이 데이타 유형은 MESSAGE_CAT 라고 합니다.  \
+MESSAGE_CAT 파일은 파일 이름 끝에 '.cat'의 \
+확장 이름을 갖습니다. 
+        TYPE_LABEL      MESSAGE_CAT
+}
+DATA_CRITERIA MESSAGE_CAT1
+{
+        DATA_ATTRIBUTES_NAME MESSAGE_CAT
+        MODE            f
+        NAME_PATTERN    *.cat
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        MESSAGE_CAT
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ##########################################################################
+# ##########################################################################
+#
+# 활동
+# 
+# ##########################################################################
+# #####################
+#
+# 유닉스 편집기
+#
+# #####################
+ACTION Vi
+{
+        LABEL		Text Editor (Vi)
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi
+	DESCRIPTION	Text Editor (Vi) 활동은 단말기 창에서 \
+'vi'명령을 실행하고 사용자가 공급하면 이 데이타 파일을 \
+로드합니다.
+}
+ACTION Vi
+{
+        LABEL		Text Editor (Vi)
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi "%(File)Arg_1"편집 파일:"%"
+	DESCRIPTION	Text Editor (Vi) 활동은 단말기 창에서 \
+'vi'명령을 실행하고 사용자가 공급하면 이 데이타 파일을 \
+로드합니다.
+}
+
+# ######
+
+ACTION Vedit
+{
+        LABEL		Vedit
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit
+	DESCRIPTION	Vedit 활동은 단말기 창에서 'vedit' 모드 \
+의 'vi'명령을 수행합니다. 만약 사용자가 공급하면 \
+데이타 파일을 로드합니다.
+}
+ACTION Vedit
+{
+        LABEL		Vedit
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit "%(File)Arg_1"편집 파일:"%"
+	DESCRIPTION	Vedit 활동은 단말기 창에서 'vedit' 모드 \
+의 'vi'명령을 수행합니다. 만약 사용자가 공급하면 \
+데이타 파일을 로드합니다.
+}
+
+# #####################
+#
+# 유닉스 명령
+#
+# #####################
+# 다음의 활동은 EXEC_STRING에서 'true %(File)Args%'을 
+# 사용합니다. 이 구문은 활동을 한 번 호출할 때 사용할 
+# 모든 인수를 받을 수 있게 합니다.
+ACTION Tar
+{
+	LABEL		Archive
+        ICON		Dtmagtp
+	ARG_COUNT	>1
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	          sh -c '            if [ "%(File)Args%" = "" ] ; then                 /usr/dt/bin/dterror.ds             "Archive 활동은 한 개의 폴더 \\n \
+인수를 받습니다."             "잘못된 인수"             "예" ;            else            true %(File)Args%;            /usr/dt/bin/dterror.ds             "Archive 활동은 한 개의 폴더 \\n \
+인수를 받습니다."             "잘못된 인수"             "예"            fi; '
+	DESCRIPTION	Archive (Tar) 활동은 폴더 인수를 받아 \
+그 안에 있는 모든 파일을 한 개의 "tar" 파일로 \
+만듭니다. 이때 "tar" 명령을 사용힙니다.
+}
+ACTION Tar
+{
+	LABEL		Archive
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+	EXEC_STRING		  sh -c '             if [ "%(File)Args%" = "" ] ; then 	        echo "오류: %(File)Arg_1%은(는) 폴더가 아닙니다.";             else 	    if [ ! -d "%(File)Arg_1"아카이브할 폴더:"%" ] ; then 	        echo "오류: %(File)Arg_1%은(는) 폴더가 아닙니다."; 	    else                 FOLDER="%(File)Arg_1%.tar"; 	        TAR_FILE=`basename "%(File)Arg_1%.tar"`;                 echo "\$FOLDER 만들기";                 echo "[처리중입니다...]\\n"; 	        tar -cvf \$TAR_FILE `basename "%(File)Arg_1%"` 2>&1 | 	          \${PAGER:-more};                 echo "\\n아카이브 파일이 \$FOLDER에 만들어지고 저장됩니다."; 	    fi; 	    fi; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+	DESCRIPTION	Archive (Tar) 활동은 폴더 인수를 받아 \
+그 안에 있는 모든 파일을 한 개의 "tar" 파일로 \
+만듭니다. 이때 "tar" 명령을 사용힙니다.
+}
+
+# ######
+
+ACTION TarList
+{
+        LABEL           Archive List Contents
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarList                             "%(File)Arg_1"나열할 아카이브:"%"
+
+        DESCRIPTION     Archive List Contents (TarList) 활동은 TAR 아카이브 \
+파일 안에 포함된 파일을 보여줍니다.
+}
+
+# ######
+
+ACTION TarUnpack
+{
+        LABEL           Archive Unpack
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarUnpack                             "%(File)Arg_1"풀려는 아카이브:"%"
+
+        DESCRIPTION     Archive Unpack (TarUnpack) 활동은 \
+TAR 파일을 인수로 받아서 아카이브\
+파일을 각각의 파일로 분리합니다. 
+}
+
+# ######
+
+ACTION Compress
+{
+	LABEL		Compress File
+        ICON		Dtcmprs
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                 compress -vf "%(File)Arg_1"압축할 파일:"%"                          %(File)Args% 2>&1 | \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+	DESCRIPTION	Compress File (Compress) 활동은 하나 \
+이상의 파일을 받아, 'compress' 명령을 사용해 \
+파일들을 압축합니다.
+}
+
+# ######
+
+ACTION Uncompress
+{
+        LABEL           Uncompress File
+        ICON		Dtcmprs
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction Uncompress                             "%(File)Arg_1"풀려는 파일:"%"
+
+        DESCRIPTION     Uncompress File 활동은 'compress' 명령을 \
+사용해 압축한 하나 이상의 파일을 받아 \
+압축을 풉니다. 이 때 'uncompress' 명령을 사용합니다.
+}
+
+# ######
+
+ACTION Env
+{
+	LABEL		Environment Variables
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                          env 2>&1 | \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+	DESCRIPTION	Environment Variables (Env) 활동은 'env' 명령을  \
+사용해 사용자의 환경 변수를 보여줍니다.
+}
+
+# ######
+
+ACTION Diff
+{
+	LABEL		Compare Files
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file1="%(File)Arg_1"첫째 파일 (<):"%" ;	    file2="%(File)Arg_2"둘째 파일 (>):"%" ;            cmp -s \$file1 \$file2 ;            if [ \$? -eq 0 ] ; then               echo "\$file1, \$file2 : 같은 파일입니다." ;             else               diff \$file1 \$file2  | \${PAGER:-more} ;            fi ;	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+	DESCRIPTION	Compare Files (Diff) 활동은 'diff' 명령으로 \
+두 파일을 비교합니다. 
+}
+
+# ######
+
+ACTION Rm
+{
+	LABEL		Shred File
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING		  sh -c ' 	    echo "[파일을 없앨려면 y를, 남기려면 n을 입력하십시오...]\\n"; 	    rm -i "%(File)Arg_1"없앨 파일:"%" %(File)Args%; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+
+	DESCRIPTION	Shred File (Rm) 활동은 파일을 휴지통으로 옮기지 \
+않고 파일을 없애는 'rm -i' 명령을 사용합니다. \
+이것은 사용자에게 한개씩 파일의 이름을 보여주고, \
+파일을 없앨것인지 확인하도록 합니다. \
+한 번 완전히 없앤 파일은 다시 복원할 수 없습니다.
+}
+
+# ######
+
+ACTION Wc
+{
+	LABEL		Count Words 
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    (echo "  줄  단어  문자  파일이름"; 	     echo "  ========================"; 	     wc "%(File)Arg_1"확인할 파일:"%" %(File)Args%) 2>&1 | 	       \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+
+
+	DESCRIPTION	 Count Words (Wc) 활동은 파일에 포함된 줄 수, \
+단어 수 및 문자 수를 알려줍니다. 이 때 'wc' 명령을 \
+사용합니다.
+}
+
+# ######
+
+ACTION Spell
+{
+	LABEL		Check Spelling
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c ' 	    (echo "잘못쓴 단어\\n===========\\n"; 	     spell "%(File)Arg_1"검사할 파일:"%" %(File)Args%) 2>&1 |                \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+
+
+	DESCRIPTION	Check Spelling (Spell) 활동은 파일 안에 \
+있는 모든 철자를 검사합니다. 이것은 'spell' 명령을 \
+사용합니다.
+}
+
+# ######
+
+ACTION Df
+{
+	LABEL		Disk Usage
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             df 2>&1 | \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+	DESCRIPTION	Disk Usage (Df) 활동은 마운트된 디스크에 \
+사용가능한 디스크 공간을 보여줍니다. \
+이것은 'df' 명령을 사용합니다.
+}
+
+
+# ######
+
+ACTION DuSort
+{
+	LABEL		Folder Size
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    if [ ! -d "%(File)Arg_1"확인할 폴더:"%" ] ; then 	        echo "오류: %(File)Arg_1%은(는) 폴더가 아닙니다."; 	    else 	        echo "[처리중입니다...]\\n"; 	        (echo "블록  파일/디렉토리 - (블록은 512-바이트)"; 	         echo "========================================="; 	         du -s "%(File)Arg_1"확인할 폴더:"%" | sort -n) 2>&1 |                    \${PAGER:-more}; 	    fi; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+	DESCRIPTION	Folder Size (DuSort) 활동은 폴더 안의 \
+하위 폴더와 각 파일의 크기를 보여줍니다. \
+이것은 'du' 명령과 'sort' 명령을 사용합니다.
+}
+
+# ######
+
+ACTION Grep
+{
+	LABEL		Search Text
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             SEARCH_FILE="%(File)Arg_1"찾을 파일:"%";             if [ -d \$SEARCH_FILE ] ; then                 echo "경고: \$SEARCH_FILE은(는) 폴더이며, Search Text\\n활동은 폴더에서 문자열을 찾지 않습니다. ";             else                grep %"찾을 문자열:"% \$SEARCH_FILE                                    %(File)Args% >/tmp/dtstrsearch 2>&1;                if [ \$? -eq 1 ] ; then                    echo "일치하는 문자열이 없습니다.";                else                   cat /tmp/dtstrsearch | \${PAGER:-more};                fi;                rm /tmp/dtstrsearch;             fi; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+	DESCRIPTION	Search Text (Grep) 활동은 'grep'명령을 \
+사용하여 파일들에 있는 해당 문자열을 모두\
+찾습니다.
+}
+
+# ######
+
+ACTION File
+{
+	LABEL		Type File
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file "%(File)Arg_1"확인할 파일:"%" %(File)Args% 2>&1 |               \${PAGER:-more}; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+	DESCRIPTION	Type File (File) 활동은 'file' 명령을  \
+사용해 파일 유형을 확인합니다. 이것은 파일의 \
+데스크탑 데이타 유형과 같지 않습니다. \
+파일의 데스크탑 데이타 유형을 확인하려면, \
+파일을 선택하고 파일 관리자 열람에서 \
+선택->사용권한 변경... 메뉴 명령을 선택하십시오.
+}
+
+# ######
+
+ACTION Execute
+{
+	LABEL		Execute
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     	  "%(File)Arg_1"실행할 파일:"%" %"선택항목:"% %"인수:"% %(File)Args%
+
+	DESCRIPTION	Execute 활동은 이진 실행 파일 또는 \
+쉘 스크립트를 실행합니다. 이것은 선택항목이나 \
+인수에 대해 묻고 그런 다음 \
+단말기 창에서 실행 파일이나, 스크립트를 실행합니다.
+}
+
+# ######
+
+ACTION ExecuteCmd
+{
+	LABEL		Execute Command
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	          %"명령:"% %(File)Args%; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+	DESCRIPTION	Execute Command (ExecuteCmd) 활동은 실행할 \
+명령에 대해 묻고, 인수로 제공되는 \
+파일에 명령을 실행합니다.
+}
+# ######################## EOF ############################################

@@ -1,0 +1,775 @@
+# ##########################################################################
+#
+#     uxstd.dt
+#
+#     Action and DataType definitions for standard operating system commands.
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+# $TOG: uxstd.dt.src /main/7 1998/07/29 17:09:27 mgreess $
+#
+# ##########################################################################
+
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+#
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+#
+# ##########################################################################
+
+# ##########################################################################
+#
+# データ属性
+# 
+# ##########################################################################
+DATA_ATTRIBUTES MAN_PAGE
+{
+        ACTIONS         Open,Print
+        ICON            Dtmanpg
+        IS_TEXT		true
+        ACTIONS         Open,Print
+        MIME_TYPE	text/plain
+	DESCRIPTION	このファイルはマニュアル・ページを格納しています。\
+                       データ型は MAN_PAGE です。
+        TYPE_LABEL      MAN_PAGE
+}
+DATA_CRITERIA MAN_PAGE1
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/man*/*.[1-9]*
+}
+DATA_CRITERIA MAN_PAGE2
+{
+        DATA_ATTRIBUTES_NAME MAN_PAGE
+        MODE            f
+        PATH_PATTERN    */man/cat*/*.[1-9]*
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        MAN_PAGE
+        TYPE            MAP
+        MAP_ACTION	Dtmanpageview
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        MAN_PAGE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp -a "%Arg_1%"
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES TAR
+{
+        ACTIONS         Open,TarUnpack,Print
+        ICON		Dtmagtp
+        NAME_TEMPLATE	%s.tar
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	このファイルは、個別ファイルの番号を格納している\
+                       保管ファイルです。データ型は TAR です。TAR ファイル\
+                       の名前は、'.tar' で終ります。
+        TYPE_LABEL      TAR
+}
+DATA_CRITERIA TAR1
+{
+	DATA_ATTRIBUTES_NAME TAR
+        MODE            f
+	NAME_PATTERN	*.tar
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      TarList
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        TAR
+        TYPE            MAP
+        MAP_ACTION      PrintTarList
+}
+ACTION TarList
+{
+	LABEL		保管リストの内容
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+	DESCRIPTION	保管リストの内容 (TarList) アクションは、TAR \
+                       保管ファイルに格納されたファイルを一覧表示します。
+}
+ACTION PrintTarList
+{
+	LABEL		PrintTarList
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     sh -c '                         tar -tvf "%(File)Arg_1%" |                            /usr/dt/bin/dtlp -u "保管リストの内容"'
+
+
+	DESCRIPTION	PrintTarList アクションは、TAR 保管ファイルに\
+                       格納されたファイルのリストを、デフォルト・プリンタ\
+                       に印刷します。
+}
+ACTION TarUnpack
+{
+	LABEL		保管ファイルの展開
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                tar -xvf "%(File)Arg_1"ファイル名:"%"                            2>&1 | \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+	DESCRIPTION	保管ファイルの展開 (TarUnpack) アクションは、TAR \
+                       ファイルを引き数として受け入れて、保管されている\
+                       ファイルを別々のファイルに分けます。
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES COMPRESSED
+{
+        ACTIONS         Uncompress
+        ICON		Dtcmprs
+        NAME_TEMPLATE	%s.Z
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      compress
+	DESCRIPTION	これは、スペースを取らないようにするために、\
+                       commpress コマンドで圧縮されたファイルです。\
+                       データ型は COMPRESSED です。COMPRESSED ファイルの\
+                       名前は '.Z' で終ります。
+        TYPE_LABEL      COMPRESSED
+}
+DATA_CRITERIA COMPRESSED1
+{
+	DATA_ATTRIBUTES_NAME COMPRESSED
+        MODE            f
+        NAME_PATTERN    *.Z
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        COMPRESSED
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uncompress
+{
+	LABEL		ファイルの圧縮解除
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                uncompress -vf "%(File)Arg_1%" %(File)Args% 2>&1 |                            \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+	DESCRIPTION	ファイルの圧縮解除アクションは、'compress' \
+                       コマンドを使用して圧縮した 1 個以上のファイルを\
+                       受け入れて、圧縮解除します。このアクションは \
+                       'uncompress' コマンドを使用します。
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtbshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.sh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      shell-script
+        DESCRIPTION     このファイルは BOURNE シェル・スクリプト言語で\
+                       書かれた実行可能スクリプトを格納しています。\
+                       データ型は SHELL です。SHELL ファイルは、\
+                       名前が '.sh' で終るか、その中に文字列 \
+                       "#!/bin/sh"または"#! /bin/sh"を含んでいます。
+        TYPE_LABEL      SHELL
+}
+DATA_CRITERIA SHELL1
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        MODE            f&x
+	NAME_PATTERN	*.sh
+}
+DATA_CRITERIA SHELL2
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #!/bin/sh
+        MODE            f&x
+}
+DATA_CRITERIA SHELL3
+{
+        DATA_ATTRIBUTES_NAME SHELL
+        CONTENT         0 string #! /bin/sh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           実行
+        ARG_TYPE        SHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES CSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtcshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.csh
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      cshell-script
+        DESCRIPTION     このファイルは、C-SHELL スクリプト言語で書かれた\
+                       実行可能スクリプトを格納しています。\
+                       データ型は CSHELL です。CSHELL ファイルは\
+                       名前が '.csh' で終るか、その中に文字列\
+                       "#!/bin/csh"または"#! /bin/csh"を含んでいます。
+        TYPE_LABEL      CSHELL
+}
+DATA_CRITERIA CSHELL1
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        MODE            f&x
+        NAME_PATTERN    *.csh
+}
+DATA_CRITERIA CSHELL2
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #!/bin/csh
+        MODE            f&x
+}
+DATA_CRITERIA CSHELL3
+{
+        DATA_ATTRIBUTES_NAME CSHELL
+        CONTENT		0 string #! /bin/csh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           実行
+        ARG_TYPE        CSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES KSHELL
+{
+        ACTIONS         Run,Open,Print
+        ICON            Dtkshll
+        IS_EXECUTABLE   true
+        COPY_TO_ACTION  Execute
+        NAME_TEMPLATE	%s.ksh
+        MIME_TYPE	text/plain
+        DESCRIPTION     このファイルは、K-SHELL スクリプト言語で書かれた\
+                       実行可能スクリプトを格納しています。\
+                       データ型は KSHELL です。KSHELL ファイルは\
+                       名前が '.ksh' で終わるか、その中に文字列\
+                       "#!/bin/ksh" または "#! /bin/ksh" を含んでいます。
+        TYPE_LABEL      KSHELL
+}
+DATA_CRITERIA KSHELL1
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        MODE            f&x
+        NAME_PATTERN    *.ksh
+}
+DATA_CRITERIA KSHELL2
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL3
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL4
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #!/bin/ksh
+        MODE            f&x
+}
+DATA_CRITERIA KSHELL5
+{
+        DATA_ATTRIBUTES_NAME KSHELL
+        CONTENT		0 string #! /bin/ksh
+        MODE            f&x
+}
+ACTION Run
+{
+        LABEL           実行
+        ARG_TYPE        KSHELL
+        TYPE            MAP
+        MAP_ACTION      Execute
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES SHAR
+{
+        ACTIONS         Unshar
+        ICON 		Dtshar           
+        NAME_TEMPLATE	%s.shar
+        MIME_TYPE	text/plain
+        DESCRIPTION     このファイルはシェル保管パッケージです。\
+                       シェル保管パッケージは、通常メール・ファイルに\
+                       使用します。データ型は SHAR です。\
+                       SHAR ファイルの名前は '.shar' で終わります。
+        TYPE_LABEL      SHAR
+}
+DATA_CRITERIA SHAR1
+{
+        DATA_ATTRIBUTES_NAME SHAR
+        MODE            f
+        NAME_PATTERN    *.shar
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        SHAR
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Unshar
+{
+        LABEL           共用解除
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         sh "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+        DESCRIPTION     共用解除アクションは、share コマンドで共用された\
+                       ファイルを受け入れて、共用解除します。
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES UUENCODE
+{
+        ACTIONS         Uudecode
+        ICON            Dtuuncd
+        NAME_TEMPLATE	%s.uu
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、メール・プログラムを介した通信に使用する\
+                       バイナリ・ファイルです。データ型は UUENCODE です。\
+                       UUENCODE ファイルの名前は '.uu' で終わります。
+        TYPE_LABEL      UUENCODE
+}
+DATA_CRITERIA UUENCODE1
+{
+        DATA_ATTRIBUTES_NAME UUENCODE
+        MODE            f
+        NAME_PATTERN    *.uu
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        UUENCODE
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Uudecode
+{
+        LABEL           Uudecode
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                         uudecode "%(File)Arg_1%" 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+        DESCRIPTION     Uudecode アクションは、uuencode コマンドを使用して\
+                       暗号化したファイルを受け入れて、暗号解除します。
+}
+
+# ##########################################################
+
+DATA_ATTRIBUTES MESSAGE_CAT
+{
+        ACTIONS         (None)
+        ICON            Dtcat
+        NAME_TEMPLATE   %s.cat
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     このファイルは、実行形式ファイルのローカライズ・\
+                       メッセージを格納しています。\
+                       データ型は MESSAGE_CAT です。\
+                       MESSAGE_CAT ファイルの名前は '.cat' で終わります。
+        TYPE_LABEL      MESSAGE_CAT
+}
+DATA_CRITERIA MESSAGE_CAT1
+{
+        DATA_ATTRIBUTES_NAME MESSAGE_CAT
+        MODE            f
+        NAME_PATTERN    *.cat
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        MESSAGE_CAT
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ##########################################################################
+# ##########################################################################
+#
+# アクション
+# 
+# ##########################################################################
+# #####################
+#
+# Unix エディタ
+#
+# #####################
+ACTION Vi
+{
+        LABEL		テキスト・エディタ (Vi)
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi
+	DESCRIPTION	テキスト・エディタ (Vi) アクションは 'vi' \
+                       コマンドを端末エミュレータ・ウィンドウで起動します。\
+                       データファイルを 1 個指定した場合には、そのファイル\
+                       を読み込みます。
+}
+ACTION Vi
+{
+        LABEL		テキスト・エディタ (Vi)
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+        EXEC_STRING     vi "%(File)Arg_1"編集するファイル:"%"
+	DESCRIPTION	テキスト・エディタ (Vi) アクションは 'vi' \
+                       コマンドを端末エミュレータ・ウィンドウで起動します。\
+                       データファイルを 1 個指定した場合には、そのファイル\
+                       を読み込みます。
+}
+
+# ######
+
+ACTION Vedit
+{
+        LABEL		Vedit
+        ARG_COUNT       0
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit
+	DESCRIPTION	Vedit アクションは 'vi' コマンドを 'vedit' \
+                       モードで端末エミュレータ・ウィンドウで起動します。\
+                       データファイルを 1 個指定した場合には、そのファイル\
+                       を読み込みます。
+}
+ACTION Vedit
+{
+        LABEL		Vedit
+	TYPE		COMMAND
+	WINDOW_TYPE	TERMINAL
+	EXEC_STRING	vedit "%(File)Arg_1"編集するファイル:"%"
+	DESCRIPTION	Vedit アクションは 'vi' コマンドを 'vedit' \
+                       モードで端末エミュレータ・ウィンドウで起動します。\
+                       データファイルを 1 個指定した場合には、そのファイル\
+                       を読み込みます。
+}
+
+# #####################
+#
+# Unix コマンド
+#
+# #####################
+# 次のアクションは EXEC_STRING の 'true %(File)Args%' を使用します。
+# この記述の唯一の効果は、すべての引き数を一回のアクションの起動で
+# '使用する' ことです。
+ACTION Tar
+{
+	LABEL		Archive
+        ICON		Dtmagtp
+	ARG_COUNT	>1
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	          sh -c '            if [ "%(File)Args%" = "" ] ; then                 /usr/dt/bin/dterror.ds             "保管アクションは、フォルダを示す単一の引き数だけ\\n \
+受け入れます。"             "無効な引き数"             "了解" ;            else            true %(File)Args%;            /usr/dt/bin/dterror.ds             "保管アクションは、フォルダを示す単一の引き数だけ\\n \
+受け入れます。"             "無効な引き数"             "了解"            fi; '
+	DESCRIPTION	保管 (Tar) アクションは、フォルダ引き数を\
+                        受け入れて、フォルダにあるすべてのファイルを \
+                        1 個の"tar"ファイルにまとめて保管します。この\
+                        アクションは 'tar' コマンドを使用します。
+}
+ACTION Tar
+{
+	LABEL		Archive
+        ICON		Dtmagtp
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+	EXEC_STRING		  sh -c '             if [ "%(File)Args%" = "" ] ; then 	        echo "エラー: '%(File)Args_1%' はフォルダではありません。";             else 	    if [ ! -d "%(File)Arg_1"保管するフォルダ:"%" ] ; then 	        echo "エラー: '%(File)Args_1%' はフォルダではありません。"; 	    else                 FOLDER="%(File)Arg_1%.tar"; 	        TAR_FILE=`basename "%(File)Arg_1%.tar"`;                 echo "\$FOLDER を作成中です。";                 echo "[しばらくお待ちください...]\\n"; 	        tar -cvf \$TAR_FILE `basename "%(File)Arg_1%"` 2>&1 | 	          \${PAGER:-more};                 echo "\\n保管ファイルを \$FOLDER に作成しました。"; 	    fi; 	    fi; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+	DESCRIPTION	保管 (Tar) アクションは、フォルダ引き数を\
+                        受け入れて、フォルダにあるすべてのファイルを \
+                        1 個の"tar"ファイルにまとめて保管します。この\
+                        アクションは 'tar' コマンドを使用します。
+}
+
+# ######
+
+ACTION TarList
+{
+        LABEL           保管リストの内容
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarList                             "%(File)Arg_1"リストする保管ファイル:"%"
+
+        DESCRIPTION     保管リストの内容 (TarList) アクションは、TAR \
+                       保管ファイルに格納されたファイルを一覧表示します。
+}
+
+# ######
+
+ACTION TarUnpack
+{
+        LABEL           保管ファイルの展開
+        ICON		Dtmagtp
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction TarUnpack                             "%(File)Arg_1"展開する保管ファイル:"%"
+
+        DESCRIPTION     保管ファイルの展開 (TarUnpack) アクションは、TAR \
+                       ファイルを引き数として受け入れて、保管されている\
+                       ファイルを別々のファイルに分けます。
+}
+
+# ######
+
+ACTION Compress
+{
+	LABEL		ファイルの圧縮
+        ICON		Dtcmprs
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	                 compress -vf "%(File)Arg_1"圧縮するファイル:"%"                          %(File)Args% 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+	DESCRIPTION	ファイルの圧縮 (Compress) アクションは、1 個以上の\
+                        ファイルを受け入れて、'compress' コマンドを使用して\
+                        圧縮します。
+}
+
+# ######
+
+ACTION Uncompress
+{
+        LABEL           ファイルの圧縮解除
+        ICON		Dtcmprs
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtaction Uncompress                             "%(File)Arg_1"圧縮解除するファイル:"%"
+
+        DESCRIPTION     ファイルの圧縮解除アクションは、'compress' \
+                       コマンドを使用して圧縮した 1 個以上のファイルを\
+                       受け入れて、圧縮解除します。このアクションは \
+                       'uncompress' コマンドを使用します。
+}
+
+# ######
+
+ACTION Env
+{
+	LABEL		環境変数
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                          env 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+	DESCRIPTION	環境変数 (Env) アクションは、ユーザの環境変数を\
+                        'env' コマンドを使用して表示します。
+}
+
+# ######
+
+ACTION Diff
+{
+	LABEL		ファイルの比較
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file1="%(File)Arg_1"1 個目のファイル (<):"%" ;	    file2="%(File)Arg_2"2 個目のファイル (>):"%" ;            cmp -s \$file1 \$file2 ;            if [ \$? -eq 0 ] ; then               echo "ファイル \$file1 と \$file2 は同じです。" ;             else               diff \$file1 \$file2  | \${PAGER:-more} ;            fi ;	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+	DESCRIPTION	ファイルの比較 (Diff) アクションは、2 個の\
+                        ファイルを 'diff' コマンドを使用して比較します。
+}
+
+# ######
+
+ACTION Rm
+{
+	LABEL		ファイルの破棄
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING		  sh -c ' 	    echo "[ファイルを削除するには y を入力してください。\
+                        削除しない場合は n を入力してください...]\\n"; 	    rm -i "%(File)Arg_1"破棄するファイル:"%" %(File)Args%; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+
+	DESCRIPTION	ファイルの破棄 (Rm) アクションは、'rm -i' \
+                        コマンドを使用して、ファイルをごみ箱に置かないで\
+                        削除します。このアクションは、各ファイルの名前を\
+                        表示し、ファイルを削除してもいいかを確認します。\
+                        破棄したファイルを復旧することはできません。
+}
+
+# ######
+
+ACTION Wc
+{
+	LABEL		ワードカウント 
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    (echo "  行数  語数  文字数  ファイル名"; 	     echo "  =============================="; 	     wc "%(File)Arg_1"カウントするファイル:"%" %(File)Args%) 2>&1 | 	       \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+
+
+	DESCRIPTION	ワードカウント (Wc) アクションは、ファイルの行数、\
+                        語数および文字数をカウントします。これは 'wc' \
+                        コマンドを使用します。
+}
+
+# ######
+
+ACTION Spell
+{
+	LABEL		スペルチェック
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c ' 	    (echo "誤ったスペルの単語\\n================\\n"; 	     spell "%(File)Arg_1"スペルチェックするファイル:"%" %(File)Args%) 2>&1 |                \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+
+
+	DESCRIPTION	スペルチェック (Spell) アクションは、ファイルの\
+                        すべての語のスペリングをチェックします。これは \
+                        'spell' コマンドを使用します。
+}
+
+# ######
+
+ACTION Df
+{
+	LABEL		ディスクの使用状況
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             df 2>&1 | \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+	DESCRIPTION	ディスクの使用状況 (Df) アクションは、マウント\
+                        しているすべてのディスクの空きスペースの容量を\
+                        表示します。これは 'df' コマンドを使用します。
+}
+
+
+# ######
+
+ACTION DuSort
+{
+	LABEL		フォルダのサイズ
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    if [ ! -d "%(File)Arg_1"サイズを表示するフォルダ:"%" ] ; then 	        echo "エラー: '%(File)Args_1%' はフォルダではありません。"; 	    else 	        echo "[しばらくお待ちください...]\\n"; 	        (echo "ブロック数  ファイル/ディレクトリ - (ブロックは 512バイト)"; 	         echo "=========================================================="; 	         du -s "%(File)Arg_1"サイズを表示するフォルダ:"%" | sort -n) 2>&1 |                    \${PAGER:-more}; 	    fi; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+	DESCRIPTION	フォルダのサイズ (DuSort) アクションは、フォルダ\
+                        内の各ファイルとサブフォルダのサイズを表示します。\
+                        このアクションは、'du' コマンドと 'sort' コマンドの\
+                        組み合わせを使用します。
+}
+
+# ######
+
+ACTION Grep
+{
+	LABEL		テキストの検索
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             SEARCH_FILE="%(File)Arg_1"検索するファイル:"%";             if [ -d \$SEARCH_FILE ] ; then                 echo "エラー: \$SEARCH_FILE はフォルダです。テキスト\\nの検索アクションは、フォルダ内の文字列を検索しません。";             else                grep %"検索する文字列:"% \$SEARCH_FILE                                    %(File)Args% >/tmp/dtstrsearch 2>&1;                if [ \$? -eq 1 ] ; then                    echo "一致する文字列は見つかりません。";                else                   cat /tmp/dtstrsearch | \${PAGER:-more};                fi;                rm /tmp/dtstrsearch;             fi; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+	DESCRIPTION	テキストの検索 (Grep) アクションは、ファイルの\
+                        セット内で文字列が使用されている箇所を、'grep' \
+                        コマンドを使用して検索します。
+}
+
+# ######
+
+ACTION File
+{
+	LABEL		ファイルのタイプ
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	    file "%(File)Arg_1"タイプを調べるファイル:"%" %(File)Args% 2>&1 |               \${PAGER:-more}; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+	DESCRIPTION	[ファイルのタイプ] (File) アクションは、file \
+                        コマンドを使用してファイルのタイプを表示します。\
+                        これは、デスクトップ・データ型と同じでは\
+                        ありません。デスクトップ・データ型を調べるには、\
+                        ファイルを選択して、[ファイル・マネージャ表示] の\
+                        メニュー・コマンド [選択->アクセス権の変更] を選択\
+                        してください。
+}
+
+# ######
+
+ACTION Execute
+{
+	LABEL		実行
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     	  "%(File)Arg_1"実行するファイル:"%" %"オプション:"% %"引き数:"% %(File)Args%
+
+	DESCRIPTION	実行アクションは、シェル・スクリプトまたはバイナリ\
+                        実行形式ファイルを実行します。これは、オプション\
+                        または引き数を入力するように要求し、端末\
+                        エミュレータ・ウィンドウでシェル・スクリプト\
+                        またはバイナリ実行形式ファイルを実行します。
+}
+
+# ######
+
+ACTION ExecuteCmd
+{
+	LABEL		コマンドの実行
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c ' 	          %"コマンド:"% %(File)Args%; 	    echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+	DESCRIPTION	コマンドの実行 (ExecuteCmd) アクションは、\
+                        コマンドの入力を要求し、それを引き数で指定した\
+                        ファイルに対して実行します。
+}
+# ######################## EOF ############################################

@@ -1,0 +1,115 @@
+# ##########################################################################
+# 
+#      dtpad.dt
+# 
+#      Actions used with the DT Text Editor (dtpad)
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dtpad.dt.src /main/4 1996/04/23 17:35:35 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES TEXTFILE
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.txt
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      text
+        MEDIA           C_STRING
+        DESCRIPTION     이 파일은 일반 문자 데이타를 가지고 있습니다. \
+이 데이타 유형은 TEXTFILE이라고 합니다. TEXTFILE \
+파일은 파일 이름 끝에 '.txt'라는 확장 이름을 갖습니다.
+        TYPE_LABEL      TEXTFILE
+}
+DATA_CRITERIA TEXTFILE1
+{
+        DATA_ATTRIBUTES_NAME TEXTFILE
+        MODE            f&!x
+        NAME_PATTERN    *.txt
+}
+# ##################################################################
+# 
+#  경고.......
+#
+# 다음의 DATA_CRITERIA 규칙은 dtmail이 TEXTFILE DATA_ATTRIBUTE
+# 시스템을 구분하는 데 사용합니다. 이 규칙을 없애거나 수정하면
+# dtmail이 문자 메시지(편지)를 적절히 표시하지 못할 수도 있습니다.
+# 
+# ##################################################################
+DATA_CRITERIA TEXTFILE2
+{
+        DATA_ATTRIBUTES_NAME TEXTFILE
+        MODE            f&!x
+        NAME_PATTERN    text
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        TEXTFILE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# ##########################################################################
+# ##########################################################################
+# 
+# 활동
+# 
+# ##########################################################################
+# ####################
+# 
+# PRINT 활동
+# 
+# ####################
+# 
+# PRINT_DTPAD 활동은 인쇄되는 임시 파일을 없애는 
+# 점을 제외하면 "Print" 활동과 같습니다. 이 활동은 
+# 'dtpad' 클라이언트에 의해 사용됩니다.
+# 
+# ####################
+ACTION PRINT_DTPAD_TEMPFILE
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING 	/usr/dt/bin/dtlp -u "%(String)Arg_2%" -e "%(File)Arg_1%"
+}
+
+# #####################
+# 
+# Exiting 활동
+# 
+# #####################
+ACTION Dtpad
+{
+	LABEL		문서 편집기
+        ICON            Dtpenpd
+	TYPE		MAP
+	MAP_ACTION	DtTTMediaOpen
+	DESCRIPTION	문서 편집기 (Dtpad) 활동은 데스크탑 문서 편집기 \
+창에 지정된 파일을 엽니다.
+}
+
+# ######################## EOF ############################################

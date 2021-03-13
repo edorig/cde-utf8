@@ -1,0 +1,71 @@
+# ##########################################################################
+# 
+#      dtims.dt
+# 
+#      Action definitions for the Common Desktop Environment
+#      dtimsstart application.
+# 
+#  (c) Copyright 1996 Digital Equipment Corporation.
+#  (c) Copyright 1996 Hewlett-Packard Company.
+#  (c) Copyright 1996 International Business Machines Corp.
+#  (c) Copyright 1996 Sun Microsystems, Inc.
+#  (c) Copyright 1996 Novell, Inc. 
+#  (c) Copyright 1996 FUJITSU LIMITED.
+#  (c) Copyright 1996 Hitachi.
+# 
+#     $XConsortium: dtims.dt.src /main/2 1996/04/23 17:35:29 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# 활동
+# 
+# ##################################################################
+
+ACTION DtImsMode
+{
+        LABEL           DtImsMode
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -mode -window  %Args%
+        DESCRIPTION     The DtimsMode action sets the selection mode for Input Method.
+}
+
+
+ACTION DtImsGetRemoteConf
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -remoteconf %(String)Args%
+        DESCRIPTION     This action obtains IMS configuration data on a remote system.
+}
+
+
+ACTION DtImsRunRemoteIms
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        ARG_COUNT       *
+        ARG_CLASS       *
+        ARG_MODE        *
+        EXEC_STRING     dtimsstart -remoterun %(String)Args%
+        DESCRIPTION     This action starts an IMS on a remote system.
+}
+

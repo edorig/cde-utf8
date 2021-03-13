@@ -1,0 +1,1097 @@
+# ##########################################################################
+# 
+#     miscImages.dt
+# 
+#     Examples of miscellaneous datatypes for Images.
+# 
+#     (c) Copyright 1993, 1994 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994 International Business Machines Corp.
+#     (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994 Novell, Inc.
+# 
+#      $XConsortium: miscImages.dt.src /main/5 1996/04/23 17:36:09 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES pict-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pict
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pict-file
+        DESCRIPTION     이 파일은 Macintosh PICT 형식에서  \
+그래픽 이미지를 갖고있습니다. 이 데이타 유형은 pict-file  \
+이라고 합니다. pict-file 파일은 파일 이름끝에 '.PICT' 또는  .pict' \
+의 확장 이름을 갖습니다.
+        TYPE_LABEL      pict-file
+}
+DATA_CRITERIA pict-file1
+{
+        DATA_ATTRIBUTES_NAME pict-file
+        NAME_PATTERN    *.PICT
+        MODE         	fr
+}
+DATA_CRITERIA pict-file2
+{
+        DATA_ATTRIBUTES_NAME pict-file
+        NAME_PATTERN    *.pict
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        pict-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 pict-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES ppm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.ppm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      ppm-file
+        DESCRIPTION     이 파일은 Poskanser Portable Pixmap 형식에서 \
+그래픽 이미지를 갖고있습니다. 이 데이타 유형은 ppm-file이라고 \
+합니다. ppm-file 파일은 "P6" 또는 "P3" \
+의 문자를 갖습니다.
+        TYPE_LABEL      ppm-file
+}
+DATA_CRITERIA ppm-file1
+{
+        DATA_ATTRIBUTES_NAME ppm-file
+        CONTENT         0 string P6
+        MODE         	fr
+}
+DATA_CRITERIA ppm-file2
+{
+        DATA_ATTRIBUTES_NAME ppm-file
+        CONTENT         0 string P3
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        ppm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 ppm-file 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pj-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pj
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pj-file
+        DESCRIPTION     이 파일은 HP PaintJet 형식에서 \
+그래픽 이미지를 갖고있습니다. 이 데이타 유형은 pj-file이라고 합니다. \
+pj-file 파일은 파일 이름끝에 '.pj'의 확장이름을 갖습니다.
+        TYPE_LABEL      pj-file
+}
+DATA_CRITERIA pj-file1
+{
+        DATA_ATTRIBUTES_NAME pj-file
+        NAME_PATTERN    *.pj
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        pj-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 pj-file 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pgm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pgm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pgm-file
+        DESCRIPTION     이 파일은 Portable Graymap 형식에서\
+그래픽 이미지를 갖고있습니다. 이 데이타 유형은 pgm-file이라고 합니다. \
+pgm-file 파일은 "P5" 또는 "P2"문자를 갖습니다.
+        TYPE_LABEL      pgm-file
+}
+DATA_CRITERIA pgm-file1
+{
+        DATA_ATTRIBUTES_NAME pgm-file
+        CONTENT         0 string P5
+        MODE         	fr
+}
+DATA_CRITERIA pgm-file2
+{
+        DATA_ATTRIBUTES_NAME pgm-file
+        CONTENT         0 string P2
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        pgm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 pgm-file 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pbm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pbm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pbm-file
+        DESCRIPTION     이 파일은 Poskanser Portable Bitmap 형식에서\
+그래픽 이미지를 갖고있습니다. 이 데이타 유형은 pbm-file이라고 \
+합니다. pbm-file 파일은 "P4" 또는  P1"문자를 \
+갖습니다.
+        TYPE_LABEL      pbm-file
+}
+DATA_CRITERIA pbm-file1
+{
+        DATA_ATTRIBUTES_NAME pbm-file
+        CONTENT         0 string P4
+        MODE         	fr
+}
+DATA_CRITERIA pbm-file2
+{
+        DATA_ATTRIBUTES_NAME pbm-file
+        CONTENT         0 string P1
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           Open
+   	ARG_TYPE        pbm-file
+   	TYPE            COMMAND
+   	WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 pbm-file 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES ilbm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.ilbm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      ilbm-file
+        DESCRIPTION     이 파일은 Amiga's IFF ILBM 형식에서\
+그래픽 이미지를 갖고있습니다. 이 데이타 유형은 ilbm-file이라고 합니다. \
+ilbm-file 파일은 파일 이름끝에 '.ilbm'의 확장 이름을 가지며, \
+"ILBM"문자를 갖습니다.
+        TYPE_LABEL      ilbm-file
+}
+DATA_CRITERIA ilbm-file1
+{
+        DATA_ATTRIBUTES_NAME ilbm-file
+        CONTENT         0 string ILBM
+        MODE         	fr
+}
+DATA_CRITERIA ilbm-file2
+{
+        DATA_ATTRIBUTES_NAME ilbm-file
+        NAME_PATTERN    *.ilbm
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        ilbm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 ilbm-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pi1-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pi1
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pi1-file
+        DESCRIPTION     이 파일은 Atari Degas pil 형식에서  \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 pi1-file이라고 합니다.  \
+pi1-file 파일은 파일 이름끝에 '.pi1'의 확장 이름을 갖습니다.
+        TYPE_LABEL      pi1-file
+}
+DATA_CRITERIA pi1-file1
+{
+        DATA_ATTRIBUTES_NAME pi1-file
+        NAME_PATTERN    *.pi1
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        pi1-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 pi1-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pcx-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pcx
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pcx-file
+        DESCRIPTION     이 파일은 PC Paintbrush PCX 형식에서 \
+그래픽 이미지를 갖습니다. 이 데이타 유형은 pcx-file라고 합니다.  \
+pcx-file 파일은 파일 이름끝에 '.pcx'의 확장 이름을 갖습니다.
+        TYPE_LABEL      pcx-file
+}
+DATA_CRITERIA pcx-file1
+{
+        DATA_ATTRIBUTES_NAME pcx-file
+        NAME_PATTERN    *.pcx
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        pcx-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 pcx-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES tga-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.tga
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      tga-file
+        DESCRIPTION     이 파일은 TrueVision Targa 형식에서\
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 tga-file이라고 합니다.  \
+tga-file 파일은 파일 이름끝에 '.tga'의 확장 이름을 갖습니다.
+        TYPE_LABEL      tga-file
+}
+DATA_CRITERIA tga-file1
+{
+        DATA_ATTRIBUTES_NAME tga-file
+        NAME_PATTERN    *.tga
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        tga-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 tga-file 열람기가 없습니다. "                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES xim-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.xim
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      xim-file
+        DESCRIPTION     이 파일은 xim 형식에서 그래픽 이미지를 갖고 있습니다. \
+이 데이타 유형은 xim-file이라고 합니다.  xim-file \
+파일은 파일 이름끝에 '.xim'의 확장 이름을 갖습니다.
+        TYPE_LABEL      xim-file
+}
+DATA_CRITERIA xim-file1
+{
+        DATA_ATTRIBUTES_NAME xim-file
+        NAME_PATTERN    *.xim
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        xim-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 xim-file 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES mtv-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.mtv
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      mtv-file
+        DESCRIPTION     이 파일은 MTV/PRT ray-tracer 출력 형식에서\
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 mtv-file이라고 \
+합니다. mtv-file 파일은 파일 이름끝에 '.mtv'의  \
+확장 이름을 갖습니다.
+        TYPE_LABEL      mtv-file
+}
+DATA_CRITERIA mtv-file1
+{
+        DATA_ATTRIBUTES_NAME mtv-file
+        NAME_PATTERN    *.mtv
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        mtv-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 mtv-file 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES qrt-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.qrt
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      qrt-file
+        DESCRIPTION     이 파일은 QRT ray-tracer 출력 형식에서\
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 qrt-file이라고  \
+합니다. qrt-file 파일은 파일 이름끝에 '.qrt'의 확장 이름을 갖습니다.
+        TYPE_LABEL      qrt-file
+}
+DATA_CRITERIA qrt-file1
+{
+        DATA_ATTRIBUTES_NAME qrt-file
+        NAME_PATTERN    *.qrt
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        qrt-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 qrt-file 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES imgw-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.imgw
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      imgw-file
+        DESCRIPTION     이 파일은 Img-whatnot 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 imgw-file이라고 합니다.  \
+imgw-file 은 파일 이름끝에 '.imgw'의 확장 이름을 갖습니다.
+        TYPE_LABEL      imgw-file
+}
+DATA_CRITERIA imgw-file1
+{
+        DATA_ATTRIBUTES_NAME imgw-file
+        NAME_PATTERN    *.imgw
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        imgw-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 imgw-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES sld-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.sld
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      sld-file
+        DESCRIPTION     이 파일은 AutoCAD 슬라이드 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 sld-file이라고 합니다.  \
+sld-file 파일은 파일 이름끝에 '.sld'의 확장이름을 갖습니다.
+        TYPE_LABEL      sld-file
+}
+DATA_CRITERIA sld-file1
+{
+        DATA_ATTRIBUTES_NAME sld-file
+        NAME_PATTERN    *.sld
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        sld-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 sld-file 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES spc-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.spc
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      spc-file
+        DESCRIPTION     이 파일은 Atari compressed Spectrum 형식에서\
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은  \
+spc-file이라고 합니다.  spc-file 파일은 파일 이름끝에 \
+'.spc'의 확장 이름을 갖습니다.
+        TYPE_LABEL      spc-file
+}
+DATA_CRITERIA spc-file1
+{
+        DATA_ATTRIBUTES_NAME spc-file
+        NAME_PATTERN    *.spc
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        spc-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 spc-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES spu-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.spu
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      spu-file
+        DESCRIPTION     이 파일은 Atari uncompress Stectrum 형식에서\
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은  spu-file이라고 합니다. \
+spu-file 파일은 파일 이름끝에 '.spu'의 확장 이름을\
+갖습니다.
+        TYPE_LABEL      spu-file
+}
+DATA_CRITERIA spu-file1
+{
+        DATA_ATTRIBUTES_NAME spu-file
+        NAME_PATTERN    *.spu
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        spu-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 spu-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES gould-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.gould
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      gould-file
+        DESCRIPTION     이 파일은 Gould scanner 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 gould-file이라고 합니다. \
+gould-file 파일은 파일 이름끝에 '.gould'의 확장 이름을 갖습니다.
+        TYPE_LABEL      gould-file
+}
+DATA_CRITERIA gould-file1
+{
+        DATA_ATTRIBUTES_NAME gould-file
+        NAME_PATTERN    *.gould
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        gould-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 gould-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES fs-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.fs
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      fs-file
+        DESCRIPTION     이 파일은 Usenix FaceSaver 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 fs-file이라고 합니다. \
+fs-file 파일은 파일 이름끝에 '.fs'의 확장 이름을 갖습니다.
+        TYPE_LABEL      fs-file
+}
+DATA_CRITERIA fs-file1
+{
+        DATA_ATTRIBUTES_NAME fs-file
+        NAME_PATTERN    *.fs
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        fs-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "얄수 없음 -  사용할 수 있는 fs-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES fits-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.fits
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      fits-file
+        DESCRIPTION     이 파일은 FITS 형식에서 그래픽 이미지를 갖고 있습니다. \
+이 데이타 유형은 fits-file이라고 합니다.  fits-file파일은 \
+파일 이름끝에 '.fits'의 확장 이름을 갖습니다.
+        TYPE_LABEL      fits-file
+}
+DATA_CRITERIA fits-file1
+{
+        DATA_ATTRIBUTES_NAME fits-file
+        NAME_PATTERN    *.fits
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        fits-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 fits-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES lispm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.lispm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      lispm-file
+        DESCRIPTION     이 파일은 Lisp Machine bit-array-file 형식에서\
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 lispm-file이라고 \
+합니다.  lispm-file 파일은 파일 이름끝에  \
+'.lispm'의 확장 이름을 갖고, 내용중에  \
+"This is a BitMap file"의 문자를 갖습니다.
+        TYPE_LABEL      lispm-file
+}
+DATA_CRITERIA lispm-file1
+{
+        DATA_ATTRIBUTES_NAME lispm-file
+        NAME_PATTERN    *.lispm
+        MODE         	fr
+}
+DATA_CRITERIA lispm-file2
+{
+        DATA_ATTRIBUTES_NAME lispm-file
+        CONTENT         0 string This is a BitMap file
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        lispm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 lispm-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES hips-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.hips
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      hips-file
+        DESCRIPTION     이 파일은 HIPS 형식에서 그래픽 이미지를 갖고 있습니다. \
+이 데이타 유형은 hips-file이라고 합니다.  hips-file \
+파일은 파일 이름끝에 '.hips'의 확장 이름을 갖습니다.
+        TYPE_LABEL      hips-file
+}
+DATA_CRITERIA hips-file1
+{
+        DATA_ATTRIBUTES_NAME hips-file
+        NAME_PATTERN    *.hips
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        hips-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 hips-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES mac-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.mac
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      mac-file
+        DESCRIPTION     이 파일은 MacPaint 형식에서\
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 mac-file이라고 합니다.  \
+mac-file 파일은 파일 이름끝에 '.mac'의 확장이름을 갖습니다.
+        TYPE_LABEL      mac-file
+}
+DATA_CRITERIA mac-file1
+{
+        DATA_ATTRIBUTES_NAME mac-file
+        NAME_PATTERN    *.mac
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        mac-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 mac-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES atk-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.atk
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      atk-file
+        DESCRIPTION     이 파일은 Andrew Toolkit raster 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 atk-file이라고 합니다. \
+atk-file 파일은 파일 이름끝에 '.atk'의 확장 이름을 갖습니다.
+        TYPE_LABEL      atk-file
+}
+DATA_CRITERIA atk-file1
+{
+        DATA_ATTRIBUTES_NAME atk-file
+        NAME_PATTERN    *.atk
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        atk-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 atk-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES brush-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.brush
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      brush-file
+        DESCRIPTION     이 파일은 doodle brush 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 brush-file이라고 합니다.  \
+brush-file 파일은 파일 이름끝에 '.brush'의 확장 이름을 갖습니다.
+        TYPE_LABEL      brush-file
+}
+DATA_CRITERIA brush-file1
+{
+        DATA_ATTRIBUTES_NAME brush-file
+        NAME_PATTERN    *.brush
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        brush-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 brush-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES cmu-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.cmu
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      cmu-file
+        DESCRIPTION     이 파일은 CMU 창 관리자 비트맵 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 cmu-file이라고 합니다. \
+cmu-file 파일은 파일 이름끝에 '.cmu'의 확장 이름을 가지며, \
+내용중에 "\361\0\100\273"의 문자를 갖습니다.
+        TYPE_LABEL      cmu-file
+}
+DATA_CRITERIA cmu-file1
+{
+        DATA_ATTRIBUTES_NAME cmu-file
+        NAME_PATTERN    *.cmu
+        MODE         	fr
+}
+DATA_CRITERIA cmu-file2
+{
+        DATA_ATTRIBUTES_NAME cmu-file
+        CONTENT         0 string \361\0\100\273
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        cmu-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 cmu-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES mgr-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.mgr
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      mgr-file
+        DESCRIPTION     이 파일은 MGR 비트맵 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 mgr-file이라고 합니다. \
+mgr-file 파일은 파일 이름끝에 '.mgr'의 확장 이름을 가지며, \
+내용중에 "yz"의 문자를 갖습니다.
+        TYPE_LABEL      mgr-file
+}
+DATA_CRITERIA mgr-file1
+{
+        DATA_ATTRIBUTES_NAME mgr-file
+        NAME_PATTERN    *.mgr
+        MODE         	fr
+}
+DATA_CRITERIA mgr-file2
+{
+        DATA_ATTRIBUTES_NAME mgr-file
+        CONTENT         0 string yz
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        mgr-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 mgr-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES g3-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.g3
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      g3-file
+        DESCRIPTION     이 파일은 Group 3 fax 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 g3-file이라고 합니다. \
+g3-file은 파일 이름끝에 '.g3'의 확장 이름을 갖습니다.
+        TYPE_LABEL      g3-file
+}
+DATA_CRITERIA g3-file1
+{
+        DATA_ATTRIBUTES_NAME g3-file
+        NAME_PATTERN    *.g3
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        g3-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 g3-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES img-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.img
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      img-file
+        DESCRIPTION     이 파일은 GEM IMG 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 img-file이라고 합니다. \
+img-file은 파일 이름끝에 '.img'의 확장 이름을 갖습니다.
+        TYPE_LABEL      img-file
+}
+DATA_CRITERIA img-file1
+{
+        DATA_ATTRIBUTES_NAME img-file
+        NAME_PATTERN    *.img
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        img-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 - 사용할 수 있는 img-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pi3-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pi3
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pi3-file
+        DESCRIPTION     이 파일은 Atari Degas pi3 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 pi3-file이라고 합니다.  \
+pi3-file 파일은 파일 이름끝에 '.pi3'의 확장 이름을 갖습니다.
+}
+DATA_CRITERIA pi3-file1
+{
+        DATA_ATTRIBUTES_NAME pi3-file
+        NAME_PATTERN    *.pi3
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        pi3-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 pi3-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES ybm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.ybm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      ybm-file
+        DESCRIPTION     이 파일은 Benet Yee's face 형식에서 \
+그래픽 이미지를 갖고 있습니다. 이 데이타 유형은 ybm-file이라고 합니다. \
+ybm-file 파일은 파일 이름끝에 '.ybm'의 확장 이름을 가지며, \
+내용중에 "!!"의 문자를 갖습니다.
+        TYPE_LABEL      ybm-file
+}
+DATA_CRITERIA ybm-file1
+{
+        DATA_ATTRIBUTES_NAME ybm-file
+        NAME_PATTERN    *.ybm
+        MODE         	fr
+}
+DATA_CRITERIA ybm-file2
+{
+        DATA_ATTRIBUTES_NAME ybm-file
+        CONTENT         0 string !!
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		Open
+        ARG_TYPE        ybm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "열수 없음 -  사용할 수 있는 ybm-file 파일 열람기가 없습니다."                            "정보"                            "예"
+
+
+
+}
+
+# #######################################################
+DATA_ATTRIBUTES photocd-file
+{
+        ACTIONS         Open,Print
+	ICON            Dtimage
+	NAME_TEMPLATE   image%s.pcd
+		MIME_TYPE       application/octet-stream
+		SUNV3_TYPE      photocd-file
+	DESCRIPTION     이 파일은 PhotoCD 형식의 그래픽 이미지를 가지고 있습니다. \
+데이타 유형은 photocd-file 입니다. \
+photocd-file 파일들은 파일 이름이 '.pcd' 또는 \
+'.PCD'로 끝납니다.
+}
+DATA_CRITERIA photocd-file1
+{
+        DATA_ATTRIBUTES_NAME photocd-file
+	MODE		fr
+	NAME_PATTERN    *.PCD
+}
+DATA_CRITERIA photocd-file2
+{
+        DATA_ATTRIBUTES_NAME photocd-file
+	MODE		fr
+	NAME_PATTERN    *.pcd
+}
+ACTION Open
+{
+	LABEL           Open
+	ARG_TYPE        photocd-file
+	TYPE            COMMAND
+	WINDOW_TYPE     NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dterror.ds 			"할수 없음" 			"정보" 			"예"
+
+
+
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        photocd-file,pict-file,ppm-file,pj-file,pgm-file,pbm-file,ilbm-file,pi1-file,pcx-file,tga-file,xim-file,mtv-file,qrt-file,imgw-file,sld-file,spc-file,spu-file,gould-file,fs-file,fits-file,lispm-file,hips-file,mac-file,atk-file,brush-file,cmu-file,mgr-file,g3-file,img-file,pi3-file,ybm-file
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}

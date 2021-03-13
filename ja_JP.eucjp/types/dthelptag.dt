@@ -1,0 +1,216 @@
+# ##########################################################################
+# 
+#      dthelptag.dt
+# 
+#      Actions and DataTypes for authoring Help information.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $TOG: dthelptag.dt.src /main/6 1998/07/29 17:08:50 mgreess $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ヘルプ実行形式ファイルは、../dt/bin にありますが、このディレクトリ
+# はすべてのユーザのパスにあるわけではありません。したがって、クライアント
+# を起動する前に、これをパスに追加するために次の文字列を定義します。
+set HELPTAG_PATH=\$PATH:/usr/dt/bin
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES DTHELP_HTG
+{
+        ACTIONS         Open,Compile,CleanUp
+        ICON            Dthsrc
+        NAME_TEMPLATE   %s.htg
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、デスクトップ・ヘルプ・システムのマスタ\
+                        HelpTag ソース・ファイルです。このファイルの情報は\
+                        HelpTag マークアップ言語で書式化し、表示する前に\
+                        HelpTag ソフトウェア ('dthelptag') を用いて\
+                        コンパイルしなければなりません。データ型は \
+                        DTHELP_HTG です。DTHELP_HTG ファイルの名前は \
+                        '.htg' で終わります。
+        TYPE_LABEL      DTHELP_HTG
+}
+
+DATA_CRITERIA DTHELP_HTG1
+{
+	DATA_ATTRIBUTES_NAME DTHELP_HTG
+        MODE            f
+        NAME_PATTERN    *.htg
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES DTHELP_CTG
+{
+        ACTIONS         Open,CompileCanon,CleanUp
+        ICON            Dthsrc
+        NAME_TEMPLATE   %s.ctg
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、デスクトップ・ヘルプ・システムの正規 \
+                        SGML マスタ HelpTag ソース・ファイルです。この\
+                       ファイルの情報は、正規 HelpTag マークアップ言語で\
+                       書式化し、表示する前に HelpTag ソフトウェア \
+                       ('dthelptag') を'-canon'オプション付きで使用して、\
+                       コンパイルしなければなりません。データ型は \
+                       DTHELP_CTG です。DTHELP_CTG ファイルの名前は '.ctg' \
+                       で終わります。
+        TYPE_LABEL      DTHELP_CTG
+}
+
+DATA_CRITERIA DTHELP_CTG1
+{
+	DATA_ATTRIBUTES_NAME DTHELP_CTG
+        MODE            f
+        NAME_PATTERN    *.ctg
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES DTHELP_ERR
+{
+        ACTIONS         Open
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.err
+        MIME_TYPE	text/plain
+        DESCRIPTION     このファイルは、コンパイルしたヘルプ・ボリューム\
+                       に関するパーサ・エラーを格納しています。dthelptag \
+                       パーサは、ヘルプ・ボリュームのコンパイル中にパーサ・\
+                       エラーを検知した時にだけ、このファイルを作成します。\
+                       データ型は DTHELP_ERR です。DTHELP_ERR ファイルの\
+                       名前は '.err' で終わります。
+        TYPE_LABEL      DTHELP_ERR
+}
+
+DATA_CRITERIA DTHELP_ERR1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_ERR
+        NAME_PATTERN    *.err
+        MODE            f
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# アクション
+# 
+# ##################################################################
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        DTHELP_HTG,DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION      OpenHelpTag
+}
+
+# ######
+
+ACTION Compile
+{
+        LABEL           コンパイル
+        ARG_TYPE        DTHELP_HTG
+	TYPE		MAP
+        MAP_ACTION	HelpTag
+}
+
+# ######
+
+ACTION CompileCanon
+{
+        LABEL           CompileCanon
+        ARG_TYPE        DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION	HelpTagCanon
+}
+
+# ######
+
+ACTION CleanUp
+{
+        LABEL           Cleanup
+        ARG_TYPE        DTHELP_HTG,DTHELP_CTG
+	TYPE		MAP
+        MAP_ACTION	CleanHelpTag
+}
+
+# ######
+
+ACTION OpenHelpTag
+{
+        LABEL           OpenHelpTag
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtpad "%(File)Arg_1%"
+	DESCRIPTION	OpenHelpTag アクションはマスタ HelpTag ファイル\
+                        ('.sdl' または '.hv' ファイル) をテキスト・\
+                        エディタで開きます。
+}
+
+# ######
+
+ACTION HelpTag
+{
+        LABEL           HelpTag
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag File:"%"`; 			       PATH=$HELPTAG_PATH dthelptag 				  `basename "%(File)Arg_1%"`'
+
+
+
+	DESCRIPTION	HelpTag アクションは、マスタ HelpTag ファイルを\
+                        コンパイルして実行時のヘルプ・ファイルを作成します。\
+                        実行時のヘルプ・ファイルは、ヘルプ・システムを使用\
+                        するアプリケーションによって、または 'dthelpview' \
+                        プログラムを使用することによって、表示できます。
+}
+
+# ######
+
+ACTION HelpTagCanon
+{
+        LABEL           HelpTagCanon
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag File:"%"`; 			       PATH=$HELPTAG_PATH dthelptag -formal 				  `basename "%(File)Arg_1%"`'
+
+
+
+	DESCRIPTION	HelpTagCanon アクションは、正規 SGML マスタ \
+                        HelpTag ファイルをコンパイルして、実行時のヘルプ・\
+                       ファイルを作成します。実行時のファイルは、ヘルプ・\
+                       システムを使用するアプリケーションによって、または \
+                       'dthelpview' プログラムを使用することによって、表示\
+                       できます。
+}
+
+# ######
+
+ACTION CleanHelpTag
+{
+        LABEL           CleanHelpTag
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'PATH=$HELPTAG_PATH dthelptag -clean 				  `basename "%(File)Arg_1"HelpTag File:"%"`'
+
+	DESCRIPTION	CleanHelpTag アクションは、HelpTag アクションが\
+                       作成したすべての実行時のヘルプ・ファイルを削除します。
+}
+# ######################## EOF ############################################

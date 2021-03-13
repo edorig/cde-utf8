@@ -1,0 +1,53 @@
+# ##########################################################################
+# 
+#      autoStart.dt
+# 
+#      Action definitions for auto-starting the DT clients
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: autoStart.dt.src /main/4 1996/04/23 20:23:54 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+ACTION InvokeFILEMGR
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtfile -noview
+	DESCRIPTION	InvokeFILEMGR アクションは、ファイル・マネージャ\
+                        (dtfile クライアント)を起動します。
+}
+
+ACTION InvokeDTPAD
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtpad -server
+	DESCRIPTION	InvokeDTPAD アクションは、デスクトップ・テキスト・\
+                        エディタ(dtpad クライアント)を起動します。
+}
+
+ACTION InvokeMAILER
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtmail
+	DESCRIPTION	InvokeMAILER アクションは、メール・プログラム\
+                        (dtmail クライアント)を起動します。
+}
+# ######################## EOF ############################################

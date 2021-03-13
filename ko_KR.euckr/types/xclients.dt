@@ -1,0 +1,387 @@
+# ##########################################################################
+# 
+#     xclients.dt
+# 
+#     Actions and DataTypes for integrating X clients into the Common
+#     Desktop Environment (CDE).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: xclients.dt.src /main/5 1996/04/23 20:26:44 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES XWD
+{
+        ACTIONS         Open,Print
+        ICON            Dtxwd
+        NAME_TEMPLATE   %s.xwd
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      xwd-file
+        DESCRIPTION     이 파일은 XWD 형식의 그래픽 이미지를 갖습니다. \
+이 파일들은 전형적으로 XWD Capture 활동을 사용하여 \
+창의 사진 이미지로 만들어집니다. 이 데이타 유형은 \
+XWD라고 합니다. XWD 파일은 파일 이름 끝에 \
+'.xwd' 또는 '.wd'의 확장 이름을 갖습니다.
+        TYPE_LABEL      XWD
+}
+DATA_CRITERIA XWD1
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.xwd
+}
+DATA_CRITERIA XWD2
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.wd
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      Xwud
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Xwud
+{
+        LABEL		Xwd Display
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwud -noclick -in                               "%(File)Arg_1"Xwd 파일:"%"
+
+	DESCRIPTION	Xwd Display 활동은 Xwd Capture (Xwd)\
+활동을 사용해 만들어진 xwd 파일을 보여줍니다. \
+이것은 'xwud' 명령을 사용합니다.
+}
+
+# ##########################################################################
+# 
+# 활동
+# 
+# ##########################################################################
+ACTION Xrefresh
+{
+        LABEL		Refresh Display
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xrefresh
+	DESCRIPTION	Refresh Display (Xrefresh) 활동은 'xrefresh' \
+명령을 사용해 화면 전체를 다시 그립니다.
+}
+
+# ######
+
+ACTION Bitmap
+{
+        LABEL		Edit Bitmap 
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				"%(File)Arg_1"열 파일:"%"
+
+	DESCRIPTION	Edit Bitmap (Bitmap) 활동은 'bitmap' 클라이언트를 \
+실행합니다. 사용자가 파일 인수를 제공할 수도 있고 \
+새 비트맵 파일의 세로와 \
+가로 크기에 대하여 묻기도 합니다.
+}
+ACTION Bitmap
+{
+        LABEL		Edit Bitmap 
+	ARG_COUNT	0	
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				-size %"가로:"%x%"세로:"% 				"%(File)Arg_1"열 파일:"%"
+
+
+	DESCRIPTION	Edit Bitmap (Bitmap) 활동은 'bitmap' 클라이언트를 \
+실행합니다. 사용자가 파일 인수를 제공할 수도 있고 \
+새 비트맵 파일의 세로와 \
+가로 크기에 대하여 묻기도 합니다.
+}
+
+# ######
+
+ACTION DttermConsole
+{
+        LABEL		Terminal Console
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtterm -C -ls -name Console -title Console
+	DESCRIPTION	Terminal Console 활동은 사용자의 콘솔 \
+로서 'dtterm' 단말기 에뮬레이터를 시작합니다. 
+}
+
+# ######
+
+ACTION Xterm
+{
+        LABEL		Xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xterm
+	DESCRIPTION	Xterm 활동은 'xterm' 단말기  \
+에뮬레이터를 시작합니다. 
+}
+
+# ######
+
+ACTION DttermDtspcd
+{
+        LABEL		Terminal Remote
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"호스트 이름:"%
+	EXEC_STRING	/usr/dt/bin/dtterm
+	DESCRIPTION	Terminal Remote 활동은 사용자에게 \
+시스템 이름을 묻고 그 시스템에 'dtterm' 단말기 \
+에뮬레이터를 시작합니다.  이 시스템은 \
+원격 실행을 위해 적절하게 구성되어져야 합니다.
+}
+
+# ######
+
+ACTION XtermDtspcd
+{
+        LABEL		Xterm Remote
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"호스트 이름:"%
+	EXEC_STRING	xterm
+	DESCRIPTION	Xterm Remote 활동은 사용자에게 \
+시스템 이름을 묻고 그 시스템에 'xterm' 단말기 \
+에뮬레이터를 시작합니다. 이 시스템은 원격 \
+실행을 위해 적절하게 구성되어져야 합니다. 
+}
+
+# ######
+
+ACTION DttermRlogin
+{
+        LABEL		Terminal Rlogin
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"호스트 이름:"%";             /usr/dt/bin/dtterm -title "\$_title : Dtterm" -e KORNSHELL -c             "echo \$_title... (으)로 연결을 시도하는 중입니다.....;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	Terminal Rlogin 활동은 사용자에게 \
+시스템 이름을 묻고 'dtterm' 단말기 에뮬레이터 \
+창을 엽니다. 그런 다음, 그 시스템에 'rlogin'을 \
+수행합니다.
+}
+
+# ######
+
+ACTION XtermRlogin
+{
+        LABEL		Xterm Rlogin
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"호스트 이름:"%";             xterm -title "\$_title : Xterm" -e KORNSHELL -c             "echo \$_title... (으)로 연결을 시도하는 중입니다.....;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	Xterm Rlogin 활동은 시스템의 사용자에게 \
+시스템 이름을 묻고 'xterm' 단말기 에뮬레이터 창을 \
+엽니다. 그런다음 그 시스템에 'rlogin'을 \
+수행합니다.
+}
+
+# ######
+
+ACTION XclockDig
+{
+        LABEL		Digital Clock
+        ARG_COUNT	0
+        ICON		Dtdgclk
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xclock -name "Digital Clock"                                    -digital -update 1
+
+        DESCRIPTION     Digital Clock (Xclock) 활동은 디지탈 시계를 \
+보여줍니다. 이것은 'xclock -digital' 명령을 사용합니다.
+}
+
+
+# ######
+
+ACTION Xload
+{
+        LABEL		System Load
+        ARG_COUNT	0
+        ICON		Dtload
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xload -name "System Load"                              -geometry 250x150 -xrm '*primaryColorSetId: 5'
+
+        DESCRIPTION     System Load (Xload) 활동은 시스템 로드를 \
+그래픽으로 보여줍니다. 이것은 \
+xload 명령을 사용합니다.
+}
+
+# ######
+
+ACTION Xwd
+{
+        LABEL		Xwd Capture
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwd -out                              %(File)"출력 파일(<name>.xwd):"%
+
+	DESCRIPTION	Xwd Capture (Xwd) 활동은 창의 이미지를  \
+찍어 xwd 그래픽 파일에 저장합니다. \
+이 활동을 실행할때, 커서가 십자 모양으로 \
+바뀐 다음, capture 하고 싶은 창을 두번 눌러야합니다.  \
+이 활동은 xwd명령을 사용합니다. \
+Xwd는 'X Window Dump'를 나타냅니다.
+}
+
+# ######
+
+ACTION Xclipboard
+{
+        LABEL		Clipboard Contents
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xclipboard
+	DESCRIPTION	Clipboard Contents (Xclipboard) 활동은 사용자의 \
+클립보드 내용을 보여줍니다. 이것은 \
+'xalipboard' 명령을 사용합니다.
+}
+
+# ######
+
+ACTION Xfd
+{
+        LABEL		Font Preview
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'xfd -fn                 "%(String)Arg_1"미리 보려는 글꼴:"%"; 	               if [ \$? -eq 1 ] ; then                          /usr/dt/bin/dterror.ds                           "사용자가 지정한 글꼴은 없습니다.\\n\
+유효한 글꼴 목록을 보려면 Font List 활동을 \\n\
+실행하십시오."                           "글꼴 이름이 없습니다. "                           "예" ; 	                fi'
+
+
+
+
+
+
+
+	DESCRIPTION	Font Preview (Xfd) 활동은 글꼴의 이름을 \
+묻고나서 글꼴의 모든 특성을 보여줍니다. 이것은\
+'xfd' 명령을 사용합니다.
+}
+
+# ######
+
+# Window Information (Xwininfo) 활동은 '| ${PAGER:-more}' 정의가
+# '창을 누르십시오.' 메세지를 나타나지 못하도록 하므로
+# 이 정의를 사용할 수 없습니다. 
+ACTION Xwininfo
+{
+        LABEL		Window Information
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING	sh -c 'xwininfo; 	    echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+	DESCRIPTION	Window Information (Xwininfo) 활동은 창에 대한\
+정보를 보여줍니다. 창 정보 목록을 실행할때, \
+커서가 십자모양으로 바뀐다음, 정보를 보고자 하는 \
+창에서 누르십시오. 이 활동은 \
+'xwininfo' 명령을 사용합니다.
+}
+
+# ######
+
+ACTION Xprop
+{
+        LABEL           Window Properties
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "[커서가 십자 모양으로 바뀔 때, 창을 누르십시오....]\\n";             xprop | \${PAGER:-more};             echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+        DESCRIPTION     Window Properties (Xprop) 활동은 창에 저장 되어있는 \
+특성을 보여줍니다. 사용자가 창 특성을 실행할 때 \
+커서가 십자 모양으로 바뀐 다음, 사용자가 정보를 \
+원하는 창을 누르십시오. 이 활동은 'xprop' 명령을 \
+사용합니다.
+}
+
+# ######
+
+ACTION Xdpyinfo
+{
+        LABEL           X Server Information
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             xdpyinfo | \${PAGER:-more};             echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+        DESCRIPTION     X Server Information (Xdpyinfo) 활동은 사용자의 \
+X 서버와 디스플레이 시스템에 대한 정보를 보여줍니다. \
+이것은 'xdpyinfo' 명령을 사용합니다.
+}
+
+# ######
+
+ACTION Xlsfonts
+{
+        LABEL           Font List
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "글꼴 찾기중입니다....\\n경고: 잠시동안 사용자의 디스플레이 서버를 잠글 수도 있습니다.";             xlsfonts | \${PAGER:-more};             echo "\\n***이 창을 닫으려면 창 메뉴에서 닫기 또는 끝내기를 선택하십시오. ***"'
+
+
+
+        DESCRIPTION     Font List (Xlsfonts) 활동은 사용자의 \
+시스템에 나타낼 수 있는 모든 글꼴을 나열합니다. \
+이것은 'xlsfonts' 명령을 사용합니다.
+}
+
+# ######################## EOF ############################################

@@ -1,0 +1,356 @@
+# ##########################################################################
+# 
+#     xclients.dt
+# 
+#     Actions and DataTypes for integrating X clients into the Common
+#     Desktop Environment (CDE).
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: xclients.dt.src /main/5 1996/04/23 20:26:44 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+# ##################################################################
+# 
+# 数据属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES XWD
+{
+        ACTIONS         Open,Print
+        ICON            Dtxwd
+        NAME_TEMPLATE   %s.xwd
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      xwd-file
+        DESCRIPTION     这个文件包含一个XWD格式的图形图象。这些文件是用 Xwd 捕获\
+                        动作通过拍摄窗口快照而创建的。它的数据类型称为XWD。\
+                        XWD文件的文件名以 '.xwd' 或 '.wd' 结尾。
+        TYPE_LABEL      XWD
+}
+DATA_CRITERIA XWD1
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.xwd
+}
+DATA_CRITERIA XWD2
+{
+        DATA_ATTRIBUTES_NAME XWD
+        MODE            f
+        NAME_PATTERN    *.wd
+}
+ACTION Open
+{
+        LABEL           打开
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      Xwud
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        XWD
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+ACTION Xwud
+{
+        LABEL		Xwd 显示
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwud -noclick -in                               "%(File)Arg_1"要显示的 Xwd 文件:"%"
+
+	DESCRIPTION	'Xwd 显示'(Xwud) 动作显示用 Xwd 捕获 (Xwd) 动作创建的 xwd 文件。\
+                        它使用 'xwud' 命令。
+}
+
+# ##########################################################################
+# 
+# 动作
+# 
+# ##########################################################################
+ACTION Xrefresh
+{
+        LABEL		刷新屏幕
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xrefresh
+	DESCRIPTION	'刷新屏幕'(Xrefresh) 动作用'xrefresh' 命令将整个屏幕刷新。
+}
+
+# ######
+
+ACTION Bitmap
+{
+        LABEL		编辑位图
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				"%(File)Arg_1"要打开的文件:"%"
+
+	DESCRIPTION	'编缉位图'(Bitmap) 动作运行 'bitmap' 客户程序。您可以提供一\
+                        个文件变量，或者它将提示新的位图文件的宽度和高度。
+}
+ACTION Bitmap
+{
+        LABEL		编辑位图
+	ARG_COUNT	0	
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	bitmap 				-size %"宽度:"%x%"高度:"% 				"%(File)Arg_1"要打开的文件:"%"
+
+
+	DESCRIPTION	'编缉位图'(Bitmap) 动作运行 'bitmap' 客户程序。您可以提供一\
+                        个文件变量，或者它将提示新的位图文件的宽度和高度。
+}
+
+# ######
+
+ACTION DttermConsole
+{
+        LABEL		终端控制台
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtterm -C -ls -name 控制台 -title 控制台
+	DESCRIPTION	'终端控制台' 动作启动一个'dtterm' 终端仿真程序作为用户的控制台。
+}
+
+# ######
+
+ACTION Xterm
+{
+        LABEL		Xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xterm
+	DESCRIPTION	'Xterm' 动作启动一个 'xterm' 终端仿真程序。
+}
+
+# ######
+
+ACTION DttermDtspcd
+{
+        LABEL		远程终端
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"宿主机名:"%
+	EXEC_STRING	/usr/dt/bin/dtterm
+	DESCRIPTION	'远程终端' 动作提示用户一个系统名，并启动该系统的 'dtterm' 终端\
+                        仿真程序。系统必须设定成远程可执行。
+}
+
+# ######
+
+ACTION XtermDtspcd
+{
+        LABEL		远程 Xterm
+        ICON            Dtterm
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_HOST	%"宿主机名:"%
+	EXEC_STRING	xterm
+	DESCRIPTION	'远程 Xterm' 动作提示用户一个系统名，并启动该系统的一个'xterm'\
+                        终端仿真程序。系统必须设定成远程可执行。
+}
+
+# ######
+
+ACTION DttermRlogin
+{
+        LABEL		终端远程注册
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"宿主机名:"%";             /usr/dt/bin/dtterm -title "\$_title : 运行终端仿真器" -e KORNSHELL -c             "echo 试图建立与\$_title的联系... 请稍等。;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	'终端远程注册' 动作提示用户一个系统名，打开一个 'dtterm' 终端仿真\
+                        程序窗口，然后在该系统上执行 'rlogin' 。
+}
+
+# ######
+
+ACTION XtermRlogin
+{
+        LABEL		Xterm 远程注册
+        ICON            Dtterm
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/ksh -c 'export _title="%"宿主机名:"%";             xterm -title "\$_title : Xterm" -e KORNSHELL -c             "echo 试图建立与\$_title的联系... 请稍等。;             rlogin \$_title; sleep 5;";'
+
+
+
+	DESCRIPTION	'Xterm 远程注册' 动作提示用户一个系统名，打开一个 'xterm' 终端仿真\
+                        程序窗口，然后在该系统上执行 'rlogin'。
+}
+
+# ######
+
+ACTION XclockDig
+{
+        LABEL		数字式时钟
+        ARG_COUNT	0
+        ICON		Dtdgclk
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xclock -name "数字式时钟"                                    -digital -update 1
+
+        DESCRIPTION     '数字式时钟'(Xclock) 动作显示一个数字式时钟。它使用 \
+                        'xclock -digital' 命令。
+}
+
+
+# ######
+
+ACTION Xload
+{
+        LABEL		系统负载
+        ARG_COUNT	0
+        ICON		Dtload
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     xload -name "系统负载"                              -geometry 250x150 -xrm '*primaryColorSetId: 5'
+
+        DESCRIPTION     '系统负载'(Xload) 动作显示一个系统负载的图形视图。它使用xload 命令。
+}
+
+# ######
+
+ACTION Xwd
+{
+        LABEL		Xwd 捕获
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+	EXEC_STRING	xwd -out                              %(File)"输出文件 (<name>.xwd):"%
+
+	DESCRIPTION	'Xwd 捕获'(Xwd) 动作抓拍一个窗口，并将其存储在\
+                       一个 xwd 图形文件中。当您运行该动作时，光标将变成\
+                       一个十字，您必须在您想要捕获的窗口上点按。该动作使用\
+                       xwd 命令。Xwd 支持 'X 窗口转储'。
+}
+
+# ######
+
+ACTION Xclipboard
+{
+        LABEL		剪贴板内容
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	xclipboard
+	DESCRIPTION	'剪贴板内容'(Xclipboard) 动作显示您的剪贴板。它使用\
+                             'xclipboard' 命令。
+}
+
+# ######
+
+ACTION Xfd
+{
+        LABEL		字库预观
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	sh -c 'xfd -fn                 "%(String)Arg_1"要预观的字库:"%"; 	               if [ \$? -eq 1 ] ; then                          /usr/dt/bin/dterror.ds                           "您指定的字库未找到。\\n\
+                           运行字库清单动作显示有效字库名的清单。"                           "字库名未找到"                           "确定" ; 	                fi'
+
+
+
+
+
+
+
+	DESCRIPTION	'字库预观' (Xfd) 动作提示一个字库名，然后显示字库中的所有符号。\
+                        它使用 'xfd' 命令。
+}
+
+# ######
+
+# 窗口信息 (Xwininfo) 动作不能使用
+# '| ${PAGER:-more}' 定义，因为它阻止显示
+# '在窗口上点按' 信息。
+ACTION Xwininfo
+{
+        LABEL		窗口信息
+        ARG_COUNT	0
+	TYPE		COMMAND
+	WINDOW_TYPE	PERM_TERMINAL
+	EXEC_STRING	sh -c 'xwininfo; 	    echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+	DESCRIPTION	'窗口信息'(Xwininfo) 动作显示有关一个窗口的信息。当您运\
+                     行窗口信息列表时，光标变成一个十字，然后您在您想要的\
+                     信息窗口上按一下。该动作使用 'xwininfo' 命令。
+}
+
+# ######
+
+ACTION Xprop
+{
+        LABEL           窗口特性设置
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "[当光标变成一个十字时，在一个窗口上按一下 ...]\\n";             xprop | \${PAGER:-more};             echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+        DESCRIPTION     '窗口特性设置'(Xprop) 动作显示存储在一个窗口中\
+                        的特性。当您运行窗口特性设置时，光标变成一个十\
+                        字，然后您在您想要得到信息的窗口上按一下。该动\
+                        作使用 'xprop'命令。
+}
+
+# ######
+
+ACTION Xdpyinfo
+{
+        LABEL           X 服务器信息
+        ARG_COUNT	0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             xdpyinfo | \${PAGER:-more};             echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+        DESCRIPTION     'X 服务器信息'(Xdpyinfo) 动作显示有关您的X服务器和显示系统的信息。\
+                        它使用 'xdpyinfo' 命令。
+}
+
+# ######
+
+ACTION Xlsfonts
+{
+        LABEL           字库列表
+        ARG_COUNT       0
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             echo "正在寻找字库，请稍候......\\n        注意: 要关闭您的显示服务器几分钟。";             xlsfonts | \${PAGER:-more};             echo "\\n*** 从窗口菜单中选择关闭或退出以关闭该窗口 ***"'
+
+
+
+        DESCRIPTION     字库列表 (Xlsfonts) 动作列出您的系统上能显示的所有字库。它使用 \
+                        'xlsfonts' 命令。
+}
+
+# ######################## EOF ############################################

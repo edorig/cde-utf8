@@ -1,0 +1,432 @@
+# ##########################################################################
+# 
+#      develop.dt
+# 
+#      Action and DataType definitions for the Common Desktop Environment
+#      (CDE) components.  This file contains common datatypes for developers.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#     $XConsortium: develop.dt.src /main/5 1996/04/23 17:35:01 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES CORE
+{
+        ACTIONS         (None)
+        ICON		Dtcore
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      corefile
+	DESCRIPTION	このファイルは異常終了したプロセスのコア・イメージ\
+                        を格納しています。データ型は CORE です。
+        TYPE_LABEL      CORE
+}
+DATA_CRITERIA CORE1
+{
+	DATA_ATTRIBUTES_NAME CORE
+        MODE            f
+	NAME_PATTERN	core
+}
+DATA_CRITERIA CORE2
+{
+	DATA_ATTRIBUTES_NAME CORE
+        MODE            f
+	NAME_PATTERN	core*
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        CORE
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES OBJECT
+{
+        ACTIONS         Open,Print
+        ICON		Dtbin
+        NAME_TEMPLATE	%s.o
+        MIME_TYPE	application/octet-stream
+        SUNV3_TYPE      o-file
+	DESCRIPTION	このファイルは、コンパイラがソール・ファイルから\
+                        作成したバイナリ・データを格納しています。\
+                        データ型は OBJECT です。OBJECT ファイルの名前は \
+                        '.o' で終ります。
+        TYPE_LABEL      OBJECT
+}
+DATA_CRITERIA OBJECT1
+{
+	DATA_ATTRIBUTES_NAME OBJECT
+        MODE            f
+	NAME_PATTERN	*.o
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        OBJECT
+        TYPE            MAP
+        MAP_ACTION      Nm
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        OBJECT
+        TYPE            MAP
+        MAP_ACTION      PrintNm
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES ASSEMBLER
+{
+        ACTIONS         Open,Print
+        ICON            Dtbin
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.s
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      text
+	DESCRIPTION	このファイルは、指定されたアーキテクチャの\
+                        アセンブラ・コードを格納しています。\
+                        データ型はASSEMBLER です。ASSEMBLER ファイルの\
+                        名前は '.s' で終ります。
+        TYPE_LABEL      ASSEMBLER
+}
+DATA_CRITERIA ASSEMBLER1
+{
+        DATA_ATTRIBUTES_NAME ASSEMBLER
+        MODE            f
+        NAME_PATTERN    *.s
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES ARCH_LIB
+{
+        ACTIONS         Open,Print
+        ICON		Dtbinml
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	このファイルは、オブジェクト・ファイルの保管\
+                        ライブラリを格納しています。データ型は ARCH_LIB \
+                        です。ARCH_LIB ファイルの名前は '.a' で終ります。
+        TYPE_LABEL      ARCH_LIB
+}
+DATA_CRITERIA ARCH_LIB1
+{
+	DATA_ATTRIBUTES_NAME ARCH_LIB
+        MODE            f
+	NAME_PATTERN	*.a
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        ARCH_LIB
+        TYPE            MAP
+        MAP_ACTION      Nm
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        ARCH_LIB
+        TYPE            MAP
+        MAP_ACTION      PrintNm
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES SHARED_LIB
+{
+        ACTIONS         Open,Print
+        ICON		Dtbinml
+        MIME_TYPE	application/octet-stream
+	DESCRIPTION	このファイルは、オブジェクト・ファイルの\
+                        共用ライブラリを格納しています。データ型は \
+                        SHARED_LIB です。SHARED_LIB ファイルの名前は、\
+                        '.sl' または '.so' で終ります。
+        TYPE_LABEL      SHARED_LIB
+}
+DATA_CRITERIA SHARED_LIB1
+{
+	DATA_ATTRIBUTES_NAME SHARED_LIB
+        MODE            f
+	NAME_PATTERN	*.sl
+}
+DATA_CRITERIA SHARED_LIB2
+{
+	DATA_ATTRIBUTES_NAME SHARED_LIB
+        MODE            f
+	NAME_PATTERN	*.so
+}
+DATA_CRITERIA SHARED_LIB3
+{
+	DATA_ATTRIBUTES_NAME SHARED_LIB
+        MODE            f
+	NAME_PATTERN	*.so*
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        SHARED_LIB
+        TYPE            MAP
+        MAP_ACTION      Nm
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        SHARED_LIB
+        TYPE            MAP
+        MAP_ACTION      PrintNm
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES C_SRC
+{
+        ACTIONS         Open,Make,Print
+        ICON		DtdotC
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.c
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      c-file
+	DESCRIPTION	このファイルは、C プログラム言語のソース・\
+                        ファイルです。データ型は C_SRC です。C_SRC \
+                        ファイルの名前は '.c' で終ります。
+        TYPE_LABEL      C_SRC
+}
+DATA_CRITERIA C_SRC1
+{
+	DATA_ATTRIBUTES_NAME C_SRC
+        MODE            f
+	NAME_PATTERN	*.c
+}
+ACTION Make
+{
+        LABEL           Make
+        TYPE            COMMAND
+        ARG_TYPE        C_SRC
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             make `basename "%(File)Arg_1%" .c`.o 2>&1 | \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+        DESCRIPTION     C_SRC ファイルに対する Make コマンドは\
+                        Unix 'make' コマンドを使用して、関連オブジェクト・\
+                       ファイルを作成します。
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES CPLUSPLUS_SRC
+{
+        ACTIONS         Open,Make,Print
+        ICON            DtC++
+        IS_TEXT         true
+        NAME_TEMPLATE	%s.C
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは、C++ プログラム言語のソース・ファイルです。\
+                        データ型は CPLUSPLUS_SRC です。CPLUSPLUS_SRC \
+                        ファイルの名前は '.C' または '.cc' で終ります。
+        TYPE_LABEL      CPLUSPLUS_SRC
+}
+DATA_CRITERIA C_PLUSPLUS1
+{
+        DATA_ATTRIBUTES_NAME CPLUSPLUS_SRC
+        MODE            f
+        NAME_PATTERN    *.C
+}
+DATA_CRITERIA C_PLUSPLUS2
+{
+        DATA_ATTRIBUTES_NAME CPLUSPLUS_SRC
+        MODE            f
+        NAME_PATTERN    *.cc
+}
+ACTION Make
+{
+        LABEL           Make
+        TYPE            COMMAND
+        ARG_TYPE        CPLUSPLUS_SRC
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             if [ -r "%(File)Arg_1%.C" ]; then                make `basename "%(File)Arg_1%" .C`.o 2>&1 | \${PAGER:-more};             else                make `basename "%(File)Arg_1%" .cc`.o 2>&1 | \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+
+
+        DESCRIPTION      CPLUSPLUS_SRC ファイルに対する Make コマンドは\
+                        Unix 'make' コマンドを使用して、関連オブジェクト・\
+                       ファイルを作成します。
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES H_SRC
+{
+        ACTIONS         Open,Print
+        ICON		DtdotH
+        IS_TEXT		true
+        NAME_TEMPLATE	%s.h
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      h-file
+	DESCRIPTION	これは、C 言語プログラム・ヘッダ・ファイルです。\
+                        データ型は H_SRCです。H_SRC ファイルの名前は \
+                        '.h' で終ります。
+        TYPE_LABEL      H_SRC
+}
+DATA_CRITERIA H_SRC1
+{
+	DATA_ATTRIBUTES_NAME H_SRC
+        MODE            f
+	NAME_PATTERN	*.h
+}
+
+# ###########################################################
+
+DATA_ATTRIBUTES MAKEFILE
+{
+        ACTIONS         Open,Make,Print
+        ICON		DtbigM
+        IS_TEXT		true
+        NAME_TEMPLATE	Makefile
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      Makefile
+	DESCRIPTION	これは Makefile です。Makefile にはソース・\
+                        ファイルのセットから実行形式ファイルを作成する方法\
+                        を記述します。これは、make コマンドが使用します。\
+                        データ型は MAKEFILE です。MAKEFILE ファイルの名前は\
+                        Makefile か makefile です。あるいは、Makefile か\
+                        makefile で始まるか、'.mk' で終ります。
+        TYPE_LABEL      MAKEFILE
+}
+DATA_CRITERIA MAKEFILE1
+{
+	DATA_ATTRIBUTES_NAME MAKEFILE
+        MODE            f
+        NAME_PATTERN    [Mm]akefile*
+}
+DATA_CRITERIA MAKEFILE2
+{
+	DATA_ATTRIBUTES_NAME MAKEFILE
+        MODE            f
+        NAME_PATTERN    *.mk
+}
+ACTION Make
+{
+        LABEL           Make
+        TYPE            COMMAND
+        ARG_TYPE        MAKEFILE
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             make -f "%(File)Arg_1%" %"Make するターゲット:"% 2>&1 | \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+        DESCRIPTION     Makefile に対する Make アクション は、make する\
+                        ターゲットの入力を要求し、Unix 'make' コマンドを\
+                        使用します。ターゲットが空のままの場合には、\
+                        コマンドは現在のフォルダの 'all' を make します。
+}
+
+
+# ###########################################################
+
+DATA_ATTRIBUTES IMAKEFILE
+{
+        ACTIONS         Open,Make,Print
+        ICON            Dtimake
+        IS_TEXT         true
+        NAME_TEMPLATE	Imakefile
+        MIME_TYPE	text/plain
+        DESCRIPTION     これは Imakefile ファイルです。Imakefile は\
+                        ソース・ファイルのセットから実行形式ファイルを\
+                        作成する方法を記述しています。これは make コマンド\
+                        が使用します。データ型は IMAKEFILE です。IMAKEFILE \
+                        ファイルの名前は imakefile か Imakefile です。\
+                        あるいは、imakefile か Imakefile で始まります。
+        TYPE_LABEL      IMAKEFILE
+}
+DATA_CRITERIA IMAKEFILE1
+{
+        DATA_ATTRIBUTES_NAME IMAKEFILE
+        MODE            f
+        NAME_PATTERN    [Ii]makefile*
+}
+ACTION Make
+{
+        LABEL           Make
+        TYPE            COMMAND
+        ARG_TYPE        IMAKEFILE
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '             make Makefile 2>&1 | \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+        DESCRIPTION     Imakefile ファイルに対する Make コマンドは、\
+                        Unix 'make' コマンドを使用して関連 Makefile を\
+                       作成します。
+}
+
+# ##########################################################################
+# ##########################################################################
+# 
+# アクション
+# 
+# ##########################################################################
+
+ACTION Nm
+{
+        LABEL           シンボル・リスト
+        TYPE            COMMAND
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING     sh -c '                  nm "%(File)Arg_1"ファイル名:"%" 2>&1 | \${PAGER:-more};                  echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+        DESCRIPTION     シンボル・リスト (Nm) アクションは、オブジェクト・\
+                       ファイルまたはライブラリ・ファイルのシンボル・\
+                       テーブルを一覧表示します。これは 'nm' コマンドを\
+                       使用します。
+}
+ACTION PrintNm
+{
+        LABEL           シンボル・リストの印刷
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /bin/sh -c ' nm "%(File)Arg_1%" |                         /usr/dt/bin/dtlp -u "シンボル・リスト"'
+
+        DESCRIPTION     シンボル・リストの印刷 (PrintNm) アクションは\
+                       'nm' コマンドからの出力をデフォルト・プリンタに\
+                       印刷します。
+}
+
+
+ACTION Make
+{
+        LABEL           Make
+        TYPE            COMMAND
+        ARG_COUNT       0
+        WINDOW_TYPE     PERM_TERMINAL
+        EXEC_STRING               sh -c '             make -f "%(File)Arg_1"Makefile:"%" %"Make するターゲット:"% 2>&1 |               \${PAGER:-more};             echo "\\n*** 閉じるには、ウィンドウ・メニューの [閉じる] または [終了] を選択してください。"'
+
+
+
+
+        DESCRIPTION     引き数なしで Make アクションを実行すると、\
+                       Makefile およびターゲットの入力を要求し、Unix \
+                       'make' コマンドを使用します。
+}
+# ######################## EOF ############################################

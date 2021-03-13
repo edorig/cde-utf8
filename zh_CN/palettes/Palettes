@@ -1,0 +1,56 @@
+! $XConsortium: Palettes.src /main/2 1995/07/20 12:05:51 drk $
+!######################################################################
+!#
+!#     Palettes
+!#
+!#     Common Desktop Environment (CDE)
+!#
+!#     Palette file used for localization of backdrop names
+!#
+!#     (c) Copyright 1993, 1994 Hewlett-Packard Company
+!#     (c) Copyright 1993, 1994 International Business Machines Corp.
+!#     (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+!#     (c) Copyright 1993, 1994 Unix System Labs, Inc., a subsidiary 
+!#	   of Novell, Inc.
+!#
+!#
+!######################################################################
+
+!###
+!#
+!#   C palette names followed by message tags for the translated names 
+!#   
+!###
+
+Palettes*Alpine.desc: 高山
+Palettes*Arizona.desc: 亚利桑那
+Palettes*Black.desc: 黑色
+Palettes*BlackWhite.desc: 黑白
+Palettes*Broica.desc: 蓝灰
+Palettes*Cabernet.desc: 红葡萄酒
+Palettes*Camouflage.desc: 伪装
+Palettes*Charcoal.desc: 木炭
+Palettes*Chocolate.desc: 巧克力
+Palettes*Cinnamon.desc: 黄棕色
+Palettes*Clay.desc: 泥土
+Palettes*Default.desc: 默认
+Palettes*Golden.desc: 金色
+Palettes*GrayScale.desc: 灰度
+Palettes*Lilac.desc: 丁香花
+Palettes*Mustard.desc: 芥末色
+Palettes*Neptune.desc: 海洋
+Palettes*NorthernSky.desc: 北方天空
+Palettes*Nutmeg.desc: 肉豆蔻
+Palettes*Olive.desc: 橄榄色
+Palettes*Orchid.desc: 兰花
+Palettes*Sand.desc: 沙子
+Palettes*SantaFe.desc: 棕色
+Palettes*Savannah.desc: 热带草原
+Palettes*SeaFoam.desc: 海洋泡沫
+Palettes*SoftBlue.desc: 柔和的蓝
+Palettes*SouthWest.desc: 西南
+Palettes*Tundra.desc: 寒漠
+Palettes*Urchin.desc: 顽童
+Palettes*Wheat.desc: 小麦
+Palettes*White.desc: 白色
+Palettes*WhiteBlack.desc: 白黑

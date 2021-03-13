@@ -1,0 +1,1145 @@
+# ##########################################################################
+# 
+#     miscImages.dt
+# 
+#     Examples of miscellaneous datatypes for Images.
+# 
+#     (c) Copyright 1993, 1994 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994 International Business Machines Corp.
+#     (c) Copyright 1993, 1994 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994 Novell, Inc.
+# 
+#      $XConsortium: miscImages.dt.src /main/5 1996/04/23 17:36:09 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES pict-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pict
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pict-file
+        DESCRIPTION     このファイルは、Macintosh PICT 形式のグラフィック・\
+                        イメージを格納しています。データ型は pict-file \
+                        です。pict-file の名前は、'.PICT' または '.pict' \
+                        で終わります。
+        TYPE_LABEL      pict-file
+}
+DATA_CRITERIA pict-file1
+{
+        DATA_ATTRIBUTES_NAME pict-file
+        NAME_PATTERN    *.PICT
+        MODE         	fr
+}
+DATA_CRITERIA pict-file2
+{
+        DATA_ATTRIBUTES_NAME pict-file
+        NAME_PATTERN    *.pict
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        pict-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な pict-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES ppm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.ppm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      ppm-file
+        DESCRIPTION     このファイルは、Poskanser Portable Pixmap 形式の\
+                        グラフィック・イメージを格納しています。データ型は \
+                        ppm-file です。ppm-file は、文字列 "P6" または "P3"\
+                        を含んでいます。
+        TYPE_LABEL      ppm-file
+}
+DATA_CRITERIA ppm-file1
+{
+        DATA_ATTRIBUTES_NAME ppm-file
+        CONTENT         0 string P6
+        MODE         	fr
+}
+DATA_CRITERIA ppm-file2
+{
+        DATA_ATTRIBUTES_NAME ppm-file
+        CONTENT         0 string P3
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        ppm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な ppm-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pj-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pj
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pj-file
+        DESCRIPTION     このファイルは、HP PaintJet フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        pj-file です。pj-file ファイルの名前は '.pj' で終わ\
+                        ります。
+        TYPE_LABEL      pj-file
+}
+DATA_CRITERIA pj-file1
+{
+        DATA_ATTRIBUTES_NAME pj-file
+        NAME_PATTERN    *.pj
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        pj-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な pj-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pgm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pgm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pgm-file
+        DESCRIPTION     このファイルは、Portable Graymap フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        pgm-file です。pgm-file ファイルは、文字列 "P5" \
+                        または "P2" を含んでいます。
+        TYPE_LABEL      pgm-file
+}
+DATA_CRITERIA pgm-file1
+{
+        DATA_ATTRIBUTES_NAME pgm-file
+        CONTENT         0 string P5
+        MODE         	fr
+}
+DATA_CRITERIA pgm-file2
+{
+        DATA_ATTRIBUTES_NAME pgm-file
+        CONTENT         0 string P2
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           開く
+        ARG_TYPE        pgm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な pgm-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pbm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pbm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pbm-file
+        DESCRIPTION     このファイルは、Poskanser Portable ビットマップ・\
+                        フォーマットのグラフィック・イメージを格納してい\
+                        ます。データ型は pbm-file です。pbm-file ファイル\
+                        は、文字列" P4" または "P1" を含んでいます。
+        TYPE_LABEL      pbm-file
+}
+DATA_CRITERIA pbm-file1
+{
+        DATA_ATTRIBUTES_NAME pbm-file
+        CONTENT         0 string P4
+        MODE         	fr
+}
+DATA_CRITERIA pbm-file2
+{
+        DATA_ATTRIBUTES_NAME pbm-file
+        CONTENT         0 string P1
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL           開く
+   	ARG_TYPE        pbm-file
+   	TYPE            COMMAND
+   	WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な pbm-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES ilbm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.ilbm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      ilbm-file
+        DESCRIPTION     このファイルは、Amiga の IFF  ILBM フォーマットの\
+                        グラフィック・イメージを格納しています。\
+                        データ型は ilbm-file です。\n                        ilbm-file ファイルは、名前が '.ilbm' で終わるか、\
+                        その中に文字列"ILBM"を含んでいます。
+        TYPE_LABEL      ilbm-file
+}
+DATA_CRITERIA ilbm-file1
+{
+        DATA_ATTRIBUTES_NAME ilbm-file
+        CONTENT         0 string ILBM
+        MODE         	fr
+}
+DATA_CRITERIA ilbm-file2
+{
+        DATA_ATTRIBUTES_NAME ilbm-file
+        NAME_PATTERN    *.ilbm
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        ilbm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な ilbm-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pi1-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pi1
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pi1-file
+        DESCRIPTION     このファイルは、Atari Degas pi1 フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        pi1-file です。pi1-file ファイルの名前は '.pi1' で\
+                        終わります。
+        TYPE_LABEL      pi1-file
+}
+DATA_CRITERIA pi1-file1
+{
+        DATA_ATTRIBUTES_NAME pi1-file
+        NAME_PATTERN    *.pi1
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        pi1-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な pi1-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pcx-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pcx
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pcx-file
+        DESCRIPTION     このファイルは、PC Paintbrush PCX フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        pcx-file です。pcx-file ファイルの名前は '.pcx' で\
+                        終わります。
+        TYPE_LABEL      pcx-file
+}
+DATA_CRITERIA pcx-file1
+{
+        DATA_ATTRIBUTES_NAME pcx-file
+        NAME_PATTERN    *.pcx
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        pcx-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な pcx-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES tga-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.tga
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      tga-file
+        DESCRIPTION     このファイルは、TrueVision Targa フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        tga-file です。tga-file ファイルの名前は '.tga' で\
+                         終わります。
+        TYPE_LABEL      tga-file
+}
+DATA_CRITERIA tga-file1
+{
+        DATA_ATTRIBUTES_NAME tga-file
+        NAME_PATTERN    *.tga
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        tga-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な tga-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES xim-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.xim
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      xim-file
+        DESCRIPTION     このファイルは、xim フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        xim-file です。xim-file ファイルの名前は '.xim' で\
+                        終わります。
+        TYPE_LABEL      xim-file
+}
+DATA_CRITERIA xim-file1
+{
+        DATA_ATTRIBUTES_NAME xim-file
+        NAME_PATTERN    *.xim
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        xim-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な xim-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES mtv-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.mtv
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      mtv-file
+        DESCRIPTION     このファイルは、MTV/PRT レイトレーサ出力\
+                        フォーマットのグラフィック・イメージを格納してい\
+                        ます。データ型は mtv-file です。mtv-file ファイル\
+                        の名前は '.mtv' で終わります。
+        TYPE_LABEL      mtv-file
+}
+DATA_CRITERIA mtv-file1
+{
+        DATA_ATTRIBUTES_NAME mtv-file
+        NAME_PATTERN    *.mtv
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        mtv-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な mtv-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES qrt-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.qrt
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      qrt-file
+        DESCRIPTION     このファイルは、QRT レイトレーサ出力\
+                        フォーマットのグラフィック・イメージを格納してい\
+                        ます。データ型は qrt-file です。qrt-file ファイル\
+                        の名前は '.qrt' で終わります。
+        TYPE_LABEL      qrt-file
+}
+DATA_CRITERIA qrt-file1
+{
+        DATA_ATTRIBUTES_NAME qrt-file
+        NAME_PATTERN    *.qrt
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        qrt-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な qrt-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES imgw-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.imgw
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      imgw-file
+        DESCRIPTION     このファイルは、Img-whatnot フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        imgw-file です。imgw-file ファイルの名前は '.imgw' \
+                        で終わります。
+        TYPE_LABEL      imgw-file
+}
+DATA_CRITERIA imgw-file1
+{
+        DATA_ATTRIBUTES_NAME imgw-file
+        NAME_PATTERN    *.imgw
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        imgw-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な imgw-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES sld-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.sld
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      sld-file
+        DESCRIPTION     このファイルは、AutoCAD スライド・フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        sld-file です。sld-file ファイルの名前は '.sld' で\
+                        終わります。
+        TYPE_LABEL      sld-file
+}
+DATA_CRITERIA sld-file1
+{
+        DATA_ATTRIBUTES_NAME sld-file
+        NAME_PATTERN    *.sld
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        sld-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な sld-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES spc-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.spc
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      spc-file
+        DESCRIPTION     このファイルは、Atari 圧縮スペクトル・フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        spc-file です。spc-file ファイルの名前は '.spc' で\
+                        終わります。
+        TYPE_LABEL      spc-file
+}
+DATA_CRITERIA spc-file1
+{
+        DATA_ATTRIBUTES_NAME spc-file
+        NAME_PATTERN    *.spc
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        spc-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な spc-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES spu-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.spu
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      spu-file
+        DESCRIPTION     このファイルは、Atari 圧縮解除スペクトル・フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        spu-file です。spu-file ファイルの名前は '.spu' で\
+                        終わります。
+        TYPE_LABEL      spu-file
+}
+DATA_CRITERIA spu-file1
+{
+        DATA_ATTRIBUTES_NAME spu-file
+        NAME_PATTERN    *.spu
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        spu-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な spu-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES gould-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.gould
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      gould-file
+        DESCRIPTION     このファイルは、Gould スキャナ・フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        gould-file です。gould-file ファイルの名前は \
+                        '.gould' で終わります。
+        TYPE_LABEL      gould-file
+}
+DATA_CRITERIA gould-file1
+{
+        DATA_ATTRIBUTES_NAME gould-file
+        NAME_PATTERN    *.gould
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        gould-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な gould-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES fs-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.fs
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      fs-file
+        DESCRIPTION     このファイルは、Usenix FaceSaver フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        fs-file です。fs-file ファイルの名前は '.fs' で終わ\
+                        ります。
+        TYPE_LABEL      fs-file
+}
+DATA_CRITERIA fs-file1
+{
+        DATA_ATTRIBUTES_NAME fs-file
+        NAME_PATTERN    *.fs
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        fs-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な fs-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES fits-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.fits
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      fits-file
+        DESCRIPTION     このファイルは、FITS フォーマットのグラフィック・\
+                        イメージを格納しています。データ型は fits-file \
+                        です。fits-file ファイルの名前は '.fits' で終わります。
+        TYPE_LABEL      fits-file
+}
+DATA_CRITERIA fits-file1
+{
+        DATA_ATTRIBUTES_NAME fits-file
+        NAME_PATTERN    *.fits
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        fits-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な fits-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES lispm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.lispm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      lispm-file
+        DESCRIPTION     このファイルは、Lisp Machine bit-array-file \
+                        フォーマットのグラフィック・イメージを格納していま\
+                        す。データ型は lispm-file です。lispm-file ファイル\
+                        は、名前が '.lispm' で終わるか、文字列 "This is a \
+                        BitMap file" を含んでいます。
+        TYPE_LABEL      lispm-file
+}
+DATA_CRITERIA lispm-file1
+{
+        DATA_ATTRIBUTES_NAME lispm-file
+        NAME_PATTERN    *.lispm
+        MODE         	fr
+}
+DATA_CRITERIA lispm-file2
+{
+        DATA_ATTRIBUTES_NAME lispm-file
+        CONTENT         0 string This is a BitMap file
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        lispm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な lispm-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES hips-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.hips
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      hips-file
+        DESCRIPTION     このファイルは、HIPS フォーマットのグラフィック・\
+                        イメージを格納しています。データ型は hips-file で\
+                        す。hips-file ファイルの名前は '.hips' で終わります。
+        TYPE_LABEL      hips-file
+}
+DATA_CRITERIA hips-file1
+{
+        DATA_ATTRIBUTES_NAME hips-file
+        NAME_PATTERN    *.hips
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        hips-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な hips-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES mac-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.mac
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      mac-file
+        DESCRIPTION     このファイルは、MacPaint フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        mac-file です。mac-file ファイルの名前は '.mac' で\
+                        終わります。
+        TYPE_LABEL      mac-file
+}
+DATA_CRITERIA mac-file1
+{
+        DATA_ATTRIBUTES_NAME mac-file
+        NAME_PATTERN    *.mac
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        mac-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な mac-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES atk-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.atk
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      atk-file
+        DESCRIPTION     このファイルは、Andrew Toolkit ラスタ・\
+                        フォーマットのグラフィック・イメージを格納していま\
+                        す。データ型は atk-file です。atk-file ファイルの\
+                        名前は '.atk' で終わります。
+        TYPE_LABEL      atk-file
+}
+DATA_CRITERIA atk-file1
+{
+        DATA_ATTRIBUTES_NAME atk-file
+        NAME_PATTERN    *.atk
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        atk-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な atk-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES brush-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.brush
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      brush-file
+        DESCRIPTION     このファイルは、手書ブラシ・フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        brush-file です。brush-file ファイルの名前は \
+                        '.brush' で終わります。
+        TYPE_LABEL      brush-file
+}
+DATA_CRITERIA brush-file1
+{
+        DATA_ATTRIBUTES_NAME brush-file
+        NAME_PATTERN    *.brush
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        brush-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な brush-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES cmu-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.cmu
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      cmu-file
+        DESCRIPTION     このファイルは、CMU ウィンドウ・マネージャ・\
+                        フォーマットのグラフィック・イメージを格納していま\
+                        す。データ型は cmu-file です。cmu-file ファイルは、\
+                        名前が '.cmu' で終わるか、"\361\0\100\273" を\
+                        文字列に含んでいます。
+        TYPE_LABEL      cmu-file
+}
+DATA_CRITERIA cmu-file1
+{
+        DATA_ATTRIBUTES_NAME cmu-file
+        NAME_PATTERN    *.cmu
+        MODE         	fr
+}
+DATA_CRITERIA cmu-file2
+{
+        DATA_ATTRIBUTES_NAME cmu-file
+        CONTENT         0 string \361\0\100\273
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        cmu-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な cmu-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES mgr-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.mgr
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      mgr-file
+        DESCRIPTION     このファイルは、MGR ビットマップ・フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        mgr-file です。mgr-file ファイルは、名前が '.mgr' \
+                        で終わるか、文字列"yz"を含んでいます。
+        TYPE_LABEL      mgr-file
+}
+DATA_CRITERIA mgr-file1
+{
+        DATA_ATTRIBUTES_NAME mgr-file
+        NAME_PATTERN    *.mgr
+        MODE         	fr
+}
+DATA_CRITERIA mgr-file2
+{
+        DATA_ATTRIBUTES_NAME mgr-file
+        CONTENT         0 string yz
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        mgr-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な mgr-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES g3-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.g3
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      g3-file
+        DESCRIPTION     このファイルは、G3 ファックス・フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        g3-file です。g3-file ファイルの名前は '.g3' で終わ\
+                        ります。
+        TYPE_LABEL      g3-file
+}
+DATA_CRITERIA g3-file1
+{
+        DATA_ATTRIBUTES_NAME g3-file
+        NAME_PATTERN    *.g3
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        g3-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な g3-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES img-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.img
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      img-file
+        DESCRIPTION     このファイルは、GEM IMG フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        img-file です。img-file ファイルの名前は '.img' で\
+                        終わります。
+        TYPE_LABEL      img-file
+}
+DATA_CRITERIA img-file1
+{
+        DATA_ATTRIBUTES_NAME img-file
+        NAME_PATTERN    *.img
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        img-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な img-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES pi3-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.pi3
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      pi3-file
+        DESCRIPTION     このファイルは、Atari Degas pi3 フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        pi3-file です。pi3-file ファイルの名前は '.pi3' で\
+                        終わります。
+}
+DATA_CRITERIA pi3-file1
+{
+        DATA_ATTRIBUTES_NAME pi3-file
+        NAME_PATTERN    *.pi3
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        pi3-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な pi3-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+
+DATA_ATTRIBUTES ybm-file
+{
+        ACTIONS         Open,Print
+        ICON            Dtimage
+        NAME_TEMPLATE   image%s.ybm
+	MIME_TYPE       application/octet-stream
+	SUNV3_TYPE      ybm-file
+        DESCRIPTION     このファイルは、Benet Yee の face フォーマットの\
+                        グラフィック・イメージを格納しています。データ型は \
+                        ybm-file です。ybm-file ファイルは、名前が '.ybm' \
+                        で終わるか、文字列 "!!" を含んでいます。
+        TYPE_LABEL      ybm-file
+}
+DATA_CRITERIA ybm-file1
+{
+        DATA_ATTRIBUTES_NAME ybm-file
+        NAME_PATTERN    *.ybm
+        MODE         	fr
+}
+DATA_CRITERIA ybm-file2
+{
+        DATA_ATTRIBUTES_NAME ybm-file
+        CONTENT         0 string !!
+        MODE         	fr
+}
+ACTION Open
+{
+        LABEL 		開く
+        ARG_TYPE        ybm-file
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                            "開くことができません。\
+                        使用可能な ybm-file ファイル・ビューアはありません。"                            "インフォメーション"                            "了解"
+
+
+
+}
+
+# #######################################################
+DATA_ATTRIBUTES photocd-file
+{
+        ACTIONS         Open,Print
+	ICON            Dtimage
+	NAME_TEMPLATE   image%s.pcd
+		MIME_TYPE       application/octet-stream
+		SUNV3_TYPE      photocd-file
+	DESCRIPTION     This file contains a graphics image in photocd format. \
+			Its data type is named photocd-file.  \
+			photocd-file files have names ending with \
+			'.pcd' or '.PCD'.
+}
+DATA_CRITERIA photocd-file1
+{
+        DATA_ATTRIBUTES_NAME photocd-file
+	MODE		fr
+	NAME_PATTERN    *.PCD
+}
+DATA_CRITERIA photocd-file2
+{
+        DATA_ATTRIBUTES_NAME photocd-file
+	MODE		fr
+	NAME_PATTERN    *.pcd
+}
+ACTION Open
+{
+	LABEL           開く
+	ARG_TYPE        photocd-file
+	TYPE            COMMAND
+	WINDOW_TYPE     NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dterror.ds 			"Cannot open - No photocd-file file viewer available." 			"インフォメーション" 			"了解"
+
+
+
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        photocd-file,pict-file,ppm-file,pj-file,pgm-file,pbm-file,ilbm-file,pi1-file,pcx-file,tga-file,xim-file,mtv-file,qrt-file,imgw-file,sld-file,spc-file,spu-file,gould-file,fs-file,fits-file,lispm-file,hips-file,mac-file,atk-file,brush-file,cmu-file,mgr-file,g3-file,img-file,pi3-file,ybm-file
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}

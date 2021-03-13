@@ -1,0 +1,200 @@
+# ##########################################################################
+# 
+#      print.dt
+# 
+#      Action and DataType Definitions for the printing
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: print.dt.src /main/4 1996/04/23 17:36:13 drk $
+# 
+
+#  CDE的打印模态集中在 '打印' 动作中。
+#
+#  您可以定义多个 '打印' 动作，每个数据类型一个。
+#  如果不为 '打印' 动作提供变量，将调用dtprintinfo
+#  命令显示打印机和工作状态。
+#
+#  'dtprintinof -populate' 是一个用于创建 '<printer name>_Print'
+#  结构打印机动作的管理工具。
+#
+#  当在系统中增加一个新的文件类型时，将创建一个文件类型特定的 '打印'
+#  动作，桌面动作引擎将自动使用该动作以代替默认值。这个新的动作可以
+#  用 'dtlp' 或依靠其自己的打印工具采集应用程序特定的变量。
+# 
+# ##########################################################################
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 数据属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES PRINTER_UNKNOWN
+{
+        ACTIONS         PrinterUnconfigured
+        ICON		DtPrtun
+        IS_EXECUTABLE   true
+        DESCRIPTION     这个图标代表一个在您的桌面上不再注册的打印机。
+        TYPE_LABEL      PRINTER_UNKNOWN
+}
+DATA_CRITERIA PRINTER_UNKNOWN1
+{
+	DATA_ATTRIBUTES_NAME PRINTER_UNKNOWN
+	MODE		f&x
+        NAME_PATTERN    *_Print
+}
+
+# 
+# 调用一般 ARG_TYPE 类型文件的默认打印动作是对于那些没有定义其它
+# 打印动作的文件而言的。
+# 
+ACTION Print
+{
+	LABEL		打印
+	ARG_TYPE	*
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp "%(File)Arg_1%"
+	DESCRIPTION	这是默认打印动作。当它带一个文件变量运行时，将采集打印机特定选项，\
+                        然后打印文件。当它不带任何选项时，将显示 '这个\
+                        窗口调用什么' 窗口。
+}
+ACTION PrintRaw
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     /usr/dt/bin/dtlp -w "%(File)Arg_1%"
+}
+
+# 
+#   如果不提供文件变量，调用 DtPrintinfo 动作。
+# 
+ACTION Print
+{
+	LABEL			打印
+	ARG_COUNT		0
+	TYPE			MAP
+	MAP_ACTION		Dtprintinfo
+}
+
+# 
+#    打印管理程序 (DtPrintManager) 动作调用
+#  'dtprintinfo -all' 命令。
+# 
+ACTION DtPrintManager
+{
+	LABEL		打印管理程序
+        ICON            FpPrtmg
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -all
+	DESCRIPTION	打印管理程序 (DtPrintManager) 动作使您确定\
+                        多台打印机的的状态并观察其打印作业。它还允许您\
+                        拖拉打印机到在子面板上以安装图标控制。
+}
+
+# 
+#   打印作业 (Dtprintinfo) 动作调用dtprintinfo
+#  命令或 'dtprintinfo -p printer' 命令。
+# 
+ACTION Dtprintinfo
+{
+	LABEL		打印作业
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo -p "%(String)Arg_1%"
+	DESCRIPTION	打印作业 (Dtprintinfo) 动作使您确定状态及观察打印机的打印作业。
+}
+
+ACTION Dtprintinfo
+{
+	LABEL		打印作业
+	ARG_COUNT	0
+        ICON            Fpprnt
+        TYPE            COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtprintinfo
+	DESCRIPTION	打印作业 (Dtprintinfo) 动作使您确定状态及观察打印机的打印作业。
+}
+
+# ###############################################################
+#  
+#   默认打印机的动作
+#  
+# ###############################################################
+ 
+# 
+#   如果提供一个文件变量，调用打印动作。
+# 
+ACTION DtPrint
+{
+	LABEL		默认打印机
+	ARG_TYPE	*
+        ICON		Fpprnt
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING	/usr/dt/bin/dtaction Print "%(File)Arg_1%"
+	DESCRIPTION	这是默认打印动作。当它带一个文件变量运行时，将采集打印机特定选项，\
+                        然后打印文件。当它不带任何选项时，将显示 '这个\
+                        窗口调用什么' 窗口。
+}
+
+# 
+#   如果不提供文件变量，调用 DtPrintinfo 动作。
+# 
+ACTION DtPrint
+{
+	LABEL		默认打印机
+	ARG_COUNT	0
+        ICON		Fpprnt
+	TYPE		MAP
+	MAP_ACTION	Dtprintinfo
+	DESCRIPTION	打印作业 (Dtprintinfo) 动作使您确定状态及观察打印机的打印作业。
+}
+
+
+# 
+#   这些是未知和未设定打印对象的动作和数据属性。
+# 
+ACTION PrinterUnconfigured
+{
+	LABEL		未设定打印机
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "这个打印机控制没有被设定。\
+要设定 \
+                        它，按 '提示'，并按其\\n说明去做。"                         "未设定打印机"                         "确定"                         "HELP"
+
+
+
+
+	DESCRIPTION	'未设定打印机' 动作显示一个打印机状态还没有被设定的对话框。
+}
+
+ACTION Printer_Trash
+{
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dterror.ds                         "将打印机放入废物箱中不能把它从系统中删除。\\n\
+                        要将打印机从系统中删除，查阅您的系统管理\\n\
+                        员文件。"                         "删除打印机"                         "确定"
+
+
+
+        DESCRIPTION     'Printer_Trash' 动作显示一个对话，说明将\
+                        一台打印机放入废物箱中不能将其从您的系统中删除。
+}
+# ######################## EOF ############################################

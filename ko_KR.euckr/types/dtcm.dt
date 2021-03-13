@@ -1,0 +1,140 @@
+###############################################################################
+#
+#     dtcm.dt
+#
+#     Action and DataType definitions for the Common Desktop Environment
+#     (CDE) Calendar Component.
+#
+#    (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#    (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#    (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#    (c) Copyright 1993, 1994, 1995 Novell, Inc.
+#
+#
+###############################################################################
+set DtDbVersion=1.0
+
+###############################################################################
+#
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+#
+###############################################################################
+
+###################################################################
+#
+# 데이타 특성
+#
+###################################################################
+DATA_ATTRIBUTES DtcmAppointmentAttrs
+{
+	ACTIONS		Open,Insert,Print
+	ICON		DtCMapt
+	NAME_TEMPLATE	%s.appt
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      ae-file
+	MEDIA		DT_APPOINTMENT
+	DESCRIPTION	이 파일은 달력 관리자 약속에 속한 정보를 \
+가지고 있습니다. 이 데이타 유형을 CalendarAppointmentAttrs \
+라고 합니다.  CalendarAppointmentAttrs파일은 파일  \
+이름끝에 '.appt'리 확장 이름을 갖습니다.
+	TYPE_LABEL      DtcmAppointmentAttrs
+}
+DATA_CRITERIA DtcmAppointmentAttrs1
+{
+	DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+	MODE 		fr
+	NAME_PATTERN	*.appt
+}
+DATA_CRITERIA DtcmAppointmentAttrs2
+{
+	DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+	MODE 		fr
+	CONTENT		3 string ** Calendar Appointment **
+}
+DATA_CRITERIA DtcmAppointmentAttrs3
+{
+        DATA_ATTRIBUTES_NAME DtcmAppointmentAttrs
+        MODE            fr
+        CONTENT         3 string ** Calendar To Do Item **
+}
+ACTION Open
+{
+        LABEL		Open
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      DtcmEdit
+}
+ACTION Insert
+{
+        LABEL		Insert
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      DtcmInsert
+}
+ACTION Print
+{
+        LABEL		Print
+        ARG_TYPE        DtcmAppointmentAttrs
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+
+###################################################################
+###################################################################
+#
+# 활동
+#
+###################################################################
+ACTION Dtcm
+{
+        LABEL		달력
+        ICON            DtCM
+	TYPE		COMMAND
+	EXEC_STRING	/usr/dt/bin/dtcm
+	WINDOW_TYPE	NO_STDIO
+	DESCRIPTION	달력 (Dtcm) 활동은 데스크탑 달력 \
+관리자를 시작합니다.
+}
+
+######
+
+ACTION DtcmInsert
+{
+        LABEL		Calendar Insert
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING     sh -c '/usr/dt/bin/dtcm_insert  -a "%(File)Arg_1%" ;\
+			if [ \$? -ne 0 ] ; then \
+			  /usr/dt/bin/dterror.ds \
+			    "오류로 인해 약속이 달력에 삽입되지 않았습니다.\
+약속이 올바른 형식을 가지고 있지 않거나 달력을 액세스할수 \
+없었을수 있습니다." \
+			    "달력 : 오류 - 일정" \
+			    "예" ; \
+			fi'
+	DESCRIPTION	Calendar Insert (DtcmInsert) 활동은 사용자의 \
+기본 달력에 약속을 삽입합니다.
+}
+
+######
+
+ACTION DtcmEdit
+{
+        LABEL		Calendar Edit
+        TYPE            TT_MSG
+	TT_SCOPE	TT_SESSION
+	TT_CLASS	TT_REQUEST
+	TT_OPERATION	Edit
+	TT_ARG0_MODE	TT_INOUT
+	TT_ARG0_VTYPE	%Arg_1%
+	TT_FILE		%Arg_1"....Missing message #20011"%
+	DESCRIPTION	Calendar Edit (DtcmEdit) 활동은 달력 약속에 \
+\
+독립형 약속 편집기를 실행합니다.
+}
+
+########################### EOF ##############################################

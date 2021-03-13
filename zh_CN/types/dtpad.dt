@@ -1,0 +1,113 @@
+# ##########################################################################
+# 
+#      dtpad.dt
+# 
+#      Actions used with the DT Text Editor (dtpad)
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dtpad.dt.src /main/4 1996/04/23 17:35:35 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 数据属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES TEXTFILE
+{
+        ACTIONS         Open,Print
+        ICON            Dtdata
+        IS_TEXT         true
+        NAME_TEMPLATE   %s.txt
+        MIME_TYPE	text/plain
+        SUNV3_TYPE      text
+        MEDIA           C_STRING
+        DESCRIPTION     这个文件包含简单的文本数据。它的数据类型称为 TEXTFILE。一个TEXTFILE \
+                        文件的文件名应以 '.txt' 结尾。
+        TYPE_LABEL      TEXTFILE
+}
+DATA_CRITERIA TEXTFILE1
+{
+        DATA_ATTRIBUTES_NAME TEXTFILE
+        MODE            f&!x
+        NAME_PATTERN    *.txt
+}
+# ##################################################################
+# 
+#   警告   警告   警告
+#
+# 下列 DATA_CRITERIA 规则被 dtmail 用于
+# 识别系统 TEXTFILE DATA_ATTRIBUTE。如果您删除
+# 或修改这个规则，dtmail 将不能正确地显示文本
+# 信息。
+# 
+# ##################################################################
+DATA_CRITERIA TEXTFILE2
+{
+        DATA_ATTRIBUTES_NAME TEXTFILE
+        MODE            f&!x
+        NAME_PATTERN    text
+}
+ACTION Print
+{
+        LABEL           打印
+        ARG_TYPE        TEXTFILE
+        TYPE            COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtlp "%Arg_1%"
+}
+
+# ##########################################################################
+# ##########################################################################
+# 
+# 动作
+# 
+# ##########################################################################
+# ####################
+# 
+# 打印动作
+# 
+# ####################
+# 
+# 除了删除正在打印的文件，PRINT_DTPAD 动作与
+# 默认"打印"动作相似。这个动作
+# 由客户程序使用 'dtpad'。 
+# 
+# ####################
+ACTION PRINT_DTPAD_TEMPFILE
+{
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+	EXEC_STRING 	/usr/dt/bin/dtlp -u "%(String)Arg_2%" -e "%(File)Arg_1%"
+}
+
+# #####################
+# 
+# 编辑动作
+# 
+# #####################
+ACTION Dtpad
+{
+	LABEL		文本编辑器
+        ICON            Dtpenpd
+	TYPE		MAP
+	MAP_ACTION	DtTTMediaOpen
+	DESCRIPTION	文本编辑器 (Dtpad) 动作打开一个桌面文本编辑窗口中的特定文件。
+}
+
+# ######################## EOF ############################################

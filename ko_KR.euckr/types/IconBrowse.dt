@@ -1,0 +1,137 @@
+# ##########################################################################
+# 
+#      IconBrowse.dt
+# 
+#      DataType definitions for instance-based icons.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp. 
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.   
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#    $XConsortium: IconBrowse.dt.src /main/4 1996/04/23 20:23:49 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+# ##########################################################################
+# 
+# 이 파일 (BM 과 PM)의 두 데이타 유형은 비트맵과 픽스맵 파일에 대한 
+# "instance_based" 아이콘을 사용가능하게 합니다. 이것은 각 아이콘 파일이 
+# (.bm 과 .pm 확장자) 그들 자신의 아이콘이 됨을 말합니다. 이것은 아이콘 폴더를
+# 훑어보는데 좋습니다. 왜냐하면, 사용자는 아이콘이 무엇을 나타내는지 보기 
+# 위해 파일을 열 필요가 없기 때문입니다.
+#
+# instance-based 아이콘을 사용가능하게 하려면, 이 파일을 사용자 홈 폴더의 
+# .dt/types/ 하위 폴더로 복사하고, 이 활동과 데이타 유형 데이타베이스를
+# 다시 로드하십시오. (사용자는 로그아웃하고 다시 로그인하거나 또는 
+# 응용프로그램 관리자의 DtTools 폴더에서 ReloadApps 활동을 실행함으로 
+# 데이타유형 데이타베이스와 활동을 다시 로드할 수 있습니다.)
+#
+#   경고:  사용자 정의 아이콘을 보거나 읽기 위해서는 부가적인 작업이 필요함으로,
+#          파일 관리자는 이 데이타 유형 수행을 좀 느리게 실행하는 것이 좋습니다.
+#
+# 이 데이타베이스의 기본 아이콘으로 돌아오기 위해서는, 사용자의 개인 .dt/types/ 
+# 하위 폴더에서 이 파일를 제거하십시오. 그런뒤 이 활동과 데이타 유형 데이타베이스
+# 를 다시 로드 하십시오.
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# 데이타 특성
+# 
+# ##################################################################
+DATA_ATTRIBUTES BM
+{
+        ACTIONS         Open,Print
+        ICON		Dtbitmp
+        NAME_TEMPLATE  	%s.bm
+        MIME_TYPE       text/plain
+        SUNV3_TYPE      xbm-file
+        INSTANCE_ICON	%dir%/%name%
+        DESCRIPTION     이 파일은 X11 비트맵 형식의 데이타를 가지고 있습니다. \
+이 데이타 유형을 BM이라고 합니다. BM 파일은 파일 이름 \
+끝에 '.bm' 또는 '.xbm'의 확장 이름을 갖습니다.
+        TYPE_LABEL      BM
+}
+DATA_CRITERIA BM1
+{
+	DATA_ATTRIBUTES_NAME BM
+        MODE            	f
+        NAME_PATTERN    	*.bm
+}
+DATA_CRITERIA BM2
+{
+	DATA_ATTRIBUTES_NAME BM
+        MODE            	f
+        NAME_PATTERN    	*.xbm
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        BM
+        TYPE            MAP
+        MAP_ACTION      Dticon
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        BM
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# ##################################################################
+
+DATA_ATTRIBUTES PM
+{
+        ACTIONS         Open,Print
+        ICON		Dtpixmp
+        NAME_TEMPLATE  	%s.pm
+        MIME_TYPE       text/plain
+        SUNV3_TYPE      xpm-file
+        INSTANCE_ICON	%dir%/%name%
+        DESCRIPTION     이 파일은 여러 색상으로된 이미지를 가지고 있는 픽스맵 \
+파일입니다. 이 데이타 유형을 PM이라고 합니다. PM 파일은 \
+파일 이름 끝에 '.pm' 또는 '.xpm'의 확장 이름을 갖거나 \
+내용 중에 "! XPM2" 문자가 들어 있습니다.
+        TYPE_LABEL      PM
+}
+DATA_CRITERIA PM1
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            	f
+        NAME_PATTERN    	*.pm
+}
+DATA_CRITERIA PM2
+{
+	DATA_ATTRIBUTES_NAME PM
+        MODE            	f
+        NAME_PATTERN    	*.xpm
+}
+ACTION Open
+{
+        LABEL           Open
+        ARG_TYPE        PM
+        TYPE            MAP
+        MAP_ACTION      Dticon
+}
+ACTION Print
+{
+        LABEL           Print
+        ARG_TYPE        PM
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+# ######################## EOF ############################################

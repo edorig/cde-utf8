@@ -1,0 +1,49 @@
+# ##########################################################################
+# 
+#      autoStart.dt
+# 
+#      Action definitions for auto-starting the DT clients
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: autoStart.dt.src /main/4 1996/04/23 20:23:54 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+
+ACTION InvokeFILEMGR
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtfile -noview
+	DESCRIPTION	InvokeFILEMGR 动作启动文件管理程序 (dtfile 客户程序)。
+}
+
+ACTION InvokeDTPAD
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtpad -server
+	DESCRIPTION	InvokeDTPAD 动作启动桌面环境文本编缉器 (dtpad 客户程序)。
+}
+
+ACTION InvokeMAILER
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtmail
+	DESCRIPTION	InvokeMAILER 动作启动桌面环境邮件程序 (dtmail 客户程序)。
+}
+# ######################## EOF ############################################

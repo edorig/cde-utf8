@@ -1,0 +1,224 @@
+# #######################################################################
+# 
+#      dthelp.dt
+# 
+#      Actions and filetypes for Help files.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: dthelp.dt.src /main/4 1996/04/23 17:35:19 drk $
+# 
+# #####################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告:  このファイルは共通デスクトップ環境(CDE)をインストールする
+#     たびに書き換えられます。システム全体に関連する変更は、
+#     /etc/dt/types の該当するデータベース・ファイルに行い、
+#     このファイルには行わないでください。
+# 
+# ##########################################################################
+
+# ##################################################################
+# 
+# データ属性
+# 
+# ##################################################################
+DATA_ATTRIBUTES DTHELP_VOL
+{
+        ACTIONS         Open,Print
+        ICON		Dthvol
+        NAME_TEMPLATE   %s.sdl
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     これは、ヘルプ・ボリュームのマスタ・ボリューム・\
+                        ファイルです。データ型は DTHELP_VOL です。\
+                         DTHELP_VOL ファイルの名前は '.sdl' または '.hv' \
+                        で終わります。
+        TYPE_LABEL      DTHELP_VOL
+}
+DATA_CRITERIA DTHELP_VOL1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_VOL
+        MODE            f
+        NAME_PATTERN    *.sdl
+}
+DATA_CRITERIA DTHELP_VOL2
+{
+        DATA_ATTRIBUTES_NAME DTHELP_VOL
+        MODE            f
+        NAME_PATTERN    *.hv
+}
+ACTION Open
+{
+        LABEL           開く
+	ARG_TYPE 	DTHELP_VOL
+	TYPE		MAP
+        MAP_ACTION	Dthelpview
+}
+ACTION Print
+{
+        LABEL           印刷
+        ARG_TYPE        DTHELP_VOL
+        TYPE            MAP
+        MAP_ACTION      NoPrint
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_HT
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.ht
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     これは、ヘルプ・ボリュームの一部であるヘルプ・\
+                        トピック・ファイルです。ヘルプ・トピックを表示\
+                        するには、マスタ・ボリューム・ファイルを開かな\
+                        ければなりません。このファイルのデータ型は \
+                        DTHELP_HT です。DTHELP_HT ファイルの名前は \
+                        '.ht' で終わります。
+        TYPE_LABEL      DTHELP_HT
+}
+DATA_CRITERIA DTHELP_HT1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_HT
+        NAME_PATTERN    *.ht
+        MODE            f
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_HVK
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.hvk
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     これは、コンパイルされたヘルプ・ボリュームに\
+                        関連するファイルです。ヘルプ・ボリュームを表示\
+                        するには、マスタ・ボリューム・ファイルを開かな\
+                        ければなりません。このファイルのデータ型は \
+                        DTHELP_HVK です。DTHELP_HVK ファイルの名前は \
+                        '.hvk' で終わります。
+        TYPE_LABEL      DTHELP_HVK
+}
+DATA_CRITERIA DTHELP_HVK1
+{
+        DATA_ATTRIBUTES_NAME DTHELP_HVK
+        NAME_PATTERN    *.hvk
+        MODE            f
+}
+
+# #########################################################
+
+DATA_ATTRIBUTES DTHELP_XRH
+{
+        ACTIONS		(None)         
+        ICON		Dthtop
+        NAME_TEMPLATE   %s.xrh
+        MIME_TYPE	application/octet-stream
+        DESCRIPTION     これは、コンパイルされたヘルプ・ボリュームに関連\
+                        するファイルです。ヘルプ・ボリュームを表示する\
+                        には、マスタ・ボリューム・ファイルを開かなければ\
+                        なりません。このファイルのデータ型は DTHELP_XRH \
+                        です。DTHELP_XRH ファイルの名前は '.xrh' で終わります。
+        TYPE_LABEL      DTHELP_XRH
+}
+DATA_CRITERIA DTHELP_XRH
+{
+        DATA_ATTRIBUTES_NAME DTHELP_XRH
+        NAME_PATTERN    *.xrh
+        MODE            f
+}
+
+# ##################################################################
+# ##################################################################
+# 
+# アクション
+# 
+# ##################################################################
+ACTION Dthelpview
+{
+        LABEL           ヘルプ・ビューア
+	ARG_COUNT	0
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen -dir $HOME/.dt/help/$DTUSERSESSION;                            /usr/dt/bin/dthelpview -helpVolume browser '
+
+	DESCRIPTION	ヘルプ・ビューア (Dthelpview) アクションは、\
+                        アイコンをダブルクリックした時にヘルプのトップ\
+                        レベルを表示します。アイコン上にヘルプ・ボリューム\
+                        をドロップすると、そのボリュームを表示します。
+}
+ACTION Dthelpview
+{
+        LABEL           ヘルプ・ビューア
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen 				    -dir $HOME/.dt/help/$DTUSERSESSION;                             /usr/dt/bin/dthelpview -helpVolume "%(File)Arg_1%" '
+
+
+	DESCRIPTION	ヘルプ・ビューア (Dthelpview) アクションは、\
+                        アイコンをダブルクリックした時にヘルプのトップ\
+                        レベルを表示します。アイコン上にヘルプ・ボリューム\
+                        をドロップすると、そのボリュームを表示します。
+}
+
+# #######
+
+ACTION Dthelpgen
+{
+        LABEL           ヘルプ・ジェネレータ
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c '/usr/dt/bin/dthelpgen -dir                          "%(File)Arg_1"作成したヘルプ・ファイルを格納する場所:"%"'
+
+	DESCRIPTION	ヘルプ・ジェネレータ (Dthelpgen) アクションは、\
+                        ユーザに対するオンライン・ヘルプを作成する \
+                        dthelpgen コマンドを実行します。また、実行中は、\
+                        "ブラウザ情報を作成中です。しばらくお待ちください。"\
+                        ダイアログを表示します。このアクションは、ユーザが\
+                        共通デスクトップ環境に初めてログインした時に実行\
+                        されます。
+}
+ACTION Dthelpgen_delay
+{
+        LABEL           ヘルプ・ジェネレータ
+        ICON		Fphelp
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     /bin/sh -c 'sleep 15; /usr/dt/bin/dthelpgen -dir                          $HOME/.dt/help/$DTUSERSESSION'
+
+	DESCRIPTION	ヘルプ・ジェネレータ (Dthelpgen) アクションは、\
+                        ユーザに対するオンライン・ヘルプを作成する \
+                        dthelpgen コマンドを実行します。また、実行中は、\
+                        "ブラウザ情報を作成中です。しばらくお待ちください。"\
+                        ダイアログを表示します。このアクションは、ユーザが\
+                        共通デスクトップ環境に初めてログインした時に実行\
+                        されます。
+}
+
+# #######
+
+ACTION Dtmanpageview 
+{
+        LABEL           マニュアル・ページ・ビューア
+        ICON		Dthover
+	TYPE		COMMAND
+	WINDOW_TYPE	NO_STDIO
+        EXEC_STRING     sh -c ' /usr/dt/bin/dthelpview -manPage               `basename "%(File)Arg_1"マニュアル・ページ:"%" | sed /[.].*/s///`               -xrm "Dthelpview*manBox*columns: 50"'
+
+
+	DESCRIPTION	マニュアル・ページ・ビューア (Dtmanpageview) \
+                        アクションは簡易ヘルプ表示ウィンドウにマニュアル・\
+                        ページを表示します。
+}
+# ######################## EOF ############################################

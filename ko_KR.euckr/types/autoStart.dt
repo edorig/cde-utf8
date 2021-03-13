@@ -1,0 +1,53 @@
+# ##########################################################################
+# 
+#      autoStart.dt
+# 
+#      Action definitions for auto-starting the DT clients
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: autoStart.dt.src /main/4 1996/04/23 20:23:54 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 경고: 이 파일은 Common Desktop Environment (CDE)의 다음 설치에서
+#       겹쳐 쓰일 수 있습니다. 따라서 어떠한 시스템 전체의 변경에 대해
+#       이 파일이 아니라 /etc/dt/types에 있는 같은 데이타베이스 파일이
+#       수정되어야합니다.
+# 
+# ##########################################################################
+
+ACTION InvokeFILEMGR
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtfile -noview
+	DESCRIPTION	InvokeFILEMGR 활동은 파일 관리자를 시작합니다. \
+                   (dtfile 클라이언트)
+}
+
+ACTION InvokeDTPAD
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtpad -server
+	DESCRIPTION	InvokeDTPAD 활동은 데스크탑 문서 편집기를 \
+                 시작합니다. (dtpad 클라이언트)
+}
+
+ACTION InvokeMAILER
+{
+	TYPE		COMMAND
+        WINDOW_TYPE     NO_STDIO
+        EXEC_STRING     /usr/dt/bin/dtmail
+	DESCRIPTION	InvokeMAILER 활동은 데스크탑 우편 시스템을 \
+                 시작합니다. (dtmail 클라이언트)
+}
+# ######################## EOF ############################################

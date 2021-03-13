@@ -1,0 +1,78 @@
+# ##########################################################################
+# 
+#      user-prefs.dt
+# 
+#      Actions which define user preferences.
+# 
+#     (c) Copyright 1993, 1994, 1995 Hewlett-Packard Company
+#     (c) Copyright 1993, 1994, 1995 International Business Machines Corp.
+#     (c) Copyright 1993, 1994, 1995 Sun Microsystems, Inc.
+#     (c) Copyright 1993, 1994, 1995 Novell, Inc.
+# 
+#      $XConsortium: user-prefs.dt.src /main/4 1996/04/23 17:36:30 drk $
+# 
+# ##########################################################################
+
+set DtDbVersion=1.0
+
+# ##########################################################################
+# 
+# 警告: 这个文件在通用桌面环境环境 (CDE) 的顺序安装中可能被覆盖。
+#     因此应该在相应的数据库文件 /etc/dt/types 中而不是在这个文件中
+#     进行全系统的变更。
+# 
+# ##########################################################################
+
+# ##########################################################################
+# 
+# 公用桌面环境 (CDE) 动作数据库定义
+#
+# 在这个文件映射中定义的动作对于象 "Vi" 这样的特定应用程序请求有如
+# "文本编缉器"这样综合的动作。为了获得这些映象的个人定制，拷贝该文件到
+# $HOME/.dt/types/user-prefs.dt 中，并且将 MAP_ACTION 改变成您所希望
+# 运行的动作。
+#
+# 为确定动作可用于您的系统，从前面板打开应用管理程序并浏览。
+# 
+# ##########################################################################
+
+
+# 为使用 'vi' 作为你的文本编辑器，用'Vi'代替 'Dtpad' ( CDE
+# 基于Motif的文本编辑)。
+
+ACTION TextEditor
+{
+        LABEL		文本编辑器
+        ICON            Dtpenpd
+	TYPE		MAP
+	MAP_ACTION	Dtpad
+        DESCRIPTION	文本编辑器动作运行用户选择的文本编辑器。
+}
+
+# #####
+
+# 公用桌面环境(CDE)的默认终端是 Dtterm.
+
+ACTION Terminal
+{
+        LABEL		终端
+        ICON            Dtterm
+	TYPE		MAP
+	MAP_ACTION	Dtterm
+        DESCRIPTION	终端动作运行用户选择的终端仿真程序。
+}
+
+# #####
+
+# 公用桌面环境(CDE)的默认废物箱是 Dttrash。
+
+ACTION Trash
+{
+        LABEL		废物
+        ICON		Dttrsh
+	TYPE		MAP
+	MAP_ACTION	Dttrash
+        DESCRIPTION	废物动作运行用户选择的废物客户程序。
+}
+
+# ###################### EOF ############################################
