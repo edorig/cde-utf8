@@ -157,7 +157,7 @@ $ Do NOT remove the leading spaces from any of the lines of the following messag
 5 "Pellere mandatum sequens \n\
 in hospite \"%1$s\" offendit:\n\n\
    %2$s\n\n\
-Verifica programma adesse, pelletabilis esse, licentias \n\
+Verifica programma adesse, pulsabilis esse, licentias \n\
 non vitiosas esse."
 $ Do NOT remove the leading spaces from any of the lines of the following message.  
 
@@ -172,7 +172,7 @@ $ Do NOT localize the word "PATH".
 7 "Actionem incipere non potest numque pellere\n\
 programmam terminalis sequentem non potest:\n\n\
    %s\n\n\
-Verifica programma adesse, pelletabilis esse,\n\
+Verifica programma adesse, pulsabilis esse,\n\
 licentias non vitiosas esse. Verifica deinde \n\
 programma in \"PATH\" adesse."
 $ Do NOT remove the leading spaces from any of the lines of the following message.  

@@ -263,7 +263,7 @@ $
 $ nictare = clignoter, nictans = part. pres. 
 12 "Indicium nictans"
 $ nictatio = clignotement
-13 "Velocita nictatio (ms)"
+13 "Velocita nictationis (ms)"
 
 14 "Non aspectabilis"
 
@@ -554,6 +554,6 @@ $ These are the messages for the ToolTalk error dialog
 $ "-NEW"
 1 Terminale - Error
 $ "-NEW"
-2 " Connectere cum ToolTalk non possuit:\n%s\nExeo ..."
+2 " Conectere cum ToolTalk non possuit:\n%s\nExeo ..."
 $ "-NEW"
 3 Profecto

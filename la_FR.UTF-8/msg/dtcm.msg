@@ -116,9 +116,9 @@ $set 1
 
 89 "in quit_handler\n"
 
-90 "Error accidit cum apertione scapi libelli."
+90 "Error accidit dum apertione scapi libelli."
 
-91 "rpc.cmsd non respondit pro nomen usoris tuus.\n\
+91 "rpc.cmsd non respondit pro nomine usoris tuo.\n\
 Verifica processus inetd adesse et linea \n\
 cum rpc.cmsd in scapi inetd.conf valida esse."
 
@@ -494,7 +494,7 @@ Confirmasne sublationem...?"
 
 291 "Constitutum invenire non potest."
 
-292 "%d casus inventus(i)."
+292 "%d casus(i) inventus(i)."
 
 293 "Die:"
 
@@ -588,7 +588,7 @@ Confirmasne mutationem...?"
 
 348 "Addere licentiam"
 
-349 "Editor conventus"
+349 "Editorium conventi"
 
 350 "Error selectionis, continuare non potest.\n"
 
@@ -715,11 +715,11 @@ Visne conjicere illam a postridie ?"
 
 420 "Destinatio:"
 
-421 "Instrumentum pressorium"
+421 "Machina pressoria"
 
 422 "Scapus"
 
-423 "Instrumentum pressorium:"
+423 "Machina pressoria:"
 
 424 "Index:"
 
