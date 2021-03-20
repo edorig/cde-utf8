@@ -72,7 +72,7 @@ $   for the action.  Execute the "TERM_PROMPT" action for an example.
 
 5 "Inducere percontationes quae sequuntur:"
 
-6 "Induxisti nimis parametri.\n\n\
+6 "Induxisti nimis parametra.\n\n\
 Selige Profecto ut contemnere parametri adventici.\n\n\
 Selige Rescindere ut terminare actioni."
 $ NOTE: trailing spaces ARE important in message 7!  
@@ -86,15 +86,15 @@ datis remotis facta est.\n\n"
 $ ** The arguments for message #9 are: <action name>, <file name>, <file type>.  
 
 9 "Actionem \"%1$s\" invenire non potest aut\n\
-eam scapo non applicat:\n\
+ea scapo non applicat:\n\
     \"%2$s\"\n\
-cum l'attribut datorum:   \"%3$s\"\n\n"
+cum genere datorum:   \"%3$s\"\n\n"
 $ ** The argument for message #10 is: <action name>  
 
 10 "Actionem \"%s\" invenire non potest.\n"
 $ ** Message number 11 is difficult to generate without an internal error.  
 
-11 "Hoc scapum invenire non potest:\n\n\
+11 "Hunc scapum invenire non potest:\n\n\
        "
 $ Do NOT localize the word "MAP".  
 
@@ -124,7 +124,7 @@ applicationem argumentorum scaporum."
 $ ** The arguments for message #19 are: <action name>, <buffer type>.  
 
 19 "Actio \"%1$s\" deest aut \n\
- memoris tampons generis:\n\n\
+ memoris penicilli generis:\n\n\
 \"%2$s\" non applicat"
 
 20 "Creare scapum temporarium : \"%1$s\" \n\
@@ -154,18 +154,18 @@ ab hospite \"%2$s\" offendit.\n\n\
 Verifica orthographiam, licentias, et indicem adesse."
 $ Do NOT remove the leading spaces from any of the lines of the following message.  
 
-5 "Pellere mandatum sequens \n\
+5 "Pellere mandatum sequentem \n\
 in hospite \"%1$s\" offendit:\n\n\
    %2$s\n\n\
 Verifica programma adesse, pulsabilis esse, licentias \n\
 non vitiosas esse."
 $ Do NOT remove the leading spaces from any of the lines of the following message.  
 
-6 "Une tentative d'exécution de la commande suivante \n\
-n'a pas abouti:\n\n\
+6 " Pellere mandatum sequentem\n\
+offendit:\n\n\
    %s\n\n\
-Vérifiez que le programme existe, qu'il dispose des autorisations\n\
-appropriées, et qu'il est exécutable."
+Verifica programma adesse, pulsabilis esse, licentias\n\
+non vitiosas esse."
 $ Do NOT remove the leading spaces from any of the lines of the following message.  
 $ Do NOT localize the word "PATH".  
 
@@ -192,10 +192,10 @@ $ 10               "Le lancement du programme shell \"%s\" est impossible.
 $ 
 $ \
 
-$ Vérifiez que le programme dispose des autorisations
+$ Verifica programmam licentias non vitiosas 
 $ \
 
-$ appropriées et qu'il est exécutable." 
+$ habere et pusablilitem esse." 
 
 11 "Une tentative de lancement d'un nouveau processus sur l'hôte \"%s\" n'a pas abouti.\n\n\
 Vous devrez peut-être arrêter un processus inutile."
@@ -215,7 +215,7 @@ $ Do NOT remove the leading spaces from any of the lines of the following messag
 $ Do NOT localize the words "WINDOW_TYPE".  
 
 17 "Parametrum actionis WINDOW_TYPE \"%1$s\" ignotus est.\n\
-Indice l'une des valor,oris suivantes:\n\n\
+Indice l'une des valores sequentes:\n\n\
   %2$s, %3$s, %4$s,\n\
   %5$s, %6$s aut %7$s"
 $ Do NOT remove the leading spaces from any of the lines of the following message.  
@@ -227,7 +227,7 @@ des autorisations appropriées et qu'il est exécutable."
 $ MESSAGE 19 IN SET 3 WILL ONLY APPEAR IN THE DT ERRORLOG FILE  
 $ Do NOT remove the leading spaces from any of the lines of the following message.  
 
-19 "Une tentative d'exécution de xhost sur le serveur X hôte \"%s\" n'a pas abouti.\n\n\
+19 "Pellere xhost in ministerio X hospitis \"%s\" offendit.\n\n\
 Pour supprimer ce message et désactiver l'exécution automatique de\n\
 xhost, exécutez l'action \"Editer ressources\" et ajoutez la ressource:\n\n\
    *autoXhosting:  False\n"
@@ -292,15 +292,15 @@ $  MESSAGES 1-11 IN SET 4 WILL ONLY APPEAR IN THE DT ERRORLOG FILE
 $   
 $ Do NOT remove the leading spaces from any of the lines of the following message.  
 
-1 "Une définition \"%s\" dans le fichier\n\
+1 "Definitio \"%s\" in scapo\n\
   \"%s\"\n\
-ne comporte pas de nom: ajoutez-le\n\
+nominem non habet: ajoutez-le\n\
   à la définition.\n"
 $ Do NOT remove the leading spaces from any of the lines of the following message.  
 $ Do NOT localize the word "END".  
 $ THIS MESSAGE IS OBSOLETE  
 
-2 "La définition \"%s\" dans le fichier\n\
+2 "Definitio \"%s\" in scapo\n\
   \"%s\"\n\
 est incomplète. La zone \"END\" est\n\
 peut-être manquante.\n"

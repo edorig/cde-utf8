@@ -1,0 +1,406 @@
+<!-- $XConsortium: ch06.sgm /main/13 1996/12/21 18:56:29 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="SAG.PrCnf.div.1">
+<h1 id="SAG.PrCnf.mkr.1">Configuration et gestion de l'impression &agrave;
+partir du Bureau</h1>
+<para id="SAG.PrCnf.mkr.2"><indexterm><primary>Impression</primary><secondary>gestion</secondary></indexterm>L'utilisateur peut imprimer des fichiers de
+diff&eacute;rentes fa&ccedil;ons. Il en existe deux principales: l'impression
+&agrave; partir du Bureau et l'impression &agrave; partir d'une application.
+</p>
+<p>Il existe diff&eacute;rentes possibilit&eacute;s d'impression &agrave;
+partir du Bureau:</p>
+<ul remap="Bullet1">
+<li><p>s&eacute;lection d'un fichier dans le Gestionnaire de fichiers,
+puis de l'option Imprimer du menu S&eacute;lectionn&eacute;(s) ou du menu
+instantan&eacute; de l'ic&ocirc;ne</p>
+</li>
+<li><p>d&eacute;placement d'un fichier du Gestionnaire de fichiers
+vers l'ic&ocirc;ne Imprimante du Tableau de bord ou le panneau secondaire
+Imprimantes personnelles</p>
+</li>
+<li><p>d&eacute;placement d'un fichier du Gestionnaire de fichiers
+vers une imprimante de la fen&ecirc;tre principale du Gestionnaire d'impression.
+</p>
+<p>Pour imprimer &agrave; partir d'une application, utilisez la commande
+Imprimer &agrave; laquelle vous pouvez acc&eacute;der &agrave; partir d'un
+menu ou d'un autre objet de commande de la fen&ecirc;tre de l'application.
+</p>
+<informaltable id="sag.pconf.itbl.1" frame="all">
+<tgroup cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<table>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Ajout et
+suppression d'imprimantes116'--><xref role="JumpText" linkend="sag.prcnf.div.2"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Images
+d'ictnes des imprimantes117'--><xref role="JumpText" linkend="sag.prcnf.div.6"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Configuration
+de l'imprimante par difaut119'--><xref role="JumpText" linkend="sag.prcnf.div.9"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Starting
+the Print Dialog Manager'--><xref role="JumpText" linkend="sag.prcnf.div.11"></p></td>
+</tr>
+</table>
+</tgroup>
+</informaltable>
+</li>
+</ul>
+<sect1 id="SAG.PrCnf.div.2">
+<h1 id="SAG.PrCnf.mkr.3">Ajout et suppression d'imprimantes</h1>
+<p>Cette section comporte les proc&eacute;dures d'ajout et de suppression
+d'imprimantes du Bureau.</p>
+<sect2 id="SAG.PrCnf.div.3" role="Procedure">
+<h1>Ajout d'une imprimante<indexterm><primary>Imprimantes</primary><secondary>ajout</secondary></indexterm></h1>
+<ol>
+<li><p>Ajoutez une imprimante &agrave; votre configuration syst&egrave;me.
+</p>
+<p>Suivez les instructions de la documentation d'administration syst&egrave;me
+de votre syst&egrave;me d'exploitation.</p>
+</li>
+<li><p>Ex&eacute;cutez la commande:</p>
+<programlisting>env LANG=<replaceable remap="Emphasis">language</replaceable>/usr/dt/bin/dtprintinfo -populate
+</programlisting>
+<p>Remarque: Vous devez avoir l'autorisation de super utilisateur super-user
+pour ex&eacute;cuter cette commande.</p>
+</li>
+<li><p>Relancez le Gestionnaire d'impression ou cliquez deux fois
+sur Recharger actions dans le groupe d'applications Outils_Bureau du Gestionnaire
+d'applications. V&eacute;rifiez que l'imprimante s'affiche.</p>
+</li>
+<li><p>Envoyez un message aux utilisateurs pour leur indiquer de
+relancer le Gestionnaire d'impression ou d'ex&eacute;cuter Recharger actions.
+</p>
+</li>
+</orderedlist>
+<p>A chaque fois qu'il est appel&eacute;,<indexterm><primary>Gestionnaire
+d'impression</primary></indexterm> le Gestionnaire d'impression lit la liste
+de configuration des imprimantes du syst&egrave;me. S'il d&eacute;tecte une
+nouvelle imprimante, il cr&eacute;e automatiquement une action et une ic&ocirc;ne
+pour la nouvelle imprimante. Aucune autre intervention de votre part n'est
+n&eacute;cessaire pour faire figurer l'imprimante sur le Bureau.</p>
+</sect2>
+<sect2 id="SAG.PrCnf.div.4" role="Procedure">
+<h1 id="SAG.PrCnf.mkr.4">Suppression d'une imprimante<indexterm><primary>Imprimantes</primary><secondary>suppression</secondary></indexterm></h1>
+<ol>
+<li><p>Supprimez l'imprimante de la configuration de votre syst&egrave;me.
+</p>
+<p>Suivez les instructions de la documentation d'administration syst&egrave;me
+de votre syst&egrave;me d'exploitation.</p>
+</li>
+<li><p>Relancez le Gestionnaire d'impression ou cliquez deux fois
+sur Recharger actions dans le groupe d'applications Outils_Bureau du Gestionnaire
+d'applications. Assurez-vous que l'imprimante a disparu.</p>
+</li>
+<li><p>Envoyez un message aux utilisateurs pour leur indiquer de
+relancer le Gestionnaire d'impression ou d'ex&eacute;cuter Recharger actions.
+</p>
+</li>
+</orderedlist>
+<p>&Agrave; chaque fois qu'il est appel&eacute;, le Gestionnaire d'impression
+lit la liste de configuration des imprimantes du syst&egrave;me. S'il d&eacute;tecte
+une suppression d'imprimante de la liste, il supprime automatiquement l'action
+et l'ic&ocirc;ne de cette imprimante du Gestionnaire d'impression et du Gestionnaire
+de fichiers. Aucune autre intervention de votre part n'est n&eacute;cessaire
+pour supprimer l'imprimante du Bureau.</p>
+<note>
+<p>Le Gestionnaire d'impression ne peut supprimer les imprimantes &agrave;
+partir du Tableau de bord. C'est pourquoi, lors de la suppression d'une imprimante
+de votre configuration, vous devez envoyer un message &agrave; tous les utilisateurs
+du syst&egrave;me pour leur demander de supprimer toute ic&ocirc;ne correspondant
+&agrave; l'imprimante supprim&eacute;e sur le Tableau de bord.</p>
+</note>
+</sect2>
+<sect2 id="SAG.PrCnf.div.5">
+<h1>Modification de l'intervalle de mise &agrave; jour de la liste des
+t&acirc;ches<indexterm><primary>Imprimantes</primary><secondary>intervalle
+de mise &agrave; jour des t&acirc;ches</secondary></indexterm><indexterm>
+<primary>Intervalle de mise &agrave; jour des t&acirc;ches</primary></indexterm></h1>
+<p>Pour modifier la fr&eacute;quence d'affichage des informations dans<indexterm>
+<primary>Gestionnaire d'impression</primary><secondary>intervalle de mise
+&agrave; jour des t&acirc;ches</secondary></indexterm> le Gestionnaire d'impression,
+modifiez l'intervalle de mise &agrave; jour de la liste des t&acirc;ches.
+Par d&eacute;faut, le Gestionnaire d'impression interroge les imprimantes
+toutes les trente secondes pour d&eacute;terminer l'&eacute;tat des t&acirc;ches
+d'impression. Vous pouvez modifier l'intervalle des interrogations &agrave;
+l'aide de la r&egrave;gle &ldquo;Intervalle des mises &agrave; jour&rdquo;
+dans la bo&icirc;te de dialogue &ldquo;D&eacute;finir les options&rdquo; (affich&eacute;e
+&agrave; la s&eacute;lection de &ldquo;D&eacute;finir les options&rdquo; sur
+le menu &ldquo;Visualiser&rdquo;).</p>
+</sect2>
+</div>
+<sect1 id="SAG.PrCnf.div.6">
+<h1 id="SAG.PrCnf.mkr.5">Images d'ic&ocirc;nes des imprimantes<indexterm>
+<primary>Imprimantes</primary><secondary>images d'ic&ocirc;nes</secondary>
+</indexterm><indexterm><primary>Ic&ocirc;nes</primary><secondary>images d'imprimantes</secondary></indexterm></h1>
+<p>Lorsque vous ajoutez une imprimante, l'ic&ocirc;ne de l'imprimante par
+d&eacute;faut lui est automatiquement attribu&eacute;e. Si vous souhaitez
+la remplacer par une autre ic&ocirc;ne d'imprimante, placez les fichiers d'ic&ocirc;nes
+dans<tt>/etc/dt/appconfig/icons/</tt><i role="Variable">langue</i>, ou dans un autre r&eacute;pertoire du chemin de recherche
+des ic&ocirc;nes. Les utilisateurs peuvent alors s&eacute;lectionner cette
+ic&ocirc;ne en remplacement de l'ic&ocirc;ne par d&eacute;faut.</p>
+<p>Vous <em>devez</em> cr&eacute;er un jeu complet d'ic&ocirc;nes
+(grandes, moyennes, petites), sinon elles ne s'afficheront pas dans le s&eacute;lecteur
+d'ic&ocirc;nes du Gestionnaire d'impression.</p>
+<p>Pour plus de d&eacute;tails sur le chemin de recherche des ic&ocirc;nes,
+reportez-vous &agrave; la section <!--Original XRef content: '&rdquo;Chemin
+de recherche d'icônes&rdquo;, page&numsp;130'--><xref role="SecTitleAndPageNum"
+linkend="SAG.Datab.mkr.13">.</p>
+<sect2 id="SAG.PrCnf.div.7">
+<h1>Noms et tailles de fichiers d'ic&ocirc;nes</h1>
+<p>Les conditions pr&eacute;alables &agrave; l'attribution d'un nom pour
+un fichier d'ic&ocirc;nes sont les suivantes:</p>
+<programlisting><i role="Variable">nom_base.taille</i>.<i role="Variable">type</i></programlisting>
+<p>o&ugrave;:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="104*">
+<colspec colwidth="424*">
+<table>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">taille</i></p></td>
+<td align="left" valign="top"><p><code>l</code> (grande), <code>m</code> (moyenne), <code>t</code> (petite). Pour plus de d&eacute;tails
+sur les tailles d'ic&ocirc;nes, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Taille des icônes&rdquo;, page&numsp;215'--><xref role="SecTitleAndPageNum"
+linkend="SAG.CrIcn.mkr.4">.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">type</i></p></td>
+<td align="left" valign="top"><p><code>pm</code> (pixmap couleur), <code>bm</code> (bitmap).</p></td>
+</tr>
+</table>
+</tgroup>
+</informaltable>
+<p>Par exemple, les noms de fichiers d'ic&ocirc;nes pour les ic&ocirc;nes
+pixmap petites et moyennes d'une ic&ocirc;ne d'imprimante couleur peuvent
+&ecirc;tre <tt>ColorPrinter.m.pm</tt> et <tt>ColorPrinter.t.pm</tt>.</p>
+<p>Pour plus de d&eacute;tails, reportez-vous au <!--Original XRef content:
+'chapitre 12, &rdquo;Création d'icônes pour le Bureau&rdquo;'--><xref role="ChapNumAndTitle"
+linkend="SAG.CrIcn.mkr.1">.</p>
+</sect2>
+<sect2 id="SAG.PrCnf.div.8" role="Procedure">
+<h1>Modification globale du libell&eacute; d'ic&ocirc;ne, d'imprimante
+ou de la description d'une imprimante</h1>
+<p>Vous devez modifier globalement les caract&eacute;ristiques d'une imprimante
+d&egrave;s son ajout, avant que les utilisateurs ne le fassent &agrave; l'aide
+du Gestionnaire d'impression. Lorsqu'un utilisateur a modifi&eacute; les caract&eacute;ristiques
+de l'imprimante avec le Gestionnaire d'impression, il ne voit pas les modifications
+que vous effectuez.</p>
+<p>Editez le fichier <tt>/etc/dt/appconfig/types/</tt><i role="Variable">langue</i>/<i role="Variable">nom_file_attente_impression</i><tt>.dt</tt> avec les informations concernant le libell&eacute;
+de l'ic&ocirc;ne, de l'imprimante ou la description:</p>
+<ol>
+<li><p>Dans la zone <code>ICON</code>, modifiez le <i role="Variable">nom_base</i> par le nouveau nom de base de l'ic&ocirc;ne.
+</p>
+</li>
+<li><p><indexterm><primary>Imprimantes</primary><secondary>libell&eacute;s</secondary></indexterm>Dans la zone <code>LABEL</code>, modifiez le <i role="Variable">nom_libell&eacute;</i> par le nouveau libell&eacute;
+de l'imprimante.</p>
+</li>
+</orderedlist>
+<ul>
+<li><p><indexterm><primary>Imprimantes</primary><secondary>aide Sur
+l'&eacute;l&eacute;ment</secondary></indexterm><indexterm><primary>Aide</primary>
+<secondary>ic&ocirc;nes d'imprimantes</secondary></indexterm>Mettez le texte
+&agrave; jour dans la zone <code>DESCRIPTION</code>.</p>
+<p>Il s'agit du meilleur endroit o&ugrave; indiquer l'emplacement, le type
+et le responsable de la maintenance de l'imprimante. Pour ajouter plusieurs
+lignes, tapez une barre oblique inverse (\) &agrave; la fin de la ligne.
+Par exemple:</p>
+</li>
+</ul>
+<programlisting> DESCRIPTION   Imprimante PostScript du B&acirc;timent 1\
+                Pi&egrave;ce 123. Appelez le 555-5555 en cas d'incident.</programlisting>
+</sect2>
+</div>
+<sect1 id="SAG.PrCnf.div.9">
+<h1 id="SAG.PrCnf.mkr.6">Configuration de l'imprimante par d&eacute;faut<indexterm>
+<primary>Imprimantes</primary><secondary>par d&eacute;faut</secondary></indexterm></h1>
+<p>L'imprimante par d&eacute;faut est accessible lorsque l'utilisateur
+:</p>
+<ul remap="Bullet1">
+<li><p>fait glisser un objet sur l'ic&ocirc;ne Imprimante du Tableau
+de bord;</p>
+</li>
+<li><p>s&eacute;lectionne un objet dans le Gestionnaire de fichiers
+et choisit l'option Imprimer du menu S&eacute;lectionn&eacute;(s) ou du menu
+instantan&eacute; de l'ic&ocirc;ne;</p>
+</li>
+<li><p>imprime &agrave; partir d'applications qui utilisent l'imprimante
+par d&eacute;faut.</p>
+</li>
+</ul>
+<sect2 id="SAG.PrCnf.div.10" role="Procedure">
+<h1>Modification de l'imprimante par d&eacute;faut<indexterm><primary>Impression</primary><secondary>imprimante par d&eacute;faut</secondary></indexterm></h1>
+<p>Pour modifier l'imprimante par d&eacute;faut pour tous les utilisateurs
+:</p>
+<ol>
+<li><p>Ouvrez le fichier <tt>/etc/dt/config/Xsession.d/0010.dtpaths</tt>.</p>
+<p>Si le fichier <tt>/etc/dt/config/Xsession.d/0010.dtpaths</tt>
+n'existe pas, copiez-le &agrave; partir de <tt>/usr/dt/config/Xsession.d/0010.dtpaths</tt></p>
+</li>
+<li><p>Sur la ligne<indexterm><primary>Variable LPDEST</primary>
+</indexterm> <systemitem>LPDEST=</systemitem><i role="Variable">imprimante</i>, mettez &agrave; jour l'<i role="Variable">imprimante</i>
+en lui donnant le nom de la nouvelle imprimante de destination par d&eacute;faut.
+</p>
+<p>Si la ligne n'existe pas, ajoutez-en une, dans laquelle <i role="Variable">imprimante</i> correspond au nom de l'imprimante &agrave; utiliser par
+d&eacute;faut.</p>
+</li>
+<li><p>Les utilisateurs doivent se d&eacute;connecter puis se reconnecter.
+</p>
+</li>
+</orderedlist>
+<p>Pour modifier l'imprimante par d&eacute;faut d'un utilisateur, ce dernier
+doit:</p>
+<ul>
+<li><p>Copier une autre imprimante dans le Tableau de bord &agrave;
+partir du panneau secondaire Imprimantes personnelles.</p>
+</li>
+</ul>
+<p>Pour d&eacute;signer une autre imprimante comme imprimante par d&eacute;faut
+:</p>
+<ol>
+<li><p>Allez dans votre r&eacute;pertoire personnel et ouvrez le
+fichier <tt>.dtprofile</tt>.</p>
+</li>
+<li><p>Ajoutez ou &eacute;ditez la ligne fixant la valeur de la variable
+d'environnement <systemitem>LPDEST</systemitem>:</p>
+<para remap="CodeIndent1"><systemitem>LPDEST</systemitem>=<i role="Variable">unit&eacute;_imprimante;</i> <code>export LPDEST</code></p>
+<p>Si vous utilisez <code>csh</code>, la syntaxe est la suivante
+:</p>
+<p><code>setenv</code> <systemitem>LPDEST</systemitem> <i role="Variable">unit&eacute;_imprimante</i></p>
+<p>Par exemple, la ligne ci-dessous transforme l'imprimante par d&eacute;faut
+en imprimante dont le nom d'unit&eacute; est <tt>laser3d</tt>.
+</p>
+<para remap="CodeIndent1"><systemitem>LPDEST</systemitem>=laser3d; <code>export</code> <systemitem>LPDEST</systemitem></p>
+<p>Si vous utilisez <code>csh</code>, la syntaxe est la suivante
+:</p>
+<para remap="CodeIndent1"><code>setenv</code> <systemitem>LPDEST</systemitem>
+laser3d</p>
+</li>
+</orderedlist>
+</sect2>
+</div>
+<sect1 id="SAG.PrCnf.div.11">
+<h1 id="SAG.PrCnf.mkr.7">Concepts d'impression<indexterm><primary>impression</primary><secondary>concepts</secondary></indexterm></h1>
+<p>Les utilisateurs peuvent initier l'impression en d&eacute;pla&ccedil;ant
+un objet, fichier ou texte,
+sur une ic&ocirc;ne d'imprimante.
+Une autre m&eacute;thode consiste &agrave; s&eacute;lectionner la commande
+d'impression dans
+une application. Dans chaque cas, le proc&eacute;d&eacute; est diff&eacute;rent.
+</p>
+<sect2 id="SAG.PrCnf.div.12">
+<h1 id="SAG.PrCnf.mkr.8">Impression par d&eacute;placement (Glisser et
+poser)<indexterm><primary>impression</primary><secondary>d&eacute;placement (Glisser
+et poser)</secondary></indexterm></h1>
+<p>Lorsqu'une demande d'impression est initi&eacute;e par le d&eacute;placement
+d'un fichier ou d'un texte sur
+une ic&ocirc;ne d'imprimante, le syst&egrave;me proc&egrave;de comme suit:</p>
+<ol>
+<li><p>Il recherche la base de donn&eacute;es de type de donn&eacute;es
+pour obtenir la d&eacute;finition
+de l'objet d&eacute;plac&eacute;.</p>
+</li>
+<li><p>S'il n'existe qu'une seule action d'impression pour le type
+de donn&eacute;es (indiqu&eacute;e &agrave; l'aide de la zone ARG_TYPE dans
+l'action d'impression), celle-ci est utilis&eacute;e, sinon l'action d'impression
+par d&eacute;faut <code>dtlp</code> est utilis&eacute;e. Par exemple,
+s'il s'agit d'un fichier PostScript, le syst&egrave;me utilise l'action d'impression
+des fichiers PostScript (Cette action est d&eacute;finie dans <tt>/usr/dt/appconfig/types/&lt;langue>/dt.dt</tt>.) Si vous avez utilis&eacute;
+l'outil "Cr&eacute;er action" pour ce type de donn&eacute;es, la commande
+d'impression entr&eacute;e repr&eacute;sente la seule action d'impression
+qui sera utilis&eacute;e pour imprimer des fichiers avec ce type de donn&eacute;es.
+</p>
+</li>
+<li><p>Le fichier est envoy&eacute; &agrave; l'imprimante avec le
+sous-syst&egrave;me d'impression <code>lp</code> UNIX standard.</p>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="SAG.PrCnf.div.13">
+<h1 id="SAG.PrCnf.mkr.9">Impression &agrave; partir des applications CDE<indexterm><primary>impression</primary><secondary>&agrave; partir des applications
+CDE</secondary></indexterm></h1>
+<p>Un certain nombre d'applications, y compris le Gestionnaire d'agenda
+(<code>dtcm</code>), le Gestionnaire d'aide (<code>dthelp</code>),
+la messagerie (<code>dtmail</code>) et l'Editeur de texte (<code>dtpad</code>) ont un support d'impression int&eacute;gr&eacute; constitu&eacute;
+principalement d'un serveur d'impression X. Ce dernier est un simple serveur
+X (vid&eacute;o) qui a &eacute;t&eacute; am&eacute;lior&eacute; pour pouvoir
+correspondre &agrave; des types diff&eacute;rents d'imprimantes comme par
+exemple raster, PCL et Post Script.</p>
+<p>Lorsqu'une demande d'impression est initi&eacute;e &agrave; partir d'une
+application CDE (par exemple en s&eacute;lectionnant "Imprimer ..." dans le
+menu Fichier de l'Editeur de texte), le syst&egrave;me proc&egrave;de comme
+suit:</p>
+<ol>
+<li><p>L'application affiche une bo&icirc;te de dialogue dans laquelle
+l'utilisateur peut d&eacute;finir des options d'impression sp&eacute;cifiques
+&agrave; l'application, sp&eacute;cifiques &agrave; l'imprimante ou g&eacute;n&eacute;riques.
+</p>
+</li>
+<li><p>L'application envoie des instructions au serveur d'impression
+X. Ces derni&egrave;res comprennent des demandes de dessins X standard auxquels
+sont ajout&eacute;s des indicateurs de page et de limites de la t&acirc;che.
+</p>
+</li>
+<li><p>Le serveur d'impression X interpr&egrave;te les instructions
+en donn&eacute;es de sortie correspondant &agrave; l'imprimante choisie. Ces
+donn&eacute;es de sortie sont fonction des capacit&eacute;s du serveur d'impression
+X et de l'imprimante s&eacute;lectionn&eacute;e.</p>
+</li>
+<li><p>Le fichier est alors envoy&eacute; &agrave; l'imprimante avec
+le sous-syt&egrave;me d'impression <code>lp</code> UNIX normal.</p>
+</li>
+</orderedlist>
+<sect3 id="SAG.PrCnf.div.14">
+<h1 id="SAG.PrCnf.mkr.10">Prise en charge de l'impression &agrave; partir
+des applications CDE<indexterm><primary>impression</primary><secondary>prise
+en charge pour les applications CDE</secondary></indexterm></h1>
+<p>Deux programmes sont n&eacute;cessaires pour la prise en charge de l'impression
+&agrave; partir des applications CDE (en plus de l'application elle-m&ecirc;me
+et du serveur d'impression X): le Gestionnaire des bo&icirc;tes de dialogue
+d'impression (Print Dialog Manager, PDM) et le daemon du PDM.</p>
+<p>Des programmes sp&eacute;ciaux appel&eacute;s Gestionnaire des bo&icirc;tes
+de dialogue d'impression (PDM) prennent en charge l'affichage et la configuration
+des options sp&eacute;cifiques &agrave; l'imprimante. Chaque classe d'imprimante
+a son propre PDM capable de reconna&icirc;tre ses capacit&eacute;s et la gamme
+d'options offertes.</p>
+<p>La deuxi&egrave;me cat&eacute;gorie de programmes, appel&eacute;s deamons
+du PDM, est charg&eacute;e de reconna&icirc;tre si l'application veut afficher
+ou d&eacute;finir les options d'impression sp&eacute;cifiques &agrave; l'imprimante
+et ensuite de lancer le PDM qui correspond &agrave; l'imprimante s&eacute;lectionn&eacute;e.
+</p>
+<p>En r&eacute;sum&eacute;, pour imprimer &agrave; partir des applications
+CDE et obtenir de bons r&eacute;sultats, vous devez:</p>
+<ol>
+<li><p>V&eacute;rifier que les imprimantes sont ajout&eacute;es correctement
+&agrave; la configuration de votre syst&egrave;me.</p>
+</li>
+<li><p>V&eacute;rifier que les serveurs d'impression X n&eacute;cessaires
+&agrave; la configuration de votre imprimante sont correctement d&eacute;finis
+et qu'ils sont lanc&eacute;s. Le serveur d'impression X pour CDE par d&eacute;faut
+est <code>Xprt</code>.</p>
+</li>
+<li><p>V&eacute;rifier que les deamons du Gestionnaire d'affichage
+de l'impression (PDM) sont correctement configur&eacute;s et qu'ils sont
+lanc&eacute;s. Le deamon PDM pour CDE par d&eacute;faut est <code>dtpdmd</code>.</p>
+</li>
+<li><p>V&eacute;rifier que les Gestionnaires d'affichage de l'impression
+(PDM) sont correctement configur&eacute;s et qu'ils sont disponibles. Le PDM
+pour CDE par d&eacute;faut est <code>dtpdm</code><?Pub Caret1>.</p>
+</li>
+</orderedlist>
+</sect3>
+</sect2>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
+<?Pub *0000027113>

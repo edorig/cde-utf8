@@ -1,0 +1,1743 @@
+<!-- $XConsortium: ch10.sgm /main/11 1996/12/21 18:56:41 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="SAG.CrAct.div.1">
+<h1 id="SAG.CrAct.mkr.1"><indexterm><primary>Actions</primary><secondary>cr&eacute;</secondary></indexterm><indexterm><primary>ation manuelle</primary>
+</indexterm>Cr&eacute;ation manuelle d'actions</h1>
+<p>Une action peut &ecirc;tre d&eacute;finie de deux fa&ccedil;ons:</p>
+<ul remap="Bullet1">
+<li><p>&agrave; l'aide de l'utilitaire &ldquo;Cr&eacute;er action&rdquo;
+</p>
+</li>
+<li><p>en cr&eacute;ant manuellement une d&eacute;finition d'action
+</p>
+</li>
+</ul>
+<p>Pour cr&eacute;er une action manuellement, vous devez &eacute;diter
+un fichier de base de donn&eacute;es; le pr&eacute;sent chapitre explique
+comment effectuer cette op&eacute;ration.</p>
+<informaltable id="SAG.CrAct.itbl.1" frame="All">
+<tgroup cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.77in">
+<table>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Pourquoi
+créer manuellement une action166'--><xref role="JumpText" linkend="SAG.CrAct.mkr.2"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Création
+manuelle d'une action: étapes principales167'--><xref role="JumpText" linkend="SAG.CrAct.mkr.4"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Création
+de la chaîne d'exécution d'une action COMMAND177'--><xref role="JumpText"
+linkend="SAG.CrAct.mkr.13"></p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Support
+de fenêtrage et émulateurs de terminal pour les actions COMMAND184'--><xref
+role="JumpText" linkend="SAG.CrAct.mkr.24"></p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Restriction
+des actions à certains arguments186'--><xref role="JumpText" linkend="SAG.CrAct.mkr.29"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Création
+d'actions exécutant des applications sur des systèmes éloignés189'--><xref
+role="JumpText" linkend="SAG.CrAct.mkr.32"></p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Utilisation
+de variables dans les définitions d'actions et de types de données190'--><xref
+role="JumpText" linkend="SAG.CrAct.mkr.34"></p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Exécution
+d'actions à partir de la ligne de commande192'--><xref role="JumpText" linkend="SAG.CrAct.mkr.37"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Création
+d'actions internationalisées193'--><xref role="JumpText" linkend="SAG.CrAct.mkr.39"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Création
+d'actions pour les applications ToolTalk195'--><xref role="JumpText" linkend="SAG.CrAct.mkr.40"></p></td>
+</tr></table></tgroup></informaltable>
+<sect1 id="SAG.CrAct.div.2">
+<h1>Voir aussi</h1>
+<ul remap="Bullet1">
+<li><p>Pour plus de d&eacute;tails sur les actions, reportez-vous
+au <!--Original XRef content: 'chapitre&numsp;8,
+&rdquo;Introduction aux actions et aux types de données&rdquo;'--><xref role="ChapNumAndTitle"
+linkend="SAG.IntAc.mkr.1">.</p>
+</li>
+<li><p>Pour savoir comment utiliser &ldquo;Cr&eacute;er action&rdquo;,
+reportez-vous au <!--Original XRef content: 'chapitre&numsp;9,
+&rdquo;Création d'actions et de types de donnés à l'aide de Créer action&rdquo;'-->.
+</p>
+</li>
+<li><p>Pour plus de d&eacute;tails sur les d&eacute;finitions d'actions,
+consultez la page de manuel <tt>dtactionfile(4)</tt>.</p>
+</li>
+</ul>
+</div>
+<sect1 id="SAG.CrAct.div.3">
+<h1 id="SAG.CrAct.mkr.2">Pourquoi cr&eacute;er manuellement une action</h1>
+<p><indexterm><primary>Actions</primary><secondary>types</secondary></indexterm>Il
+existe trois principaux types d'action:</p>
+<ul remap="Bullet1">
+<li><p><code>COMMAND</code></p>
+</li>
+<li><p><code>MAP</code></p>
+</li>
+<li><p><tt>TT_MSG</tt></p>
+</li>
+</ul>
+<para id="SAG.CrAct.mkr.3">L'utilitaire &ldquo;Cr&eacute;er action&rdquo; permet
+uniquement de cr&eacute;er certains types d'actions <code>COMMAND</code>
+et <code>MAP</code>. Toutes les actions <tt>TT_MSG</tt>
+doivent &ecirc;tre cr&eacute;&eacute;es manuellement.</p>
+<p>Pour plus de d&eacute;tails, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Limites de Créer action&rdquo;, page&numsp;150'--><xref
+role="SecTitleAndPageNum" linkend="SAG.dtCrA.mkr.3">.</p>
+<sect2 id="SAG.CrAct.div.4">
+<h1><indexterm><primary>Actions</primary><secondary>COMMAND</secondary>
+</indexterm>Actions de type COMMAND</h1>
+<p>Ces actions permettent d'ex&eacute;cuter une commande de lancement d'application
+ou d'utilitaire, de lancer un script shell ou d'ex&eacute;cuter une commande
+du syst&egrave;me d'exploitation. La d&eacute;finition de l'action indique
+la commande &agrave; ex&eacute;cuter (zone <tt>EXEC_STRING</tt>).
+</p>
+<p>&ldquo;Cr&eacute;er action&rdquo; s'applique aux types les plus courants
+d'actions de commande. Cependant, certaines d'entre elles doivent &ecirc;tre
+cr&eacute;&eacute;es manuellement, par exemple dans les cas suivants:</p>
+<ul remap="Bullet1">
+<li><p>lorsque l'action comporte plusieurs arguments de fichier,
+et qu'une invite diff&eacute;rente est utilis&eacute;e pour chacun d'eux</p>
+</li>
+<li><p>lorsque l'action en appelle une autre</p>
+</li>
+<li><p>lorsqu'elle d&eacute;finit des comportements distincts pour
+diff&eacute;rents arguments de fichiers</p>
+</li>
+<li><p>lorsqu'elle doit s'ex&eacute;cuter sur un syst&egrave;me &eacute;loign&eacute;,
+diff&eacute;rent de celui sur lequel elle est d&eacute;finie</p>
+</li>
+<li><p>lorsqu'elle doit pouvoir &ecirc;tre ex&eacute;cut&eacute;e
+par un utilisateur diff&eacute;rent (elle peut par exemple inviter l'entr&eacute;e
+du mot de passe de root &agrave; un moment sp&eacute;cifique de l'ex&eacute;cution,
+puis continuer de s'ex&eacute;cuter en tant que root)</p>
+</li>
+</ul>
+</sect2>
+<sect2 id="SAG.CrAct.div.5">
+<h1><indexterm><primary>Actions</primary><secondary>MAP</secondary></indexterm>Actions
+de type MAP<indexterm><primary>Actions</primary><secondary>MAP</secondary>
+</indexterm></h1>
+<p>Ces actions n'indiquent pas directement de commande ou de message ToolTalk
+; elles sont mises en correspondance avec d'autres actions.</p>
+<p>Cette m&eacute;thode permet de sp&eacute;cifier plusieurs noms pour
+une m&ecirc;me action. Par exemple, l'action de commande int&eacute;gr&eacute;e
+Editeur d'ic&ocirc;nes permet de lancer le programme correspondant. La base
+de donn&eacute;es contient &eacute;galement une action &ldquo;Ouvrir&rdquo;,
+ne s'appliquant qu'aux fichiers bitmaps et pixmaps (caract&eacute;ristique
+indiqu&eacute;e dans la zone <tt>ARG_TYPE</tt> de la d&eacute;finition
+de l'action), mise en correspondance avec l'action &ldquo;Editeur d'ic&ocirc;nes&rdquo;.
+Ainsi, l'utilisateur peut lancer l'Editeur d'ic&ocirc;nes en s&eacute;lectionnant
+un fichier bitmap ou pixmap dans le Gestionnaire de fichiers, et en choisissant
+&ldquo;Ouvrir&rdquo; sur le menu &ldquo;S&eacute;lectionn&eacute;(s)&rdquo;.
+</p>
+<p>A l'aide de &ldquo;Cr&eacute;er action&rdquo;, seules les actions &ldquo;Ouvrir&rdquo;
+et &ldquo;Imprimer&rdquo; peuvent &ecirc;tre mises en correspondance; toutes
+les autres actions doivent l'&ecirc;tre manuellement.</p>
+</sect2>
+<sect2 id="SAG.CrAct.div.6">
+<h1><indexterm><primary>Actions</primary><secondary>TT_MSG</secondary>
+</indexterm>Actions de type TT_MSG (message ToolTalk)</h1>
+<p>Ces actions permettent d'envoyer des messages ToolTalk; elle doivent
+&ecirc;tre cr&eacute;&eacute;es manuellement.</p>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.7">
+<h1 id="SAG.CrAct.mkr.4">Cr&eacute;ation manuelle d'une action: &eacute;tapes
+principales<indexterm><primary>Actions</primary><secondary>cr&eacute;ation
+manuelle</secondary></indexterm></h1>
+<p>La pr&eacute;sente section explique comment cr&eacute;er un fichier
+de configuration pour une d&eacute;finition d'action.</p>
+<sect2 id="SAG.CrAct.div.8">
+<h1 id="SAG.CrAct.mkr.5">Fichiers de configuration d'action<indexterm>
+<primary>Actions</primary><secondary>fichiers de configuration</secondary>
+</indexterm><indexterm><primary>Fichiers</primary><secondary>configuration</secondary></indexterm></h1>
+<p>Les fichiers de configuration contenant des d&eacute;finitions d'actions
+doivent respecter les r&egrave;gles suivantes.</p>
+<ul remap="Bullet1">
+<li><p>Leur nom doit adopter le format <i role="Variable">nom</i><tt>.dt</tt>.</p>
+</li>
+<li><p><indexterm><primary>Chemin de recherche</primary><secondary>actions</secondary></indexterm>Les fichiers doivent se trouver dans le chemin
+de recherche de la base de donn&eacute;es des actions et des types de donn&eacute;es.
+Les chemins de recherche par d&eacute;faut sont les suivants:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="174*">
+<colspec colwidth="354*">
+<table>
+<tr>
+<td align="left" valign="top"><p>Actions personnelles</p></td>
+<td align="left" valign="top"><p><i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types</tt></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Actions syst&egrave;me</p></td>
+<td align="left" valign="top"><p><tt>/etc/dt/appconfig/types/</tt><i role="Variable">langue</i></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Actions int&eacute;gr&eacute;es</p></td>
+<td align="left" valign="top"><p><tt>/usr/dt/appconfig/types/</tt><i role="Variable">langue</i>. Il est pr&eacute;f&eacute;rable
+de ne pas utiliser ce r&eacute;pertoire.</p></td></tr></table></tgroup>
+</informaltable>
+</li>
+</ul>
+<p>Pour plus de d&eacute;tails sur la modification du chemin de recherche
+des actions et des types de donn&eacute;es, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Définition de la valeur d'un chemin de recherche&rdquo;,
+page&numsp;123'--><xref role="SecTitleAndPageNum" linkend="SAG.Datab.mkr.6">.
+</p>
+</sect2>
+<sect2 id="SAG.CrAct.div.9" role="Procedure">
+<h1 id="SAG.CrAct.mkr.6">Proc&eacute;dure<indexterm><primary>Actions</primary>
+<secondary>cr&eacute;ation manuelle</secondary></indexterm></h1>
+<ol>
+<li><p>Ouvrez un fichier de base de donn&eacute;es existant ou cr&eacute;ez-en
+un nouveau. Reportez-vous &agrave; la section pr&eacute;c&eacute;dente, <!--Original
+XRef content: '&rdquo;Fichiers de configuration d'action'--><xref role="SectionTitle"
+linkend="SAG.CrAct.mkr.5">.</p>
+</li>
+<li><p>Cr&eacute;ez la d&eacute;finition de l'action en utilisant
+la syntaxe:</p>
+<programlisting remap="CodeIndent1">ACTION nom_action 
+{ 
+   TYPE   type_action zone_action  
+   &hellip; 
+}</programlisting>
+<p>o&ugrave;:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="192*">
+<colspec colwidth="336*">
+<table>
+<tr>
+<td align="left" valign="top"><p><i>nom_action</i></p><indexterm>
+<primary>Actions</primary><secondary>nom</secondary></indexterm></td>
+<td align="left" valign="top"><p>Nom utilis&eacute; pour appeler l'action.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i>type_action</i></p><indexterm>
+<primary>Actions</primary><secondary>types</secondary></indexterm></td>
+<td align="left" valign="top"><p><code>COMMAND</code> (d&eacute;faut), <code>MAP</code> ou <tt>TT_MSG.</tt></p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i>zone_action</i></p><indexterm>
+<primary>Actions</primary><secondary>types</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>types</secondary></indexterm></td>
+<td align="left" valign="top"><p>Une ou plusieurs des zones requises
+ou facultatives pour ce type d'action. Elles se composent d'un mot cl&eacute;
+et d'une valeur.</p><p>La plupart des zones d'action sont d&eacute;crites
+dans ce chapitre. Pour plus de d&eacute;tails, consultez la page de manuel
+dtactionfile(4).</p></td></tr></table></tgroup></informaltable>
+</li>
+<li><p>Enregistrez le fichier.</p>
+</li>
+<li><p>Pour associer des ic&ocirc;nes particuli&egrave;res &agrave;
+l'action, cr&eacute;ez-les. Par d&eacute;faut, les ic&ocirc;nes se trouvent
+dans les r&eacute;pertoires suivants:</p>
+<ul remap="Bullet2">
+<li><p>ic&ocirc;nes personnelles: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/icons</tt></p>
+</li>
+<li><p>ic&ocirc;nes syst&egrave;me: <tt>/etc/dt/appconfig/icons/</tt><i role="Variable">langue (la langue</i> par d&eacute;faut
+est C).</p>
+<p>Pour plus de d&eacute;tails, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Définition d'une icône d'action&rdquo;, page&numsp;173'--><xref
+role="SecTitleAndPageNum" linkend="SAG.FrPC.mkr.12">.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez deux fois sur &ldquo;Recharger actions&rdquo; dans
+le groupe d'applications Outils_Bureau.</p>
+</li>
+<li><p>Cr&eacute;ez un fichier d'action, pour qu'une ic&ocirc;ne
+repr&eacute;sentant l'action soit ajout&eacute;e dans le Gestionnaire de fichiers
+ou d'applications. Si l'action est destin&eacute;e &agrave; lancer une application,
+l'ic&ocirc;ne est appel&eacute;e<indexterm><primary>Ic&ocirc;ne d'application</primary></indexterm> <em>ic&ocirc;ne d'application</em>.</p>
+<p>Pour cr&eacute;er le fichier d'action, cr&eacute;ez un fichier ex&eacute;cutable
+portant le m&ecirc;me nom que l'action, dans n'importe quel r&eacute;pertoire
+auquel vous avez acc&egrave;s en &eacute;criture. Vous pouvez cr&eacute;er
+autant de fichiers d'action que n&eacute;cessaire.</p>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="sag.cract.div.10">
+<h1 id="sag.cract.mkr.7">Exemple d'action COMMAND<indexterm><primary>Actions</primary><secondary>exemple d'action COMMAND</secondary></indexterm></h1>
+<p>Les &eacute;tapes suivantes cr&eacute;ent une action personnelle permettant
+de lancer une application de t&eacute;l&eacute;copie sur un syst&egrave;me
+&eacute;loign&eacute; appel&eacute; Serveur_AppA. La commande de lancement
+de cette application est la suivante:</p>
+<programlisting>/usr/fax/bin/faxcompose [<i role="Variable">nom_fichier</i>]</programlisting>
+<ol>
+<li><p>Cr&eacute;ez le fichier <i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types/T&eacute;l&eacute;copie.dt</tt>.</p>
+</li>
+<li><p>Entrez la d&eacute;finition d'action suivante dans le fichier
+:</p>
+<para remap="CodeIndent1"><programlisting>ACTION Compo_t&eacute;l&eacute;copie 
+{ 
+   TYPE         COMMAND 
+   ICON         fax 
+   WINDOW_TYPE  NO_STDIO 
+   EXEC_STRING  /usr/fax/bin/faxcompose -c %Arg_1% 
+   EXEC_HOST    Serveur_AppA 
+   DESCRIPTION  Lance le programme de composition des t&eacute;l&eacute;copies.
+)</programlisting></p>
+<p>Les zones <tt>WINDOW_TYPE</tt> et <tt>EXEC_STRING</tt> d&eacute;crivent le comportement de l'action.</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="160*">
+<colspec colwidth="368*">
+<table>
+<tr>
+<td align="left" valign="top"><p><tt>WINDOW_TYPE</tt></p></td>
+<td align="left" valign="top"><p>Le mot cl&eacute; <tt>NO_STDIO</tt> indique que l'action ne doit pas n&eacute;cessairement &ecirc;tre
+ex&eacute;cut&eacute;e dans une fen&ecirc;tre d'&eacute;mulation de terminal.
+</p><p>Pour plus de d&eacute;tails, reportez-vous &agrave; la section
+<!--Original XRef content: '&rdquo;Difinition du support de fenjtrage&ldq--><!--uor;,
+page&numsp;185'--><xref role="SecTitleAndPageNum" linkend="sag.cract.mkr.25">.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>EXEC_STRING</tt></p></td>
+<td align="left" valign="top"><p>La syntaxe <tt>%Arg_1%</tt>
+indique qu'un fichier peut &ecirc;tre pos&eacute; sur l'action. Lorsque l'utilisateur
+clique deux fois sur l'ic&ocirc;ne d'action, une fen&ecirc;tre de composition
+de t&eacute;l&eacute;copie vide s'affiche.</p><p>Pour plus de d&eacute;tails,
+reportez-vous &agrave; la section <!--Original XRef content: '&rdquo;Criation
+de la channe d'exicution d'un--><!--e action COMMAND&rdquo;, page&numsp;177'--><xref
+role="SecTitleAndPageNum" linkend="sag.cract.mkr.13">.</p></td></tr>
+</table></tgroup></informaltable>
+</li>
+<li><p>Sauvegardez le fichier.</p>
+</li>
+<li><p>&Agrave; l'aide de l'Editeur d'ic&ocirc;nes, cr&eacute;ez
+les ic&ocirc;nes suivantes dans le r&eacute;pertoire auquel <i role="Variable">R&eacute;p_personnel</i><tt>/.dt/icons</tt>:</p>
+<ul>
+<li><p><tt>T&eacute;lecopie.m.pm</tt> (32 x 32 pixels)
+</p>
+</li>
+<li><p><tt>T&eacute;lecopie.t.pm</tt> (16 x 16 pixels)
+</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez deux fois sur Recharger actions dans le groupe d'applications
+Outils_Bureau.</p>
+</li>
+<li><p>Cr&eacute;ez un fichier ex&eacute;cutable appel&eacute; <tt>Compo_t&eacute;l&eacute;copie</tt> dans un r&eacute;pertoire auquel
+vous avez acc&egrave;s en &eacute;criture (votre r&eacute;pertoire personnel,
+par exemple).</p>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="SAG.CrAct.div.11">
+<h1 id="SAG.CrAct.mkr.8">Exemple d'action MAP<indexterm><primary>Actions</primary><secondary>exemple d'action MAP</secondary></indexterm></h1>
+<p>Supposons que vous cr&eacute;ez la plupart des fichiers que vous t&eacute;l&eacute;copiez
+&agrave; l'aide de l'Editeur de texte et qu'ils ont le type de donn&eacute;es
+TEXTFILE (leur extension est <tt>.txt</tt>).</p>
+<p>La proc&eacute;dure ci-apr&egrave;s permet d'ajouter une option T&eacute;l&eacute;copier
+au menu S&eacute;lectionn&eacute;(s) associ&eacute; &agrave; ce type de donn&eacute;es.
+</p>
+<ol>
+<li><p>Ouvrez le fichier <i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types/T&eacute;l&eacute;copie.dt</tt> que vous
+avez cr&eacute;&eacute; pr&eacute;c&eacute;demment.</p>
+</li>
+<li><p>Ajoutez-y la d&eacute;finition d'action <code>MAP</code>
+suivante:</p>
+<programlisting>ACTION T&eacute;l&eacute;copier
+{
+   ARG_TYPE    TEXTFILE
+   TYPE        MAP
+   MAP_ACTION  Compo_t&eacute;l&eacute;copie
+}</programlisting>
+</li>
+<li><p>Sauvegardez le fichier.</p>
+</li>
+<li><p>Copiez la d&eacute;finition des attributs du type de donn&eacute;es
+TEXTFILE de<tt>/usr/dt/appconfig/types/</tt><i role="Variable">langue</i><tt>/dtpad.dt</tt> dans un nouveau fichier, <i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types/fich_texte.dt</tt>. Ajoutez l'action T&eacute;l&eacute;copier &agrave; la zone <code>ACTIONS</code>.</p>
+<para remap="CodeIndent1"><programlisting>DATA_ATTRIBUTES TEXTFILE 
+{ 
+   ACTIONS   Ouvrir,Imprimer,T&eacute;l&eacute;copier 
+   ICON      Dtpenpd 
+   &hellip;
+}</programlisting></p>
+</li>
+<li><p>Enregistrez le fichier.</p>
+</li>
+<li><p>Ouvrez le Gestionnaire d'applications et cliquez deux fois
+sur Recharger applications, dans le groupe d'applications <structname>Outils_Bureau</structname>.</p>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="SAG.CrAct.div.12" role="Procedure">
+<h1 id="SAG.CrAct.mkr.9">Rechargement de la base de donn&eacute;es des actions
+et des types de donn&eacute;es<indexterm><primary>Types de donn&eacute;es</primary><secondary>rechargement</secondary></indexterm><indexterm><primary>Types de donn&eacute;es</primary><secondary>Recharger actions</secondary>
+</indexterm><indexterm><primary>Actions</primary><secondary>rechargement</secondary></indexterm><indexterm><primary>Base de donn&eacute;es</primary>
+<secondary>rechargement des actions</secondary></indexterm><indexterm><primary>Actions</primary><secondary>Recharger actions</secondary></indexterm><indexterm>
+<primary>Base de donn&eacute;es</primary><secondary>rechargement</secondary>
+</indexterm><indexterm><primary>Actions</primary><secondary>Recharger actions</secondary></indexterm></h1>
+<p>Pour que les nouvelles d&eacute;finitions d'action ou les actions modifi&eacute;es
+entrent en vigueur, le Bureau doit relire la base de donn&eacute;es.</p>
+<ul>
+<li><p>Ouvrez le groupe d'applications <structname>Outils_Bureau</structname> et cliquez deux fois sur Recharger actions.</p>
+</li>
+<li><p><i role="Variable">Ou</i> lancez la commande:</p>
+<para remap="CodeIndent1"><code>dtaction ReloadActions</code></p>
+</li>
+</ul>
+<p><indexterm><primary>Actions</primary><secondary>Recharger actions</secondary>
+</indexterm>ReloadActions est le nom de l'action correspondant &agrave; l'ic&ocirc;ne
+Recharger actions.</p>
+<p>La base de donn&eacute;es est &eacute;galement relue lorsque l'utilisateur
+:</p>
+<ul remap="Bullet1">
+<li><p>se connecte</p>
+</li>
+<li><p>relance le Gestionnaire de l'espace de travail</p>
+</li>
+<li><p>enregistre une action dans la fen&ecirc;tre Cr&eacute;er action
+&agrave; l'aide de l'option Sauvegarder du menu Fichier</p>
+</li>
+</ul>
+</sect2>
+<sect2 id="SAG.CrAct.div.13">
+<h1><indexterm><primary>Ic&ocirc;ne d'action</primary><secondary>cr&eacute;ation</secondary></indexterm><indexterm><primary>Ic&ocirc;ne d'application</primary>
+<secondary>cr&eacute;ation</secondary></indexterm><indexterm><primary>Fichier</primary><secondary>d'action</secondary><tertiary>cr&eacute;ation</tertiary>
+</indexterm>Cr&eacute;ation d'un fichier (ic&ocirc;ne) d'action<indexterm>
+<primary>Actions</primary><secondary>fichiers, voir Fichier d'action</secondary>
+</indexterm><indexterm><primary>Ic&ocirc;ne d'action</primary></indexterm><indexterm>
+<primary>Ic&ocirc;nes</primary><secondary>action</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>ic&ocirc;nes</secondary></indexterm></h1>
+<p>Un<indexterm><primary>Fichier</primary><secondary>action</secondary>
+</indexterm> <em>fichier d'action</em> permet de cr&eacute;er une
+repr&eacute;sentation visuelle d'une action dans le Gestionnaire de fichiers
+ou d'applications.</p>
+<figure>
+<h1><em>Fichiers d'action</em> (ou <em>ic&ocirc;nes d'action</em> ou encore <em>ic&ocirc;nes d'application</em>) dans
+le Gestionnaire d'applications</h1>
+<graphic id="SAG.CrAct.grph.1" entityref="SAG.CrAct.fig.1"></graphic>
+</figure>
+<p>Les ic&ocirc;nes de fichiers d'action repr&eacute;sentant des actions,
+elles sont parfois appel&eacute;es <em><indexterm><primary>Ic&ocirc;ne
+d'action</primary></indexterm>ic&ocirc;nes d'action</em>. Si les actions
+associ&eacute;es permettent de lancer une application, ces ic&ocirc;nes sont
+appel&eacute;es <em>ic&ocirc;nes d'application</em>.</p>
+<p>Lorsque vous cliquez deux fois sur une ic&ocirc;ne d'action, l'action
+correspondante est lanc&eacute;e. Une ic&ocirc;ne d'action peut &eacute;galement
+&ecirc;tre une zone de pose.</p>
+<sect3 id="SAG.CrAct.div.14" role="Procedure">
+<h1>Proc&eacute;dure</h1>
+<ul>
+<li><p>Cr&eacute;ez un fichier ex&eacute;cutable portant le m&ecirc;me
+nom que<indexterm><primary>Actions</primary><secondary>nom</secondary></indexterm> l'action;
+son contenu n'a pas d'importance.</p>
+</li>
+</ul>
+<p>Par exemple, dans le cas d'une action d&eacute;finie comme suit:</p>
+<programlisting>ACTION Mon_application
+{
+   EXEC_STRING  Ma -file %Arg_1%
+   DESCRIPTION  Lance Mon_application.
+   ICON         Mapp
+}</programlisting>
+<p>Le fichier d'action est un fichier ex&eacute;cutable appel&eacute; <tt>Mon_application</tt>. Dans les Gestionnaires de fichiers et d'applications,
+ce fichier utilise l'ic&ocirc;ne <tt>Mapp.</tt><i role="Variable">taille</i><tt>.</tt><i role="Variable">type</i>.
+Lorsque vous cliquez deux fois sur cette ic&ocirc;ne, la cha&icirc;ne d'ex&eacute;cution
+de l'action est lanc&eacute;e. Lorsque vous demandez l'aide sur l'&eacute;l&eacute;ment
+de l'action,<indexterm><primary>Aide</primary><secondary>fichier d'action</secondary></indexterm><indexterm><primary>Zone</primary><secondary>DESCRIPTION</secondary></indexterm> le contenu de la zone <code>DESCRIPTION</code>
+s'affiche.</p>
+</sect3>
+<sect3 id="SAG.CrAct.div.15">
+<h1><indexterm><primary>Actions</primary><secondary>libell&eacute;s</secondary>
+</indexterm><indexterm><primary>Libell&eacute;s</primary><secondary>actions</secondary></indexterm>Libell&eacute;s d'actions</h1>
+<p>Si la zone <code>LABEL</code> figure dans une d&eacute;finition
+d'action, sa valeur sera utilis&eacute;e comme libell&eacute; du fichier d'action
+dans les Gestionnaires de fichiers et d'applications, &agrave; la place du
+nom du fichier (<i role="Variable">nom_action</i>). Par exemple,
+si la d&eacute;finition d'action comporte les zones suivantes:</p>
+<programlisting>ACTION Mon_application
+{
+   LABEL   Mon application
+   &hellip;
+}</programlisting>
+<p>Le libell&eacute; de l'ic&ocirc;ne d'action sera &ldquo;Mon application&rdquo;.
+</p>
+</sect3>
+</sect2>
+<sect2 id="SAG.CrAct.div.16">
+<h1 id="SAG.CrAct.mkr.10">D&eacute;finition d'une ic&ocirc;ne d'action<indexterm>
+<primary>Actions</primary><secondary>ic&ocirc;nes</secondary></indexterm><indexterm>
+<primary>Ic&ocirc;nes</primary><secondary>actions</secondary></indexterm></h1>
+<p>Pour indiquer l'image &agrave; utiliser pour les ic&ocirc;nes d'une
+action dans les Gestionnaires de fichiers et d'applications, compl&eacute;tez
+la zone <code>ICON</code>.</p>
+<p>Si vous ne sp&eacute;cifiez pas d'ic&ocirc;ne, le syst&egrave;me utilise<indexterm>
+<primary>Actions</primary><secondary>ic&ocirc;ne par d&eacute;faut</secondary>
+</indexterm> les fichiers d'ic&ocirc;nes d'action par d&eacute;faut situ&eacute;s
+dans le r&eacute;pertoire <tt>/usr/dt/appconfig/icons/</tt><i role="Variable">langue</i><tt>/Dtactn.*</tt>.</p>
+<figure>
+<h1>Ic&ocirc;ne d'action par d&eacute;faut</h1>
+<graphic id="SAG.CrAct.grph.2" entityref="SAG.CrAct.fig.2"></graphic>
+</figure>
+<p>Pour modifier l'ic&ocirc;ne d'action, utilisez la ressource suivante
+:<indexterm><primary>Ressources</primary><secondary>actionIcon</secondary>
+</indexterm></p>
+<programlisting>*actionIcon: <i role="Variable">nom_fichier_ic&ocirc;ne</i></programlisting>
+<p>o&ugrave; <i role="Variable">nom_fichier_ic&ocirc;ne</i> peut
+&ecirc;tre un nom de base ou un chemin d'acc&egrave;s absolu.</p>
+<p>La zone <code>ICON</code> peut prendre l'une des valeurs ci-dessous.<indexterm>
+<primary>Zone</primary><secondary>ICON</secondary><tertiary>valeurs</tertiary>
+</indexterm></p>
+<ul remap="Bullet1">
+<li><p>Un nom de base de fichier.</p>
+<p>Il<indexterm><primary>Nom de base</primary></indexterm> s'agit du nom
+du fichier contenant l'image, sans les extensions indiquant la taille de cette
+derni&egrave;re (<code>m</code> et <code>t</code>) et son type
+(<code>bm</code> et <code>pm</code>). Par exemple, le nom de base
+des fichiers <tt>Ic&ocirc;neJeu.m.pm</tt> et <tt>Ic&ocirc;neJeu.t.pm</tt> est <tt>Ic&ocirc;neJeu</tt>.</p>
+<p>Si vous indiquez un nom de base, les fichiers d'ic&ocirc;ne doivent
+se trouver dans un r&eacute;pertoire du chemin de recherche des ic&ocirc;nes
+:</p>
+<ul remap="Bullet2">
+<li><p>ic&ocirc;nes personnelles: <i role="Variable">R&eacute;p_Personnel</i><code>/.dt/icons</code></p>
+</li>
+<li><p>ic&ocirc;nes syst&egrave;me: <tt>/etc/dt/appconfig/icons/</tt><i role="Variable">langue</i></p>
+</li>
+</ul>
+</li>
+<li><p>Un chemin d'acc&egrave;s absolu, comprenant le nom complet
+du fichier.</p>
+<p>Utilisez le chemin absolu uniquement si le fichier d'ic&ocirc;ne ne
+figure pas dans le chemin de recherche des ic&ocirc;nes. Par exemple, dans
+le cas du fichier <tt>Ic&ocirc;neJeu.m.pm</tt>, situ&eacute; dans
+le r&eacute;pertoire <tt>/doc/projets</tt> (ne se trouvant pas
+dans le chemin de recherche des ic&ocirc;nes), la valeur de la zone <code>ICON</code> doit &ecirc;tre <tt>/doc/projets/Ic&ocirc;neJeu.m.pm</tt>.</p>
+</li>
+</ul>
+<p>Le <!--Original XRef content: 'Tableau&numsp;10&hyphen;1'--><xref role="CodeOrFigureOrTable"
+linkend="SAG.CrAct.mkr.11"> indique les diff&eacute;rentes tailles d'ic&ocirc;nes
+et les noms de fichiers correspondants.</p>
+<table id="SAG.CrAct.tbl.1" frame="Topbot">
+<h1 id="SAG.CrAct.mkr.11">Nom et taille des ic&ocirc;nes d'action</h1>
+<tgroup cols="3" colsep="0" rowsep="0">
+<colspec colwidth="1.49in">
+<colspec colwidth="1.77in">
+<colspec colwidth="1.75in">
+<thead>
+<tr><td align="left" valign="bottom"><p><code>Taille en pixels</code></p></td>
+<td align="left" valign="bottom"><p><code>Nom du bitmap</code></p></td>
+<td align="left" valign="bottom"><p><code>Nom du pixmap</code></p></td>
+</tr></thead>
+<table>
+<tr>
+<td align="left" valign="top"><p>48 x 48</p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.l.bm</tt></p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.l.pm</tt></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>32 x 32</p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.m.bm</tt></p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.m.pm</tt></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>16 x 16</p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.t.bm</tt></p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.t.pm</tt></p></td></tr></table></tgroup></table>
+</sect2>
+<sect2 id="SAG.CrAct.div.17" role="Procedure">
+<h1>Modification d'une d&eacute;finition d'action existante<indexterm>
+<primary>Actions</primary><secondary>modification</secondary></indexterm></h1>
+<p>Toutes les actions install&eacute;es sur le syst&egrave;me peuvent &ecirc;tre
+modifi&eacute;es, y compris les actions int&eacute;gr&eacute;es.</p>
+<note>
+<p>Toute modification de la base de donn&eacute;es des actions int&eacute;gr&eacute;es
+doit &ecirc;tre effectu&eacute;e avec prudence, en veillant &agrave; ne pas
+compromettre la compatibilit&eacute; des actions int&eacute;gr&eacute;es avec
+les applications du Bureau.</p>
+</note>
+<ol>
+<li><p>Localisez la d&eacute;finition de l'action &agrave; modifier.
+</p>
+<p>Les emplacements par d&eacute;faut des d&eacute;finitions d'action sont
+les suivants:</p>
+<ul remap="Bullet2">
+<li><p>actions int&eacute;gr&eacute;es: <tt>/usr/dt/appconfig/types/</tt><i role="Variable">langue</i></p>
+</li>
+<li><p>actions syst&egrave;me: <tt>/etc/dt/appconfig/types/</tt><i role="Variable">langue</i></p>
+</li>
+<li><p>actions personnelles: <i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types</tt></p>
+<p><indexterm><primary>&lt;$nopage>Actions</primary><secondary>chemin de
+recherche, voir Chemin de recherche de base de donn&eacute;es</secondary>
+</indexterm>Il est possible que des emplacements suppl&eacute;mentaires soient
+disponibles sur votre syst&egrave;me. Pour en afficher la liste, entrez la
+commande suivante:</p>
+<para remap="CodeIndent1"><code><indexterm><primary>dtsearchpath</primary>
+</indexterm>dtsearchpath -v</code></p>
+<p>Votre syst&egrave;me utilise les r&eacute;pertoires indiqu&eacute;s
+par<indexterm><primary>Variables</primary><secondary>DTDATABASESEARCHPATH</secondary></indexterm> la variable <systemitem>DTDATABASESEARCHPATH</systemitem>.
+</p>
+</li>
+</ul>
+</li>
+<li><p>S'il y a lieu, copiez la d&eacute;finition d'action dans un
+fichier (nouveau ou existant) de l'un des r&eacute;pertoires suivants:</p>
+<ul remap="Bullet2">
+<li><p>actions syst&egrave;me: <tt>/etc/dt/appconfig/types/</tt><i role="Variable">langue</i></p>
+</li>
+<li><p>actions personnelles: <i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types</tt></p>
+<p>Les fichiers situ&eacute;s dans <tt>/usr/dt/appconfig/types/</tt><i role="Variable">langue</i> ne pouvant pas &ecirc;tre modifi&eacute;s,
+vous devez copier les actions int&eacute;gr&eacute;es.</p>
+</li>
+</ul>
+</li>
+<li><p>Effectuez les modifications voulues. Une fois cette op&eacute;ration
+termin&eacute;e, enregistrez le fichier.</p>
+</li>
+<li><p>Cliquez deux fois sur Recharger actions dans le groupe d'applications
+Outils_Bureau.</p>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="SAG.CrAct.div.18">
+<h1 id="SAG.CrAct.mkr.12">Priorit&eacute; des d&eacute;finitions d'action<indexterm>
+<primary>Actions</primary><secondary>r&egrave;gles de priorit&eacute;</secondary>
+</indexterm></h1>
+<p>Lorsque l'utilisateur lance une action, le syst&egrave;me recherche
+une entr&eacute;e correspondante dans la base de donn&eacute;es. Lorsqu'il
+existe plusieurs occurrences, des r&egrave;gles de priorit&eacute; sont appliqu&eacute;es
+pour s&eacute;lectionner l'action &agrave; utiliser.</p>
+<ul remap="Bullet1">
+<li><p>La priorit&eacute; est d&eacute;termin&eacute;e par l'emplacement
+de la d&eacute;finition d'action, si aucune autre r&egrave;gle n'est d&eacute;finie.
+La liste suivante indique les r&eacute;pertoires d'actions, dans un ordre
+de priorit&eacute; d&eacute;croissant:</p>
+<ul remap="Bullet2">
+<li><p>actions personnelles (<i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types</tt>)</p>
+</li>
+<li><p>actions syst&egrave;me locales (<tt>/etc/dt/appconfig/types/</tt><i role="Variable">langue</i>)</p>
+</li>
+<li><p>actions syst&egrave;me &eacute;loign&eacute;es ( <i role="Variable">nom_h&ocirc;te</i>:<tt>/etc/dt/appconfig/types/</tt><i role="Variable">langue</i>). Les syst&egrave;mes h&ocirc;tes &eacute;loign&eacute;s
+recherch&eacute;s sont ceux d&eacute;finis dans le chemin de recherche des
+applications</p>
+</li>
+<li><p>actions int&eacute;gr&eacute;es (<tt>/usr/dt/appconfig/types/</tt><i role="Variable">langue</i>.</p>
+</li>
+</ul>
+</li>
+<li><p>A l'int&eacute;rieur d'un r&eacute;pertoire, les fichiers <tt>*.dt</tt> sont lus dans l'ordre alphab&eacute;tique.</p>
+</li>
+<li><p>Les actions faisant l'objet d'une restriction <tt>(ARG_CLASS</tt>, <tt><indexterm><primary>Zone</primary><secondary>ARG_TYPE</secondary></indexterm>ARG_TYPE</tt>, <tt><indexterm><primary>Zone</primary><secondary>ARG_MODE</secondary></indexterm>ARG_MODE</tt>
+ou <tt><indexterm><primary>Zone</primary><secondary>ARG_COUNT</secondary>
+</indexterm>ARG_COUNT)</tt> sont prioritaires par rapport aux autres.
+La valeur par d&eacute;faut de ces zones est <tt>*</tt>.</p>
+<p>Lorsque plusieurs restrictions s'appliquent, l'ordre (d&eacute;croissant)
+de priorit&eacute; est le suivant:</p>
+<ul remap="Bullet2">
+<li><p><tt>ARG_CLASS</tt></p>
+</li>
+<li><p><tt>ARG_TYPE</tt></p>
+</li>
+<li><p><tt>ARG_MODE</tt></p>
+</li>
+<li><p><tt>ARG_COUNT</tt></p>
+<p>Si plusieurs restrictions <tt>ARG_COUNT</tt> existent, l'ordre
+(d&eacute;croissant) de priorit&eacute; est le suivant:</p>
+</li>
+<li><p>Valeur enti&egrave;re <i role="Variable">n</i></p>
+</li>
+<li><p>&lt;n</p>
+</li>
+<li><p>>n</p>
+</li>
+<li><p>*</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>Par exemple, dans le cas de la d&eacute;finition d'action (partielle)
+suivante:</p>
+<programlisting>ACTION Editer_graphiques
+# Editer_graphiques-1
+{
+   ARG_TYPE   XWD
+   &hellip;
+}
+
+ACTION Editer_graphiques
+# Editer_graphiques-2
+{
+   ARG_COUNT  0
+   &hellip;
+}
+
+ACTION Editer_graphiques
+# Editer_graphiques-3
+{
+   ARG_TYPE  *
+   &hellip;
+}</programlisting>
+<p>Lorsque vous cliquez deux fois sur l'ic&ocirc;ne d'action Editer_graphiques,
+l'action Editer_graphiques-2 est lanc&eacute;e. En effet, aucun argument n'ayant
+&eacute;t&eacute; indiqu&eacute;, <tt>ARG_COUNT 0</tt> est prioritaire.
+Lorsqu'un argument (fichier de type XWD) est sp&eacute;cifi&eacute;, Editer_graphiques-1
+est lanc&eacute;e car la zone <tt>ARG_TYPE</tt> est d&eacute;finie
+(sa valeur est XWD). Editer_graphiques-3 est utilis&eacute;e pour tous les
+autres arguments (fichiers).</p>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.19">
+<h1 id="SAG.CrAct.mkr.13">Cr&eacute;ation de la cha&icirc;ne d'ex&eacute;cution
+d'une action COMMAND<indexterm><primary>Actions</primary><secondary>cha&icirc;ne
+d'ex&eacute;cution</secondary></indexterm><indexterm><primary>Actions</primary>
+<secondary>ligne de commande</secondary></indexterm><indexterm><primary>Cha&icirc;ne d'ex&eacute;cution</primary></indexterm><indexterm><primary>Actions</primary><secondary>cha&icirc;ne d'ex&eacute;cution</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>COMMAND</secondary></indexterm><indexterm>
+<primary>&lt;$nopage>Zone</primary><secondary>EXEC_STRING, Voir Cha&icirc;ne
+d'ex&eacute;cution</secondary></indexterm></h1>
+<p>Les deux zones requises pour une action de type <code><indexterm>
+<primary>Actions</primary><secondary>COMMAND</secondary></indexterm>COMMAND</code> sont <code>ACTION</code> et <code>EXEC_STRING</code>.
+</p>
+<programlisting>ACTION nom_action 
+{
+   EXEC_STRING  cha&icirc;ne_ex&eacute;cution
+}</programlisting>
+<p>La cha&icirc;ne d'ex&eacute;cution est la partie essentielle d'une d&eacute;finition
+d'action <code>COMMAND</code>; sa syntaxe est identique &agrave; celle
+de la ligne de commande entr&eacute;e dans une fen&ecirc;tre d'&eacute;mulation
+de terminal. Elle contient cependant des &eacute;l&eacute;ments suppl&eacute;mentaires
+destin&eacute;s au traitement des arguments (cha&icirc;nes et fichiers).
+</p>
+<sect2 id="SAG.CrAct.div.20">
+<h1><indexterm><primary>Cha&icirc;ne d'ex&eacute;cution</primary><secondary>g&eacute;n&eacute;ralit&eacute;s</secondary></indexterm>Fonctions g&eacute;n&eacute;rales
+des cha&icirc;nes d'ex&eacute;cution</h1>
+<p>Une cha&icirc;ne d'ex&eacute;cution peut contenir:</p>
+<ul remap="Bullet1">
+<li><p>des arguments (fichiers ou autres)</p>
+</li>
+<li><p>une syntaxe de shell</p>
+</li>
+<li><p>des chemins d'acc&egrave;s absolus ou des noms de fichiers
+ex&eacute;cutables</p>
+</li>
+</ul>
+<sect3 id="SAG.CrAct.div.21">
+<h1>Arguments d'action<indexterm><primary>Actions</primary><secondary>arguments</secondary></indexterm><indexterm><primary>Arguments</primary>
+<secondary>actions</secondary></indexterm></h1>
+<p>Un argument est une donn&eacute;e n&eacute;cessaire &agrave; l'ex&eacute;cution
+d'une application ou d'une commande. Par exemple, la ligne de commande ci-apr&egrave;s
+permet d'ouvrir un fichier dans une fen&ecirc;tre de l'Editeur de texte.</p>
+<p><code>dtpad</code> <i role="Variable">nom_fichier</i></p>
+<p>Dans cette commande, <i role="Variable">nom_fichier</i> est
+un fichier indiqu&eacute; comme argument de la commande <code>dtpad</code>.
+</p>
+<p>Tout comme les applications et les commandes, les actions peuvent &ecirc;tre
+associ&eacute;es &agrave; des arguments. Les deux types d'arguments disponibles
+pour les actions <code>COMMAND</code> sont les suivants:</p>
+<ul remap="Bullet1">
+<li><p>fichiers</p>
+</li>
+<li><p>cha&icirc;nes</p>
+</li>
+</ul>
+</sect3>
+<sect3 id="SAG.CrAct.div.22">
+<h1>Utilisation des shells dans les cha&icirc;nes d'ex&eacute;cution<indexterm>
+<primary>Cha&icirc;ne d'ex&eacute;cution</primary><secondary>syntaxe de shell</secondary></indexterm><indexterm><primary>Shell</primary><secondary>syntaxe</secondary></indexterm></h1>
+<p>Bien que la cha&icirc;ne s'ex&eacute;cute directement, sans passer par
+un shell, vous pouvez en indiquer un dans sa syntaxe.</p>
+<p>Par exemple:</p>
+<programlisting>EXEC_STRING     \
+        /bin/sh -c \
+        'tar -tvf %(File)Arg_1% 2>&amp;1 | \${PAGER:-more};\
+        echo "\\n*** S&eacute;lectionnez Fermer pour sortir ***&rdquo;'</programlisting>
+</sect3>
+<sect3 id="SAG.CrAct.div.23">
+<h1>Nom ou chemin d'acc&egrave;s absolu du fichier ex&eacute;cutable<indexterm>
+<primary>Cha&icirc;ne d'ex&eacute;cution</primary><secondary>fichier ex&eacute;cutable</secondary></indexterm></h1>
+<p>Si votre application est install&eacute;e dans un r&eacute;pertoire
+figurant dans la variable<indexterm><primary>Variables</primary><secondary>PATH</secondary></indexterm> PATH, vous pouvez indiquer uniquement le nom du
+fichier ex&eacute;cutable. Sinon, vous devez utiliser<indexterm><primary>Cha&icirc;ne d'ex&eacute;cution</primary><secondary>chemin d'acc&egrave;s
+absolu</secondary></indexterm> son chemin d'acc&egrave;s absolu.</p>
+</sect3>
+</sect2>
+<sect2 id="SAG.CrAct.div.24">
+<h1 id="SAG.CrAct.mkr.14">Cr&eacute;ation d'une action sans arguments<indexterm>
+<primary>Cha&icirc;ne d'ex&eacute;ction</primary><secondary>sans arguments</secondary></indexterm><indexterm><primary>Actions</primary><secondary>sans arguments</secondary></indexterm><indexterm><primary>Actions</primary>
+<secondary>sans donn&eacute;es</secondary></indexterm></h1>
+<p>Dans la zone <tt>EXEC_STRING</tt>, utilisez la syntaxe permettant
+de lancer l'application &agrave; partir de la ligne de commande.</p>
+<sect3 id="SAG.CrAct.div.25">
+<h1>Exemples</h1>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne d'ex&eacute;cution suivante fait partie d'une
+action permettant de lancer le client X <code>xcutsel</code>:</p>
+<para remap="CodeIndent1"><programlisting>EXEC_STRING xcutsel</programlisting></p>
+</li>
+<li><p>La cha&icirc;ne suivante permet de lancer le client <code>xclock</code> en indiquant une horloge num&eacute;rique; la ligne de commande
+comporte une option mais aucun argument n'est requis:</p>
+<para remap="CodeIndent1"><programlisting>EXEC_STRING xclock -digital</programlisting></p>
+</li>
+</ul>
+</sect3>
+</sect2>
+<sect2 id="SAG.CrAct.div.26">
+<h1 id="SAG.CrAct.mkr.15">Cr&eacute;ation d'une action prenant en charge
+la pose de fichiers<indexterm><primary>Cha&icirc;ne d'ex&eacute;cution</primary>
+<secondary>fichiers pos&eacute;s</secondary></indexterm><indexterm><primary>Actions</primary><secondary>prise en charge de fichiers pos&eacute;s</secondary>
+</indexterm><indexterm><primary>Zone de pose</primary><secondary>ic&ocirc;ne
+d'action</secondary></indexterm><indexterm><primary>Fichiers pos&eacute;s</primary></indexterm></h1>
+<p>Pour indiquer l'argument (fichier), utilisez la syntaxe suivante:<indexterm>
+<primary>Syntaxe</primary><secondary>Arg_n</secondary></indexterm></p>
+<programlisting>%Arg_n%</programlisting>
+<p>ou</p>
+<programlisting>%(File)Arg_n%</programlisting>
+<p><tt>(File)</tt> est facultatif, &eacute;tant donn&eacute;
+que les arguments indiqu&eacute;s pour <computeroutput>Arg_n sont</computeroutput>
+consid&eacute;r&eacute;s par d&eacute;faut comme des fichiers. Pour plus de
+d&eacute;tails sur l'utilisation de la syntaxe <computeroutput>%(String)Arg_n%</computeroutput>, reportez-vous &agrave; la section <!--Original XRef content:
+'&rdquo;Interprétation d'un
+argument (fichier) en tant que chaîne&rdquo;, page&numsp;181'--><xref role="SecTitleAndPageNum"
+linkend="SAG.CrAct.mkr.19">.</p>
+<p>Cette syntaxe permet &agrave; l'utilisateur de poser un fichier de donn&eacute;es
+sur une ic&ocirc;ne d'action afin de l'utiliser comme argument pour cette
+derni&egrave;re. Il remplace le <i role="Variable">n</i>i&egrave;me
+argument de la ligne de commande. Il peut s'agir d'un fichier local ou &eacute;loign&eacute;.
+</p>
+<sect3 id="SAG.CrAct.div.27">
+<h1>Exemples</h1>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne d'ex&eacute;cution suivante lance <code>wc -w</code> en utilisant un fichier pos&eacute; comme argument pour le
+param&egrave;tre.</p>
+<para remap="CodeIndent1"><programlisting>EXEC_STRING wc -w %Arg_1%</programlisting></p>
+</li>
+<li><p>L'exemple ci-dessous repr&eacute;sente la d&eacute;finition
+partielle d'une action qui n'accepte que des r&eacute;pertoires en tant qu'arguments.
+Lorsqu'un r&eacute;pertoire est pos&eacute; sur l'ic&ocirc;ne de cette action,
+celle-ci affiche la liste des fichiers du r&eacute;pertoire accessibles en
+lecture-&eacute;criture.</p>
+<programlisting>ACTION Liste_fich_accessibles 
+{
+   ARG_TYPE     FOLDER
+   EXEC_STRING  /bin/sh -c 'ls -l %Arg_1% | grep rw-' 
+   &hellip; 
+}</programlisting>
+</li>
+</ul>
+</sect3>
+</sect2>
+<sect2 id="SAG.CrAct.div.28">
+<h1 id="SAG.CrAct.mkr.16">Cr&eacute;ation d'une action invitant &agrave;
+indiquer un argument (fichier)<indexterm><primary>Cha&icirc;ne d'ex&eacute;cution</primary><secondary>fichier requis</secondary></indexterm><indexterm><primary>Actions</primary><secondary>indication d'un fichier</secondary></indexterm><indexterm>
+<primary></primary></indexterm></h1>
+<p>Pour indiquer l'argument (fichier), utilisez la syntaxe suivante:
+</p>
+<programlisting>%(File)"<i role="Variable">invite</i>"%</programlisting>
+<p>Lorsque l'utilisateur clique deux fois sur l'ic&ocirc;ne correspondant
+&agrave; cette action, un message l'invitant &agrave; indiquer un nom de fichier
+s'affiche.</p>
+<p>Par exemple, la cha&icirc;ne d'ex&eacute;cution suivante affiche une
+bo&icirc;te de dialogue dans laquelle l'argument de la commande <code>wc -w</code> doit &ecirc;tre indiqu&eacute;:</p>
+<programlisting>EXEC_STRING wc -w %(File)"Fichier &agrave; compter :"%</programlisting>
+</sect2>
+<sect2 id="SAG.CrAct.div.29">
+<h1 id="SAG.CrAct.mkr.17">Cr&eacute;ation d'une action supportant les fichiers
+pos&eacute;s ou invitant &agrave; les indiquer<indexterm><primary>Actions</primary><secondary>poser un fichier</secondary></indexterm></h1>
+<p>Pour indiquer l'argument (fichier), utilisez la syntaxe suivante:</p>
+<programlisting>%Arg_n"<i role="Variable">invite</i>"%</programlisting>
+<p>ou</p>
+<programlisting>%(File)Arg_n"<i role="Variable">invite</i>"%</programlisting>
+<p>L'action cr&eacute;&eacute;e par cette syntaxe:</p>
+<ul remap="Bullet1">
+<li><p>accepte les fichiers pos&eacute;s en tant qu'arguments</p>
+</li>
+<li><p>affiche, lorsque l'utilisateur clique sur l'ic&ocirc;ne correspondante,
+une bo&icirc;te de dialogue l'invitant &agrave; entrer un nom de fichier</p>
+</li>
+</ul>
+<p>Par exemple, la cha&icirc;ne d'ex&eacute;cution ci-dessous lance la
+commande <code>lp -oraw</code> sur un fichier pos&eacute;. Si l'utilisateur
+a cliqu&eacute; deux fois sur l'ic&ocirc;ne de l'action pour la lancer, il
+est invit&eacute; &agrave; indiquer un nom de fichier.</p>
+<programlisting>EXEC_STRING lp -oraw %Arg_1"Fichier &agrave; imprimer:"%</programlisting>
+</sect2>
+<sect2 id="SAG.CrAct.div.30">
+<h1 id="SAG.CrAct.mkr.18">Cr&eacute;ation d'une action invitant &agrave;
+indiquer un argument autre qu'un fichier<indexterm><primary>Cha&icirc;ne
+d'ex&eacute;cution</primary><secondary>cha&icirc;ne requise</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>arguments</secondary></indexterm><indexterm>
+<primary>Arguments</primary><secondary>non-fichier</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>arguments</secondary></indexterm></h1>
+<p>Pour indiquer l'argument, utilisez la syntaxe suivant:</p>
+<programlisting>%"invite"%</programlisting>
+<p>ou</p>
+<programlisting>%(String)"invite"%</programlisting>
+<p><tt>(String)</tt> est facultatif; en effet, le texte indiqu&eacute;
+entre guillemets est consid&eacute;r&eacute; par d&eacute;faut comme une cha&icirc;ne.
+Cette syntaxe affiche une bo&icirc;te de dialogue qui invite l'utilisateur
+&agrave; entrer des donn&eacute;es; ne l'utilisez pas lorsqu'un nom de fichier
+doit &ecirc;tre indiqu&eacute;.</p>
+<p>Par exemple, la cha&icirc;ne d'ex&eacute;cution suivante lance la commande <code>xwd</code> et invite l'utilisateur &agrave; indiquer une valeur &agrave;
+ajouter &agrave; chaque pixel:</p>
+<programlisting>EXEC_STRING xwd -add %"Valeur &agrave; ajouter :"% -out %Arg_1"Nom du 
+fichier :"%</programlisting>
+</sect2>
+<sect2 id="SAG.CrAct.div.31">
+<h1 id="SAG.CrAct.mkr.19">Interpr&eacute;tation d'un argument (fichier)
+en tant que cha&icirc;ne</h1>
+<p>Pour indiquer l'argument, utilisez la syntaxe suivante:</p>
+<programlisting>%(String)Arg_n%</programlisting>
+<p>Par exemple, la cha&icirc;ne d'ex&eacute;cution suivante permet d'imprimer
+un fichier accompagn&eacute; d'une page banni&egrave;re indiquant son nom,
+&agrave; l'aide de la commande <code>lp -t</code> <i role="Variable">banni&egrave;re nom_fichier.</i></p>
+<programlisting>EXEC_STRING lp -t%(String)Arg_1% %(File)Arg_1"Fichier &agrave; imprimer :"%
+</programlisting>
+</sect2>
+<sect2 id="SAG.CrAct.div.32">
+<h1 id="SAG.CrAct.mkr.20">Fonctions shell<indexterm><primary>Actions</primary>
+<secondary>fonctions shell</secondary></indexterm><indexterm><primary>Shells</primary><secondary>actions</secondary></indexterm><indexterm><primary>Shells</primary><secondary>actions</secondary></indexterm></h1>
+<p>Indiquez le shell dans la cha&icirc;ne d'ex&eacute;cution:</p>
+<programlisting>/bin/sh -c '<i role="Variable">commande</i>'
+/bin/ksh -c '<i role="Variable">commande</i>'
+/bin/csh -c '<i role="Variable">commande</i>'</programlisting>
+<sect3 id="SAG.CrAct.div.33">
+<h1>Exemples</h1>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne d'ex&eacute;cution suivante correspond &agrave;
+une action qui utilise les fonctions de tube du shell:</p>
+</li>
+</ul>
+<programlisting>EXEC_STRING /bin/sh -c 'ps | lp'</programlisting>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne suivante est plus complexe; elle requiert
+un traitement par le shell et supporte un argument (fichier):</p>
+</li>
+</ul>
+<programlisting>EXEC_STRING /bin/sh -c 'tbl %Arg_1"Page de manuel :"% | troff -man'
+</programlisting>
+<ul remap="Bullet1">
+<li><p>Pour la cha&icirc;ne ci-apr&egrave;s, l'argument doit &ecirc;tre
+un fichier compress&eacute;; l'action le d&eacute;compresse et l'imprime
+&agrave; l'aide de la commande <code>lp -oraw</code>.</p>
+</li>
+</ul>
+<programlisting>EXEC_STRING /bin/sh -c 'cat %Arg_1 "Fichier &agrave; imprimer :"% |  uncompress | lp -oraw'
+</programlisting>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne suivante permet de lancer un script shell
+:</p>
+</li>
+</ul>
+<programlisting>EXEC_STRING /usr/local/bin/LancerClientGnu</programlisting>
+</sect3>
+</sect2>
+<sect2 id="SAG.CrAct.div.34">
+<h1>Cr&eacute;ation d'actions COMMAND pour plusieurs arguments (fichiers)<indexterm>
+<primary>Cha&icirc;ne d'ex&eacute;cution</primary><secondary>arguments multiples</secondary></indexterm><indexterm><primary>Arguments</primary><secondary>actions</secondary></indexterm></h1>
+<p>Les actions peuvent g&eacute;rer les arguments multiples des trois mani&egrave;res
+suivantes.</p>
+<ul remap="Bullet1">
+<li><p>L'action peut &ecirc;tre ex&eacute;cut&eacute;e &agrave; plusieurs
+reprises, &agrave; raison d'une par argument. Lorsqu'une zone <tt>EXEC_STRING</tt> d&eacute;finit un seul argument et que plusieurs fichiers sont
+pos&eacute;s sur l'ic&ocirc;ne de l'action, celle-ci est ex&eacute;cut&eacute;e
+pour chaque fichier.</p>
+<p>Par exemple, si plusieurs fichiers sont indiqu&eacute;s pour la d&eacute;finition
+d'action suivante:</p>
+<para remap="CodeIndent1"><programlisting>ACTION Affich_image_&eacute;cran 
+{
+   EXEC_STRING xwud -in %Arg_1%
+    &hellip; 
+}</programlisting></p>
+<p>Dans ce cas, l'action Affich_image_&eacute;cran est ex&eacute;cut&eacute;e
+&agrave; plusieurs reprises.</p>
+</li>
+<li><p>L'action peut utiliser deux (ou plus) fichiers non interchangeables.
+Par exemple:</p>
+<programlisting remap="CodeIndent1"><code>xsetroot -cursor</code> <i role="Variable">fich_curseur fich_masque</i></programlisting>
+<p>Cette action requiert deux fichiers, indiqu&eacute;s dans un ordre donn&eacute;.
+</p>
+</li>
+<li><p>Une action peut &eacute;galement ex&eacute;cuter la m&ecirc;me
+commande de fa&ccedil;on s&eacute;quentielle sur chaque fichier. Par exemple
+:</p>
+<para remap="CodeIndent1"><programlisting><code>pr</code> <i role="Variable">fichier</i> [<i role="Variable">fichier</i> &hellip;]</programlisting></p>
+<p>Cette action regroupe un ou plusieurs fichiers dans un m&ecirc;me travail
+d'impression.</p>
+</li>
+</ul>
+<sect3 id="SAG.CrAct.div.35">
+<h1 id="SAG.CrAct.mkr.21">Cr&eacute;ation d'une action avec des arguments
+non interchangeables<indexterm><primary>Actions</primary><secondary>arguments
+non interchangeables</secondary></indexterm><indexterm><primary>Arguments</primary><secondary>non interchangeables</secondary></indexterm></h1>
+<p>Utilisez l'une des syntaxes d&eacute;crites ci-dessous.</p>
+<ul remap="Bullet1">
+<li><p>Pour que l'action invite &agrave; indiquer les noms de fichier,
+utilisez la syntaxe suivante pour chaque argument:</p>
+<programlisting>%(File)&rdquo;<i role="Variable">invite</i>&rdquo;%
+</programlisting>
+<p>Utilisez une cha&icirc;ne <i role="Variable">invite</i> diff&eacute;rente
+pour chaque argument.</p>
+<p>Par exemple, la cha&icirc;ne suivante invite &agrave; sp&eacute;cifier
+deux fichiers:</p>
+<programlisting>EXEC_STRING  xsetroot -cursor %(File)&rdquo;Bitmap curseur :&rdquo;% \ 
+             %(File)&rdquo;Bitmap masque :&rdquo;%</programlisting>
+</li>
+<li><p>Pour que l'action supporte les fichiers pos&eacute;s, utilisez
+la syntaxe suivante pour chaque argument:</p>
+<programlisting> %Arg_n%</programlisting>
+<p>Attribuez une valeur diff&eacute;rente &agrave; <i role="Variable">n</i> pour chaque argument. Par exemple:</p>
+<programlisting>EXEC_STRING diff %Arg_1% %Arg_2%</programlisting>
+</li>
+</ul>
+</sect3>
+<sect3 id="SAG.CrAct.div.36">
+<h1 id="SAG.CrAct.mkr.22">Cr&eacute;ation d'une action avec des arguments
+interchangeables<indexterm><primary>Actions</primary><secondary>arguments
+interchangeables</secondary></indexterm><indexterm><primary>Arguments</primary>
+<secondary>interchangeables</secondary></indexterm></h1>
+<p>Utilisez l'une des syntaxes d&eacute;crites ci-dessous.</p>
+<ul remap="Bullet1">
+<li><p>Pour cr&eacute;er une action supportant les fichiers pos&eacute;s,
+charg&eacute;e d'ex&eacute;cuter une commande du type <code>commande</code> <i>fichier</i><subscript>1</subscript> <i role="Variable">fichier</i><subscript>2</subscript> &hellip;, utilisez la syntaxe suivante pour
+les arguments:</p>
+<programlisting remap="CodeIndent1">%Args%</programlisting>
+</li>
+<li><p>Pour cr&eacute;er une action qui prenne en charge plusieurs
+fichiers pos&eacute;s, ou qui affiche un message invitant &agrave; indiquer
+un fichier lorsque l'utilisateur clique deux fois dessus, utilisez la syntaxe
+suivante pour les arguments:</p>
+<programlisting remap="CodeIndent1">%Arg_1&rdquo;<i role="Variable">invite</i>&rdquo;% %Args%</programlisting>
+<p>La commande sera lanc&eacute;e sous la forme <code>commande</code> <i role="Variable">fichier</i><subscript>1</subscript> <i role="Variable">fichier</i><subscript>2</subscript> &hellip;.</p>
+</li>
+</ul>
+<sect4 id="SAG.CrAct.div.37">
+<h1>Exemples</h1>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne suivante cr&eacute;e une action qui ex&eacute;cute
+la commande:</p>
+</li>
+</ul>
+<programlisting><code>pr</code> <i role="Variable">fichier</i><subscript>
+1</subscript> <i role="Variable">fichier</i><subscript>2</subscript></programlisting>
+<p>Cette action prend en charge plusieurs arguments (fichiers).</p>
+<programlisting>EXEC_STRING pr %Args%</programlisting>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne suivante cr&eacute;e une action semblable
+&agrave; la pr&eacute;c&eacute;dente, qui affiche en outre une invite lors
+de l'ex&eacute;cution d'un double d&eacute;clic par l'utilisateur (pas d'arguments):
+</p>
+</li>
+</ul>
+<programlisting>EXEC_STRING pr %Arg_1"Fichier(s) &agrave; imprimer :"% %Args%
+</programlisting>
+</sect4>
+</sect3>
+<sect3 id="SAG.CrAct.div.38">
+<h1 id="SAG.CrAct.mkr.23">Cr&eacute;ation d'une action pour plusieurs fichiers
+pos&eacute;s<indexterm><primary>Actions</primary><secondary>poser plusieurs
+fichiers</secondary></indexterm></h1>
+<p>Pour cr&eacute;er une action qui supporte plusieurs arguments et ex&eacute;cute
+une commande du type:</p>
+<programlisting><command role="Variable">commande</code> <i role="Variable">fichier</i><subscript>1</subscript> <i role="Variable">fichier</i><subscript>
+2</subscript> &hellip;</programlisting>
+<p>Utilisez la syntaxe:</p>
+<programlisting>%Args%</programlisting>
+<sect4 id="SAG.CrAct.div.39">
+<h1>Exemples</h1>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne suivante lance le script V&eacute;rification
+sur plusieurs fichiers:</p>
+</li>
+</ul>
+<programlisting>EXEC_STRING   /usr/local/bin/V&eacute;rification \
+              %Arg_1"Fichier &agrave; v&eacute;rifier ?"% %Args%</programlisting>
+<ul remap="Bullet1">
+<li><p>La cha&icirc;ne suivante ex&eacute;cute la commande <code>lp -oraw</code> sur plusieurs fichiers:</p>
+</li>
+</ul>
+<programlisting>EXEC_STRING lp -oraw %Arg_1"Fichier &agrave; imprimer :"% %Args%
+</programlisting>
+</sect4>
+</sect3>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.40">
+<h1 id="SAG.CrAct.mkr.24">Support de fen&ecirc;trage et &eacute;mulateurs
+de terminal pour les actions COMMAND<indexterm><primary>Actions</primary>
+<secondary>support de fen&ecirc;trage</secondary></indexterm><indexterm><primary>Emulateur de terminal</primary><secondary>actions</secondary></indexterm></h1>
+<p>Les actions <code>COMMAND</code> supportent les fen&ecirc;tres
+du Bureau des mani&egrave;res d&eacute;crites ci-dessous.</p>
+<ul remap="Bullet1">
+<li><p>Si l'application dispose de sa propre fen&ecirc;tre, l'action
+peut &ecirc;tre con&ccedil;ue de sorte qu'aucune fen&ecirc;tre suppl&eacute;mentaire
+ne soit ouverte. Cette option est &eacute;galement utilis&eacute;e pour les
+actions qui lancent des commandes ne requ&eacute;rant aucune entr&eacute;e
+utilisateur et ne g&eacute;n&eacute;rant aucune sortie.</p>
+</li>
+<li><p>Si l'application doit s'ex&eacute;cuter dans une fen&ecirc;tre
+d'&eacute;mulation de terminal, l'action peut ouvrir cette fen&ecirc;tre avant
+de lancer l'application. Il existe plusieurs options de terminal.</p>
+</li>
+</ul>
+<sect2 id="SAG.CrAct.div.41">
+<h1 id="SAG.CrAct.mkr.25">D&eacute;finition du support de fen&ecirc;trage</h1>
+<p>Pour indiquer le type de support de fen&ecirc;trage utilis&eacute; par
+l'action, utilisez la zone <tt>WINDOW_TYPE</tt>.</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="176*">
+<colspec colwidth="352*">
+<table>
+<tr>
+<td align="left" valign="top"><p>WINDOW_TYPE</p><indexterm><primary>Zone</primary><secondary>WINDOW_TYPE</secondary></indexterm></td>
+<td align="left" valign="top"><p>Type de support de fen&ecirc;trage
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt><indexterm><primary>Support
+de fen&ecirc;trage</primary></indexterm><indexterm><primary></primary><secondary>NO_STDIO</secondary></indexterm>NO_STDIO</tt></p></td>
+<td align="left" valign="top"><p>Aucun. Utilisez cette valeur si l'application
+dispose de sa propre fen&ecirc;tre, ou si la commande ne g&eacute;n&egrave;re
+aucune sortie visible.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt><indexterm><primary>Support
+de fen&ecirc;trage</primary></indexterm><indexterm><primary></primary><secondary>PERM_TERMINAL</secondary></indexterm> PERM_TERMINAL</tt></p></td>
+<td align="left" valign="top"><p>Fen&ecirc;tre d'&eacute;mulation de
+terminal permanente. L'action ouvre une fen&ecirc;tre de terminal qui reste
+ouverte jusqu'&agrave; ce que l'utilisateur demande explicitement sa fermeture;
+des donn&eacute;es peuvent &ecirc;tre entr&eacute;es dans cette fen&ecirc;tre.
+Cette valeur doit &ecirc;tre utilis&eacute;e avec les commandes qui exigent
+des entr&eacute;es et g&eacute;n&egrave;rent une sortie avant de prendre fin
+(par exemple, <code>ls</code> <i role="Variable">r&eacute;pertoire</i> ).</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><code><indexterm><primary>Support
+de fen&ecirc;trage</primary></indexterm><indexterm><primary>TERMINAL</primary>
+</indexterm> TERMINAL</code></p></td>
+<td align="left" valign="top"><p>Fen&ecirc;tre d'&eacute;mulation de
+terminal provisoire. L'action ouvre une fen&ecirc;tre de terminal qui se ferme
+d&egrave;s la fin de l'ex&eacute;cution de la commande. Utilisez cette valeur
+dans le cas des commandes plein &eacute;cran (par exemple, <code>vi</code>).
+</p></td></tr></table></tgroup></informaltable>
+</sect2>
+<sect2 id="SAG.CrAct.div.42">
+<h1 id="SAG.CrAct.mkr.26">D&eacute;finition d'options de ligne de commande
+pour l'&eacute;mulateur de terminal<indexterm><primary>Emulateur de terminal</primary><secondary>options de ligne de commande</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>options de terminal</secondary></indexterm></h1>
+<p>Pour d&eacute;finir ces options, utilisez la zone <tt>TERM_OPTS</tt> de la d&eacute;finition de l'action.</p>
+<p>Par exemple, l'action suivante invite &agrave; indiquer l'h&ocirc;te
+d'ex&eacute;cution:</p>
+<programlisting>ACTION Ouvrir_term_sur_syst&egrave;me_indiqu&eacute;
+{
+   WINDOW_TYPE   PERM_TERMINAL
+   EXEC_HOST     %(String)"Terminal &eacute;loign&eacute; sur :"%
+   TERM_OPTS     -title %(String)"Titre de la fen&ecirc;tre :"%
+   EXEC_STRING   $SHELL
+}</programlisting>
+</sect2>
+<sect2 id="SAG.CrAct.div.43">
+<h1 id="SAG.CrAct.mkr.27">D&eacute;finition d'un &eacute;mulateur de terminal
+par d&eacute;faut diff&eacute;rent<indexterm><primary>Emulateur de terminal</primary><secondary>par d&eacute;faut</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>&eacute;mulateur de terminal par d&eacute;faut</secondary></indexterm></h1>
+<p>Par d&eacute;faut, les actions utilisent l'&eacute;mulateur de terminal <code>dtterm</code>; vous pouvez cependant en indiquer un autre. L'&eacute;mulateur
+par d&eacute;faut est pris en compte lorsque l'action n'identifie pas explicitement
+l'&eacute;mulateur &agrave; utiliser.</p>
+<p>L'&eacute;mulateur utilis&eacute; par les actions doit &ecirc;tre associ&eacute;
+aux options de ligne de commande suivantes:</p>
+<ul remap="Bullet1">
+<li><p><code>-title</code> <i role="Variable">titre_fen&ecirc;tre</i></p>
+</li>
+<li><p><code>-e</code> <i role="Variable">commande</i>
+</p>
+</li>
+</ul>
+<p>Les ressources ci-dessous d&eacute;finissent l'&eacute;mulateur utilis&eacute;
+par les actions.</p>
+<ul remap="Bullet1">
+<li><p><indexterm><primary>Ressources</primary><secondary>localTerminal</secondary></indexterm>La ressource <systemitem>localTerminal</systemitem>
+indique l'&eacute;mulateur associ&eacute; aux applications locales.</p>
+<programlisting remap="CodeIndent1">*localTerminal: <i role="Variable">terminal</i></programlisting>
+<p>Par exemple:</p>
+<programlisting>*localTerminal: xterm</programlisting>
+</li>
+<li><para id="SAG.CrAct.mkr.28">La ressource <systemitem>remoteTerminal</systemitem> indique l'&eacute;mulateur associ&eacute; aux applications &eacute;loign&eacute;es.
+</p>
+</li>
+</ul>
+<programlisting>*remoteTerminal: <i role="Variable">h&ocirc;te</i>:<i role="Variable">terminal</i> [,<i role="Variable">h&ocirc;te</i>:<i role="Variable">terminal</i>&hellip;]</programlisting>
+<p>Par exemple:</p>
+<programlisting>*remoteTerminal: sysibm1:/usr/bin/xterm,syshp2:/usr/bin/yterm
+</programlisting>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.44">
+<h1 id="SAG.CrAct.mkr.29"><indexterm><primary>Actions</primary><secondary>arguments restrictifs</secondary></indexterm><indexterm><primary>Arguments</primary><secondary>restrictions pour les actions</secondary></indexterm>Restriction
+des actions &agrave; certains arguments</h1>
+<p>Pour pr&eacute;ciser l'action, vous avez la possibilit&eacute; de l'associer
+&agrave; certains arguments uniquement. Par exemple, il est pr&eacute;f&eacute;rable
+de faire en sorte que l'action permettant d'afficher les fichiers PostScript
+n'accepte que ce type de fichier comme argument. Si un fichier incorrect est
+indiqu&eacute;, l'action affiche un message d'erreur.</p>
+<p>Les restrictions s'appliquent en fonction:</p>
+<ul remap="Bullet1">
+<li><p>du type de donn&eacute;es du fichier indiqu&eacute; comme
+argument</p>
+</li>
+<li><p>du nombre d'arguments (par exemple, aucun argument ou un ou
+plusieurs arguments), ce qui permet d'indiquer diff&eacute;rents comportements
+pour la pose et le double clic sur l'ic&ocirc;ne de l'action</p>
+</li>
+<li><p>le mode de lecture-&eacute;criture de l'argument</p>
+</li>
+</ul>
+<sect2 id="SAG.CrAct.div.45">
+<h1 id="SAG.CrAct.mkr.30">Restriction des actions &agrave; certains types
+de donn&eacute;es<indexterm><primary>Actions</primary><secondary>restriction
+en fonction du type de donn&eacute;es</secondary></indexterm></h1>
+<p><indexterm><primary>Zone</primary><secondary>ARG_TYPE</secondary></indexterm>Utilisez
+la zone <tt>ARG_TYPE</tt> pour d&eacute;finir les types de donn&eacute;es
+auxquels l'action s'applique (indiquez les noms d'attributs de donn&eacute;es).
+</p>
+<p>Vous pouvez indiquer plusieurs types de donn&eacute;es, &agrave; condition
+de les s&eacute;parer par des virgules.</p>
+<p>Dans l'exemple de d&eacute;finition d'action suivante, on consid&egrave;re
+que le type de donn&eacute;es Gif a &eacute;t&eacute; cr&eacute;&eacute;.
+</p>
+<programlisting>ACTION Ouvrir_Gif 
+{
+   TYPE         COMMAND
+   LABEL        "Afficher fichier GIF"
+   WINDOW_TYPE  NO_STDIO
+   ARG_TYPE     Gif
+   ICON         xgif
+   DESCRIPTION  Permet d'afficher les fichiers GIF.
+   EXEC_STRING  xgif 
+}</programlisting>
+</sect2>
+<sect2 id="SAG.CrAct.div.46">
+<h1>Restriction d'une action en fonction du nombre d'arguments<indexterm>
+<primary>Actions</primary><secondary>nombre d'arguments</secondary></indexterm></h1>
+<p><indexterm><primary>Zone</primary><secondary>ARG_COUNT</secondary></indexterm>Pour
+indiquer le nombre d'arguments support&eacute;s par l'action, utilisez la
+zone <tt>ARG_COUNT</tt>. Les valeurs possibles sont les suivantes
+:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="70*">
+<colspec colwidth="458*">
+<table>
+<tr>
+<td align="left" valign="top"><p>*</p></td>
+<td align="left" valign="top"><p>(d&eacute;faut) Nombre d'arguments
+illimit&eacute;. Les autres valeurs sont prioritaires par rapport &agrave;
+*.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>n</p></td>
+<td align="left" valign="top"><p>Toute valeur enti&egrave;re, y compris
+0.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>>n</p></td>
+<td align="left" valign="top"><p>Plus de n arguments.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>&lt;n</p></td>
+<td align="left" valign="top"><p>Moins de n arguments.</p></td>
+</tr></table></tgroup></informaltable>
+<p>La zone <tt>ARG_COUNT</tt> permet d'indiquer diff&eacute;rents
+comportements pour l'ic&ocirc;ne d'action, selon que l'utilisateur clique
+deux fois dessus ou y pose un fichier. Pour plus de d&eacute;tails, reportez-vous
+&agrave; la section suivante <!--Original XRef content: '&rdquo;Définition
+de comportements différents pour la pose et le double clic&rdquo;'--><xref
+role="SectionTitle" linkend="SAG.CrAct.mkr.31">.</p>
+</sect2>
+<sect2 id="SAG.CrAct.div.47" role="Procedure">
+<h1 id="SAG.CrAct.mkr.31">D&eacute;finition de comportements diff&eacute;rents
+pour la pose et le double clic<indexterm><primary>Actions</primary><secondary>pose et double clic</secondary></indexterm><indexterm><primary>Zone</primary>
+<secondary>ARG_COUNT</secondary></indexterm></h1>
+<p>La proc&eacute;dure suivante permet de cr&eacute;er une action prenant
+en charge les fichiers pos&eacute;s, mais n'invitant pas &agrave; indiquer
+un fichier lors d'un double clic utilisateu:</p>
+<ol>
+<li><p>Cr&eacute;ez une d&eacute;finition d'action pour la fonction
+double clic.</p>
+<p>Indiquez la valeur 0 dans la zone <tt>ARG_COUNT</tt>. Dans
+la zone <tt>EXEC_STRING</tt>, sp&eacute;cifiez une syntaxe ne
+supportant pas les arguments pos&eacute;s.</p>
+</li>
+<li><p>Cr&eacute;ez une d&eacute;finition d'action pour la fonction
+pose.</p>
+<p>Indiquez la valeur >0 dans la zone <tt>ARG_COUNT</tt>. Dans
+la zone <tt>EXEC_STRING</tt>, sp&eacute;cifiez une syntaxe supportant
+les arguments pos&eacute;s.</p>
+</li>
+</orderedlist>
+<p>Dans les exemples ci-dessous, les commandes suivantes permettent de
+lancer l'&eacute;diteur <code>vedit</code>.</p>
+<ul remap="Bullet1">
+<li><p>Pour lancer l'&eacute;diteur sans argument:</p>
+<programlisting remap="CodeIndent1">vedit</programlisting>
+</li>
+<li><p>Pour lancer l'&eacute;diteur et ouvrir un fichier en lecture
+seule:</p>
+<programlisting remap="CodeIndent1">vedit -R <i role="Variable">nom_fichier</i></programlisting>
+</li>
+</ul>
+<p>Les deux actions ci-dessous permettent de cr&eacute;er les fonctions
+pose et double clic pour l'action Vedit. La premi&egrave;re action est prioritaire
+lors de la recherche dans la base de donn&eacute;es; en effet, la d&eacute;finition <tt>ARG_COUNT 0</tt> est plus pr&eacute;cise que (<tt>ARG_COUNT *</tt> ).</p>
+<programlisting># Fonction double clic
+ACTION Vedit 
+{
+   TYPE          COMMAND
+   ARG_COUNT     0
+   WINDOW_TYPE   PERM_TERMINAL
+   EXEC_STRING   vedit 
+}
+
+# Fonction pose
+ACTION Vedit
+{
+   TYPE         COMMAND
+   WINDOW_TYPE  PERM_TERMINAL
+   EXEC_STRING  vedit -R %Arg_1% 
+}</programlisting>
+</sect2>
+<sect2 id="SAG.CrAct.div.48">
+<h1>Restriction d'une action en fonction du mode de l'argument</h1>
+<p>Pour indiquer le mode de lecture-&eacute;criture de l'argument, utilisez
+la zone <tt>ARG_MODE</tt>. Les valeurs possibles sont les suivantes:
+</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="65*">
+<colspec colwidth="463*">
+<table>
+<tr>
+<td align="left" valign="top"><p>*</p></td>
+<td align="left" valign="top"><p>(d&eacute;faut) Mode quelconque.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>!w</p></td>
+<td align="left" valign="top"><p>Non accessible en &eacute;criture.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>w</p></td>
+<td align="left" valign="top"><p>Accessible en &eacute;criture.</p></td>
+</tr></table></tgroup></informaltable>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.49">
+<h1 id="SAG.CrAct.mkr.32">Cr&eacute;ation d'actions ex&eacute;cutant des
+applications sur des syst&egrave;mes &eacute;loign&eacute;s<indexterm><primary>Actions</primary><secondary>lancement d'applications &eacute;loign&eacute;s</secondary></indexterm></h1>
+<p>Vous devez conna&icirc;tre la signification des termes suivants:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="179*">
+<colspec colwidth="349*">
+<table>
+<tr>
+<td align="left" valign="top"><p><indexterm><primary>H&ocirc;te de base
+de donn&eacute;es</primary></indexterm>H&ocirc;te de base de donn&eacute;es
+</p></td>
+<td align="left" valign="top"><p>Syst&egrave;me contenant la d&eacute;finition
+de l'action.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><indexterm><primary>H&ocirc;te d'ex&eacute;cution</primary></indexterm><indexterm><primary>cr&eacute;ation d'actions</primary>
+</indexterm>H&ocirc;te d'ex&eacute;cution</p></td>
+<td align="left" valign="top"><p>Syst&egrave;me sur lequel le programme
+s'ex&eacute;cute.</p></td></tr></table></tgroup></informaltable>
+<p>Dans la plupart des cas, les actions et les applications associ&eacute;es
+sont install&eacute;es sur le m&ecirc;me syst&egrave;me; &eacute;tant donn&eacute;
+que l'h&ocirc;te d'ex&eacute;cution par d&eacute;faut d'une action est l'h&ocirc;te
+de base de donn&eacute;es, aucune syntaxe particuli&egrave;re n'est requise.
+</p>
+<p>Cependant, lorsque l'h&ocirc;te d'ex&eacute;cution est diff&eacute;rent
+de l'h&ocirc;te de base de donn&eacute;es, le syst&egrave;me sur lequel la
+cha&icirc;ne d'ex&eacute;cution sera lanc&eacute;e doit &ecirc;tre indiqu&eacute;
+dans la d&eacute;finition de l'action.</p>
+<p>La fonction de recherche des actions et des applications sur diff&eacute;rents
+syst&egrave;mes fait partie de l'architecture client/serveur du Bureau. Pour
+plus de d&eacute;tails sur les applications en r&eacute;seau, reportez-vous
+&agrave; la section <!--Original XRef content: '&rdquo;Gestion des services
+d'applications&rdquo;, page&numsp;106'--><xref role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.15">.
+</p>
+<sect2 id="SAG.CrAct.div.50">
+<h1 id="SAG.CrAct.mkr.33">Cr&eacute;ation d'une action ex&eacute;cutant
+une application &eacute;loign&eacute;e<indexterm><primary>Zone</primary>
+<secondary>EXEC_HOST</secondary></indexterm></h1>
+<p><indexterm><primary>Zone</primary><secondary>EXEC_HOST</secondary></indexterm><indexterm>
+<primary>H&ocirc;te d'ex&eacute;cution</primary><secondary>zone EXEC_HOST</secondary></indexterm>Pour d&eacute;finir l'emplacement de l'application,
+utilisez la zone <tt>EXEC_HOST</tt> de la d&eacute;finition de
+l'action.</p>
+<p>Vous pouvez indiquer les valeurs suivantes:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="176*">
+<colspec colwidth="352*">
+<table>
+<tr>
+<td align="left" valign="top"><p><tt><indexterm><primary>Mots
+cl&eacute;</primary></indexterm><indexterm><primary>&sigma;</primary><secondary>DataBaseHost</secondary></indexterm> %DatabaseHost%</tt></p></td>
+<td align="left" valign="top"><p>Syst&egrave;me h&ocirc;te sur lequel
+l'action est d&eacute;finie.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>%LocalHost%</tt></p></td>
+<td align="left" valign="top"><p>Syst&egrave;me h&ocirc;te sur lequel
+l'action est lanc&eacute;e (<em>serveur de session</em>).</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><tt><indexterm><primary>Mots
+cl&eacute;</primary></indexterm><indexterm><primary>&sigma;</primary><secondary>DisplayHost</secondary></indexterm> %DisplayHost%</tt></p></td>
+<td align="left" valign="top"><p>Syst&egrave;me h&ocirc;te sur lequel
+le serveur X s'ex&eacute;cute (non autoris&eacute; dans le cas des terminaux
+X).</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt><indexterm><primary>Mots
+cl&eacute;</primary></indexterm><indexterm><primary>&sigma;</primary><secondary>SessionHost</secondary></indexterm> %SessionHost%</tt></p></td>
+<td align="left" valign="top"><p>Syst&egrave;me h&ocirc;te sur lequel
+le Gestionnaire de connexion en cours s'ex&eacute;cute.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">nom_h&ocirc;te</i></p></td>
+<td align="left" valign="top"><p>Utilisez cette valeur pour les environnements
+dans lesquels l'action doit toujours &ecirc;tre ex&eacute;cut&eacute;e sur
+un syst&egrave;me h&ocirc;te donn&eacute;.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>%"<i role="Variable">invite</i>"%
+</p></td>
+<td align="left" valign="top"><p>Invite l'utilisateur &agrave; indiquer
+le nom h&ocirc;te lors de chaque ex&eacute;cution de l'action.</p></td>
+</tr></table></tgroup></informaltable>
+<p>La valeur par d&eacute;faut est <tt>%DatabaseHost%</tt>, <tt>%LocalHost%</tt>.<indexterm><primary>Zone</primary><secondary>EXEC_HOST</secondary><tertiary>valeur par d&eacute;faut</tertiary></indexterm> Ainsi,
+lorsque la zone <tt>EXEC_HOST</tt> n'est pas pr&eacute;cis&eacute;e,
+une tentative d'ex&eacute;cution de la commande est effectu&eacute;e sur le
+syst&egrave;me h&ocirc;te contenant la d&eacute;finition de l'action. En cas
+d'&eacute;chec, le serveur de sessions est utilis&eacute;.</p>
+<sect3 id="SAG.CrAct.div.51">
+<h1>Exemples</h1>
+<ul remap="Bullet1">
+<li><p>La zone suivante d&eacute;signe le syst&egrave;me h&ocirc;te <code>ddsyd</code>:</p>
+</li>
+</ul>
+<programlisting>EXEC_HOST ddsyd</programlisting>
+<ul remap="Bullet1">
+<li><p>La zone suivante invite &agrave; indiquer un syst&egrave;me
+h&ocirc;te:</p>
+</li>
+</ul>
+<programlisting>EXEC_HOST %"H&ocirc;te contenant l'application :"%</programlisting>
+<ul remap="Bullet1">
+<li><p>La zone suivante indique que l'action tente de lancer l'application
+sur le syst&egrave;me h&ocirc;te qui contient sa d&eacute;finition. En cas
+d'&eacute;chec, elle tente de la lancer sur le syst&egrave;me h&ocirc;te <code>ddsyd</code>.</p>
+</li>
+</ul>
+<programlisting>EXEC_HOST %DatabaseHost%, ddsyd</programlisting>
+</sect3>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.52">
+<h1 id="SAG.CrAct.mkr.34">Utilisation de variables dans les d&eacute;finitions
+d'actions et de types de donn&eacute;es<indexterm><primary>Variables</primary>
+<secondary>d&eacute;finitions d'actions</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>utilisation de variables</secondary>
+</indexterm><indexterm><primary>Types de donn&eacute;es</primary><secondary>utilisation de variables</secondary></indexterm></h1>
+<p>Vous pouvez indiquer des variables d'environnement et des variables
+cha&icirc;nes de caract&egrave;res dans les fichiers de d&eacute;finition
+d'actions et de types de donn&eacute;es.</p>
+<sect2 id="SAG.CrAct.div.53">
+<h1 id="SAG.CrAct.mkr.35">Variables cha&icirc;nes de caract&egrave;res (actions)<indexterm>
+<primary>Variables</primary><secondary>cha&icirc;nes de caract&egrave;res</secondary></indexterm><indexterm><primary>Actions</primary><secondary>variables cha&icirc;nes de caract&egrave;res</secondary></indexterm></h1>
+<p>Ce type de variable entre en vigueur lorsqu'elle est d&eacute;finie
+et le reste jusqu'&agrave; la fin du fichier. Il n'existe aucune variable
+globale pour la base de donn&eacute;es.</p>
+<p>Si une variable d'environnement et une variable cha&icirc;ne de caract&egrave;res
+portent le m&ecirc;me nom, cette derni&egrave;re est prioritaire.</p>
+<sect3 id="SAG.CrAct.div.54" role="Procedure">
+<h1>D&eacute;finition d'une variable cha&icirc;ne de caract&egrave;res</h1>
+<ul>
+<li><p>Utilisez la syntaxe:</p>
+<programlisting remap="CodeIndent1">set <i role="Variable">nom_variable</i>=<i role="Variable">valeur</i></programlisting>
+</li>
+</ul>
+<p>Les noms de variables peuvent contenir des caract&egrave;res alphanum&eacute;riques
+et le caract&egrave;re de soulignement &ldquo;__&rdquo;. Chaque d&eacute;finition
+de variable doit figurer sur une ligne distincte.</p>
+<p>Par exemple:</p>
+<programlisting>set Remote_Application_Server=sysapp
+set Remote_File_Server=sysdata</programlisting>
+</sect3>
+<sect3 id="SAG.CrAct.div.55" role="Procedure">
+<h1>R&eacute;f&eacute;rence &agrave; une variable cha&icirc;ne de caract&egrave;res
+:</h1>
+<ul>
+<li><p>Utilisez la syntaxe:</p>
+<para remap="CodeIndent1">$[{]<i role="Variable">nom_variable</i>[}]
+</p>
+</li>
+</ul>
+<p>Par exemple:</p>
+<programlisting>EXEC-HOST   $Remote_Application_Server
+CWD /net/   ${Remote_File_Server}/doc/projet</programlisting>
+</sect3>
+</sect2>
+<sect2 id="SAG.CrAct.div.56">
+<h1 id="SAG.CrAct.mkr.36">Variables d'environnement (actions et types de
+donn&eacute;es)<indexterm><primary>Variables</primary><secondary>d'environnement</secondary><tertiary>d&eacute;finitions d'actions</tertiary></indexterm><indexterm>
+<primary>Actions</primary><secondary>variables d'environnement</secondary>
+</indexterm></h1>
+<ul>
+<li><p>Utilisez la syntaxe suivante pour faire r&eacute;f&eacute;rence
+&agrave; une variable d'environnement:</p>
+<para remap="CodeIndent1"><tt>$[{]</tt><i role="Variable">variable</i>[<tt>}]</tt>.</p>
+</li>
+</ul>
+<p>La variable est remplac&eacute;e par sa valeur lors du chargement de
+la base de donn&eacute;es. Si une variable d'environnement et une variable
+cha&icirc;ne de caract&egrave;res portent le m&ecirc;me nom, cette derni&egrave;re
+est prioritaire.</p>
+<p>Par exemple, la cha&icirc;ne d'ex&eacute;cution suivante permet d'imprimer
+un fichier avec une banni&egrave;re indiquant le nom de connexion:</p>
+<programlisting>EXEC-STRING lp  -t$LOGNAME  %(File)Arg_1%</programlisting>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.57">
+<h1 id="SAG.CrAct.mkr.37">Ex&eacute;cution d'actions &agrave; partir de
+la ligne de commande<indexterm><primary>Actions</primary><secondary>ex&eacute;cution
+d'autres actions</secondary></indexterm></h1>
+<p>Pour effectuer cette op&eacute;ration, utilisez la commande du Bureau <code>dtaction</code>. Les actions peuvent &ecirc;tre ex&eacute;cut&eacute;es
+&agrave; partir:</p>
+<ul remap="Bullet1">
+<li><p>de scripts</p>
+</li>
+<li><p>d'autres actions</p>
+</li>
+<li><p>de la ligne de commande d'une fen&ecirc;tre d'&eacute;mulation
+de terminal.</p>
+</li>
+</ul>
+<sect2 id="SAG.CrAct.div.58">
+<h1>Commande dtaction<indexterm><primary>dtaction</primary><secondary>syntaxe</secondary></indexterm></h1>
+<p><code>dtaction [-user</code> <i role="Variable">nom_utilisateur</i><code>] [-execHost</code> <i role="Variable">nom_h&ocirc;te</i><code>]</code> <i role="Variable">nom_action</i> <code>[</code><i role="Variable">argument</i> <code>[</code><i role="Variable">argument</i><code>]&hellip;]</code></p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="192*">
+<colspec colwidth="336*">
+<table>
+<tr>
+<td align="left" valign="top"><p><tt>-user</tt> <i role="Variable">nom_utilisateur</i></p></td>
+<td align="left" valign="top"><p>Permet &agrave; un autre utilisateur
+d'ex&eacute;cuter l'action. Si <code>dtaction</code> est lanc&eacute;e
+par un utilisateur diff&eacute;rent de <i role="Variable">nom_utilisateur,</i> il est invit&eacute; &agrave; indiquer un mot de passe.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>-<code>execHost</code> <i role="Variable">nom_h&ocirc;te</i></p></td>
+<td align="left" valign="top"><p>Actions de type <code>COMMAND</code>
+uniquement; indique le syst&egrave;me h&ocirc;te d'ex&eacute;cution de la
+commande.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">argument</i></p></td>
+<td align="left" valign="top"><p>Arguments associ&eacute;s &agrave;
+l'action; il s'agit g&eacute;n&eacute;ralement de fichiers.</p></td>
+</tr></table></tgroup></informaltable>
+<p>Le client <code>dtaction</code> dispose d'options de ligne de
+commande suppl&eacute;mentaires. Pour plus de d&eacute;tails, consultez la
+page de manuel <filename moreinfo="RefEntry">dtaction(1)</tt>.</p>
+</sect2>
+<sect2 id="SAG.CrAct.div.59">
+<h1>Cr&eacute;ation d'une action ex&eacute;cutant une autre action<indexterm>
+<primary>Actions</primary><secondary>ex&eacute;cution d'autres actions</secondary>
+</indexterm></h1>
+<p>Indiquez <code>dtaction</code> dans la zone <tt>EXEC_STRING</tt> de l'action.</p>
+<p>Par exemple, l'action ci-dessous utilise l'action int&eacute;gr&eacute;e
+Spell, dont le libell&eacute; est V&eacute;rifier orthographe dans le Gestionnaire
+d'applications. La nouvelle action lance l'Editeur de texte et Spell, puis
+affiche les erreurs d'orthographe dans une fen&ecirc;tre d'&eacute;mulation
+de terminal distincte.</p>
+<programlisting>ACTION Editer_et_v&eacute;rifier
+{
+   WINDOW_TYPE   NO_STDIO
+   EXEC_STRING   /bin/sh -c 'dtaction Spell \
+                 %Arg_1"Fichier :"%; dtpad %Arg_1%'
+}</programlisting>
+</sect2>
+<sect2 id="SAG.CrAct.div.60">
+<h1 id="SAG.CrAct.mkr.38">Cr&eacute;ation d'une action ex&eacute;cut&eacute;e
+par un autre utilisateur<indexterm><primary>Actions</primary><secondary>ex&eacute;cution par un autre utilisateur</secondary></indexterm><indexterm>
+<primary>dtaction</primary><secondary>modification de l'utilisateur</secondary>
+</indexterm></h1>
+<p>Utilisez la syntaxe suivante dans la zone <tt>EXEC_STRING</tt>
+:</p>
+<programlisting>EXEC_STRING dtaction -user <i role="Variable">nom_utilisateur</i> <i role="Variable">nom_action</i> [<i role="Variable">argument_fichier</i>]</programlisting>
+<p>Pour avoir acc&egrave;s au syst&egrave;me, le nouvel utilisateur (<i role="Variable">nom_utilisateur</i>) doit disposer d'une des autorisations
+suivantes:</p>
+<ul remap="Bullet1">
+<li><p>autorisation de lecture sur le fichier <tt>.Xauthority</tt> de l'utilisateur de connexion</p>
+</li>
+<li><p><em>ou</em> autorisation <code>xhost</code></p>
+</li>
+</ul>
+<p>Par exemple, les actions suivantes permettent de devenir utilisateur
+root et d'&eacute;diter un fichier app-defaults.</p>
+<programlisting>ACTION AppDefaults
+{
+   WINDOW_TYPE  NO_STDIO
+   EXEC_STRING  /usr/dt/bin/dtaction -user root \
+                EditerAppDefaults %Arg_1"Fichier :"%
+}
+
+ACTION EditerAppDefaults
+{
+   WINDOW_TYPE  TERMINAL
+   EXEC_STRING  /bin/sh -c 'chmod +w %Arg_1%; \
+                vi %Arg_1%; chmod -w %Arg_1%'
+}</programlisting>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.61">
+<h1 id="SAG.CrAct.mkr.39">Cr&eacute;ation d'actions internationalis&eacute;es<indexterm>
+<primary>Actions</primary><secondary>localisation</secondary></indexterm><indexterm>
+<primary>Localisation</primary><secondary>actions</secondary></indexterm></h1>
+<p>Le chemin de recherche de types de donn&eacute;es comporte des emplacements
+li&eacute;s &agrave; la langue utilis&eacute;e. Le Bureau utilise la valeur
+de <systemitem>LANG</systemitem> pour identifier les r&eacute;pertoires dans
+lesquels rechercher les d&eacute;finitions de types de donn&eacute;es.</p>
+<sect2 id="SAG.CrAct.div.62">
+<h1>Emplacements des actions internationalis&eacute;es</h1>
+<p>Les d&eacute;finitions des actions adapt&eacute;es au pays doivent &ecirc;tre
+situ&eacute;es dans les r&eacute;pertoires associ&eacute;s &agrave; la langue
+utilis&eacute;e, dans le chemin de recherche des actions.</p>
+<p>Les chemins de recherche par d&eacute;faut sont les suivants:</p>
+<ul remap="Bullet1">
+<li><p>actions personnelles: <i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types</tt></p>
+</li>
+<li><p>actions syst&egrave;me: <tt>/etc/dt/appconfig/types/</tt><i role="Variable">langue</i></p>
+</li>
+<li><p>actions int&eacute;gr&eacute;es: <tt>/usr/dt/appconfig/types/</tt><i role="Variable">langue</i>.</p>
+</li>
+</ul>
+</sect2>
+<sect2 id="SAG.CrAct.div.63" role="Procedure">
+<h1>Internationalisation d'une action existante<indexterm><primary>Actions</primary><secondary>libell&eacute;s</secondary></indexterm><indexterm><primary>Libell&eacute;s</primary><secondary>actions</secondary></indexterm><indexterm>
+<primary>Localisation</primary><secondary>libell&eacute;s d'actions</secondary>
+</indexterm></h1>
+<ol>
+<li><p>Cr&eacute;ez un fichier dans le r&eacute;pertoire correspondant
+&agrave; la langue (par exemple, <tt>/etc/dt/appconfig/types/fr_FR</tt>).
+</p>
+</li>
+<li><p>Copiez la d&eacute;finition de l'action dans le fichier de
+configuration li&eacute; &agrave; la langue.</p>
+<p>Par exemple, vous pouvez copier une d&eacute;finition d'action de</p>
+<para remap="CodeIndent1"><tt><i role="Variable">racine_app</i>/dt/appconfig/types/C/<i role="Variable">fichier</i>.dt</tt></p>
+<p>vers</p>
+<para remap="CodeIndent1"><tt><i role="Variable">racine_app</i>/dt/appconfig/types/fr_FR/<i role="Variable">nouveau_fichier</i>.dt</tt></p>
+</li>
+<li><p>Ajoutez une zone <code>LABEL</code> ou modifiez celle
+qui existe.</p>
+<para remap="CodeIndent1"><code>LABEL</code> <i role="Variable">cha&icirc;ne</i></p>
+<p>Les Gestionnaires d'applications et de fichiers utilisent cette cha&icirc;ne
+pour identifier l'ic&ocirc;ne d'action.</p>
+</li>
+<li><p>Localisez un ou plusieurs des &eacute;l&eacute;ments suivants
+:</p>
+<ul remap="Bullet2">
+<li><p>ic&ocirc;nes: zone <code>ICON</code></p>
+</li>
+<li><p>aide sur l'&eacute;l&eacute;ment: zone <code>DESCRIPTION</code></p>
+</li>
+<li><p>invites localis&eacute;es: texte entre guillemets dans la
+zone <tt>EXEC_STRING</tt></p>
+</li>
+</ul>
+</li>
+</orderedlist>
+</sect2>
+</div>
+<sect1 id="SAG.CrAct.div.64">
+<h1 id="SAG.CrAct.mkr.40">Cr&eacute;ation d'actions pour les applications
+ToolTalk<indexterm><primary>Actions</primary><secondary>TT_MSG</secondary>
+<tertiary>cr&eacute;ation</tertiary></indexterm><indexterm><primary>ToolTalk</primary><secondary>applications</secondary></indexterm><indexterm><primary>&lt;$nopage>ToolTalk</primary><secondary>action, Voir Actions</secondary>
+</indexterm></h1>
+<note>
+<p>Les informations suivantes ne s'appliquent qu'aux programmes qui supportent
+la messagerie ToolTalk.</p>
+</note>
+<p>Les actions permettant d'envoyer des messages ToolTalk, sont du type <tt>TT_MSG</tt>.</p>
+<programlisting>ACTION nom_action 
+{
+   TYPE   TT_MSG 
+   &hellip;
+}</programlisting>
+<sect2 id="SAG.CrAct.div.65">
+<h1>Zones addressing et disposition</h1>
+<ul remap="Bullet1">
+<li><p>La valeur de la zone ToolTalk <code>addressing</code>
+est toujours <tt>TT_PROCEDURE</tt>.</p>
+</li>
+<li><p>Par d&eacute;faut, la valeur de la zone <code>disposition</code> est la sp&eacute;cification de forme de message statique.</p>
+</li>
+</ul>
+<sect3 id="SAG.CrAct.div.66">
+<h1>Messages non pris en charge</h1>
+<p>Les messages suivants ne sont pas pris en charge par les actions de
+type <tt>TT_MSG</tt>:</p>
+<ul remap="Bullet1">
+<li><p>messages ToolTalk orient&eacute;s objet</p>
+</li>
+<li><p>arguments contextuels des messages</p>
+</li>
+</ul>
+</sect3>
+<sect3 id="SAG.CrAct.div.67">
+<h1>Mots cl&eacute;s des actions TT_MSG<indexterm><primary>Actions</primary>
+<secondary>TT_MSG</secondary><tertiary>mots cl&eacute;s</tertiary></indexterm></h1>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="163*">
+<colspec colwidth="365*">
+<thead>
+<tr><td align="left" valign="bottom"><p>Mot cl&eacute;</p></td>
+<td align="left" valign="bottom"><p>Utilisation</p></td></tr>
+</thead>
+<table>
+<tr>
+<td align="left" valign="top"><p><tt>TT_CLASS</tt></p></td>
+<td align="left" valign="top"><p>D&eacute;finit la valeur de la zone
+ToolTalk <code>class</code>.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>TT_SCOPE</tt></p></td>
+<td align="left" valign="top"><p>D&eacute;finit la valeur de la zone
+ToolTalk <code>scope</code>.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>TT_OPERATION</tt></p></td>
+<td align="left" valign="top"><p>D&eacute;finit la valeur de la zone
+ToolTalk <code>operation</code>.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>TT_FILE</tt></p></td>
+<td align="left" valign="top"><p>D&eacute;finit la valeur de la zone
+ToolTalk <code>file</code>.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>TT_ARGn_MODE</tt></p></td>
+<td align="left" valign="top"><p>D&eacute;finit la valeur de l'attribut
+ToolTalk <code>mode</code> pour le <i role="Variable">n</i>i&egrave;me
+message.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>TT_ARGn_VTYPE</tt></p></td>
+<td align="left" valign="top"><p>D&eacute;finit la valeur de l'attribut
+ToolTalk <code>vtype</code> pour le <i role="Variable">n</i>i&egrave;me
+message.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>TT_ARGn_VALUE</tt></p></td>
+<td align="left" valign="top"><p>D&eacute;finit la valeur du <i role="Variable">n</i>i&egrave;me message.</p></td></tr></table>
+</tgroup></informaltable>
+</sect3>
+</sect2>
+</div><?Pub Caret>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
+<?Pub *0000102034>

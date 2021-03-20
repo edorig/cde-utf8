@@ -1,0 +1,824 @@
+<!-- $XConsortium: ch14.sgm /main/10 1996/12/20 20:39:59 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="SAG.WMCnf.div.1">
+<h1 id="SAG.WMCnf.mkr.1">Personnalisation du Gestionnaire de l'espace de
+travail</h1>
+<p><indexterm><primary>dtwm, voir Gestionnaire de l'espace de travail&lt;$nopage></primary></indexterm><indexterm><primary>Gestionnaire de l'espace de travail</primary></indexterm><indexterm><primary>Gestionnaire de fen&ecirc;tre Motif,
+voir Gestionnaire de l'espace de travail&lt;$nopage></primary></indexterm>Le
+pr&eacute;sent chapitre d&eacute;crit la proc&eacute;dure &agrave; suivre
+pour personnaliser le Gestionnaire de l'espace de travail.</p>
+<informaltable id="SAG.WMCnf.itbl.1" frame="All">
+<tgroup cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.63in">
+<table>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Fichiers
+de configuration du Gestionnaire de l'espace de travail258'--><xref role="JumpText"
+linkend="SAG.WMCnf.mkr.2"></p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Personnalisation
+d'un espace de travail261'--><xref role="JumpText" linkend="SAG.WMCnf.mkr.5"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Menus du
+Gestionnaire de l'espace de travail263'--><xref role="JumpText" linkend="SAG.WMCnf.mkr.8"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Personnalisation
+des associations de fonctions aux boutons267'--><xref role="JumpText" linkend="SAG.WMCnf.mkr.12"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Personnalisation
+des associations de fonctions aux touches269'--><xref role="JumpText" linkend="SAG.WMCnf.mkr.15"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Commutation
+entre comportement par défaut et comportement personnalisé272'--><xref role="JumpText"
+linkend="SAG.WMCnf.mkr.18"></p></td></tr></table></tgroup></informaltable>
+<p><indexterm><primary>Gestionnaire de l'espace de travail</primary><secondary>d&eacute;finition</secondary></indexterm>Le Gestionnaire de l'espace de travail
+est le gestionnaire de fen&ecirc;tres du Bureau. Comme tout gestionnaire de
+fen&ecirc;tres, il contr&ocirc;le:</p>
+<ul remap="Bullet1">
+<li><p>l'apparence des composants des cadres de fen&ecirc;tres</p>
+</li>
+<li><p>le comportement des fen&ecirc;tres, dont leur ordre dans la
+pile et le comportement de la zone d'entr&eacute;e</p>
+</li>
+<li><p>les associations de fonctions aux touches et aux boutons</p>
+</li>
+<li><p>l'apparence des fen&ecirc;tres r&eacute;duites</p>
+</li>
+<li><p>les menus Espace de travail et Fen&ecirc;tre</p>
+</li>
+</ul>
+<p>Il contr&ocirc;le, en outre, les composants du Bureau ci-apr&egrave;s.
+</p>
+<ul remap="Bullet1">
+<li><p><em>Espaces de travail</em>. Le Gestionnaire de
+l'espace de travail contr&ocirc;le le nombre d'espaces de travail et les fen&ecirc;tres
+ouvertes dans chacun d'eux.</p>
+</li>
+<li><p><em><indexterm><primary>Fond</primary></indexterm><indexterm>
+<primary>Espaces de travail</primary><secondary>voir fond&lt;$nopage></secondary>
+</indexterm> Fonds des espaces de travail</em>. L'utilisateur peut modifier
+les arri&egrave;re-plans &agrave; l'aide du Gestionnaire de configuration.
+Toutefois, la gestion des arri&egrave;re-plans est une fonction du Gestionnaire
+de l'espace de travail.</p>
+</li>
+<li><p><em><indexterm><primary>Tableau de bord</primary><secondary>Gestionnaire de l'espace de travail</secondary></indexterm><indexterm><primary>Gestionnaire de l'espace de travail</primary><secondary>gestion du Tableau
+de bord</secondary></indexterm> Tableau de bord</em>. Le Tableau de bord
+utilise ses propres fichiers de configuration; il est cependant cr&eacute;&eacute;
+et g&eacute;r&eacute; par le Gestionnaire de l'espace de travail.</p>
+</li>
+</ul>
+<p>Nombre de ces composants peuvent &ecirc;tre modifi&eacute;s &agrave;
+l'aide du Gestionnaire de configuration. Le Gestionnaire de configuration
+permet d'appliquer rapidement et simplement des modifications fr&eacute;quemment
+utilis&eacute;es. D'autres ressources doivent &ecirc;tre configur&eacute;es
+manuellement.</p>
+<p>Le Gestionnaire de l'espace de travail est <code>dtwm</code>.
+Il est bas&eacute; sur le Gestionnaire de fen&ecirc;tres Motif.</p>
+<sect1 id="SAG.WMCnf.div.2">
+<h1>Informations connexes</h1>
+<ul remap="Bullet1">
+<li><p>Pour plus de d&eacute;tails sur le Gestionnaire de l'espace
+de travail, reportez-vous aux pages de manuel <tt>dtwm(1)</tt>
+et <tt>dtwmrc(4)</tt>.</p>
+</li>
+<li><p>Pour plus de d&eacute;tails sur la configuration des ressources
+du Gestionnaire de l'espace de travail, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Définition de ressources d'applications&rdquo;,
+page&numsp;272'--><xref role="SecTitleAndPageNum" linkend="SAG.FACol.mkr.2">.
+</p>
+</li>
+<li><p>Pour plus de d&eacute;tails sur les fichiers de configuration
+du Tableau de bord, reportez-vous au <!--Original XRef content:
+'chapitre&numsp;13, &rdquo;Personnalisation du Tableau de bord&rdquo;'--><xref
+role="ChapNumAndTitle" linkend="SAG.FrPC.mkr.1">.</p>
+</li>
+</ul>
+<p>Pour plus de d&eacute;tails sur la configuration des ressources, reportez-vous
+&agrave; la section <!--Original XRef content: '&rdquo;Définition de ressources
+d'applications&rdquo;, page&numsp;272'--><xref role="SecTitleAndPageNum" linkend="SAG.FACol.mkr.2">.
+</p>
+</div>
+<sect1 id="SAG.WMCnf.div.3">
+<h1 id="SAG.WMCnf.mkr.2">Fichiers de configuration du Gestionnaire de l'espace
+de travail<indexterm><primary>Gestionnaire de l'espace de travail</primary>
+<secondary>fichiers de configuration</secondary></indexterm><indexterm><primary>Fichiers</primary><secondary>de configuration</secondary><tertiary>Gestionnaire
+de l'espace de travail</tertiary></indexterm><indexterm><primary>Fichiers</primary><secondary>de configuration</secondary><tertiary>Gestionnaire de
+l'espace de travail</tertiary></indexterm></h1>
+<p>Le Gestionnaire de l'espace de travail rassemble les informations concernant
+les menus de fen&ecirc;tres et d'espaces de travail, et les associations de
+fonctions aux touches et aux boutons contenues dans les fichiers de configuration.
+</p>
+<p>Il fait appel &agrave; l'un des fichiers suivants:</p>
+<ul remap="Bullet1">
+<li><p>fichier personnel: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt><indexterm><primary>Fichier</primary>
+<secondary>dtwmrc</secondary></indexterm></p>
+</li>
+<li><p>fichier de niveau syst&egrave;me: <tt>/etc/dt/config/</tt><i role="Variable">langue</i><tt>/sys.dtwmrc</tt><indexterm>
+<primary>Fichier</primary><secondary>sys.dtwmrc</secondary></indexterm></p>
+</li>
+<li><p>fichier int&eacute;gr&eacute; :<tt>/usr/dt/config/</tt><i role="Variable">langue</i><tt>/sys.dtwmrc.</tt></p>
+</li>
+</ul>
+<p>Le Gestionnaire de l'espace de travail recherche un fichier de configuration
+dans l'ordre ci-dessus et utilise le premier fichier trouv&eacute;.</p>
+<p>Pour les utilisateurs de langues de session multiples, il est possible
+de cr&eacute;er un fichier de configuration personnel et tributaire de la
+langue <tt><i role="Variable">R&eacute;p_Personnel</i>/.dt/<i role="Variable">langue</i>/dtwrmc</tt>. Ce fichier est alors prioritaire
+sur le fichier <tt><i role="Variable">R&eacute;p_Personnel</i>/.dt/dtwmrc</tt>.</p>
+<sect2 id="SAG.WMCnf.div.4" role="Procedure">
+<h1 id="SAG.WMCnf.mkr.3">Cr&eacute;ation ou modification d'un fichier de
+configuration personnel<indexterm><primary>Gestionnaire de l'espace de travail</primary><secondary>personnalisation</secondary></indexterm></h1>
+<p>Le fichier personnel de configuration du Gestionnaire de l'espace de
+travail est <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt>. Le cas &eacute;ch&eacute;ant, c'est ce fichier qui
+est utilis&eacute;.</p>
+<ol>
+<li><p>Cliquez deux fois<indexterm><primary>Editer Dtwmrc</primary>
+</indexterm><indexterm><primary>Fichier</primary><secondary>dtwmrc</secondary>
+<tertiary>&eacute;</tertiary></indexterm><indexterm><primary>dition</primary>
+</indexterm> sur Editer Dtwmrc dans le groupe d'applications <structname>Outils_Bureau</structname>.</p>
+<p>Si vous disposez d&eacute;j&agrave; d'un fichier personnel <tt>dtwmrc</tt>, il est charg&eacute; dans l'&eacute;diteur. Si tel n'est
+pas le cas, le fichier <tt>sys.dtwmrc</tt> est copi&eacute; dans <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt>,
+qui est ensuite charg&eacute; dans l'&eacute;diteur.</p>
+</li>
+<li><p>Modifiez le fichier.</p>
+</li>
+<li><p>Quittez l'&eacute;diteur.</p>
+<p>Le fichier est enregistr&eacute; comme &eacute;tant votre fichier <code>dtwmrc</code> personnel, quelle que soit sa source.</p>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="SAG.WMCnf.div.5" role="Procedure">
+<h1>Cr&eacute;ation d'un fichier de configuration appliqu&eacute; au syst&egrave;me<indexterm>
+<primary>Gestionnaire de l'espace de travail</primary><secondary>personnalisation
+appliqu&eacute;e au syst&egrave;me</secondary></indexterm></h1>
+<p>Le fichier de configuration du Gestionnaire de l'espace de travail appliqu&eacute;
+au syst&egrave;me est <tt>/etc/dt/config/</tt><i>langue</i><tt>/sys.dtwmrc</tt>.</p>
+<ul>
+<li><p>Copiez <tt>/usr/dt/config/</tt><i role="Variable">langue</i><tt>/sys.dtwmrc</tt><indexterm><primary>Fichier</primary><secondary>sys.dtwmrc</secondary></indexterm> dans <tt>/etc/dt/config/</tt><i role="Variable">langue</i><tt>/sys.dtwmrc</tt>.
+</p>
+</li>
+</ul>
+<note>
+<p>Ce fichier n'est pas utilis&eacute; si <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt> existe.</p>
+</note>
+</sect2>
+<sect2 id="SAG.WMCnf.div.6" role="Procedure">
+<h1 id="SAG.WMCnf.mkr.4">Inclusion d'autres fichiers<indexterm><primary>Gestionnaire de l'espace de travail</primary><secondary>inclusion d'autres
+fichiers</secondary></indexterm></h1>
+<ul>
+<li><p>Utilisez la syntaxe:</p>
+<programlisting remap="CodeIndent1">include  
+{
+   chemin
+   chemin 
+    &hellip; 
+}</programlisting>
+<indexterm><primary>Instruction d'inclusion</primary></indexterm></li>
+</ul>
+<p>Les lignes suivantes, par exemple, proviennent du fichier <tt>/users/ellen/mymenu</tt>:</p>
+<programlisting>include
+{
+   /users/ellen/mymenu
+}</programlisting>
+<p>Les instructions d'inclusion offrent des possibilit&eacute;s suppl&eacute;mentaires
+sans n&eacute;cessiter la copie du fichier de configuration dans sa totalit&eacute;.
+Un utilisateur peut, par exemple, cr&eacute;er une nouvelle association de
+touches sans avoir &agrave; g&eacute;rer l'ensemble du fichier de configuration.
+L'utilisateur peut cr&eacute;er un fichier <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt> contenant:</p>
+<programlisting>include
+{
+   /etc/dt/config/C/sys.dtwmrc
+}
+Keys DtKeyBindings
+{
+   Alt&lt;Key>F5 root f.menu Applications
+}
+Menu Applications
+{
+   "GraphicsApp" f.exec "/usr/bin/GraphicsApp/GApp"
+   &hellip;
+}</programlisting>
+</sect2>
+<sect2 id="SAG.WMCnf.div.7" role="Procedure">
+<h1>Relance du Gestionnaire de l'espace de travail<indexterm><primary>Gestionnaire de l'espace de travail</primary><secondary>relance</secondary>
+</indexterm></h1>
+<p>Le Gestionnaire de l'espace de travail doit &ecirc;tre relanc&eacute;
+pour que les modifications effectu&eacute;es dans le fichier de configuration
+prennent effet.</p>
+<ul>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail (positionnez le pointeur sur le fond
+et appuyez sur le bouton 3 de la souris).</p>
+</li>
+</ul>
+</sect2>
+</div>
+<sect1 id="SAG.WMCnf.div.8">
+<h1 id="SAG.WMCnf.mkr.5">Personnalisation d'un espace de travail</h1>
+<p>La plupart des personnalisations d'espaces de travail, telles que la
+modification de leurs noms et de leur nombre, peuvent &ecirc;tre effectu&eacute;es
+par l'utilisateur &agrave; l'aide de l'interface du Bureau. Toutefois, le
+Gestionnaire de l'espace de travail fournit les ressources n&eacute;cessaires
+&agrave; la configuration de param&egrave;tres par d&eacute;faut appliqu&eacute;s
+au syst&egrave;me.</p>
+<sect2 id="SAG.WMCnf.div.9" role="Procedure">
+<h1 id="SAG.WMCnf.mkr.6">Modification du nombre d'espaces de travail appliqu&eacute;s
+au syst&egrave;me<indexterm><primary>Espaces de travail</primary><secondary>nombre</secondary></indexterm></h1>
+<p>La configuration par d&eacute;faut du Bureau comporte quatre espaces
+de travail. L'utilisateur peut en ajouter ou en supprimer &agrave; l'aide
+du menu instantan&eacute; associ&eacute; au s&eacute;lecteur d'espace de travail
+(zone de commutation).</p>
+<p>Le Gestionnaire de l'espace de travail permet de modifier le nombre
+d'espaces de travail par d&eacute;faut.</p>
+<ul>
+<li><p>Utilisez la ressource <systemitem>workspaceCount</systemitem>
+pour d&eacute;finir un nombre:</p>
+<para remap="CodeIndent1"><systemitem>Dtwm*workspaceCount</systemitem>: <i role="Variable">nombre</i><indexterm><primary>Ressources</primary><secondary>workspaceCount</secondary></indexterm></p>
+</li>
+</ul>
+<p>Pour plus de d&eacute;tails sur la configuration des ressources du Gestionnaire
+de l'espace de travail, reportez-vous &agrave; la section <!--Original XRef
+content: '&rdquo;Définition de ressources d'applications&rdquo;, page&numsp;272'--><xref
+role="SecTitleAndPageNum" linkend="SAG.FACol.mkr.2">.</p>
+<p>Par exemple, la ressource suivante permet de d&eacute;finir six espaces
+de travail:</p>
+<p><systemitem>Dtwm*workspaceCount</systemitem>: 6</p>
+</sect2>
+<sect2 id="SAG.WMCnf.div.10" role="Procedure">
+<h1>D&eacute;signation des espaces de travail de niveau syst&egrave;me<indexterm>
+<primary>Espaces de travail</primary><secondary>noms</secondary></indexterm></h1>
+<p>Le nombre d'espaces de travail est d&eacute;fini par la convention <code>ws</code><i role="Variable">n</i>, o&ugrave; <i role="Variable">n</i> correspond &agrave; 0, 1, 2, etc. Par exemple, les quatre espaces
+de travail par d&eacute;faut sont num&eacute;rot&eacute;s de <tt>ws0</tt> &agrave; <tt>ws3</tt>.</p>
+<ul>
+<li><p>Utilisez la ressource <systemitem>title</systemitem><indexterm>
+<primary>Ressource</primary><secondary>title</secondary></indexterm> pour modifier
+le nom d'un espace de travail donn&eacute;:</p>
+<para remap="CodeIndent1"><systemitem>Dtwm*ws</systemitem><i role="Variable">n</i>: <i role="Variable">nom</i></p>
+
+<Para Remap="CodeIndent1"><systemitem>Dtwm*ws</systemitem><Symbol Role="Variable">n</Symbol>.title: <Symbol Role="Variable">name</Symbol></Para>
+
+</li>
+</ul>
+<p>Pour plus de d&eacute;tails sur la d&eacute;finition des ressources
+du Gestionnaire de l'espace de travail, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Définition de ressources d'applications&rdquo;, page&numsp;272'--><xref
+role="SecTitleAndPageNum" linkend="SAG.FACol.mkr.2">.</p>
+<p>Par exemple, les ressources suivantes permettent d'affecter aux quatre
+espaces de travail par d&eacute;faut des noms donn&eacute;s:</p>
+<programlisting>Dtwm*ws0*title:  Anne
+Dtwm*ws1*title:  Daniel
+Dtwm*ws2*title:  Julie
+Dtwm*ws3*title:  Patrick</programlisting>
+</sect2>
+<sect2 id="SAG.WMCnf.div.11" role="Procedure">
+<h1>Cr&eacute;ation de fonds suppl&eacute;mentaires<indexterm><primary>Fond</primary><secondary>ajout</secondary></indexterm></h1>
+<ol>
+<li><p>Cr&eacute;ez les images des fonds. Il peut s'agir de fichiers
+bitmap ou de mappe de pixels.</p>
+</li>
+<li><p><indexterm><primary>Fond</primary><secondary>emplacement des
+fichiers</secondary></indexterm>Copiez les fonds dans l'un des r&eacute;pertoires
+suivants. Au besoin, cr&eacute;ez ce r&eacute;pertoire.</p>
+<ul remap="Bullet2">
+<li><p>Fonds appliqu&eacute;s au syst&egrave;me: <tt>/etc/dt/backdrops</tt></p>
+</li>
+<li><p>Fonds personnels: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/backdrops</tt></p>
+</li>
+</ul>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</orderedlist>
+<p>Les fonds personnels et de niveau syst&egrave;me sont ajout&eacute;s
+aux fonds int&eacute;gr&eacute;s dans <tt>/usr/dt/backdrops</tt>.
+</p>
+<p>Vous pouvez remplacer un fond int&eacute;gr&eacute; par un fond personnel
+ou de niveau syst&egrave;me que vous aurez cr&eacute;&eacute;.</p>
+</sect2>
+<sect2 id="SAG.WMCnf.div.12" role="Procedure">
+<h1 id="SAG.WMCnf.mkr.7">Remplacement d'un fond par une image graphique<indexterm>
+<primary>Fond</primary><secondary>image graphique</secondary></indexterm></h1>
+<p>Les fonds apparaissent en couches<indexterm><primary>Fen&ecirc;tre</primary><secondary>racine</secondary></indexterm> sur la fen&ecirc;tre racine.
+La bo&icirc;te de dialogue Fond du Gestionnaire de configuration comporte
+un param&egrave;tre<indexterm><primary>NoBackdrop</primary></indexterm> NoBackdrop
+pour lequel le fond est transparent.</p>
+<p>Une seule fen&ecirc;tre racine se trouve derri&egrave;re les fonds de
+l'espace de travail. Ainsi, une image graphique plac&eacute;e dans la fen&ecirc;tre
+racine est conserv&eacute;e dans tous les espaces de travail. Vous pouvez
+indiquer les espaces de travail qui couvrent la fen&ecirc;tre racine avec
+un fond. L'image visible lorsque le param&egrave;tre NoBackdrop est s&eacute;lectionn&eacute;
+sera toutefois commune &agrave; l'ensemble des espaces de travail.</p>
+<ol>
+<li><p>Cr&eacute;ez l'image graphique. Son format doit &ecirc;tre
+compatible avec vos outils et permettre son affichage dans la fen&ecirc;tre
+racine. Par exemple, pour utiliser <code>xsetroot</code>, vous devez
+cr&eacute;er un fichier de bitmap.</p>
+</li>
+<li><p>S'il n'existe pas, cr&eacute;ez un fichier ex&eacute;cutable <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/sessions/sessionetc</tt>. Le fichier <tt>sessionetc</tt> est ex&eacute;cut&eacute;
+chaque fois que l'utilisateur se connecte.</p>
+</li>
+<li><p>Entrez la commande d'affichage de l'image dans le fichier <tt>sessionetc</tt>.</p>
+<p>La commande suivante, par exemple, juxtapose le fichier bitmap sur la
+fen&ecirc;tre racine:</p>
+<para remap="CodeIndent1"><code>xsetroot -bitmap</code> <tt>/users/ellen/.dt/icons/root.bm</tt></p>
+</li>
+</orderedlist>
+</sect2>
+</div>
+<sect1 id="SAG.WMCnf.div.13">
+<h1 id="SAG.WMCnf.mkr.8">Menus du Gestionnaire de l'espace de travail<indexterm>
+<primary>Menus</primary><secondary>Gestionnaire de l'espace de travail</secondary>
+</indexterm><indexterm><primary>Gestionnaire de l'espace de travail</primary>
+<secondary>menus</secondary></indexterm></h1>
+<p>Le Gestionnaire de l'espace de travail comporte trois menus par d&eacute;faut:
+</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="159*">
+<colspec colwidth="369*">
+<table>
+<tr>
+<td align="left" valign="top"><p>Menu Espace de travail<indexterm>
+<primary>Menu Espace de travail</primary><secondary>d&eacute;finition</secondary>
+</indexterm></p></td>
+<td align="left" valign="top"><p>(Ou menu racine). Il s'affiche lorsque
+l'utilisateur positionne le pointeur sur le fond et appuie sur le bouton 3
+de la souris et ce gr&acirc;ce &agrave; une association de touches.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Menu Fen&ecirc;tre<indexterm><primary>Menu Fen&ecirc;tre</primary></indexterm><indexterm><primary></primary><secondary>d&eacute;finition</secondary></indexterm></p></td>
+<td align="left" valign="top"><p>Il s'affiche lorsque l'utilisateur
+positionne le pointeur sur le bouton du menu Fen&ecirc;tre (angle sup&eacute;rieur
+gauche de la fen&ecirc;tre) et appuie sur le bouton 1 ou 3 de la souris et
+ce gr&acirc;ce &agrave; la ressource <code><indexterm><primary>Ressource</primary><secondary>windowMenu</secondary></indexterm>windowMenu</code>.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Menu Tableau de bord<indexterm><primary>Tableau de bord</primary><secondary>menu</secondary></indexterm></p></td>
+<td align="left" valign="top"><p>Il s'affiche lorsque l'utilisateur
+positionne le pointeur sur le bouton du menu Fen&ecirc;tre du Tableau de bord
+et appuie sur le bouton 1 ou 3 de la souris</p></td></tr></table>
+</tgroup></informaltable>
+<sect2 id="SAG.WMCnf.div.14">
+<h1 id="SAG.WMCnf.mkr.9">Syntaxe des menus du Gestionnaire de l'espace de
+travail<indexterm><primary>Menu Fen&ecirc;tre</primary><secondary>syntaxe</secondary></indexterm><indexterm><primary>Menu Espace de travail</primary>
+<secondary>syntaxe</secondary></indexterm></h1>
+<p>La syntaxe des menus du Gestionnaire de l'espace de travail est la suivante:
+</p>
+<programlisting>MenuNom_menu
+{
+   s&eacute;lection1 [mn&eacute;monique] [acc&eacute;l&eacute;rateur] fonction [argument]
+   s&eacute;lection2 [mn&eacute;monique] [acc&eacute;l&eacute;rateur] fonction [argument]
+   &hellip;
+}</programlisting>
+<p>O&ugrave;:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="130*">
+<colspec colwidth="398*">
+<table>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">s&eacute;lection</i></p></td>
+<td align="left" valign="top"><p>Texte ou bitmap qui appara&icirc;t
+dans le menu. Si le texte comporte des espaces, d&eacute;limitez-le par des
+guillemets. Pour les bitmaps, utilisez la syntaxe @/<i role="Variable">chemin</i>.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">mn&eacute;monique</i></p></td>
+<td align="left" valign="top"><p>Caract&egrave;re unique qui agit comme
+un raccourci-clavier lorsque le menu est affich&eacute;. Ce caract&egrave;re
+appara&icirc;t dans le format <tt>_</tt><i role="Variable">caract&egrave;re</i>.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">acc&eacute;l&eacute;rateur</i></p></td>
+<td align="left" valign="top"><p>Raccourci-clavier actif, que le menu
+soit affich&eacute; ou non. La syntaxe des acc&eacute;l&eacute;rateurs est <i role="Variable">modificateur</i><computeroutput>&lt;Key></computeroutput> <i role="Variable">touche</i> o&ugrave; le modificateur est <code>Ctrl</code>, <code>Maj</code>, <code>Alt</code> (Caract&egrave;re
+&eacute;tendu) ou <code>Lock</code>. Pour une liste de toutes les touches
+mn&eacute;moniques possibles, reportez-vous au fichier <tt>keysymdef.h</tt> du r&eacute;pertoire "X11 include".</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">f onction</i></p><indexterm>
+<primary>Gestionnaire de l'espace de travail</primary><secondary>fonctions </secondary></indexterm></td>
+<td align="left" valign="top"><p>Fonction ex&eacute;cut&eacute;e lors
+de cette s&eacute;lection. Pour consulter la liste des fonctions, reportez-vous
+&agrave; la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)</tt>.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">argument</i></p></td>
+<td align="left" valign="top"><p>Arguments de fonction. Pour plus de
+d&eacute;tails, reportez-vous &agrave; la page de manuel <tt>dtwmrc(4)</tt>.</p></td></tr></table></tgroup></informaltable>
+<p>L'option de menu Restaurer, par exemple, r&eacute;tablit la fen&ecirc;tre.
+Ainsi, lorsque le menu est affich&eacute;, vous pouvez r&eacute;tablir la
+fen&ecirc;tre en appuyant sur la touche &ldquo;R&rdquo; ou sur F5.</p>
+<programlisting>Restore   _R   Alt&lt;Key> F5  f.normalize</programlisting>
+<note>
+<p>Pour plus de d&eacute;tails sur la syntaxe des menus du Gestionnaire
+de l'espace de travail, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)</tt>.</p>
+</note>
+</sect2>
+<sect2 id="SAG.WMCnf.div.15" role="Procedure">
+<h1>Modification du menu racine Espace de travail<indexterm><primary>Menu Espace de travail</primary><secondary>modification</secondary></indexterm><indexterm>
+<primary>&lt;$nopage>Menu racine, voir Espace de travail</primary></indexterm></h1>
+<ol>
+<li><p>Ouvrez le fichier correspondant pour le modifier:</p>
+<ul remap="Bullet2">
+<li><p>personnel: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt></p>
+</li>
+<li><p>fichier syst&egrave;me: <tt>/etc/dt/config/</tt> <i>langue</i><tt>/sys.dtwmrc</tt></p>
+<p>Pour plus de d&eacute;tails sur la cr&eacute;ation de ces fichiers,
+reportez-vous &agrave; la section <!--Original XRef content: '&rdquo;Fichiers
+de configuration du Gestionnaire de l'espace de travail&rdquo;, page&numsp;258'--><xref
+role="SecTitleAndPageNum" linkend="SAG.WMCnf.mkr.2">.</p>
+</li>
+</ul>
+</li>
+<li><p>Modifiez la description du menu Espace de travail.</p>
+<p>Son nom par d&eacute;faut est<indexterm><primary>DtRootMenu</primary>
+</indexterm> DtRootMenu.</p>
+<programlisting remap="CodeIndent1">Menu DtRootMenu 
+{ 
+   &ldquo;Workspace Menu&rdquo;                     f.title 
+   &ldquo;Shuffle Up&rdquo;                         f.circle_up 
+   &ldquo;Shuffle Down&rdquo;                       f.circle_down
+   &hellip; 
+}</programlisting>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="SAG.WMCnf.div.16" role="Procedure">
+<h1 id="SAG.WMCnf.mkr.10">Cr&eacute;ation d'un nouveau menu racine Espace
+de travail<indexterm><primary>Menu Espace de travail</primary><secondary>cr&eacute;ation</secondary></indexterm></h1>
+<ol>
+<li><p>Ouvrez le fichier correspondant pour le modifier:</p>
+<ul remap="Bullet2">
+<li><p>personnel: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt></p>
+</li>
+<li><p>fichier syst&egrave;me: <tt>/etc/dt/config/</tt> <i>langue</i><tt>/sys.dtwmrc</tt></p>
+<p>Pour plus de d&eacute;tails sur la cr&eacute;ation de ces fichiers,
+reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Fichiers
+de configuration du Gestionna--><!--ire de l'espace de travail&rdquo;,
+page&numsp;258'--><xref role="SecTitleAndPageNum" linkend="sag.wmcnf.mkr.2">.
+</p>
+</li>
+</ul>
+</li>
+<li><p>Cr&eacute;ation du nouveau menu:</p>
+<programlisting remap="CodeIndent1">Menu nom_menu 
+{ 
+   &hellip; 
+}</programlisting>
+<p>Reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Syntaxe
+des menus du Gestionnaire de l--><!--'espace de travail&rdquo;,
+page&numsp;264'--><xref role="SecTitleAndPageNum" linkend="sag.wmcnf.mkr.9">.
+</p>
+</li>
+<li><p>Cr&eacute;ez ou modifiez l'association de fonction au bouton
+permettant d'afficher le nouveau menu.</p>
+<p>Si ce dernier remplace le menu existant, modifiez l'association de fonction
+au bouton permettant d'afficher le menu Espace de travail.</p>
+<programlisting>&lt;Btn3Down> root f.menu <i role="Variable">nom_menu</i></programlisting>
+<p>S'il s'agit d'un menu suppl&eacute;mentaire, cr&eacute;ez une nouvelle
+association. L'association suivante, par exemple, permet d'afficher le menu
+lorsque vous appuyez simultan&eacute;ment sur la touche Maj et sur le bouton
+3 de la souris apr&egrave;s avoir positionn&eacute; le pointeur sur le fond:
+</p>
+<programlisting>Maj&lt;Btn3Down> root f.menu <i role="Variable">nom_menu</i></programlisting>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer le Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="SAG.WMCnf.div.17" role="Procedure">
+<h1 id="SAG.WMCnf.mkr.11">Cr&eacute;ation d'un nouveau menu Fen&ecirc;tre<indexterm>
+<primary>Menu Fen&ecirc;tre</primary><secondary>nouveau</secondary></indexterm></h1>
+<note>
+<p>Le menu Fen&ecirc;tre est int&eacute;gr&eacute; au Gestionnaire de l'espace
+de travail et n'est g&eacute;n&eacute;ralement pas personnalis&eacute;. Pour
+conserver une certaine coh&eacute;rence dans le comportement des fen&ecirc;tres
+d'une application &agrave; une autre, il est pr&eacute;f&eacute;rable de ne
+pas effectuer de grandes modifications dans le menu Fen&ecirc;tre.</p>
+</note>
+<ol>
+<li><p>Ouvrez le fichier correspondant pour le modifier:</p>
+<ul remap="Bullet2">
+<li><p>personnel: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt></p>
+</li>
+<li><p>fichier syst&egrave;me: <tt>/etc/dt/config/</tt> <i>langue</i><tt>/sys.dtwmrc</tt>.</p>
+<p>Pour plus de d&eacute;tails sur la cr&eacute;ation de ces fichiers,
+reportez-vous &agrave; la section <!--Original XRef content: '&rdquo;Fichiers
+de configuration du Gestionnaire de l'espace de travail&rdquo;, page&numsp;258'--><xref
+role="SecTitleAndPageNum" linkend="SAG.WMCnf.mkr.2">.</p>
+</li>
+</ul>
+</li>
+<li><p>Cr&eacute;ation du nouveau menu:</p>
+<programlisting remap="CodeIndent1">Menu nom_menu 
+{ 
+   &hellip;
+}</programlisting>
+</li>
+<li><p>Utilisez la ressource <systemitem>windowMenu</systemitem>
+pour pr&eacute;ciser le nouveau menu:</p>
+<para remap="CodeIndent1"><systemitem>Dtwm*windowMenu</systemitem>: <i role="Variable">nom_menu</i></p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</orderedlist>
+</sect2>
+</div>
+<sect1 id="SAG.WMCnf.div.18">
+<h1 id="SAG.WMCnf.mkr.12">Personnalisation des associations de fonctions
+aux boutons<indexterm><primary>Gestionnaire de l'espace de travail</primary>
+<secondary>association de fonction au bouton</secondary></indexterm><indexterm>
+<primary>Association de fonction au bouton</primary></indexterm><indexterm>
+<primary>&lt;$nopage>Bouton de souris, voir Association de fonction au bouton</primary></indexterm></h1>
+<p>Une <em>association de fonction au bouton</em> permet l'ex&eacute;cution
+d'une fonction du gestionnaire de fen&ecirc;tres par l'utilisation simultan&eacute;e
+d'un bouton de la souris et d'une touche du clavier. Ces associations s'appliquent
+&agrave; tous les espaces de travail.</p>
+<p>Les associations par d&eacute;faut sont d&eacute;finies dans le fichier
+de configuration du Gestionnaire de l'espace de travail en un jeu d'associations
+appel&eacute; <code><indexterm><primary>DtButtonBindings</primary></indexterm>DtButtonBindings</code>:</p>
+<programlisting>Buttons DtButtonBindings
+{
+   &hellip;
+}</programlisting>
+<sect2 id="SAG.WMCnf.div.19">
+<h1 id="SAG.WMCnf.mkr.13">Syntaxe des associations de fonctions aux boutons<indexterm>
+<primary>Association de fonction au bouton</primary><secondary>syntaxe</secondary>
+</indexterm></h1>
+<p>Cette syntaxe est la suivante:</p>
+<programlisting>Buttons Nom_jeu_associations_boutons
+{
+   [modificateur]&lt;nom_bouton Action_souris> contexte fonction  [argument]
+   [modificateur]&lt;nom_bouton Action_souris> contexte fonction  [argument]
+}</programlisting>
+<p>O&ugrave;:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="119*">
+<colspec colwidth="409*">
+<table>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">nom_bouton</i></p></td>
+<td align="left" valign="top"><p>Btn1 - Bouton gauche de la souris.
+</p><p>Btn2 - Bouton du milieu (souris &agrave; trois boutons) ou
+les deux boutons (souris &agrave; deux boutons).</p><p>Btn3 - Bouton
+droit de la souris.</p><p>Btn4 - Boutons 1 et 2 (ensemble) d'une souris
+&agrave; 3 boutons.</p><p>Btn5 - Boutons 2 et 3 (ensemble) d'une souris
+&agrave; 3 boutons.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">modificateur</i></p></td>
+<td align="left" valign="top"><p>Ctrl, Maj, Alt, Lock</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">action_souris</i></p></td>
+<td align="left" valign="top"><p>Down - Appuyez sur un bouton de souris.
+</p><p>Up - Rel&acirc;chez le bouton.</p><p>Click- Appuyez
+sur le bouton et rel&acirc;chez-le.</p><p>Click2 - Cliquez deux fois.
+</p><p>Drag - D&eacute;placez la souris tout en maintenant le bouton
+enfonc&eacute;.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">contexte</i></p></td>
+<td align="left" valign="top"><p>Indique l'emplacement du pointeur pour
+que l'association prenne effet. Au besoin, s&eacute;parez les &eacute;l&eacute;ments
+par le signe " | ".</p><p>root</p><p>- Fen&ecirc;tre de l'espace
+de travail</p><p>window - Fen&ecirc;tre cliente ou cadre de la fen&ecirc;tre
+</p><p>frameCadre de la fen&ecirc;tre, sans le contenu</p><p>icon -Ic&ocirc;ne</p><p>title&lt;-Barre de titre</p><p>app-
+Fen&ecirc;tre cliente, sans le cadre</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">function</i></p></td>
+<td align="left" valign="top"><p>L'une des fonctions du gestionnaire
+de fen&ecirc;tres. Pour consulter la liste des fonctions valides, reportez-vous
+&agrave; la page de manuel <filename moreinfo="refentry">dtwmrc(4)</tt>.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">argument</i></p></td>
+<td align="left" valign="top"><p>Argument de fonction du gestionnaire
+de fen&ecirc;tres requis. Pour plus de d&eacute;tails, reportez-vous &agrave;
+la page de manuel <filename moreinfo="refentry">dtwmrc(4)</tt>.</p></td>
+</tr></table></tgroup></informaltable>
+<p>La ligne suivante, par exemple, permet d'afficher le menu d&eacute;crit
+dans <code>DtRootMenu</code> lorsque vous appuyez sur le bouton 3 de
+la souris alors que le pointeur se trouve dans la fen&ecirc;tre de l'espace
+de travail (mais pas dans une fen&ecirc;tre cliente).</p>
+<programlisting>&lt;Btn3Down>    root    f.menu    DtRootMenu</programlisting>
+<note>
+<p>Pour plus de d&eacute;tails sur la syntaxe des associations de fonctions
+aux boutons, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)</tt>.</p>
+</note>
+</sect2>
+<sect2 id="SAG.WMCnf.div.20" role="Procedure">
+<h1>Ajout d'une association de fonction au bouton<indexterm><primary>Association de fonction au bouton</primary><secondary>ajout</secondary></indexterm></h1>
+<ol>
+<li><p>Ouvrez le fichier correspondant pour le modifier:</p>
+<ul remap="Bullet2">
+<li><p>personnel: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt></p>
+</li>
+<li><p>fichier syst&egrave;me: <tt>/etc/dt/config/</tt> <i>langue</i><tt>/sys.dtwmrc</tt></p>
+<p>Pour plus de d&eacute;tails sur la cr&eacute;ation de ces fichiers,
+reportez-vous &agrave; la section <!--Original XRef content: '&rdquo;Fichiers
+de configuration du Gestionnaire de l'espace de travail&rdquo;, page&numsp;258'--><xref
+role="SecTitleAndPageNum" linkend="SAG.WMCnf.mkr.2">.</p>
+</li>
+</ul>
+</li>
+<li><p>Ajoutez l'association &agrave; la d&eacute;finition <systemitem>DtButtonBindings</systemitem>.</p>
+<p>Attribuez une seule fonction &agrave; un m&ecirc;me bouton.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</orderedlist>
+</sect2>
+<sect2 id="SAG.WMCnf.div.21" role="Procedure">
+<h1 id="SAG.WMCnf.mkr.14">Cr&eacute;ation d'un nouveau jeu d'associations
+de fonctions aux boutons<indexterm><primary>Association de fonction au bouton</primary><secondary>cr&eacute;ation d'un nouveau jeu</secondary></indexterm></h1>
+<ol>
+<li><p>Ouvrez le fichier correspondant pour le modifier:</p>
+<ul remap="Bullet2">
+<li><p>personnel: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt></p>
+</li>
+<li><p>fichier syst&egrave;me: <tt>/etc/dt/config/</tt> <i>langue</i><tt>/sys.dtwmrc</tt></p>
+<p>Pour plus de d&eacute;tails sur la cr&eacute;ation de ces fichiers,
+reportez-vous &agrave; la section <!--Original XRef content: '&rdquo;Fichiers
+de configuration du Gestionnaire de l'espace de travail&rdquo;, page&numsp;258'--><xref
+role="SecTitleAndPageNum" linkend="SAG.WMCnf.mkr.2">.</p>
+</li>
+</ul>
+</li>
+<li><p>Cr&eacute;ez le nouveau jeu d'associations. Reportez-vous
+&agrave; la section <!--Original XRef content: '&rdquo;Syntaxe des associations
+de fonctions aux boutons&rdquo;, page&numsp;267'--><xref role="SecTitleAndPageNum"
+linkend="SAG.WMCnf.mkr.13">.</p>
+</li>
+<li><p>D&eacute;finissez le nouveau nom de la ressource <systemitem>buttonBindings</systemitem>:<indexterm><primary>Ressources</primary><secondary>buttonBindings</secondary></indexterm></p>
+<para remap="CodeIndent1"><systemitem>Dtwm*buttonBindings</systemitem>: <i role="Variable">Nom_jeu_associations_boutons</i></p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</orderedlist>
+<note>
+<p>Les nouvelles associations remplacent les associations qui existaient
+d&eacute;j&agrave;. Copiez celles que vous souhaitez conserver &agrave; partir
+de <systemitem>DtButtonBindings</systemitem>.</p>
+</note>
+</sect2>
+</div>
+<sect1 id="SAG.WMCnf.div.22">
+<h1 id="SAG.WMCnf.mkr.15">Personnalisation des associations de fonctions
+aux touches</h1>
+<p>Les <em>associations de fonctions aux touches</em> attribuent
+des fonctions du Gestionnaire de l'espace de travail &agrave; des touches
+du clavier. Ces associations s'appliquent &agrave; tous les espaces de travail.
+</p>
+<note>
+<p>Choisissez les associations avec pr&eacute;caution. Maj-A permet normalement
+d'entrer la mettre &ldquo;A&rdquo;. Si vous associez une autre fonction &agrave;
+cette combinaison de touches, la fonction d'origine devient inactive.</p>
+</note>
+<sect2 id="SAG.WMCnf.div.23">
+<h1>Associations par d&eacute;faut de fonctions aux touches<indexterm>
+<primary>Association de fonctions aux touches</primary><secondary>d&eacute;faut</secondary></indexterm></h1>
+<p>Les associations par d&eacute;faut sont d&eacute;finies dans le fichier
+de configuration du Gestionnaire de l'espace de travail en un jeu d'associations
+appel&eacute; <systemitem>DtKeyBindings</systemitem>.</p>
+<programlisting>Keys DtKeyBindings
+{
+   &hellip;
+}</programlisting>
+</sect2>
+<sect2 id="SAG.WMCnf.div.24">
+<h1 id="SAG.WMCnf.mkr.16">Syntaxe des associations de fonctions aux touches<indexterm>
+<primary>Association de fonctions aux touches</primary><secondary>syntaxe</secondary></indexterm></h1>
+<p>Cette syntaxe est la suivante:</p>
+<programlisting>Keys Nom_jeu_associations_touches
+{
+   [Modificateurs]&lt;Key>nom_touche contexte fonction  [argument]
+   [Modificateurs]&lt;Key>nom_touche contexte fonction  [argument]
+    &hellip; 
+}</programlisting>
+<p>O&ugrave;:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="132*">
+<colspec colwidth="396*">
+<table>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">Modificateurs</i></p></td>
+<td align="left" valign="top"><p><code>Ctrl</code>, <code>Maj</code>, <code>Alt</code> et <code>Lock</code>. Des modificateurs
+multiples, s&eacute;par&eacute;s par des espaces, sont accept&eacute;s.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">nom_touche</i></p></td>
+<td align="left" valign="top"><p>Touche correspondant &agrave; la fonction.
+Le <i role="Variable">nom_touche</i> des touches portant des lettres
+ou des chiffres (par exemple, "a", "2", "Tab", "F3") correspond au caract&egrave;re
+inscrit sur la touche.</p></td></tr></table></tgroup></informaltable>
+<p>Le libell&eacute; des autres touches doit &ecirc;tre explicite, par
+exemple, <code>plus</code> pour la touche &ldquo;+&rdquo;. Le fichier <tt>keysymdef.h</tt>, figurant dans un r&eacute;pertoire syst&egrave;me
+contient des informations suppl&eacute;mentaires sur le nom des touches.
+</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="106*">
+<colspec colwidth="422*">
+<table>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">contexte</i></p></td>
+<td align="left" valign="top"><p>El&eacute;ments qui deviennent effectifs
+par l'activation du clavier. Ils peuvent &ecirc;tre concat&eacute;n&eacute;s
+si l'association s'applique &agrave; plusieurs contextes. Les contextes sont
+s&eacute;par&eacute;s par le signe "|".</p><p>root - Fond de l'espace
+de travail <code>window -</code> Fen&ecirc;tre cliente icon - Ic&ocirc;ne
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">fonction</i></p></td>
+<td align="left" valign="top"><p>Fonction du gestionnaire de fen&ecirc;tres.
+Pour consulter la liste des fonctions valides, reportez-vous &agrave; la page
+de manuel <filename moreinfo="RefEntry">dtwmrc(4)</tt>.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">argument</i></p></td>
+<td align="left" valign="top"><p>Argument de fonction du gestionnaire
+de fen&ecirc;tres requis. Pour plus de d&eacute;tails, reportez-vous &agrave;
+la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)</tt>.</p></td>
+</tr></table></tgroup></informaltable>
+<p>L'association suivante, par exemple, permet &agrave; l'utilisateur de
+transmettre l'activation du clavier &agrave; la fen&ecirc;tre transitoire
+d'une application en appuyant sur Alt+F6.</p>
+<programlisting>Alt&lt;Key>F6    window   f.next_key   transient</programlisting>
+<note>
+<p>Pour plus de d&eacute;tails sur la syntaxe des associations de fonctions
+aux touches, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)</tt>.</p>
+</note>
+</sect2>
+<sect2 id="SAG.WMCnf.div.25" role="Procedure">
+<h1 id="SAG.WMCnf.mkr.17">Cr&eacute;ation d'un jeu d'associations personnalis&eacute;es<indexterm>
+<primary>Association de fonctions aux touches</primary><secondary>cr&eacute;ation
+d'un nouveau jeu</secondary></indexterm></h1>
+<ol>
+<li><p>Ouvrez le fichier correspondant pour le modifier:</p>
+<ul remap="Bullet2">
+<li><p>personnel: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/dtwmrc</tt></p>
+</li>
+<li><p>fichier syst&egrave;me: <tt>/etc/dt/config/</tt> <i>langue</i><tt>/sys.dtwmrc</tt></p>
+<p>Pour plus de d&eacute;tails sur la cr&eacute;ation de ces fichiers,
+reportez-vous &agrave; la section <!--Original XRef content: '&rdquo;Fichiers
+de configuration
+du Gestionna--><!--ire de l'espace de travail&rdquo;, page&numsp;258'--><xref
+role="SecTitleAndPageNum" linkend="sag.wmcnf.mkr.2">.</p>
+</li>
+</ul>
+</li>
+</orderedlist>
+<ol>
+<li><p>Cr&eacute;ez un nouveau jeu d'associations de fonctions &agrave;
+des touches portant un nom unique: <i role="Variable">Nom_jeu_associations_touches</i>. Prenez mod&egrave;le sur le jeu d'associations de fonctions aux
+touches par d&eacute;faut, <systemitem>DtKeyBindings</systemitem>.</p>
+</li>
+<li><p>D&eacute;finissez le nouveau nom de la ressource <systemitem>keyBindings</systemitem> :<indexterm><primary>Ressources</primary><secondary>keyBindings</secondary></indexterm></p><?Pub Caret>
+<para remap="CodeIndent1"><systemitem>Dtwm*keyBindings</systemitem>: <i role="Variable">Nom_jeu_associations_touches</i></p>
+</li>
+<li><p>S&eacute;lectionnez l'option &ldquo;Relancer Gestionnaire
+de l'esp. de travail&rdquo; du menu Espace de travail.</p>
+</li>
+</orderedlist>
+<note>
+<p>Les nouvelles associations remplacent celles qui existaient d&eacute;j&agrave;.
+Copiez celles que vous souhaitez conserver &agrave; partir du nouveau jeu
+<systemitem>DtKeyBindings</systemitem>.</p>
+</note>
+</sect2>
+</div>
+<sect1 id="SAG.WMCnf.div.26">
+<h1 id="SAG.WMCnf.mkr.18">Commutation entre comportement par d&eacute;faut
+et comportement personnalis&eacute;<indexterm><primary>Gestionnaire de l'espace
+de travail</primary><secondary>modifi&eacute; en Motif</secondary></indexterm></h1>
+<p>Pour basculer du comportement d'Motif 1.2 par d&eacute;faut et celui
+de la fen&ecirc;tre du Bureau CDE:</p>
+<ol>
+<li><p>Appuyez sur Alt+Maj+Ctrl+!</p>
+</li>
+<li><p>Cliquez sur OK dans la bo&icirc;te de dialogue.</p>
+</li>
+</orderedlist>
+<p>Le rappel du comportement par d&eacute;faut supprime le Tableau de bord
+ainsi que toutes les associations personnalis&eacute;es de fonctions aux boutons
+et aux touches.</p>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
+<?Pub *0000051469>

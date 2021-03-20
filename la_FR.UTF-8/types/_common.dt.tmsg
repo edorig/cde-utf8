@@ -228,7 +228,7 @@ $        Also, don't translate the word 'dtksh'.
 $ 
 $ 
 
-2007 "Hoc scapus continet functiones in lingua programmandi \\\n\
+2007 "Hoc scapus continet functiones in lingua programmatoria \\\n\
                          dtksh. Ejus genus datorum \\\n\
                         est DTKSH_CONV."
 $ ----------------------------------------------------------------------------
@@ -291,7 +291,7 @@ $ 2017 - use the same word as Message 2016 to translate 'LockDisplay'
 $ 
 
 2017 "Actio Obserare_scrinium permittit obserare ordinatrum. \\\n\
-                        Ut deserare, oportet \\\n\
+                        Ad deserandum, oportet \\\n\
                         novisse tesseram usoris vel machinatoris."
 $ 
 $ ----------------------------------------------------------------------------
@@ -306,8 +306,8 @@ $ 2019 - use the same word as Message 2018 to translate 'ExitSession'
 $ 
 
 2019 "Actio Exire_sessio permittit terminare sessio Mensae \\\n\
-                        usoris et proponere scrinium conexus. Ut \\\n\
-                        coepisse sessionem alteram, usor rursus connectere debet."
+                        usoris et proponere scrinium conexus. Ad \\\n\
+                        incipiendum sessionem alteram, usor rursus connectere debet."
 $ 
 $ ----------------------------------------------------------------------------
 $ Messages 2020 - 2021 refer to the ReloadApps action.  Reload apps executes
@@ -332,8 +332,8 @@ $ 2023 - do not translate '(Dtcreate)'.
 $ 
 
 2023 "Actio Actionem creare (Dtcreate) pellet programmam \\\n\
-                        congruentum, utilisée pour créer des définitions \\\n\
-                        d'actions et de types de données pour les applications."
+                        congruentum, usum ad creandum  definitiones \\\n\
+                        actiones et generes datorum programmorum."
 $ 
 $ ----------------------------------------------------------------------------
 $ Messages 2024 - 2025 refer to the Edit Dtwmrc (DtwmrcEdit) action.
@@ -344,15 +344,15 @@ $
 $ 2025 - Don't translate '\$HOME/.dt/dtwmrc', 'EDITOR', or (DtwmrcEdit).
 $ 
 
-2025 "Actio Redigere Dtwmrc (DtwmrcEdit) ouvre une copie du fichier \\\n\
-                        $HOME/.dt/dtwmrc sous l'éditeur système (celui spécifié \\\n\
-                        par la variable d'environnement EDITOR). Si \\\n\
-                        $HOME/.dt/dtwmrc n'existe pas, cette action le \\\n\
-                        crée, en copiant le fichier /usr/dt/config/<langue>/sys.dtwmrc. \\\n\
-                        Lorsque vous sauvegardez le fichier et quittez l'éditeur, \\\n\
-                        vous devez relancer le Gestionnaire de l'espace de travail \\\n\
-                        à l'aide de l'option Relancer le Gestionnaire de travail du \\\n\
-                        menu Espace de travail."
+2025 "Actio Redigere Dtwmrc (DtwmrcEdit) aperit copiam scapi \\\n\
+                        $HOME/.dt/dtwmrc in Editorium systemi (indicatum \\\n\
+                        a variabile ambiti EDITOR). Si \\\n\
+                        scapus $HOME/.dt/dtwmrc deest, illa actio  \\\n\
+                        creat illum, copiando scapum /usr/dt/config/<langue>/sys.dtwmrc. \\\n\
+                        Postquam perscribes scapum et exis editoriis, \\\n\
+                        iterum pellere Rector Spatii Negotii  \\\n\
+                        cum  optione rursus pellere Rector Spatii Negotii \\\n\
+                        in index Spatio Negotii debes."
 $ 
 $ ----------------------------------------------------------------------------
 $ Messages 2026 - 2027 refer to the Mailer (Dtmail) action.
@@ -400,7 +400,7 @@ $ ----------------------------------------------------------------------------
 $ Messages 2032 - 2034 refer to the Icon Editor (Dticon) action.
 $ 
 
-2032 "Editorium iconorum"
+2032 "Editorium iconum"
 $ 
 $ ----------------------------------------------------------------------------
 $ Message 2033. Do not remove the ':'.
@@ -413,9 +413,9 @@ $
 $ 2034 - do not translate '(Dticon)'.
 $ 
 
-2034 "Actio Editorium iconorum (Dticon) permittit pellere l'Editeur \\\n\
-                        d'icônes sur le Bureau ; celui-ci permet de créer \\\n\
-                        et d'éditer des fichiers d'images (bitmaps et pixmaps)."
+2034 "Actio Editorium iconum (Dticon) permittit pellere Editorium\\n\
+                        iconum sur le Bureau ; hoc permittit creare \\\n\
+                        et modifiare scapos imaginum (bitmaps et pixmaps)."
 $ 
 $ ----------------------------------------------------------------------------
 $ Messages 2035 - 2037 refer to the '(None)' action.
@@ -433,7 +433,7 @@ $
 $ 2037 - use the same word as Message 4 to translate '(None)'.
 $ 
 
-2037 "Actio (Aucune) est une action spéciale: elle indique \\\n\
+2037 "Actio (Nihil) est une action spéciale: elle indique \\\n\
                         qu'aucune action n'est disponible pour un \\\n\
                         type de données."
 $ 
@@ -780,10 +780,10 @@ $        translated  '.html', "<HTML>", or "<html>" are used as filename
 $        and CONTENT patterns which match this data type.
 $ 
 
-3027 "Scapus hypertexti linguae programmandi Hyper-Text \\\n\
-                        Markup Language (World Wide Web). Ejus genus datorum \\\n\
-                        est HTML et ejus suffixus, .html. Il peut également \\\n\
-                        contenir les caractères \"<HTML>\" ou \"<html>\".  "
+3027 "Scapus hypertexti linguae programmatoria Hyper-Text \\\n\
+                        Markup Language (Tota Terra Tela). Ejus genus datorum \\\n\
+                         HTML est et ejus suffixus, .html. Potest également \\\n\
+                        continere litteras \"<HTML>\" vel \"<html>\".  "
 $ 
 $ ----------------------------------------------------------------------------
 $ Message 3028 is the description of the RICHTEXT datatype.
@@ -793,8 +793,8 @@ $        translated  '.rt' is used as filename pattern which matches
 $        this data type.
 $ 
 
-3028 "Scapus texti quot continet des définitions \\\n\
-                        de polices et du texte normal. Ejus genus datorum \\\n\
+3028 "Scapus texti quot continet definitiones \\\n\
+                        typorum et textum. Ejus genus datorum \\\n\
                         est RICHTEXT et ejus suffixus, .rt."
 $ 
 $ ----------------------------------------------------------------------------
@@ -805,8 +805,8 @@ $        translated and '.exe' and '.EXE' are the parts of the filename
 $        pattern used to match this datatype.
 $ 
 
-3029 "Il s'agit d'un fichier exécutable sur les ordinateurs \\\n\
-                        personnels compatibles MSDOS. Ejus genus datorum \\\n\
+3029 "Scapus pulsabilis a ordinatris \\\n\
+                         MSDOS. Ejus genus datorum \\\n\
                         est MSDOS_EXE et ejus suffixus, .exe ou .EXE."
 $ 
 $ ----------------------------------------------------------------------------
@@ -817,10 +817,10 @@ $        translated and '.uil' and '.UIL' are the parts of the filename
 $        pattern used to match this datatype.
 $ 
 
-3030 "Il s'agit d'un fichier de texte contenant un code source\\\n\
-                        pouvant être utilisé par un interpréteur UIL pour \\\n\
-                        créer une interface utilisateur Motif. Le suffixe de \\\n\
-                        ce type de fichier est .uil ou .UIL."
+3030 "Scapus texti quot continet descriptionem\\\n\
+                        interfaciae usoris ad usum interpretatri UIL. \\\n\
+                        Suffixus ejus \\\n\
+                         est .uil vel .UIL."
 $ 
 $ 
 $ ----------------------------------------------------------------------------
@@ -853,23 +853,23 @@ $
 $ ----------------------------------------------------------------------------
 $ Message 3037 is the description of the 'ImageView' action.
 $ 
-3037 "Cette action lance l'afficheur d'images."
+3037 "Haec actio pellet exhibitrum imaginum."
 $ 
 $ 3038 - This is the 'ImageView' action label.
 $ 
-3038 "Afficheur"
+3038 "Exhibitrum"
 $ 
 $ 3039 - This message is used by ImageView 'Audio' action. It is the error
 $   message when a user tries to start the image viewer.
 $ 
-3039 "Il n'y a pas d'afficheur d'images dans votre système."
+3039 "Exhibitrum imaginum deest in computatro tui."
 $ 
 $ ----------------------------------------------------------------------------
 $ Message 3040 is the description of the EPS (Encapsulated PostScript) datatype.
 $ 3040 - Do not translate 'PS', 'EPS' or'.eps' in the message.
 $ 
-3040 "Hoc scapus continet un mélange de texte et de graphiques au \\\n\
-                        format PS Encapsulé. Ejus genus datorum est EPS. \\\n\
+3040 "Hoc scapus continet textum et imagines in \\\n\
+                        forma EPS. Ejus genus datorum est EPS. \\\n\
                         ejus suffixus est .eps."
 $ 
 $ ----------------------------------------------------------------------------
@@ -913,10 +913,10 @@ $        translated  '.ert' is used as filename pattern which matches
 $        this data type.
 $ 
 $ "-NEW"
-3045 This file is a text file containing multiple \\\n\
-                        font definitions as well as plain text.  Its data \\\n\
-                        type is named ENRICHED_RICHTEXT.  ENRICHED_RICHTEXT\\\n\
-			files have names ending with '.ert'.
+3045 Hoc scapus continet definitiones typorum et \\\n\
+                        textum. Ejus genus datorum \\\n\
+                        ENRICHED_RICHTEXT vocatur.  Ejus\\\n\
+			suffixus '.ert' est.
 
 $ 
 $ **************************************************************************
@@ -943,7 +943,7 @@ $ ----------------------------------------------------------------------------
 $ Message 4003 is the description of the TRASH_FOLDER datatype.
 $ 
 
-4003 "Ce dossier est l'emplacement provisoire de la corbeille."
+4003 "Hoc index est l'emplacement provisoire canistri."
 $ 
 $ ----------------------------------------------------------------------------
 $ Message 4004 is the description of the PARENT_FOLDER datatype.
@@ -951,7 +951,7 @@ $ 4004 - Do not translate PARENT_FOLDER in the message. PARENT_FOLDER is a
 $        defined datatype name that doesn't get translated.
 $ 
 
-4004 "L'icône '..' exprimit indicem patrem indicis vertentis ; \\\n\
+4004 "Icon '..' exprimit indicem patrem indicis vertentis ; \\\n\
                         permittit adire in tabella soperiore in \\\n\
                         arborem. Ejus genus datorum est \\\n\
                         PARENT_FOLDER."
@@ -973,7 +973,7 @@ $
 
 4006 "Genus datorum hujus indicis DOT_FOLDER est. \\\n\
                         Nomen ejus incipet cum puncto (.) et \\\n\
-                        il est généralement aditus."
+                        generaliter aditus est."
 $ 
 $ ----------------------------------------------------------------------------
 $ Message 4007 is the description of the FOLDER_LOCK datatype.
@@ -981,8 +981,8 @@ $ 4007 - Do not translate FOLDER_LOCK in the message. FOLDER_LOCK
 $        is a defined datatype name that doesn't get translated.
 $ 
 
-4007 "Licentiam scribendi in hoc indicem non habes. \\\n\
-                        Non potes eo addere scapos vel tollere \\\n\
+4007 "Licentiam scribendi in hoc indice non habes. \\\n\
+                        Non potes in eo addere scapos vel tollere \\\n\
                         illa qua continet. Ejus genus datorum est FOLDER_LOCK."
 $ 
 $ ----------------------------------------------------------------------------
@@ -992,7 +992,7 @@ $        is a defined datatype name that doesn't get translated.
 $ 
 
 4008 "Index est. Index continet scapos \\\n\
-                        vel d'autres indices. Ejus genus datorum est \\\n\
+                        vel alia indices. Ejus genus datorum est \\\n\
                         FOLDER."
 $ 
 $ ----------------------------------------------------------------------------
@@ -1001,9 +1001,9 @@ $ 4009 - Do not translate RECURSIVE-LINK in the message. RECURSIVE-LINK
 $        is a defined datatype name that doesn't get translated.
 $ 
 
-4009 "Haec iconem exprimit vinculum symbolique vinctus \\\n\
-                        ad ipsem, directement ou à l'aide de \\\n\
-                        liens symboliques intermédiaires. Genus datorum \\\n\
+4009 "Haec iconem exprimit vinculum symbolicum vinctum \\\n\
+                        ad ipsem, vel directe vel propter \\\n\
+                        vinculos symbolicos medios. Genus datorum \\\n\
                         ejus est RECURSIVE_LINK."
 $ 
 $ ----------------------------------------------------------------------------
@@ -1012,7 +1012,7 @@ $ 4010 - Do not translate BROKEN_LINK in the message. BROKEN_LINK
 $        is a defined datatype name that doesn't get translated.
 $ 
 
-4010 "Haec icon exprimit vinculum symbolique ad \\\n\
+4010 "Haec icon exprimit vinculum symbolicum ad \\\n\
                         scapum non exstant. Ejus genus datorum \\\n\
                         est BROKEN_LINK."
 $ 
@@ -1022,9 +1022,9 @@ $ 4011 - Do not translate DOT_FILE in the message. DOT_FILE
 $        is a defined datatype name that doesn't get translated.
 $ 
 
-4011 "Le type de données de ce fichier est DOT_FILE. \\\n\
-                        Son nom commence par un point (.) \\\n\
-                        et il est généralement caché."
+4011 "Genus datorum hujus scapi DOT_FILE est. \\\n\
+                        Nomen ejus incipet cum puncto (.) \\\n\
+                        et generaliter abditus est."
 $ 
 $ ----------------------------------------------------------------------------
 $ Message 4012 is the description of the EXECUTABLE datatype.
@@ -1033,7 +1033,7 @@ $        is a defined datatype name that doesn't get translated.
 $ 
 
 4012 "Hoc scapus continet programmam shell aut \\\n\
-                        compilatum executabilem. Ejus genus \\\n\
+                        compilatum pulsabilem. Ejus genus \\\n\
                         datorum est EXECUTABLE."
 $ 
 $ ----------------------------------------------------------------------------
@@ -1127,13 +1127,13 @@ $ Message 4025 - Requests which file to trash when no file/folder is
 $      is provided to the 'TrashFile' action.  Do not remove the ':'.
 $ 
 
-4025 "Scapus à placer in canistrum:"
+4025 "Scapus jactandus in canistrum:"
 $ 
 $ 4026 - use the same word as Message 4024 to translate 'TrashFile'.
 $ 
 
-4026 "Actio Corbeille_fichiers permet de placer un fichier \\\n\
-                        dans la corbeille du Bureau."
+4026 "Actio Canistrum_scaporum permittit jacere scapum \\\n\
+                        in canistrum Mensae."
 $ 
 $ ----------------------------------------------------------------------------
 $ Messages 4027 - 4028 refer to the Trash Can (Dttrash) action.
@@ -1179,17 +1179,17 @@ $  which tells the File Manager to put an object on the desktop.
 $ 
 $ 4032 is the Label of the action
 $ 
-4032 Afficher_dans_l'espace_de_travail
+4032 Proponere_in_spatio_negotii
 $ 
 $ 4033 is the Description of what that action does.
 $   Don't translate 'PutOnWorkspace -workspace wsX'
 $ 
-4033 Afficher_dans_l'espace_de_travail (PutOnWorkspace) permet \\\n\
-                        à une application compatible avec CDE de lancer une action \\\n\
-                        destinée à placer un objet sur le Bureau.\\\n\
-                        Le format de cette action est: \\\n\
+4033 Proponere_in_spatio_negotii (PutOnWorkspace) permittit \\\n\
+                        applicationi congruenti cum mensa CDE pellere actionem \\\n\
+                        destinée à placer rem supra mensa.\\\n\
+                        Forma hujus actionis est: \\\n\
                           'PutOnWorkspace -workspace wsX <path/filename>' \\\n\
-                        où X est le numéro de l'espace de travail, à partir de 0.
+                        ubi X numerus spatii negotii, ab 0, est.
 $ 
 $  Messges 4034 and 4035 are
 $  for a new action (FILESYSTEM_MOVE).  This an action used by other clients
@@ -1197,7 +1197,7 @@ $  to tell the file Manager to move a file.
 $ 
 $ 4034 is the Label of the action
 $ 
-4034 Déplacer_vers_dossier
+4034 Movere_in_indicem
 $ 
 $ 4035 is the Description of what that action does.
 $   Don't translate FILESYSTEM_MOVE
@@ -1216,7 +1216,7 @@ $  to tell the file Manager to copy a file.
 $ 
 $ 4036 is the Label of the action
 $ 
-4036 Copier_vers_dossier
+4036 Copiare_in_indicem
 $ 
 $ 4037 is the Description of what that action does.
 $   Don't translate FILESYSTEM_COPY
@@ -1254,7 +1254,7 @@ $  to tell the file Manager to empty the trash can.
 $ 
 $ 4040 is the Label of the action
 $ 
-4040 Vider_la_Corbeille
+4040 Vider_la_Canistrum
 $ 
 $ 4041 is the Description of what that action does.
 $  Don't translate DtEmptyTrash
@@ -1281,7 +1281,7 @@ $        defined datatype name and it doesn't get translated and '.txt'
 $        is the filename pattern which matches this datatype.
 $ 
 
-5001 "Hoc scapus continet textus normal. Ejus Genus \\\n\
+5001 "Hoc scapus continet textum normal. Ejus Genus \\\n\
                         datorum est TEXTFILE et ejus suffixus, .txt."
 $ 
 $ Messages 5002 - 5006 are comments.  NOTE: make sure each new line

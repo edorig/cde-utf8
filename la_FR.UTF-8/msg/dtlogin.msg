@@ -104,7 +104,7 @@ $
 22 "* Incipio conexus Mensae CDE supra scrinium %1$s...\r\n\
 *\r\n"
 
-23 "* Exspecta scrinium conexus Mensae CDE proponitus esse ante conectere.\r\n\
+23 "* Exspecta scrinium conexus Mensae CDE proponitus esse ante connectere.\r\n\
 *\r\n"
 
 24 "* Minister X incipere supra scrinium %1$s non potest...\r\n\
@@ -156,7 +156,7 @@ Debes creare tesseram initialem rationis ordinatri tui, \n\
 vel tesseram vertentem tuam non jam \n\
  validus est.\n\n\
 Post defineris tesseram tuam,\n\
-debito rursus conectere \n\
+debito rursus connectere \n\
 utens tesseram novam."
 
 5 "Error connexus, nomen usoris validus non est."
@@ -218,11 +218,11 @@ Connexus - Adjumentum :\n\
 Imple scrinium conexus ut tu ordinatro\n\
  nosciaris.\n\n\
 \n\
-Ut connectere :\n\
-       1) Induce nominem usoris tuus deinde pulsa clavem <Entrée>,\n\
+Ut connectas :\n\
+       1) Induce nominem usoris tuus deinde pulsa clavem <Enter>,\n\
           aut pulsorium [Profecto] (si usorem non jam creavi,\n\
           induce nominem usoris \"root\" ).\n\
-       2) Induce tesseram tua deinde pulsa clavem <Entrée>,\n\
+       2) Induce tesseram tua deinde pulsa clavem <Enter>,\n\
           aut pulsorium [Profecto].\n\n\
 \n\
 [Incipio] :\n\
@@ -230,13 +230,13 @@ Ut connectere :\n\
     deinde redintegra.\n\n\
 \n\
 [Optiones] :\n\
-   Ut mutare optiones sessionis.\n\
+   Ut mutes optiones sessionis.\n\
 \n\
    Move indicium globuli supra Optiones et retine fixus \n\
    pulsorium 1 globuli. Fac labi indicium \n\
    supra quamvis optionem  et laxa pulsorium \n\
-   globuli ut seligere functionem idonea. \n\
-   Les choix possibles sont :\n\n\
+   globuli ut seligas functionem idoneam. \n\
+   Optiones possibiles sunt :\n\n\
 \n\
     Lingua - mutat linguam usam\n\
    Sessio - seliget mensam usoris\n\
@@ -247,20 +247,20 @@ Ut connectere :\n\
           in scrinio indicato\n\
       <nomen scrinii> - Initialis - incipiet sessionem initialem in \n\
           scrinio indicato \n\
-       Sessio  mono-fenestrae- incipiet sessionem fenestra singula.\n\
+       Sessio  fenestrae singulae- incipiet sessionem fenestrae singulae.\n\
    Conexus linea mandatii - uti lineam mandatii \n\
    Scrinium conexus - rursus incipiet ministrum X-r\n\
 \n\
 In ima signum globuli mitte et pulsorium globuli \n\
-quamvis pulsa ut restituere scrinium, si eam \n\
-legere non potes propter nuntii systemae.\n\n\
+quamvis pulsa ut restituas scrinium, si id \n\
+difficilis ad legendum a nuntii systemae factum est.\n\n\
 \n\
-Pour afficher des informations d'aide supplémentaires,\n\
-ouvrez une session puis cliquez sur l'icône du Gestionnaire\n\
-d'aide située sur le tableau de bord. (représentée par des \n\
-livres et un point d'interrogation. \n\
-Consultez ensuite le volume d'aide concernant le Gestionnaire \n\
-de connexion.\n"
+Ad legendum percontationes adjumenti supplémentaires,\n\
+incipe sessionem dum crepita supra icone Rectoris\n\
+adjumenti (libri et lettera "i")   \n\
+in tabula indicatoria. \n\
+Consultez ensuite  voluminem adjumenti Rectoris \n\
+conexus.\n"
 
 
 $ message 2 is generated when you attempt to start a system whose id is   
@@ -274,15 +274,15 @@ $ message 3 is generated when the help button on the chooser screen is clicked.
 
 3 "\n\
 Selector - Adjumentum\n\n\
-Hoc scrinium sinet seligere ministerum cum id conectere\n\
+Hoc scrinium sinet seligere ministerum cum id connectere\n\
 vis.\n\n\
 Continet index cujus lineas continent duas\n\
 partes. Pars prima nomines reti hospitum \n\
-disponibles indicat, pars altera percontationes dépendantes\n\
-rector conexus pelletur in hospite \n\
-concerné. Si mensa CDE instructa in hospite est,\n\
-numero usoris (vel terminalis tty) conecturum proponitus est,\n\
-tum usum moyenne memoriae dum \n\
+disponibilium indicat, pars altera percontationes subjectas \n\
+rectore conexus pelletur in hospite \n\
+que agitur. Si mensa CDE instructa in hospite est,\n\
+numero usoris (vel terminalis tty) connecturum proponitus est,\n\
+tum usum medium memoriae dum \n\
 5, 10 et 15 minutae superior.\n\n\
 Ad hospitem seligendum, ejus lineam \n\
 selige.\n\n\
@@ -290,18 +290,18 @@ Post selectio hospitis, pulsa Profecto\n\
 ; scrinium conexus apud hospitem selectum proponetur.\n\n\
 [Indicem reficere]\n\
    Haec optio sinet substituere indicem vertentum cum \n\
-   indico hospitum cui conectere potest.\n\n\
+   indico hospitum cui connectere potest.\n\n\
 [Optiones]\n\
-   Cette option permet de modifier les options de la session.\n\n\
+   Haec optio permittit mutare optiones sessionis.\n\n\
    Amenez le pointeur sur ce bouton, appuyez sur le bouton 1\n\
-   de la souris et maintenez-le enfoncé. Pour sélectionner une\n\
-   option, amenez le pointeur dessus, puis relâchez le bouton\n\
-   de la souris. Les options disponibles sont les suivantes :\n\n\
-   Langue (permet de modifier la langue utilisée)\n\
-   Ecran de connexion (permet de relancer le serveur X)\n\n\
-Pour régénérer l'écran lorsqu'il est rendu illisible par\n\
-l'apparition de messages système, cliquez sur l'arrière-plan\n\
-à l'aide de l'un des boutons de la souris.\n\n"
+   de la souris et maintenez-le enfoncé. Ut seligendum \n\
+   optionem, amenez le pointeur dessus, puis relâchez pulsorium\n\
+   globuli. Optiones disponibiles sunt sequentes :\n\n\
+   Lingua (permittit mutare linguam utilisée)\n\
+   Scrinium conexus (permittit rursus incipere ministrum X)\n\n\
+Ad  restituendum scrinium si difficilis ad legendum \n\
+ a nuntii systemae factus est, crepita supra ima\n\
+cum pulsoris globuli.\n\n"
 
 $set 4
 

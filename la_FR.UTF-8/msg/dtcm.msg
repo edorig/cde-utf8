@@ -2060,7 +2060,7 @@ $ These are the messages for the ToolTalk error dialog
 $ "-NEW"
 1 Libellus - Monitio
 $ "-NEW"
-2 "conectere cum ToolTalk non potest:\n%s\n"
+2 "connectere cum ToolTalk non potest:\n%s\n"
 $ "-NEW"
 3 Profecto
 $ "-NEW"

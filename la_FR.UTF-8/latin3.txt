@@ -63,6 +63,7 @@ Brackets ()	Parenthèses	 lunulae f. pl
 Browse		 Parcourir 	Perlustrare
 Browser		Navigateur 	navigatrum,i n.
 Button		 Bouton		pulsorium(- n.)
+Buffer          Tampon          Penicillus,i,m. 
 Byte	    	Octet		octetus,i m
 Calendar	Agenda		Libellus, i, m.
 Calendar	Calendrier 	  calendarium (-i n.)

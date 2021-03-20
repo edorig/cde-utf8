@@ -1,0 +1,474 @@
+<!-- $XConsortium: ch12.sgm /main/11 1996/12/21 18:56:48 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="SAG.CrIcn.div.1">
+<h1 id="SAG.CrIcn.mkr.1">Cr&eacute;ation d'ic&ocirc;nes pour le Bureau</h1>
+<para id="SAG.CrIcn.mkr.2">Les ic&ocirc;nes du Bureau sont associ&eacute;es
+aux &eacute;l&eacute;ments suivants:</p>
+<ul remap="Bullet1">
+<li><p>fichiers d'action et types de donn&eacute;es des Gestionnaires
+de fichiers et d'applications</p>
+</li>
+<li><p>objets de commande du Tableau de bord</p>
+</li>
+<li><p>fen&ecirc;tres d'applications r&eacute;duites</p>
+</li>
+<li><p>graphiques utilis&eacute;s par les applications (palettes
+et barres d'outils)</p>
+</li>
+<li><p>fond de l'espace de travail</p>
+<informaltable id="SAG.CrIcn.itbl.1" frame="All">
+<tgroup cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<table>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Fichiers
+d'images216'--><xref role="JumpText" linkend="SAG.CrIcn.mkr.3"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Association
+d'icônes219'--><xref role="JumpText" linkend="SAG.CrIcn.mkr.8"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!--Original XRef content: 'Aspect
+des icônes222'--><xref role="JumpText" linkend="SAG.CrIcn.mkr.9"></p></td>
+</tr></table></tgroup></informaltable>
+</li>
+</ul>
+<note>
+<p>La documentation destin&eacute;e au d&eacute;veloppeur et propre &agrave;
+l'environnement utilis&eacute; contient des informations compl&eacute;mentaires
+sur les ic&ocirc;nes du Bureau. Reportez vous au chapitre 4, &ldquo;Visual
+Design&rdquo;, du manuel <citetitle>Style Guide and Certification Checklist</citetitle>.</p>
+</note>
+<sect1 id="SAG.CrIcn.div.2">
+<h1 id="SAG.CrIcn.mkr.3">Fichiers d'images</h1>
+<p>Pour &ecirc;tre utilis&eacute; en tant qu'image d'ic&ocirc;ne, un fichier
+graphique doit:</p>
+<ul remap="Bullet1">
+<li><p>avoir le format appropri&eacute;</p>
+</li>
+<li><p>utiliser les conventions de d&eacute;nomination correctes
+</p>
+</li>
+<li><p>utiliser les conventions de taille prises en charge par le
+Bureau</p>
+</li>
+<li><p>&ecirc;tre situ&eacute; dans un r&eacute;pertoire du chemin
+de recherche des ic&ocirc;nes</p>
+</li>
+<li><p>&ecirc;tre appel&eacute; &agrave; l'aide de la syntaxe appropri&eacute;e
+(par exemple, si vous cr&eacute;ez une ic&ocirc;ne pour le Tableau de bord,
+utilisez la zone <code>ICON</code> de la d&eacute;finition du Tableau
+de bord pour indiquer l'image associ&eacute;e)</p>
+</li>
+</ul>
+<sect2 id="SAG.CrIcn.div.3">
+<h1><indexterm><primary>Ic&ocirc;nes</primary><secondary>chemin de recherche,
+voir Chemin de recherche des ic&ocirc;nes&lt;$nopage></secondary></indexterm><indexterm>
+<primary>Ic&ocirc;nes</primary><secondary>serveurs, voir Serveur d'ic&ocirc;nes&lt;$nopage></secondary></indexterm>Format des fichiers d'ic&ocirc;nes<indexterm><primary>Ic&ocirc;nes</primary><secondary>formats de fichiers</secondary></indexterm><indexterm>
+<primary>&lt;$nopage>Bitmaps</primary><secondary>Voir Ic&ocirc;nes[bitmapsaaa]</secondary></indexterm></h1>
+<p>Si vous disposez d'un &eacute;cran couleur, utilisez le format pixmap
+X XPM (portant le suffixe <tt>.pm</tt>). Sinon, utilisez le format
+bitmap X XBM (suffixe <tt>.bm</tt>). Dans le cas d'un fichier
+bitmap, si la transparence est utilis&eacute;e, un masque (fichier portant
+le suffixe <tt>_m.bm</tt>) est g&eacute;n&eacute;r&eacute; lors
+de la cr&eacute;ation du fichier <tt>.bm</tt>. Pour plus de d&eacute;tails
+sur la mani&egrave;re dont le Bureau recherche ces fichiers, reportez- vous
+&agrave; la section <!--Original XRef content: '&ldquo;Chemin de recherche
+d'icônes&ldquo;, page&numsp;130'--><xref role="SecTitleAndPageNum" linkend="SAG.Datab.mkr.13">.
+</p>
+</sect2>
+<sect2 id="SAG.CrIcn.div.4">
+<h1><indexterm><primary>Ic&ocirc;nes</primary><secondary>noms de fichiers</secondary></indexterm><indexterm><primary>Nom de fichier d'ic&ocirc;ne</primary></indexterm>Noms de fichiers d'ic&ocirc;ne</h1>
+<p>Les ic&ocirc;nes et les images de fond sont stock&eacute;es dans des
+fichiers distincts. G&eacute;n&eacute;ralement, une ic&ocirc;ne est identifi&eacute;e
+par la partie de base de son nom de fichier; par exemple, une ic&ocirc;ne
+peut s'appeler <computeroutput>mail</computeroutput> alors que le fichier
+correspondant se trouve dans:<indexterm><primary>Ic&ocirc;nes</primary>
+<secondary>recherche des fichiers</secondary></indexterm><indexterm><primary>Ic&ocirc;nes</primary><secondary>conventions de d&eacute;nomination</secondary>
+</indexterm><indexterm><primary>Extensions</primary><secondary>.pm</secondary>
+</indexterm><indexterm><primary>Extensions</primary><secondary>.bm</secondary>
+</indexterm><indexterm><primary>Bitmaps</primary><secondary>recherche des
+fichiers</secondary></indexterm><indexterm><primary>Pixmaps</primary><secondary>recherche des fichiers</secondary></indexterm><indexterm><primary>2</primary>
+</indexterm><indexterm><primary>Images, voir Ic&ocirc;nes&lt;$nopage></primary>
+</indexterm></p>
+<programlisting>/usr/dt/appconfig/icons/<i>langue</i>/mail.l.pm
+</programlisting>
+<p>La convention consistant &agrave; ajouter des extensions permet de regrouper
+les ic&ocirc;nes selon leur taille et leur type. Les noms des ic&ocirc;nes
+du Bureau respectent les formats suivants:</p>
+<p><i role="Variable">nom_base.taille.format</i></p>
+<p>Ou</p>
+<p><i role="Variable">nom_base.format</i></p>
+<p>o&ugrave;:</p>
+<informaltable>
+<tgroup cols="2" colsep="0" rowsep="0">
+<colspec colwidth="105*">
+<colspec colwidth="423*">
+<table>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">nom_base</i></p></td>
+<td align="left" valign="top"><p>Nom de base permettant d'identifier
+l'image.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">taille</i></p></td>
+<td align="left" valign="top"><p>Lettre indiquant la taille de l'ic&ocirc;ne
+: <code>l</code> (grande) <code>m</code> (moyenne) <code>s</code> (petite) <code>t</code> (tr&egrave;s petite)</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><i role="Variable">format</i></p></td>
+<td align="left" valign="top"><p>Format du fichier: <code>pm</code>
+(pixmap) <code>bm</code> (bitmap)</p></td></tr></table></tgroup>
+</informaltable>
+</sect2>
+<sect2 id="SAG.CrIcn.div.5">
+<h1 id="SAG.CrIcn.mkr.4">Taille des ic&ocirc;nes<indexterm><primary>Ic&ocirc;nes</primary><secondary>taille</secondary></indexterm><indexterm><primary>Taille
+des ic&ocirc;nes</primary></indexterm></h1>
+<p><indexterm><primary>Bitmaps</primary><secondary>noms</secondary></indexterm><indexterm>
+<primary>Pixmaps</primary><secondary>noms</secondary></indexterm>Le <!--Original
+XRef content: 'Tableau&numsp;12&hyphen;1'--><xref role="CodeOrFigureOrTable"
+linkend="SAG.CrIcn.mkr.5"> indique la taille, en pixels, &agrave; utiliser
+pour les ic&ocirc;nes du Bureau</p>
+<table id="SAG.CrIcn.tbl.1" frame="Topbot">
+<h1 id="SAG.CrIcn.mkr.5">Tailles d'ic&ocirc;nes et noms de fichiers</h1>
+<tgroup cols="3" colsep="0" rowsep="0">
+<colspec colwidth="2.00in">
+<colspec colwidth="2.01in">
+<colspec colwidth="1.97in">
+<thead>
+<tr><td align="left" valign="bottom"><p><code>Taille d'ic&ocirc;nes</code></p></td><td align="left" valign="bottom"><p><code>Nom du bitmap</code></p></td><td align="left" valign="bottom"><p><code>Nom du pixmap</code></p></td></tr></thead>
+<table>
+<tr>
+<td align="left" valign="top"><p>16 x 16 (tr&egrave;s petite)</p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.t.bm</tt></p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.t.pm</tt></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>24 x 24 (petite)</p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.s.bm</tt></p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.s.pm</tt></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>32 x 32 (moyenne)</p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.m.bm</tt></p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.m.pm</tt></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>48 x 48 (grande)</p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.l.bm</tt></p></td>
+<td align="left" valign="top"><p><i role="Variable">nom</i><tt>.l.pm</tt></p></td></tr></table></tgroup></table>
+<para id="SAG.CrIcn.mkr.6">.</p>
+<p>Le <!--Original XRef content: 'Tableau&numsp;12&hyphen;2'--><xref role="CodeOrFigureOrTable"
+linkend="SAG.CrIcn.mkr.7"> indique les tailles d'ic&ocirc;nes utilis&eacute;es
+par les &eacute;l&eacute;ments du Bureau. Dans certains cas, ces valeurs d&eacute;pendent
+de la d&eacute;finition de l'&eacute;cran.</p>
+<table id="SAG.CrIcn.tbl.2" frame="Topbot">
+<h1 id="SAG.CrIcn.mkr.7">&Eacute;l&eacute;ments du Bureau et taille des
+ic&ocirc;nes associ&eacute;es</h1>
+<tgroup cols="4" colsep="0" rowsep="0">
+<colspec colwidth="2.47in">
+<colspec colwidth="1.21in">
+<colspec colwidth="1.23in">
+<colspec colwidth="1.09in">
+<thead>
+<tr><td align="left" valign="bottom"><p><code>&Eacute;l&eacute;ment
+du Bureau</code></p></td><td align="left" valign="bottom"><p><code>Haute d&eacute;finition</code></p></td><td align="left" valign="bottom"><p><code>D&eacute;finition moyenne</code></p></td><td align="left" valign="bottom"><p><code>Faible d&eacute;finition</code></p></td></tr></thead>
+<table>
+<tr>
+<td align="left" valign="top"><p>Gestionnaires de fichiers et d'applications
+(vue par nom et ic&ocirc;ne)</p></td>
+<td align="left" valign="top"><p>Moyenne</p></td>
+<td align="left" valign="top"><p>Moyenne</p></td>
+<td align="left" valign="top"><p>Moyenne</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Gestionnaires de fichiers et d'applications
+(vue par nom et petite ic&ocirc;ne)</p></td>
+<td align="left" valign="top"><p>Tr&egrave;s petite</p></td>
+<td align="left" valign="top"><p>Tr&egrave;s petite</p></td>
+<td align="left" valign="top"><p>Tr&egrave;s petite</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Objets de commande du Tableau de bord
+</p></td>
+<td align="left" valign="top"><p>Grande</p></td>
+<td align="left" valign="top"><p>Grande</p></td>
+<td align="left" valign="top"><p>Moyenne</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Tableaux secondaires du Tableau de
+bord</p></td>
+<td align="left" valign="top"><p>Moyenne</p></td>
+<td align="left" valign="top"><p>Moyenne</p></td>
+<td align="left" valign="top"><p>Tr&egrave;s petite</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Objets de commande du s&eacute;lecteur
+du Tableau de bord</p></td>
+<td align="left" valign="top"><p>Petite</p></td>
+<td align="left" valign="top"><p>Petite</p></td>
+<td align="left" valign="top"><p>Tr&egrave;s petite</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Fen&ecirc;tres r&eacute;duites</p></td>
+<td align="left" valign="top"><p>Grande</p></td>
+<td align="left" valign="top"><p>Grande</p></td>
+<td align="left" valign="top"><p>Moyenne</p></td></tr></table>
+</tgroup></table>
+<p>Par exemple, si vous cr&eacute;ez une ic&ocirc;ne appel&eacute;e <computeroutput>mail</computeroutput> pour un type de donn&eacute;es, que vous disposez d'un
+&eacute;cran couleur et que vous avez s&eacute;lectionn&eacute; les ic&ocirc;nes
+de petite taille dans les param&egrave;tres du Gestionnaire de fichiers, l'image <tt>mail.t.pm</tt> sera utilis&eacute;e.</p>
+</sect2>
+<sect2 id="SAG.CrIcn.div.6">
+<h1><indexterm><primary>Bitmaps</primary><secondary>chemin de recherche</secondary></indexterm><indexterm><primary>Bitmaps</primary><secondary>recherche des fichiers</secondary></indexterm><indexterm><primary>Pixmaps</primary><secondary>chemin de recherche</secondary></indexterm><indexterm>
+<primary>Pixmaps</primary><secondary>recherche des fichiers</secondary></indexterm>Chemin
+de recherche des ic&ocirc;nes<indexterm><primary>Chemins de recherche</primary>
+<secondary>ic&ocirc;nes</secondary></indexterm></h1>
+<p>Le Bureau recherche les fichiers d'ic&ocirc;nes dans une liste de r&eacute;pertoires
+appel&eacute;e <i role="Variable">chemin</i> <em>de recherche
+des ic&ocirc;nes</em>, d&eacute;finie par plusieurs variables d'environnement.
+Pour plus de d&eacute;tails sur l'utilisation et l'association de ces derni&egrave;res,
+reportez-vous &agrave; la section <!--Original XRef content: '&ldquo;Chemin
+de recherche d'icônes&ldquo;, page&numsp;130'--><xref role="HeadingAndPage"
+linkend="SAG.Datab.mkr.13">.</p>
+<p>Les chemins de recherche par d&eacute;faut sont les suivants:</p>
+<ul remap="Bullet1">
+<li><p>ic&ocirc;nes int&eacute;gr&eacute;es: <tt>/usr/dt/appconfig/icons/</tt><i>langue</i></p>
+</li>
+<li><p>ic&ocirc;nes syst&egrave;me: <tt>/etc/dt/appconfig/icons/</tt><i>langue</i></p>
+</li>
+<li><p>ic&ocirc;nes personnelles: <i role="Variable">R&eacute;p_Personnel</i><tt>/.dt/icons</tt></p>
+</li>
+</ul>
+</sect2>
+<sect2 id="SAG.CrIcn.div.7">
+<h1>Acc&egrave;s aux ic&ocirc;nes par l'interm&eacute;diaire du r&eacute;seau</h1>
+<p>Le Bureau peut acc&eacute;der &agrave; des ic&ocirc;nes stock&eacute;es
+sur des syst&egrave;mes &eacute;loign&eacute;s. Pour plus de d&eacute;tails
+sur la cr&eacute;ation des serveurs d'ic&ocirc;nes, reportez-vous &agrave;
+la section <!--Original XRef content: '&ldquo;Configuration des services
+de bases de données, d'icônes et d'aide&ldquo;, page&numsp;109'--><xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.16">.</p>
+</sect2>
+</div>
+<sect1 id="SAG.CrIcn.div.8">
+<h1 id="SAG.CrIcn.mkr.8">Association d'ic&ocirc;nes</h1>
+<p>Pour faciliter l'identification des objets, vous pouvez associer des
+ic&ocirc;nes aux &eacute;l&eacute;ments suivants:<indexterm><primary>Ic&ocirc;nes</primary><secondary>associations</secondary></indexterm></p>
+<ul remap="Bullet1">
+<li><p>actions et types de donn&eacute;es</p>
+</li>
+<li><p>objets de commande du Tableau de bord et des tableaux secondaires
+</p>
+</li>
+<li><p>fen&ecirc;tres d'applications r&eacute;duites</p>
+</li>
+</ul>
+<sect2 id="SAG.CrIcn.div.9">
+<h1>Identification des fichiers d'ic&ocirc;nes</h1>
+<p>Pour les ic&ocirc;nes d'action et de type de donn&eacute;es et celles
+utilis&eacute;es sur le Tableau de bord et les tableaux secondaires, indiquez
+uniquement le nom de base; les extensions appropri&eacute;es sont ajout&eacute;es
+automatiquement, en fonction de la d&eacute;finition de l'&eacute;cran, des
+couleurs support&eacute;es et des param&egrave;tres indiqu&eacute;s dans le
+Gestionnaire de fichiers (ic&ocirc;nes r&eacute;duites, par exemple).</p>
+<p>Pour ne pas utiliser le chemin de recherche, indiquez le chemin d'acc&egrave;s
+et le nom complets de l'ic&ocirc;ne.</p>
+</sect2>
+<sect2 id="SAG.CrIcn.div.10" role="Procedure">
+<h1>Association d'une ic&ocirc;ne &agrave; une action ou un type de donn&eacute;es</h1>
+<ol>
+<li><p>Identifiez l'ic&ocirc;ne dans la zone <code>ICON</code>.
+</p>
+<p>Si vous respectez les conventions de d&eacute;nomination appropri&eacute;es,
+n'indiquez que le nom de base de l'ic&ocirc;ne; l'ic&ocirc;ne correspondant
+&agrave; la d&eacute;finition de l'&eacute;cran et aux couleurs prises en
+charge sera utilis&eacute;e.<indexterm><primary>Ic&ocirc;nes</primary><secondary>association avec une action ou un type de donn&eacute;es</secondary></indexterm><indexterm>
+<primary>Actions</primary><secondary>association d'une ic&ocirc;ne</secondary>
+</indexterm><indexterm><primary>Types de donn&eacute;es</primary><secondary>association d'une ic&ocirc;ne</secondary></indexterm></p>
+</li>
+<li><p>Cr&eacute;ez les tailles d'ic&ocirc;nes suivantes:</p>
+<ul remap="Bullet2">
+<li><p>actions: grande, moyenne et tr&egrave;s petite</p>
+</li>
+<li><p>types de donn&eacute;es: moyenne et tr&egrave;s petite</p>
+</li>
+</ul>
+</li>
+</orderedlist>
+<sect3 id="SAG.CrIcn.div.11">
+<h1>Exemple de d&eacute;finition d'action</h1>
+<p>La d&eacute;finition d'action ci-dessous permet de lancer le programme
+de dessin Island Paint<superscript>TM</superscript>. Les ic&ocirc;nes <tt>Ipaint.l</tt> et <tt>Ipaint.s</tt> sont associ&eacute;es
+&agrave; l'action.</p>
+<programlisting>ACTION IslandPaintOpenDoc
+{
+   WINDOW_TYPE   NO-STDIO
+   ICON          Ipaint
+   EXEC_STRING   /usr/bin/IslandPaint %Arg_1"Fichier &agrave; ouvrir:"%
+}</programlisting>
+<p>Si vous utilisez des ic&ocirc;nes en couleurs, le Bureau prend en compte
+l'extension <tt>.pm</tt> lors de la recherche des fichiers d'ic&ocirc;nes.
+Sinon (ou s'il ne d&eacute;tecte aucune ic&ocirc;ne portant l'extension <tt>.pm</tt>), le Bureau utilise l'extension <tt>.bm</tt>.
+</p>
+<sect4 id="SAG.CrIcn.div.12">
+<h1>Exemple de d&eacute;finition de type de donn&eacute;es</h1>
+<p>La d&eacute;finition suivante associe les ic&ocirc;nes <tt>comprsd.l</tt> et <tt>comprsd.s</tt> aux fichiers comprim&eacute;s:
+</p>
+<programlisting>DATA_ATTRIBUTES COMPRESSED
+{
+   ICON         comprsd
+   ACTIONS      Uncompress
+   DESCRIPTION  Il s'agit d'un fichier qui a &eacute;t&eacute; compress&eacute; \
+                &agrave; l'aide de la commande compress afin d'occuper\
+                moins d'espace.
+}</programlisting>
+</sect4>
+</sect3>
+</sect2>
+<sect2 id="SAG.CrIcn.div.13" role="Procedure">
+<h1>Affichage d'une ic&ocirc;ne pour un objet de commande du Tableau de
+bord</h1>
+<ol>
+<li><p>Identifiez l'ic&ocirc;ne dans la zone <code>ICON</code>.
+</p>
+<p>Si l'objet de commande est li&eacute; de fa&ccedil;on dynamique &agrave;
+un fichier (si la zone <tt>MONITOR_TYPE</tt> a la valeur mail
+ou file), d&eacute;signez l'ic&ocirc;ne utilis&eacute;e pour indiquer le changement
+dans la zone <tt>ALTERNATE_ICON</tt>.<indexterm><primary>2</primary>
+</indexterm><indexterm><primary>Ic&ocirc;nes</primary><secondary>Tableau
+de bord</secondary></indexterm><indexterm><primary>Tableau de bord</primary>
+<secondary>affichage d'ic&ocirc;nes</secondary></indexterm></p>
+<p>Les boutons et les zones de pose peuvent &eacute;galement &ecirc;tre
+anim&eacute;s.</p>
+</li>
+<li><p>Cr&eacute;ez les tailles d'ic&ocirc;nes suivantes:</p>
+<ul remap="Bullet2">
+<li><p>Tableau de bord et tableaux secondaires: grande, moyenne et
+tr&egrave;s petite</p>
+</li>
+<li><p>S&eacute;lecteur d'espace de travail: petite</p>
+</li>
+</ul>
+</li>
+</orderedlist>
+<sect3 id="SAG.CrIcn.div.14">
+<h1>Exemple</h1>
+<p>L'apparence de l'objet de commande ci-dessous change lorsque le fichier <code>rapport</code> est plac&eacute; dans le r&eacute;pertoire <tt>/doc/ftp/pub/</tt>. Lorsqu'il ne s'y trouve pas, l'ic&ocirc;ne <tt>rapport_absent.pm</tt> est affich&eacute;e; lorsqu'il s'y trouve, c'est l'ic&ocirc;ne <tt>rapport_pr&eacute;sent.pm</tt> qui appara&icirc;t.</p>
+<programlisting>CONTROL MonitorReport
+{
+CONTAINER_NAME nom_conteneur
+   TYPE             ICON
+   MONITOR_TYPE     file
+   FILE_NAME        /doc/ftp/pub/rapport
+   ICON             rapport_absent
+   ALTERNATE_ICON   rapport_pr&eacute;sent
+}</programlisting>
+</sect3>
+</sect2>
+<sect2 id="SAG.CrIcn.div.15" role="Procedure">
+<h1>Association d'une ic&ocirc;ne avec une fen&ecirc;tre d'application</h1>
+<ol>
+<li><p>D&eacute;finissez comme suit la ressource <systemitem>iconImage</systemitem> du Gestionnaire de l'espace de travail:<indexterm><primary>Ic&ocirc;nes</primary><secondary>association avec une fen&ecirc;tre d'application</secondary></indexterm><indexterm><primary>Fen&ecirc;tre</primary><secondary>application</secondary></indexterm></p>
+<p><tt>Dtwm*</tt><i role="Variable">nom_client</i> <systemitem>*iconImage</systemitem>: <i role="Variable">fichier_ic&ocirc;ne</i></p>
+<p>Pour conna&icirc;tre la valeur correcte de <i role="Variable">nom_client</i>, ouvrez le Gestionnaire d'applications et cliquez deux
+fois sur Caract&eacute;ristiques d'une fen&ecirc;tre, dans le groupe d'applications
+Outils_Bureau. Lorsque vous s&eacute;lectionnez une fen&ecirc;tre, ses caract&eacute;ristiques
+s'affichent. La<indexterm><primary>Caract&eacute;ristiques</primary><secondary>WM_CLASS</secondary></indexterm> caract&eacute;ristique WM_CLASS indique le
+nom de classe de la fen&ecirc;tre, entre guillemets.</p>
+<p>Pour plus de d&eacute;tails sur la d&eacute;finition des ressources,
+reportez-vous &agrave; la section <!--Original XRef content: '&ldquo;Définition
+de ressources d'applications&ldquo;, page&numsp;272'--><xref role="SecTitleAndPageNum"
+linkend="SAG.FACol.mkr.2">.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option &ldquo;Relancer le Gestionnaire
+de l'espace de travail&rdquo; dans le menu Espace de travail.</p>
+</li>
+</orderedlist>
+<p>Pour v&eacute;rifier que l'ic&ocirc;ne a &eacute;t&eacute; identifi&eacute;e
+par le Gestionnaire de l'espace de travail, r&eacute;duisez la fen&ecirc;tre
+dont l'ic&ocirc;ne est en cours de modification.</p>
+<note>
+<p>Il est parfois impossible de modifier l'ic&ocirc;ne par d&eacute;faut
+d'une fen&ecirc;tre d'application.</p>
+</note>
+</sect2>
+<sect2 id="SAG.CrIcn.div.16" role="Procedure">
+<h1>Utilisation du Gestionnaire de fichiers en tant qu'afficheur d'ic&ocirc;nes<indexterm>
+<primary>Ic&ocirc;nes</primary><secondary>visualisation &agrave; l'aide du
+Gestionnaire de fichiers</secondary></indexterm><indexterm><primary>Ic&ocirc;nes</primary><secondary>utilisation du Gestionnaire de fichiers pour l'affichage</secondary></indexterm><indexterm><primary>Gestionnaire de fichiers</primary>
+<secondary>affichage des ic&ocirc;nes</secondary></indexterm><indexterm><primary>Affichage</primary><secondary>ic&ocirc;nes</secondary></indexterm></h1>
+<ol>
+<li><p>Copiez le fichier <tt>/usr/dt/examples/types/</tt> <i>langue</i><tt>/IconBrowse.dt</tt> dans le r&eacute;pertoire <i role="Variable">R&eacute;p_personnel</i><tt>/.dt/types/Iconbrowse.dt</tt>.</p>
+</li>
+<li><p>Ouvrez le Gestionnaire d'applications et cliquez deux fois
+sur Recharger applications, dans le groupe d'applications Outils_Bureau.
+</p>
+</li>
+</orderedlist>
+<p>Lorsque vous ouvrez un r&eacute;pertoire contenant des ic&ocirc;nes
+(fichiers <tt>.bm</tt> et <tt>.pm</tt>), chacune d'elles
+s'affiche en regard de son nom. Par exemple, si vous ouvrez le r&eacute;pertoire <tt>/usr/dt/appconfig/icons/</tt><i>langue</i>, de nombreuses
+ic&ocirc;nes du Bureau s'affichent.</p>
+<note>
+<p>Sur les syst&egrave;mes dont la m&eacute;moire n'est pas tr&egrave;s
+importante, l'activation de la fonction de visualisation des ic&ocirc;nes
+peut entra&icirc;ner un ralentissement de l'affichage des r&eacute;pertoires.
+Les images dont la taille est sup&eacute;rieure &agrave; 256 x 256 ne s'affichent
+pas dans la configuration par d&eacute;faut.</p>
+</note>
+<p>Pour d&eacute;sactiver l'affichage des ic&ocirc;nes:</p>
+<ol>
+<li><p>Supprimez votre exemplaire du fichier <tt>IconBrowse.dt</tt>.</p>
+</li>
+<li><p>Ouvrez le Gestionnaire d'applications et cliquez deux fois
+sur Recharger applications, dans le groupe d'applications Outils_Bureau.
+</p>
+</li>
+</orderedlist>
+</sect2>
+</div>
+<sect1 id="SAG.CrIcn.div.17">
+<h1 id="SAG.CrIcn.mkr.9">Aspect des ic&ocirc;nes<indexterm><primary>Ic&ocirc;nes</primary><secondary>aspect</secondary></indexterm></h1>
+<p>Lorsque vous cr&eacute;ez des ic&ocirc;nes ayant un rapport entre elles
+(ic&ocirc;nes d'une application et ic&ocirc;nes des fichiers de donn&eacute;es
+associ&eacute;s, par exemple), il est conseill&eacute; d'utiliser un concept
+de base commun.</p>
+<p>Assurez-vous que la version en noir et blanc des ic&ocirc;nes couleur
+est disponible. Sur un &eacute;cran monochrome ou monochrome gris (ou ne disposant
+pas des couleurs requises), les ic&ocirc;nes s'affichent en noir et blanc.
+</p>
+<p>Dans la mesure du possible, utilisez uniquement les couleurs fournies
+par le Bureau, pour &eacute;viter de monopoliser les couleurs syst&egrave;me
+(les ic&ocirc;nes cr&eacute;&eacute;es &agrave; l'aide de l'Editeur d'ic&ocirc;nes
+utilisent uniquement les couleurs du Bureau).</p>
+<p>Pour conna&icirc;tre les tailles des ic&ocirc;nes des &eacute;l&eacute;ments
+du Bureau, reportez-vous au <!--Original XRef content: 'tableau 12&hyphen;1,
+&ldquo;Tailles d'icônes et noms de fichiers&ldquo;, page 217'--><xref role="TableAndPage"
+linkend="SAG.CrIcn.mkr.5">.</p>
+<sect2 id="SAG.CrIcn.div.18">
+<h1>Utilisation des couleurs</h1>
+<p>Les ic&ocirc;nes disponibles sur le Bureau utilisent une palette de
+22 couleurs:<indexterm><primary>Couleurs</primary><secondary>ic&ocirc;nes</secondary></indexterm><indexterm><primary>Ic&ocirc;nes</primary><secondary>couleurs</secondary></indexterm></p>
+<ul remap="Bullet1"><?Pub Caret>
+<li><p>huit nuances de gris</p>
+</li>
+<li><p>huit couleurs statiques: rouge, bleu, vert, cyan, magenta,
+jaune, noir et blanc;</p>
+</li>
+<li><p>six couleurs dynamiques: avant-plan, arri&egrave;re-plan,
+ombrage du haut, ombrage du bas, une couleur s&eacute;lectionn&eacute;e et
+une couleur transparente</p>
+</li>
+</ul>
+<p>Cette palette permet de cr&eacute;er des ic&ocirc;nes attrayantes et
+d'une grande lisibilit&eacute;, sans monopoliser les ressources dont d'autres
+applications pourraient avoir besoin. Les ic&ocirc;nes du Bureau utilisent
+principalement les nuances de gris: les couleurs permettent uniquement de
+mettre les &eacute;l&eacute;ments essentiels en &eacute;vidence.</p>
+<p>La couleur transparente permet de cr&eacute;er des ic&ocirc;nes qui
+laissent appara&icirc;tre les couleurs d'arri&egrave;re-plan, donnant ainsi
+l'illusion qu'elles ne sont pas rectangulaires.</p>
+</sect2>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
+<?Pub *0000032279>

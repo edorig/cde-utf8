@@ -47,7 +47,7 @@ $  printer name has been specified.
 10 "Absentem aliquis"
 $  This is the label that appears in the title bar of the print dialog.  
 
-20 "Perscribere"
+20 "Exscribere"
 $  This is the label for the field indicating the file that will be printed.  
 
 30 "Scapum:"
@@ -95,7 +95,7 @@ $  more details.
 $  This message is added to the error dialog when the file is not printable   
 $  or does not exist.  
 
-132 "Hoc scapum scribabilis non est aut deest."
+132 "Hoc scapum excscribere non potest aut deest."
 $  This message is added to the error dialog when the file is not readable   
 $  by the user invoking dtlp.  
 
@@ -128,7 +128,7 @@ $
 $  -- The following are error messages added for CDEnext --
 $ 
 $  File is not printable or does not exist.
-210 "Hoc scapum scribendum non est vel deest."
+210 "Hoc scapum excscribere non potest aut deest."
 
 $  File is not printable or does not exist.
 220 "Nullum instrumentum pressorium indicatum a ordinatrum vel nullum instrumentum pressorium usitatum."
