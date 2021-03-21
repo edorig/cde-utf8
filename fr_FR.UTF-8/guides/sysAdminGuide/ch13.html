@@ -1,0 +1,1763 @@
+<html><body>
+<?Pub EntList alpha bull copy rArr sect trade ocirc>
+<!-- $XConsortium: ch13.sgm /main/11 1996/12/21 18:56:53 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="SAG.FrPC.div.1">
+<h1 id="SAG.FrPC.mkr.1">Personnalisation<!---- <primary>Tableau de
+bord</primary><secondary>personnalisation</secondary>---->  du Tableau
+de bord</h1>
+<p>Les utilisateurs peuvent personnaliser le Tableau de bord &agrave; l'aide
+des menus instantan&eacute;s et des objets de commande d'installation d'ic&ocirc;nes
+des panneaux secondaires.</p>
+<p>Le pr&eacute;sent chapitre d&eacute;crit la cr&eacute;ation et la modification
+des fichiers de configuration en vue d'une personnalisation du Tableau de
+bord.</p>
+<informaltable id="SAG.FrPC.itbl.1" frame="All">
+<table cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Fichiers
+de configuration du Tableau de bord226<xref role="JumpText" linkend="SAG.FrPC.mkr.3"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Gestion
+des personnalisations effectuées à l'aide de l'interface utilisateur229<xref
+role="JumpText" linkend="SAG.FrPC.mkr.5"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Organisation
+de la définition du Tableau de bord230<xref role="JumpText" linkend="SAG.FrPC.mkr.6"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Modification
+du panneau principal234<xref role="JumpText" linkend="SAG.FrPC.mkr.9"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Création
+et modification de panneaux secondaires239<xref role="JumpText" linkend="SAG.FrPC.mkr.13"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Définition
+des objets de commande du Tableau de bord243<xref role="JumpText" linkend="SAG.FrPC.mkr.15"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Personnalisation
+du sélecteur d'espace de travail251<xref role="JumpText" linkend="SAG.FrPC.mkr.23"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Configuration
+générale du Tableau de bord253<xref role="JumpText" linkend="SAG.FrPC.mkr.26"></p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+<div class="1" id="SAG.FrPC.div.2">
+<h1>Informations connexes</h1>
+<ul remap="Bullet1">
+<li><para id="SAG.FrPC.mkr.2">Pour plus de d&eacute;tails sur la configuration
+et les objets de commande du Tableau de bord, reportez-vous &agrave; la page
+de manuel <filename moreinfo="RefEntry">dtfpfile(4X)</tt>.</p>
+</li>
+<li><p>Pour plus de d&eacute;tails sur le Gestionnaire de l'espace
+de travail, reportez-vous aux pages de manuel<tt>dtwm(1)</tt>
+et <tt>dtwmrc(4)</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="1" id="SAG.FrPC.div.3">
+<h1 id="SAG.FrPC.mkr.3">Fichiers de configuration du Tableau de bord<!---- 
+<primary>Fichiers</primary><secondary>de configuration</secondary><tertiary>Tableau de bord</tertiary>----> <!---- <primary>Tableau de bord</primary><secondary>fichiers de configuration</secondary>----> </h1>
+<p>Le Tableau de bord est d&eacute;fini dans une base de donn&eacute;es
+de fichiers de configuration.</p>
+<p>Ces fichiers permettent de personnaliser le Tableau de bord. Certains
+changements ne peuvent &ecirc;tre effectu&eacute;s que par la modification
+d'un fichier de configuration, et notamment:</p>
+<ul remap="Bullet1">
+<li><p>l'ajout d'un nouvel emplacement d'objet de commande dans le
+panneau principal</p>
+</li>
+<li><p>l'ajout de types d'objets de commande particuliers, tels que
+des fen&ecirc;tres clientes</p>
+</li>
+<li><p>la modification de certains comportements par d&eacute;faut,
+par exemple l'activation des objets de commande du Tableau de bord par simple
+ou double clic</p>
+</li>
+</ul>
+<p>Ces fichiers de configuration peuvent &ecirc;tre personnels, r&eacute;partis
+sur le syst&egrave;me ou &eacute;loign&eacute;s. La souplesse de configuration
+est de ce fait maximale.</p>
+<p>Le Tableau de bord est cr&eacute;&eacute; et g&eacute;r&eacute; par
+le Gestionnaire de l'espace de travail.</p>
+<div class="2" id="SAG.FrPC.div.4">
+<h1>Fichier de configuration du Tableau de bord par d&eacute;faut</h1>
+<p>Le Tableau de bord par d&eacute;faut est d&eacute;fini dans le fichier
+de configuration <tt>/usr/dt/appconfig/types/</tt><var">langue</var><tt>/dtwm.fp</tt>.</p>
+<p><!---- <primary>Fichier</primary><secondary>dtwm.fp</secondary>
+----> </p>
+<p>Ce fichier ne doit pas &ecirc;tre modifi&eacute;.</p>
+</div>
+<div class="2" id="SAG.FrPC.div.5">
+<h1>Chemin de recherche des fichiers de configuration du Tableau de bord<!---- 
+<primary>Chemin de recherche</primary><secondary>d&eacute;finitions du Tableau
+de bord</secondary>----> <!---- <primary>Tableau de bord</primary>
+<secondary>chemin de recherche</secondary>----> </h1>
+<p>La d&eacute;finition du Tableau de bord peut &ecirc;tre r&eacute;partie
+dans plusieurs fichiers, locaux ou &eacute;loign&eacute;s.</p>
+<p><!---- <primary>Tableau de bord</primary><secondary>convention d'appellation
+des fichiers</secondary>----> Les fichiers utilis&eacute;s pour d&eacute;finir
+le Tableau de bord doivent r&eacute;pondre aux conditions suivantes:</p>
+<ul remap="Bullet1">
+<li><p>Le nom du fichier doit se terminer par <tt>.fp</tt>;
+par exemple, <tt>mail.fp</tt>.</p>
+</li>
+<li><p>Le fichier doit se trouver sur le chemin de recherche de la
+base de donn&eacute;es d'actions.</p>
+</li>
+</ul>
+<p>Le chemin de recherche de la base de donn&eacute;es d'actions par d&eacute;faut
+comprend les trois r&eacute;pertoires indiqu&eacute;s ci-dessous (par ordre
+de recherche):</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="228*">
+<colspec colwidth="228*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><var">R&eacute;p_Personnel</var><tt>/.dt/types</tt></p></td>
+<td align="left" valign="top"><p>Personnalisations de niveau utilisateur.
+</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><tt>/etc/dt/appconfig/types/</tt><var">langue</var></p></td>
+<td align="left" valign="top"><p>Personnalisations de niveau syst&egrave;me.
+</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><tt>/usr/dt/appconfig/types/</tt><var">langue</var></p></td>
+<td align="left" valign="top"><p>Objets de commande et panneau int&eacute;gr&eacute;s.
+</p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+<p>Un r&eacute;pertoire suppl&eacute;mentaire,<!---- <primary>R&eacute;pertoire</primary><secondary>fp_dynamic</secondary>----> <!---- <primary>Tableau de bord</primary><secondary>personnalisations dynamiques</secondary>
+---->  <var">R&eacute;p_Personnel</var><tt>/.dt/types/fp_dynamic</tt>, est utilis&eacute; pour les personnalisations
+effectu&eacute;es &agrave; partir de l'interface utilisateur. Il ne doit pas
+&ecirc;tre utilis&eacute; dans le cadre de personnalisations manuelles.</p>
+<p>Le chemin de recherche de la base de donn&eacute;es peut contenir des
+r&eacute;pertoires ajout&eacute;s lors de la configuration r&eacute;seau du
+syst&egrave;me. Des emplacements &agrave; distance sont ajout&eacute;s lorsque
+le syst&egrave;me est configur&eacute; pour acc&eacute;der &agrave; un serveur
+d'applications. Pour plus de d&eacute;tails, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Chemin de recherche (Action/Types de données) de bases
+de données&rdquo;, page&numsp;128<xref role="SecTitleAndPageNum" linkend="SAG.Datab.mkr.12">.
+</p>
+</div>
+<div class="2" id="SAG.FrPC.div.6">
+<h1 id="SAG.FrPC.mkr.4">R&egrave;gles de priorit&eacute; dans la structure
+du Tableau de bord<!---- <primary>Tableau de bord</primary><secondary>priorit&eacute; de structure</secondary>----> <!---- <primary>Priorit&eacute;</primary>----> <!---- <primary></primary><secondary>structure
+du Tableau de bord</secondary>----> </h1>
+<p>La structure du Tableau de bord est d&eacute;finie par l'ensemble des
+fichiers de configuration r&eacute;sidant sur le chemin de recherche de la
+base de donn&eacute;es d'actions.</p>
+<p>En cas de conflit entre les composants d'une d&eacute;finition, les
+r&egrave;gles de priorit&eacute; d&eacute;terminent la d&eacute;finition utilis&eacute;e.
+Il existe deux cas de conflit:</p>
+<ul remap="Bullet1">
+<li><p>lorsque les composants partagent le m&ecirc;me nom d'objet
+de commande et les m&ecirc;mes valeurs pour <tt>CONTAINER_NAME</tt>
+et <tt>CONTAINER_TYPE</tt></p>
+</li>
+<li><p>lorsque les composants doivent th&eacute;oriquement occuper
+le m&ecirc;me emplacement (diff&eacute;rents noms mais valeurs de <tt>CONTAINER_NAME</tt>, <tt>CONTAINER_TYPE</tt> et <tt>POSITION_HINTS</tt> identiques.</p>
+</li>
+</ul>
+<p>Le Tableau de bord fait appel aux r&egrave;gles de priorit&eacute; suivantes:
+</p>
+<ul remap="Bullet1">
+<li><p>Dans le premier cas (m&ecirc;me nom d'objet, m&ecirc;me nom
+et m&ecirc;me type de conteneur), c'est le premier composant lu qui est utilis&eacute;.
+</p>
+<p>Par exemple, si un objet de commande de niveau syst&egrave;me et un
+objet de commande int&eacute;gr&eacute; contiennent tous deux les zones suivantes
+(et s'ils diff&egrave;rent par ailleurs):</p>
+<listing remap="CodeIndent1">CONTROL TextEditor 
+{
+   CONTAINER_TYPE   BOX 
+   CONTAINER_NAME   Top 
+   &hellip;
+}</listing>
+<p>alors l'objet de commande de niveau syst&egrave;me est prioritaire.
+</p>
+</li>
+<li><p>Dans le second cas, l'ordre de lecture d&eacute;termine leur
+position respective.</p>
+<p>Par exemple, si un utilisateur cr&eacute;e un nouvel objet de commande
+personnel pour le panneau principal, (<tt>CONTAINER_TYPE</tt>
+BOX et <tt>CONTAINER_NAME</tt> Top) et lui affecte le param&egrave;tre <tt>POSITION_HINTS</tt> 5, l'objet de commande int&eacute;gr&eacute; et
+tous les autres objets de commande sont d&eacute;cal&eacute;s d'une position
+vers la droite.</p>
+</li>
+</ul>
+<note>
+<p>Si vous modifiez un objet de commande en en cr&eacute;ant une version
+de niveau syst&egrave;me ou personnel, la nouvelle d&eacute;finition doit
+comporter le m&ecirc;me nom d'objet de commande et les m&ecirc;mes param&egrave;tres <tt>CONTAINER_NAME</tt>, et <tt>CONTAINER_TYPE</tt>. Si tel
+n'est pas le cas, le nouvel objet de commande s'ajoutera &agrave; celui qui
+existe d&eacute;j&agrave;.</p>
+</note>
+</div>
+<div class="2" id="SAG.FrPC.div.7">
+<h1><!---- <primary>Tableau de bord</primary><secondary>personnalisations
+dynamiques</secondary>----> Fichiers du Tableau de bord cr&eacute;&eacute;s
+dynamiquement</h1>
+<p>Lorsqu'un utilisateur proc&egrave;de &agrave; la personnalisation du
+Tableau de bord &agrave; l'aide de la commande Installer une ic&ocirc;ne et
+des menus instantan&eacute;s, les fichiers sont &eacute;crits dans le r&eacute;pertoire <var">R&eacute;p_Personnel</var><tt>/.dt/types/fp_dynamic</tt>.</p>
+<p>Le Tableau de bord cr&eacute;e un fichier suppl&eacute;mentaire,<!---- 
+<primary>Fichier</primary><secondary>dtwmfp.session</secondary>---->  <var">R&eacute;p_Personnel</var><tt>/.dt/sessions/dtwmfp.session</tt>, utilis&eacute; pour enregistrer et r&eacute;tablir l'&eacute;tat
+du Tableau de bord personnalis&eacute; pour chaque session.</p>
+</div>
+</div>
+<div class="1" id="SAG.FrPC.div.8">
+<h1 id="SAG.FrPC.mkr.5">Gestion des personnalisations effectu&eacute;es
+&agrave; l'aide de l'interface utilisateur</h1>
+<p>Les utilisateurs peuvent personnaliser le Tableau de bord &agrave; l'aide
+des menus instantan&eacute;s et des objets de commande d'installation d'ic&ocirc;nes.
+</p>
+<p>La pr&eacute;sente section explique comment:</p>
+<ul remap="Bullet1">
+<li><p>emp&ecirc;cher certaines personnalisations des utilisateurs.
+Vous pouvez par exemple rendre la suppression d'un objet de commande impossible
+</p>
+</li>
+<li><p>annuler certaines personnalisations des utilisateurs. Il peut
+s'av&eacute;rer n&eacute;cessaire, par exemple, de r&eacute;tablir un objet
+de commande supprim&eacute; par erreur</p>
+</li>
+</ul>
+<div class="2" id="SAG.FrPC.div.9" role="Procedure">
+<h1>Pr&eacute;vention des personnalisations utilisateur<!---- <primary>Tableau de bord</primary><secondary>contr&ocirc;le des personnalisations utilisateur</secondary>----> <!---- <primary>Tableau de bord</primary><secondary>contr&ocirc;le</secondary>----> </h1>
+<ol>
+<li><p>Si l'objet de commande est int&eacute;gr&eacute;, copiez sa
+d&eacute;finition du fichier <tt>/usr/dt/appconfig/types/</tt><var">langue</var><tt>/dtwm.fp</tt> vers le fichier <tt>/etc/dt/appconfig/types/</tt><var">langue</var><tt>/</tt><var">nom</var><tt>.fp.</tt></p>
+</li>
+<li><p>Ajoutez la ligne suivante &agrave; la d&eacute;finition de
+l'objet de commande:</p>
+<listing remap="CodeIndent1">LOCKED    True</listing>
+</li>
+</ol>
+</div>
+<div class="2" id="SAG.FrPC.div.10" role="Procedure">
+<!--TRANSLATORS: When translating the following paragraphs refer to Chapter
+13 of the French CDE 1.0 Sysadmin Guide (hard copy). You can probably reuse
+some of the translation that is already there-->
+<h1>R&eacute;tablissement du Tableasu de bord modifi&eacute;, d'un contr&ocirc;le
+supprim&eacute; ou du panneau secondaire<!---- <primary>Panneau secondaire</primary><secondary>r&eacute;tablisement</secondary>----> <!---- 
+<primary>Objet de commande</primary><secondary>r&eacute;tablissement</secondary>
+----> </h1>
+<p>Pour<!---- <primary>R&eacute;tablissement du Tableau de bord</primary>
+---->  annuler toutes les personnalisations du Tableau de bord et le
+r&eacute;tablir par d&eacute;faut, utilisez l'action R&eacute;tablir tableau
+de bord dans le groupe d'applications Outils_Bureau.<!---- <primary>Objet de commande</primary><secondary>verrouillage</secondary>----> <!---- 
+<primary>Zone</primary><secondary>LOCKED</secondary>---->  Toutes les
+personnalisations effectu&eacute;es par l';utilisateur &agrave; l'aide des
+menus d&eacute;roulants du tableau de bord sont annul&eacute;es.</p>
+<p>Pour r&eacute;tablir un contr&ocirc;le individuel qui a &eacute;t&eacute;
+supprim&eacute;, proc&eacute;dez de la mani&egrave;re suivante:<?Pub Caret></p>
+<ul>
+<li><p>Dans le r&eacute;pertoire <var">R&eacute;p_Personnel</var><tt>/.dt/types/fp_dynamic</tt>, supprimez le fichier
+cr&eacute;&eacute; lors de la suppression de l'objet de commande par l'utilisateur.
+L'objet de commande portera alors le m&ecirc;me nom que l'objet d'origine
+supprim&eacute;.</p>
+<p>Par exemple, si un utilisateur a supprim&eacute; l'objet de commande
+Editeur d'ic&ocirc;nes, un fichier du r&eacute;pertoire <tt>fp_dynamic</tt> contiendra:</p>
+<listing remap="CodeIndent1">CONTROL IconEditor 
+{
+    &hellip;  
+    DELETE True 
+}</listing>
+<!---- <primary>Zone</primary><secondary>DELETE</secondary>----> 
+</li>
+</ul>
+<p>Lorsqu'un utilisateur supprime un panneau secondaire, un fichier dynamique
+distinct est cr&eacute;&eacute; pour ce dernier et pour chacun de ses objets
+de commande.</p>
+<p>For related information, see <!--XRef content: 'Modifying the Main Panel<xref
+role="JumpText" linkend="SAG.FrPC.div.11">.</p>
+</div>
+</div>
+<div class="1" id="SAG.FrPC.div.11">
+<h1 id="SAG.FrPC.mkr.6">Organisation de la d&eacute;finition du Tableau
+de bord<!---- <primary>Tableau de bord</primary><secondary>organisation
+de la d&eacute;finition</secondary>----> </h1>
+<p>Le Tableau de bord est &eacute;labor&eacute; &agrave; partir de l'ensemble
+des d&eacute;finitions de ses composants. La syntaxe requise pour chaque composant
+d&eacute;finit l'emplacement de ce dernier dans le Tableau de bord ainsi que
+sa pr&eacute;sentation et son comportement.</p>
+<div class="2" id="SAG.FrPC.div.12">
+<h1 id="SAG.FrPC.mkr.7">Composants du Tableau de bord<!---- <primary>Tableau de bord</primary><secondary>composants</secondary>----> </h1>
+<object>
+<h1>Composants du Tableau de bord</h1>
+<img id="SAG.FrPC.grph.1" src="./graphics/fpboxes.png">
+</object>
+<p>Le Tableau de bord se compose de la mani&egrave;re suivante:</p>
+<ul remap="Bullet1">
+<li><p>Le <code><!---- <primary>D&eacute;finition</primary>
+<secondary>PANNEAU</secondary>----> PANNEAU (PANEL)</code> est le
+conteneur sup&eacute;rieur, ou p&egrave;re, de l'ensemble du Tableau de bord.
+</p>
+</li>
+<li><p>Le <code>PANNEAU</code> est le conteneur d'une ou plusieurs <code>BOITES(BOX)</code>.</p>
+</li>
+<li><p>Une <tt><!---- <primary>D&eacute;finition</primary>
+<secondary>BOITE</secondary>----> BOITE</tt> est le conteneur
+d'un ou plusieurs <code>OBJETS DE COMMANDE(CONTROL)</code>.</p>
+</li>
+</ul>
+<p>Il existe deux types de conteneurs:</p>
+<ul remap="Bullet1">
+<li><p>Un <code><!---- <primary>D&eacute;finition</primary>
+<secondary>PANNEAU SECONDAIRE</secondary>----> PANNEAU SECONDAIRE(SUBPANEL)</code> est associ&eacute; &agrave; un objet de commande donn&eacute; (l'objet
+de commande est le conteneur du panneau secondaire). Les panneaux secondaires
+&ldquo;glissent&rdquo; de l'objet de commande auquel ils sont associ&eacute;s.
+</p>
+</li>
+<li><p>Le<!---- <primary>S&eacute;lecteur d'espace de travail</primary><secondary>d&eacute;finition</secondary>---->  <code>SELECTEUR(SWITCH)</code> contient les boutons permettant de changer d'espace de travail
+ainsi que des objets de commande suppl&eacute;mentaires.</p>
+</li>
+</ul>
+</div>
+<div class="2" id="SAG.FrPC.div.13">
+<h1 id="SAG.FrPC.mkr.8">Syntaxe g&eacute;n&eacute;rale de la d&eacute;finition
+du Tableau de bord<!---- <primary>Tableau de bord</primary><secondary>syntaxe</secondary>----> </h1>
+<p>Chacun des composants du Tableau de bord est d&eacute;fini s&eacute;par&eacute;m&eacute;nt
+&agrave; l'aide la syntaxe:</p>
+<listing>COMPONENT nom
+{
+   KEYWORD    valeur
+   KEYWORD    valeur
+   &hellip;
+}</listing>
+<p>Certains mots cl&eacute;s sont requis, d'autres sont facultatifs. Pour
+plus de d&eacute;tails, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">dtfpfile(4X</tt>).</p>
+<div class="3" id="SAG.FrPC.div.14">
+<h1><!---- <primary>D&eacute;finition</primary><secondary>PANNEAU</secondary>
+----> D&eacute;finition du PANNEAU</h1>
+<p>Le <code>PANNEAU</code> est le composant sup&eacute;rieur. Sa
+d&eacute;finition indique:</p>
+<ul remap="Bullet1">
+<li><p>le nom du Tableau de bord</p>
+</li>
+<li><p>des zones d&eacute;crivant le comportement et la pr&eacute;sentation
+g&eacute;n&eacute;rale du Tableau de bord</p>
+</li>
+</ul>
+<listing>PANEL nom_tableau_bord
+{
+    KEYWORD       valeur
+    KEYWORD       valeur
+    &hellip;
+}</listing>
+<p><symbol>nom_tableau_bord</var> est le nom unique du Tableau de bord.
+Le nom par d&eacute;faut est &ldquo;FrontPanel&rdquo;.</p>
+</div>
+<div class="3" id="SAG.FrPC.div.15">
+<h1><!---- <primary>D&eacute;finition</primary><secondary>BO&Icirc;TE</secondary>----> <!---- <primary></primary><secondary>syntaxe</secondary>----> D&eacute;finition d'une BOITE</h1>
+<p>La d&eacute;finition d'une <tt>BOITE</tt> indique:</p>
+<ul remap="Bullet1">
+<li><p>le nom de la <tt>BOITE</tt></p>
+</li>
+<li><p>le <code>PANNEAU</code> dans lequel elle se trouve (<tt><!---- 
+<primary>Zone</primary><secondary>CONTAINER_NAME</secondary>----> CONTAINER_NAME</tt> )</p>
+</li>
+<li><p>l'emplacement de la bo&icirc;te dans le <code>PANNEAU</code>
+(<tt>POSITION_HINTS</tt>)</p>
+</li>
+<li><p>les zones d&eacute;crivant la pr&eacute;sentation et le comportement
+s'appliquant &agrave; l'ensemble de la bo&icirc;te</p>
+</li>
+</ul>
+<listing>BOX nom_bo&icirc;te
+{
+    CONTAINER_NAME   nom_tableau_bord
+    POSITION_HINTS   emplacement
+    KEYWORD          valeur
+    KEYWORD          valeur
+    &hellip;
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.16">
+<h1><!---- <primary>D&eacute;finition</primary><secondary>OBJET DE
+COMMANDE</secondary><tertiary>syntaxe</tertiary>----> D&eacute;finition
+d'un OBJET DE COMMANDE</h1>
+<p>La d&eacute;finition d'un <code>OBJET DE COMMANDE</code> indique
+:</p>
+<ul remap="Bullet1">
+<li><p>le nom de l'<code>OBJET DE COMMANDE</code>;</p>
+</li>
+<li><p>si ce dernier se trouve dans une bo&icirc;te, un panneau secondaire
+ou un s&eacute;lecteur (<tt><!---- <primary>Zone</primary><secondary>CONTAINER_TYPE</secondary>----> CONTAINER_TYPE</tt>)</p>
+</li>
+<li><p>la bo&icirc;te, le panneau secondaire ou le s&eacute;lecteur
+qui contient l'objet de commande (<tt><!---- <primary>Zone</primary>
+<secondary>CONTAINER_NAME</secondary>----> CONTAINER_NAME</tt>)
+</p>
+</li>
+<li><p>L'emplacement de l'<code>OBJET DE COMMANDE</code> dans
+la <tt>BOITE</tt> (<tt>POSITION_HINTS</tt>)</p>
+</li>
+<li><p>les zones d&eacute;crivant la pr&eacute;sentation et le comportement
+de l'objet de commande.</p>
+</li>
+</ul>
+<listing>CONTROL nom_objet_commande
+{
+   CONTAINER_TYPE    BOITE ou PANNEAU SECONDAIRE ou SELECTEUR
+   CONTAINER_NAME    nom_bo&icirc;te ou nom_panneau_secondaire ou nom_s&eacute;lecteur
+   TYPE              type_objet_commande
+   POSITION_HINTS    emplacement
+   KEYWORD           valeur
+   KEYWORD           valeur
+   &hellip;
+}</listing>
+<p><!---- <primary>Panneau secondaire</primary><secondary>d&eacute;finition</secondary>----> <!---- <primary>Panneau secondaire</primary>
+<secondary>syntaxe</secondary>----> </p>
+</div>
+<div class="3" id="SAG.FrPC.div.17">
+<h1><!---- <primary>Panneau secondaire</primary><secondary>syntaxe</secondary>----> D&eacute;finition du PANNEAU SECONDAIRE</h1>
+<p>La d&eacute;finition d'un <code>PANNEAU SECONDAIRE</code> indique
+:</p>
+<ul remap="Bullet1">
+<li><p>le nom du <code>PANNEAU SECONDAIRE</code></p>
+</li>
+<li><p>le nom de l'objet de commande auquel il est associ&eacute;<!---- 
+<primary>Panneau secondaire</primary><secondary>conteneur</secondary>---->  (<tt><!---- 
+<primary>Zone</primary><secondary>CONTAINER_NAME</secondary>----> CONTAINER_NAME</tt> )</p>
+</li>
+<li><p>les zones d&eacute;crivant l'apparence et le comportement
+du panneau secondaire.</p>
+</li>
+</ul>
+<listing>PANNEAU SECONDAIRE nom_panneau_secondaire
+{
+   CONTAINER_NAME nom_objet_commande
+   KEYWORD        valeur
+   KEYWORD        valeur
+   &hellip;
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.18">
+<h1><!---- <primary>D&eacute;finition</primary><secondary>SELECTEUR</secondary>----> <!---- <primary>S&eacute;lecteur d'espace de travail</primary>----> <!---- <primary>syntaxe de d&eacute;finition</primary>
+----> D&eacute;finition d'un SELECTEUR</h1>
+<p>La d&eacute;finition du <tt>SELECTEUR</tt> indique:</p>
+<ul remap="Bullet1">
+<li><p>le nom du <tt>SELECTEUR</tt></p>
+</li>
+<li><p>la <tt>BOITE</tt> dans laquelle se trouve le <tt>SELECTEUR</tt> (<tt><!---- <primary>Zone</primary><secondary>CONTAINER_NAME</secondary>----> CONTAINER_NAME</tt>)</p>
+</li>
+<li><p>l'emplacement du <tt>SELECTEUR</tt> dans la <tt>BOITE</tt> (<tt>POSITION_HINTS</tt>)</p>
+</li>
+<li><p>les zones d&eacute;crivant l'apparence et le comportement
+du <tt>S&Eacute;LECTEUR</tt></p>
+</li>
+</ul>
+<listing>SWITCH nom_s&eacute;lecteur
+{
+   CONTAINER_NAME  nom_bo&icirc;te
+   POSITION_HINTS  emplacement
+   KEYWORD         valeur
+   KEYWORD         valeur
+   &hellip;
+}</listing>
+</div>
+</div>
+</div>
+<div class="1" id="SAG.FrPC.div.19">
+<h1 id="SAG.FrPC.mkr.9">Modification du panneau principal<!---- <primary>Tableau de bord</primary><secondary>modification</secondary>----> </h1>
+<p>Le panneau principal correspond &agrave; la fen&ecirc;tre du Tableau
+de bord sans les panneaux secondaires.</p>
+<object>
+<h1>Conteneurs du panneau principal</h1>
+<img id="SAG.FrPC.grph.2" src="./graphics/fpmainbo.png">
+</object>
+<p>Vous pouvez effectuer les modifications suivantes:</p>
+<ul remap="Bullet1">
+<li><p>ajout ou retrait d'objets de commande</p>
+</li>
+<li><p>interversion d'objets de commande</p>
+</li>
+</ul>
+<div class="2" id="SAG.FrPC.div.20" role="Procedure">
+<h1 id="SAG.FrPC.mkr.10">Ajout d'un objet de commande au panneau principal<!---- 
+<primary>Objet de commande</primary><secondary>ajout au panneau principal</secondary>----> </h1>
+<ol>
+<li><p>Cr&eacute;ez un fichier de configuration du Tableau de bord
+:</p>
+<ul remap="Bullet2">
+<li><p>appliqu&eacute; au syst&egrave;me: <tt>/etc/dt/appconfig/types/</tt><var">langue</var><tt>/*.fp</tt></p>
+</li>
+<li><p>personnel: <var">R&eacute;p_Personnel</var><tt>/.dt/types/*.fp</tt></p>
+</li>
+</ul>
+</li>
+<li><p>D&eacute;finissez l'objet de commande du fichier.</p>
+<p>Indiquez le conteneur de l'objet de commande dans les zones <tt>CONTAINER_NAME</tt> et <tt>CONTAINER_TYPE</tt>:</p>
+<listing remap="CodeIndent1">CONTAINER_NAME   Top 
+CONTAINER_TYPE   BOX</listing>
+<p>Utilisez <tt>POSITION_HINTS</tt> pour sp&eacute;cifier l'emplacement
+horizontal de l'objet de commande. Les personnalisations &eacute;tant prioritaires
+sur les objets de commande int&eacute;gr&eacute;s, le nouvel objet de commande
+va d&eacute;caler l'objet de commande existant d'une position vers la droite.
+</p>
+</li>
+<li><p>Sauvegardez le fichier de configuration.</p>
+</li>
+<li><p>Cr&eacute;ez une ic&ocirc;ne pour l'objet de commande du Tableau
+de bord.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Spécification
+de l'icône utilisée par un objet de commande&rdquo;, page&numsp;238<xref
+role="SecTitleAndPageNum" linkend="SAG.CrAct.mkr.10">.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+<p>Par exemple, la d&eacute;finition d'objet de commande suivante figurant
+dans le fichier <tt>/etc/dt/appconfig/types/</tt><var">langue</var><tt>/audio.fp</tt> ins&egrave;re l'objet d'une
+application audio entre ceux de l'Horloge et de l'Agenda.</p>
+<listing>CONTROL AudioApplication
+{
+   TYPE             icon
+   CONTAINER_NAME   Top
+   CONTAINER_TYPE   BOX
+   ICON             AudioApp
+   POSITION_HINTS   2
+   PUSH_ACTION      StartAudioApplication
+   PUSH_RECALL      true
+}</listing>
+</div>
+<div class="2" id="SAG.FrPC.div.21" role="Procedure">
+<h1 id="SAG.FrPC.mkr.11">Suppression d'un objet de commande<!---- 
+<primary>Objet de commande</primary><secondary>suppression</secondary>----> </h1>
+<ol>
+<li><p>Cr&eacute;ez un fichier de configuration du Tableau de bord.
+</p>
+<ul remap="Bullet2">
+<li><p>appliqu&eacute; au syst&egrave;me: <tt>/etc/dt/appconfig/types/<var">langue</var>/<var">nom</var>.fp</tt>
+</p>
+</li>
+<li><p>personnel: <var">R&eacute;p_Personnel</var><tt>/.dt/types/</tt><var">nom</var><tt>.fp</tt></p>
+</li>
+</ul>
+</li>
+<li><p>Copiez la d&eacute;finition de l'objet de commande &agrave;
+supprimer dans le nouveau fichier.</p>
+<p>S'il s'agit d'un objet de commande int&eacute;gr&eacute;, sa d&eacute;finition
+se trouve dans <tt>/usr/dt/appconfig/types/</tt><var">langue</var><tt>/dtwm.fp.</tt></p>
+<p>Il n'est pas n&eacute;cessaire de copier la totalit&eacute; de la d&eacute;finition.
+Toutefois, le segment copi&eacute; doit contenir les zones <tt>CONTAINER_NAME</tt> et <tt>CONTAINER_TYPE</tt>.</p>
+</li>
+<li><p>Ajoutez la zone <code>DELETE</code> &agrave; la d&eacute;finition
+:</p>
+<para remap="CodeIndent1"><listing>DELETE   True</listing></p>
+</li>
+<li><p>Enregistrez le fichier de configuration.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+<p>Par exemple, la d&eacute;finition d'objet de commande suivante figurant
+dans le fichier <tt>/etc/dt/appconfig/types/</tt><var">language</var><tt>/TrashCan.fp</tt> supprime l'objet de commande
+de la Corbeille du Tableau de bord.</p>
+<listing>CONTROL Trash
+{
+   CONTAINER_NAME    Top
+   CONTAINER_TYPE    BOX
+   DELETE            True
+}</listing>
+</div>
+<div class="2" id="SAG.FrPC.div.22" role="Procedure">
+<h1>Modification d'un objet de commande<!---- <primary>Objet de commande</primary><secondary>modification</secondary>----> </h1>
+<p>Utilisez cette proc&eacute;dure pour modifier la d&eacute;finition d'un
+objet de commande, par exemple pour changer l'image de son ic&ocirc;ne.</p>
+<ol>
+<li><p>Copiez la totalit&eacute; de la d&eacute;finition de l'objet
+de commande du fichier <tt>/usr/dt/appconfig/types/</tt><var">langue</var><tt>/dtwm.fp</tt> vers:</p>
+<ul remap="Bullet2">
+<li><p>appliqu&eacute; au syst&egrave;me: <tt>/etc/dt/appconfig/types/<var">langue</var>/<var">nom</var>.fp</tt></p>
+</li>
+<li><p>personnel: <var">R&eacute;p_Personnel</var><tt>/.dt/types/</tt><var">nom</var><tt>.fp</tt></p>
+</li>
+</ul>
+</li>
+<li><p>Modifiez la zone souhait&eacute;e. Vous pouvez &eacute;galement
+ajouter des zones suppl&eacute;mentaires.</p>
+</li>
+<li><p>Enregistrez le fichier.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="SAG.FrPC.div.23" role="Procedure">
+<h1>Interversion d'objets de commande<!---- <primary>Objet de commande</primary><secondary>interversion</secondary>----> </h1>
+<ol>
+<li><p>Copiez les d&eacute;finitions des objets &agrave; d&eacute;placer
+de <tt>/usr/dt/appconfig/types/</tt><var">langue</var><tt>/dtwm.fp</tt> vers:</p>
+<ul remap="Bullet2">
+<li><p>appliqu&eacute; au syst&egrave;me: <tt>/etc/dt/appconfig/types/<var">langue</var>/<var">nom</var>.fp</tt></p>
+</li>
+<li><p>personnel: <var">R&eacute;p_Personnel</var><tt>/.dt/types/</tt><var">nom</var><tt>.fp</tt></p>
+<p>Vous devez copier la totalit&eacute; de la d&eacute;finition de chacun
+des objets &agrave; d&eacute;placer.</p>
+</li>
+</ul>
+</li>
+<li><p>Intervertissez les valeurs des zones <tt><!---- 
+<primary>Zone</primary><secondary>POSITION_HINTS</secondary>----> POSITION_HINTS</tt> des d&eacute;finitions des objets de commande.</p>
+</li>
+<li><p>Enregistrez le fichier.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+<p>Par exemple, les d&eacute;finitions suivantes figurant dans un fichier <tt>/etc/dt/appconfig/types/C/MailInfo.fp</tt> intervertissent les objets
+de commande Courrier et Gestionnaire d'information et les verrouillent, emp&ecirc;chant
+ainsi toute tentative de modification personnelle.</p>
+<listing>CONTROL Mail
+{
+   POSITION_HINTS   12
+   LOCKED           True
+   &hellip;reste de la d&eacute;finition de l'objet de commande
+}
+
+CONTROL Help
+{
+   POSITION_HINTS   5
+   LOCKED           True
+   &hellip;reste de la d&eacute;finition de l'objet de commande
+}</listing>
+</div>
+<div class="2" id="SAG.FrPC.div.24" role="Procedure">
+<h1>Remplacement d'objet de commande du Tableau de bord<!---- <primary>Objet de commande</primary><secondary>remplacement</secondary>----> </h1>
+<ul>
+<li><p>Cr&eacute;ez une autre d&eacute;finition d'objet de commande
+avec:</p>
+<ul remap="Bullet2">
+<li><p>le m&ecirc;me <var">nom_objet_commande</var>
+</p>
+</li>
+<li><p>la m&ecirc;me valeur de zone<code>CONTAINER_NAME</code></p>
+<!---- <primary>Zone</primary><secondary>CONTAINER_NAME</secondary>----> 
+</li>
+</ul>
+</li>
+</ul>
+<p>Par exemple, les deux objets de commande suivants sont d&eacute;finis
+dans deux fichiers de configuration. Ils partagent les m&ecirc;mes noms d'objet
+et de conteneur et sont par cons&eacute;quent consid&eacute;r&eacute;s comme
+identiques.</p>
+<ul remap="Bullet1">
+<li><p>D&eacute;finition dans <tt>/etc/dt/appconfig/types/C/SysControls.fp</tt>:</p>
+<listing remap="CodeIndent1">Control ImportantApplication  
+(
+   CONTAINER_NAME  Top 
+   CONTAINER_TYPE  BOX 
+   POSITION_HINTS  2
+   &hellip;</listing>
+</li>
+<li><p>D&eacute;finition dans <var">R&eacute;p_Personnel</var><tt>/.dt/types/MyControls.fp</tt>:</p>
+<listing remap="CodeIndent1">Control ImportantApplication 
+{
+   CONTAINER_NAME  Top 
+   CONTAINER_TYPE  BOX 
+   POSITION_HINTS  6
+   &hellip;
+
+}</listing>
+</li>
+</ul>
+<p>L'objet de commande personnel &eacute;tant prioritaire, il sera affect&eacute;
+&agrave; l'emplacement 6.</p>
+</div>
+<div class="2" id="SAG.FrPC.div.25">
+<h1 id="SAG.FrPC.mkr.12">Sp&eacute;cification de l'ic&ocirc;ne utilis&eacute;e
+par un objet de commande<!---- <primary>Objet de commande</primary><secondary>apparence</secondary>----> <!---- <primary>Objet de commande</primary>
+<secondary>ic&ocirc;ne</secondary>----> <!---- <primary>Ic&ocirc;nes</primary><secondary>Tableau de bord</secondary>----> </h1>
+<p>La zone <code><!---- <primary>Zone</primary><secondary>ICON</secondary>
+<tertiary>Tableau de bord</tertiary>----> ICON</code> de la d&eacute;finition
+d'objet de commande d&eacute;finit l'image de l'ic&ocirc;ne utilis&eacute;e
+pour l'objet de commande.</p>
+<p>La valeur de la zone <code>ICON</code> peut d&eacute;signer les
+&eacute;l&eacute;ments ci-dessous.</p>
+<ul remap="Bullet1">
+<li><p>Un nom de fichier de base.</p>
+<p>Le nom de fichier de base est le nom du fichier contenant l'image de
+l'ic&ocirc;ne moins les suffixes de la taille (<code>m</code> et <code>t</code>) et du type d'image (<code>bm</code> et <code>pm</code>).
+Par exemple, si des fichiers s'appellent <tt>Jeu.l.pm</tt> et
+<tt>Jeu.m.pm</tt>, utilisez <code>Jeu</code>.</p>
+<p>Si vous utilisez un nom de fichier de base, les fichiers d'ic&ocirc;ne
+doivent &ecirc;tre copi&eacute;s dans un r&eacute;pertoire figurant sur le
+chemin de recherche d'ic&ocirc;ne.</p>
+<ul remap="Bullet2">
+<li><p>Ic&ocirc;nes personnelles: <var">R&eacute;p_Personnel</var><tt>/.dt/icons</tt></p>
+</li>
+<li><p>Ic&ocirc;nes appliqu&eacute;es au syst&egrave;me: <tt>/etc/dt/appconfig/icons/</tt><var">langue</var></p>
+</li>
+</ul>
+</li>
+<li><p>Un chemin de recherche du fichier d'ic&ocirc;ne absolu, comprenant
+le nom complet du fichier.</p>
+<p>Utilisez le chemin absolu uniquement si le fichier d'ic&ocirc;ne ne
+figure pas sur le chemin de recherche de l'ic&ocirc;ne.</p>
+</li>
+</ul>
+<p>L'ic&ocirc;ne de la taille dont vous avez besoin d&eacute;pend de l'emplacement
+de l'objet de commande:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="153*">
+<colspec colwidth="375*">
+<thead>
+<tr><td align="left" valign="bottom"><p>Emplacement</p></td>
+<td align="left" valign="bottom"><p>Taille requise</p></td></tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Panneau principal</p></td>
+<td align="left" valign="top"><p>48 x 48 pixels ( <var">nom</var><tt>.l.pm</tt> ou <var">nom</var><tt>.l.bm)</tt></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Panneau secondaire</p></td>
+<td align="left" valign="top"><p>32 x 32 pixels (<var">nom</var><tt>.m.pm</tt> ou <var">nom</var><tt>.m.bm)</tt></p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+<p>Copiez le fichier d'ic&ocirc;ne dans l'un des emplacement suivants:
+</p>
+<ul remap="Bullet1">
+<li><p>ic&ocirc;nes personnelles: <var">R&eacute;p_Personnel</var><code>/.dt/icons</code></p>
+</li>
+<li><p>ic&ocirc;nes appliqu&eacute;es au syst&egrave;m: <tt>/etc/dt/appconfig/icons/</tt><var">langue</var></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="1" id="SAG.FrPC.div.26">
+<h1 id="SAG.FrPC.mkr.13">Cr&eacute;ation et modification de panneaux secondaires<!---- 
+<primary>Panneau secondaire</primary><secondary>cr&eacute;ation</secondary>
+----> <!---- <primary>Panneau secondaire</primary><secondary>modification</secondary>----> </h1>
+<p>Les utilisateurs peuvent cr&eacute;er et modifier des panneaux secondaires
+&agrave; l'aide des menus instantan&eacute;s du Tableau de bord.</p>
+<p>Cette section explique la proc&eacute;dure &agrave; suivre pour effectuer
+des personnalisations de niveau syst&egrave;me, qui requi&egrave;rent une
+modification des fichiers de configuration du Tableau de bord.</p>
+<p>Un panneau secondaire est &ldquo;associ&eacute;&rdquo; &agrave; un objet
+de commande du panneau principal.</p>
+<object>
+<h1>Le conteneur d'un panneau secondaire est l'objet de commande auquel
+il est associ&eacute;.</h1>
+<img id="SAG.FrPC.grph.3" src="./graphics/fpsubbox.png">
+</object>
+<p><!---- <primary>Panneau secondaire</primary><secondary>association
+au panneau principal</secondary>----> La liaison est &eacute;tablie
+dans la d&eacute;finition du panneau secondaire. La zone <tt>CONTAINER_NAME</tt> indique l'objet de commande auquel est associ&eacute; le panneau
+secondaire:</p>
+<listing>CONTROL nom_objet_commande
+{
+    &hellip;
+}
+
+SUBPANEL nom_panneau_secondaire
+{
+    CONTAINER_NAME   nom_objet_commande
+    &hellip;
+}</listing>
+<div class="2" id="SAG.FrPC.div.27" role="Procedure">
+<h1>Cr&eacute;ation d'un nouveau panneau secondaire de niveau syst&egrave;me<!---- 
+<primary>Panneau secondaire</primary><secondary>personnalisation syst&egrave;me</secondary>----> <!---- <primary>Panneau secondaire</primary><secondary>nouveau</secondary>----> </h1>
+<ol>
+<li><p>Localisez le <var">nom_objet_commande</var>
+de l'objet de commande du panneau principal auquel associer le panneau secondaire.
+</p>
+<p>S'il s'agit d'un objet de commande int&eacute;gr&eacute;, sa d&eacute;finition
+se trouve dans <tt>/usr/dt/appconfig/types/</tt><var">langue</var><tt>/dtwm.fp</tt>.</p>
+</li>
+<li><p>Cr&eacute;ez un nouveau fichier <tt>/etc/dt/appconfig/types/</tt><var">langue</var><tt>/*.fp</tt>.
+</p>
+</li>
+<li><p>D&eacute;finissez le panneau secondaire:</p>
+<listing remap="CodeIndent1">SUBPANEL nom_panneau_secondaire 
+{ 
+   CONTAINER_NAME  nom_objet_commande  
+   TITLE           valeur  
+   KEYWORD         valeur 
+   &hellip; 
+}</listing>
+</li>
+<li><p>Enregistrez le nouveau fichier de configuration.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option &ldquo;Relancer Gestionnaire
+de l'esp. de travail&rdquo; du menu Espace de travail.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="SAG.FrPC.div.28">
+<h1>Personnalisation des panneaux secondaires int&eacute;gr&eacute;s<!---- 
+<primary>Panneau secondaire</primary><secondary>int&eacute;gr&eacute;</secondary>
+----> <!---- <primary>Panneau secondaire</primary><secondary>personnalisation</secondary>----> </h1>
+<p>Vous pouvez modifier les caract&eacute;ristiques g&eacute;n&eacute;rales
+(le titre, par exemple) et le contenu des panneaux secondaires int&eacute;gr&eacute;s.
+</p>
+<div class="3" id="SAG.FrPC.div.29" role="Procedure">
+<h1>Modification des caract&eacute;ristiques g&eacute;n&eacute;rales d'un
+panneau secondaire int&eacute;gr&eacute;</h1>
+<ol>
+<li><p>Cr&eacute;ez un nouveau fichier de configuration du Tableau
+de bord:</p>
+<ul remap="Bullet2">
+<li><p>appliqu&eacute; au syst&egrave;me: <tt>/etc/dt/appconfig/types/<var">langue</var>/<var">nom</var>.fp</tt>
+</p>
+</li>
+<li><p>personnel: <var">R&eacute;p_Personnel</var><tt>/.dt/types/</tt><var">nom</var><tt>.fp</tt></p>
+</li>
+</ul>
+</li>
+<li><p>Copiez la totalit&eacute; de la d&eacute;finition par d&eacute;faut
+du param&egrave;tre <code>SUBPANEL</code> de <tt>/usr/dt/appconfig/types/</tt><var">language</var>/<tt>dtwm.fp</tt>
+vers le nouveau fichier:</p>
+<listing remap="CodeIndent1">SUBPANEL nom_panneau_secondaire 
+{
+    &hellip; 
+}</listing>
+</li>
+<li><p>Modifiez la d&eacute;finition du panneau secondaire.</p>
+</li>
+<li><p>Enregistrez le nouveau fichier de configuration.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+<p>Par exemple, la d&eacute;finition suivante, figurant dans le fichier <tt>/users/janice/.dt/types/PerApps.fp</tt>, modifie le nom du panneau secondaire
+Applications personnelles:</p>
+<listing>SUBPANEL PersAppsSubpanel
+{
+   CONTAINER_NAME   TextEditor
+   TITLE            Applications de Janice
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.30" role="Procedure">
+<h1>Ajout d'un objet de commande appliqu&eacute; au syst&egrave;me &agrave;
+un panneau secondaire int&eacute;gr&eacute;</h1>
+<ol>
+<li><p>Cr&eacute;ez un fichier de configuration du Tableau de bord <tt>/etc/dt/appconfig/types/<var">langue</var>/<var">nom</var>.fp</tt></p>
+</li>
+<li><p>D&eacute;finissez l'objet de commande appliqu&eacute; au syst&egrave;me
+dans le fichier.</p>
+<p>Utilisez les zones <tt>CONTAINER_NAME</tt> et <tt>CONTAINER_TYPE</tt> pour sp&eacute;cifier le conteneur de l'objet de
+commande:</p>
+<listing remap="CodeIndent1">CONTROL nom_objet_commande 
+{ 
+   CONTAINER_NAME  nom_panneau_secondaire  
+   CONTAINER_TYPE  SUBPANEL
+   &hellip; 
+}</listing>
+<p>Reportez-vous &agrave; la section &rdquo;Définition
+des objets de commande du Tableau de bord&rdquo;, page&numsp;243<xref
+role="SecTitleAndPageNum" linkend="SAG.FrPC.mkr.15">.</p>
+</li>
+<li><p>Enregistrez le fichier de configuration.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+<p>Par exemple, l'objet de commande suivant, d&eacute;fini dans un nouveau
+fichier <tt>/etc/dt/appconfig/types/<var">langue</var>/DigitalClock.fp</tt> ajoute l'Horloge num&eacute;rique (du groupe d'applications Outils_Bureau)
+au panneau secondaire Applications personnelles pour l'ensemble des utilisateurs.
+</p>
+<listing>CONTROL DigitalClockControl
+{
+    TYPE             icon
+    CONTAINER_NAME   PerAppsSubpanel
+    CONTAINER_TYPE   SUBPANEL
+    ICON             Dtdgclk
+    PUSH_ACTION      DigitalClock
+    PUSH_RECALL      True
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.31" role="Procedure">
+<h1>Retrait d'un objet de commande d'un panneau secondaire</h1>
+<ul>
+<li><p>Utilisez la m&ecirc;me proc&eacute;dure que pour le retrait
+d'un objet de commande du panneau principal. Reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Suppression d'un objet
+de commande&rdquo;,
+page&numsp;235<xref role="SecTitleAndPageNum" linkend="SAG.FrPC.mkr.11">.
+</p>
+</li>
+</ul>
+</div>
+<div class="3" id="SAG.FrPC.div.32" role="Procedure">
+<h1 id="SAG.FrPC.mkr.14">Retrait de l'objet de commande<!---- <primary>Objet de commande</primary><secondary>installation d'ic&ocirc;ne</secondary>
+----> <!---- <primary>Objet de commande</primary><secondary>retrait</secondary>---->  d'installation d'ic&ocirc;ne</h1>
+<ul>
+<li><p>Ajoutez la zone suivante &agrave; la d&eacute;finition du
+panneau secondaire:</p>
+<listing remap="CodeIndent1">CONTROL_INSTALL    False</listing>
+</li>
+</ul>
+</div>
+</div>
+<div class="2" id="SAG.FrPC.div.33" role="Procedure">
+<h1>Modification de la fermeture automatique des panneaux secondaires<!---- 
+<primary>Panneau secondaire</primary><secondary>modification de la fermeture
+automatique</secondary>----> </h1>
+<p>La fermeture automatique des panneaux secondaires est activ&eacute;e
+par d&eacute;faut lorsque l'utilisateur s&eacute;lectionne un objet de commande,
+sauf si l'utilisateur a d&eacute;plac&eacute; ce panneau de son emplacement
+d'origine.</p>
+<p>Le Tableau de bord peut &ecirc;tre configur&eacute; afin que les panneaux
+secondaires restent ouverts jusqu'&agrave; l'intervention de l'utilisateur.
+</p>
+<ol>
+<li><p>Cr&eacute;ez un nouveau fichier de configuration du Tableau
+de bord dans:</p>
+<ul remap="Bullet2">
+<li><p>appliqu&eacute; au syst&egrave;me: <tt>/etc/dt/appconfig/types/<var">langue</var>/*.fp</tt></p>
+</li>
+<li><p>personnel: <var">R&eacute;p_Personnel</var><tt>/.dt/types/*.fp</tt></p>
+</li>
+</ul>
+</li>
+<li><p>Copiez la d&eacute;finition par d&eacute;faut du param&egrave;tre <code>PANEL</code> de <tt>/usr/dt/appconfig/types/</tt><var">language</var>/<tt>dtwm.fp</tt> vers le nouveau fichier:</p>
+<listing remap="CodeIndent1">PANEL Tableau_bord 
+{
+   &hellip;
+}</listing>
+</li>
+<li><p>Ajoutez la zone suivante &agrave; la d&eacute;finition du
+param&egrave;tre <code>PANEL</code>:</p>
+<listing remap="CodeIndent1">SUBPANEL_UNPOST    False</listing>
+</li>
+<li><p>Enregistrez le nouveau fichier de configuration.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="SAG.FrPC.div.34">
+<h1 id="SAG.FrPC.mkr.15">D&eacute;finition des objets de commande du Tableau
+de bord<!---- <primary>Objet de commande</primary><secondary>d&eacute;finition</secondary>----> </h1>
+<p>L'utilisateur peut cr&eacute;er des objets de commande personnels en
+faisant glisser des ic&ocirc;nes sur les objets de commande d'installation
+d'ic&ocirc;ne.</p>
+<p>Les personnalisations se trouvent ainsi simplifi&eacute;es mais d&eacute;pendent
+&eacute;troitement des objets de commande du Tableau de bord. Par exemple,
+un objet de commande cr&eacute;&eacute; &agrave; l'aide d'Installer une ic&ocirc;ne
+ne peut:</p>
+<ul remap="Bullet1">
+<li><p>g&eacute;n&eacute;rer d'animation</p>
+</li>
+<li><p>afficher de fen&ecirc;tre cliente</p>
+</li>
+<li><p>modifier sa pr&eacute;sentation lors d'un &eacute;v&eacute;nement
+(tel que la r&eacute;ception d'un courrier)</p>
+</li>
+</ul>
+<p>La pr&eacute;sente section d&eacute;crit la proc&eacute;dure &agrave;
+suivre pour cr&eacute;er manuellement des objets de commande du Tableau de
+bord.</p>
+<p>Pour plus de d&eacute;tails sur la syntaxe des objets de commande du
+Tableau de bord, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">dtfpfile(4X)</tt>.</p>
+<div class="2" id="SAG.FrPC.div.35">
+<h1>D&eacute;finition des objets de commande du Tableau de bord</h1>
+<p>La d&eacute;finition d'un objet de commande du Tableau de bord repose
+sur la structure suivante:</p>
+<listing>CONTROL nom_objet_commande
+{
+   TYPE              type_objet_commande
+   CONTAINER_NAME    valeur
+   CONTAINER_TYPE    valeur
+   autres zones d&eacute;finissant l'apparence et le comportement 
+}</listing>
+</div>
+<div class="2" id="SAG.FrPC.div.36">
+<h1><!---- <primary>Objet de commande</primary><secondary>types</secondary>
+----> Types d'objets de commande</h1>
+<p>La zone <code><!---- <primary>Zone</primary><secondary>TYPE</secondary>
+----> TYPE</code> de la d&eacute;finition de l'objet de commande
+sert &agrave; sp&eacute;cifier le comportement de base de l'objet de commande.
+</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="104*">
+<colspec colwidth="424*">
+<thead>
+<tr><td align="left" valign="bottom"><p>TYPE</p></td><td align="left"
+valign="bottom"><p>Comportement</p></td></tr>
+</thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>icon</secondary><tertiary>Tableau de bord</tertiary>----> icon</code></p></td>
+<td align="left" valign="top"><p>(par d&eacute;faut). L'objet de commande
+ex&eacute;cute une action donn&eacute;e lorsqu'un utilisateur clique dessus
+ou pose un fichier dessus.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>blank</secondary>----> blank</code></p></td>
+<td align="left" valign="top"><p>Param&egrave;tre blanc utilis&eacute;
+pour ajuster la disposition des objets de commande.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>busy</secondary>----> busy</code></p></td>
+<td align="left" valign="top"><p>Voyant occup&eacute;. L'objet de commande
+clignote (alternance d'images) lorsqu'une action est lanc&eacute;e.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>client</secondary>----> client</code></p></td>
+<td align="left" valign="top"><p>Fen&ecirc;tre cliente du Tableau de
+bord.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>clock</secondary>----> clock</code>
+</p></td>
+<td align="left" valign="top"><p>Horloge.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>date</secondary>----> date</code></p></td>
+<td align="left" valign="top"><p>Affiche la date du jour.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>file</secondary>----> file</code></p></td>
+<td align="left" valign="top"><p>Repr&eacute;sente un fichier. La s&eacute;lection
+de cet objet de commande lance l'ex&eacute;cution de l'action par d&eacute;faut
+sur le fichier.</p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+</div>
+<div class="2" id="SAG.FrPC.div.37" role="Procedure">
+<h1 id="SAG.FrPC.mkr.16">Cr&eacute;ation d'un nouvel objet de commande<!---- 
+<primary>Objet de commande</primary><secondary>cr&eacute;ation</secondary>
+----> </h1>
+<p>La pr&eacute;sente section d&eacute;crit les &eacute;tapes g&eacute;n&eacute;rales
+de la d&eacute;finition d'un objet de commande et de la cr&eacute;ation de
+divers types d'objets.</p>
+<ol>
+<li><p>En cas de <tt>PUSH_ACTION</tt> et/ou <tt>DROP_ACTION</tt>, cr&eacute;ez les d&eacute;finitions de l'action. Il
+s'agit des actions ex&eacute;cut&eacute;es lorsque l'utilisateur clique sur
+l'objet ou pose un fichier dessus.</p>
+</li>
+<li><p>Cr&eacute;ez les fichiers image d'ic&ocirc;ne de l'objet de
+commande.</p>
+<p>Pour plus de d&eacute;tails sur les tailles, noms et emplacements des
+ic&ocirc;nes, reportez-vous &agrave; la section <!--Original XRef content:
+'&rdquo;Fichiers d'images&rdquo;, page&numsp;214<xref role="SecTitleAndPageNum"
+linkend="SAG.CrIcn.mkr.3">.</p>
+</li>
+<li><p>Cr&eacute;ez un nouveau fichier de configuration du Tableau
+de bord dans:</p>
+<ul remap="Bullet2">
+<li><p>appliqu&eacute; au syst&egrave;me: <tt>/etc/dt/appconfig/types/<var">langue</var>/*.fp</tt></p>
+</li>
+<li><p>personnel: <var">R&eacute;p_Personnel</var><tt>/.dt/types/*.fp</tt></p>
+</li>
+</ul>
+</li>
+<li><p>Ajoutez la d&eacute;finition de l'objet de commande au fichier.
+</p>
+</li>
+<li><p>Enregistrez le fichier.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+<div class="3" id="SAG.FrPC.div.38">
+<h1 id="SAG.FrPC.mkr.17">Cr&eacute;ation d'un objet de commande qui ex&eacute;cute
+une action lors d'un d&eacute;clic utilisateur</h1>
+<p>Utilisez ces zones pour d&eacute;finir le comportement d'un objet de
+commande.</p>
+<ul remap="Bullet1">
+<li><p><code>TYPE</code>: configur&eacute; sur <code>icon</code></p>
+</li>
+<li><p><code><!---- <primary>Zone</primary><secondary>PUSH_ACTION</secondary>----> PUSH_ACTION:</code> sp&eacute;cifie le nom de
+l'action &agrave; ex&eacute;cuter.</p>
+</li>
+</ul>
+<p>Par exemple, l'objet de commande suivant, qui sera int&eacute;gr&eacute;
+au panneau secondaire Applications personnelles, permet l'ex&eacute;cution
+d'un jeu:</p>
+<listing>CONTROL Ball
+{
+   TYPE            icon
+   CONTAINER_NAME  PersAppsSubpanel
+   CONTAINER_TYPE  SUBPANEL
+   ICON            ball
+   PUSH_ACTION     RunBallGame
+   HELP_STRING     "Cet objet de commande lance le jeu Ball."
+}</listing>
+<p>L'objet de commande sera plac&eacute; dans l'angle sup&eacute;rieur
+gauche du s&eacute;lecteur. Il permet de lancer l'action CutDisp.</p>
+<listing>CONTROL StartCutDisp
+{
+   TYPE            icon
+   CONTAINER_NAME  Switch
+   CONTAINER_TYPE  SWITCH
+   POSITION_HINTS  first
+   ICON            cutdisp
+   HELP_STRING     "Cet objet de commande lance l'action CutDisp."
+   PUSH_ACTION     CutDisp
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.39">
+<h1><!---- <primary>Objet de commande</primary><secondary>ouverture
+d'un fichier</secondary>----> Cr&eacute;ation d'un objet de commande
+pour l'ouverture d'un fichier</h1>
+<p>Utilisez ces zones pour d&eacute;finir le comportement d'un objet de
+commande.</p>
+<ul remap="Bullet1">
+<li><p><code>TYPE</code>: configur&eacute; sur <code>file</code></p>
+</li>
+<li><p><code><!---- <primary>Zone</primary><secondary>FILE_NAME</secondary>----> FILE_NAME</code>: indique le chemin du fichier
+&agrave; ouvrir</p>
+</li>
+<li><p><tt>PUSH_ACTION</tt>: configur&eacute; sur <tt>Open</tt></p>
+</li>
+</ul>
+<p>Une action Ouvrir doit &ecirc;tre d&eacute;finie pour le type de donn&eacute;es
+du fichier.</p>
+<p>Par exemple, l'objet de commande sera plac&eacute; sur le c&ocirc;t&eacute;
+droit du panneau principal. Il permet de lancer l'Editeur de texte &agrave;
+l'aide du fichier de donn&eacute;es <tt>/users/ellen/PhoneList.txt</tt>.
+L'action Ouvrir des fichiers de type <tt>*.txt</tt> fait partie
+de la base de donn&eacute;es d'actions par d&eacute;faut.</p>
+<listing>CONTROL EditPhoneList
+{
+   TYPE             file
+   FILE_NAME        /users/ellen/PhoneList.txt
+   CONTAINER_NAME   Top
+   CONTAINER_TYPE   BOX
+   POSITION_HINTS   last
+   ICON             PhoneBook
+   HELP_STRING      "Cet objet de commande affiche la liste t&eacute;l&eacute;phonique."
+   PUSH_ACTION      Open
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.40">
+<h1 id="SAG.FrPC.mkr.18">Cr&eacute;ation d'un objet de commande qui se
+comporte
+comme une zone de pose<!---- <primary>Zone</primary><secondary>pose</secondary>
+<tertiary>objet de commande du Tableau de bord</tertiary>----> <!---- 
+<primary>Tableau de bord</primary><secondary>objet de commande Zone de pose</secondary>----> <!---- <primary>Objet de commande</primary><secondary>zone de pose</secondary>----> </h1>
+<p>Utilisez la zone <tt><!---- <primary>Zone</primary><secondary>DROP_ACTION</secondary>----> DROP_ACTION</tt> pour pr&eacute;ciser
+l'action ex&eacute;cut&eacute;e lorsque l'utilisateur pose un fichier sur
+l'objet de commande. L'action doit pouvoir accepter un argument de fichier.
+</p>
+<p>La d&eacute;finition d'un objet de commande comporte souvent &agrave;
+la fois une zone <tt>PUSH_ACTION</tt> et une zone <tt>DROP_ACTION</tt>. La m&ecirc;me action peut &ecirc;tre utilis&eacute;e pour l'une
+ou l'autre.</p>
+<p>Par exemple, l'objet de commande suivant, figurant dans le panneau secondaire
+Applications personnelles, ex&eacute;cute le client X <code>xwud</code>,
+qui exige un argument de fichier.</p>
+<listing>CONTROL Run_xwud
+{
+   CONTAINER_NAME  PerAppsSubpanel
+   CONTAINER_TYPE  SUBPANEL
+   POSITION_HINTS  2
+   ICON            XwudImage
+   PUSH_ACTION     RunXwud
+   DROP_ACTION     RunXwud
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.41">
+<h1 id="SAG.FrPC.mkr.19">Cr&eacute;ation d'un objet de commande pour le
+contr&ocirc;le d'un fichier<!---- <primary>Objet de commande</primary>
+<secondary>contr&ocirc;le</secondary>----> </h1>
+<p>Utilisez ces zones pour d&eacute;finir le comportement d'un objet de
+commande.</p>
+<ul remap="Bullet1">
+<li><p><code>TYPE</code>: indique l'une des valeurs suivantes
+:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="105*">
+<colspec colwidth="423*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>type icon</secondary>----> icon</code></p></td>
+<td align="left" valign="top"><p>Permet de d&eacute;finir les param&egrave;tres <tt>PUSH_ACTION</tt> et/ou <tt>DROP_ACTION</tt> pour l'objet
+de commande<tt>.</tt></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>type file</secondary>----> file</code></p></td>
+<td align="left" valign="top"><p>Si vous souhaitez que l'objet de commande,
+une fois s&eacute;lectionn&eacute;, se comporte comme le fichier lorsque vous
+cliquez deux fois sur l'ic&ocirc;ne de ce dernier dans le Gestionnaire de
+fichiers.</p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+</li>
+<li><p><code>ICON</code> et <code><!---- <primary>Zone</primary><secondary>ALTERNATE_ICON</secondary>----> ALTERNATE_ICON
+:</code> d&eacute;crit les images utilis&eacute;es pour indiquer l'&eacute;tat
+(chang&eacute; et inchang&eacute;) du fichier contr&ocirc;l&eacute;.</p>
+</li>
+<li><p><tt><!---- <primary>Zone</primary><secondary>MONITOR_TYPE</secondary>----> MONITOR_TYPE</tt>: d&eacute;crit les conditions
+pouvant &ecirc;tre &agrave; l'origine d'une modification de l'image. Utilisez
+l'une des valeurs suivantes:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="105*">
+<colspec colwidth="423*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><code><!---- <primary>Objet
+de commande</primary><secondary>contr&ocirc;</secondary>----> <!---- 
+<primary>le</primary>----> <!---- <primary>Objet de commande</primary>
+<secondary>type mail</secondary>---->  mail</code></p></td>
+<td align="left" valign="top"><p>L'apparence de l'objet de commande
+est modifi&eacute; lorsque des informations sont ajout&eacute;es au fichier.
+</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code>file</code></p></td>
+<td align="left" valign="top"><p>L'objet de commande est modifi&eacute;
+lorsque le fichier sp&eacute;cifi&eacute; n'est plus vide.</p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+</li>
+<li><p><tt>FILE_NAME<!---- <primary>Zone</primary><secondary>FILE_NAME</secondary>----> </tt>: indique le fichier &agrave;
+contr&ocirc;ler.</p>
+</li>
+</ul>
+<p>Par exemple, l'objet de commande suivant recherche la pr&eacute;sence
+d'un fichier <code>meetings</code> qui doit &ecirc;tre transf&eacute;r&eacute;
+(ftp anonyme) sur votre syst&egrave;me. L'objet de commande est plac&eacute;
+dans la partie sup&eacute;rieure du panneau secondaire Applications personnelles.
+</p>
+<listing>CONTROL MonitorCalendar
+{
+   TYPE            file
+   CONTAINER_NAME  PersonalApps
+   CONTAINER_TYPE  SUBPANEL
+   POSITION_HINTS  first
+   FILE_NAME       /users/ftp/meetings
+   MONITOR_TYPE    file
+   ICON            meetingsno
+   ALTERNATE_ICON  meetingsyes
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.42">
+<h1 id="SAG.FrPC.mkr.20">Cr&eacute;ation d'un objet de commande d'une instance
+(bascule)<!---- <primary>Objet de commande</primary><secondary>bascule</secondary>----> <!---- <primary>Objet de commande</primary><secondary>instance</secondary>----> </h1>
+<p>Un objet de commande d'une instance v&eacute;rifie si le processus lanc&eacute;
+par la zone <tt>PUSH_ACTION</tt> est d&eacute;j&agrave; en cours
+d'ex&eacute;cution. Si tel n'est pas le cas, la fonction de la zone <tt>PUSH_ACTION</tt> est sollicit&eacute;e. Si le processus est en cours
+d'ex&eacute;cution, la fen&ecirc;tre appara&icirc;t en haut de la pile de
+fen&ecirc;tres de l'espace de travail courant.</p>
+<p>Utilisez ces zones pour d&eacute;finir le comportement d'un objet de
+commande.</p>
+<ul remap="Bullet1">
+<li><p><tt>PUSH_RECALL</tt>: configur&eacute; sur <code>True</code>.</p>
+</li>
+<li><p><tt><!---- <primary>Zone</primary><secondary>CLIENT_NAME</secondary>----> CLIENT_NAME</tt>: indique le nom du client &agrave;
+l'objet de commande.</p>
+<p>La valeur de la zone <tt>CLIENT_NAME</tt> doit correspondre
+&agrave; la premi&egrave;re cha&icirc;ne (<var">res_name</var>) de la caract&eacute;ristique WM_CLASS, dans la fen&ecirc;tre sup&eacute;rieure
+de l'application. Pour plus de d&eacute;tails, reportez-vous &agrave; la page
+de manuel <tt>xprop(1)</tt>.</p>
+</li>
+<li><p><tt>PUSH_ACTION</tt>: d&eacute;crit l'action lanc&eacute;e
+lorsque l'utilisateur clique sur l'objet de commande.</p>
+</li>
+</ul>
+<p>Par exemple, l'objet de commande suivant lance une instance d'application
+dont l'action est MyEditor.</p>
+<listing>CONTROL MyEditor
+{
+   TYPE            icon
+   CONTAINER_NAME  Top
+   CONTAINER_TYPE  BOX
+   POSITION_HINTS  15
+   PUSH_RECALL     True
+   CLIENT_NAME     BestEditor
+   PUSH_ACTION     StartMyEditor
+   ICON            MyEd
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.43" role="Procedure">
+<h1>Cr&eacute;ation d'un objet de commande de fen&ecirc;tre cliente<!---- 
+<primary>Tableau de bord</primary><secondary>client</secondary>----> <!---- 
+<primary>Client</primary><secondary>fen&ecirc;tre du Tableau de bord</secondary>
+----> <!---- <primary>Objet de commande</primary><secondary>client</secondary>----> </h1>
+<p>L'objet de commande d'une fen&ecirc;tre cliente est une fen&ecirc;tre
+d'application int&eacute;gr&eacute;e au Tableau de bord. Par exemple, vous
+pouvez placer un compteur de chargement du syst&egrave;me dans le Tableau
+de bord en cr&eacute;ant un objet de commande <code>xload</code> de
+fen&ecirc;tre cliente.</p>
+<ol>
+<li><p>D&eacute;finissez l'objet de commande.</p>
+<p>Utilisez ces zones pour d&eacute;finir le comportement d'un objet de
+commande.</p>
+<ul remap="Bullet2">
+<li><p><code>TYPE</code>: configur&eacute; sur <code>client</code>.</p>
+</li>
+<li><p><tt><!---- <primary>Zone</primary><secondary>CLIENT_NAME</secondary>----> CLIENT_NAME</tt>: indique le client &agrave;
+lancer.</p>
+<p>La valeur de la zone <tt>CLIENT_NAME</tt> doit correspondre
+&agrave; la premi&egrave;re cha&icirc;ne (<var">res_name</var>) de la caract&eacute;ristique WM_CLASS, dans la fen&ecirc;tre sup&eacute;rieure
+de l'application. Pour plus de d&eacute;tails, reportez-vous &agrave; la page
+de manuel <tt>xprop(1)</tt>.</p>
+</li>
+<li><p><tt><!---- <primary>Zone</primary><secondary>CLIENT_GEOMETRY</secondary>----> CLIENT_GEOMETRY</tt>: indique, en pixels, la
+taille requise pour la fen&ecirc;tre cliente du Tableau de bord.</p>
+<p>La page de manuel <tt>xwininfo(1)</tt> explique comment
+d&eacute;terminer la taille d'une fen&ecirc;tre en pixels.</p>
+</li>
+</ul>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+<li><p>Lancez le client &agrave; partir de la ligne de commande d'un
+&eacute;mulateur de terminal.</p>
+</li>
+</ol>
+<p>Par exemple, l'objet de commande suivant affiche un programme de mesure
+de la charge processeur de 30 x 20 pixels.</p>
+<listing>CONTROL LoadMeter
+{
+   TYPE            client
+   CONTAINER_NAME  Top
+   CONTAINER_TYPE  BOX
+   CLIENT_NAME     xload
+   CLIENT_GEOMETRY 30x20
+}</listing>
+<p>Si le client n'est pas enregistr&eacute; et r&eacute;tabli entre les
+sessions, vous pouvez configurer l'objet de commande afin qu'il lance le client
+lorsque l'utilisateur clique dessus. Par exemple, l'objet de commande LoadMeter
+peut &ecirc;tre configur&eacute; afin de lancer <code>xload</code> en
+ajoutant la ligne suivante &agrave; la d&eacute;finition:</p>
+<listing>PUSH_ACTION StartXload</listing>
+<p>et en cr&eacute;ant l'action:</p>
+<listing>ACTION StartXload
+{
+   WINDOW_TYPE   NO_STDIO
+   EXEC_STRING   /usr/contrib/bin/X11/xload
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.44" role="Procedure">
+<h1 id="SAG.FrPC.mkr.21">Animation d'un objet de commande<!---- <primary>Objet de commande</primary><secondary>animation</secondary>----> <!---- 
+<primary>Animation</primary><secondary>Tableau de bord</secondary>----> <!---- 
+<primary>Tableau de bord</primary><secondary>animation</secondary>----> </h1>
+<p>Vous pouvez d&eacute;finir une s&eacute;quence d'animation, activ&eacute;e
+lorsque l'utilisateur s&eacute;lectionne l'objet de commande ou pose un objet
+dessus.</p>
+<p>Pour comporter une s&eacute;quence d'animation, un objet doit:</p>
+<ul remap="Bullet1">
+<li><p>&ecirc;tre de type <code>icon</code></p>
+</li>
+<li><p>comporter une zone <tt>PUSH_ACTION</tt> ou une
+zone <tt>DROP_ACTION</tt></p>
+<ol>
+<li><p>Pr&eacute;cisez la s&eacute;quence d'animation &agrave; l'aide
+du composant <code><!---- <primary>D&eacute;</primary>----> <!---- 
+<primary>finition</primary><secondary>ANIMATION</secondary>---->  ANIMATION</code>:</p>
+<listing remap="CodeIndent1">ANIMATION nom_animation 
+{  
+   image_ic&ocirc;ne [d&eacute;lai]  
+   image_ic&ocirc;ne [d&eacute;lai] 
+   &hellip; 
+}</listing>
+<p>o&ugrave; <var">delai</var> repr&eacute;sente la
+dur&eacute;e entre les ic&ocirc;nes d'animation, en millisecondes.</p>
+</li>
+<li><p>Ajoutez les zones <tt><!---- <primary>Zone</primary>
+<secondary>PUSH_ANIMATION</secondary>----> PUSH_ANIMATION</tt>
+et/ou <tt><!---- <primary>Zone</primary><secondary>DROP_ANIMATION</secondary>----> DROP_ANIMATION</tt> &agrave; la d&eacute;finition
+de l'objet de commande. La valeur correspond au nom de la s&eacute;quence <code>ANIMATION</code>.</p>
+</li>
+</ol>
+</li>
+</ul>
+<p>Par exemple, les lignes suivantes permettent l'animation de l'objet
+de commande qui lance l'application BestEditor. Le d&eacute;lai entre les
+ic&ocirc;nes est de 300 millisecondes. Il est entendu dans cet exemple que
+vous avez cr&eacute;&eacute; les fichiers d'ic&ocirc;ne <tt>frame1</tt>, <tt>frame2</tt>, etc.</p>
+<listing>CONTROL BestEditor
+{
+    &hellip;
+    PUSH_ANIMATION BestEdAnimation
+    &hellip;
+}
+
+ANIMATION BestEdAnimation
+{
+    frame1 300
+    frame2
+    &hellip;
+}</listing>
+</div>
+<div class="3" id="SAG.FrPC.div.45">
+<h1 id="SAG.FrPC.mkr.22">Aide sur un objet de commande du Tableau de bord<!---- <primary>Aide</primary><secondary>Tableau de bord</secondary>
+----> <!---- <primary>Tableau de bord</primary><secondary>aide</secondary>----> <!---- <primary>Objet de commande</primary><secondary>aide sur l'&eacute;l&eacute;ment</secondary>----> </h1>
+<p>L'aide sur un objet de commande peut &ecirc;tre obtenue de deux fa&ccedil;ons.
+</p>
+<ul remap="Bullet1">
+<li><p>Cha&icirc;ne d'aide dans la d&eacute;finition de l'objet de
+commande.</p>
+<p>La cha&icirc;ne d'aide s'affiche lorsque l'utilisateur invoque l'aide
+relative &agrave; l'objet de commande; elle ne comporte ni formatage (en-t&ecirc;tes),
+ni liens.</p>
+<p>Pr&eacute;cisez la cha&icirc;ne d'aide dans la d&eacute;finition de
+l'objet de commande:</p>
+<listing remap="CodeIndent1">HELP_STRING <var">cha&icirc;ne_aide</var></listing>
+<!---- <primary>Zone</primary><secondary>HELP_STRING</secondary>----> 
+</li>
+<li><p>Indication d'une rubrique d'aide dans un volume d'aide.</p>
+<p>Une rubrique d'aide comporte des informations exploitant toutes les
+capacit&eacute;s du syst&egrave;me d'aide. Pour cr&eacute;er une rubrique
+d'aide, vous devez utiliser le kit du d&eacute;veloppeur du Bureau CDE.</p>
+<p>Pr&eacute;cisez le volume d'aide et l'ID de la rubrique d'aide dans
+la d&eacute;finition de l'objet de commande:<!---- <primary>Zone</primary>
+<secondary>HELP_VOLUME</secondary>----> <!---- <primary>Zone</primary>
+<secondary>HELP_TOPIC</secondary>----> </p>
+<para remap="CodeIndent1"><listing>HELP_VOLUME <var">nom_volume_aide</var> 
+HELP_TOPIC <var">id_rubrique</var></listing></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="1" id="SAG.FrPC.div.46">
+<h1 id="SAG.FrPC.mkr.23">Personnalisation du s&eacute;lecteur d'espace
+de travail<!---- <primary>S&eacute;lecteur d'espace de travail</primary>
+<secondary>personnalisation</secondary>----> <!---- <primary>S&eacute;lecteur
+d'espace de travail</primary>----> </h1>
+<p>Le s&eacute;lecteur d'espace de travail peut &ecirc;tre personnalis&eacute;
+en modifiant:</p>
+<ul remap="Bullet1">
+<li><p>le nombre d'espaces de travail</p>
+</li>
+<li><p>la pr&eacute;sentation du s&eacute;lecteur</p>
+</li>
+<li><p>les objets de commande du s&eacute;lecteur</p>
+</li>
+</ul>
+<div class="2" id="SAG.FrPC.div.47" role="Procedure">
+<h1 id="SAG.FrPC.mkr.24">Modification du nombre d'espaces de travail par
+d&eacute;faut<!---- <primary>Espaces de travail</primary><secondary>modification du nombre par d&eacute;faut</secondary>----> <!---- 
+<primary>S&eacute;lecteur d'espace de travail</primary><secondary>nombre d'espaces
+de travail</secondary>----> </h1>
+<ul>
+<li><p>Modifiez la ressource suivante dans le Gestionnaire de l'espace
+de travail:</p>
+<para remap="CodeIndent1"><systemitem>Dtwm*workspaceCount</systemitem>: <var">n</var></p>
+</li>
+</ul>
+<p>Pour plus de d&eacute;tails, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Modification du nombre d'espaces de travail appliqués
+au système&rdquo;, page&numsp;259<xref role="SecTitleAndPageNum" linkend="SAG.WMCnf.mkr.6">.
+</p>
+</div>
+<div class="2" id="SAG.FrPC.div.48" role="Procedure">
+<h1 id="SAG.FrPC.mkr.25">Modification du nombre de rangs du s&eacute;lecteur<!---- <primary>S&eacute;lecteur d'espace de travail</primary><secondary>nombre de rangs</secondary>----> </h1>
+<ul>
+<li><p>Modifiez la zone <tt><!---- <primary>Zone</primary>
+<secondary>NUMBER_OF_ROWS</secondary>----> NUMBER_OF_ROWS</tt>
+dans la d&eacute;finition <code>SWITCH</code>.</p>
+</li>
+</ul>
+<p>Par exemple, la d&eacute;finition suivante est celle d'un s&eacute;lecteur
+comportant trois rangs.</p>
+<listing>SWITCH Switch
+{
+   CONTAINER_NAME  nom_bo&icirc;te
+   NUMBER_OF_ROWS  3
+ &hellip;
+}</listing>
+</div>
+<div class="2" id="SAG.FrPC.div.49" role="Procedure">
+<h1>Modification ou ajout d'objets de commande dans le s&eacute;lecteur
+d'espace de travail<!---- <primary>S&eacute;lecteur d'espace de travail</primary><secondary>ajout d'objets de commande</secondary>----> <!---- 
+<primary>Objet de commande</primary><secondary>s&eacute;lecteur d'espace de
+travail</secondary>----> </h1>
+<ol>
+<li><p>Cr&eacute;ez un fichier de configuration du Tableau de bord
+&agrave; l'aide de la d&eacute;finition de l'objet de commande.</p>
+<ul remap="Bullet2">
+<li><p>Pr&eacute;cisez que l'objet de commande doit se trouver &agrave;
+l'int&eacute;rieur du s&eacute;lecteur:</p>
+<para remap="CodeIndent2"><listing>CONTAINER_NAME   Switch 
+CONTAINER_TYPE   SWITCH</listing></p>
+</li>
+<li><p>Pr&eacute;cisez la position de l'objet de commande dans le
+s&eacute;lecteur:</p>
+<para remap="CodeIndent2"><computeroutput>POSITION_HINTS <var">n</var></computeroutput></p>
+<p>o&ugrave; <var">n</var> est un nombre entier. Les
+positions sont num&eacute;rot&eacute;es de gauche &agrave; droite et de haut
+en bas. En ce qui concerne le s&eacute;lecteur par d&eacute;faut comportant
+deux rangs, les positions sont num&eacute;rot&eacute;es de 1 &agrave; 4.</p>
+</li>
+</ul>
+</li>
+<li><p>Cr&eacute;ez l'ic&ocirc;ne de l'objet de commande. La taille
+recommand&eacute;e est 16x16 pixels.</p>
+</li>
+</ol>
+<p>Par exemple, l'objet de commande suivant permet de placer un objet de
+commande Terminal dans le s&eacute;lecteur.</p>
+<listing>CONTROL SwitchTerminal
+{
+   TYPE icon
+   CONTAINER_NAME  Switch
+   CONTAINER_TYPE  SWITCH
+   POSITION_HINTS  3
+   ICON            Fpterm
+   LABEL           Terminal
+   PUSH_ACTION     Dtterm
+   HELP_TOPIC      FPOnItemTerm
+   HELP_VOLUME     FPanel
+}</listing>
+<p>L'objet de commande utilise une ic&ocirc;ne int&eacute;gr&eacute;e et
+la rubrique d'aide utilis&eacute;e par l'objet de commande Terminal dans le
+panneau secondaire Applications personnelles.</p>
+</div>
+</div>
+<div class="1" id="SAG.FrPC.div.50">
+<h1 id="SAG.FrPC.mkr.26">Configuration g&eacute;n&eacute;rale du Tableau
+de bord</h1>
+<p>La syntaxe <code>PANEL</code> du Tableau de bord permet de:</p>
+<ul remap="Bullet1">
+<li><p>modifier l'emplacement du Tableau de bord</p>
+</li>
+<li><p>modifier la pr&eacute;sentation de la fen&ecirc;tre</p>
+</li>
+<li><p>d&eacute;terminer la pr&eacute;sentation et le comportement
+des objets de commande</p>
+</li>
+</ul>
+<p>La description par d&eacute;faut du param&egrave;tre <code>PANEL</code> se trouve dans le fichier <tt>/usr/dt/appconfig/types/</tt><var">langue</var><tt>/dtwm.fp</tt>.</p>
+<p>Pour plus d'informations, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">dtfpfile(4X)</tt>.</p>
+<div class="2" id="SAG.FrPC.div.51">
+<h1>Proc&eacute;dure g&eacute;n&eacute;rale</h1>
+<ol>
+<li><p>Cr&eacute;ez un nouveau fichier de configuration du Tableau
+de bord dans <tt>/etc/dt/appconfig/types/</tt><var">langue</var> ou <var">R&eacute;p_Personnel</var><tt>/.dt/types</tt>.</p>
+</li>
+<li><p>Copiez la description par d&eacute;faut du param&egrave;tre <code>PANEL</code> de <tt>/usr/dt/types/</tt><var">language</var><tt>/dtwm.fp</tt> vers le nouveau fichier.</p>
+</li>
+<li><p>Modifiez la description du param&egrave;tre <code>PANEL</code>.</p>
+</li>
+</ol>
+<p>La nouvelle description du param&egrave;tre <code>PANEL</code>
+est prioritaire sur la description par d&eacute;faut.</p>
+</div>
+<div class="2" id="SAG.FrPC.div.52" role="Procedure">
+<h1 id="SAG.FrPC.mkr.27">Modification de l'emplacement par d&eacute;faut
+du Tableau de bord<!---- <primary>Tableau de bord</primary><secondary>emplacement</secondary>----> </h1>
+<ul>
+<li><p>Utilisez la zone <tt><!---- <primary>Zone</primary>
+<secondary>PANEL_GEOMETRY</secondary>----> PANEL_GEOMETRY</tt>
+dans la d&eacute;finition du param&egrave;tre <code>PANEL</code> pour
+indiquer l'emplacement.</p>
+<p>Par exemple, le panneau suivant se trouve dans l'angle sup&eacute;rieur
+droit.</p>
+<listing remap="CodeIndent1">PANEL SpecialFrontPanel 
+{  
+   PANEL_GEOMETRY -1+1  
+   &hellip; 
+}</listing>
+</li>
+</ul>
+</div>
+<div class="2" id="SAG.FrPC.div.53" role="Procedure">
+<h1 id="SAG.FrPC.mkr.28">Libell&eacute; des objets de commande du Panneau
+principal<!---- <primary>Libell&eacute;s</primary><secondary>objets de
+commande du Tableau de bord</secondary>----> <!---- <primary>Tableau
+de bord</primary><secondary>libell&eacute;s des objets de commande</secondary>
+----> <!---- <primary>Objet de commande</primary><secondary>libell&eacute;s</secondary>----> </h1>
+<ol>
+<li><p>Ajoutez la ligne suivante &agrave; la d&eacute;finition du
+param&egrave;tre <code>PANEL</code>:</p>
+<listing remap="CodeIndent1">DISPLAY_CONTROL_LABELS True</listing>
+</li>
+<li><p>Ajoutez une zone <code>LABEL</code> pour chaque objet
+de commande.</p>
+</li>
+</ol>
+<p>La zone <var">nom_objet_commande</var> est utilis&eacute;e
+si aucun param&egrave;tre <code>LABEL</code> n'est sp&eacute;cifi&eacute;.
+</p>
+</div>
+<div class="2" id="SAG.FrPC.div.54" role="Procedure">
+<h1 id="SAG.FrPC.mkr.29">Modification du comportement des objets de commande<!---- <primary>Objet de commande</primary><secondary>clic/double clic</secondary>----> </h1>
+<ul>
+<li><p>Utilisez la zone <tt><!---- <primary>Zone</primary>
+<secondary>CONTROL_BEHAVIOR</secondary>----> CONTROL_BEHAVIOR</tt>
+de la d&eacute;finition du param&egrave;tre <code>PANEL</code> pour
+pr&eacute;ciser la mani&egrave;re dont l'utilisateur ex&eacute;cute le param&egrave;tre <tt>PUSH_ACTION</tt> de l'objet de commande. Les valeurs de la zone sont
+:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="161*">
+<colspec colwidth="367*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><tt>simple_clic</tt></p></td>
+<td align="left" valign="top"><p>L'utilisateur clique sur l'objet de
+commande pour ex&eacute;cuter le param&egrave;tre <tt>PUSH_ACTION.</tt></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><tt>double_clic</tt></p></td>
+<td align="left" valign="top"><p>L'utilisateur clique deux fois sur
+l'objet de commande pour ex&eacute;cuter le param&egrave;tre <tt>PUSH_ACTION.</tt></p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+</li>
+</ul>
+</div>
+<div class="2" id="SAG.FrPC.div.55" role="Procedure">
+<h1 id="SAG.FrPC.mkr.30">Cr&eacute;ation d'un nouveau Tableau de bord<!---- 
+<primary>Tableau de bord</primary><secondary>nouveau</secondary>----> </h1>
+<p>Il peut &ecirc;tre pr&eacute;f&eacute;rable de cr&eacute;er un nouveau
+Tableau de bord si vous souhaitez apporter des modifications importantes.
+</p>
+<p>Pour &eacute;viter tout conflit avec les composants int&eacute;gr&eacute;s
+du Tableau de bord, le nouveau Tableau de bord doit faire appel &agrave; de
+nouveaux noms pour le param&egrave;tre PANEL et les autres conteneurs.</p>
+<ol>
+<li><p>Cr&eacute;ez le composant <code>PANEL</code> du nouveau
+Tableau de bord. Attribuez-lui un nom unique:</p>
+<listing remap="CodeIndent1">PANEL nom_tableau_bord 
+{ 
+   &hellip; 
+}</listing>
+</li>
+<li><p>Cr&eacute;ez les nouvelles bo&icirc;tes et les nouveaux objets
+de commande &agrave; l'aide des nouveaux noms de conteneurs.</p>
+<p>Si vous souhaitez utiliser des composants existants, vous devez copier
+leurs d&eacute;finitions et modifier la valeur du param&egrave;tre <tt>CONTAINER_NAME</tt>.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="SAG.FrPC.div.56">
+<h1>Exemple de cr&eacute;ation d'un Tableau de bord personnel comportant
+trois rangs<!---- <primary>Tableau de bord</primary><secondary>ajout
+de rangs</secondary>----> </h1>
+<p>Dans l'exemple suivant, le Tableau de bord par d&eacute;faut est modifi&eacute;.
+Ses objets de commande sont dispos&eacute;s sur trois rangs.</p>
+<ol>
+<li><p>Copiez le fichier <tt>/usr/dt/appconfig/types/</tt><var">langue</var><tt>/dtwm.fp</tt> dans <var">R&eacute;p_Personnel</var><tt>/.dt/types/MyFrontPanel.fp</tt>. Ce fichier doit &ecirc;tre accessible en &eacute;criture.</p>
+<p>Il s'agit du fichier &agrave; modifier pour cr&eacute;er le nouveau
+Tableau de bord.</p>
+</li>
+<li><p>Modifiez le nom du Tableau de bord:</p>
+<listing remap="CodeIndent1">PANEL   NewFrontPanel</listing>
+</li>
+<li><p>Modifiez le nom de la bo&icirc;te Top ainsi que celui de son
+conteneur:</p>
+<listing remap="CodeIndent1">BOX NewFrontPanelTop 
+{
+   CONTAINER_NAME   NewFrontPanel 
+   POSITION_HINTS   first
+   &hellip;
+}</listing>
+</li>
+<li><p>Ajoutez les d&eacute;finitions de la bo&icirc;te pour le rang
+du milieu et le rang du bas:</p>
+<listing remap="CodeIndent1">BOX NewFrontPanelMiddle
+{ 
+   CONTAINER_NAME  NewFrontPanel 
+   POSITION_HINTS  second 
+} 
+BOX NewFrontPanelBottom
+{ 
+   CONTAINER_NAME  NewFrontPanel 
+   POSITION_HINTS  second 
+}</listing>
+</li>
+<li><p>Modifiez le param&egrave;tre <tt>CONTAINER_NAME</tt>
+des objets de commande suivants en <code>NewFrontPanelTop</code>:</p>
+<ul remap="Bullet2">
+<li><p>Horloge</p>
+</li>
+<li><p>Date</p>
+</li>
+<li><p>Personnel</p>
+</li>
+<li><p>Editeur_texte</p>
+</li>
+<li><p>Courrier</p>
+</li>
+</ul>
+</li>
+<li><p>Modifiez le param&egrave;tre <tt>CONTAINER_NAME</tt>
+des objets de commande suivants en <code>NewFrontPanelBottom</code>
+:</p>
+<ul remap="Bullet2">
+<li><p>Imprimante</p>
+</li>
+<li><p>Style</p>
+</li>
+<li><p>Applications</p>
+</li>
+<li><p>Aide</p>
+</li>
+<li><p>Corbeille</p>
+</li>
+</ul>
+</li>
+<li><p>Modifiez le param&egrave;tre <tt>CONTAINER_NAME</tt>
+du s&eacute;lecteur en <code>NewFrontPanelMiddle</code>.</p>
+</li>
+<li><p>D&eacute;finissez les ressources:</p>
+<listing remap="CodeIndent1">Dtwm*frontPanel*name:   NewFrontPanel
+</listing>
+</li>
+<li><p>S&eacute;lectionnez l'option Relancer Gestionnaire de l'esp.
+de travail du menu Espace de travail.</p>
+</li>
+</ol>
+</div>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
+<?Pub *0000093585>
+</body></html>

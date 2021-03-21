@@ -1,0 +1,656 @@
+<html><body>
+<!-- $XConsortium: ch09.sgm /main/10 1996/12/20 20:39:19 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="SAG.dtCrA.div.1">
+<h1 id="SAG.dtCrA.mkr.1"><!---- <primary>Cr&eacute;er action</primary>
+----> Cr&eacute;ation d'actions et de types de donn&eacute;es &agrave;
+l'aide de Cr&eacute;er action</h1>
+<p><!---- <primary>Cr&eacute;er action</primary><secondary>introduction</secondary>----> <!---- <primary>dtCreate, voir Cr&eacute;er action&lt;$nopage></primary>----> L'outil Cr&eacute;er action permet la cr&eacute;ation:
+</p>
+<ul remap="Bullet1">
+<li><p>d'une action de lancement d'application</p>
+</li>
+<li><p>d'un ou plusieurs types de donn&eacute;es pour des fichiers
+de donn&eacute;es d'une application</p>
+</li>
+<li><p>d'actions d'ouverture et d'impression de fichiers de donn&eacute;es
+d'une application</p>
+</li>
+</ul>
+<p>Cr&eacute;er action est &eacute;galement utile pour la cr&eacute;ation
+d'actions simples permettant l'ex&eacute;cution de commandes de syst&egrave;mes
+d'exploitation et de scripts shell.</p>
+<informaltable id="SAG.dtCrA.itbl.1" frame="All">
+<table cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.38in">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Fonctions
+de Créer action150<xref role="JumpText" linkend="SAG.dtCrA.mkr.2"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Limites
+de Créer action150<xref role="JumpText" linkend="SAG.dtCrA.mkr.3"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Création
+d'une action et d'un type de données pour une application152<xref role="JumpText"
+linkend="SAG.dtCrA.mkr.4"></p></td></tr></tbody></table></informaltable>
+<p>Pour plus de d&eacute;tails, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">dtcreate(1X)</tt>.</p>
+<div class="1" id="SAG.dtCrA.div.2">
+<h1 id="SAG.dtCrA.mkr.2">Fonctions de Cr&eacute;er action<!---- <primary>Cr&eacute;er action</primary><secondary>fonctions</secondary>----> </h1>
+<p>Cr&eacute;er action comporte une fen&ecirc;tre principale et des bo&icirc;tes
+de dialogue permettant la cr&eacute;ation d'une action et des types de donn&eacute;es
+associ&eacute;es.</p>
+<p>L'outil Cr&eacute;er action permet d'effectuer les op&eacute;rations
+suivantes:</p>
+<ul remap="Bullet1">
+<li><p>D&eacute;finition d'une action pour l'ex&eacute;cution de
+commandes.</p>
+</li>
+<li><p><!---- <primary>Cr&eacute;er action</primary><secondary>fichier de configuration</secondary>----> <!---- <primary>Fichier</primary><secondary>d&eacute;finition d'action</secondary>----> <!---- 
+<primary>D&eacute;finition d'action</primary><secondary>Cr&eacute;er action</secondary>----> Cr&eacute;ation d'un fichier <var">R&eacute;p_Personnel</var><tt>/.dt/types/</tt><var">nom_action</var><tt>.dt</tt>. La d&eacute;finition du type
+de donn&eacute;es et de l'action cr&eacute;&eacute;s pour cette application
+est m&eacute;moris&eacute;e dans ce fichier.</p>
+</li>
+<li><p>Cr&eacute;ation d'un<!---- <primary>Fichier</primary>
+<secondary>action</secondary>---->  <em>fichier d'action</em>
+dans le r&eacute;pertoire personnel de l'utilisateur. Ce fichier est ex&eacute;cutable
+avec le m&ecirc;me<!---- <primary>Actions</primary><secondary>nom</secondary>
+---->  nom que l'action.</p>
+<p>La repr&eacute;sentation du fichier d'action dans le Gestionnaire de
+fichiers est appel&eacute;e<!---- <primary>Ic&ocirc;ne d'application</primary><secondary>Cr&eacute;er action</secondary>---->  <em>ic&ocirc;ne d'application</em> car l'application est lanc&eacute;e
+lorsque l'utilisateur clique deux fois sur cette ic&ocirc;ne.</p>
+<p>Vous pouvez &eacute;ventuellement transformer l'ic&ocirc;ne d'action
+en zone de pose en pr&eacute;cisant, lors de la cr&eacute;ation de l'action,
+des types de donn&eacute;es pouvant &ecirc;tre pos&eacute;s.</p>
+</li>
+<li><p>Cr&eacute;ation d'un ou plusieurs types de donn&eacute;es
+pour fichiers d'application (facultatif).</p>
+</li>
+<li><p>Cr&eacute;ation d'une action d'ouverture pour chaque type
+de donn&eacute;es.</p>
+</li>
+<li><p>Cr&eacute;ation d'une action d'impression pour chaque type
+de donn&eacute;es (facultatif).</p>
+</li>
+<li><p>Rechargement de la base de donn&eacute;es d'actions et de
+types de donn&eacute;es qui prennent effet imm&eacute;diatement.</p>
+</li>
+</ul>
+</div>
+<div class="1" id="SAG.dtCrA.div.3">
+<h1 id="SAG.dtCrA.mkr.3">Limites de Cr&eacute;er action<!---- <primary>Cr&eacute;er action</primary><secondary>limites</secondary>----> </h1>
+<p>Cet outil est con&ccedil;u pour cr&eacute;er des actions et des types
+de donn&eacute;es pour le lancement d'applications. Toutefois, ces actions
+et ces types de donn&eacute;es sont tr&egrave;s souples. Pour exploiter toutes
+leurs fonctionnalit&eacute;s, vous devez les d&eacute;finir manuellement.
+</p>
+<p>Pour plus de d&eacute;tails, reportez-vous aux chapitres suivants:
+</p>
+<ul remap="Bullet1">
+<li><p>chapitre&numsp;10,
+&ldquo;Création manuelle d'actions<xref role="ChapNumAndTitle" linkend="SAG.CrAct.mkr.1"></p>
+</li>
+<li><p>chapitre&numsp;11,
+&ldquo;Création manuelle de types de données&ldquo;<xref role="ChapNumAndTitle"
+linkend="SAG.CrDT.mkr.1">.</p>
+</li>
+</ul>
+<div class="2" id="SAG.dtCrA.div.4">
+<h1>Limites d'une action<!---- <primary>Actions</primary><secondary>limites de Cr&eacute;er action</secondary>----> </h1>
+<p>Vous ne pouvez utiliser Cr&eacute;er action si l'une des conditions
+ci-dessous est vraie.</p>
+<ul remap="Bullet1">
+<li><p>La ligne de commande requiert un<!---- <primary>Actions&lt;$nopage>Actions</primary><secondary>param&egrave;tres, voir arguments</secondary>---->  argument
+qui n'est pas un fichier (param&egrave;tre).</p>
+<p>Par exemple, vous ne pouvez pas utiliser Cr&eacute;er action pour &eacute;crire
+une action pour la commande:</p>
+</li>
+</ul>
+<listing> lp -d <var">nom_fichier_unit&eacute;</var></listing>
+<p>car l'utilisateur doit pr&eacute;ciser le param&egrave;tre <var">unit&eacute;</var> &agrave; chaque ex&eacute;cution de la commande.</p>
+<ul remap="Bullet1">
+<li><p>Le libell&eacute; de l'ic&ocirc;ne doit diff&eacute;rer du
+nom de l'action.</p>
+<p>Par exemple, Cr&eacute;er action ne permet pas d'obtenir une version
+d'action existante dans une autre langue.</p>
+</li>
+<li><p>L'action fait appel &agrave; certaines fonctions &eacute;tendues
+de la base de donn&eacute;es d'actions.</p>
+<p>Il peut s'agir des fonctions &eacute;tendues suivantes:</p>
+<ul remap="Bullet2">
+<li><p>lancement de commandes sur des syst&egrave;mes &eacute;loign&eacute;s
+</p>
+</li>
+<li><p>appel d'autres actions</p>
+</li>
+<li><p>ex&eacute;cution sous un autre ID utilisateur (superutilisateur,
+par exemple)</p>
+</li>
+<li><p>utilisation &eacute;tendue de la fonction &ldquo;map&rdquo;
+</p>
+</li>
+<li><p>comportements vari&eacute;s, en fonction du nombre d'arguments
+indiqu&eacute;s pour l'action</p>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="2" id="SAG.dtCrA.div.5">
+<h1><!---- <primary>Types de donn&eacute;es</primary><secondary>cr&eacute;ation
+manuelle</secondary>----> Limites de types de donn&eacute;es<!---- 
+<primary>Types de donn&eacute;es</primary><secondary>limites de Cr&eacute;er
+action</secondary>----> </h1>
+<p>Cr&eacute;er action ne peut &ecirc;tre utilis&eacute; dans les cas suivants
+:</p>
+<ul remap="Bullet1">
+<li><p>le type de donn&eacute;es doit &ecirc;tre associ&eacute; &agrave;
+des actions suppl&eacute;mentaires, autres qu'Ouvrir et Imprimer</p>
+</li>
+<li><p>l'action Ouvrir du type de donn&eacute;es ne correspond pas
+&agrave; la commande de lancement de l'action</p>
+<p>Par exemple, vous ne pouvez cr&eacute;er de type de donn&eacute;es qui
+associe une ic&ocirc;ne unique au r&eacute;pertoire repr&eacute;sentant le
+groupe d'applications de l'application.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="1" id="SAG.dtCrA.div.6">
+<h1 id="SAG.dtCrA.mkr.4">Cr&eacute;ation d'une action et d'un type de donn&eacute;es
+pour une application<!---- <primary>Cr&eacute;er action</primary><secondary>utilisation</secondary>----> </h1>
+<p>Vous devez conna&icirc;tre certains d&eacute;tails relatifs &agrave;
+l'application avant d'utiliser Cr&eacute;er action.</p>
+<ul remap="Bullet1">
+<li><p>Ligne de commande permettant le lancement de l'application.
+</p>
+<p>Vous devez savoir si elle comporte un argument de fichier requis ou
+facultatif, ou si elle n'en comporte aucun.</p>
+<p>Si l'application requiert un argument qui n'est pas un fichier, vous
+ne pouvez utiliser Cr&eacute;er action.</p>
+</li>
+<li><p>Types de fichiers de donn&eacute;es accept&eacute;s par une
+application.</p>
+<p>Certaines applications n'acceptent qu'un type de donn&eacute;es. D'autres
+(&eacute;diteur ASCII ou graphique, par exemple) en acceptent plusieurs.</p>
+</li>
+<li><p>M&eacute;thode d'identification des donn&eacute;es par l'application
+:</p>
+<p>Il peut s'agir d'une convention d'appellation des fichiers, par exemple
+des fichiers dont le nom se termine par <tt>.doc</tt>). Cette
+identification peut &eacute;galement d&eacute;pendre du contenu des fichiers.
+Si l'application ne fait appel &agrave; aucune convention d'appellation des
+fichiers, vous pouvez en d&eacute;terminer une pour l'ic&ocirc;ne d'action.
+</p>
+</li>
+<li><p>Ligne de commande pour l'impression des fichiers (facultatif).
+</p>
+</li>
+</ul>
+<div class="2" id="SAG.dtCrA.div.7" role="Procedure">
+<h1 id="SAG.dtCrA.mkr.5">Cr&eacute;ation d'une action pour une application</h1>
+<ol>
+<li><p>Cliquez deux fois<!---- <primary>Cr&eacute;er action</primary><secondary>lancement</secondary>---->  sur Cr&eacute;er action
+dans le groupe d'applications Applications_Bureau.</p>
+<object>
+<h1>Ic&ocirc;ne Cr&eacute;er action du Gestionnaire d'applications</h1>
+<img id="sag.dtcra.grph.2" src="./graphics/creatact.png">
+</object>
+<p><!---- <primary>Cr&eacute;er action</primary><secondary>fen&ecirc;tre
+principale</secondary>----> La fen&ecirc;tre principale de Cr&eacute;er
+action s'affiche.</p>
+<object>
+<h1>Fen&ecirc;tre principale de Cr&eacute;er action</h1>
+<img id="sag.dtcra.grph.1" src="./graphics/CreActIc.png">
+</object>
+</li>
+<li><p>Entrez le libell&eacute; de l'ic&ocirc;ne dans la<!---- 
+<primary>Zone</primary><secondary>Nom (libell&eacute; de l'ic&ocirc;ne)</secondary>
+----> <!---- <primary>Cr&eacute;er action</primary><secondary>nom
+(libell&eacute; de l'ic&ocirc;ne)</secondary>---->  zone Nom (libell&eacute;
+de l'ic&ocirc;ne).</p>
+</li>
+<li><p>Indiquez l'ic&ocirc;ne<!---- <primary>Objet de commande</primary><secondary>Ic&ocirc;nes d'action</secondary><tertiary>Cr&eacute;er
+action</tertiary>---->  associ&eacute;e &agrave; l'application &agrave;
+l'aide des objets de commande Ic&ocirc;nes d'action. Au d&eacute;part, l'ic&ocirc;ne
+par d&eacute;faut est affich&eacute;e.</p>
+<ul remap="Bullet2">
+<li><p>Pour s&eacute;lectionner une autre ic&ocirc;ne, cliquez sur
+Rech. ensemble pour ouvrir la bo&icirc;te de dialogue correspondante. Reportez-vous
+&agrave; la section <!--Original
+XRef
+content: '&ldquo;Indication d'une ictne ` l'aide
+de la --><!--bonte de dialogue
+Rech. ensemble&ldquo;, page 162<xref role="SecTitleAndPageNum" linkend="sag.dtcra.mkr.7">.
+</p>
+</li>
+<li><p>Pour cr&eacute;er une ic&ocirc;ne, s&eacute;lectionnez &ldquo;Editer
+une ic&ocirc;ne&rdquo; pour lancer l'Editeur d'ic&ocirc;nes.</p>
+</li>
+</ul>
+</li>
+<li><p>Dans la zone Commande ex&eacute;cut&eacute;e &agrave; l'ouverture
+de l'action, entrez la commande de lancement de l'application.</p>
+<p><!---- <primary>Cr&eacute;er action</primary><secondary>syntaxe
+de commande</secondary>----> Pour indiquer des fichiers comme arguments,
+utilisez la syntaxe $<var">n</var>, comme dans l'exemple
+ci-apr&egrave;s.</p>
+<listing remap="CodeIndent1">emacs 
+bitmap 
+$1 diff $1 $2 
+lp -oraw $1</listing>
+<p><!---- <primary>Cr&eacute;er action</primary><secondary>indication
+d'un argument de fichier</secondary>----> <!---- <primary>Arguments</primary><secondary>de fichier</secondary><tertiary>Cr&eacute;er action</tertiary>
+----> Si la commande comporte un argument de fichier (<tt>$</tt><var">n</var>), l'ic&ocirc;ne d'action sera une zone de pose.
+</p>
+<p>Les commandes ne sont pas transmises &agrave; un shell, &agrave; moins
+que vous ne l'indiquiez explicitement. Par exemple:</p>
+<listing remap="CodeIndent1">/bin/sh -c 'ps | lp'
+/bin/sh -c 'spell $1 | more'</listing>
+</li>
+<li><p>Entrez le texte de l'Aide sur l'ic&ocirc;ne d'action dans
+la zone Aide sur l'ic&ocirc;ne.</p>
+<p><!---- <primary>Aide</primary><secondary>Cr&eacute;er action</secondary>
+----> Le retour &agrave; la ligne est automatique. Cependant, les coupures
+affich&eacute;es ici ne sont pas conserv&eacute;es dans l'aide en ligne. Si
+vous souhaitez forcer une coupure, utilisez <code>\n</code>.</p>
+</li>
+<li><p><!---- <primary>Actions</primary><secondary>support graphique</secondary>----> <!---- <primary>Support graphique pour actions</primary>----> Les options du menu Type de fen&ecirc;tre permettent
+de s&eacute;lectionner le support graphique voulu:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="157*">
+<colspec colwidth="371*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Graphique (X-Window)</p></td>
+<td align="left" valign="top"><p>L'application cr&eacute;e sa propre
+fen&ecirc;tre.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Emulateur de terminal</primary><secondary>option de fermeture automatique de l'action</secondary>
+----> Terminal (fermeture auto.)</p></td>
+<td align="left" valign="top"><p>L'application s'ex&eacute;cute dans
+une fen&ecirc;tre de terminal, ferm&eacute;e automatiquement lorsque l'utilisateur
+quitte l'application.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Emulateur de terminal</primary><secondary>option de fermeture manuelle de l'action</secondary>
+----> Terminal (fermeture manuelle)</p></td>
+<td align="left" valign="top"><p>L'application s'ex&eacute;cute dans
+une fen&ecirc;tre de terminal qui reste ouverte jusqu'&agrave; ce que l'utilisateur
+demande explicitement sa fermeture.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Actions</primary>
+<secondary>pas de sortie</secondary>----> Pas de sortie</p></td>
+<td align="left" valign="top"><p>Aucune sortie associ&eacute;e &agrave;
+l'application ne s'affiche.</p></td></tr></tbody></table></informaltable>
+</li>
+<li><p>Il existe deux fa&ccedil;ons de proc&eacute;der:</p>
+<ul remap="Bullet2">
+<li><p>Si l'application contient des fichiers auxquels vous voulez
+associer des types de donn&eacute;es, reportez-vous &agrave; la section <!--Original
+XRef content: '&ldquo;Criation
+d'un ou plusieurs
+types de do--><!--nnies associis ` une application&ldquo;<xref role="SectionTitle"
+linkend="sag.dtcra.mkr.6"></p>
+</li>
+<li><p>si vous n'avez pas besoin de cr&eacute;er un type de donn&eacute;es,
+sauvegardez l'action &agrave; l'aide de l'option Sauvegarder du menu Fichier.
+Testez ensuite la nouvelle action en cliquant deux fois sur l'ic&ocirc;ne
+correspondante, situ&eacute;e dans votre r&eacute;pertoire personnel.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="2" id="SAG.dtCrA.div.8" role="Procedure">
+<h1 id="SAG.dtCrA.mkr.6">Cr&eacute;ation d'un ou plusieurs types de donn&eacute;es
+associ&eacute;s &agrave; une application<!---- <primary>Cr&eacute;er
+action</primary><secondary>type de donn&eacute;es</secondary>----> <!---- 
+<primary>Types de donn&eacute;es</primary><secondary>Cr&eacute;er action</secondary>
+----> </h1>
+<ol>
+<li><p>D&eacute;finissez l'action associ&eacute;e &agrave; l'application
+&agrave; l'aide de la proc&eacute;dure d&eacute;crite dans la section pr&eacute;c&eacute;dente.
+</p>
+</li>
+<li><p>Cliquez sur le bouton (fonctions) Avanc&eacute;es de la fen&ecirc;tre
+Cr&eacute;er une action pour d&eacute;velopper la fen&ecirc;tre.</p>
+<object>
+<h1>Fonctions avanc&eacute;es de la fen&ecirc;tre principale de Cr&eacute;er
+une action</h1>
+<img id="sag.dtcra.grph.3" src="./graphics/advcract.png">
+</object>
+</li>
+<li><p><!---- <primary>Indicatif de fichier</primary><secondary>Cr&eacute;er action</secondary>----> <!---- <primary>Cr&eacute;er
+action</primary><secondary>indicatif de fichier</secondary>----> Si
+vous souhaitez que l'ic&ocirc;ne d'application vous invite &agrave; indiquer
+un nom de fichier lors d'un double d&eacute;clic, entrez le texte du message
+dans la zone &ldquo;A l'ouverture de l'action, demander aux utilisateurs&rdquo;.
+</p>
+<p>Cette zone ob&eacute;it aux r&egrave;gles ci-dessous.</p>
+<ul remap="Bullet2">
+<li><p>Elle doit &ecirc;tre compl&eacute;t&eacute;e si la syntaxe
+de la commande de lancement de l'application comporte un nom de fichier <var">requis</var>.</p>
+</li>
+<li><p>Dans le cas contraire, elle doit rester vide.</p>
+</li>
+<li><p>Si l'argument est facultatif, deux possibilit&eacute;s se
+pr&eacute;sentent: vous pouvez taper un message, auquel cas vous serez invit&eacute;
+&agrave; indiquer un nom de fichier lorsque vous cliquerez deux fois sur l'ic&ocirc;ne,
+ou laisser la zone vide, et l'action s'ex&eacute;cute avec une cha&icirc;ne
+nulle comme argument.</p>
+</li>
+</ul>
+</li>
+<li><p>D&eacute;finissez les types de fichiers pris en charge.</p>
+<ul remap="Bullet2">
+<li><p>Si l'action accepte tout type de donn&eacute;es, s&eacute;lectionnez
+Tous.</p>
+</li>
+<li><p>Si seul(s) le(s) type(s) de donn&eacute;es cr&eacute;&eacute;(s)
+pour l'application est/sont pris en charge, s&eacute;lectionnez Liste ci-dessus
+seulement.</p>
+<p>A l'origine, la<!---- <primary>Liste Types de donn&eacute;es Cr&eacute;er
+action</primary>---->  liste Types de donn&eacute;es utilisant l'action
+est vide. Elle est compl&eacute;t&eacute;e &agrave; mesure que vous cr&eacute;ez
+les types de donn&eacute;es associ&eacute;s &agrave; l'application.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur Ajouter, pour afficher la bo&icirc;te de dialogue
+correspondante.</p>
+<object>
+<h1>Bo&icirc;te de dialogue Ajouter un type de donn&eacute;es</h1>
+<img id="sag.dtcra.grph.4" src="./graphics/adddtype.png">
+</object>
+</li>
+<li><p>&Eacute;ventuellement, si vous ne souhaitez pas utiliser le
+nom par d&eacute;faut du type de donn&eacute;es, vous pouvez entrer le nom
+de votre choix<!---- <primary>Zone</primary><secondary>Nom du type de
+donn&eacute;es</secondary>----> <!---- <primary>Cr&eacute;er action</primary><secondary>nom du type de donn&eacute;es</secondary>----> 
+dans la zone correspondante.</p>
+<p>Les espaces ne sont pas autoris&eacute;s. Le nom est invisible aux utilisateurs
+et est utilis&eacute; dans la base de donn&eacute;es des types d'actions/donn&eacute;es
+pour identifier la d&eacute;finition du type de donn&eacute;es.</p>
+</li>
+<li><p>Cliquez sur le bouton Editer, situ&eacute; en regard<!---- 
+<primary>Caract&eacute;ristiques</primary><secondary>bo&icirc;te de dialogue</secondary>---->  de la zone Caract&eacute;ristiques, pour afficher
+la bo&icirc;te de dialogue correspondante.</p>
+<object>
+<h1>Bo&icirc;te de dialogue Caract&eacute;ristiques</h1>
+<img id="sag.dtcra.grph.5" src="./graphics/idchar.png">
+</object>
+<p>Les caract&eacute;ristiques permettent de d&eacute;finir les sp&eacute;cificit&eacute;s
+des types de donn&eacute;es. Vous pouvez utiliser un ou plusieurs crit&egrave;res
+:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="158*">
+<colspec colwidth="370*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Fichiers ou dossiers</p></td>
+<td align="left" valign="top"><p>Le type de donn&eacute;es correspond
+uniquement aux fichiers ou aux dossiers.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Types de donn&eacute;es</primary><secondary>bas&eacute; sur le nom</secondary>----> Mod&egrave;le
+de nom</p></td>
+<td align="left" valign="top"><p>Type de donn&eacute;es bas&eacute;
+sur le nom du fichier</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Autorisations</primary>
+<secondary>Cr&eacute;er action</secondary>----> <!---- <primary></primary>
+----> <!---- <primary>Types de donn&eacute;es</primary>----> <!---- 
+<primary></primary><secondary>autorisations</secondary>----> Mod&egrave;le
+d'autorisations</p></td>
+<td align="left" valign="top"><p>Autorisations de lecture, d'&eacute;criture
+et d'ex&eacute;cution</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Types de donn&eacute;es</primary>----> <!---- <primary>bas&eacute; sur le contenu</primary>
+<secondary></secondary>----> <!---- <primary></primary>----> <!---- 
+<primary>Types de donn&eacute;es</primary>----> <!---- <primary></primary>
+<secondary>bas&eacute; sur le contenu</secondary>----> <!---- <primary></primary>
+----> Contenu</p></td>
+<td align="left" valign="top"><p>Contenu d'une partie donn&eacute;e
+du fichier</p></td></tr></tbody></table></informaltable>
+</li>
+<li><p>Indiquez si le type de donn&eacute;es correspond &agrave;
+un fichier ou &agrave; un dossier.</p>
+<object>
+<h1>Caract&eacute;ristique d'un fichier ou d'un r&eacute;pertoire pour
+un type de donn&eacute;es.</h1>
+<img id="sag.dtcra.grph.6" src="./graphics/inclfile.png">
+</object>
+</li>
+<li><p>Si le type de donn&eacute;es est fonction du nom, cochez la
+case Mod&egrave;le de nom et remplissez la zone.</p>
+<object>
+<h1>Caract&eacute;ristique d'un nom de fichier pour un type de donn&eacute;es.</h1>
+<img id="sag.dtcra.grph.7" src="./graphics/idname.png">
+</object>
+<p>Les caract&egrave;res g&eacute;n&eacute;riques * et ? sont autoris&eacute;s
+:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="99*">
+<colspec colwidth="429*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><tt>*</tt></p></td>
+<td align="left" valign="top"><p>correspond &agrave; une cha&icirc;ne
+de caract&egrave;res.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><tt>?</tt></p></td>
+<td align="left" valign="top"><p>correspond &agrave; un caract&egrave;re.
+</p></td></tr></tbody></table></informaltable>
+</li>
+<li><p>Si le type de donn&eacute;es est fonction des autorisations,
+cochez la case Mod&egrave;le d'autorisations et s&eacute;lectionnez les droits
+d'acc&egrave;s associ&eacute;s &agrave; ce type de donn&eacute;es.</p>
+<object>
+<h1>Indication des autorisations pour un type de donn&eacute;es</h1>
+<img id="sag.dtcra.grph.8" src="./graphics/permpat.png">
+</object>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="134*">
+<colspec colwidth="394*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>En fonction</p></td>
+<td align="left" valign="top"><p>Le droit d'acc&egrave;s sp&eacute;cifi&eacute;
+est accord&eacute;.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Hors fonction</p></td>
+<td align="left" valign="top"><p>Le droit d'acc&egrave;s sp&eacute;cifi&eacute;
+est refus&eacute;.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Indiff&eacute;remment</p></td>
+<td align="left" valign="top"><p>Le droit d'acc&egrave;s sp&eacute;cifi&eacute;
+n'est pas pris en compte.</p></td></tr></tbody></table></informaltable>
+</li>
+<li><p>Si le type de donn&eacute;es d&eacute;pend du contenu, cochez
+la case Contenu et indiquez les informations requises (Mod&egrave;le &agrave;
+rechercher et Type de contenu). Vous pouvez &eacute;galement d&eacute;finir
+l'Octet de d&eacute;part de la recherche.</p>
+<object>
+<h1>Indication des caract&eacute;ristiques du contenu pour un type de donn&eacute;es</h1>
+<img id="sag.dtcra.grph.9" src="./graphics/content.png">
+</object>
+<note>
+<p>L'utilisation d'un type de donn&eacute;es bas&eacute; sur le contenu
+peut avoir une incidence sur les performances du syst&egrave;me.</p>
+</note>
+</li>
+<li><p>Cliquez sur OK pour fermer la bo&icirc;te de dialogue.</p>
+<p>Les param&egrave;tres d&eacute;finis apparaissent dans la zone<!---- 
+<primary>Caract&eacute;ristiques</primary><secondary>zone</secondary>---->  Caract&eacute;ristiques
+&agrave; l'aide des conventions suivantes:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="74*">
+<colspec colwidth="454*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>d</p></td>
+<td align="left" valign="top"><p>R&eacute;pertoire</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>r</p></td>
+<td align="left" valign="top"><p>Autorisation de lecture</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>w</p></td>
+<td align="left" valign="top"><p>Autorisation d'&eacute;criture</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>x</p></td>
+<td align="left" valign="top"><p>Ex&eacute;cutable</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>!</p></td>
+<td align="left" valign="top"><p>Op&eacute;rateur NOT</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>&amp;</p></td>
+<td align="left" valign="top"><p>Op&eacute;rateur AND</p></td>
+</tr></tbody></table></informaltable>
+</li>
+<li><p>Tapez l'aide associ&eacute;e aux types de donn&eacute;es dans
+la zone de texte appropri&eacute;e.</p>
+</li>
+<li><p>Utilisez les objets de commande de la zone Ic&ocirc;nes du
+type de donn&eacute;es pour associer une ic&ocirc;ne &agrave; l'application.
+Au d&eacute;part, l'ic&ocirc;ne par d&eacute;faut est affich&eacute;e.</p>
+<ul remap="Bullet2">
+<li><p>Pour s&eacute;lectionner une autre ic&ocirc;ne, cliquez sur
+Rech. ensemble pour ouvrir la bo&icirc;te de dialogue correspondante. Reportez-vous
+&agrave; la section <!--Original
+XRef
+content: '&ldquo;Indication d'une ictne ` l'aide
+de la --><!--bonte de dialogue
+Rech. ensemble&ldquo;, page 162<xref role="SecTitleAndPageNum" linkend="sag.dtcra.mkr.7">.
+</p>
+</li>
+<li><p>Pour cr&eacute;er une ic&ocirc;ne, s&eacute;lectionnez Editer
+une ic&ocirc;ne.</p>
+</li>
+</ul>
+</li>
+<li><p>V&eacute;rifiez la commande de la zone Commande d'ouverture
+du type de donn&eacute;es. Elle s'ex&eacute;cute lorsque l'utilisateur clique
+deux fois sur un fichier.</p>
+</li>
+<li><p>Si l'application prend en charge une commande permettant d'imprimer
+les fichiers de donn&eacute;es &agrave; partir de la ligne de commande, entrez-la
+dans la zone Commande d'impression du type de donn&eacute;es. Pour indiquer
+un fichier comme argument, utilisez la syntaxe $<var">n</var>.</p>
+</li>
+<li><p>Pour sauvegarder la d&eacute;finition du type de donn&eacute;es
+:</p>
+<ul remap="Bullet1">
+<li><p>cliquez sur OK pour enregistrer le type de donn&eacute;es
+et fermer la bo&icirc;te de dialogue Ajouter un type de donn&eacute;es:</p>
+</li>
+<li><p>ou cliquez sur Appliquer pour sauvegarder le type de donn&eacute;es
+sans fermer cette bo&icirc;te de dialogue. Vous pouvez alors d&eacute;finir
+un autre type de donn&eacute;es associ&eacute; &agrave; l'action.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="2" id="SAG.dtCrA.div.9">
+<h1 id="SAG.dtCrA.mkr.7">Indication d'une ic&ocirc;ne &agrave; l'aide de
+la bo&icirc;te de dialogue<!---- <primary>Cr&eacute;er action</primary>
+<secondary>indication d'une ic&ocirc;ne</secondary>----> <!---- 
+<primary>Ic&ocirc;nes</primary><secondary>Rech. ensemble</secondary>----> 
+Rech. ensemble<!---- <primary>Bo&icirc;tes de dialogue</primary><secondary>Rech. ensemble</secondary>----> </h1>
+<p>Cette bo&icirc;te de dialogue s'affiche lorsque vous s&eacute;lectionnez
+l'option Rech. ensemble de la fen&ecirc;tre principale (Cr&eacute;er une action)
+ou de la fen&ecirc;tre Ajouter un type de donn&eacute;es. Elle permet d'indiquer
+l'ic&ocirc;ne qui sera associ&eacute;e &agrave; l'action ou au type de donn&eacute;es.
+</p>
+<object>
+<h1>Bo&icirc;te de dialogue Rech. ensemble<!---- <primary>Types de
+donn&eacute;es</primary><secondary>ic&ocirc;nes</secondary>----> <!---- 
+<primary>Ic&ocirc;nes</primary><secondary>types de donn&eacute;es</secondary>
+----> <!---- <primary>Ic&ocirc;nes</primary><secondary>actions</secondary>
+----> <!---- <primary>Actions</primary><secondary>ic&ocirc;nes</secondary>----> </h1>
+<img id="SAG.dtCrA.grph.10" src="./graphics/findset.png">
+</object>
+<p>Cette bo&icirc;te de dialogue permet d'indiquer des fichiers image d'ic&ocirc;nes
+situ&eacute;s:</p>
+<ul remap="Bullet1">
+<li><p>dans un r&eacute;pertoire du chemin de recherche d'ic&ocirc;ne.
+La liste des dossiers d'ic&ocirc;nes contient tous les r&eacute;pertoires
+figurant sur le chemin de recherche d'ic&ocirc;ne;</p>
+</li>
+<li><p>dans un module d'enregistrement qui sera int&eacute;gr&eacute;
+au Bureau &agrave; l'aide de <code>dtappintegrate</code>. Les ic&ocirc;nes
+ne sont pas encore plac&eacute;es dans un r&eacute;pertoire faisant partie
+du chemin de recherche, mais y seront plac&eacute;es par <code>dtappintegrate</code>.</p>
+</li>
+</ul>
+<note>
+<p>Les d&eacute;finitions des actions et des types de donn&eacute;es cr&eacute;&eacute;s
+&agrave; l'aide de Cr&eacute;er action contiennent le nom de base des fichiers
+d'ic&ocirc;nes (le nom de fichier sans les extensions de taille et de type
+de fichier). Les ic&ocirc;nes associ&eacute;es &agrave; ces actions et &agrave;
+ces types de donn&eacute;es doivent ensuite &ecirc;tre plac&eacute;es dans
+des r&eacute;pertoires du chemin de recherche.</p>
+</note>
+<div class="3" id="SAG.dtCrA.div.10" role="Procedure">
+<h1>Indication d'un ensemble d'ic&ocirc;nes figurant sur le chemin de recherche</h1>
+<ol>
+<li><p>Dans la liste des dossiers d'ic&ocirc;nes de la bo&icirc;te
+de dialogue &ldquo;Rech. ensemble&rdquo;, cliquez deux fois sur le dossier
+contenant l'ic&ocirc;ne.</p>
+<p>Le contenu de ce dossier s'affiche dans la liste des fichiers d'ic&ocirc;nes.
+</p>
+</li>
+<li><p>Cliquez alors sur l'ic&ocirc;ne &agrave; utiliser.</p>
+<p>Le nom de base du fichier d'ic&ocirc;ne appara&icirc;t alors dans la
+zone &ldquo;Entrez un nom de fichier d'ic&ocirc;ne&rdquo;.</p>
+</li>
+<li><p>Cliquez sur OK.</p>
+</li>
+</ol>
+</div>
+<div class="3" id="SAG.dtCrA.div.11" role="Procedure">
+<h1>Indication d'une ic&ocirc;ne dans un module d'enregistrement</h1>
+<p>Si vous &ecirc;tes administrateur syst&egrave;me ou programmeur et que
+vous cr&eacute;ez un module d'enregistrement, les fichiers image d'ic&ocirc;nes
+se trouvent au d&eacute;part dans un r&eacute;pertoire de ce module.</p>
+<listing><var">racine_app</var>/dt/appconfig/icons/<var">langue</var></listing>
+<p>Une fois enregistr&eacute;s &agrave; l'aide de la syntaxe <code>dtappintegrate</code>, les fichiers d'ic&ocirc;ne sont copi&eacute;s dans <tt>/etc/dt/appconfig/icons/</tt><var">langue</var>,
+qui se trouve sur le chemin de recherche d'ic&ocirc;ne.</p>
+<p>Pour indiquer les ic&ocirc;nes int&eacute;gr&eacute;es au module d'enregistrement,
+proc&eacute;dez comme suit:</p>
+<ol>
+<li><p>Entrez le nom de base du fichier d'ic&ocirc;ne dans la zone
+correspondante.</p>
+</li>
+<li><p>Cliquez sur OK.</p>
+<p>L'outil Cr&eacute;er action affiche une bo&icirc;te de dialogue indiquant
+que les ic&ocirc;nes sont introuvables dans les r&eacute;pertoires du chemin
+de recherche d'ic&ocirc;ne.</p>
+</li>
+<li><p>Dans la bo&icirc;te de dialogue qui s'affiche, s&eacute;lectionnez
+l'option de non- modification.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
+<?Pub Caret>
+<?Pub *0000038961>
+</body></html>

@@ -1,0 +1,951 @@
+<html><body>
+<!-- $XConsortium: ch16.sgm /main/12 1996/12/21 18:57:07 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="SAG.I18N.div.1">
+<h1 id="SAG.I18N.mkr.1">Configuration de sessions de Bureau adapt&eacute;es
+au pays<!---- <primary>Support de langue nationale</primary><secondary>internationalisation</secondary>----> </h1>
+<p>Pour configurer des sessions de Bureau adapt&eacute;es au pays, vous
+devez:</p>
+<ul remap="Bullet1">
+<li><p>d&eacute;finir la variable d'environnement <systemitem>LANG</systemitem> et les autres variables de support de la langue nationale
+</p>
+</li>
+<li><p>acc&eacute;der aux catalogues de messages et aux fichiers
+de ressources d&eacute;pendants de la langue utilis&eacute;e</p>
+</li>
+<li><p>ex&eacute;cuter des applications &agrave; distance, par l'interm&eacute;diaire
+de syst&egrave;mes internationalis&eacute;s</p>
+<informaltable id="SAG.I18N.itbl.1" frame="All">
+<table cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Gestion
+de la variable d'environnement LANG296<xref role="JumpText" linkend="SAG.I18N.mkr.2"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Recherche
+des polices299<xref role="JumpText" linkend="SAG.I18N.mkr.4"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Localisation
+des fichiers de ressources app-defaults299<xref role="JumpText" linkend="SAG.I18N.mkr.5"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Localisation
+des actions et des types de données300<xref role="JumpText" linkend="SAG.I18N.mkr.6"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Localisation
+des icônes et des bitmaps300<xref role="JumpText" linkend="SAG.I18N.mkr.7"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Localisation
+des volumes d'aide302<xref role="JumpText" linkend="SAG.I18N.mkr.10"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Localisation
+des catalogues de messages302<xref role="JumpText" linkend="SAG.I18N.mkr.11"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Exécution
+à distance d'applications adaptées au pays302<xref role="JumpText" linkend="SAG.I18N.mkr.12"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Réinitialisation
+de la mappe de clavier302<xref role="JumpText" linkend="SAG.I18N.mkr.13"></p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+</li>
+</ul>
+<div class="1" id="SAG.I18N.div.2">
+<h1 id="SAG.I18N.mkr.2">Gestion de la variable d'environnement LANG<!---- 
+<primary>Internationalisation</primary><secondary>variable LANG</secondary>
+----> <!---- <primary>Variables</primary><secondary>LANG</secondary>
+----> </h1>
+<p>La variable d'environnement LANG doit &ecirc;tre d&eacute;finie pour
+que le Bureau utilise les programmes d&eacute;pendants de la langue du syst&egrave;me
+d'exploitation. Le Bureau prend en charge:</p>
+<ul remap="Bullet1">
+<li><p>les langues latines d'Europe occidentale;</p>
+</li>
+<li><p>le japonais</p>
+</li>
+<li><p>le chinois traditionnel</p>
+</li>
+<li><p>le chinois simplifi&eacute;</p>
+</li>
+<li><p>le cor&eacute;en</p>
+</li>
+</ul>
+<note>
+<p>Votre fournisseur peut avoir ajout&eacute; d'autres langues de travail.
+</p>
+</note>
+<p>Vous pouvez attribuer &agrave; la variable <systemitem>LANG</systemitem>
+toute valeur prise en charge par le syst&egrave;me d'exploitation. Pour afficher
+la liste des langues et des pays support&eacute;s, s&eacute;lectionnez Options
+sur l'&eacute;cran de connexion.</p>
+<p>Pour d&eacute;finir la variable <systemitem>LANG</systemitem> du Bureau,
+vous pouvez effectuer l'une des op&eacute;rations suivantes:</p>
+<ul remap="Bullet1">
+<li><p>modifier une ressource dans le fichier <tt>Xconfig</tt>
+</p>
+</li>
+<li><p>utiliser le menu Options de l'&eacute;cran de connexion</p>
+</li>
+<li><p>cr&eacute;er un script ex&eacute;cutable <code>sh</code>
+ou <code>ksh Xsession.d</code> (pour plus de d&eacute;tails sur l'utilisation
+d'un script Xsession.d, reportez-vous &agrave; la section <!--Original XRef
+content: '&rdquo;Lancement des scripts
+Xsession.d&rdquo;, page&numsp;28<xref role="SecTitleAndPageNum" linkend="SAG.SesMg.mkr.5">)
+</p>
+</li>
+<li><p>modifier le fichier <tt>.dtprofile</tt> de l'utilisateur
+</p>
+</li>
+</ul>
+<p>Une fois la variable <systemitem>LANG</systemitem> d&eacute;finie, le
+Bureau utilise les fichiers d&eacute;pendants de la langue suivants pour identifier
+l'interface adapt&eacute;e au pays:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="127*">
+<colspec colwidth="401*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><code>Couleurs</code></p></td>
+<td align="left" valign="top"><p><tt>/usr/dt/palettes/desc</tt><var">.langue</var></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code>Fonds</code></p></td>
+<td align="left" valign="top"><p><tt>/usr/dt/backdrops/desc</tt><var">.langue</var></p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+<div class="2" id="SAG.I18N.div.3">
+<h1><!---- <primary>Internationalisation</primary><secondary>d&eacute;finition
+de la langue</secondary>----> D&eacute;finition de la langue pour plusieurs
+utilisateurs<!---- <primary>Langue</primary><secondary>d&eacute;finition
+&agrave; l'aide du fichier Xconfig</secondary>----> <!---- <primary>Fichier</primary><secondary>Xconfig</secondary><tertiary>d&eacute;finition
+de la langue</tertiary>----> </h1>
+<p>Si vous d&eacute;finissez la langue &agrave; l'aide du fichier <tt>Xconfig</tt>, l'&eacute;cran de connexion est localis&eacute; (internationalis&eacute;)
+et la variable <systemitem>LANG</systemitem> est d&eacute;finie pour tous
+les utilisateurs. Il s'agit de la seule m&eacute;thode de modification de
+cette variable pour tous les &eacute;crans d'un syst&egrave;me. Pour modifier
+le fichier <tt>Xconfig</tt>, copiez-le de <tt>/usr/dt/config/Xconfig</tt> dans <tt>/etc/dt/config/Xconfig</tt>.</p>
+<p>Pour d&eacute;finir la langue, ajoutez la ligne suivante dans le fichier <tt>/etc/dt/config/Xconfig</tt>:</p>
+<listing><tt>dtlogin.</tt><var">&eacute;cran_h&ocirc;te</var><tt>.language:</tt> <var">langue</var> 
+</listing>
+<p>Par exemple, la ligne suivante attribue la valeur <tt>fr_FR</tt>
+(fran&ccedil;ais) &agrave; la variable <systemitem>LANG</systemitem> utilis&eacute;e
+par l'&eacute;cran <computeroutput>mon_h&ocirc;te:0</computeroutput>.</p>
+<listing>dtlogin.mon_h&ocirc;te_0.langue: fr_FR</listing>
+<p>Le client <code>dtlogin</code> lit le catalogue de messages correspondant
+&agrave; la langue indiqu&eacute;e et affiche l'&eacute;cran de connexion
+appropri&eacute;. Il &eacute;tablit ensuite la liste des environnements locaux
+qui utilisent, dans le fichier <tt>/etc/dt/config/Xresources</tt>,
+les ressources suivantes:</p>
+<ul remap="Bullet1">
+<li><p><systemitem>dtlogin*language</systemitem></p>
+</li>
+<li><p><systemitem>dtlogin*languageList</systemitem></p>
+</li>
+<li><p><systemitem>dtlogin*languageName</systemitem></p>
+</li>
+</ul>
+<p>Il est possible que le fichier <tt>Xconfig</tt> d&eacute;finisse
+la variable d'environnement <systemitem>NLSPATH</systemitem> correspondant
+&agrave; la langue choisie. Si tel n'est pas le cas, ou pour d&eacute;finir
+cette variable vous-m&ecirc;me, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Variable
+d'environnement NLSPATH&rdquo;, page&numsp;299<xref role="HeadingAndPage"
+linkend="SAG.I18N.mkr.3">.</p>
+</div>
+<div class="2" id="SAG.I18N.div.4">
+<h1>D&eacute;finition de la langue d'une session</h1>
+<p>Pour d&eacute;finir la langue d'une session, utilisez le menu Options
+de l'&eacute;cran de connexion. Celui-ci est alors modifi&eacute; en fonction
+de votre choix et la variable <systemitem>LANG</systemitem> est d&eacute;finie
+(elle retrouve sa valeur par d&eacute;faut, d&eacute;finie dans le fichier <tt>dtlogin</tt>, &agrave; la fin de la session).</p>
+</div>
+<div class="2" id="SAG.I18N.div.5">
+<h1>D&eacute;finition de la langue pour un utilisateur<!---- <primary>Variables</primary><secondary>LANG</secondary>----> <!---- <primary>Fichiers</primary><secondary>.dtprofile</secondary>----> </h1>
+<p>L'utilisateur peut modifier la valeur de sa variable <systemitem>LANG</systemitem> dans le fichier <var">R&eacute;p_personnel</var><tt>/.dtprofile</tt> (dans ce cas, l'&eacute;cran de
+connexion n'est pas localis&eacute;).</p>
+<ul remap="Bullet1">
+<li><p>Si vous utilisez <code>sh</code> ou <code>ksh</code>
+:</p>
+<listing remap="CodeIndent1">LANG=<var">langue</var> 
+<code>export</code> LANG</listing>
+</li>
+<li><p>Si vous utilisez <code>csh</code>:</p>
+<listing remap="CodeIndent1"><code>setenv</code> LANG <var">langue</var></listing>
+</li>
+</ul>
+</div>
+<div class="2" id="SAG.I18N.div.6">
+<h1>Variable d'environnement LANG et configuration d'une session</h1>
+<p><systemitem>LANG</systemitem> permet de modifier le r&eacute;pertoire
+dans lequel les fichiers de configuration de la session sont recherch&eacute;s.
+</p>
+<p>Les fichiers de configuration d'une session adapt&eacute;e au pays sont
+les suivants:</p>
+<ul remap="Bullet1">
+<li><p><tt>/usr/dt/config/</tt><symbol>langue</var><tt>/Xresources</tt> (fichier de ressources du Gestionnaire de connexion)
+</p>
+</li>
+<li><p><tt>/usr/dt/config/</tt><symbol>langue</var><tt>/sys.font</tt> (fichier de ressources du Gestionnaire de sessions)
+</p>
+</li>
+<li><p><tt>/usr/dt/config/</tt><symbol>langue</var><tt>/sys.resources</tt> (fichier de ressources du Gestionnaire de sessions)
+</p>
+</li>
+<li><p><tt>/usr/dt/config/</tt><symbol>langue</var><tt>/sys.session</tt> (shell ex&eacute;cutable du Gestionnaire de sessions)
+</p>
+</li>
+<li><p><tt>/usr/dt/config/</tt><symbol>langue</var><tt>/sys.dtwmrc</tt> (fichier de ressources du Gestionnaire de fen&ecirc;tres)
+</p>
+</li>
+<li><p><tt>/usr/dt/appconfig/types/</tt><symbol>langue</var><tt>/dtwm.fp</tt> (Tableau de bord du Gestionnaire de
+fen&ecirc;tres)</p>
+</li>
+</ul>
+</div>
+<div class="2" id="SAG.I18N.div.7">
+<h1>D&eacute;finition d'autres variables d'environnement linguistique<!---- 
+<primary>Internationalisation</primary><secondary>variables d'environnement
+linguistique</secondary>----> <!---- <primary>Variables</primary>
+<secondary>d'environnement</secondary><tertiary>linguistiques</tertiary>----> </h1>
+<p>Outre <systemitem>LANG</systemitem>, il existe d'autres variables d'environnement
+linguistique, telles que <systemitem>LC_CTYPE</systemitem> et <systemitem>LC_ALL</systemitem>. Celles-ci ne sont affect&eacute;es ni par le fichier
+de ressources <code>dtlogin</code> ni par le menu Options de l'&eacute;cran
+de connexion. Elles doivent &ecirc;tre d&eacute;finies dans les fichiers suivant
+:</p>
+<ul remap="Bullet1">
+<li><p>variables syst&egrave;m: <tt>/etc/dt/config/Xsession.d</tt></p>
+</li>
+<li><p>variables personnelles: <var">R&eacute;p_personnel</var><tt>/.dtprofile</tt></p>
+</li>
+</ul>
+<div class="3" id="SAG.I18N.div.8">
+<h1 id="SAG.I18N.mkr.3">Variable d'environnement NLSPATH<!---- <primary>Catalogue de messages</primary>----> </h1>
+<p>Cette variable indique les r&eacute;pertoires dans lesquels les applications
+recherchent les catalogues de messages. <systemitem>LANG</systemitem> et <systemitem>NLSPATH</systemitem> doivent &ecirc;tre d&eacute;finies de sorte que ces catalogues
+de messages soient utilis&eacute;s. Pour conna&icirc;tre l'emplacement des
+messages nationaux, reportez-vous &agrave; la section <!--Original XRef content:
+'&rdquo;Localisation des
+catalogues de messages&rdquo;, page&numsp;302<xref role="HeadingAndPage"
+linkend="SAG.I18N.mkr.11">. La plupart des clients du Bureau ajoutent ce chemin
+&agrave; la variable <systemitem>NLSPATH</systemitem> lors du lancement.</p>
+</div>
+</div>
+</div>
+<div class="1" id="SAG.I18N.div.9">
+<h1 id="SAG.I18N.mkr.4">Recherche des polices<!---- <primary>Internationalisation</primary><secondary>polices</secondary>----> </h1>
+<p>Les polices fournies avec le Bureau se trouvent dans le r&eacute;pertoire
+<tt>/usr/lib/X11/fonts</tt>.<!---- <primary>Polices</primary>
+<secondary>r&eacute;pertoire principal</secondary>---->  Chaque r&eacute;pertoire
+contient un fichier r&eacute;pertoire, <tt>fonts.dir</tt>, et
+un fichier alias, <tt>fonts.alias</tt>. Pour plus de d&eacute;tails
+sur la cr&eacute;ation de ces fichiers, consultez la page de manuel <tt>mkfontdir</tt>.<!---- <primary>Polices</primary><secondary>fichier
+r&eacute;pertoire</secondary>----> <!---- <primary>Polices</primary>
+<secondary>fichier alias</secondary>----> <!---- <primary>Polices</primary><secondary>commande mkfontdir</secondary>----> <!---- 
+<primary>Commandes</primary><secondary>mkfontdir</secondary>----> </p>
+<p>Pour afficher la liste des polices disponibles sur un serveur, utilisez
+la commande <code>xlsfonts</code>.<!---- <primary>Commandes</primary>
+<secondary>xlsfonts</secondary>----> <!---- <primary>Polices</primary>
+<secondary>commande xlsfonts</secondary>----> <!---- <primary>Commandes</primary><secondary>xlsfonts</secondary>----> <!---- 
+<primary>Polices</primary><secondary>installation</secondary>----> 
+Pour ajouter des polices sur le serveur, ou en supprimer, utilisez la commande <code>xset</code>.</p>
+</div>
+<div class="1" id="SAG.I18N.div.9a">
+<h1 id="SAG.I18N.mkr.4a">Gestion des caract&egrave;res d&eacute;finis par
+l'utilisateur<!---- <primary>user defined characters</primary><secondary>managing</secondary>----> <!---- <primary>localization</primary>
+<secondary>user defined characters</secondary>----> </h1>
+<div class="2">
+<h1>G&eacute;n&eacute;ralit&eacute;s</h1>
+<p>Dans les pays d'Extr&ecirc;me orient, en Chine, en Cor&eacute;e ou au
+Japon, l'usage des caract&egrave;res chinois est tr&egrave;s r&eacute;pandu.
+(Ils se nomment Hanzi en Chine, Hanja en Cor&eacute;e et Kanji au Japon).
+Etant donn&eacute; leur nombre consid&eacute;rable (plus de 50 000 dans le
+plus gros dictionnaire de kanji japonais) les jeux de caract&egrave;res cod&eacute;s
+standard pour les caract&egrave;res chinois (par exemple JIS X 0208, KS C
+5601 et GB 2312) ne d&eacute;finissent que les caract&egrave;res utilis&eacute;s
+le plus fr&eacute;quemment.</p>
+<p>Pour l'usage &eacute;crit courant, un jeu de caract&egrave;res standard
+suffit. Dans certains cas, cependant, on doit utiliser des caract&egrave;res
+non standard. Par exemple, pour l'Inscription des r&eacute;sidents au Japon,
+les noms de la personne et de l'endroit doivent &ecirc;tre &eacute;crits avec
+exactement les m&ecirc;mes caract&egrave;res que ceux utilis&eacute;s sur
+les formulaires remplis &agrave; la main pr&eacute;c&eacute;demment. Un autre
+exemple est celui de la publication de documents ancients tels que les classiques
+taoistes ou de l'&eacute;poque de Confucius.Ces textes contiennent beaucoup
+de caract&egrave;res vieillis et qui ne sont pas d&eacute;finis dans les jeux
+de caract&egrave;res standard. On appelle ces caract&egrave;res non standard
+des&grave; &ldquo;caract&egrave;res d&eacute;finis par l'utilisateur&rdquo;.
+</p>
+<div class="3">
+<h1>Organisation des UDC ( User Defined Characters)</h1>
+<p>Les caract&egrave;res d&eacute;finis par l'utilisateur (UDC) utilisent
+des points de code &ldquo; vide&rdquo;( des points dans le jeu de code auxquels
+on n'a pas attribu&eacute; de caract&egrave;res) ou une zone d'utilisation
+priv&eacute;e (si le jeu de code en d&eacute;finit une ). Dans la plupart
+des cas, le vendeur du syst&egrave;me fournit une zone UDC constitu&eacute;e
+d'un ou de plusieurs blocs attenants de points de code.</p>
+<p>Pour cr&eacute;er un UDC, proc&eacute;dez de la mani&egrave;re suivante
+:</p>
+<ol>
+<li><p>Attribuez un point de code au caract&egrave;re &agrave; d&eacute;finir
+dans la zone UDC.</p>
+</li>
+<li><p>Cr&eacute;ez une image glyphe (ou un jeu d'images glyphes
+pour d&eacute;finir plusieurs tailles de polices) pour le caract&egrave;re
+en utilisant l'&eacute;diteur de polices UDC, <code>dtudcfonted</code>.
+</p>
+</li>
+</ol>
+<p>Quand le UDC est cr&eacute;&eacute;, vous pouvez l'&eacute;tendre &agrave;
+d'autres syst&egrave;mes en utilisant l'Utilitaire d'&eacute;change de donn&eacute;es
+UDC. Pour respecter la coh&eacute;rence des &eacute;changes de donn&eacute;es,
+il est souhaitable d'unifier les d&eacute;finitions UDC au sein d'un m&ecirc;me
+organisme.</p>
+<p>Avant d'essayer de cr&eacute;er des UDC, vous devez d&eacute;terminer
+:</p>
+<ul>
+<li><p>Le jeu de caract&egrave;res &agrave; utiliser et les points
+de code disponibles pour les UDC. La cr&eacute;ation de UDC pr&eacute;suppose
+la connaissance des points de code &agrave; utiliser.</p>
+<p>Quand vous &eacute;changez des donn&eacute;es sous le protocole X, vous
+utilisez du texte compos&eacute;. Dans celui-ci, vous pouvez utiliser des
+segments &eacute;tendus pour transf&eacute;rer les UDC. Dans ce cas, vous
+devez d&eacute;finir le nom cod&eacute; des UDC et comment les points de code
+ou les index de glyphe sont transf&eacute;r&eacute;s aux segments.</p>
+</li>
+<li><p>L'organisation des polices et quels index de glyphes sont
+utilis&eacute;s pour les UDC. Ces derniers peuvent &ecirc;tre stock&eacute;s
+dans des fichiers de police standard avec des glyphes vides ou dans des fichiers
+de polices s&eacute;par&eacute;s qui leur sont sp&eacute;cifiques. Si vous
+utilisez des fichiers s&eacute;par&eacute;s, le syst&egrave;me sera livr&eacute;
+avec des fichiers de polices vides pour les UDC. Lors de la modification d'un
+UDC existant, l'utilisateur doit sp&eacute;cifier le nom de la police et les
+index de glyphes ce qui implique une bonne connaissance de la relation entre
+les points de code et les index de glyphe.</p>
+</li>
+</ul>
+</div>
+<div class="3">
+<h1>Fichiers de polices</h1>
+<p>Les UDC doivent &ecirc;tre stock&eacute;s dans la base de donn&eacute;es
+comme fichiers de polices pour que vous puissiez les afficher et les imprimer.
+Les glyphes UDC, comme les autres caract&egrave;res glyphes, sont stock&eacute;s
+dans des fichiers de polices utilis&eacute;s dans le syst&egrave;me Window
+X. Les formats des fichiers de police sont PCF (Portable Compiled Format)
+et SNF (Server Natural Format) auxquels vous pouvez acc&eacute;der par un
+serveur X. L'&eacute;diteur de police UDC peut aussi acc&eacute;der aux fichiers
+de polices de ces formats.</p>
+<p>Quand le serveur X affiche un UDC, il s'agit du UDC du fichier de police
+correspondant. De m&ecirc;me, quand vous imprimez un UDC, le programme d'impression
+d&eacute;synchronis&eacute; indique le UDC dans le fichier de polices.</p>
+<p>Vous devez configurer les fichiers de polices pour les utiliser dans
+le syst&egrave;me Window X. Autrement dit, vous devez les placer dans des
+r&eacute;pertoires d&eacute;finis dans le chemin de police du serveur X et
+vous devez y placer aussi les fichiers de gestion ( par exemple <var">fonts.dir</var>). L'&eacute;diteur de polices UDC n'installe pas les fichiers
+de police et ne modifie aucune ressource du syst&egrave;me ( par exemple <var">fonts.dir</var>).</p>
+<p>L'Editeur de polices UDC ne peut utiliser que les fichiers de polices
+UDC qui sont disponibles dans l'environnement du pays en cours et qui sont
+d&eacute;finis dans la base de donn&eacute;es X NLS. Cette derni&egrave;re
+d&eacute;finit les jeux de caract&egrave;res et de polices utilis&eacute;s
+pour chaque environnement de pays. L'Editeur de police UDC construit des polices
+UDC de tailles et de styles diff&eacute;rents. Pour ajouter une nouvelle police
+modifiable vous devez sp&eacute;cifier le nom du jeu de caract&egrave;res
+et la zone UDC dans la base de donn&eacute;es X NLS.</p>
+<p>Quand l'Editeur de police UDC et l'utilitaire d'&eacute;change de donn&eacute;es
+cherchent des fichiers de polices, ils cherchent d'abord la variable d'environnement <systemitem class="environvar">DTUDCFONTPATH</systemitem> (constitu&eacute;e de la liste
+des r&eacute;pertoires contenant les fichiers de polices UDC et s&eacute;par&eacute;s
+par des virgules) puis ils cherchent les r&eacute;pertoires sp&eacute;cifi&eacute;s
+dans le fichier <tt>/usr/dt/config/$LANG/fonts.list</tt> .Pour
+configurer les r&eacute;pertoires de recherche de polices de chaque environnement
+du pays, sp&eacute;cifiez-les dans le fichier <tt>fonts.list</tt>.
+(N'onbliez pas les deux points de la fin) par exemple:</p>
+<listing>#
+# fonts.list file example
+#
+  /usr/lib/X11/fonts/misc:
+  /usr/dt/config/xfonts/ja:</listing>
+</div>
+</div>
+<div class="2">
+<h1>L'Editeur de police UDC</h1>
+<p>L'Editeur de police UDC (<code>dtudcfonted</code>) vous permet
+de cr&eacute;er, de modifier et de supprimer des UDC.</p>
+<p>Pour des explications d&eacute;taill&eacute;es de l'utilisation de l'Editeur
+de polices UDC, reportez-vous &agrave; la page de manuel <code>dtudcfonted.</code></p>
+<p>Quand vous lancez l'Editeur de police UDC, la fen&ecirc;tre <code>S&eacute;lection de polices</code> s'affiche.</p>
+<p>Les fichiers de police UDC sont sp&eacute;cifi&eacute;s par le nom XLFD
+(X Logical Font Description, description de la police logique). XLFD sont
+des noms uniques et descriptifs utilis&eacute;s par les clients et les applications.
+Les diff&eacute;rentes caract&eacute;ristiques des polices tels le style et
+le nom du jeu de caract&egrave;res sont inclus dans XLFD. Pour des raisons
+pratiques, vous pouvez s&eacute;lectionner le style du fichier de polices,
+la taille et la zone de code UDC. Cette derni&egrave;re comprend le num&eacute;ro
+du jeu de caract&egrave;res sp&eacute;cifi&eacute; dans la base de donn&eacute;es
+X NLS et la plage des index de glyphe UDC qui sont utilis&eacute;s dans le
+jeu de code.</p>
+<p>Pour afficher la liste des fichiers de polices UDC disponibles, s&eacute;lectionnez
+le jeu de code, le style et la taille des caract&egrave;res de d&eacute;finition
+de la police d&eacute;sir&eacute;e dans le champ de s&eacute;lection des &eacute;l&eacute;ments.
+Si vous sp&eacute;cifiez une police puis s&eacute;lectionnez le bouton <code>Ouvrir</code> la fen&ecirc;tre <code>Modification des caract&egrave;res</code> s'affiche.</p>
+<div class="3">
+<h1>Cr&eacute;ation et modification des caract&egrave;res</h1>
+<p>Vous cr&eacute;ez ou modifiez les caract&egrave;res dans la fen&ecirc;tre <code>Modification des caract&egrave;res</code>.</p>
+<p>S&eacute;lectionnez le code du caract&egrave;re &agrave; modifier dans
+la liste des caract&egrave;res. La forme du caract&egrave;re correspondant
+s'affiche dans la section &eacute;dition. Rien n'est affich&eacute; si le
+code du caract&egrave;re n'a pas &eacute;t&eacute; enregistr&eacute; dans
+la zone UDC.</p>
+<p>Si tel est le cas, ajoutez le code dans la fen&ecirc;tre <code>Contr&ocirc;le des caract&egrave;res</code> ou copiez la forme dans la
+fen&ecirc;tre <code>Copie des caract&egrave;res</code>. Pour de plus
+amples d&eacute;tails, r&eacute;f&eacute;rez-vous &agrave; la section, "Ajout
+et suppression des codes de caract&egrave;res". Pour de plus amples d&eacute;tails
+au sujet de la copie des formes de caract&egrave;res, r&eacute;f&eacute;rez-vous
+&agrave; la section "Copie des formes de caract&egrave;res".</p>
+<p>Un jeu d'outils de dessin et des options du menu <code>Edition</code>
+fournit tout un ensemble complet d'op&eacute;rations pour cr&eacute;er et
+modifier les formes des caract&egrave;res.</p>
+</div>
+<div class="3">
+<h1>Ajout et suppresssion des codes de caract&egrave;res</h1>
+<p>Vous pouvez ajouter ou supprimer les codes de caract&egrave;res dans
+la fen&ecirc;tre <code>Contr&ocirc;le des caract&egrave;res</code>,
+que vous affichez en s&eacute;lectionnant <code>Ajouter/Supprimer</code>
+dans le menu <code>Caract&egrave;res</code>.</p>
+<p>Pour ajouter un code de caract&egrave;re, sp&eacute;cifiez ses quatre
+nombres hexad&eacute;cimaux dans la zone de caract&egrave;re d&eacute;finie
+par l'utilisateur et cliquez sur le bouton <code>Ajouter</code>. Vous
+pouvez aussi ajouter une plage de caract&egrave;res en sp&eacute;cifiant les
+codes des premier et dernier caract&egrave;res de la plage. Chaque nouveau
+caract&egrave;re est ajout&eacute; &agrave; la liste des caract&egrave;res
+modifi&eacute;s dans la fen&ecirc;tre <code>Modification des caract&egrave;res</code>. Le caract&egrave;re &agrave; modifier est le premier caract&egrave;re
+du code de caract&egrave;re ajout&eacute; ( ou le champ du code de caract&egrave;re
+ajout&eacute;). S'il est d&eacute;j&agrave; enregistr&eacute;, la forme du
+caract&egrave;re du code de caract&egrave;re sp&eacute;cifi&eacute; n'est
+pas modifi&eacute;e.</p>
+<p>Pour supprimer un code de caract&egrave;re, sp&eacute;cifiez ses quatre
+chiffres hexad&eacute;cimaux dans la zone de caract&egrave;re d&eacute;finie
+par l'utilisateur et cliquez sur le bouton <code>Supprimer</code>.
+Vous pouvez aussi supprimer une plage de caract&egrave;res en sp&eacute;cifiant
+les codes des premier et dernier caract&egrave;res de la plage. L'utilitaire
+vous demande de confirmer chaque suppression.</p>
+<p>Quand vous supprimez un code de caract&egrave;re, il est retir&eacute;
+de la liste des caract&egrave;res &agrave; modifier dans la fen&ecirc;tre <code>Modification de caract&egrave;re</code>. Le code de caract&egrave;re suivant
+celui qui a &eacute;t&eacute; supprim&eacute; devient le code de caract&egrave;re
+&agrave; modifier.</p>
+</div>
+<div class="3">
+<h1>Entr&eacute;e graphique des codes de caract&egrave;res</h1>
+<p>Pour entrer un code de caract&egrave;re graphiquement, cliquez sur le
+bouton <code>Code</code> dans la fen&ecirc;tre <code>Contr&ocirc;le
+des caract&egrave;res</code>. La fen&ecirc;tre <code>Entr&eacute;e
+du code de caract&egrave;re</code> s'affiche. Dans cette fen&ecirc;tre,
+cliquez sur le caract&egrave;re d&eacute;sir&eacute; puis cliquez sur <code>Appliquer</code> pour ins&eacute;rer le code du caract&egrave;re s&eacute;lectionn&eacute;
+dans le champ d'entr&eacute;e de code de la fen&ecirc;tre <code>Contr&ocirc;le
+des caract&egrave;res</code>.</p>
+</div>
+<div class="3">
+<h1>Copie des formes de caract&egrave;res</h1>
+<p>Pour copier des formes de caract&egrave;res d&eacute;j&agrave; enregistr&eacute;s
+ou cr&eacute;&eacute;s, s&eacute;lectionnez <code>Copier</code> dans
+le menu <code>Caract&egrave;res</code>. La fen&ecirc;tre <code>Copie de caract&egrave;re</code> appara&icirc;t. Le code du caract&egrave;re
+sp&eacute;cifi&eacute; pour la copie est ajout&eacute; &agrave; la liste des
+caract&egrave;res de la fen&ecirc;tre Edition.</p>
+<p>Pour copier une forme de caract&egrave;re, s&eacute;lectionnez la taille
+du caract&egrave;re et sp&eacute;cifiez son code de quatre chiffres hexad&eacute;cimaux.
+(Vous pouvez aussi copier une plage en fournissant les codes des premier et
+dernier caract&egrave;res de la plage). Puis, sp&eacute;cifiez les codes de
+quatre chiffres hexad&eacute;cimaux des caract&egrave;res de destination et
+cliquez sur le bouton <code>Copier</code>.</p>
+<p>Vous pouvez aussi faire des copies compos&eacute;es dans lesquelles
+les points de la forme du caract&egrave;re source sont ORed avec les points
+de la forme du caract&egrave;re de destination.</p>
+</div>
+</div>
+<div class="2">
+<h1>Utilitaire d'&eacute;change de donn&eacute;es UDC</h1>
+<p>L'utilitaire d'&eacute;change de donn&eacute;es UDC (<code>dtudcexch</code>) est un outil qui permet d'&eacute;changer des images glyphes UDC
+entre des syst&egrave;mes.</p>
+<p><code>dtudcexch</code> fournit un m&eacute;canisme de distribution
+d'images glyphes UDC entre diff&eacute;rents syst&egrave;mes. Plus particuli&egrave;rement,
+il permet de cr&eacute;er des images glyphes UDC sur un syst&egrave;me en
+utilisant l'Editeur de polices UDC (<code>dtudcfonted</code>) puis de
+les distribuer sur d'autres syst&egrave;mes. <code>dtudcexch</code>
+stocke les images glyphes UDC dans un fichier BDF (Bitmap Distribution Format)
+qui est transport&eacute; vers un syst&egrave;me de destination. Sur celui-ci,
+on ex&eacute;cute encore <code>dtudcexch</code>, cette fois pour extraire
+les images du fichier BDF et les ajouter au fichier de police appropri&eacute;.
+</p>
+<p><code>dtudcexch</code> fournit &agrave; la fois une fonction d'importation
+et d'exportation. La fonction d'exportation lit les images glyphes UDC s&eacute;lectionn&eacute;es
+&agrave; partir d'un fichier de police et les stocke dans un fichier BDF
+pour les transf&eacute;rer sur d'autres syst&egrave;mes. La fonction d'importation
+lit toutes les images glyphes UDC dans un fichier BDF et les ajoute &agrave;
+un fichier de polices sp&eacute;cifique.</p>
+<p>Pendant l'exportation, <code>dtudcexch</code> utilise les index
+de glyphes de la zone de code UDC dans le fichier de police PCF/SNF pour s&eacute;lectionner
+les images glyphes UDC. Les images converties en fichier format BDFsont stock&eacute;es
+dans les index de glyphes. Pendant l'importation, <code>dtudcexch</code>
+ajoute les images glyphes UDC au fichier de police PCF/SNF dans les m&ecirc;mes
+index de glyphes se trouvant dans le fichier BDF. L'information de la zone
+de code UDC est d&eacute;finie dans la base de donn&eacute;es X NLS.</p>
+<p>Pour cr&eacute;er des index de glyphes diff&eacute;rents pour les images
+du syst&egrave;me de destination, vous pouvez modifier le fichier BDF avant
+d'appeler la fonction d'importation.</p>
+<p>Pour des d&eacute;tails suppl&eacute;mentaires au sujet de l'utilitaire
+d'&eacute;change de donn&eacute;es, r&eacute;f&eacute;rez-vous &agrave; la
+page de manuel <code>dtudcexch</code>.</p>
+</div>
+</div>
+<div class="1" id="SAG.I18N.div.10">
+<h1 id="SAG.I18N.mkr.5">Localisation des fichiers de ressources app-defaults<!---- 
+<primary>Internationalisation</primary><secondary>app-defaults</secondary>
+----> <!---- <primary>Variables</primary><secondary>XUSERFILESEARCHPATH</secondary>----> <!---- <primary>Ressources</primary><secondary>d&eacute;pendantes de la langue</secondary>----> <!---- <primary>app-defaults</primary>----> </h1>
+<p>Par d&eacute;faut, le fichier <tt>app-defaults</tt> des
+clients du Bureau se trouve dans <tt>/usr/dt/app-defaults/</tt><var">langue</var>. Par exemple, si la valeur de la variable <systemitem>LANG</systemitem> est <tt>fr_FR</tt>, les applications recherchent
+leur fichier <tt>app-defaults</tt> dans <tt>/usr/dt/app-defaults/fr_FR</tt>. Si cette variable n'est pas d&eacute;finie, le sous-r&eacute;pertoire <var">langue</var> n'est pas pris en compte et les applications
+recherchent le fichier <tt>app-defaults</tt> dans <tt>/usr/app-defaults/C</tt>.</p>
+<p>Pour modifier l'emplacement du fichier <tt>app-defaults</tt>,
+utilisez la variable d'environnement <systemitem>XFILESEARCHPATH</systemitem>.
+Par exemple, pour le d&eacute;placer dans <tt>/users</tt>, attribuez
+la valeur <tt>/usr/app-defaults/</tt><var">langue</var><tt>/</tt><var">nom_classe</var>
+&agrave; la variable <systemitem>XFILESEARCHPATH</systemitem>.</p>
+<p>Si vous attribuez la valeur <var">R&eacute;p_personnel</var><tt>/.dtprofile</tt> &agrave; cette variable, elle s'applique
+&agrave; tous les clients du Bureau et &agrave; tous les clients X que vous
+lancez. Pour que les applications non clientes trouvent leurs fichiers de
+ressources, liez-les ou copiez-les dans le r&eacute;pertoire indiqu&eacute;
+par la variable <systemitem>XFILESEARCHPATH</systemitem>.</p>
+</div>
+<div class="1" id="SAG.I18N.div.11">
+<h1 id="SAG.I18N.mkr.6">Localisation des actions et des types de donn&eacute;es</h1>
+<note>
+<p>Avant de personnaliser un fichier du r&eacute;pertoire <tt>/usr/dt/appconfig</tt>, copiez-le dans <tt>/etc/dt/appconfig</tt>.</p>
+</note>
+<p>Le chemin de recherche des fichiers de d&eacute;finition des actions
+et des types de donn&eacute;es comprend des r&eacute;pertoires d&eacute;pendants
+de la langue situ&eacute;s dans les emplacements suivants:</p>
+<ul remap="Bullet1">
+<li><p>personnel: <var">R&eacute;p_personnel</var><tt>/dt/types</tt></p>
+</li>
+<li><p>syst&egrave;me: <tt>/etc/dt/appconfig/types/</tt><var">langue</var></p>
+</li>
+<li><p>int&eacute;gr&eacute;: <tt>/usr/dt/appconfig/types/</tt><var">langue</var>.</p>
+</li>
+</ul>
+<p>Le chemin de recherche des fichiers de configuration du Gestionnaire
+d'applications est le suivant:</p>
+<ul remap="Bullet1">
+<li><p>fichiers personnels: <tt><var">R&eacute;p_personnel</var>/dt/appmanager</tt></p>
+</li>
+<li><p>fichiers syst&egrave;me: <tt>/etc/dt/appconfig/appmanager/</tt><var">langue</var></p>
+</li>
+<li><p>fichiers int&eacute;gr&eacute;s: <tt>/usr/dt/appconfig/appmanager/</tt><var">langue</var></p>
+<p>Les noms des fichiers et des r&eacute;pertoires situ&eacute;s dans ces
+emplacements sont localis&eacute;s.</p>
+</li>
+</ul>
+</div>
+<div class="1" id="SAG.I18N.div.12">
+<h1 id="SAG.I18N.mkr.7">Localisation des ic&ocirc;nes et des bitmaps<!---- 
+<primary>Localisation</primary><secondary>ic&ocirc;nes</secondary>----> <!---- 
+<primary>Ic&ocirc;nes</primary><secondary>localisation</secondary>----> <!---- 
+<primary>Ic&ocirc;nes</primary><secondary>traduites</secondary>----> </h1>
+<p>Pour localiser une ic&ocirc;ne, modifiez-la &agrave; l'aide de l'Editeur
+d'ic&ocirc;nes et enregistrez-la dans le r&eacute;pertoire suivant:</p>
+<listing>/etc/dt/appconfig/icons/<var">langue</var></listing>
+<p>Si vous utilisez un autre r&eacute;pertoire, modifiez la valeur de la
+variable <systemitem>XMICONSEARCHPATH</systemitem> en cons&eacute;quence (cette
+variable d&eacute;finit le chemin de recherche des ic&ocirc;nes).</p>
+</div>
+<div class="1" id="SAG.I18N.div.13">
+<h1 id="SAG.I18N.mkr.8">Localisation des noms de fonds<!---- <primary>Ic&ocirc;nes</primary><secondary>localisation</secondary>----> </h1>
+<p>La localisation des noms de fonds s'effectue par l'interm&eacute;diaire
+de fichiers de description (<tt>desc.</tt><var">langue</var> et <tt>desc.backdrops</tt> ). Il n'existe aucun emplacement sp&eacute;cifique (tel que <tt>/usr/dt/backdrops/</tt><var">langue</var>) pour
+les fichiers de fonds. Ceux-ci sont utilis&eacute;s par tous les environnements
+locaux, contrairement aux fichiers <tt>desc.</tt><var">langue</var>, qui indiquent les noms de fonds traduits.</p>
+<p>Le fichier de description contient les sp&eacute;cifications de ressources
+pour les noms de fonds traduits. Par exemple:</p>
+<listing>Backdrops*Corduroy.desc: Velours
+Backdrops*DarkPaper.desc: PapierKraft
+Backdrops*Foreground.desc: AvantPlan</listing>
+<p>Le fichier <tt>desc.</tt><var">langue</var> permet d'obtenir la description des fonds correspondant &agrave;
+l'environnement local <var">langue</var>. Si une sp&eacute;cification
+est associ&eacute;e &agrave; la description, elle s'affiche dans la liste
+de fonds du Gestionnaire de configuration. Sinon, le nom de fichier du fond
+est utilis&eacute;.</p>
+<p>Les utilisateurs peuvent ajouter leurs propres descriptions de fonds
+dans le fichier <var">R&eacute;p_personnel</var><tt>/.dt/backdrops/desc.backdrops</tt>. Ce fichier contient les descriptions
+de tous les fonds ajout&eacute;s par l'utilisateur, quel que soit l'environnement
+local utilis&eacute;.</p>
+<p>Le chemin de recherche des fichiers <tt>description</tt>
+est le suivant:</p>
+<ul remap="Bullet1">
+<li><p>fichiers personnels: <var">R&eacute;p_personnel</var><tt>/.dt/backdrops/desc.backdrops</tt></p>
+</li>
+<li><p>fichiers syst&egrave;me: <tt>/etc/dt/backdrops/desc</tt><var">langue</var></p>
+</li>
+<li><p>fichiers int&eacute;gr&eacute;s: <tt>/usr/dt/backdrops/desc</tt><var">langue</var></p>
+</li>
+</ul>
+</div>
+<div class="1" id="SAG.I18N.div.14">
+<h1 id="SAG.I18N.mkr.9">Localisation des noms de palettes<!---- <primary>&lt;$nopage>Localisation</primary><secondary>Voir Internationalisation</secondary>
+----> <!---- <primary>Palettes</primary><secondary>localisation</secondary>----> <!---- <primary>Localisation</primary><secondary>noms de palettes</secondary>----> <!---- <primary>Localisation</primary><secondary>ic&ocirc;nes</secondary>----> <!---- <primary>Ic&ocirc;nes</primary><secondary>localisation</secondary>----> <!---- 
+<primary>Ic&ocirc;nes</primary><secondary>traduites</secondary>----> </h1>
+<p>La localisation des noms de palettes s'effectue par l'interm&eacute;diaire
+de fichiers de description (<tt>desc.</tt><var">langue</var> et <tt>desc.palettes</tt>). Il n'existe aucun
+emplacement sp&eacute;cifique (tel que <tt>/usr/dt/palettes/ <symbol>langue</var></tt>) pour les fichiers de palettes. Ceux-ci sont utilis&eacute;s
+par tous les environnements locaux, contrairement au fichier <tt>desc.palettes</tt>, qui indique les noms de fonds traduits.</p>
+<p>Le fichier de description contient les sp&eacute;cifications de ressources
+pour les noms de palettes traduits. Par exemple:</p>
+<listing>Palettes*Cardamon.desc: Cardamone
+Palettes*Cinnamon.desc: Cannelle
+Palettes*Clove.desc:    Brun</listing>
+<p>Le fichier <tt>desc.</tt><var">langue</var> permet d'obtenir la description des palettes correspondant &agrave;
+l'environnement local <var">langue</var>. Si une sp&eacute;cification
+est associ&eacute;e &agrave; la description, elle s'affiche dans la liste
+de palettes du Gestionnaire de configuration. Sinon, le nom de fichier de
+la palette est utilis&eacute;.</p>
+<p>Les utilisateurs peuvent ajouter leurs propres descriptions de palettes
+dans le fichier <var">R&eacute;p_personnel</var><tt>/.dt/palettes/desc.palettes</tt>. Ce fichier contient les descriptions
+de toutes les palettes ajout&eacute;es par l'utilisateur, quel que soit l'environnement
+local utilis&eacute;.</p>
+<p>Le chemin de recherche des fichiers de description est le suivant:
+</p>
+<ul remap="Bullet1">
+<li><p>fichiers personnels: <var">R&eacute;p_personnel</var><tt>/.dt/palettes/desc.palettes</tt></p>
+</li>
+<li><p>fichiers syst&egrave;me: <tt>/etc/dt/palettes/desc.</tt><var">langue</var></p>
+</li>
+<li><p>fichiers int&eacute;gr&eacute;s: <tt>/usr/dt/palettes/desc.</tt><var">langue</var></p>
+</li>
+</ul>
+</div>
+<div class="1" id="SAG.I18N.div.14a">
+<h1 id="SAG.I18N.mkr.9a">Localisation d'une biblinfo<!---- <primary>infolibs</primary><secondary>localizing</secondary>----> <!---- 
+<primary>localization</primary><secondary>infolibs</secondary>----> </h1>
+<p>Une biblinfo contient un ou plusieurs rayons qui contiennent eux-m&ecirc;mes
+un ou plusieurs livres que vous pouvez parcourir ou rechercher &agrave; l'aide
+du Gestionnaire d'information. Dans cette hi&eacute;rarchie, seules les biblioth&egrave;ques
+d'informations sont associ&eacute;es aux actions du bureau. Elles sont des
+&eacute;l&eacute;ments du Bureau et comme tels, vous pouvez donc les ouvrir
+en les glissant et d&eacute;pla&ccedil;ant sur le contr&ocirc;le du Gestionnaire
+d'information. Quand vous ouvrez une biblinfo, tous les rayons qu'elle contient
+sont affich&eacute;s dans la fen&ecirc;tre Liste de livres du Gestionnaire
+d'information.</p>
+<p>Le chemin de recherche des biblinfos par d&eacute;faut est d&eacute;termin&eacute;
+par la variable d'environnement <systemitem class="environvar">DTINFOLIBPATH</systemitem>. (Le chemin standard du bureau CDE est <tt>/usr/dt/dtinfo/cde.dti</tt> .) Le fichier<var">name</var><tt>.oli</tt> qui se trouve au niveau du premier r&eacute;pertoire d'une biblinfo
+contient le nom abr&eacute;g&eacute; de celle-ci. Les localisations d'une
+biblinfo se trouvent dans des sous-r&eacute;pertoires au-dessous du niveau
+du premier r&eacute;pertoire et sont nomm&eacute;s selon le masque NLS %<var">L</var> (ou %<var">l</var>_%<var">t</var>.%<var">c</var>.) Dans la fen&ecirc;tre
+Liste des livres du Gestionnaire d'information, chaque rayon de biblioth&egrave;que
+est affich&eacute; avec la cha&icirc;ne localis&eacute;e ou le titre stock&eacute;s
+dans le fichier<tt>bookcase.map</tt> plac&eacute; dans le sous-r&eacute;pertoire
+du rayon.</p>
+</div>
+<div class="1" id="SAG.I18N.div.15">
+<h1 id="SAG.I18N.mkr.10">Localisation des volumes d'aide<!---- <primary>Volume d'aide</primary><secondary>localisation</secondary>----> </h1>
+<p>Les volumes d'aide localis&eacute;s doivent &ecirc;tre stock&eacute;s
+dans l'un des r&eacute;pertoires ci- dessous. Le premier volume d&eacute;tect&eacute;
+est utilis&eacute;. La recherche s'effectue dans l'ordre suivant:</p>
+<ul remap="Bullet1">
+<li><p>volumes personnels: <var">R&eacute;p_personnel</var><tt>/.dt/help</tt></p>
+</li>
+<li><p>volumes syst&egrave;me: <tt>/etc/dt/appconfig/help/</tt><var">langue;</var></p>
+</li>
+<li><p>volumes int&eacute;gr&eacute;s: <var">/usr/dt/appconfig/help/</var><var">langue.</var></p>
+</li>
+</ul>
+</div>
+<div class="1" id="SAG.I18N.div.16">
+<h1 id="SAG.I18N.mkr.11">Localisation des catalogues de messages<!---- 
+<primary>Localisation</primary><secondary>catalogues de messages</secondary>
+----> </h1>
+<p>Les catalogues de messages localis&eacute;s doivent &ecirc;tre stock&eacute;s
+dans le r&eacute;pertoire suivant:</p>
+<p><tt>/usr/dt/lib/nls/msg/</tt><var">langue</var>.</p>
+<p>Ce r&eacute;pertoire contient des fichiers dont l'extension est <tt>.cat</tt>.</p>
+</div>
+<div class="1" id="SAG.I18N.div.17">
+<h1 id="SAG.I18N.mkr.12">Ex&eacute;cution &agrave; distance d'applications
+adapt&eacute;es au pays<!---- <primary>Ex&eacute;cution</primary><secondary>applications localis&eacute;es</secondary>----> <!---- <primary>Applications</primary><secondary>ex&eacute;cution &agrave; distance</secondary>
+----> </h1>
+<p>Vous pouvez ex&eacute;cuter une application de Bureau localis&eacute;e
+sur tout h&ocirc;te d'ex&eacute;cution dont la configuration linguistique
+est compatible. Les valeurs des variables d'environnement linguistiques utilis&eacute;es
+sur l'h&ocirc;te qui lance l'application sont transmises &agrave; l'h&ocirc;te
+&eacute;loign&eacute; lors du lancement de l'application. Cependant, ces variables
+ne contiennent aucune information relative &agrave; l'h&ocirc;te.</p>
+</div>
+<div class="1" id="SAG.I18N.div.18">
+<h1 id="SAG.I18N.mkr.13">R&eacute;initialisation de la mappe de clavier<!---- 
+<primary>Mappe</primary><secondary>clavier</secondary>----> <!---- 
+<primary>Internationalisation</primary><secondary>r&eacute;solution des incidents</secondary>----> </h1>
+<p>Si vous voyez appara&icirc;tre des caract&egrave;res inappropri&eacute;s,
+ou que vous constatez des comportements inattendus, vous deverz peut-&ecirc;tre
+r&eacute;initialiser votre mappe de clavier ou modifier le mode d'entr&eacute;e.
+</p>
+<para id="SAG.I18N.mkr.14">Le mode d'entr&eacute;e est d&eacute;termin&eacute;
+par les variables d'environnement <systemitem>LC_CTYPE</systemitem>, <systemitem>LANG</systemitem> et <systemitem>LC_ALL</systemitem>, ou par la langue indiqu&eacute;e
+par l'option <code>-lang</code>.<!---- <primary>Mode d'entr&eacute;e</primary><secondary>internationalisation</secondary>----> </p>
+<p>Par exemple, pour ouvrir une fen&ecirc;tre de terminal utilisant l'environnement
+local C dans un shell POSIX:</p>
+<listing>LANG=C dtterm</listing>
+<p>La nouvelle fen&ecirc;tre utilise le mode d'entr&eacute;e et les polices
+correspondant &agrave; l'environnement local indiqu&eacute;. Si vous disposez
+d'un clavier sp&eacute;cifique, il est possible que le mode d'entr&eacute;e
+ne prenne pas en charge les caract&egrave;res &eacute;tendus. Dans ce cas,
+vous devez attribuer &agrave; la variable <systemitem>LC_CTYPE</systemitem>, <systemitem>LANG</systemitem> ou <systemitem>LC_ALL</systemitem></p>
+<p>une valeur appropri&eacute;e avant d'ouvrir la fen&ecirc;tre de terminal.
+</p>
+<p>Par exemple, pour utiliser l'environnement local C alors que vous disposez
+d'un clavier allemand, entrez:</p>
+<listing>LANG=C LC_CTYPE=DeDE dtterm</listing>
+<p>Si le serveur X a &eacute;t&eacute; relanc&eacute; et que les mappes
+de clavier ont &eacute;t&eacute; initialis&eacute;es, vous pouvez r&eacute;initialiser
+la mappe appropri&eacute;e &agrave; partir du serveur &agrave; l'aide de la
+commande <code>xmodmap</code>.</p>
+</div>
+<div class="1" id="SAG.I18N.div.19">
+<h1 id="SAG.I18N.mkr.14a">S&eacute;lection d'un serveur de m&eacute;thode
+d'entr&eacute;e<!---- <primary>input method server</primary><secondary>selecting</secondary>----> </h1>
+<p>Les utilisateurs asiatiques peuvent s&eacute;lectionner le serveur de
+m&eacute;thode d'entr&eacute;e soit au d&eacute;marrage de la session soit
+&agrave; tout moment pendant la session. (en utilisant le contr&ocirc;le de
+localisation du Gestionnaire de configuration). La s&eacute;lection d'un
+IMS n'est possible que si la variable <systemitem class="environvar">LANG</systemitem> est d&eacute;finie pour une langue asiatique (Japonais, Cor&eacute;en,
+Chinois traditionel ou Chinois simplifi&eacute;).</p>
+<p>Apr&egrave;s avoir s&eacute;lectionn&eacute; le IMS, les utilisateurs
+peuvent d&eacute;finir le mode de s&eacute;lection IMS qui indique si un message
+d'invite s'affichera &agrave; la prochaine connexion ou s'il utilisera automatiquement
+le IMS courant s&eacute;lectionn&eacute;.</p>
+<p>La s&eacute;lection du IMS et le mode de s&eacute;lection sont stock&eacute;s
+dans le fichier:<!---- <primary>input method server</primary><secondary>selection file</secondary>----> </p>
+<listing><var">$HOME</var>/.dt/ims/[<var">display_name</var>/]<var">CDE_locale_name</var></listing>
+<p>Le format du fichier de s&eacute;lection IMS est:</p>
+<listing><code>@SelectMode:</code>    <code>0</code> (Ask at login), or
+                <code>1</code> (Continuer m&eacute;thode d'entr&eacute;e en cours)
+<code>@ImsName:</code>       <var">ims_name</var>
+<code>@HostName:</code>      <var">host_name</var></listing>
+<div class="2" id="SAG.I18N.div.20">
+<h1 id="SAG.I18N.mkr.15">Au d&eacute;marrage d'une session<!---- <primary>input method server</primary><secondary>selecting at session startup</secondary>
+----> </h1>
+<p>Configurez la variable d'environnement <systemitem class="environvar">DTSTARTIMS</systemitem> &agrave;<systemitem class="constant">TRUE</systemitem>
+pour permettre aux utilisateurs de s&eacute;lectionner un IMS avant le d&eacute;marrage
+d'une session. La configuration <systemitem class="environvar">DTSTARTIMS</systemitem> &agrave;<systemitem class="constant">TRUE</systemitem> fait
+ex&eacute;cuter le script <tt>/usr/dt/config/Xsession.d/0020.dtims</tt>
+au Gestionnaire de session. Ce script v&eacute;rifie la valeur <systemitem class="environvar">LANG</systemitem>.Si<systemitem class="environvar">LANG</systemitem> est configur&eacute; pour une langue asiatique, le script lance
+le programme<code>dtimsstart</code>. <code>dtimsstart</code> affiche
+la bo&icirc;te de dialogue S&eacute;lection d'un serveur de m&eacute;thode
+d'entr&eacute;e dans laquelle l'utilisateur peut s&eacute;lectionner le IMS
+d&eacute;sir&eacute;. Il peut choisir un IMS lanc&eacute; soit sur un h&ocirc;te
+local ou sur un h&ocirc;te &eacute;loign&eacute;.</p>
+<p>Pour configurer le mode de s&eacute;lection, l'utilisateur peut utiliser
+le contr&ocirc;le saI18N du Gestionnaire de configuration (d&eacute;crit
+ci-dessous) ou utiliser <code>DtActionInvoke</code> pour ex&eacute;cuter
+l'action <code>DtImsMode</code>dans <code>Outils_Bureau</code> du
+Gestionnaire d'applications. L'action <code>DtImsMode</code> affiche
+une bo&icirc;te de dialogue qui permet &agrave; l'utilisateur de choisir entre <code>Demander &agrave; connexion</code> et <code>Continuer la m&eacute;thode
+d'entr&eacute;e en cours</code>.</p>
+<p>Le nom du IMS s&eacute;lectionn&eacute; ainsi que son h&ocirc;te et
+le mode de s&eacute;lection sont enregistr&eacute;s dans le fichier de s&eacute;lection
+IMS.</p>
+</div>
+<div class="2" id="SAG.I18N.div.21">
+<h1 id="SAG.I18N.mkr.16">En cours de session<!---- <primary>input
+method server</primary><secondary>selecting within a session</secondary>----> </h1>
+<p>A tout moment pendant une session, un utilisateur peut s&eacute;lectionner
+le IMS d&eacute;sir&eacute; en cliquant sur le contr&ocirc;le saI18N du gestionnaire
+de configuration. (Ce contr&ocirc;le n'est visible que si la variable<systemitem class="environvar">LANG</systemitem>est d&eacute;finie pour une langue asiatique).
+La bo&icirc;te de dialogue S&eacute;lection de la m&eacute;thode d'entr&eacute;e
+s'affiche. S'il existe un IMS courant, son nom s'affiche ainsi que l'h&ocirc;te
+serveur sur lequel il se trouve. L'utilisateur peut choisir un IMS soit sur
+un h&ocirc;te local ou sur un h&ocirc;te &eacute;loign&eacute;.</p>
+<p>Pour d&eacute;finir les h&ocirc;tes sur lesquels se trouvent les IMS,
+vous pouvez configurer la ressource d'application<code>imServerHosts</code>
+. Le Gestionnaire de configuration l'utilise pour identifier les h&ocirc;tes
+n&eacute;cessaires &agrave; la s&eacute;lection des IMS. Elle contient la
+liste des noms d'h&ocirc;tes, s&eacute;par&eacute;s par des virgules.</p>
+<p>En plus de la s&eacute;lection des IMS, l'utilisateur peut configurer
+le mode de s&eacute;lection soit <code>Demander &agrave; la connexion</code> or <code>Reprendre la m&eacute;thode d'entr&eacute;e en cours</code>.</p>
+<p>Le nom du IMS s&eacute;lectionn&eacute; ainsi que son h&ocirc;te et
+le mode de s&eacute;lection sont enregistr&eacute;s dans le fichier de s&eacute;lection
+IMS.</p>
+</div>
+<div class="2" id="SAG.I18N.div.22">
+<h1 id="SAG.I18N.mkr.17">Configuration des fichiers de configuration IMS<!---- 
+<primary>input method server</primary><secondary>configuration files</secondary>
+----> </h1>
+<p>En plus du fichier de s&eacute;lection IMS (d&eacute;crit ci-dessous),
+la configuration IMS est d&eacute;finie par:</p>
+<ul>
+<li><p>Le fichier d'entr&eacute;e de l'environnement du pays</p>
+</li>
+<li><p>Le fichier d'entr&eacute;e IMS</p>
+</li>
+</ul>
+<div class="3" id="SAG.I18N.div.23">
+<h1 id="SAG.I18N.mkr.18">Le fichier d'entr&eacute;e de l'environnement
+du pays<!---- <primary>input method server</primary><secondary>Locale
+Entry file</secondary>----> <!---- <primary>Locale Entry file</primary>
+----> </h1>
+<p>Le fichier d'entr&eacute;e de l'environnement du pays contient la liste
+des IMS qui prennent en charge l' environnement d'un pays donn&eacute;. Son
+emplacement est <tt>/usr/dt/config/ims/</tt><var">locale_name</var> et a le format:</p>
+<listing>@Default: <var">ims_name</var>
+<var">ims_name</var>: <var">label_string</var> 
+&hellip;</listing>
+<p>Un exemple de la liste IMS pour l'environnement du pays <code>ja_JP.SJIS</code> est:</p>
+<listing>@Default: xjim
+xjim:     HP XJIM
+atok8:    ATOK8
+vje:      VJE-gamma
+egbridge: EGBridge
+none:     No Input Method</listing>
+</div>
+<div class="3" id="SAG.I18N.div.24">
+<h1 id="SAG.I18N.mkr.19">Fichier d'entr&eacute;e IMS<!---- <primary>input method server</primary><secondary>IMS Entry file</secondary>----> <!---- 
+<primary>IMS Entry file</primary>----> </h1>
+<p>Le fichier d'entr&eacute;e IMS d&eacute;crit les cract&eacute;ristiques
+d'un IMS. Son emplacement est :<tt>/usr/dt/config/ims/</tt> <var">ims_name</var> et son format:</p>
+<listing><symbol role="variable">attribute_name</var>: <symbol role="variable">attribute_value</var></listing>
+<p>o&ugrave; <symbol role="variable">attribute_name</var> est:
+</p>
+<variablelist>
+<varlistentry><term><code>protocols</code></term>
+<li>
+<p>Une caract&eacute;ristique de la cha&icirc;ne qui identifie les protocoles
+XIM pris en charge. Les protocoles valides sont A XIM, Ximp, et Xsi. Elle
+est obligatoire.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>server_name</code></term>
+<li>
+<p>Une caract&eacute;ristiquede la cha&icirc;ne qui identifie le serveur
+sur lequel IMS est ex&eacute;cut&eacute;. Elle est utilis&eacute; pour XMODIFIERS
+et elle est obligatoire.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>cmd_path</code></term>
+<li>
+<p>Une caract&eacute;ristique du chemin qui sp&eacute;cifie le chemin absolu
+du fichier ex&eacute;cutable IMS. C'est un mot-cl&eacute; int&eacute;gr&eacute;
+utilis&eacute; pour la m&eacute;thode d'entr&eacute;e locale int&eacute;gr&eacute;e
+dans Xlib et qui ne demande pas de processus s&eacute;par&eacute;. Elle est
+obligatoire.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>cmd_param</code></term>
+<li>
+<p>Une caract&eacute;ristique de la cha&icirc;ne qui fournit l'option de
+la ligne de commande au serveur IMS. Sa valeur par d&eacute;faut est NULL.
+</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>env_set</code></term>
+<li>
+<p>Une caract&eacute;ristique de la cha&icirc;ne qui sp&eacute;cifie les
+variables d'environnement &agrave; d&eacute;finir sauf XMODIFIERS. Sa valeur
+par d&eacute;faut est nulle.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>env_unset</code></term>
+<li>
+<p>Une caract&eacute;ristique de la cha&icirc;ne qui sp&eacute;cifie les
+variables d'environnement &agrave; d&eacute;configurer sauf XMODIFIERS. Sa
+valeur par d&eacute;faut est NULL.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>env_pass</code></term>
+<li>
+<p>Une caract&eacute;ristique de la cha&icirc;ne qui sp&eacute;cifie les
+variables d'environnemt &agrave; passer aux IMS ex&eacute;cut&eacute;s sur
+des syst&egrave;mes &eacute;loign&eacute;s sauf LANG, DISPLAYet XMODIFIERS.
+Sa valeur par d&eacute;faut est NULL.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>has_window</code></term>
+<li>
+<p>Une caract&eacute;ristique boul&eacute;enne qui indique si le IMS a
+l'apparence de sa propre fen&ecirc;tre principale ou non. Sa valeur par d&eacute;faut
+est False.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>no_server</code></term>
+<li>
+<p>Une caract&eacute;ristique boul&eacute;enne qui indique si <code>dtimsstart</code> doit lancer le IMS ou non. La valeur True doit &ecirc;tre
+attribu&eacute;e &agrave; la m&eacute;thode d'entr&eacute;e locale car elle
+ne demande pas de processus de serveur lanc&eacute; par<code>dtimsstart</code>. Sa valeur par d&eacute;faut est False.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>no_remote</code></term>
+<li>
+<p>Une caract&eacute;ristique boul&eacute;enne qui indique si les IMS permettent
+une ex&eacute;cution &eacute;loign&eacute;e ou non. Sa valeur par d&eacute;faut
+est False.</p>
+</li>
+</varlistentry>
+<varlistentry><term><code>no_option</code></term>
+<li>
+<p>Une caract&eacute;ristique boul&eacute;enne qui indique si les IMS permettent
+une option de la ligne de commande ou non. Si la valeur est True, toutes les
+options sp&eacute;cifi&eacute;es par <code>-imsopt</code> sont ignor&eacute;es
+bien que la valeur de la caract&eacute;ristique <code>cmd_param</code>
+soit toujours appliqu&eacute;e quelle qu'elle soit. La valeur True doit &ecirc;tre
+donn&eacute;e &agrave; le m&eacute;thode d'entr&eacute;e locale. Sa valeur
+par d&eacute;faut est False.</p>
+</li>
+</varlistentry>
+</variablelist>
+<p>Remarque: Quand des valeurs multiples sont permises, vous devez les
+sp&eacute;cifier sur une liste et les s&eacute;parer par des virgules. Si
+plusieurs entr&eacute;es ont la m&ecirc;me caract&eacute;ristique dans le
+fichier, seule la derni&egrave;re sera utilis&eacute;e.</p>
+<p>L'exemple suivant illustre le contenu d'un fichier d'entr&eacute;e IMS
+: <tt>/usr/dt/config/ims/</tt><var">xjim</var>.
+</p>
+<listing>protocols:   XIM Ximp
+server_name: xjim
+cmd_path:    /usr/bin/X11/xjim
+cmd_param:   -iconic
+env_set:
+env_unset:
+env_pass:
+has_window:  true</listing>
+</div>
+</div>
+</div>
+<div class="1" id="SAG.I18N.div.20a">
+<h1 id="SAG.I18N.mkr.15a">D&eacute;finition du style de m&eacute;thode
+d'entr&eacute;e<!---- <primary>input method style</primary><secondary>setting</secondary>----> </h1>
+<p>Le contr&ocirc;le saI18N du Gestionnaire de configuration permet &agrave;
+l'utilisateur de configurer le style de la m&eacute;thode d'entr&eacute;e
+ce qui d&eacute;terminera la pr&eacute;-&eacute;dition. L'ordre d'utilisation
+des styles de pr&eacute;-&eacute;dition est stock&eacute; dans la ressource <code>XmNpreeditType</code> du <code>VendorShell</code>. <code>XmNpreeditType</code> enregistre l'ordre de pr&eacute;f&eacute;rence des styles de pr&eacute;-&eacute;dition
+dans une liste s&eacute;par&eacute;e par des virgules. Par exemple:</p>
+<listing>OnTheSpot,OverTheSpot,OffTheSpot,Root</listing>
+<p>A l'aide des boutons <?Pub Caret><code>Haut</code> et <code>bas</code> de la bo&icirc;te de dialogue affich&eacute;e par le contr&ocirc;le
+saI18N, l'utilisateur peut changer l'ordre des styles de pr&eacute;-&eacute;dition
+de la liste.</p>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
+<?Pub *0000066454>
+</body></html>

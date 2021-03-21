@@ -1,0 +1,1347 @@
+<html><body>
+<!-- $XConsortium: ch05.sgm /main/11 1996/12/21 18:56:22 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="SAG.ClSrv.div.1">
+<h1 id="SAG.ClSrv.mkr.1">Configuration du Bureau dans un r&eacute;seau</h1>
+<p><!---- <primary>&lt;$nopage>Mise en r&eacute;seau</primary><secondary>voir aussi serveurs</secondary>----> Le Bureau est con&ccedil;u pour
+fonctionner dans un environnement de r&eacute;seau. Son architecture permet
+aux administrateurs syst&egrave;me de r&eacute;partir les ressources informatiques
+&agrave; travers le r&eacute;seau. Ces ressources sont:</p>
+<ul remap="Bullet1">
+<li><p>les applications</p>
+</li>
+<li><p>les fichiers de donn&eacute;es des applications</p>
+</li>
+<li><p>la gestion des sessions du Bureau (applications du Bureau
+telles que le Gestionnaire de connexion et le Gestionnaire de fichiers)</p>
+</li>
+<li><p>les services d'aide. Les fichiers de donn&eacute;es d'aide
+peuvent &ecirc;tre plac&eacute;s dans un serveur d'aide central</p>
+<informaltable id="SAG.ClSrv.itbl.1" frame="All">
+<table cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Généralités
+sur la mise en réseau du Bureau92<xref role="JumpText" linkend="SAG.ClSrv.mkr.2"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Etapes
+générales de configuration du réseau du Bureau96<xref role="JumpText"
+linkend="SAG.ClSrv.mkr.5"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Mise en
+réseau du système d'exploitation de base pour le Bureau96<xref role="JumpText"
+linkend="SAG.ClSrv.mkr.6"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Configuration
+des clients et serveurs du Bureau100<xref role="JumpText" linkend="SAG.ClSrv.mkr.9"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Gestion
+des services d'applications106<xref role="JumpText" linkend="SAG.ClSrv.mkr.15"></p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+</li>
+</ul>
+<div class="1" id="SAG.ClSrv.div.2">
+<h1 id="SAG.ClSrv.mkr.2">G&eacute;n&eacute;ralit&eacute;s sur la mise en
+r&eacute;seau du Bureau<!---- <primary>Mise en r&eacute;seau</primary>
+<secondary>g&eacute;n&eacute;ralit&eacute;s</secondary>----> <!---- 
+<primary>Configuration client-serveur, voir mise en r&eacute;seau&lt;$nopage></primary>----> </h1>
+<p>Le syst&egrave;me d'exploitation propose une vaste gamme de services
+de mise en r&eacute;seau, comprenant les syst&egrave;mes de fichiers r&eacute;partis
+et l'ex&eacute;cution &agrave; distance. Les serveurs X offrent d'autres fonctions
+de mise en r&eacute;seau, dont l'acc&egrave;s &agrave; des &eacute;crans &agrave;
+distance et des services de s&eacute;curit&eacute;.</p>
+<p>Le Bureau offre une interface utilisateur pour ces fonctions de r&eacute;seau.
+Le but de cette interface et de son architecture sous-jacente est de:</p>
+<ul remap="Bullet1">
+<li><p>Simplifier l'utilisation des syst&egrave;mes en r&eacute;seau.
+Les utilisateurs peuvent lancer des applications et acc&eacute;der aux fichiers
+de donn&eacute;es sans avoir &agrave; s'inqui&eacute;ter de l'emplacement
+des applications et des donn&eacute;es sur le r&eacute;seau.</p>
+</li>
+<li><p>Simplifier la gestion des syst&egrave;mes en r&eacute;seau.
+Le Bureau fournit des outils d'int&eacute;gration des applications et des
+chemins de recherche en r&eacute;seau qui autorisent un rep&eacute;rage plus
+rapide des donn&eacute;es et des applications &eacute;loign&eacute;es. De
+plus, le processus de correspondance des noms de fichiers du Bureau facilite
+la gestion de r&eacute;seaux complexes comportant de nombreux serveurs.</p>
+</li>
+<li><p>Am&eacute;liorer la souplesse du r&eacute;seau. Les fonctions
+de gestion du Bureau ont &eacute;t&eacute; con&ccedil;ues pour certaines situations
+de r&eacute;seau habituelles, tout en permettant la mise en oeuvre de nombreuses
+autres configurations de r&eacute;seau personnalis&eacute;es.</p>
+</li>
+</ul>
+<div class="2" id="SAG.ClSrv.div.3">
+<h1>Types de services du Bureau en r&eacute;seau<!---- <primary>Mise
+en r&eacute;seau</primary><secondary>types de services</secondary>----> </h1>
+<p>La mise en r&eacute;seau permet &agrave; l'utilisateur d'acc&eacute;der
+&agrave; diff&eacute;rents services informatiques r&eacute;partis entre diff&eacute;rents
+syst&egrave;mes. Il s'agit entre autres:</p>
+<ul remap="Bullet1">
+<li><p>de la session du Bureau et de ses applications &mdash; par
+exemple, le Gestionnaire de l'espace de travail et le Gestionnaire de fichiers
+</p>
+</li>
+<li><p>des autres applications</p>
+</li>
+<li><p>des fichiers de donn&eacute;es</p>
+</li>
+</ul>
+<p>Dans la terminologie r&eacute;seau,<!---- <primary>Serveurs</primary>
+<secondary>d&eacute;finition</secondary>---->  <em>serveur</em>
+d&eacute;signe un syst&egrave;me offrant des services informatiques &agrave;
+un ou plusieurs autres syst&egrave;mes. Lorsqu'un syst&egrave;me re&ccedil;oit
+des services d'un serveur, on l'appelle le<!---- <primary>Client</primary>
+<secondary>d&eacute;finition</secondary>---->  <var">client</var> de ce serveur.</p>
+<p>Dans un r&eacute;seau complexe, un syst&egrave;me peut utiliser les
+services de diff&eacute;rents syst&egrave;mes du r&eacute;seau. En outre,
+un syst&egrave;me peut &ecirc;tre &agrave; la fois un type de serveur particulier
+(par exemple, un serveur de sessions) et un client (par exemple, un serveur
+d'applications).</p>
+</div>
+<div class="2" id="SAG.ClSrv.div.4">
+<h1>Situations de r&eacute;seau types</h1>
+<p>Dans un environnement CDE, la configuration type d'un r&eacute;seau
+peut comprendre la combinaison des principaux &eacute;l&eacute;ments suivants
+:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="210*">
+<colspec colwidth="318*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Ecrans</p></td>
+<td align="left" valign="top"><p>Ex&eacute;cution du serveur X</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Serveurs</primary>
+<secondary>session</secondary>----> <!---- <primary>Serveurs</primary>
+<secondary>connexion</secondary>----> Serveurs de connexion/sessions
+</p></td>
+<td align="left" valign="top"><p>Ex&eacute;cution des applications du
+Bureau (Gestionnaire de sessions, Gestionnaire de l'espace de travail, etc.)
+</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Serveurs</primary>
+<secondary>application</secondary>----> <!---- <primary>Serveurs</primary><secondary>d'applications</secondary><tertiary>d&eacute;</tertiary>
+----> <!---- <primary>finition</primary>----> Serveurs d'applications
+</p></td>
+<td align="left" valign="top"><p>Ex&eacute;cution des autres applications
+</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Serveurs</primary>
+<secondary>fichiers</secondary>----> Serveurs de fichiers</p></td>
+<td align="left" valign="top"><p>Stockage des donn&eacute;es utilis&eacute;es
+par les applications</p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+<p>Dans les configurations de r&eacute;seau les plus courantes, ces syst&egrave;mes
+clients acc&egrave;dent &agrave; un serveur d'applications. La <!--Original
+XRef content: 'Figure&numsp;5&hyphen;1<xref role="CodeOrFigureOrTable"
+linkend="SAG.ClSrv.mkr.3"> illustre un poste de travail qui utilise un serveur
+d'applications. Les sessions du serveur X et du Bureau s'ex&eacute;cutent
+sur le poste de travail.</p>
+<object>
+<h1 id="SAG.ClSrv.mkr.3">Les serveurs d'applications offrent des services
+aux sessions du Bureau</h1>
+<img id="SAG.ClSrv.grph.1" src="./graphics/appserv.png">
+</object>
+<p>Les r&eacute;seaux font &eacute;galement appel &agrave;<!---- 
+<primary>Serveurs</primary><secondary>fichiers</secondary>---->  des
+serveurs de fichiers pour le stockage de grandes quantit&eacute;s de donn&eacute;es.
+Ces donn&eacute;es peuvent &ecirc;tre utilis&eacute;es par des applications
+fonctionnant sur un serveur d'applications ou par les applications du Bureau
+(par exemple, le Gestionnaire de fichiers a besoin d'acc&eacute;der aux fichiers
+de donn&eacute;es pour les afficher dans sa fen&ecirc;tre).</p>
+<object>
+<h1>Les serveurs de fichiers fournissent des donn&eacute;es au serveur
+d'applications et au serveur de sessions.</h1>
+<img id="SAG.ClSrv.grph.2" src="./graphics/fileserv.png">
+</object>
+<p><!---- <primary>Terminaux X</primary><secondary>acc&egrave;s &agrave;
+la gestion des sessions</secondary>----> Les terminaux X lancent le
+serveur X et acc&egrave;dent aux fonctions de gestion des sessions du Bureau
+&agrave; partir d'un autre syst&egrave;me.</p>
+<object>
+<h1>Les terminaux X acc&egrave;dent aux fonction de gestion des sessions
+&agrave; partir d'un serveur de sessions</h1>
+<img id="SAG.ClSrv.grph.3" src="./graphics/sesserve.png">
+</object>
+</div>
+<div class="2" id="SAG.ClSrv.div.5">
+<h1>Autres situations de mise en r&eacute;seau</h1>
+<p>Le Bureau est souple et peut supporter des configurations de r&eacute;seau
+plus complexes. Les serveurs d'applications doivent alors avoir acc&egrave;s
+aux serveurs de fichiers, mais aussi aux diff&eacute;rents services du r&eacute;seau.
+</p>
+<object>
+<h1>Les services requis par un serveur d'applications du Bureau peuvent
+&ecirc;tre r&eacute;partis</h1>
+<img id="SAG.ClSrv.grph.4" src="./graphics/complexa.png">
+</object>
+</div>
+<div class="2" id="SAG.ClSrv.div.6">
+<h1 id="SAG.ClSrv.mkr.4"><!---- <primary>Serveurs</primary><secondary>types</secondary>----> R&eacute;sum&eacute; &mdash; Types de serveurs</h1>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="264*">
+<colspec colwidth="264*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Ecran</p></td>
+<td align="left" valign="top"><p>Le syst&egrave;me sur lequel s'ex&eacute;cute
+le serveur X.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Serveurs de connexion/sessions</p></td>
+<td align="left" valign="top"><p>Le syst&egrave;me sur lequel s'ex&eacute;cute
+la session du Bureau (Gestionnaire de connexion, de sessions, de fen&ecirc;tres,
+de fichiers, etc).</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Serveur d'applications</p></td>
+<td align="left" valign="top"><p>Le syst&egrave;me sur lequel s'ex&eacute;cute
+une application. Egalement appel&eacute; <em>h&ocirc;te d'ex&eacute;cution</em>.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Serveur de fichiers</p></td>
+<td align="left" valign="top"><p>Syst&egrave;me sur lequel sont stock&eacute;s
+les fichiers de donn&eacute;es des applications.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Serveurs</primary>
+<secondary>aide</secondary>----> Serveur d'aide</p></td>
+<td align="left" valign="top"><p>Syst&egrave;me sur lequel sont stock&eacute;s
+les fichiers d'aide.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Serveurs</primary>
+<secondary>bases de donn&eacute;es</secondary>----> Serveur de bases
+de donn&eacute;es (actions)</p></td>
+<td align="left" valign="top"><p>Syst&egrave;me sur lequel sont stock&eacute;s
+les fichiers contenant les d&eacute;finitions de types d'actions et de donn&eacute;es.
+</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><!---- <primary>Serveurs</primary>
+<secondary>ic&ocirc;ne</secondary>----> <!---- <primary>Serveurs</primary><secondary>d'ic&ocirc;nes</secondary>----> Serveur d'ic&ocirc;nes
+</p></td>
+<td align="left" valign="top"><p>Syst&egrave;me sur lequel sont stock&eacute;s
+les fichiers d'ic&ocirc;nes.</p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+<p>Le r&eacute;seau peut comporter d'autres serveurs, tels qu'un serveur
+de mot de passe, un serveur de messagerie, un serveur vid&eacute;o, etc.</p>
+</div>
+</div>
+<div class="1" id="SAG.ClSrv.div.7">
+<h1 id="SAG.ClSrv.mkr.5">Etapes g&eacute;n&eacute;rales de configuration
+du r&eacute;seau du Bureau<!---- <primary>R&eacute;seau</primary><secondary>&eacute;tapes g&eacute;n&eacute;rales de configuration</secondary>----> </h1>
+<p>Il existe trois &eacute;tapes g&eacute;n&eacute;rales de configuration
+du r&eacute;seau pour le Bureau:</p>
+<ol>
+<li><p>La configuration des services r&eacute;seau de base du syst&egrave;me
+d'exploitation.</p>
+<p>Il s'agit des services r&eacute;seau offerts par le syst&egrave;me d'exploitation
+et dont d&eacute;pend le Bureau. Reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Mise en réseau du système d'exploitation de base pour
+le Bureau&rdquo;, page 96<xref role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.6">.
+</p>
+</li>
+<li><p>L'installation et la configuration des services et du logiciel
+r&eacute;seau du Bureau.</p>
+<p>Il s'agit des services dont le Bureau a besoin, quel que soit le type
+de syst&egrave;me client ou serveur configur&eacute;. Reportez-vous &agrave;
+la section &rdquo;Configuration des clients et
+serveurs du Bureau&rdquo;, page 100<xref role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.9">.
+</p>
+</li>
+<li><p>La configuration d'un type de serveur ou de client donn&eacute;.
+</p>
+<p>Les &eacute;tapes de configuration d'un serveur d'applications diff&egrave;rent
+en effet de celles d'un serveur de fichiers. Reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Gestion des services d'applications&rdquo;, page 106<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.15">.</p>
+</li>
+</ol>
+</div>
+<div class="1" id="SAG.ClSrv.div.8">
+<h1 id="SAG.ClSrv.mkr.6">Mise en r&eacute;seau du syst&egrave;me d'exploitation
+de base pour le Bureau<!---- <primary>R&eacute;seau</primary><secondary>configuration de base</secondary>----> </h1>
+<p>Le Bureau requiert la configuration de r&eacute;seau de base suivante
+:</p>
+<ul remap="Bullet1">
+<li><p>Les utilisateurs doivent disposer d'un compte de connexion
+au serveur de sessions et &agrave; tout syst&egrave;me lui offrant des services
+r&eacute;seau. Il doit avoir les m&ecirc;mes ID utilisateur et de groupe sur
+tous les syst&egrave;mes clients et serveurs.</p>
+</li>
+<li><p>Les syst&egrave;mes doivent pouvoir acc&eacute;der aux syst&egrave;mes
+de fichiers &eacute;loign&eacute;s contenant des donn&eacute;es utilis&eacute;es
+par la session et d'autres applications.</p>
+</li>
+<li><p>Le spouleur d'impression <code>lp</code> doit pouvoir
+acc&eacute;der aux imprimantes &eacute;loign&eacute;es.</p>
+</li>
+<li><p><code>sendmail</code> doit &ecirc;tre configur&eacute;
+pour les services de courrier.</p>
+</li>
+<li><p>L'autorisation d'acc&egrave;s au serveur X doit &ecirc;tre
+configur&eacute;e.</p>
+</li>
+</ul>
+<div class="2" id="SAG.ClSrv.div.9">
+<h1>Ouverture de comptes de connexion<!---- <primary>Comptes de connexion</primary>----> </h1>
+<p>Cette section d&eacute;crit les conditions pr&eacute;alables requises
+pour l'ouverture de comptes de connexion sur le Bureau.</p>
+<div class="3" id="SAG.ClSrv.div.10">
+<h1>Ouverture de comptes de connexion</h1>
+<p>Les utilisateurs doivent disposer d'un tel compte sur:</p>
+<ul remap="Bullet1">
+<li><p>tous les syst&egrave;mes fournissant des services au Bureau,
+y compris les serveurs d'applications, de fichiers et les syst&egrave;mes
+d'imprimantes r&eacute;seau;</p>
+</li>
+<li><p>tous les serveurs de sessions accessibles aux utilisateurs.
+G&eacute;n&eacute;ralement, ces serveurs sont utilis&eacute;s avec des terminaux
+X.</p>
+</li>
+</ul>
+</div>
+<div class="3" id="SAG.ClSrv.div.11">
+<h1>Attribution d'ID utilisateur et de groupe coh&eacute;rents</h1>
+<p>Les utilisateurs UNIX sont identifi&eacute;s par un nom de connexion
+et un<!---- <primary>UID</primary>----> <!---- <primary>ID
+utilisateur</primary>---->  ID utilisateur num&eacute;rique (UID). Dans
+le r&eacute;seau, l'utilisateur doit avoir le m&ecirc;me nom de connexion
+et le m&ecirc;me UID sur tous les syst&egrave;mes clients et serveurs.</p>
+<p>Les utilisateurs UNIX sont &eacute;galement affect&eacute;s &agrave;
+un ou plusieurs groupes de connexion. Chaque groupe poss&egrave;de un nom
+et une ID de groupe num&eacute;rique<!---- <primary>GID</primary>----> <!---- 
+<primary>ID de groupe</primary>---->  (GID). Dans un r&eacute;seau de
+bureau, tous les syst&egrave;mes doivent utiliser des noms de groupes et des
+ID coh&eacute;rents.</p>
+<p>Pour plus de d&eacute;tails, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">id(1)</tt> ou <filename moreinfo="RefEntry">id(1M)</tt>.</p>
+</div>
+</div>
+<div class="2" id="SAG.ClSrv.div.12">
+<h1 id="SAG.ClSrv.mkr.7">Configuration de l'acc&egrave;s au syst&egrave;me
+de fichiers r&eacute;parti<!---- <primary>Fichiers</primary><secondary>acc&egrave;s au syst&egrave;me r&eacute;parti</secondary>----> </h1>
+<p>Le Bureau utilise<!---- <primary>Partage de fichiers</primary>
+----> <!---- <primary>NFS</primary>----> <!---- <primary>Fichiers</primary><secondary>acc&egrave;s &agrave; distance</secondary>----> 
+NFS<superscript>&lsquor;</superscript> pour le partage des fichiers entre
+les syst&egrave;mes. Vous devez identifier tous les syst&egrave;mes de fichiers
+du r&eacute;seau contenant des fichiers partag&eacute;s et v&eacute;rifier
+qu'ils sont correctement<!---- <primary>Fichiers</primary><secondary>montage</secondary>---->  mont&eacute;s sur les syst&egrave;mes appropri&eacute;s.
+</p>
+<p>L'acc&egrave;s &agrave; distance doit &ecirc;tre possible dans tous
+les cas indiqu&eacute;s ci-dessous.</p>
+<ul remap="Bullet1">
+<li><p>Le<!---- <primary>R&eacute;pertoire</primary><secondary>personnel</secondary><tertiary>partage</tertiary>---->  r&eacute;pertoire
+personnel de l'utilisateur doit &ecirc;tre partag&eacute; par tous les syst&egrave;mes
+clients et serveurs du Bureau. Ce partage est n&eacute;cessaire car:</p>
+<ul remap="Bullet2">
+<li><p>Le r&eacute;pertoire personnel contient des fichiers de donn&eacute;es
+auxquels doivent pouvoir acc&eacute;der les applications r&eacute;sidant sur
+des syst&egrave;mes &eacute;loign&eacute;s. Par exemple, les applications
+qui utilisent souvent des fichiers de donn&eacute;es prennent le r&eacute;pertoire
+personnel comme emplacement par d&eacute;faut de ces fichiers.</p>
+</li>
+<li><p>Le<!---- <primary>R&eacute;pertoire</primary><secondary>authentification</secondary>----> <!---- <primary>dtspcd</primary>
+<secondary>r&eacute;pertoire d'authentification</secondary>---->  r&eacute;pertoire
+personnel est le r&eacute;pertoire d'authentification <code>dtspcd</code>
+par d&eacute;faut. Pour plus de d&eacute;tails sur le r&eacute;pertoire <code>dtspcd</code>, reportez-vous &agrave; la section <!--Original XRef content:
+'&rdquo;Configuration du démon de contrôle des sous-processus&rdquo;, page
+104<xref role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.13">.</p>
+</li>
+</ul>
+</li>
+<li><p>Lorsque les utilisateurs veulent acc&eacute;der &agrave; des
+fichiers de donn&eacute;es qui ne se trouvent pas dans leur r&eacute;pertoire
+personnel, ces fichiers doivent &ecirc;tre partag&eacute;s par tous les syst&egrave;mes
+clients et serveurs du Bureau qui travaillent sur ceux-ci.</p>
+</li>
+<li><p>Les r&eacute;pertoires d'installation et de configuration
+du Bureau (<tt>/usr/dt</tt> et <tt>/etc/dt</tt>) doivent
+&ecirc;tre partag&eacute;s par tous les syst&egrave;mes clients et serveurs
+du bureau afin que l'ensemble des applications de l'utilisateur acc&egrave;dent
+aux m&ecirc;mes fichiers de configuration du Bureau.</p>
+</li>
+</ul>
+<div class="3" id="SAG.ClSrv.div.13">
+<h1><!---- <primary>R&eacute;pertoire</primary><secondary>personnel</secondary><tertiary>mise en r&eacute;seau</tertiary>----> Mise en
+r&eacute;seau d'un r&eacute;pertoire personnel</h1>
+<p>Un r&eacute;seau fonctionne plus efficacement lorsque les utilisateurs
+ont un seul r&eacute;pertoire personnel partag&eacute; par l'ensemble des
+syst&egrave;mes clients et serveurs du r&eacute;seau.</p>
+<p>Un r&eacute;pertoire personnel en r&eacute;seau permet d'utiliser diff&eacute;rents
+syst&egrave;mes du r&eacute;seau sans perdre les personnalisations et configurations
+sp&eacute;cifiques. En effet, les personnalisations et les informations n&eacute;cessaires
+au r&eacute;tablissement de la session pr&eacute;c&eacute;dente sont sauvegard&eacute;es
+dans des sous-r&eacute;pertoires du r&eacute;pertoire personnel.</p>
+<p>Un r&eacute;pertoire personnel commun est &eacute;galement requis pour
+:</p>
+<ul remap="Bullet1">
+<li><p>le m&eacute;canisme d'autorisation d'acc&egrave;s au serveur
+X. Reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Configuration de l'autorisation X&rdquo;, page 100<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.8">;</p>
+</li>
+<li><p>le d&eacute;mon de contr&ocirc;le des sous-processus, qui
+intervient dans le lancement d'applications &agrave; distance, doit pouvoir
+&eacute;crire dans le r&eacute;pertoire personnel de l'utilisateur.</p>
+</li>
+</ul>
+</div>
+<div class="3" id="SAG.ClSrv.div.14">
+<h1><!---- <primary>Fichiers</primary><secondary>coh&eacute;rence des
+noms</secondary>----> <!---- <primary>Coh&eacute;rence des noms
+de fichiers</primary>----> Coh&eacute;rence des noms de fichiers</h1>
+<p>Configurez le r&eacute;seau de mani&egrave;re &agrave; permettre aux
+utilisateurs d'acc&eacute;der &agrave; leurs fichiers de donn&eacute;es &agrave;
+partir de tous les syst&egrave;mes en utilisant le m&ecirc;me nom. Cette r&egrave;gle
+est appel&eacute;e <em>coh&eacute;rence des noms de fichiers</em>,
+et est g&eacute;n&eacute;ralement appliqu&eacute;e par la cr&eacute;ation
+de<!---- <primary>Lien</primary><secondary>symbolique</secondary><tertiary>coh&eacute;rence des noms de fichiers</tertiary>---->  liens symboliques
+ad&eacute;quats. Vous pouvez par exemple configurer chaque syst&egrave;me
+afin que le r&eacute;pertoire personnel de chaque utilisateur soit accessible
+sous la forme <tt>/users/</tt><var">nom_connexion</var> apr&egrave;s la cr&eacute;ation d'un lien symbolique &agrave; l'emplacement
+r&eacute;el du montage du r&eacute;pertoire.</p>
+</div>
+</div>
+<div class="2" id="SAG.ClSrv.div.15">
+<h1>Configuration de l'acc&egrave;s aux imprimantes &eacute;loign&eacute;es<!---- 
+<primary>Imprimantes</primary><secondary>acc&egrave;s &agrave; distance</secondary>
+----> </h1>
+<p>Le Bureau utilise le spooleur d'impression<!---- <primary>Spooleur
+d'impression lp</primary>---->  <code>lp</code> pour acc&eacute;der
+aux imprimantes locales ou &eacute;loign&eacute;es. Pour plus de d&eacute;tails
+sur la configuration du spouleur <code>lp</code>, reportez-vous &agrave;
+la page de manuel <filename moreinfo="RefEntry">lpadmin(1M)</tt>.</p>
+<p><!---- <primary>Impression</primary><secondary>test</secondary>
+----> Avant d'imprimer via l'interface graphique du Bureau, vous devez
+v&eacute;rifier que vous pouvez imprimer correctement sur toutes les imprimantes
+&agrave; l'aide de la<!---- <primary>Commandes</primary><secondary>lp</secondary>---->  commande <code>lp</code>.</p>
+<p><!---- <primary>Imprimantes</primary><secondary>nom des unit&eacute;s</secondary>----> Il est recommand&eacute; d'utiliser des noms d'imprimantes
+coh&eacute;rents. Par exemple, dans le cas d'une imprimante appel&eacute;e <tt>Postscript1</tt> et directement rattach&eacute;e au syst&egrave;me,
+tous les autres syst&egrave;mes ayant acc&egrave;s &agrave; distance &agrave;
+cette imprimante doivent &eacute;galement utiliser le nom <tt>Postscript1</tt>.</p>
+</div>
+<div class="2" id="SAG.ClSrv.div.16">
+<h1><!---- <primary>Messagerie &eacute;lectronique, configuration</primary>
+----> <!---- <primary>Mise en r&eacute;seau</primary><secondary>messagerie &eacute;lectronique</secondary>----> Configuration de la
+messagerie &eacute;lectronique</h1>
+<p>La Messagerie du Bureau utilise <code>sendmail</code> pour transmettre
+des messages entre les syst&egrave;mes. Reportez-vous &agrave; la<!---- 
+<primary>Sendmail</primary>---->  page de manuel <filename moreinfo="RefEntry">sendmail(1M)</tt> pour apprendre &agrave; configurer la connexion de
+la messagerie &eacute;lectronique.</p>
+<p>Avant d'essayer d'envoyer ou de recevoir des messages du Bureau, vous
+devez v&eacute;rifier que vous pouvez effectuer ces op&eacute;rations correctement
+&agrave; l'aide de la<!---- <primary>Mailx</primary>---->  commande <code>mailx</code>.</p>
+</div>
+<div class="2" id="SAG.ClSrv.div.17">
+<h1 id="SAG.ClSrv.mkr.8">Configuration de l'autorisation X<!---- 
+<primary>Autorisation X</primary>----> <!---- <primary>Mise en
+r&eacute;seau</primary><secondary>autorisation X</secondary>----> </h1>
+<p>Le Bureau utilise la proc&eacute;dure X par d&eacute;faut pour autoriser
+l'acc&egrave;s &agrave; un &eacute;cran local aux applications &eacute;loign&eacute;es
+(clients X). La fa&ccedil;on la plus simple d'effectuer cette configuration
+consiste &agrave; fournir un r&eacute;pertoire personnel en r&eacute;seau
+&agrave; chaque utilisateur. De la sorte, les conditions indiqu&eacute;es
+ci-apr&egrave;s sont respect&eacute;es.</p>
+<ul remap="Bullet1">
+<li><p>L'utilisateur doit disposer des droits d'acc&egrave;s en lecture
+et en &eacute;criture au fichier <var">R&eacute;pPersonnel</var><tt>/.Xauthority.</tt></p>
+</li>
+<li><p>Le fichier <tt>.Xauthority</tt> d'un serveur d'applications
+doit contenir la description de l'&eacute;cran sur lequel l'application tournera.
+</p>
+</li>
+</ul>
+<p>Pour plus de d&eacute;tails, reportez-vous aux pages de manuel <filename moreinfo="RefEntry">X(1)</tt> ou <filename moreinfo="RefEntry">xauth(1)</tt>.</p>
+</div>
+</div>
+<div class="1" id="SAG.ClSrv.div.18">
+<h1 id="SAG.ClSrv.mkr.9">Configuration des clients et serveurs du Bureau<!---- 
+<primary>Client</primary><secondary>du serveur, configuration</secondary>
+----> <!---- <primary>Serveurs</primary><secondary>configuration</secondary>----> <!---- <primary>R&eacute;seau</primary><secondary>configuration des clients et des serveurs</secondary>----> </h1>
+<p>Cette section traite des imp&eacute;ratifs de configuration du r&eacute;seau
+propres au Bureau &mdash; &agrave; savoir, les fonctions fournies par celui-ci
+et non par le syst&egrave;me d'exploitation de base.</p>
+<p>Elle est divis&eacute;e en deux parties:</p>
+<ul remap="Bullet1">
+<li><p>configuration des services de connexion et de session;</p>
+</li>
+<li><p>configuration des services requis par les applications et
+leurs donn&eacute;es. Elle comprend les serveurs d'applications, de bases
+de donn&eacute;es, d'ic&ocirc;nes, de fichiers et d'aide ainsi que leurs clients.
+</p>
+</li>
+</ul>
+<div class="2" id="SAG.ClSrv.div.19">
+<h1>Configuration des services de connexion et de session<!---- <primary>Serveurs</primary><secondary>connexion</secondary><tertiary>configuration</tertiary>----> </h1>
+<p>Un serveur de connexion/de sessions est un syst&egrave;me qui offre
+les services du Bureau (Gestionnaires de connexion, de sessions, de fichiers,
+de fen&ecirc;tres, etc.) &agrave; un &eacute;cran et &agrave; un serveur X.
+</p>
+<p><!---- <primary>Serveurs</primary><secondary>de sessions</secondary>
+----> <!---- <primary>Terminaux X</primary>----> <!---- 
+<primary>Serveurs</primary><secondary>de connexion</secondary>----> G&eacute;n&eacute;ralement,
+un serveur de sessions fournit des services aux terminaux X. Cependant, un
+r&eacute;seau peut &ecirc;tre configur&eacute; de mani&egrave;re &agrave;
+concentrer les services de sessions sur un ou plusieurs serveurs auxquels
+les terminaux X et les postes de travail ont acc&egrave;s.</p>
+<p>Le Gestionnaire de connexion est le composant du Bureau charg&eacute;
+de fournir les services de connexion aux autres &eacute;crans. Lorsque l'utilisateur
+s'est connect&eacute;, le Gestionnaire de sessions est lanc&eacute;.</p>
+<p>Pour plus de d&eacute;tails sur la configuration des serveurs de connexion/de
+sessions et les terminaux X, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Affichage d'un écran de connexion sur un écran du réseau&rdquo;,
+page 7<xref role="SecTitleAndPageNum" linkend="SAG.LogMg.mkr.6">.</p>
+</div>
+<div class="2" id="SAG.ClSrv.div.19a">
+<h1>Configuration des serveurs de m&eacute;thode d'entr&eacute;e<!---- 
+<primary>input method servers</primary><secondary>configuring</secondary>
+----> </h1>
+<p>Un serveur de m&eacute;thode d'entr&eacute;e (IMS, Input Method Server)
+est lanc&eacute; par la commande <code>dtimsstart</code>. <code>dtimsstart</code> est automatiquement appel&eacute;e lors de la session
+X de lancement (login de l'utilisateur) par le script <tt>/usr/dt/config/Xsession.d/0020.dtims</tt>.</p>
+<p>Selon l'environnement du pays s&eacute;lectionn&eacute;, les param&egrave;tres
+d'environnement, les fichiers de configuration et les options de ligne de
+commande, <code>dtimsstart</code> affiche une fen&ecirc;tre de s&eacute;lection
+dans laquelle l'utilisateur peut s&eacute;lectionner le IMS &agrave; utiliser.
+A partir de cette fen&ecirc;tre, il peut aussi demander le lancement d'un
+IMS sur un syst&egrave;me &eacute;loign&eacute;. Dans ce cas, <code>dtimsstart</code>:</p>
+<ul>
+<li><p>Ex&eacute;cute l'action <code>DtImsGetRemoteConf</code>
+pour extraire l'information relative aux IMS enregistr&eacute;s sur le syst&egrave;me
+&eacute;loign&eacute; sp&eacute;cifi&eacute;</p>
+</li>
+<li><p>Liste les IMS enregistr&eacute;s dans la fen&ecirc;tre de
+s&eacute;lection</p>
+</li>
+<li><p>Ex&eacute;cute l'action <code>DtImsRunRemoteIms</code>
+pour d&eacute;marrer le IMS s&eacute;lectionn&eacute; par l'utilisateur sur
+le syst&egrave;me &eacute;loign&eacute;</p>
+</li>
+</ul>
+<p>Au cours de la recherche d'un IMS sur un syst&egrave;me &eacute;loign&eacute;, <code>dtimsstart</code> n'extrait que les IMS enregistr&eacute;s. Pour &ecirc;tre
+enregistr&eacute; sur un syst&egrave;me (local ou &eacute;loign&eacute;) un
+IMS doit:</p>
+<ul>
+<li><p>Etre d&eacute;fini dans le fichier d'entr&eacute;e de l'environnement
+du pays en cours. Chaque environnement du pays a son propre fichier d'entr&eacute;e
+qui liste les IMS de sa prise en charge. L'emplacement du fichier d'entr&eacute;e
+de l'environnement du pays est <tt>/usr/dt/config/ims/&lt;locale_name></tt>.</p>
+</li>
+<li><p>Avoir son propre fichier d'entr&eacute;e sur le syst&egrave;me.
+Les attributs du IMS d&eacute;crits dans le fichier d'entr&eacute;e comprennent
+les protocoles, le nom du serveur sur lequel le IMS est ex&eacute;cut&eacute;,
+les options de la ligne de commande et l'indication si le IMS permet ou non
+une ex&eacute;cution &eacute;loign&eacute;e. L'emplacement des fichiers d'entr&eacute;e
+IMS est <tt>/usr/dt/config/ims/&lt;ims_name></tt>.</p>
+</li>
+</ul>
+<p>Pour la description des formats de fichiers accompagn&eacute;e d'exemples,
+reportez-vous &agrave; la page de manuel <code>dtimsstart</code>.</p>
+<p>Pour d&eacute;finir les h&ocirc;tes sur lesquels le IMS se trouve, vous
+pouvez configurer la ressource d''application <code>imServerHosts</code>.
+<?Pub Caret>Cette ressource (utilis&eacute;e par le Gestionnaire de configuration
+lors de l'identification des IMS pour la s&eacute;lection de l'utilisateur)
+contient la liste des noms d'h&ocirc;tes s&eacute;par&eacute;s par des virgules.
+Par exemple:</p>
+<listing>*imServerHosts: xylo,expo</listing>
+</div>
+<div class="2" id="SAG.ClSrv.div.20">
+<h1>Configuration d'autres services associ&eacute;s aux applications</h1>
+<p>Cette section traite de la configuration des &eacute;l&eacute;ments
+de r&eacute;seau dans un environnement CDE:</p>
+<ul remap="Bullet1">
+<li><p><!---- <primary>Serveurs</primary><secondary>d'applications</secondary><tertiary>configuration</tertiary>----> <!---- <primary>Serveurs</primary><secondary>d'applications</secondary>----> serveurs
+d'applications,</p>
+</li>
+<li><p><!---- <primary>Serveurs</primary><secondary>bases de
+donn&eacute;es, configuration</secondary>----> <!---- <primary>Serveurs</primary><secondary>bases de donn&eacute;es</secondary>----> serveurs
+de bases de donn&eacute;es,</p>
+</li>
+<li><p><!---- <primary>Serveurs</primary><secondary>d'ic&ocirc;nes,
+configuration</secondary>----> <!---- <primary>Serveurs</primary>
+<secondary>d'ic&ocirc;nes</secondary>----> serveurs d'ic&ocirc;nes,
+</p>
+</li>
+<li><p><!---- <primary>Serveurs</primary><secondary>d'aide</secondary>
+<tertiary>configuration</tertiary>----> <!---- <primary>Serveurs</primary><secondary>d'aide</secondary>----> serveurs d'aide.</p>
+</li>
+</ul>
+<div class="3" id="SAG.ClSrv.div.21" role="Procedure">
+<h1 id="SAG.ClSrv.mkr.10">Configuration des clients et des serveurs du
+Bureau</h1>
+<ol>
+<li><p>Effectuez les configurations de r&eacute;seau du syst&egrave;me
+d'exploitation requises par le Bureau.</p>
+<p>Reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Mise
+en riseau du systhme d'exploitati--><!--on de base pour le
+Bureau&rdquo;, page 96<xref role="SecTitleAndPageNum" linkend="sag.clsrv.mkr.6">.
+</p>
+</li>
+<li><p><!---- <primary>Fichiers</primary><secondary>requis pour
+la mise en r&eacute;seau</secondary>----> <!---- <primary>Mise en
+r&eacute;seau</primary><secondary>fichiers requis</secondary>----> Installez
+le Bureau ou le jeu de fichiers de base.</p>
+<p>Vous devez installer:</p>
+<ul remap="Bullet2">
+<li><p>le jeu de fichiers d'ex&eacute;cution complet du Bureau CDE
+;</p>
+</li>
+<li><p><em>ou</em> les jeux de fichiers suivants:<!---- 
+<primary>Fichiers</primary><secondary>CDE-MIN</secondary>----> <!---- 
+<primary>Fichiers</primary><secondary>CDE-TT</secondary>---->  CDE-MIN
+et CDE-TT.</p>
+</li>
+</ul>
+<note>
+<p>L'installation et les jeux de fichiers peuvent varier en fonction des
+fournisseurs.</p>
+</note>
+</li>
+<li><p>Configurez le syst&egrave;me pour le<!---- <primary>Serveur</primary><secondary>base de donn&eacute;es</secondary>---->  d&eacute;mon
+Tooltalk du serveur de base de donn&eacute;es des noms de fichiers <tt>rpc.ttdbserver.</tt><!---- <primary>rpc.ttdbserver</primary>----> </p>
+<p>Cette configuration est automatique lorsque le Bureau est install&eacute;.
+Pour plus de d&eacute;tails, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Configuration du serveur de
+base de do--><!--nnies ToolTalk&rdquo;,
+page 106<xref role="SecTitleAndPageNum" linkend="sag.clsrv.mkr.14">.</p>
+</li>
+<li><p>Installez et configurez le d&eacute;mon de contr&ocirc;le
+des sous-processus (<code><!---- <primary>dtspcd</primary>----> dtspcd</code> ).</p>
+<p>Cette configuration est automatique lorsque le Bureau est install&eacute;.
+Pour plus de d&eacute;tails, reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Configuration du dimon de contrtle
+des--><!-- sous-processus&rdquo;,
+page 104<xref role="SecTitleAndPageNum" linkend="sag.clsrv.mkr.13">.
+</p>
+</li>
+<li><p><!---- <primary>Fichiers</primary><secondary>donn&eacute;es
+&eacute;loign&eacute;es</secondary>----> Montez toutes les donn&eacute;es
+&eacute;loign&eacute;es requises.</p>
+<p>Celles-ci sont consid&eacute;r&eacute;es comme &ldquo;&eacute;loign&eacute;es&rdquo;
+lorsqu'elles se trouvent sur un syst&egrave;me autre que celui qui les utilise.
+</p>
+<p>Par exemple:</p>
+<ul remap="Bullet2">
+<li><p>si une application utilise les donn&eacute;es situ&eacute;es
+sur un serveur de fichiers, elle doit monter ces fichiers</p>
+</li>
+<li><p>si les ic&ocirc;nes du Gestionnaire de fichiers sont situ&eacute;es
+sur un serveur d'ic&ocirc;nes, le serveur de sessions doit monter ces fichiers
+</p>
+</li>
+<li><p>si le r&eacute;seau utilise un serveur d'aide pour les fichiers
+d'aide du Bureau, le serveur de sessions et tous les serveurs d'applications
+doivent monter ces fichiers</p>
+<p>Pour plus de d&eacute;tails sur les points de montage, reportez-vous
+&agrave; la section suivante, <!--Original
+XRef content: '&rdquo;Configuration
+du point de montage des --><!--systhmes de fichiers iloignis&rdquo;<xref
+role="SectionTitle" linkend="sag.clsrv.mkr.11">.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="3" id="SAG.ClSrv.div.22">
+<h1 id="SAG.ClSrv.mkr.11">Configuration du point de montage des syst&egrave;mes
+de fichiers &eacute;loign&eacute;s<!---- <primary>Fichiers</primary>
+<secondary>point de montage</secondary>----> <!---- <primary>Point
+de montage des fichiers &eacute;loign&eacute;s</primary>----> </h1>
+<p><!---- <primary>Mappage des noms de fichiers</primary>----> Lorsque
+le Bureau transmet des noms de fichiers d'un syst&egrave;me &agrave; l'autre,
+il doit transformer ou les <em>mapper</em>, en noms de fichiers
+compr&eacute;hensibles par le syst&egrave;me cible. Ce mappage est n&eacute;cessaire
+car un fichier peut &ecirc;tre mont&eacute; &agrave; diff&eacute;rents endroits
+de diff&eacute;rents syst&egrave;mes et, donc accessibles avec des noms diff&eacute;rents.
+Par exemple, le fichier /<tt>projets/grd</tt> sur <code>sysA</code> est accessible sous la forme <tt>/net/sysA/projets/grd</tt>
+sur <code>sysB</code>.</p>
+<div class="4" id="SAG.ClSrv.div.23">
+<h1>Conditions pr&eacute;alables au mappage des noms de fichiers</h1>
+<p>Pour effectuer cette proc&eacute;dure correctement, l'une des conditions
+ci-apr&egrave;s doit &ecirc;tre vraie.</p>
+<ul remap="Bullet1">
+<li><p>La commande <code>mount</code> permet de monter les
+syst&egrave;mes de fichiers de fa&ccedil;on statique. Ces types de montages
+statiques sont g&eacute;n&eacute;ralement configur&eacute;s dans un fichier
+tel que <tt>/etc/checklist</tt>, <tt>/etc/mnttab</tt>,
+ou <tt>/etc/filesystems</tt>.</p>
+<p>Pour que le mappage des noms de fichiers fonctionne correctement entre
+les syst&egrave;mes, les montages des syst&egrave;mes de fichiers doivent
+utiliser des noms d'h&ocirc;tes coh&eacute;rents. Si un syst&egrave;me h&ocirc;te
+porte plusieurs noms (par exemple, des alias, ou s'il poss&egrave;de plus
+d'une adresse de r&eacute;seau local ayant des noms diff&eacute;rents), vous
+devez utiliser le m&ecirc;me nom et format de nom pour tous les montages.
+</p>
+</li>
+<li><p><em>Ou</em> le processus de montage automatique
+est utilis&eacute; pour monter les syst&egrave;mes de fichiers au point par
+d&eacute;faut <tt>/net</tt>.</p>
+</li>
+<li><p><em>Ou</em> le<!---- <primary>Processus de
+montage automatique</primary>---->  processus de montage automatique
+est utilis&eacute; pour monter les syst&egrave;mes de fichiers &agrave; un
+endroit autre que <tt>/net</tt> et la variable d'environnement <systemitem>DTMOUNTPOINT</systemitem> est d&eacute;finie afin d'indiquer ce point de montage.
+Reportez-vous &agrave; la section suivante, &rdquo;Définition
+d'une valeur pour DTMOUNTPOINT&rdquo;<xref role="SectionTitle" linkend="SAG.ClSrv.mkr.12">.
+</p>
+</li>
+</ul>
+<p>Pour plus de d&eacute;tails sur le processus de montage automatique,
+reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">automount(1M)</tt>.</p>
+</div>
+<div class="4" id="SAG.ClSrv.div.24">
+<h1 id="SAG.ClSrv.mkr.12">D&eacute;finition d'une valeur pour<!---- 
+<primary>Variables</primary><secondary>DTMOUNTPOINT</secondary><tertiary>d&eacute;finition</tertiary>---->  DTMOUNTPOINT</h1>
+<p><!---- <primary>Variables</primary><secondary>DTMOUNTPOINT</secondary>
+<tertiary>processus utilisant</tertiary>----> Vous devez d&eacute;finir
+la variable d'environnement <systemitem>DTMOUNTPOINT</systemitem> si les deux
+conditions suivantes sont vraies:</p>
+<ul remap="Bullet1">
+<li><p>le processus de montage automatique est utilis&eacute; pour
+monter des syst&egrave;mes de fichiers;</p>
+</li>
+<li><p><em>et</em> les syst&egrave;mes de fichiers &eacute;loign&eacute;s
+sont mont&eacute;s &agrave; un endroit autre que <tt>/net</tt>.
+</p>
+</li>
+</ul>
+<p><!---- <primary>Variables</primary><secondary>DTMOUNTPOINT</secondary>
+<tertiary>processus requ&eacute;rant</tertiary>----> <systemitem>DTMOUNTPOINT</systemitem> doit &ecirc;tre d&eacute;finie pour les diff&eacute;rents processus,
+notamment:</p>
+<ul remap="Bullet1">
+<li><p>les processus utilisateur du Bureau lanc&eacute;s automatiquement
+&agrave; la connexion, tels que le Gestionnaire de l'espace de travail ( <code>dtwm</code>) et le Gestionnaire de fichiers (<code>dtfile</code>)
+;</p>
+</li>
+<li><p>les processus syst&egrave;me, tels que <code><!---- 
+<primary>rpc.ttdbserver</primary>----> rpc.ttdbserver</code> et <code>dtspcd</code> lanc&eacute;s par des m&eacute;canismes comme <code>inetd
+;</code></p>
+</li>
+<li><p>les applications lanc&eacute;es par le Bureau sur des syst&egrave;mes
+locaux ou &eacute;loign&eacute;s;</p>
+</li>
+<li><p>les applications lanc&eacute;es par l'utilisateur &agrave;
+partir d'une ligne de commande du shell.</p>
+</li>
+</ul>
+<p>Pour d&eacute;finir la variable <systemitem>DTMOUNTPOINT</systemitem>
+pour tous ces processus:</p>
+<ol>
+<li><p>Editez le fichier <tt>/etc/<!---- <primary>inetd.conf</primary>---->  inetd.conf</tt>:</p>
+<ol>
+<li><p>Recherchez l'entr&eacute;e <code><!---- <primary>dtspcd</primary>----> dtspcd</code> et ajoutez:</p>
+<para remap="CodeIndent2"><computeroutput>-mount_point <var">point_montage</var></computeroutput></p>
+</li>
+<li><p>Recherchez l'entr&eacute;e <tt>rpc.ttdbserver</tt>
+et ajoutez:</p>
+<para remap="CodeIndent2"><computeroutput>-m <var">point_montage</var> </computeroutput></p>
+<p>Par exemple, pour que le processus de montage utilise le point de montage <code>/nfs</code>, les entr&eacute;es de <tt>/etc/inetd.conf</tt>
+doivent &ecirc;tre modifi&eacute;es comme suit:</p>
+<listing>dtspc stream tcp nowait root /usr/dt/bin/dtspcd /usr/dt/bin/dtspcd -mount_point /nfs
+rpc stream tcp wait root /usr/dt/bin/rpc.ttdbserver 100083 1 rpc.ttdbserver -m /nfs
+</listing>
+</li>
+</ol>
+</li>
+<li><p>Effectuez sur votre syst&egrave;me la proc&eacute;dure permettant
+de relire <tt>/etc/inetd.conf</tt>. Pour plus de d&eacute;tails,
+reportez-vous &agrave; la page de manuel <filename moreinfo="refentry">inetd(1M)</tt>.</p>
+</li>
+<li><p><!---- <primary>Variables</primary><secondary>DTMOUNTPOINT</secondary><tertiary>h&eacute;rit&eacute;es des utilisateurs</tertiary>----> D&eacute;finissez <systemitem>DTMOUNTPOINT</systemitem> afin que sa valeur provienne des connexions des
+utilisateurs.</p>
+<p>Cette op&eacute;ration peut &ecirc;tre effectu&eacute;e en d&eacute;finissant
+cette variable dans <tt>/etc/dt/config/Xsession.d</tt>. Pour plus
+de d&eacute;tails sur la d&eacute;finition des variables d'environnement,
+reportez-vous &agrave; la section <!--Original
+XRef content: '&rdquo;Difinition
+de variables d'environnemen--><!--t&rdquo;, page 36<xref role="SecTitleAndPageNum"
+linkend="sag.sesmg.mkr.9">.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="3" id="SAG.ClSrv.div.25">
+<h1 id="SAG.ClSrv.mkr.13">Configuration du d&eacute;mon de contr&ocirc;le
+des sous-processus</h1>
+<p>Le<!---- <primary>Service de contr&ocirc;le des sous-processus,
+voir SPC &lt;$nopage></primary>---->  service de contr&ocirc;le des sous-processus
+(<!---- <primary>SPC</primary>---->  SPC) permet l'ex&eacute;cution
+de commandes client-serveur.</p>
+<p>Le<!---- <primary>D&eacute;mon</primary><secondary>dtspcd</secondary>
+---->  d&eacute;mon de contr&ocirc;le des sous-processus (<code><!---- 
+<primary>dtspcd</primary>----> dtspcd</code>) est utilis&eacute;
+par le Bureau pour lancer des applications &agrave; distance. Il s'agit d'un
+d&eacute;mon <code>inet</code> qui accepte les requ&ecirc;tes d'ex&eacute;cution
+de commandes de clients &agrave; distance. Pour plus de d&eacute;tails sur
+la configuration des d&eacute;mons <code>inet</code>, reportez-vous
+&agrave; la page de manuel <filename moreinfo="RefEntry">inetd.conf(1M)</tt>.
+</p>
+<p>La biblioth&egrave;que d'appel des actions du Bureau utilise le service
+SPC pour invoquer des actions &agrave; distance.</p>
+<div class="4" id="SAG.ClSrv.div.26">
+<h1>Pour configurer<!---- <primary>dtspcd</primary><secondary>configuration</secondary>---->  dtspcd</h1>
+<ol>
+<li><p>V&eacute;rifiez que <code>dtspc</code> est correctement
+enregistr&eacute; dans <tt>/etc/services</tt> et dans <tt>/etc/inetd.conf</tt>. Reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">dtspcd(1M)</tt>.</p>
+</li>
+<li><p>HP-UX seulement: V&eacute;rifiez que <tt>/usr/adm/inetd.sec</tt> est configur&eacute; correctement. Reportez-vous &agrave; la page
+de manuel <filename moreinfo="RefEntry"><!---- <primary>inetd.sec</primary>
+----> inetd.sec(4)</tt>.</p>
+</li>
+</ol>
+</div>
+<div class="4" id="SAG.ClSrv.div.27">
+<h1><!---- <primary>SPC</primary><secondary>s&eacute;curit&eacute;</secondary>----> S&eacute;curit&eacute; SPC</h1>
+<p>L'authentification du service de contr&ocirc;le des sous-processus est
+bas&eacute;e sur celle des syst&egrave;mes de fichiers. Le <code>dtspcd</code> doit pouvoir acc&eacute;der &agrave; un <em>r&eacute;pertoire
+d'authentification</em> qui est &eacute;galement mont&eacute; par tous
+les syst&egrave;mes clients SPC.</p>
+<p>Par d&eacute;faut, le r&eacute;pertoire d'authentification <code><!---- 
+<primary>dtspcd</primary><secondary>r&eacute;pertoire d'authentification</secondary>
+----> <!---- <primary>R&eacute;pertoire</primary><secondary>d'authentification</secondary>---->  dtspcd</code> est le r&eacute;pertoire personnel
+de l'utilisateur. Cependant, vous pouvez configurer <code>dtspcd</code>
+afin d'utiliser un emplacement diff&eacute;rent. Pour ce faire, d&eacute;finissez
+l'option <tt>-auth_dir</tt> dans le r&eacute;pertoire <tt>/etc/inetd.conf</tt>. Pour plus de d&eacute;tails, reportez-vous &agrave;
+la page de manuel <tt>dtspcd(1M)</tt>.</p>
+<p>L'authentification SPC &eacute;tant bas&eacute;e sur celle des syst&egrave;mes
+de fichiers, le niveau de s&eacute;curit&eacute; du service SPC est directement
+li&eacute; &agrave; celui du syst&egrave;me de fichiers r&eacute;parti. Si
+le syst&egrave;me de fichiers r&eacute;parti du r&eacute;seau ne vous semble
+pas suffisamment s&eacute;curis&eacute;, vous pouvez &eacute;ventuellement
+d&eacute;sactiver le d&eacute;mon <code>dtspcd</code>. Pour ce faire,
+il suffit de supprimer l'entr&eacute;e <code>dtspc</code> dans <tt>/etc/services</tt>.</p>
+</div>
+</div>
+<div class="3" id="SAG.ClSrv.div.28">
+<h1><!---- <primary>Variables</primary><secondary>d'environnement</secondary>
+<tertiary>ex&eacute;cution &agrave; distance</tertiary>----> Configuration
+de variables d'environnement pour l'ex&eacute;cution &agrave; distance</h1>
+<p>Lorsque le Bureau utilise une action pour lancer une application sur
+un syst&egrave;me &eacute;loign&eacute;, les variables d'environnement de
+l'utilisateur sont copi&eacute;es sur le syst&egrave;me &eacute;loign&eacute;
+et plac&eacute;es dans l'environnement de l'application.</p>
+<p>Par d&eacute;faut, certaines variables d'environnement sont modifi&eacute;es
+avant d'&ecirc;tre copi&eacute;es sur le syst&egrave;me &eacute;loign&eacute;.
+Vous pouvez configurer le composant d'appel et le service de contr&ocirc;le
+des sous-processus du Bureau pour traiter d'autres variables d'environnement
+avant que ces derni&egrave;res ne soient plac&eacute;es dans l'environnement
+d'application.</p>
+<p>Pour plus de d&eacute;tails sur la configuration par d&eacute;faut et
+sur la fa&ccedil;on de la modifier, reportez-vous aux pages de manuel <tt>dtactionfile(4)</tt> et <tt>dtspcdenv(4)</tt>.</p>
+</div>
+<div class="3" id="SAG.ClSrv.div.29">
+<h1 id="SAG.ClSrv.mkr.14">Configuration du<!---- <primary>ToolTalk</primary><secondary>serveur de base de donn&eacute;es, voir rpc.ttdbserver&lt;$nopage></secondary>---->  serveur de base de donn&eacute;es ToolTalk</h1>
+<p>Tooltalk comprend notamment un serveur de base de donn&eacute;es, <tt>/usr/dt/bin/rpc.ttdbserver</tt>.</p>
+<p>Ce serveur est utilis&eacute; par le service de messagerie de Tooltalk
+et pour le mappage des noms de fichiers. Il est g&eacute;n&eacute;ralement
+enregistr&eacute; dans <tt>/etc/inetd.conf</tt> lorsque le Bureau
+est install&eacute; et qu'aucune configuration suppl&eacute;mentaire n'est
+requise.</p>
+<p>Pour plus de d&eacute;tails sur le serveur de base de donn&eacute;es
+Tooltalk et ses options de configuration, reportez-vous &agrave; la page de
+manuel <tt>rpc.ttdbserver(1M)</tt>.</p>
+</div>
+<div class="3" id="SAG.ClSrv.div.30">
+<h1>Configuration du<!---- <primary>Serveur de messages Tooltalk,
+voir ttsession&lt;$nopage></primary>---->  serveur de messages ToolTalk</h1>
+<p>Le serveur de messages Tooltalk est <code><!---- <primary>ttsession</primary>----> ttsession</code>. Par d&eacute;faut, il ne requiert
+aucune configuration. Il est lanc&eacute; par le script <code>Xsession</code> lors de la connexion.</p>
+<p>Pour plus de d&eacute;tails sur le serveur de messages Tooltalk et ses
+options de configuration, reportez-vous &agrave; la page de manuel <code>ttsession</code>.</p>
+</div>
+<div class="3" id="SAG.ClSrv.div.31">
+<h1>Configuration du<!---- <primary>D&eacute;mon</primary><secondary>agenda</secondary>---->  d&eacute;mon Agenda</h1>
+<p>L'application Agenda poss&egrave;de un d&eacute;mon appel&eacute; <tt>rpc.cmsd</tt><!---- <primary>rpc.cmsd</primary>----> . Il
+est g&eacute;n&eacute;ralement enregistr&eacute; dans <tt>/etc/inetd.conf</tt> lorsque le Bureau est install&eacute; et aucune configuration
+suppl&eacute;mentaire n'est requise.</p>
+<p>Pour plus de d&eacute;tails sur ce d&eacute;mon et ses options de configuration,
+reportez-vous &agrave; la page de manuel <tt>rpc.cmsd</tt><filename moreinfo="RefEntry">(1)</tt>.</p>
+</div>
+</div>
+</div>
+<div class="1" id="SAG.ClSrv.div.32">
+<h1 id="SAG.ClSrv.mkr.15">Gestion des services d'applications<!---- 
+<primary>Serveurs</primary><secondary>d'applications</secondary><tertiary>gestion</tertiary>----> </h1>
+<p>Cette section traite des imp&eacute;ratifs de configuration relatifs
+aux:</p>
+<ul remap="Bullet1">
+<li><p>serveurs d'applications et leurs clients;</p>
+</li>
+<li><p>serveurs du Bureau qui offrent des fonctions sp&eacute;ciales
+&mdash; serveurs de bases de donn&eacute;es, d'ic&ocirc;nes et d'aide.</p>
+</li>
+</ul>
+<p>Elle traite &eacute;galement des imp&eacute;ratifs de mise en r&eacute;seau
+pour deux configurations particuli&egrave;res:</p>
+<ul remap="Bullet1">
+<li><p>h&ocirc;tes d'ex&eacute;cution &eacute;loign&eacute;s;</p>
+</li>
+<li><p>applications tournant entre des montages de syst&egrave;mes
+de fichiers.</p>
+</li>
+</ul>
+<div class="2" id="SAG.ClSrv.div.33">
+<h1>Variables d'environnement des chemins de recherche</h1>
+<p>Le Bureau utilise un jeu de variables d'environnement pour indiquer
+le chemin utilis&eacute; pour rechercher des fichiers de configuration d'applications
+(actions, base de donn&eacute;es des types de donn&eacute;es, fichiers d'aide
+et ic&ocirc;nes).</p>
+<p>Pour plus de d&eacute;tails sur ces variables d'environnement, reportez-vous
+au chapitre 7, &rdquo;Chemins de recherche du
+Bureau&rdquo;<xref role="ChapNumAndTitle" linkend="SAG.Datab.mkr.1">,
+ou &agrave; la page de manuel <filename moreinfo="RefEntry">dtenvvar(5)</tt>.
+</p>
+</div>
+<div class="2" id="SAG.ClSrv.div.34">
+<h1>Configuration d'un serveur d'applications et de ses clients<!---- 
+<primary>Ex&eacute;cution &agrave; distance</primary><secondary>configuration
+du serveur d'applications</secondary>----> </h1>
+<p>Dans la configuration standard d'un serveur d'applications, le serveur
+d'applications contient tous les fichiers binaires et de configuration associ&eacute;s
+&agrave; l'application, y compris:</p>
+<ul remap="Bullet1">
+<li><p>le(s) fichier(s) ex&eacute;cutable(s) de l'application</p>
+</li>
+<li><p>les fichiers de configuration standard de l'application, tels
+que app-defaults, les catalogues de messages et les biblioth&egrave;ques partag&eacute;es
+pour cette application</p>
+</li>
+<li><p>les fichiers de configuration du Bureau:</p>
+<ul remap="Bullet2">
+<li><p>fichiers de d&eacute;finitions des actions et des types de
+donn&eacute;es,</p>
+</li>
+<li><p>fichiers d'images d'ic&ocirc;nes,</p>
+</li>
+<li><p>fichiers de donn&eacute;es d'aide du Bureau.</p>
+</li>
+</ul>
+</li>
+</ul>
+<object>
+<h1><!---- <primary>Serveurs</primary><secondary>d'applications</secondary>
+<tertiary>configuration standard</tertiary>----> Configuration standard
+du serveur d'applications</h1>
+<img id="SAG.ClSrv.grph.5" src="./graphics/appserv1.png">
+</object>
+<div class="3" id="SAG.ClSrv.div.35" role="Procedure">
+<h1>Configuration d'un serveur d'applications<!---- <primary>Serveurs
+d'applications</primary><secondary>configuration</secondary>----> </h1>
+<ol>
+<li><p>Effectuez les configurations de r&eacute;seau du syst&egrave;me
+d'exploitation requises par le Bureau.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Mise
+en réseau du système d'exploitation de base pour le Bureau&rdquo;, page 96<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.6">.</p>
+</li>
+<li><p>Effectuez la configuration g&eacute;n&eacute;rale du Bureau
+requise pour les serveurs.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Configuration
+des clients et des serveurs du Bureau&rdquo;, page 101<xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.10">.</p>
+</li>
+<li><p>Installez les applications voulues.</p>
+</li>
+<li><p>Si une application ne s'enregistre pas automatiquement, vous
+devez effectuer la proc&eacute;dure d'enregistrement.</p>
+<p>Reportez-vous au chapitre 4, &rdquo;Enregistrement
+d'une application&rdquo;<xref role="ChapNumAndTitle" linkend="SAG.RegAp.mkr.1">.
+</p>
+</li>
+</ol>
+</div>
+<div class="3" id="SAG.ClSrv.div.36" role="Procedure">
+<h1>Configuration du client d'un serveur d'applications<!---- <primary>Serveurs</primary><secondary>d'applications</secondary><tertiary>client</tertiary>
+----> <!---- <primary>Serveurs</primary><secondary>d'applications</secondary><tertiary>configuration du client</tertiary>----> </h1>
+<ol>
+<li><p>Effectuez les configurations de r&eacute;seau du syst&egrave;me
+d'exploitation requises par le Bureau.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Mise
+en réseau du système d'exploitation de base pour le Bureau&rdquo;, page 96<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.6">.</p>
+</li>
+<li><p>Effectuez la configuration g&eacute;n&eacute;rale du Bureau
+requise pour les clients.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Configuration
+des clients et des serveurs du Bureau&rdquo;, page 101<xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.10">.</p>
+</li>
+<li><p>Ajoutez le serveur d'applications au chemin de recherche de
+l'application au niveau syst&egrave;me ou personnel:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="106*">
+<colspec colwidth="422*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Syst&egrave;me</p></td>
+<td align="left" valign="top"><p>D&eacute;finissez la<!---- <primary>Variables</primary><secondary>DTSPSYSAPPHOSTS</secondary>---->  variable <systemitem>DTSPSYSAPPHOSTS</systemitem> dans/<tt>etc/dt/config/Xsession.d/0010.dtpaths</tt></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Personnel</p></td>
+<td align="left" valign="top"><p>D&eacute;finissez la<!---- <primary>Variables</primary><secondary>DTSPUSERAPPHOSTS</secondary>---->  variable <systemitem>DTSPSYSAPPHOSTS</systemitem> dans <var">R&eacute;pPersonnel</var><tt>/.dtprofile</tt></p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+</li>
+</ol>
+<p>Par exemple, la ligne suivante de <tt>/etc/dt/config/Xsession.d/0010.dtpaths</tt> ajoute un syst&egrave;me avec le nom d'h&ocirc;te <code>SysAAA</code> et <code>SysBBB</code> au chemin de recherche de l'application
+:</p>
+<listing>DTSPSYSAPPHOSTS=SysAAA:,SysBBB:</listing>
+<p>Pour plus de d&eacute;tails sur la d&eacute;finition du chemin de recherche
+de l'application, reportez-vous aux sections suivantes:</p>
+<ul remap="Bullet1">
+<li><p>&rdquo;Chemin
+de recherche des applications&rdquo;, page 125<xref role="SecTitleAndPageNum"
+linkend="SAG.Datab.mkr.8">.</p>
+</li>
+<li><p>&rdquo;Définition
+de la valeur d'un chemin de recherche&rdquo;, page 123<xref role="SecTitleAndPageNum"
+linkend="SAG.Datab.mkr.6">.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="2" id="SAG.ClSrv.div.37">
+<h1 id="SAG.ClSrv.mkr.16">Configuration des services de bases de donn&eacute;es,
+d'ic&ocirc;nes et d'aide<!---- <primary>Serveurs</primary><secondary>d'ic&ocirc;nes</secondary><tertiary>configuration</tertiary>----> <!---- 
+<primary>Serveurs</primary><secondary>d'aide</secondary><tertiary>configuration</tertiary>----> <!---- <primary>Serveurs</primary><secondary>bases de donn&eacute;es</secondary><tertiary>configuration</tertiary>----> <!---- 
+<primary>Serveurs</primary><secondary>bases de donn&eacute;es</secondary>
+<tertiary>configuration</tertiary>----> <!---- <primary>Serveurs</primary><secondary>actions</secondary>----> <!---- <primary>Serveurs</primary><secondary>types de donn&eacute;es</secondary>----> <!---- 
+<primary>Serveurs</primary><secondary>actions</secondary>----> <!---- 
+<primary>Serveurs</primary><secondary>types de donn&eacute;es</secondary>
+----> <!---- <primary>Types de donn&eacute;es</primary><secondary>serveur de</secondary>----> <!---- <primary>Actions</primary><secondary>serveur de</secondary>----> </h1>
+<p>G&eacute;n&eacute;ralement, les d&eacute;finitions de types de donn&eacute;es
+et d'actions, les ic&ocirc;nes et les fichiers d'aide associ&eacute;s &agrave;
+une application sont install&eacute;s sur le m&ecirc;me syst&egrave;me que
+celle-ci.</p>
+<p>Prenons comme exemple la configuration type des fichiers d'aide.</p>
+<ul remap="Bullet1">
+<li><p>Les fichiers d'aide du Gestionnaire de fichiers sont g&eacute;n&eacute;ralement
+situ&eacute;s sur le serveur de sessions. Le Bureau les trouve car le chemin
+de recherche de l'aide recherche automatiquement les emplacements ad&eacute;quats
+sur le serveur de sessions.</p>
+</li>
+<li><p>Les fichiers d'aide d'autres applications sont g&eacute;n&eacute;ralement
+situ&eacute;s sur le m&ecirc;me serveur d'applications que celle-ci. Le serveur
+de sessions les trouve car la modification du chemin de recherche de l'application
+entra&icirc;ne automatiquement la modification du chemin de recherche de l'aide.
+</p>
+</li>
+</ul>
+<p>Dans certains cas, vous devez placer la base de donn&eacute;es (actions
+et types de donn&eacute;es), l'aide ou les ic&ocirc;nes en un autre endroit
+du r&eacute;seau. Par exemple, si votre r&eacute;seau utilise de nombreux
+serveurs de sessions, vous pouvez cr&eacute;er un serveur d'aide sur lequel
+m&eacute;moriser tous les fichiers d'aide des applications du Bureau (Gestionnaire
+de fichiers, Gestionnaire de configuration, etc.). Cela permet d'&eacute;conomiser
+de l'espace disque car il est inutile de dupliquer les fichiers d'aide sur
+chaque serveur de sessions.</p>
+<div class="3" id="SAG.ClSrv.div.38" role="Procedure">
+<h1 id="SAG.ClSrv.mkr.17">Cr&eacute;ation d'un serveur de base de donn&eacute;es,
+d'ic&ocirc;nes ou d'aide<!---- <primary>Serveurs</primary><secondary>bases de donn&eacute;es</secondary><tertiary>cr&eacute;ation</tertiary>----> <!---- 
+<primary>Serveurs</primary><secondary>d'ic&ocirc;nes</secondary><tertiary>cr&eacute;ation</tertiary>----> <!---- <primary>Serveurs</primary>
+<secondary>d'aide</secondary><tertiary>cr&eacute;ation</tertiary>----> </h1>
+<ol>
+<li><p>Effectuez les configurations de r&eacute;seau du syst&egrave;me
+d'exploitation requises par le Bureau.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Mise
+en réseau du système d'exploitation de base pour le Bureau&rdquo;, page 96<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.6">.</p>
+</li>
+<li><p>Effectuez la configuration g&eacute;n&eacute;rale du Bureau
+requise pour les clients.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Configuration
+des clients et des serveurs du Bureau&rdquo;, page 101<xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.10">.</p>
+</li>
+<li><para id="SAG.ClSrv.mkr.18">Installez les fichiers de base de donn&eacute;es,
+d'aide ou d'ic&ocirc;nes.</p>
+<p>Les fichiers peuvent se trouver en n'importe quel endroit du syst&egrave;me.
+Cependant, il est plus facile d'utiliser les emplacements suivants, dans la
+mesure o&ugrave; il s'agit des r&eacute;pertoires recherch&eacute;s automatiquement
+lorsqu'un syst&egrave;me a &eacute;t&eacute; d&eacute;sign&eacute; comme serveur
+d'applications.</p>
+<ul remap="Bullet2">
+<li><p>Fichiers de bases de donn&eacute;es: <tt>/etc/dt/appconfig/types/</tt><var">langue.</var></p>
+</li>
+<li><p>Fichiers d'aide: <tt>/etc/dt/appconfig/help/</tt><var">langue</var>.</p>
+</li>
+<li><p>Fichiers d'ic&ocirc;nes: <tt>/etc/dt/appconfig/icons/</tt><var">langue</var>.</p>
+<p>Si vous configurez un serveur de base de donn&eacute;es, les actions
+doivent &ecirc;tre &eacute;crites afin d'indiquer o&ugrave; leurs commandes
+(<tt>EXEC_STRING</tt>) seront ex&eacute;cut&eacute;es. Reportez-vous
+&agrave; la section &rdquo;Spécification d'un
+hôte d'exécution éloigné&rdquo;, page 111<xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.19">.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="3" id="SAG.ClSrv.div.39" role="Procedure">
+<h1>Configuration du serveur de sessions pour la recherche d'un serveur
+de base de donn&eacute;es, d'ic&ocirc;nes ou d'aide<!---- <primary>Serveurs</primary><secondary>d'aide</secondary><tertiary>client de</tertiary>----> <!---- 
+<primary>Serveurs</primary><secondary>d'ic&ocirc;nes</secondary><tertiary>client de</tertiary>----> <!---- <primary>Serveurs</primary><secondary>bases de donn&eacute;es</secondary><tertiary>client de</tertiary>----> </h1>
+<ol>
+<li><p>Effectuez les configurations de r&eacute;seau du syst&egrave;me
+d'exploitation requises par le Bureau.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Mise
+en réseau du système d'exploitation de base pour le Bureau&rdquo;, page 96<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.6">.</p>
+</li>
+<li><p>Effectuez la configuration g&eacute;n&eacute;rale du Bureau
+requise pour les clients.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Configuration
+des clients et des serveurs du Bureau&rdquo;, page 101<xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.10">.</p>
+</li>
+<li><p>Ajoutez le serveur de base de donn&eacute;es, d'ic&ocirc;ne
+ou d'aide au chemin de recherche appropri&eacute;.</p>
+<ul remap="Bullet2">
+<li><p>Si vous avez plac&eacute; les fichiers de donn&eacute;es aux
+endroits indiqu&eacute;s dans l'<!--Original
+XRef content: 'Etape&numsp;3<xref role="Step" linkend="SAG.ClSrv.mkr.18">
+de la section &rdquo;Création d'un serveur de
+base de données, d'icônes ou d'aide<xref role="SectionTitle" linkend="SAG.ClSrv.mkr.17">,
+vous pouvez modifier le chemin de recherche de l'application.</p>
+</li>
+<li><p>Si vous avez enregistr&eacute; ces fichiers ailleurs, vous
+devez modifier le chemin de recherche sp&eacute;cifi&eacute;.</p>
+<p>Par exemple, si vous avez plac&eacute; les fichiers d'aide dans le r&eacute;pertoire <tt>/etc/dt/help</tt> du syst&egrave;me <code>SysCCC</code>, ajoutez
+la ligne suivante &agrave; /<tt>etc/dt/config/Xsession.d/0010.dtpaths</tt>:</p>
+<para remap="CodeIndent2"><computeroutput>DTSPSYSHELP=/net/SysCCC/etc/dt/help</computeroutput></p>
+<p>Pour plus de d&eacute;tails sur la d&eacute;finition des chemins de
+recherche, reportez-vous aux sections suivantes:</p>
+</li>
+<li><p>&rdquo;Chemin de recherche
+(Action/Types de données) de bases de données&rdquo;, page 128<xref role="SecTitleAndPageNum"
+linkend="SAG.Datab.mkr.12">.</p>
+</li>
+<li><p>&rdquo;Chemin de recherche
+d'icônes&rdquo;, page 130<xref role="SecTitleAndPageNum" linkend="SAG.Datab.mkr.13">.
+</p>
+</li>
+<li><p>&rdquo;Chemin de recherche
+d'aide&rdquo;, page 132<xref role="SecTitleAndPageNum" linkend="SAG.Datab.mkr.14">.
+</p>
+</li>
+<li><p>&rdquo;Définition
+de la valeur d'un chemin de recherche&rdquo;, page 123<xref role="SecTitleAndPageNum"
+linkend="SAG.Datab.mkr.6">.</p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+<div class="2" id="SAG.ClSrv.div.40">
+<h1>Configurations d'applications en r&eacute;seau sp&eacute;ciales</h1>
+<p>Cette section d&eacute;crit comment configurer des syst&egrave;mes pour
+ex&eacute;cuter des applications:</p>
+<ul remap="Bullet1">
+<li><p>ailleurs que sur le syst&egrave;me contenant l'action &mdash;
+sur un h&ocirc;te d'ex&eacute;cution &eacute;loign&eacute;;</p>
+</li>
+<li><p>localement sur des montages de syst&egrave;mes de fichiers.
+</p>
+</li>
+</ul>
+<div class="3" id="SAG.ClSrv.div.41">
+<h1 id="SAG.ClSrv.mkr.19">Sp&eacute;cification d'un h&ocirc;te d'ex&eacute;cution
+&eacute;loign&eacute;<!---- <primary>Ex&eacute;cution &agrave; distance</primary><secondary>avec une action &eacute;loign&eacute;e de l'application</secondary>----> </h1>
+<p>Dans une configuration de serveur d'applications typique, la d&eacute;finition
+des actions se trouve sur le m&ecirc;me syst&egrave;me que l'ex&eacute;cutable
+de l'application. Cependant,<!---- <primary>Actions</primary><secondary>lancement d'applications &agrave; distance</secondary>---->  des actions
+peuvent &ecirc;tre &eacute;crites pour ex&eacute;cuter des commandes sur d'autres
+syst&egrave;mes. Dans cette configuration, le syst&egrave;me contenant l'application
+s'appelle <em><!---- <primary>H&ocirc;te d'ex&eacute;cution</primary>
+<secondary>sp&eacute;cification</secondary>----> l'h&ocirc;te d'ex&eacute;cution</em>.<!---- <primary>EXEC_HOST, Voir h&ocirc;te d'ex&eacute;cution&lt;$nopage></primary>----> </p>
+<p>La d&eacute;finition des actions peut r&eacute;sider sur le serveur
+de sessions ou sur un syst&egrave;me qui fournit des services d'actions et
+de types de donn&eacute;es au serveur de sessions &mdash; appel&eacute;<em><!---- <primary>Serveurs</primary><secondary>bases de donn&eacute;es</secondary>----> <!---- <primary>H&ocirc;te d'ex&eacute;cution</primary><secondary>base de donn&eacute;es</secondary>----> 
+serveur
+de base de donn&eacute;es</em> ou <em>h&ocirc;te de base de donn&eacute;es</em>.</p>
+<p>Les d&eacute;finitions d'actions utilisent la zone <tt>EXEC_HOST</tt> pour indiquer o&ugrave; leurs commandes (<tt>EXEC_STRING</tt>) doivent &ecirc;tre ex&eacute;cut&eacute;es. Par exemple, la d&eacute;finition
+d'action suivante indique qu'un client <code>xload</code> doit &ecirc;tre
+ex&eacute;cut&eacute; sur un syst&egrave;me avec un nom h&ocirc;te <code>SysDDD</code>:</p>
+<listing>ACTION XloadSysDDD
+{
+   TYPE         COMMAND
+   EXEC_HOST    SysDDD
+   EXEC_STRING  /usr/bin/X11/xload -label SysDDD
+}</listing>
+<p>Si la zone <tt><!---- <primary>Zone</primary><secondary>EXEC_HOST</secondary><tertiary>valeurs multiples</tertiary>----> EXEC_HOST</tt>
+indique plusieurs noms d'h&ocirc;tes, le Bureau tente alors d'ex&eacute;cuter <tt>EXEC_STRING</tt> sur chaque h&ocirc;te, dans l'ordre, jusqu'&agrave;
+ce qu'il en trouve un capable d'ex&eacute;cuter l'action. Par exemple, la
+zone <tt>EXEC_HOST</tt> suivante indique que l'action doit d'abord
+essayer d'ex&eacute;cuter <tt>EXEC_STRING</tt> sur <code>SysDDD</code> et, en cas d'&eacute;chec, sur <code>SysEEE</code>.</p>
+<listing> EXEC_HOST SysDDD,SysEEE</listing>
+<p>Si la zone <tt><!---- <primary>Zone</primary><secondary>EXEC_HOST</secondary><tertiary>valeur par d&eacute;faut</tertiary>----> EXEC_HOST</tt> n'est pas d&eacute;finie pour une action, elle adopte par d&eacute;faut
+la valeur <tt>%DatabaseHost%</tt>. La valeur de <tt>%DatabaseHost%</tt> est obtenue &agrave; partir du chemin de recherche de la base
+de donn&eacute;es.</p>
+<p>Supposons, par exemple, que le chemin de recherche de la base de donn&eacute;es
+a &eacute;t&eacute; modifi&eacute; par l'ajout de la ligne ci-dessous &agrave; <tt>/etc/dt/config/Xsession.d/0010.dtpaths</tt>:</p>
+<p><!---- <primary>Chemin de recherche</primary><secondary>base de
+donn&eacute;es</secondary><tertiary>effet sur EXEC_HOST</tertiary>----> <!---- 
+<primary>Variable DTSPSYSDATABASEHOSTS</primary><secondary>effet sur la zone
+EXEC_HOST</secondary>----> <!---- <primary>Zone EXEC_HOST</primary>
+<secondary>affect&eacute;e par le chemin de recherche de la base de donn&eacute;es</secondary>----> </p>
+<listing>DTSPSYSDATABASEHOSTS=SysAAA:,/net/SysBBB/etc/dt/appconfig/types/C 
+</listing>
+<p><code>SysAAA</code> est indiqu&eacute; &agrave; l'aide de la syntaxe
+qualifi&eacute;e de l'h&ocirc;te &mdash; <tt>SysAAA:</tt>. Une
+d&eacute;finition d'actions trouv&eacute;e &agrave; l'aide de cet &eacute;l&eacute;ment
+du chemin de recherche donne la valeur <code>SysAAA</code> &agrave;
+l'h&ocirc;te de la base de donn&eacute;es. Cependant, une action trouv&eacute;e
+&agrave; l'aide de la partie <tt>/net/SysBBB</tt>&hellip; du chemin
+de recherche donne comme valeur &agrave; l'h&ocirc;te de la base de donn&eacute;es
+celle du syst&egrave;me local, car la syntaxe n'inclut pas le qualifiant de
+l'h&ocirc;te.</p>
+<div class="4" id="SAG.ClSrv.div.42">
+<h1><!---- <primary>H&ocirc;</primary>----> <!---- <primary>te d'ex&eacute;</primary>----> <!---- <primary>cution</primary>
+<secondary>configuration</secondary>----> Configuration de l'h&ocirc;te
+d'ex&eacute;cution &eacute;loign&eacute;</h1>
+<ol>
+<li><p>Effectuez les configurations de r&eacute;seau du syst&egrave;me
+d'exploitation requises par le Bureau.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Mise
+en réseau du système d'exploitation de base pour le Bureau&rdquo;, page 96<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.6">.</p>
+</li>
+<li><p>Effectuez la configuration g&eacute;n&eacute;rale du Bureau
+requise pour les serveurs.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Configuration
+des clients et des serveurs du Bureau&rdquo;, page 101<xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.10">.</p>
+</li>
+<li><p>V&eacute;rifiez que les applications sont correctement install&eacute;es
+et configur&eacute;es pour ex&eacute;cution locale.</p>
+</li>
+</ol>
+</div>
+<div class="4" id="SAG.ClSrv.div.43">
+<h1>Configuration des syst&egrave;mes contenant les d&eacute;finitions
+d'actions</h1>
+<ol>
+<li><p>Effectuez les configurations de r&eacute;seau du syst&egrave;me
+d'exploitation requises par le Bureau.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Mise
+en réseau du système d'exploitation de base pour le Bureau&rdquo;, page 96<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.6">.</p>
+</li>
+<li><p>Effectuez la configuration g&eacute;n&eacute;rale du Bureau
+requise pour les serveurs.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Configuration
+des clients et des serveurs du Bureau&rdquo;, page 101<xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.10">.</p>
+</li>
+<li><p>Cr&eacute;ez et installez les d&eacute;finitions d'actions
+et les groupes d'applications.</p>
+<p>Reportez-vous aux sections &rdquo;Création
+d'actions exécutant des applications sur des systèmes éloignés&rdquo;, page
+189<xref role="SecTitleAndPageNum" linkend="SAG.CrAct.mkr.32"> et <!--Original
+XRef content: '&rdquo;Création et administration de groupes d'applications
+généraux&rdquo;, page 50<xref role="SecTitleAndPageNum" linkend="SAG.CnfAM.mkr.10">.
+</p>
+</li>
+</ol>
+</div>
+<div class="4" id="SAG.ClSrv.div.44">
+<h1>Pour configurer le serveur de sessions</h1>
+<ol>
+<li><p>Fournissez les configurations de r&eacute;seau du syst&egrave;me
+d'exploitation requises par le Bureau.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Mise
+en réseau du système d'exploitation de base pour le Bureau&rdquo;, page 96<xref
+role="SecTitleAndPageNum" linkend="SAG.ClSrv.mkr.6">.</p>
+</li>
+<li><p>Effectuez la configuration g&eacute;n&eacute;rale du Bureau
+requise pour les clients.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Configuration
+des clients et des serveurs du Bureau&rdquo;, page 101<xref role="SecTitleAndPageNum"
+linkend="SAG.ClSrv.mkr.10">.</p>
+</li>
+<li><p>Modifiez le chemin de recherche des actions afin d'inclure
+l'h&ocirc;te de base de donn&eacute;es.</p>
+<p>Reportez-vous &agrave; la section &rdquo;Chemin
+de recherche (Action/Types de données) de bases de données&rdquo;, page 128<xref
+role="SecTitleAndPageNum" linkend="SAG.Datab.mkr.12">.</p>
+</li>
+<li><p>Modifiez le chemin de recherche des actions afin d'inclure
+l'h&ocirc;te d'ex&eacute;cution.</p>
+<p>Voir la section &rdquo;Chemin de recherche
+des applications&rdquo;, page 125<xref role="SecTitleAndPageNum" linkend="SAG.Datab.mkr.8">.
+</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="3" id="SAG.ClSrv.div.45">
+<h1><!---- <primary>Montages, ex&eacute;cution d'applications entre</primary>----> <!---- <primary>Applications</primary><secondary>ex&eacute;cution locale entre montages</secondary>----> <!---- 
+<primary>R&eacute;seau</primary><secondary>ex&eacute;cution d'applications
+entre montages</secondary>----> Ex&eacute;cution locale d'applications</h1>
+<p>La configuration standard du serveur d'applications permet d'ex&eacute;cuter
+des applications sur ce serveur. Il est parfois souhaitable d'installer une
+application sur un syst&egrave;me &eacute;loign&eacute;, mais de l'ex&eacute;cuter
+localement sur le serveur de sessions.</p>
+<object>
+<h1>Ex&eacute;cution entre points de montage</h1>
+<img id="SAG.ClSrv.grph.6" src="./graphics/nfsbased.png">
+</object>
+<div class="4" id="SAG.ClSrv.div.46">
+<h1>Configuration du serveur d'applications</h1>
+<p>Aucune configuration sp&eacute;ciale n'est requise.</p>
+</div>
+<div class="4" id="SAG.ClSrv.div.47">
+<h1>Configuration du serveur de sessions</h1>
+<ul>
+<li><p>Modifiez le chemin de recherche de l'application. Utilisez
+le chemin absolu local de l'application.</p>
+</li>
+</ul>
+<p>Par exemple, vous pouvez utiliser la d&eacute;finition de variable ci-dessous
+pour loacliser une application enregistr&eacute;e sur <code>sysAAA</code>
+:</p>
+<listing>DTSPSYSAPPHOSTS=/net/SysAAA/etc/dt/appconfig/appmanager/C
+</listing>
+<p>Le serveur de sessions doit &ecirc;tre capable d'acc&eacute;der aux
+fichiers de configuration de l'application, tels que les app-defaults, les
+catalogues de messages et les biblioth&egrave;ques r&eacute;parties.</p>
+</div>
+</div>
+</div>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
+<?Pub *0000085742>
+</body></html>

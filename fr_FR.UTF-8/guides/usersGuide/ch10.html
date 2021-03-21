@@ -1,0 +1,1400 @@
+<html><body>
+<!-- $XConsortium: ch10.sgm /main/11 1996/12/21 19:06:08 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="UG.TextE.div.1">
+<h1 id="UG.TextE.mkr.1">Utilisation de l'Editeur de texte</h1>
+<p><!---- <primary>Document</primary><secondary>r&eacute;tablissement</secondary>----> <!---- <primary>Document</primary><secondary>&eacute;dition</secondary>----> <!---- <primary>Texte</primary>
+<secondary>&eacute;dition</secondary>----> <!---- <primary>Edition</primary><secondary>texte ou document</secondary>----> Le pr&eacute;sent
+chapitre d&eacute;crit comment cr&eacute;er et &eacute;diter des documents
+courts, tels que des notes, des messages ou des fichiers de ressources &agrave;
+l'aide de l'Editeur de texte.</p>
+<informaltable id="UG.TextE.itbl.1" frame="All">
+<table cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Ouverture
+<a  role="JumpText" href="#UG.TextE.mkr.2" >et fermeture de l'Editeur de texte210</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Fenêtre
+<a  role="JumpText" href="#UG.TextE.mkr.3" >de l'Editeur de texte211</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Ouverture
+<a  role="JumpText" href="#UG.TextE.mkr.5" >et sauvegarde de documents212</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Déplacement
+<a  role="JumpText" href="#UG.TextE.mkr.8" >du curseur dans un document218</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Entrée
+<a  role="JumpText" href="#UG.TextE.mkr.6" >de texte216</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Edition
+<a  role="JumpText" href="#UG.TextE.mkr.9" >de texte221</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Recherche
+<a  role="JumpText" href="#UG.TextE.mkr.17" >de document229</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Formatage
+<a  role="JumpText" href="#UG.TextE.mkr.18" >et impression de documents231</a></p></td>
+</tr></tbody></table></informaltable>
+<div class="1" id="UG.TextE.div.2">
+<h1 id="UG.TextE.mkr.2">Ouverture et fermeture de l'Editeur de texte<!---- 
+<primary>Editeur de texte</primary><secondary>lancement</secondary>----> </h1>
+<p>Il existe plusieurs fa&ccedil;ons de lancer l'Editeur de texte &agrave;
+partir du Bureau.</p>
+<div class="2" id="UG.TextE.div.3" role="Procedure">
+<h1>Ouverture de l'Editeur de texte</h1>
+<ul remap="Bullet1">
+<li><p>Cliquez sur l'ic&ocirc;ne Editeur
+de texte du Tableau de bord.<!---- <primary>Editeur de texte</primary>
+<secondary>ic&ocirc;ne du Tableau de bord</secondary>----> <!---- 
+<primary>Tableau de bord</primary><secondary>ic&ocirc;ne de l'Editeur de texte</secondary>----> </p>
+</li>
+</ul>
+<img id="UG.TextE.igrph.1" src="./graphics/TEbutton.png">
+<ul remap="Bullet1">
+<li><p><em>Ou</em> ouvrez
+le panneau secondaire Applications
+personnelles du Tableau de bord et cliquez sur l'ic&ocirc;ne Editeur de texte.
+</p>
+</li>
+</ul>
+<img id="UG.TextE.igrph.2" src="./graphics/TEsubpan.png">
+<p>Vous pouvez &eacute;galement lancer l'Editeur de texte en tapant la
+commande suivante dans une fen&ecirc;tre de terminal:</p>
+<listing>dtpad <var">nom_fichier</var> &amp;</listing>
+<p>Le nom du fichier est facultatif.</p>
+</div>
+<div class="2" id="UG.TextE.div.4" role="Procedure">
+<h1>Fermeture de l'Editeur de texte<!---- <primary>Editeur de texte</primary><secondary>fermeture</secondary>----> </h1>
+<ul>
+<li><p>S&eacute;lectionnez Fermer dans le menu Fichier
+ou appuyez
+sur Alt+F4.</p>
+</li>
+</ul>
+<note>
+<p>Si la touche Alt ne figure pas sur votre clavier, demandez &agrave;
+l'administrateur syst&egrave;me d'identifier la touche correspondante.</p>
+</note>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.5">
+<h1 id="UG.TextE.mkr.3">Fen&ecirc;tre de l'Editeur de texte<!---- 
+<primary>Editeur de texte</primary><secondary>fen&ecirc;tre</secondary>----> </h1>
+<p>Vous pouvez cr&eacute;er et &eacute;diter un document dans la fen&ecirc;tre
+de l'Editeur de texte. La barre de titre affiche le nom du document courant.
+Un nouveau document est toujours appel&eacute; SANS TITRE.</p>
+<object>
+<h1>Fen&ecirc;tre de l'Editeur de texte</h1>
+<img id="UG.TextE.grph.1" src="./graphics/TEwindow.png">
+</object>
+<p>Vous pouvez &eacute;ventuellement afficher une ligne d'&eacute;tat indiquant
+le nombre de lignes du document et vous permettant d'atteindre un num&eacute;ro
+de ligne donn&eacute;.</p>
+<div class="2" id="UG.TextE.div.6" role="Procedure">
+<h1 id="UG.TextE.mkr.4">Affichage de la ligne d'&eacute;tat<!---- 
+<primary>Ligne d'&eacute;tat</primary><secondary>fen&ecirc;tre de l'Editeur
+de texte</secondary>----> <!---- <primary>Editeur de texte</primary>
+<secondary>ligne d'&eacute;tat</secondary>----> </h1>
+<p>La ligne d'&eacute;tat indique le num&eacute;ro de la ligne sur laquelle
+se trouve le curseur d'insertion et le nombre total de lignes d'un document.
+Elle affiche &eacute;galement les messages de l'Editeur de texte et indique
+si le mode de surimpression est activ&eacute;.</p>
+<img id="UG.TextE.igrph.3" src="./graphics/TEstatus.png">
+<ul>
+<li><p>S&eacute;lectionnez Ligne d'&eacute;tat dans
+le menu Options.
+Pour la supprimer, choisissez de nouveau cette option.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.7">
+<h1 id="UG.TextE.mkr.5">Ouverture et sauvegarde de documents<!---- 
+<primary>Editeur de texte</primary><secondary>ouverture d'un document</secondary>
+----> <!---- <primary>Editeur de texte</primary><secondary>sauvegarde
+d'un document</secondary>----> </h1>
+<p>Vous pouvez cr&eacute;er un nouveau document ou ouvrir un document existant.
+L'ouverture d'un document affiche le contenu du fichier s&eacute;lectionn&eacute;
+dans la fen&ecirc;tre de l'Editeur de texte.</p>
+<p>La sauvegarde permet d'enregistrer les modifications apport&eacute;es
+&agrave; un fichier. Vous pouvez sauvegarder un document sous son nom initial
+ou sous un autre nom de fichier.</p>
+<div class="2" id="UG.TextE.div.8" role="Procedure">
+<h1>Cr&eacute;ation d'un nouveau document</h1>
+<p>Un nouveau document appel&eacute; <code>(SANS TITRE)</code> est
+cr&eacute;&eacute; lorsque vous lancez l'Editeur de texte.<!---- <primary>Document</primary><secondary>cr&eacute;ation</secondary>----> <!---- 
+<primary>Cr&eacute;ation</primary><secondary>document</secondary>---->  Pour
+entrer du texte dans le document, reportez-vous &agrave; la section <!--Original
+XRef content: '&ldquo;Entrie de texte&ldquo;, page&numsp;21--><!--6<xref
+role="SecTitleAndPageNum" href="#ug.texte.mkr.6">. Vous le nommerez lors
+de
+son enregistrement.</p>
+<p>Lorsque vous avez termin&eacute; un document, vous pouvez en cr&eacute;er
+un autre &agrave; l'aide de la commande Nouveau.</p>
+<ul>
+<li><p>S&eacute;lectionnez Nouveau dans le menu Fichier.</p>
+<p>La fen&ecirc;tre de l'Editeur de texte s'efface et un nouveau document
+est cr&eacute;&eacute;. Si vous n'avez pas enregistr&eacute; le document courant,
+une bo&icirc;te de dialogue de confirmation s'affiche.</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.TextE.div.9" role="Procedure">
+<h1>Sauvegarde d'un document dans un nouveau fichier<!---- <primary>Document</primary><secondary>sauvegarde</secondary>----> <!---- 
+<primary>Sauvegarde</primary><secondary>document dans un nouveau fichier</secondary>
+----> <!---- <primary>Editeur de texte</primary><secondary>sauvegarde
+d'un document</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez Sauvegarder sous dans le
+menu Fichier.</p>
+<p>La bo&icirc;te de dialogue Sauvegarder sous r&eacute;pertorie les fichiers
+et les dossiers situ&eacute;s dans le dossier courant. Vous pouvez m&eacute;moriser
+le document dans le dossier courant, dans un sous-dossier ou dans un dossier
+sp&eacute;cifi&eacute;.</p>
+<p>Si vous avez s&eacute;lectionn&eacute; l'option Retour &agrave; la ligne
+automatique, la bo&icirc;te de dialogue comporte une option suppl&eacute;mentaire
+relative &agrave; la gestion des fins de ligne. Si la fonction de retour &agrave;
+la ligne automatique est d&eacute;sactiv&eacute;e, cette option n'appara&icirc;t
+pas dans la bo&icirc;te de dialogue. Reportez-vous &agrave; la section <!--Original
+XRef content: '&ldquo;Utilisation de l'option Retour
+` la li--><!--gne automatique&ldquo;,
+<a  role="SecTitleAndPageNum" href="#ug.texte.mkr.7" >page&numsp;217</a>.
+</p>
+<object>
+<h1>Bo&icirc;te de dialogue Sauvegarder sous</h1>
+<img id="ug.texte.grph.2" src="./graphics/TEsaveas.png">
+</object>
+</li>
+<li><p><em>Facultatif</em>. Si vous pr&eacute;f&eacute;rez
+ne pas enregistrer le fichier dans le dossier courant, s&eacute;lectionnez
+un sous-dossier ou indiquez un dossier diff&eacute;rent.</p>
+<ul remap="Bullet2">
+<li><p>Pour sauvegarder le fichier
+dans un sous-dossier, s&eacute;lectionnez
+celui-ci dans la liste correspondante et appuyez sur Entr&eacute;e.</p>
+</li>
+<li><p>Pour sauvegarder le fichier dans un autre dossier,
+utilisez
+l'ic&ocirc;ne .. (Monter) pour changer de dossier ou tapez son chemin d'acc&egrave;s
+dans la zone Entrez le chemin d'acc&egrave;s ou le nom du dossier.</p>
+</li>
+</ul>
+</li>
+<li><p>Tapez le nom du nouveau fichier dans la zone Entrez
+le nom
+du fichier.</p>
+</li>
+<li><p>Appuyez sur Entr&eacute;e ou cliquez sur OK.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.10" role="Procedure">
+<h1>Sauvegarde d'un document dans le fichier d'origine<!---- <primary>Editeur de texte</primary><secondary>sauvegarde d'un document</secondary>
+----> <!---- <primary>Sauvegarde</primary><secondary>document dans
+le fichier d'origine</secondary>----> </h1>
+<ul>
+<li><p>S&eacute;lectionnez Sauvegarder dans le menu
+Fichier pour
+sauvegarder votre travail et poursuivre l'&eacute;dition du document.</p>
+<p>Si vous avez s&eacute;lectionn&eacute; l'option Retour &agrave; la ligne
+automatique, la bo&icirc;te de dialogue Sauvegarder comporte une option suppl&eacute;mentaire
+relative &agrave; la gestion des fins de ligne. Reportez-vous &agrave; la
+section &ldquo;Utilisation de l'option Retour
+à la ligne automatique&ldquo;, page&numsp;217<xref role="SecTitleAndPageNum"
+href="#UG.TextE.mkr.7">.</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.TextE.div.11">
+<h1>Ouverture d'un document existant</h1>
+<p>Vous pouvez ouvrir un document existant de l'une des fa&ccedil;ons indiqu&eacute;es
+ci- dessous.<!---- <primary>Document</primary><secondary>ouverture d'un
+document&lt;$startrange></secondary>----> <!---- <primary>Ouverture</primary><secondary>document&lt;$startrange></secondary>----> </p>
+<ul remap="Bullet1">
+<li><p>Ouvrez le document dans l'Editeur
+de texte.</p>
+</li>
+<li><p>S&eacute;lectionnez l'ic&ocirc;ne de fichier dans
+le Gestionnaire
+de fichiers ou s&eacute;lectionnez Ouvrir sur le menu S&eacute;lectionn&eacute;(s)
+du Gestionnaire de fichiers.</p>
+</li>
+<li><p>Cliquez deux fois sur l'ic&ocirc;ne du fichier
+dans le Gestionnaire
+de fichiers.</p>
+</li>
+<li><p>Faites glisser l'ic&ocirc;ne du document vers l'ic&ocirc;ne
+Editeur de texte du Tableau de bord.</p>
+</li>
+</ul>
+<div class="3" id="UG.TextE.div.12" role="Procedure">
+<h1>Ouverture d'un document existant &agrave; partir de l'Editeur de texte</h1>
+<ol>
+<li><p>S&eacute;lectionnez Ouvrir dans le menu Fichier.</p>
+<p>La bo&icirc;te de dialogue Ouvrir un fichier r&eacute;pertorie les fichiers
+et les dossiers du dossier courant. Vous pouvez consulter les documents list&eacute;s
+ou ouvrir un autre dossier pour en afficher d'autres.</p>
+<object>
+<h1>Bo&icirc;te de dialogue Ouvrir un fichier</h1>
+<img id="ug.texte.grph.3" src="./graphics/TEopenfi.png">
+</object>
+</li>
+<li><p>S&eacute;lectionnez le document &agrave; ouvrir
+ou tapez son
+nom dans la zone Entrez le nom du fichier.</p>
+</li>
+<li><p>Appuyez sur Entr&eacute;e ou cliquez sur OK.</p>
+</li>
+</ol>
+<note>
+<p>Vous pouvez &eacute;galement utiliser le raccourci suivant: double
+clic sur le nom du document dans la bo&icirc;te de dialogue.</p>
+</note>
+</div>
+<div class="3" id="UG.TextE.div.13" role="Procedure">
+<h1>Ouverture d'un document existant &agrave; partir du Gestionnaire de
+fichiers</h1>
+<ol>
+<li><p>Affichez l'ic&ocirc;ne du document dans une fen&ecirc;tre
+du Gestionnaire de fichiers.<!---- <primary>Document</primary><secondary>ouverture d'un document</secondary>----> <!---- <primary>Gestionnaire
+de fichiers</primary><secondary>ouverture d'un document</secondary>----> </p>
+<object>
+<h1>Ic&ocirc;ne du document</h1>
+<img id="ug.texte.grph.4" src="./graphics/TEdataf.png">
+</object>
+</li>
+<li><p>Ouvrez le document de <em>l'une</em>
+des mani&egrave;res
+indiqu&eacute;es ci-dessous.</p>
+<ul remap="Bullet2">
+<li><p>Cliquez deux fois sur le document.</p>
+</li>
+<li><p>S&eacute;lectionnez le document, puis choisissez
+Ouvrir dans
+le menu S&eacute;lectionn&eacute;(s) du Gestionnaire de fichiers.</p>
+</li>
+<li><p>Faites glisser l'ic&ocirc;ne du document vers le
+Tableau de
+bord et posez-la sur celle de l'Editeur de texte.<!---- <primary>Document</primary><secondary>ouverture d'un document&lt;$endrange></secondary>----> <!---- 
+<primary>Ouverture</primary><secondary>document&lt;$endrange></secondary>
+----> </p>
+</li>
+</ul>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.14">
+<h1 id="UG.TextE.mkr.6">Entr&eacute;e de texte<!---- <primary>Editeur
+de texte</primary><secondary>entr&eacute;e de texte</secondary>----> <!---- 
+<primary>Texte</primary><secondary>entr&eacute;e</secondary>----> </h1>
+<p>Lors de la cr&eacute;ation d'un document, vous pouvez saisir et &eacute;diter
+le texte qu'il contient. Le curseur en forme de (<code>I</code>) vous
+indique la position &agrave; laquelle vous vous trouvez. Les caract&egrave;res
+sont ins&eacute;r&eacute;s sauf si vous &ecirc;tes en mode de surimpression.
+Reportez-vous &agrave; la section &ldquo;Activation
+du mode de surimpression&ldquo;, page&numsp;223<xref role="SecTitleAndPageNum"
+href="#UG.TextE.mkr.10">.</p>
+<div class="2" id="UG.TextE.div.15" role="Procedure">
+<h1>Entr&eacute;e d'un nouveau texte</h1>
+<ul>
+<li><p>Cliquez dans le document et commencez &agrave;
+taper le texte.</p>
+<p>Pour cr&eacute;er une nouvelle ligne, appuyez sur Entr&eacute;e. Vous
+pouvez &eacute;galement activer l'option Retour &agrave; la ligne automatique
+pour que le passage &agrave; la ligne s'effectue automatiquement lorsque vous
+atteignez le bord de la fen&ecirc;tre.</p>
+<p>Pour commencer un nouveau paragraphe, appuyez deux fois sur Entr&eacute;e.
+</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.TextE.div.16">
+<h1 id="UG.TextE.mkr.7">Utilisation de l'option Retour &agrave; la ligne
+automatique</h1>
+<p>Cette option permet de g&eacute;rer le passage &agrave; la ligne automatique
+en fonction de la largeur de la fen&ecirc;tre. Lorsque cette option est activ&eacute;e,
+le curseur passe automatiquement &agrave; la ligne suivante lorsqu'il atteint
+le bord de la fen&ecirc;tre. Les fins de ligne sont dynamiques; vous pouvez
+donc redimensionner la fen&ecirc;tre de l'Editeur de texte et<!---- 
+<primary>Document</primary><secondary>nouvelles lignes</secondary>----> 
+le texte s'ajuste automatiquement &agrave; la nouvelle largeur de la fen&ecirc;tre.
+</p>
+<p>Lorsque vous enregistrez le document, indiquez si vous souhaitez ajouter
+une coupure de ligne &agrave; la fin de chaque ligne ou conserver les coupures
+de ligne dynamiques. S&eacute;lectionnez alors l'une de ces deux options:
+</p>
+<ul remap="Bullet1">
+<li><p>Ajouter caract&egrave;res nouvelle
+ligne &agrave; la fin des
+lignes avec retour &agrave; la ligne automatique.</p>
+</li>
+<li><p><em>Ou</em> Ne pas ajouter de nouvelles
+lignes.
+Seuls les passages &agrave; la ligne &agrave; l'aide de la touche Entr&eacute;e
+seront pr&eacute;serv&eacute;s.</p>
+</li>
+</ul>
+<img id="UG.TextE.igrph.4" src="./graphics/TEwrapto.png">
+<div class="3" id="UG.TextE.div.17" role="Procedure">
+<h1>Activation ou d&eacute;sactivation du retour &agrave; la ligne automatique<!---- 
+<primary>Editeur de texte</primary><secondary>retour &agrave; la ligne automatique</secondary>----> <!---- <primary>Editeur de texte</primary><secondary>option Retour &agrave; la ligne automatique</secondary>----> <!---- 
+<primary>Texte</primary><secondary>retour &agrave; la ligne automatique</secondary>
+----> <!---- <primary>Document</primary><secondary>retour &agrave;
+la ligne</secondary>----> <!---- <primary>Retour &agrave; la ligne</primary>----> <!---- <primary>Retour &agrave; la ligne</primary>
+----> </h1>
+<ul>
+<li><p>Pour activer l'option Retour &agrave; la ligne
+automatique,
+cliquez sur le bouton correspondant du menu Options. Pour la d&eacute;sactiver,
+cliquez &agrave; nouveau sur le bouton.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="2" id="UG.TextE.div.18">
+<h1><!---- <primary>Editeur de texte</primary><secondary>caract&egrave;res
+sp&eacute;ciaux</secondary>----> <!---- <primary>Caract&egrave;res
+sp&eacute;ciaux</primary>----> <!---- <primary></primary><secondary>Editeur de texte</secondary>----> Entr&eacute;e de caract&egrave;res
+sp&eacute;ciaux</h1>
+<p>Les diff&eacute;rents syst&egrave;mes utilisent souvent certaines combinaisons
+de touches pour ins&eacute;rer des caract&egrave;res sp&eacute;ciaux. Dans
+certains cas, une combinaison donn&eacute;e peut &ecirc;tre r&eacute;serv&eacute;e
+par l'Editeur de texte. Par exemple, la lettre mn&eacute;monique de l'Editeur
+de texte pour l'affichage d'un menu peut &ecirc;tre identique &agrave; la
+s&eacute;quence de touches que vous souhaitez utiliser sur le clavier.</p>
+<p>Pour ins&eacute;rer le caract&egrave;re correct, modifiez le comportement
+de la lettre mn&eacute;monique r&eacute;serv&eacute;e en faisant pr&eacute;c&eacute;der
+la combinaison de touches par Ctrl+Q.</p>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.19">
+<h1 id="UG.TextE.mkr.8">D&eacute;placement du curseur dans un document<!---- 
+<primary>Editeur de texte</primary><secondary>d&eacute;placement du curseur</secondary>----> </h1>
+<p>Lorsque vous entrez et &eacute;ditez du texte, d&eacute;placez le curseur
+d'insertion &agrave; l'aide de la souris et des touches de d&eacute;placement
+du curseur du clavier. &Agrave; l'aide de la souris, amenez le pointeur &agrave;
+l'endroit voulu du document et cliquez sur le bouton gauche de la souris.<!---- 
+<primary>Navigation</primary><secondary>d&eacute;placement du curseur d'insertion</secondary>----> </p>
+<p>Vous pouvez &eacute;galement utiliser les touches de d&eacute;placement
+du curseur:<!---- <primary>Clavier</primary><secondary>d&eacute;placement
+du curseur</secondary>----> <!---- <primary>Editeur de texte</primary>
+<secondary>Touche d&eacute;placement du curseur</secondary>----> </p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="208*">
+<colspec colwidth="320*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Touche</p></td>
+<td align="left" valign="top"><p>Mouvement du curseur</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Fl&egrave;che vers le haut</p></td>
+<td align="left" valign="top"><p>Remonte d'une ligne.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Fl&egrave;che vers le bas</p></td>
+<td align="left" valign="top"><p>Descend d'une ligne.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Fl&egrave;che vers la gauche</p></td>
+<td align="left" valign="top"><p>Un caract&egrave;re vers la gauche.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Fl&egrave;che vers la droite</p></td>
+<td align="left" valign="top"><p>Un caract&egrave;re vers la droite.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+Fl&egrave;che vers la gauche</p></td>
+<td align="left" valign="top"><p>Un mot vers la gauche.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+Fl&egrave;che vers la droite</p></td>
+<td align="left" valign="top"><p>Un mot vers la droite.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Pos1</p></td>
+<td align="left" valign="top"><p>D&eacute;but de la ligne en cours.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Fin</p></td>
+<td align="left" valign="top"><p>Fin de la ligne en cours.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+Fl&egrave;che vers le haut</p></td>
+<td align="left" valign="top"><p>D&eacute;but du paragraphe pr&eacute;c&eacute;dent.
+</p></td></tr>
+<tr>
+<td align="left" valign="top">Ctrl+Fl&egrave;che vers le bas</td>
+<td align="left" valign="top"><p>D&eacute;but du paragraphe suivant.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+Pos1</p></td>
+<td align="left" valign="top"><p>D&eacute;but du document.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+Fin</p></td>
+<td align="left" valign="top"><p>Fin du document.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+G</p></td>
+<td align="left" valign="top"><p>Vers la zone Ligne de la ligne d'&eacute;tat.
+</p></td></tr></tbody></table></informaltable>
+<note>
+<p>Si le libell&eacute; des touches diff&egrave;re sur votre clavier, demandez
+&agrave; l'administrateur syst&egrave;me d'identifier les touches correspondantes.
+</p>
+</note>
+<div class="2" id="UG.TextE.div.20" role="Procedure">
+<h1>Passage &agrave; une ligne donn&eacute;e<!---- <primary>Document</primary><secondary>passage &agrave; une ligne donn&eacute;e du document</secondary>----> <!---- <primary>Navigation</primary><secondary>ligne donn&eacute;e du document</secondary>----> </h1>
+<ol>
+<li><p>Affichez la ligne d'&eacute;tat. Reportez-vous
+&agrave; la
+section &ldquo;Affichage de la ligne
+d'é<a  role="SecTitleAndPageNum" href="#UG.TextE.mkr.4" >tat&ldquo;, page&numsp;211</a>.
+</p>
+</li>
+<li><p>Appuyez sur Ctrl+G ou cliquez dans la zone Ligne
+de la ligne
+d'&eacute;tat.</p>
+</li>
+<li><p>Tapez le num&eacute;ro de la ligne sur laquelle
+positionner
+le curseur et appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.21" role="Procedure">
+<h1>D&eacute;filement d'un document</h1>
+<ul>
+<li><p>S&eacute;lectionnez et faites glisser la barre
+de d&eacute;filement
+vertical pour visualiser le texte. Utilisez la barre de d&eacute;filement
+horizontal pour visualiser les longues lignes de texte.</p>
+<p>Vous pouvez &eacute;galement utiliser les touches de d&eacute;filement
+:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="107*">
+<colspec colwidth="421*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Touche</p></td>
+<td align="left" valign="top"><p>Mouvement du curseur</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>PgAv</p></td>
+<td align="left" valign="top"><p>Remonte d'une page.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>PgAr</p></td>
+<td align="left" valign="top"><p>Descend d'une page.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+PgAv</p></td>
+<td align="left" valign="top"><p>Une page vers la gauche.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top">Ctrl+PgAr</td>
+<td align="left" valign="top"><p>Une page vers la droite.</p></td>
+</tr></tbody></table></informaltable>
+</li>
+</ul>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.22">
+<h1>S&eacute;lection<!---- <primary>S&eacute;lection secondaire</primary>
+<secondary>Editeur de texte</secondary>---->  de texte<!---- <primary>S&eacute;lection</primary><secondary>texte</secondary>----> <!---- 
+<primary>Texte</primary><secondary>s&eacute;lection</secondary>----> </h1>
+<p>Avant d'utiliser des commandes d'&eacute;dition (comme couper et coller)
+s&eacute;lectionnez d'abord le texte. Vous pouvez le faire &agrave; l'aide
+de la souris ou du clavier.</p>
+<div class="2" id="UG.TextE.div.23" role="Procedure">
+<h1>S&eacute;lection de texte &agrave; l'aide de la souris</h1>
+<ol>
+<li><p>Cliquez sur le d&eacute;but du texte que vous
+souhaitez s&eacute;lectionner.</p>
+</li>
+<li><p>Appuyez sur le bouton gauche de la souris et, tout
+en le maintenant
+enfonc&eacute;, faites glisser la souris jusqu'&agrave; la fin du texte.
+</p>
+</li>
+</ol>
+<p>Pour d&eacute;s&eacute;lectionner le texte, cliquez n'importe o&ugrave;
+dans la fen&ecirc;tre.</p>
+<note>
+<p>Pour modifier une s&eacute;lection, appuyez sur la touche Maj et sur
+le bouton gauche de la souris et maintenez-les enfonc&eacute;s. D&eacute;placez-vous
+ensuite vers l'avant ou vers l'arri&egrave;re pour s&eacute;lectionner le
+texte voulu. Vous pouvez &eacute;galement appuyer sur la touche Maj et l'une
+des touches de d&eacute;placement et les maintenir enfonc&eacute;es pour &eacute;tendre
+la s&eacute;lection.</p>
+</note>
+<p>Vous pouvez &eacute;galement utiliser les raccourcis suivants pour s&eacute;lectionner
+du texte:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="108*">
+<colspec colwidth="420*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Mot</p></td>
+<td align="left" valign="top"><p>Cliquez deux fois sur le mot.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Ligne</p></td>
+<td align="left" valign="top"><p>Cliquez trois fois sur la ligne.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Tout le texte</p></td>
+<td align="left" valign="top"><p>Cliquez quatre fois dans le texte.
+</p></td></tr></tbody></table></informaltable>
+</div>
+<div class="2" id="UG.TextE.div.24">
+<h1>S&eacute;lection secondaire</h1>
+<p>Cette m&eacute;thode permet de s&eacute;lectionner du texte et de le
+remplacer par une autre s&eacute;lection, utilis&eacute;e comme texte de remplacement.
+</p>
+<div class="3" id="UG.TextE.div.25" role="Procedure">
+<h1>Remplacement de texte &agrave; l'aide d'une s&eacute;lection secondaire</h1>
+<ol>
+<li><p>S&eacute;lectionnez le texte &agrave; remplacer.</p>
+</li>
+<li><p>Amenez le pointeur sur le d&eacute;but du texte
+qui remplacera
+la premi&egrave;re s&eacute;lection. Maintenez la touche Alt et le bouton
+2 de la souris enfonc&eacute;s et d&eacute;placez-vous jusqu'&agrave; la fin
+du texte &agrave; utiliser.</p>
+<p>Le texte est soulign&eacute;.</p>
+<note>
+<p>Si la touche Alt n'existe pas sur votre clavier, demandez &agrave; l'administrateur
+syst&egrave;me d'identifier la touche correspondante.</p>
+</note>
+</li>
+<li><p>Rel&acirc;chez la touche Alt et le bouton de la
+souris.</p>
+<p>Le texte soulign&eacute; &eacute;crase votre premi&egrave;re s&eacute;lection.
+</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="2" id="UG.TextE.div.26" role="Procedure">
+<h1>S&eacute;lection du texte &agrave; l'aide du clavier</h1>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="211*">
+<colspec colwidth="317*">
+<thead>
+<tr><td align="left" valign="bottom"><p>Texte &agrave; s&eacute;lectionner
+</p></td><td align="left" valign="bottom"><p>Action</p></td>
+</tr></thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Bloc de texte</p></td>
+<td align="left" valign="top"><p>Amenez le curseur sur le d&eacute;but
+du bloc de texte. Maintenez la touche Maj et l'une des touches de d&eacute;placement
+enfonc&eacute;es pour d&eacute;placer le curseur &agrave; la fin du bloc de
+texte.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Curseur au d&eacute;but de la ligne
+</p></td>
+<td align="left" valign="top"><p>Maj+Pos1</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Curseur &agrave; la fin de la ligne
+</p></td>
+<td align="left" valign="top"><p>Maj+Fin</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Curseur au d&eacute;but du paragraphe
+</p></td>
+<td align="left" valign="top"><p>Maj+Ctrl+Fl&egrave;che vers le haut
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Curseur &agrave; la fin du paragraphe
+</p></td>
+<td align="left" valign="top"><p>Maj+Ctrl+Fl&egrave;che vers le bas
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Curseur au d&eacute;but du document
+</p></td>
+<td align="left" valign="top"><p>Maj+Ctrl+Pos1</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Curseur &agrave; la fin du document
+</p></td>
+<td align="left" valign="top"><p>Maj+Ctrl+Fin</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Tout le texte</p></td>
+<td align="left" valign="top"><p>Ctrl+/</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>D&eacute;s&eacute;lectionner tout le
+texte</p></td>
+<td align="left" valign="top"><p>Ctrl+\</p></td></tr></tbody>
+</table></informaltable>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.27">
+<h1 id="UG.TextE.mkr.9">Edition de texte</h1>
+<p>Les modifications mineures peuvent se faire &agrave; l'aide des touches
+d'&eacute;dition. Vous pouvez &eacute;galement, &agrave; l'aide de ces touches,
+copier, d&eacute;placer ou supprimer des parties du texte, rechercher et modifier
+un mot ou une phrase et enfin v&eacute;rifier l'orthographe du document.
+</p>
+<div class="2" id="UG.TextE.div.28">
+<h1>Touches d'&eacute;dition<!---- <primary>Editeur de texte</primary>
+<secondary>touches d'&eacute;dition</secondary>----> </h1>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="160*">
+<colspec colwidth="368*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><code>Touche</code></p></td>
+<td align="left" valign="top"><p><code>Action</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Retour arri&egrave;re</p></td>
+<td align="left" valign="top"><p>Supprime le caract&egrave;re plac&eacute;
+avant le curseur.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Suppr</p></td>
+<td align="left" valign="top"><p>Supprime le caract&egrave;re plac&eacute;
+apr&egrave;s le curseur d'insertion.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+Retour arri&egrave;re</p></td>
+<td align="left" valign="top"><p>Supprime le mot pr&eacute;c&eacute;dent.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Maj+Retour arri&egrave;re</p></td>
+<td align="left" valign="top"><p>Supprime les caract&egrave;res de la
+position du curseur au d&eacute;but de la ligne.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+Suppr</p></td>
+<td align="left" valign="top"><p>Supprime les caract&egrave;res de la
+position du curseur &agrave; la fin de la ligne en cours.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Inser</p></td>
+<td align="left" valign="top"><p>Alterne entre les modes de surimpression
+et d'insertion.</p></td></tr></tbody></table></informaltable>
+</div>
+<div class="2" id="UG.TextE.div.29">
+<h1><!---- <primary>Editeur de texte</primary><secondary>raccourci
+clavier</secondary>----> <!---- <primary>Touche</primary><secondary>raccourci clavier</secondary><tertiary>Editeur de texte</tertiary>----> Touches
+de raccourci clavier</h1>
+<p>Vous pouvez &eacute;galement utiliser ces touches de raccourci lors
+de modifications.</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="158*">
+<colspec colwidth="370*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Ctrl+C</p></td>
+<td align="left" valign="top"><p>Copie le texte s&eacute;lectionn&eacute;.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+X</p></td>
+<td align="left" valign="top"><p>Coupe le texte s&eacute;lectionn&eacute;.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+V</p></td>
+<td align="left" valign="top"><p>Colle le texte s&eacute;lectionn&eacute;.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+F</p></td>
+<td align="left" valign="top"><p>Recherche/remplace le texte.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Ctrl+Z</p></td>
+<td align="left" valign="top"><p>Annule les commandes Couper, Supprimer,
+Effacer, Inclure, Copier ou Coller.</p></td></tr></tbody></table>
+</informaltable>
+</div>
+<div class="2" id="UG.TextE.div.30">
+<h1>Association de fonctions aux touches Unix<!---- <primary>Editeur
+de texte</primary><secondary>&eacute;dition de liens entre touches UNIX (Emacs)</secondary>----> </h1>
+<p>L'association de fonctions aux touches UNIX<superscript>TM</superscript>
+permet d'utiliser un ensemble de touches Emacs &eacute;tendues, telles que
+Alt+B (mot pr&eacute;c&eacute;dent) ou Ctrl+N (ligne suivante), dans l'Editeur
+de texte. Pour activer l'association de fonctions aux touches UNIX (d&eacute;sactiv&eacute;e
+par d&eacute;faut), modifiez un fichier dans votre r&eacute;pertoire personnel.
+</p>
+<div class="3" id="UG.TextE.div.31" role="Procedure">
+<h1><!---- <primary>Edition</primary><secondary>liens entre touches
+UNIX</secondary>----> Activation de l'association de fonctions aux touches
+UNIX</h1>
+<ol>
+<li><p>Ajoutez la ligne suivante au fichier <tt>.Xdefaults</tt> de votre r&eacute;pertoire personnel:</p>
+<listing> #include "/usr/dt/app-defaults/<symbol>langue</var>/UNIXbindings"
+</listing>
+<p>Remplacez <em>langue</em> par le nom de votre environnement
+de langue.</p>
+<p>Si le fichier <tt>.Xdefaults</tt> n'existe pas, cr&eacute;ez-le
+dans votre r&eacute;pertoire personnel.</p>
+</li>
+<li><p>D&eacute;connectez-vous de la session en cours.</p>
+</li>
+<li><p>Reconnectez-vous et relancez l'Editeur de texte.</p>
+</li>
+</ol>
+<p>Certains raccourcis de l'Editeur de texte sont en conflit avec l'association
+de fonctions aux touches UNIX. Lorsque cette derni&egrave;re est activ&eacute;e,
+l'&eacute;diteur d'association de fonctions aux touches UNIX propose d'autres
+raccourcis pour les commandes suivantes:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="228*">
+<colspec colwidth="228*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Commande</p></td>
+<td align="left" valign="top"><p>Autre raccourci</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Rechercher/Remplacer (Ctrl+F)</p></td>
+<td align="left" valign="top"><p>Ctrl+S</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Coller (Ctrl+V)</p></td>
+<td align="left" valign="top"><p>Maj+Inser</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Imprimer (Ctrl+P)</p></td>
+<td align="left" valign="top"><p>pas d'autre raccourci</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Annuler (Ctrl+Z)</p></td>
+<td align="left" valign="top"><p>Ctrl+_</p></td></tr></tbody>
+</table></informaltable>
+<p>Pour modifier ces raccourcis, copiez le fichier <tt>/usr/dt/app-
+defaults/</tt><symbol>langue</var><tt>/UNIXbindings</tt>
+dans votre fichier <tt>.Xdefaults</tt>, puis &eacute;ditez-le.
+</p>
+<note>
+<p>Lorsque l'association de fonctions aux touches UNIX est activ&eacute;e,
+la touche Suppr supprime le caract&egrave;re pr&eacute;c&eacute;dent et non
+celui qui suit le curseur.</p>
+</note>
+</div>
+</div>
+<div class="2" id="UG.TextE.div.32" role="Procedure">
+<h1 id="UG.TextE.mkr.10">Activation du mode de surimpression</h1>
+<p><!---- <primary>Mode de surimpression</primary><secondary>Editeur
+de texte</secondary>----> A mesure de la saisie, de nouveaux caract&egrave;res
+sont ins&eacute;r&eacute;s. Pour &eacute;craser les caract&egrave;res existants,
+passez en mode de surimpression.</p>
+<ul remap="Bullet1">
+<li><p>S&eacute;lectionnez Surimprimer
+sur le menu Options. Pour
+revenir au mode d'insertion, choisissez de nouveau cette option.</p>
+</li>
+<li><p><em>Ou</em> utilisez la touche Inser
+pour alterner
+entre les modes d'insertion et de surimpression.</p>
+<p>Lorsque le mode de surimpression est activ&eacute;, le curseur se transforme
+en un bloc ( z ). Si vous utilisez souvent le mode de surimpression, affichez
+la ligne d'&eacute;tat (section &ldquo;Affichage
+de la ligne d'état&ldquo;, page&numsp;211<xref role="SecTitleAndPageNum"
+href="#UG.TextE.mkr.4">) car celle-ci indique si le mode de surimpression
+est actif ou non.</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.TextE.div.33" role="Procedure">
+<h1>Ecrasement de texte</h1>
+<ol>
+<li><p>S&eacute;lectionnez le texte.</p>
+</li>
+<li><p>Tapez le texte de remplacement.</p>
+<p>Vous pouvez &eacute;galement s&eacute;lectionner l'option Surimpression
+dans le menu Options pour d&eacute;sactiver le mode d'insertion et &eacute;craser
+directement le texte.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.34" role="Procedure">
+<h1>Suppression de texte<!---- <primary>Suppression</primary><secondary>texte</secondary>----> <!---- <primary>Texte</primary><secondary>suppression</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez le texte.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Supprimer dans le
+menu Editer
+ou appuyez sur la touche Suppr.</p>
+</li>
+</ol>
+<p>Vous ne pouvez coller du texte supprim&eacute;. Par contre, vous pouvez
+le r&eacute;cup&eacute;rer &agrave; l'aide de la commande Annuler. Reportez-vous
+&agrave; la section &ldquo;Annulation d'une édition&ldquo;,
+<a  role="SecTitleAndPageNum" href="#UG.TextE.mkr.11" >page&numsp;224</a>.
+</p>
+<p>Pour r&eacute;utiliser ult&eacute;rieurement le texte &agrave; supprimer,
+utilisez la commande Couper. Reportez-vous &agrave; la section <!--Original
+XRef content: '&ldquo;Déplacement de texte (couper-coller)&ldquo;, page&numsp;225<xref
+role="SecTitleAndPageNum" href="#UG.TextE.mkr.12">.</p>
+</div>
+<div class="2" id="UG.TextE.div.35" role="Procedure">
+<h1>Effacement de texte</h1>
+<p>La commande Effacer remplace le texte s&eacute;lectionn&eacute; par
+des espaces ou des lignes blanches.</p>
+<ol>
+<li><p>S&eacute;lectionnez le texte &agrave; effacer.</p>
+</li>
+<li><p>S&eacute;lectionnez Effacer dans le menu Editer.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.36" role="Procedure">
+<h1 id="UG.TextE.mkr.11">Annulation d'une &eacute;dition<!---- <primary>Editeur de texte</primary><secondary>commande Annuler</secondary>----> <!---- 
+<primary>Commande</primary><secondary>Annuler</secondary><tertiary>Editeur
+de texte</tertiary>----> </h1>
+<ul>
+<li><p>S&eacute;lectionnez D&eacute;faire dans le menu
+Editer ou
+appuyez sur Ctrl+Z.</p>
+<p>Cette option annule la derni&egrave;re commande (Couper, Coller, Effacer,
+Supprimer, Remplacer, Inclure ou op&eacute;ration de formatage).</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.TextE.div.37" role="Procedure">
+<h1>Copie de texte<!---- <primary>Copie</primary><secondary>texte</secondary>----> <!---- <primary>Texte</primary><secondary>copie</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez le texte &agrave; copier.</p>
+</li>
+<li><p>S&eacute;lectionnez Copier dans le menu Editer
+ou appuyez
+sur Ctrl+C.</p>
+<p>Une copie du texte est stock&eacute;e dans le presse-papiers; d'autres
+applications peuvent y acc&eacute;der ou la remplacer.</p>
+</li>
+<li><p>Cliquez &agrave; l'endroit o&ugrave; ins&eacute;rer
+le texte.</p>
+</li>
+<li><p>S&eacute;lectionnez Coller dans le menu Editer
+ou appuyez
+sur Ctrl+V.</p>
+<p>Vous pouvez &eacute;galement utiliser la m&eacute;thode glisser-d&eacute;placer
+pour copier du texte (reportez- vous &agrave; la section <!--Original XRef
+content: '&ldquo;Copie de texte à l'aide des commandes Faire glisser et Poser&ldquo;,
+<a  role="SecTitleAndPageNum" href="#UG.TextE.mkr.15" >page&numsp;228</a>).
+</p>
+</li>
+</ol>
+<note>
+<p>Utilisez le raccourci suivant pour copier un mot ou une phrase: s&eacute;lectionnez
+le texte, amenez le pointeur &agrave; l'endroit o&ugrave; ins&eacute;rer le
+texte et cliquez sur le bouton 2 de la souris. Il s'agit d'un moyen simple
+de copier du texte dans une bo&icirc;te de dialogue.</p>
+</note>
+</div>
+<div class="2" id="UG.TextE.div.38" role="Procedure">
+<h1 id="UG.TextE.mkr.12">D&eacute;placement de texte (couper-coller)<!---- 
+<primary>Texte</primary><secondary>couper-coller</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez le texte.</p>
+</li>
+<li><p>S&eacute;lectionnez Couper dans le menu Editer
+ou appuyez
+sur Ctrl+X.</p>
+<p>Le texte est effac&eacute; et m&eacute;moris&eacute; dans le Presse-papiers
+; d'autres applications peuvent y acc&eacute;der et le remplacer.</p>
+</li>
+<li><p>Positionnez le curseur &agrave; l'endroit o&ugrave;
+ins&eacute;rer
+le texte.</p>
+</li>
+<li><p>S&eacute;lectionnez Coller dans le menu Editer
+ou appuyez
+sur Ctrl+V.</p>
+<p>Vous pouvez &eacute;galement utiliser la m&eacute;thode glisser-d&eacute;placer
+pour d&eacute;placer le texte. Reportez-vous &agrave; la section <!--Original
+XRef content: '&ldquo;Déplacement de texte à l'aide des commandes Faire glisser
+<a  role="SecTitleAndPageNum" href="#UG.TextE.mkr.14" >et Poser&ldquo;, page&numsp;228</a>.
+</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.39" role="Procedure">
+<h1>V&eacute;rification orthographique<!---- <primary>Orthographe</primary><secondary>correction</secondary><tertiary>Editeur de texte</tertiary>
+----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez V&eacute;rif. orthographe
+dans le menu
+Editer.</p>
+<p>Une bo&icirc;te de dialogue affiche les mots erron&eacute;s ou inconnus.
+</p>
+<object>
+<h1>Bo&icirc;te de dialogue Orthographe</h1>
+<img id="ug.texte.grph.5" src="./graphics/TEspell.png">
+</object>
+</li>
+<li><p>S&eacute;lectionnez le mot recherch&eacute; dans
+la liste
+Mots mal orthographi&eacute;s et appuyez sur Entr&eacute;e. Vous pouvez &eacute;galement
+cliquer deux fois sur le mot.</p>
+<p>L'occurrence suivante du mot est mise en &eacute;vidence dans le document.
+</p>
+</li>
+<li><p>Tapez le mot correct dans la zone Modifier en.</p>
+</li>
+<li><p>Cliquez sur Modifier pour remplacer une seule occurrence.
+</p>
+</li>
+<li><p>Cliquez sur Rechercher, puis Modifier pour remplacer
+les autres
+occurrences.</p>
+<p>Vous pouvez &eacute;galement cliquer sur Tout modifier pour remplacer
+toutes les occurrences.</p>
+</li>
+<li><p>Cliquez sur Fermer lorsque vous avez fini.</p>
+</li>
+</ol>
+<note>
+<p>Cette fonction n'est disponible qu'en anglais.</p>
+</note>
+</div>
+<div class="2" id="UG.TextE.div.40" role="Procedure">
+<h1 id="UG.TextE.mkr.13">Inclusion d'un fichier<!---- <primary>Document</primary><secondary>inclusion d'un fichier</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>inclusion</secondary>----> </h1>
+<p>Vous pouvez ins&eacute;rer un fichier de texte dans le document, utiliser
+l'option de menu appropri&eacute;e ou faire glisser le fichier &agrave; partir
+de la fen&ecirc;tre de l'Editeur de texte. Reportez-vous &agrave; la section <!--Original
+XRef content: '&ldquo;Inclusion d'un fichier à l'aide des commandes Faire
+glisser et Poser&ldquo;, page&numsp;228<xref role="SecTitleAndPageNum"
+href="#UG.TextE.mkr.16">.</p>
+<ol>
+<li><p>Placez le curseur &agrave; l'endroit o&ugrave;
+ins&eacute;rer
+le fichier de texte.</p>
+</li>
+<li><p>S&eacute;lectionnez Inclure dans le menu Fichier.</p>
+<p>La bo&icirc;te de dialogue Inclure un fichier r&eacute;pertorie les
+fichiers et les dossiers du syst&egrave;me. Vous pouvez consulter les documents
+r&eacute;pertori&eacute;s ou ouvrir un autre dossier pour en afficher d'autres.
+</p>
+<object>
+<h1>Bo&icirc;te de dialogue Inclure un fichier</h1>
+<img id="ug.texte.grph.6" src="./graphics/TEinclud.png">
+</object>
+</li>
+<li><p>S&eacute;lectionnez le document &agrave; ins&eacute;rer,
+&agrave;
+partir de la liste Fichiers.</p>
+</li>
+<li><p>Appuyez sur Entr&eacute;e ou cliquez sur OK.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.41">
+<h1>Utilisation de la m&eacute;thode &ldquo;Faire glisser/d&eacute;placer&rdquo;<!---- 
+<primary>Editeur de texte</primary><secondary>faire glisser et poser</secondary>
+----> <!---- <primary>Texte</primary><secondary>faire glisser</secondary>
+----> <!---- <primary>Texte</primary><secondary>pose</secondary>
+----> <!---- <primary>Faire glisser</primary><secondary>texte</secondary>
+----> <!---- <primary>Pose</primary><secondary>texte</secondary>
+----> <!---- <primary>Fichier</primary><secondary>pose</secondary>
+----> <!---- <primary>Fichier</primary><secondary>inclusion</secondary>
+----> <!---- <primary>Document</primary><secondary>inclusion</secondary>
+----> <!---- <primary>Faire glisser et poser</primary><secondary>Editeur de texte</secondary>----> </h1>
+<p>Vous pouvez utiliser les commandes Faire glisser et Poser pour d&eacute;placer
+ou copier du texte entre des documents de l'Editeur de texte ou d'autres applications.
+Vous pouvez inclure un fichier dans un document &agrave; l'aide de ces commandes.
+</p>
+<div class="2" id="UG.TextE.div.42" role="Procedure">
+<h1 id="UG.TextE.mkr.14">D&eacute;placement de texte &agrave; l'aide des
+commandes Faire glisser et Poser</h1>
+<ol>
+<li><p>S&eacute;lectionnez le texte &agrave; d&eacute;placer.</p>
+</li>
+<li><p>Amenez le pointeur sur la s&eacute;lection, appuyez
+sur le
+bouton 1 de la souris et, tout en le maintenant enfonc&eacute;, faites glisser
+le texte &agrave; l'endroit o&ugrave; vous souhaitez l'ins&eacute;rer.</p>
+</li>
+<li><p>Rel&acirc;chez le bouton de la souris.</p>
+<p>Le texte est ins&eacute;r&eacute; dans le document en fonction de la
+position de l'ic&ocirc;ne de glissement.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.43" role="Procedure">
+<h1 id="UG.TextE.mkr.15">Copie de texte &agrave; l'aide des commandes Faire
+glisser et Poser</h1>
+<ol>
+<li><p>S&eacute;lectionnez le texte &agrave; copier.</p>
+</li>
+<li><p>Positionnez le pointeur sur la s&eacute;lection,
+appuyez sur
+la touche Ctrl et sur le bouton gauche de la souris et, tout en les maintenant
+enfonc&eacute;s, faites glisser le texte &agrave; l'endroit o&ugrave; vous
+souhaitez le copier.</p>
+</li>
+<li><p>Rel&acirc;chez la touche Ctrl et le bouton de la
+souris.</p>
+<p>Le texte est copi&eacute; &agrave; l'emplacement de l'ic&ocirc;ne de
+glissement.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.44" role="Procedure">
+<h1 id="UG.TextE.mkr.16">Inclusion d'un fichier &agrave; l'aide des commandes
+Faire glisser et Poser</h1>
+<p><!---- <primary>Faire glisser</primary><secondary>fichier vers l'Editeur
+de texte</secondary>----> <!---- <primary>Pose</primary><secondary>fichier</secondary><tertiary>Editeur de texte</tertiary>----> Lorsque
+vous utilisez ces commandes, le contenu du fichier est copi&eacute; dans la
+fen&ecirc;tre de l'Editeur de texte, &agrave; l'endroit o&ugrave; se trouve
+le curseur d'insertion. Le fichier d'origine reste intact.</p>
+<ol>
+<li><p>Cliquez dans le document &agrave; l'endroit o&ugrave;
+ins&eacute;rer
+le fichier.</p>
+</li>
+<li><p>Faites glisser l'ic&ocirc;ne du fichier &agrave;
+ins&eacute;rer
+dans la fen&ecirc;tre de l'Editeur de texte.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.45">
+<h1 id="UG.TextE.mkr.17">Recherche de document<!---- <primary>Document</primary><secondary>recherche</secondary>----> <!---- <primary>Remplacement</primary><secondary>Editeur de texte</secondary>----> </h1>
+<p>Vous pouvez rechercher un mot ou une phrase dans un document. La recherche
+commence &agrave; partir de la position du curseur d'insertion et porte sur
+le document complet. Vous pouvez remplacer ou supprimer automatiquement les
+occurrences rencontr&eacute;es.</p>
+<p>L'utilitaire de recherche distingue les majuscules des minuscules. Pour
+trouver toutes les occurrences, recherchez le texte en majuscules et en minuscules.
+</p>
+<div class="2" id="UG.TextE.div.46" role="Procedure">
+<h1>Recherche de texte<!---- <primary>Texte</primary><secondary>recherche
+dans l'Editeur de texte</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez Rechercher/Modifier dans
+le menu Editer
+ou appuyez sur Ctrl+F.</p>
+<object>
+<h1>Bo&icirc;te de dialogue Rechercher/Modifier</h1>
+<img id="ug.texte.grph.7" src="./graphics/TEfindch.png">
+</object>
+</li>
+<li><p>Entrez le texte dans la zone Rechercher.</p>
+</li>
+<li><p>Appuyez sur Entr&eacute;e ou cliquez sur le bouton
+Rechercher
+pour rechercher l'occurrence suivante.</p>
+</li>
+<li><p>Pour trouver d'autres occurrences, appuyez &agrave;
+nouveau
+sur Entr&eacute;e ou sur Rechercher.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.47" role="Procedure">
+<h1>Recherche/Remplacement de texte</h1>
+<ol>
+<li><p>S&eacute;lectionnez Rechercher/Modifier dans
+le menu Editer
+ou appuyez sur Ctrl+F.</p>
+</li>
+<li><p>Entrez le texte dans la zone Rechercher.</p>
+</li>
+<li><p>Tapez le texte de remplacement dans la zone Modifier
+en.</p>
+</li>
+<li><p>Appuyez sur Entr&eacute;e ou cliquez sur le bouton
+Rechercher
+pour rechercher l'occurrence suivante.</p>
+</li>
+<li><p>Cliquez sur Modifier pour remplacer une seule occurrence.
+</p>
+</li>
+<li><p>Cliquez sur Rechercher, puis Modifier pour remplacer
+les autres
+occurrences.</p>
+<p>Vous pouvez &eacute;galement cliquer sur Tout modifier pour remplacer
+toutes les occurrences.</p>
+<caution>
+<p>Vous ne pouvez annuler cette commande.</p>
+</caution>
+</li>
+<li><p>Cliquez sur Fermer lorsque vous avez fini.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.48" role="Procedure">
+<h1>Recherche et suppression de texte</h1>
+<ol>
+<li><p>S&eacute;lectionnez Rechercher/Modifier dans
+le menu Editer
+ou appuyez sur Ctrl+F.</p>
+</li>
+<li><p>Entrez le texte &agrave; supprimer dans la zone
+Rechercher.</p>
+</li>
+<li><p>Laissez en blanc la zone Modifier en.</p>
+</li>
+<li><p>Appuyez sur Entr&eacute;e ou cliquez sur Rechercher
+pour rechercher
+l'occurrence suivante.</p>
+</li>
+<li><p>Cliquez sur Modifier pour supprimer une seule occurrence.
+</p>
+</li>
+<li><p>Cliquez sur Rechercher, puis Modifier pour remplacer
+les autres
+occurrences.</p>
+<p>Vous pouvez &eacute;galement cliquer sur Tout modifier pour remplacer
+toutes les occurrences.</p>
+</li>
+<li><p>Cliquez sur Fermer lorsque vous avez fini.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.49">
+<h1 id="UG.TextE.mkr.18">Formatage et impression de documents<!---- 
+<primary>Editeur de texte</primary><secondary></secondary>----> </h1>
+<p>Lorsque vous avez fini d'&eacute;diter votre document, formatez-le en
+d&eacute;finissant les marges et l'alignement du texte.</p>
+<div class="2" id="UG.TextE.div.50" role="Procedure">
+<h1>Formatage d'un document<!---- <primary>Editeur de texte</primary>
+<secondary>formatage de documents</secondary>----> <!---- <primary>Marges</primary><secondary>document</secondary>----> <!---- <primary>Document</primary><secondary>marges</secondary>----> <!---- <primary>Alignement</primary><secondary>Editeur de texte</secondary>----> <!---- 
+<primary>Document</primary><secondary>alignement du texte</secondary>----> <!---- 
+<primary>Texte</primary><secondary>alignement</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez Param&egrave;tres dans le
+menu Format.</p>
+<object>
+<h1>Bo&icirc;te de dialogue Param&egrave;tres de mise en forme</h1>
+<img id="ug.texte.grph.8" src="./graphics/TEformat.png">
+</object>
+</li>
+<li><p>Entrez la valeur des marges.</p>
+<p>La marge gauche par d&eacute;faut a pour valeur 0 et la marge droite
+est fix&eacute;e &agrave; la largeur de la fen&ecirc;tre de l'Editeur de texte.
+L'unit&eacute; de mesure des marges est le nombre de colonnes de caract&egrave;res.
+</p>
+</li>
+<li><p>S&eacute;lectionnez l'alignement &agrave; gauche,
+&agrave; droite, justifi&eacute; (style du bloc), ou centr&eacute;.<!---- 
+<primary>Texte</primary><secondary>alignement</secondary>----> </p>
+</li>
+<li><p>D&eacute;terminez l'&eacute;tendue du formatage.</p>
+<ul remap="Bullet2">
+<li><p>Pour formater un seul paragraphe,
+placez le curseur dans celui-ci, puis cliquez sur Paragraphe.</p>
+</li>
+<li><p>Pour formater le document complet, cliquez sur
+Tout.</p>
+</li>
+</ul>
+</li>
+<li><p>Pour appliquer les param&egrave;tres de formatage
+apr&egrave;s avoir ferm&eacute; la bo&icirc;te de dialogue, s&eacute;lectionnez
+Paragraphe ou Tout dans le menu Format.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.51" role="Procedure">
+<h1 id="UG.TextE.mkr.18a">Impression d'un document ouvert avec les options
+par d&eacute;faut</h1>
+<!---- <primary>Editeur de texte</primary><secondary>impression d'un document
+avec options par d&eacute;faut</secondary>----> <!---- <primary>impression</primary><secondary>document avec options par d&eacute;faut</secondary>
+----> <!---- <primary>document</primary><secondary>impression avec
+options par d&eacute;faut</secondary>----> 
+<ol>
+<li><p>Ouvrez le document &agrave; l'aide de l'Editeur de texte.
+</p>
+</li>
+<li><p>Choisissez Imprimer sur le menu Fichier.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.51a" role="Procedure">
+<h1 id="UG.TextE.mkr.18b">Impression d'un document ouvert avec des options
+sp&eacute;cifiques</h1>
+<!---- <primary>Editeur de texte</primary><secondary>impression d'un document
+avec des options sp&eacute;cifiques</secondary>----> <!---- <primary>impression</primary><secondary>document avec options sp&eacute;cifiques</secondary>
+----> <!---- <primary>document</primary><secondary>impression avec
+options sp&eacute;cifiques</secondary>----> 
+<ol>
+<li><p>Ouvrez le document &agrave; l'aide de l'Editeur de texte.
+</p>
+</li>
+<li><p>Choisissez Imprimer... sur le menu Fichier ou appuyez sur
+Ctrl+P.</p>
+<p>La bo&icirc;te de dialogue Imprimer appara&icirc;t.</p>
+<object>
+<h1>Bo&icirc;te de dialogue Imprimer</h1>
+<img id="UG.TextE.grph.9" src="./graphics/TEprint.png">
+</object>
+<ul remap="Bullet2">
+<li><p>Pour s&eacute;lectionner une autre imprimante, tapez le nouveau
+nom d'imprimante dans le champ Nom de l'imprimante.</p>
+</li>
+<li><p>Pour produire des copies multiples, sp&eacute;cifiez le nombre
+d'exemplaires dans le champ Copies.</p>
+</li>
+<li><p>Pour imprimer dans un fichier, cliquez dans la case &agrave;
+cocher Fichier d'impression et sp&eacute;cifiez les chemin d'acc&egrave;s
+et nom complet du fichier cible.</p>
+</li>
+<li><p>Pour renvoyer automatiquement &agrave; la ligne les longues
+lignes en fonction de la taille de la page, cliquez dans la case &agrave;
+cocher Utiliser renvoi &agrave; la ligne.</p>
+</li>
+<li><p>Pour d&eacute;finir les marges des pages imprim&eacute;es,
+tapez les valeurs d&eacute;sir&eacute;es dans les champs Haut, Gauche, Droite
+et Bas. Vous pouvez sp&eacute;cifier les marges en pouces (<em>in</em>,
+de l'anglais <em>inches</em>), centim&egrave;tres (cm) ou pixels
+(pi). La valeur par d&eacute;faut pour chaque type de marge est d'un pouce
+(1 in = 2,54 cm). Si aucune unit&eacute; de mesure n'est sp&eacute;cifi&eacute;e,
+le syst&egrave;me utilise des pixels.</p>
+<p>Vos r&eacute;glages de marge resteront en vigueur jusqu'&agrave; ce
+que vous les modifiiez. Le syst&egrave;me les utilise lorsque vous imprimez
+avec les options par d&eacute;faut.</p>
+</li>
+<li><p>Pour inclure des en-t&ecirc;tes et/ou des bas de page sur
+vos sorties imprim&eacute;es, choisissez les types d'informations que vous
+souhaitez ins&eacute;rer dans les coins sup&eacute;rieur gauche, inf&eacute;rieur
+gauche, sup&eacute;rieur droit et/ou inf&eacute;rieur droit. Pour chaque emplacement,
+vous pouvez s&eacute;lectionner:</p>
+<ul remap="Bullet2">
+<li><p><code>Date</code>, pour afficher la date actuelle.</p>
+</li>
+<li><p><code>Nom du document</code>, pour afficher le nom du
+document &agrave; imprimer.</p>
+</li>
+<li><p><code>Num&eacute;ro de page</code>, pour afficher les
+num&eacute;ros de page.</p>
+</li>
+<li><p><code>Nom de l'utilisateur</code>, pour afficher votre
+nom d'utilisateur.</p>
+</li>
+<li><p><code>Aucun</code>, pour ne rien afficher.</p>
+</li>
+</ul>
+<p>Le syst&egrave;me utilise les valeurs par d&eacute;faut suivantes:
+</p>
+<ul remap="Bullet2">
+<li><p><code>Sup&eacute;rieur gauche</code>&mdash;Aucun</p>
+</li>
+<li><p><code>Sup&eacute;rieur droit</code>&mdash;Nom du document
+</p>
+</li>
+<li><p><code>Inf&eacute;rieur gauche</code>&mdash;Aucun</p>
+</li>
+<li><p><code>Inf&eacute;rieur droit</code>&mdash;Num&eacute;ro
+de page</p>
+</li>
+</ul>
+<p>Vos r&eacute;glages d'en-t&ecirc;te et de bas de page resteront en vigueur
+jusqu'&agrave; ce que vous les modifiiez. Le syst&egrave;me les utilise lorsque
+vous imprimez avec les options par d&eacute;faut.</p>
+</li>
+</ul>
+</li>
+<li><p>Pour d&eacute;finir des options sp&eacute;cifiques &agrave;
+une imprimante, cliquez sur le bouton Configurer... de la bo&icirc;te de dialogue
+Imprimer. La fen&ecirc;tre Configuration de l'impression appara&icirc;t. Cette
+fen&ecirc;tre vous permet d'acc&eacute;der &agrave; la fois aux options de
+l'imprimante et &agrave; celles du travail d'impression.</p>
+<object>
+<h1>Fen&ecirc;tre Configuration de l'impression</h1>
+<img id="UG.TextE.grph.9a" src="./graphics/printset.png">
+</object>
+<p>La bo&icirc;te de dialogue Options de l'imprimante vous permet de contr&ocirc;ler
+des param&egrave;tres d'impression tels que l'orientation de la page (Portrait
+ou Paysage), la taille de la page (format L&eacute;gal, Lettre, etc.), l'impression
+d'un ou des deux c&ocirc;t&eacute;s, ainsi que la source de papier &agrave;
+utiliser.</p>
+<p>La bo&icirc;te de dialogue Options du travail d'impression vous permet
+de sp&eacute;cifier si vous d&eacute;sirez recevoir une confirmation par message
+&eacute;lectronique de la r&eacute;ussite de l'impression de votre travail,
+ainsi que le texte (le cas &eacute;ch&eacute;ant) &agrave; faire figurer sur
+la page de t&ecirc;te. Vous pouvez &eacute;galement sp&eacute;cifier des options
+de commande d'impression dans le champ pr&eacute;vu &agrave; cet effet.</p>
+<p>Lorsque vous en avez termin&eacute; avec la fen&ecirc;tre Configuration
+de l'impression, cliquez sur OK pour valider vos modifications et retourner
+&agrave; la bo&icirc;te de dialogue Imprimer.</p>
+<p>Vos r&eacute;glages Configuration de l'impression resteront en<?Pub Caret> vigueur
+jusqu'&agrave; ce que vous les modifiiez. Le syst&egrave;me les utilise lorsque
+vous imprimez avec les options par d&eacute;faut.</p>
+</li>
+<li><p>Pour envoyer le document ouvert &agrave; l'imprimante &agrave;
+partir de la bo&icirc;te de dialogue Imprimer, cliquez sur Imprimer.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.TextE.div.52" role="Procedure">
+<h1>Impression d'un document ferm&eacute;</h1>
+<ol>
+<li><p>Affichez l'ic&ocirc;ne du document dans le Gestionnaire de
+fichiers.</p>
+</li>
+<li><p>Faites-la glisser sur l'ic&ocirc;ne Imprimante du Tableau
+de bord.</p>
+<p>La bo&icirc;te de dialogue Imprimer s'ouvre.</p>
+</li>
+<li><p><em>Facultatif.</em> D&eacute;finissez les options
+d'impression.</p>
+</li>
+<li><p>Cliquez sur Imprimer.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.53">
+<h1>R&eacute;cup&eacute;ration d'un fichier<!---- <primary>R&eacute;tablissement</primary><secondary>fichier de l'Editeur de texte</secondary>----> </h1>
+<p>Si l'Editeur de texte s'interrompt suite &agrave; une erreur syst&egrave;me,
+il essaye d'enregistrer vos modifications dans un fichier de reprise de votre
+dossier courant. Ce fichier s'appelle <tt>#<symbol>nom_fichier</var>#</tt>, o&ugrave; <symbol>nom_fichier</var> correspond au nom du document.
+Si vous n'avez jamais enregistr&eacute; le document, le nom du fichier de
+sauvegarde est <tt>#SANS_TITRE#</tt>.</p>
+<div class="2" id="UG.TextE.div.54" role="Procedure">
+<h1>R&eacute;cup&eacute;ration d'un fichier</h1>
+<ol>
+<li><p>Lancez l'Editeur de texte.</p>
+</li>
+<li><p>Ouvrez le fichier de reprise.</p>
+</li>
+<li><p>Enregistrez le document en utilisant le nom du
+fichier d'origine
+ou nommez-le si vous ne l'avez pas encore enregistr&eacute;.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="UG.TextE.div.55">
+<h1>L'Editeur de texte et les autres applications<!---- <primary>Editeur de texte</primary><secondary>utilisation dans d'autres applications</secondary>----> <!---- <primary>Applications</primary><secondary>utilisation de l'Editeur de texte</secondary>----> </h1>
+<p>D'autres applications peuvent utiliser l'Editeur de texte comme outil
+d'&eacute;dition de documents et d'autres types d'informations. Dans certaines
+circonstances, une application peut restreindre les options d'&eacute;dition
+dont vous disposez. Dans l'exemple ci-dessous, le menu Fichier a &eacute;t&eacute;
+modifi&eacute;. La commande Sauvegarder sous a &eacute;t&eacute; remplac&eacute;e
+par la commande Copier vers fichier et les commandes Nouveau et Ouvrir ne
+sont pas disponibles.</p>
+<!--"Sauvegarder sous" should be "Enregistrer sous" to use the standard terminology-->
+<object>
+<h1>Menu fichier de l'Editeur de texte modifi&eacute;</h1>
+<img id="UG.TextE.grph.10" src="./graphics/TECopyTo.png">
+</object>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
+<?Pub *0000091967>
+</body></html>

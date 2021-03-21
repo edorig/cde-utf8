@@ -1,0 +1,1096 @@
+<html><body>
+<!-- $XConsortium: ch12.sgm /main/10 1996/12/20 20:43:52 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="UG.UTrmE.div.1">
+<h1 id="UG.UTrmE.mkr.1">Utilisation du terminal</h1>
+<p>Un<!---- <primary>Emulateur de terminal</primary><secondary>d&eacute;finition</secondary>---->  &eacute;mulateur de terminal affiche une fen&ecirc;tre
+permettant d'entrer les commandes du syst&egrave;me d'exploitation, d'utiliser
+les commandes UNIX et de copier et coller du texte.</p>
+<informaltable id="UG.UTrmE.itbl.1" frame="All">
+<table cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>&Emulateur
+de terminal par dé<a  role="JumpText" href="#UG.UTrmE.mkr.2" >faut du Bureau270</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Ouverture
+d'une fenê<a  role="JumpText" href="#UG.UTrmE.mkr.3" >tre de terminal270</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Fermeture
+d'une fenê<a  role="JumpText" href="#UG.UTrmE.mkr.4" >tre de terminal273</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Utilisation
+d'une fenê<a  role="JumpText" href="#UG.UTrmE.mkr.5" >tre de terminal273</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Lancement
+de dtterm sur un autre systè<a  role="JumpText" href="#UG.UTrmE.mkr.6" >me275</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Personnalisation
+<a  role="JumpText" href="#UG.UTrmE.mkr.7" >de dtterm277</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Options
+géné<a  role="JumpText" href="#UG.UTrmE.mkr.8" >rales de dtterm279</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Options
+<a  role="JumpText" href="#UG.UTrmE.mkr.11" >du terminal dtterm284</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Caractères
+de contrô<a  role="JumpText" href="#UG.UTrmE.mkr.12" >le du terminal290</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Modification
+de l'émulateur de terminal par dé<a  role="JumpText" href="#UG.UTrmE.mkr.14" >faut291</a></p></td>
+</tr></tbody></table></informaltable>
+<note>
+<p>Les illustrations de ce chapitre proviennent des &eacute;crans par d&eacute;faut
+du Bureau CDE. Les &eacute;crans affich&eacute;s sur votre terminal peuvent
+pr&eacute;senter un aspect diff&eacute;rent si vous ou l'administrateur syst&egrave;me
+les avez personnalis&eacute;s.</p>
+</note>
+<div class="1" id="UG.UTrmE.div.2">
+<h1 id="UG.UTrmE.mkr.2">&Eacute;mulateur de terminal par d&eacute;faut du
+Bureau</h1>
+<p>L'&eacute;mulateur de terminal par d&eacute;faut du Bureau est <code>dtterm</code>. L'&eacute;mulateur de terminal <code>dtterm</code>
+&eacute;mule la partie du terminal VT220 qui est en conformit&eacute; avec
+les normes ANSI et ISO.<!---- <primary>Emulateur de terminal</primary>
+<secondary>par d&eacute;faut</secondary>----> <!---- <primary>Emulateur
+de terminal</primary><secondary>valeur par d&eacute;faut</secondary>----> </p>
+<p><!---- <primary>&lt;Filename | Command>dtterm,&lt;Default Para Font>&lt;Emphasis>
+Voir&lt;Default Para Font> Terminal&lt;$nopage></primary>----> L'invite
+de la ligne de commande <code><!---- <primary>Commande</primary><secondary>&lt;Filename | Command>dtterm&lt;Default Para Font></secondary>----> dtterm</code> est un caract&egrave;re sp&eacute;cial qui s'affiche dans la marge
+gauche de l'&eacute;mulateur de terminal. Il peut s'agir des caract&egrave;res
+``%'', ``&lt;'', ``$'', ou d'un autre caract&egrave;re sp&eacute;cial. Une
+petite bo&icirc;te ou barre, appel&eacute;e <em>curseur</em>,
+indique l'endroit o&ugrave; les caract&egrave;res apparaissent dans la fen&ecirc;tre
+lorsque vous saisissez du texte au clavier.<!---- <primary>Emulateur
+de terminal</primary><secondary>&lt;Emphasis>Voir aussi &lt;Default Para Font>
+Terminal&lt;$nopage></secondary>----> </p>
+<img id="UG.UTrmE.igrph.1" src="./graphics/ugdtterm.png">
+<div class="2" id="UG.UTrmE.div.3">
+<h1 id="UG.UTrmE.mkr.3"><!---- <primary>Terminal</primary><secondary>lancement&lt;$startrange></secondary>----> <!---- <primary>Lancement</primary><secondary>terminal&lt;$startrange></secondary>----> Ouverture
+d'une fen&ecirc;tre de terminal</h1>
+<p>Vous pouvez ouvrir une fen&ecirc;tre de terminal:</p>
+<ul remap="Bullet1">
+<li><p>&agrave; partir du Tableau de bord,</p>
+</li>
+<li><p>&agrave; partir du Gestionnaire d'applications,</p>
+</li>
+<li><p>&agrave; partir du Gestionnaire de fichiers,</p>
+</li>
+<li><p>&agrave; partir du menu Fen&ecirc;tre,</p>
+</li>
+<li><p>&agrave; partir d'une fen&ecirc;tre de terminal existante.
+</p>
+</li>
+</ul>
+<div class="3" id="UG.UTrmE.div.4" role="Procedure">
+<h1>Ouverture d'une fen&ecirc;tre de terminal &agrave; partir du Tableau
+de bord</h1>
+<ol>
+<li><p>Cliquez sur la fl&egrave;che situ&eacute;e au-dessus de l'ic&ocirc;ne
+de l'Editeur de texte (ou celle qui appara&icirc;t en deuxi&egrave;me &agrave;
+gauche des s&eacute;lecteurs d'espaces de travail) du Tableau de bord.</p>
+</li>
+<li><p>Cliquez sur l'ic&ocirc;ne Terminal du panneau secondaire Applications
+personnelles.</p>
+</li>
+</ol>
+<img id="UG.UTrmE.igrph.2" src="./graphics/ugpamenu.png">
+<p>La fen&ecirc;tre de terminal par d&eacute;faut s'affiche.</p>
+</div>
+<div class="3" id="UG.UTrmE.div.5" role="Procedure">
+<h1>Ouverture d'une fen&ecirc;tre de terminal &agrave; partir du Gestionnaire
+d'applications</h1>
+<ol>
+<li><p>Cliquez sur l'ic&ocirc;ne Gestionnaire d'applications du Tableau
+de bord.</p>
+<img id="ug.utrme.igrph.3" src="./graphics/ugamgrfp.png">
+</li>
+<li><p>Cliquez deux fois sur Applications_Bureau pour ouvrir le groupe
+correspondant.</p>
+<img id="ug.utrme.igrph.4" src="./graphics/ugappmgr.png">
+</li>
+<li><p>Cliquez deux fois sur l'ic&ocirc;ne Terminal (vous devrez
+peut-&ecirc;tre faire d&eacute;filer l'&eacute;cran pour la faire appara&icirc;tre).
+</p>
+</li>
+</ol>
+</div>
+<div class="3" id="UG.UTrmE.div.6" role="Procedure">
+<h1>Ouverture d'une fen&ecirc;tre de terminal &agrave; partir du Gestionnaire
+de fichiers</h1>
+<ol>
+<li><p>Cliquez sur l'ic&ocirc;ne Gestionnaire de fichiers du Tableau
+de bord.</p>
+<img id="ug.utrme.igrph.5" src="./graphics/ugfmicon.png">
+<p>La fen&ecirc;tre du Gestionnaire de fichiers appara&icirc;t.</p>
+</li>
+<li><p>S&eacute;lectionnez Ouvrir terminal dans le menu Fichier du
+Gestionnaire de fichiers.</p>
+</li>
+</ol>
+<img id="UG.UTrmE.igrph.6" src="./graphics/ugfilemg.png">
+</div>
+<div class="3" id="UG.UTrmE.div.7" role="Procedure">
+<h1>Ouverture d'une fen&ecirc;tre de terminal &agrave; partir du menu Fen&ecirc;tre</h1>
+<ul>
+<li><p>S&eacute;lectionnez Nouveau dans le menu Fen&ecirc;tre d'une
+fen&ecirc;tre de terminal existante.</p>
+<p>Une r&eacute;plique exacte de la fen&ecirc;tre appara&icirc;t.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="2" id="UG.UTrmE.div.8" role="Procedure">
+<h1 id="UG.UTrmE.mkr.4">Fermeture d'une fen&ecirc;tre de terminal</h1>
+<ul>
+<li><p>Entrez <code>exit</code> sur la ligne de commande et
+appuyez sur Entr&eacute;e.</p>
+<ul remap="Bullet1">
+<li><p><em>Ou</em> s&eacute;lectionnez Quitter dans le
+menu Fen&ecirc;tre de terminal.</p>
+</li>
+<li><p><em>Ou</em> s&eacute;lectionnez Fermer dans le
+menu Fen&ecirc;tre (affich&eacute; gr&acirc;ce au bouton situ&eacute; dans
+l'angle sup&eacute;rieur gauche du contour de la fen&ecirc;tre).</p>
+</li>
+</ul>
+</li>
+</ul>
+<note>
+<p>Entrer <code>exit</code> sur la ligne de commande est la meilleure
+m&eacute;thode de fermeture d'une fen&ecirc;tre de terminal. Les autres m&eacute;thodes
+ne mettent pas fin aux t&acirc;ches d'arri&egrave;re-plan que vous avez pu
+lancer, ce qui risque parfois de provoquer des incidents.</p>
+</note>
+<p>Si vous avez ouvert une fen&ecirc;tre de terminal &agrave; partir de
+la ligne de commande, vous pouvez la fermer en appuyant sur Ctrl+C dans la
+fen&ecirc;tre &agrave; partir de laquelle vous l'avez ouverte.<!---- 
+<primary>Terminal</primary><secondary>arr&ecirc;t</secondary>----> <!---- 
+<primary>Lancement</primary><secondary>terminal&lt;$endrange></secondary>
+----> <!---- <primary>Terminal</primary><secondary>lancement&lt;$endrange></secondary>----> </p>
+</div>
+</div>
+<div class="1" id="UG.UTrmE.div.9">
+<h1 id="UG.UTrmE.mkr.5">Utilisation d'une fen&ecirc;tre de terminal</h1>
+<p>Une fen&ecirc;tre de terminal permet de lancer d'autres applications,
+d'entrer des commandes UNIX et de copier et coller du texte entre et &agrave;
+l'int&eacute;rieur des fen&ecirc;tres.</p>
+<div class="2" id="UG.UTrmE.div.10" role="Procedure">
+<h1>Lancement d'applications dans une fen&ecirc;tre de terminal</h1>
+<ul>
+<li><p>&Agrave; l'invite de ligne de commande, entrez la commande
+de lancement de l'application.</p>
+</li>
+</ul>
+<p><!---- <primary>Applications</primary><secondary>lancement</secondary>
+----> <!---- <primary>Lancement</primary><secondary>applications
+dans une fen&ecirc;</secondary>----> <!---- <primary>tre de terminal</primary>----> <!---- <primary>Terminal</primary><secondary>lancement
+d'applications dans une fen&ecirc;tre</secondary>----> La syntaxe de
+lancement d'une application est la suivante:</p>
+<listing><var">application</var> [<var">options</var>] &amp;</listing>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="106*">
+<colspec colwidth="422*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><var">application</var></p></td>
+<td align="left" valign="top"><p>Nom de l'application.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><var">options</var></p></td>
+<td align="left" valign="top"><p>Liste d'informations facultatives &agrave;
+transmettre &agrave; l'application.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><var">&amp;</var></p></td>
+<td align="left" valign="top"><p>Indique que l'application s'ex&eacute;cute
+en arri&egrave;re-plan, ce qui signifie que vous pouvez continuer &agrave;
+utiliser la fen&ecirc;tre de terminal pendant que l'application s'ex&eacute;cute.
+</p></td></tr></tbody></table></informaltable>
+<p>Pour conna&icirc;tre la commande et les options &agrave; utiliser avec
+cette application, reportez-vous &agrave; la page de manuel correspondante
+ou &agrave; une autre source de documentation.</p>
+<div class="3" id="UG.UTrmE.div.11">
+<h1>Exemple</h1>
+<p>Pour lancer une horloge num&eacute;rique &agrave; partir de la ligne
+de commande, entrez:</p>
+<p><code>xclock -digital &amp;</code></p>
+</div>
+</div>
+<div class="2" id="UG.UTrmE.div.12" role="Procedure">
+<h1>Entr&eacute;e d'une commande</h1>
+<ul>
+<li><p>Entrez la commande et appuyez sur Entr&eacute;e.</p>
+</li>
+</ul>
+<div class="3" id="UG.UTrmE.div.13">
+<h1><!---- <primary>Entr&eacute;e</primary><secondary>commandes</secondary>
+----> <!---- <primary>Commande</primary><secondary>entr&eacute;e</secondary>----> <!---- <primary>Terminal</primary><secondary>entr&eacute;e de commandes dans une fen&ecirc;tre</secondary>----> Exemples</h1>
+<p>Pour obtenir la liste des fichiers du r&eacute;pertoire courant, entrez
+:</p>
+<listing>ls [Entr&eacute;e]</listing>
+<p>Pour obtenir la liste des fichiers du r&eacute;pertoire courant et l'imprimer
+sur l'imprimante par d&eacute;faut, entrez:</p>
+<listing>ls | lp [Entr&eacute;e]</listing>
+</div>
+</div>
+<div class="2" id="UG.UTrmE.div.14" role="Procedure">
+<h1>Copie<!---- <primary>Collage</primary><secondary>texte</secondary>
+----> <!---- <primary>Texte</primary><secondary>copie</secondary>
+<tertiary>fen&ecirc;tre de terminal</tertiary>----> <!---- <primary>Copie</primary><secondary>texte</secondary><tertiary>fen&ecirc;tre de terminal</tertiary>---->  et collage de texte</h1>
+<ol>
+<li><p>&Agrave; l'aide du bouton 1 de la souris, placez-vous sur
+le texte &agrave; d&eacute;placer.</p>
+<p>Le texte est mis en &eacute;vidence.</p>
+</li>
+<li><p>Rel&acirc;chez le bouton gauche de la souris une fois que le texte
+voulu est mis en &eacute;vidence.</p>
+<p>Le texte mis en &eacute;vidence est copi&eacute; dans un presse-papiers
+interne o&ugrave; il est conserv&eacute; jusqu'&agrave; la prochaine copie.
+Le texte n'est pas supprim&eacute; de l'emplacement d'origine.</p>
+</li>
+<li><p>Cliquez &agrave; l'aide du bouton 2 de la souris &agrave;
+l'endroit o&ugrave; vous souhaitez ins&eacute;rer le texte.</p>
+<p><!---- <primary>Texte</primary><secondary>collage</secondary><tertiary>fen&ecirc;tre de terminal</tertiary>----> Une copie du contenu du presse-papiers
+est coll&eacute;e &agrave; l'emplacement indiqu&eacute;. Vous pouvez faire
+des copies suppl&eacute;mentaires en r&eacute;p&eacute;tant les &eacute;tapes
+ci-dessus.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.UTrmE.div.15" role="Procedure">
+<h1>Redimensionnement du contenu de la fen&ecirc;tre</h1>
+<p>Le redimensionnement d'une fen&ecirc;tre d'&eacute;mulateur de terminal
+n'est pas n&eacute;cessairement r&eacute;percut&eacute; sur les applications
+qu'elle contient. Utilisez la proc&eacute;dure ci-dessous pour redimensionner
+la repr&eacute;sentation de l'application &agrave; l'&eacute;cran.</p>
+<ul>
+<li><p>&Agrave; l'invite de ligne de commande, tapez:</p>
+<para remap="CodeIndent1"><code>eval 'resize'</code></p>
+</li>
+</ul>
+<p><!---- <primary>Terminal</primary><secondary>redimensionnement d'une
+fen&ecirc;tre</secondary>----> Notez que resize est inclus entre guillemets
+simples et non doubles.</p>
+</div>
+</div>
+<div class="1" id="UG.UTrmE.div.16">
+<h1 id="UG.UTrmE.mkr.6">Lancement de dtterm sur un autre syst&egrave;me</h1>
+<p><!---- <primary>Terminal</primary><secondary>lancement sur un autre
+syst&egrave;me&lt;$startrange></secondary>----> Vous pouvez lancer <code>dtterm</code> sur un autre syst&egrave;me par l'interm&eacute;diaire de
+diff&eacute;rentes commandes:</p>
+<ul remap="Bullet1">
+<li><p>l'option <code>-display</code></p>
+</li>
+<li><p>la commande <code>rlogin</code></p>
+</li>
+<li><p>la commande <code>remsh</code></p>
+</li>
+</ul>
+<div class="2" id="UG.UTrmE.div.17">
+<h1>Option -display</h1>
+<p><code>-display</code> <symbol>h&ocirc;te:affichage[.&eacute;cran]</var></p>
+<p>o&ugrave;</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="106*">
+<colspec colwidth="422*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><var">h&ocirc;te</var></p></td>
+<td align="left" valign="top"><p>Nom du syst&egrave;me correct sur le
+r&eacute;seau.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><var">affichage</var></p></td>
+<td align="left" valign="top"><p>Num&eacute;ro de l'affichage sur l'h&ocirc;te.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><var">&eacute;cran</var></p></td>
+<td align="left" valign="top"><p><em>Facultatif</em>. L'&eacute;cran
+de l'affichage. La valeur par d&eacute;faut est 0.</p></td></tr></tbody>
+</table></informaltable>
+<p>Vous pouvez trouver ces valeurs en tapant <code>env</code>, et
+en consultant la ligne DISPLAY. L'&eacute;mulateur de terminal s'ex&eacute;cute
+sur votre syst&egrave;me, mais la fen&ecirc;tre correspondante s'affiche sur
+un autre syst&egrave;me.</p>
+<div class="3" id="UG.UTrmE.div.18">
+<h1>Exemple</h1>
+<p>La commande suivante lance une fen&ecirc;tre <code>dtterm</code>
+sur l'ordinateur h&ocirc;te appel&eacute; <code>hpcvxdm</code>:</p>
+<listing>dtterm -display hpcvxdm:0 &amp;</listing>
+</div>
+</div>
+<div class="2" id="UG.UTrmE.div.19">
+<h1>Commande rlogin</h1>
+<p>Utilisez <code>rlogin</code> dans une fen&ecirc;tre de terminal
+existante pour vous connecter &agrave; un syst&egrave;me h&ocirc;te &eacute;loign&eacute;.
+&Agrave; partir du moment o&ugrave; le syst&egrave;me h&ocirc;te &eacute;loign&eacute;
+assimile la fen&ecirc;tre &agrave; un terminal, vous pouvez y ex&eacute;cuter
+des applications et, s'il y a lieu, rediriger l'affichage vers un syst&egrave;me
+local.</p>
+<p>Par exemple, la commande suivante r&eacute;alise une connexion au syst&egrave;me <tt>l&agrave;-bas</tt>, ex&eacute;cute le client <code>xload</code>,
+et renvoie l'affichage au syst&egrave;me d'origine. Supposons que ce dernier
+s'appelle <code>ici</code>.</p>
+<listing>rlogin l&agrave;-bas
+xload -display ici:0</listing>
+</div>
+<div class="2" id="UG.UTrmE.div.20">
+<h1>Commande remsh</h1>
+<p>La commande <code>remsh</code> lance un shell sur un syst&egrave;me
+h&ocirc;te &eacute;loign&eacute;, ex&eacute;cute plusieurs applications clientes
+(ce qui implique souvent un &eacute;mulateur de terminal sur le syst&egrave;me
+h&ocirc;te &eacute;loign&eacute;) et renvoie, sur demande, l'affichage au
+syst&egrave;me local.</p>
+<p>Sa syntaxe est la suivante:</p>
+<p><code>remsh</code> <symbol>&eacute;loign&eacute;</var> <code>-n</code> <var">client</var> <code>-display</code> <symbol>syst&egrave;me:&eacute;cran[.&eacute;cran]</var></p>
+<p>o&ugrave;</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="211*">
+<colspec colwidth="317*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p><var">&eacute;loign&eacute;</var></p></td>
+<td align="left" valign="top"><p>Nom du syst&egrave;me &eacute;loign&eacute;.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><var">client</var></p></td>
+<td align="left" valign="top"><p>Programme &agrave; ex&eacute;cuter
+sur le syst&egrave;me h&ocirc;te &eacute;loign&eacute;.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p><var">syst&egrave;me</var> :<var">&eacute;cran</var>[.<var">&eacute;cran</var>]</p></td>
+<td align="left" valign="top"><p>Syst&egrave;me h&ocirc;te et &eacute;cran
+sur lequel les r&eacute;sultats doivent &ecirc;tre affich&eacute;s.</p></td>
+</tr></tbody></table></informaltable>
+<p>La commande <code>remsh</code> est souvent utilis&eacute;e lors
+de la personnalisation d'un menu permettant d'acc&eacute;der &agrave; d'autres
+syst&egrave;mes h&ocirc;te.<!---- <primary>Terminal</primary><secondary>lancement sur un autre syst&egrave;me&lt;$endrange></secondary>----> </p>
+<div class="3" id="UG.UTrmE.div.21">
+<h1>Exemple</h1>
+<p>La commande suivante lance <code>xload</code>sur le syst&egrave;me
+h&ocirc;te &eacute;loign&eacute; appel&eacute; <code>l&agrave;- bas</code>,
+et redirige l'envoi sur le syst&egrave;me <code>ici</code>.</p>
+<listing>remsh l&agrave;-bas -n /usr/bin/X11/xload -display ici:0.0 &amp;
+</listing>
+</div>
+</div>
+</div>
+<div class="1" id="UG.UTrmE.div.22">
+<h1 id="UG.UTrmE.mkr.7">Personnalisation de dtterm</h1>
+<p>Il existe plusieurs fa&ccedil;ons de personnaliser <code>dtterm</code>.
+</p>
+<ul remap="Bullet1">
+<li><p>Lancez-la avec des options sp&eacute;ciales, telles que les
+barres de menus et de d&eacute;filement.</p>
+</li>
+<li><p>Lancez l'&eacute;mulateur de terminal sur un autre syst&egrave;me.
+</p>
+</li>
+<li><p>Modifiez les options g&eacute;n&eacute;rales, telles que le
+style du curseur et la couleur de l'arri&egrave;re-plan.</p>
+</li>
+<li><p>Modifiez les options du terminal, telles que le clavier et
+l'&eacute;cran.</p>
+</li>
+</ul>
+<div class="2" id="UG.UTrmE.div.23">
+<h1><!---- <primary>Suppression</primary><secondary>barre de menus
+de la fen&ecirc;tre de terminal</secondary>----> <!---- <primary>Barre de menus</primary><secondary>suppression</secondary>----> <!---- 
+<primary>Terminal</primary><secondary>suppression</secondary><tertiary>barre
+de menus de la fen&ecirc;tre</tertiary>----> Affichage de la barre de
+menus</h1>
+<p>Par d&eacute;faut, <code>dtterm</code> appara&icirc;t avec une
+barre de menus. Vous pouvez la supprimer si vous le souhaitez.</p>
+<div class="3" id="UG.UTrmE.div.24" role="Procedure">
+<h1>Suppression de la barre de menus</h1>
+<ul>
+<li><p>S&eacute;lectionnez Barre de menus dans le menu Options.</p>
+<p>La barre de menus dispara&icirc;t de la fen&ecirc;tre <code>dtterm</code>.</p>
+</li>
+</ul>
+</div>
+<div class="3" id="UG.UTrmE.div.25" role="Procedure">
+<h1><!---- <primary>R&eacute;tablissement</primary><secondary>barre
+de menus</secondary>----> <!---- <primary>Terminal</primary><secondary>r&eacute;tablissement</secondary><tertiary>barre de menus dans la fen&ecirc;tre</tertiary>----> <!---- <primary>Barre de menus</primary><secondary>r&eacute;tablissement</secondary>----> R&eacute;tablissement de la barre
+de menus</h1>
+<ol>
+<li><p>Cliquez sur le bouton droit de la souris &agrave; un endroit quelconque
+de la fen&ecirc;tre <code>dtterm</code>.</p>
+<p>Un menu instantan&eacute; s'affiche. Il contient des options identiques
+&agrave; celles de la barre de menus.</p>
+<img id="ug.utrme.igrph.7" src="./graphics/ugtermpo.png">
+</li>
+<li><p>S&eacute;lectionnez Barre de menus dans le menu Options.</p>
+<p>La barre de menus appara&icirc;t au sommet de la fen&ecirc;tre <code>dtterm</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="2" id="UG.UTrmE.div.26">
+<h1>Affichage de la barre de d&eacute;filement</h1>
+<p>Par d&eacute;faut, <code>dtterm</code> appara&icirc;t sans barre
+de d&eacute;filement.</p>
+<div class="3" id="UG.UTrmE.div.27" role="Procedure">
+<h1><!---- <primary>Restauration</primary><secondary>barre de d&eacute;filement</secondary>----> <!---- <primary>Terminal</primary><secondary>r&eacute;tablissement</secondary><tertiary>barre de d&eacute;filement</tertiary>
+----> <!---- <primary>Barre de d&eacute;filement</primary><secondary>r&eacute;tablissement</secondary>----> Affichage de la barre de d&eacute;filement</h1>
+<ul>
+<li><p>S&eacute;lectionnez Barre de d&eacute;filement dans le menu
+Options.</p>
+<p>La barre de d&eacute;filement appara&icirc;t dans la fen&ecirc;tre <code>dtterm</code>.<code><!---- <primary>Suppression</primary><secondary>barre de d&eacute;filement de la fen&ecirc;tre de terminal</secondary>----> <!---- 
+<primary>Terminal</primary><secondary>suppression</secondary><tertiary>barre
+de d&eacute;filement</tertiary>----> <!---- <primary>Barre de d&eacute;filement</primary><secondary>suppression</secondary>----> </code></p>
+<p>Pour supprimer la barre de d&eacute;filement de la fen&ecirc;tre, s&eacute;lectionnez
+&agrave; nouveau Barre de d&eacute;filement dans le menu Options.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="2" id="UG.UTrmE.div.28">
+<h1 id="UG.UTrmE.mkr.8">Options g&eacute;n&eacute;rales de dtterm</h1>
+<p>Il existe quatre zones accessibles dans la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales:</p>
+<ul remap="Bullet1">
+<li><p>Caract&eacute;ristiques du curseur,</p>
+</li>
+<li><p>Couleurs,</p>
+</li>
+<li><p>Mode de d&eacute;filement,</p>
+</li>
+<li><p>Param&egrave;tres du signal.</p>
+<ul>
+<li><p><!---- <primary>Terminal</primary><secondary>Bo&icirc;te
+de dialogue</secondary>----> <!---- <primary>Options g&eacute;n&eacute;rales</primary>----> Pour afficher la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales,
+s&eacute;lectionnez G&eacute;n&eacute;ral dans le menu Options.</p>
+</li>
+</ul>
+</li>
+</ul>
+<img id="UG.UTrmE.igrph.8" src="./graphics/ugglobop.png">
+<div class="3" id="UG.UTrmE.div.29">
+<h1>Caract&eacute;ristiques du curseur</h1>
+<p><!---- <primary>Terminal</primary><secondary>options du curseur&lt;$startrange></secondary>----> <!---- <primary>Curseur</primary><secondary>options dans le terminal&lt;$startrange></secondary>----> Vous pouvez
+modifier trois aspects du curseur <code>dtterm</code>:</p>
+<ul remap="Bullet1">
+<li><p>style du curseur,</p>
+</li>
+<li><p>curseur clignotant,</p>
+</li>
+<li><p>vitesse de clignotement.</p>
+</li>
+</ul>
+</div>
+<div class="3" id="UG.UTrmE.div.30" role="Procedure">
+<h1>Style de curseur</h1>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales
+n'est pas affich&eacute;e, s&eacute;lectionnez G&eacute;n&eacute;ral dans
+le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Style du curseur et s&eacute;lectionnez
+l'option voulue:</p>
+<ul remap="Bullet2">
+<li><p>Bo&icirc;te (il s'agit de la valeur par d&eacute;faut),</p>
+</li>
+<li><p>Soulignement,</p>
+</li>
+<li><p>Aucun (Invisible).</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales ou appuyez sur Entr&eacute;e pour sauvegarder vos
+s&eacute;lections et sortir de la fen&ecirc;tre.</p>
+<p>Pour enregistrer vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+<p>Les modifications effectu&eacute;es seront visibles dans les fen&ecirc;tres <code>dtterm</code> existantes; il est inutile d'en ouvrir une autre.</p>
+</div>
+<div class="3" id="UG.UTrmE.div.31" role="Procedure">
+<h1>Clignotement du curseur</h1>
+<p>Le curseur <code>dtterm</code> clignote par d&eacute;faut. Vous
+pouvez d&eacute;sactiver le clignotement ou modifier la vitesse de clignotement.
+Reportez-vous &agrave; la section &ldquo;Vitesse
+<a  role="SectionTitle" href="#UG.UTrmE.mkr.9" >de clignotement du curseur</a>.
+</p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales
+n'est pas affich&eacute;e, s&eacute;lectionnez G&eacute;n&eacute;ral dans
+le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Curseur clignotant dans la section Caract&eacute;ristiques
+du curseur et s&eacute;lection curseur clignotant (activ&eacute;) ou non (d&eacute;sactiv&eacute;).
+</p>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales ou appuyez sur Entr&eacute;e pour sauvegarder votre
+s&eacute;lection et sortir de la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+<p>Notez que lorsque cette option est d&eacute;sactiv&eacute;e, l'option
+Vitesse de clignotement et la zone de texte sont inactives et apparaissent
+en gris&eacute;.<!---- <primary>Terminal</primary><secondary>options
+du curseur&lt;$endrange></secondary>----> <!---- <primary>Curseur</primary><secondary>options dans le terminal&lt;$endrange></secondary>----> </p>
+</div>
+<div class="3" id="UG.UTrmE.div.32" role="Procedure">
+<h1 id="UG.UTrmE.mkr.9">Vitesse de clignotement du curseur</h1>
+<p>La vitesse de clignotement d&eacute;termine la fr&eacute;quence de clignotement
+du curseur de la fen&ecirc;tre <code>dtterm</code>. La vitesse par d&eacute;faut
+est de 250 millisecondes. Pour la modifier:</p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales
+n'est pas affich&eacute;e, s&eacute;lectionnez G&eacute;n&eacute;ral sur le
+menu Options.</p>
+</li>
+<li><p>Dans la zone de texte Vitesse de clignotement, entrez la valeur
+souhait&eacute;e en millisecondes.</p>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales ou appuyez sur Entr&eacute;e pour enregistrer votre
+s&eacute;lection et quitter la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+<p>Les modifications effectu&eacute;es seront visibles dans les fen&ecirc;tres <code>dtterm</code> existantes; il est inutile d'en ouvrir une autre.</p>
+</div>
+<div class="3" id="UG.UTrmE.div.33" role="Procedure">
+<h1>Inversion des couleurs de premier et d'arri&egrave;re-plan (Couleurs)</h1>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales
+n'est pas affich&eacute;e, s&eacute;lectionnez G&eacute;n&eacute;ral dans
+le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Arri&egrave;re-plan fen&ecirc;tre dans
+la zone Couleur et s&eacute;lectionnez la couleur souhait&eacute;e:</p>
+<ul remap="Bullet2">
+<li><p>la valeur Normal affiche les couleurs normalement;</p>
+</li>
+<li><p>la valeur Inverse intervertit les couleurs de premier plan
+et d'arri&egrave;re plan.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales ou appuyez sur Entr&eacute;e pour enregistrer votre
+s&eacute;lection et sortir de la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.<!---- <primary>Terminal</primary><secondary>couleurs</secondary>----> <!---- <primary>Couleurs</primary><secondary>dans la fen&ecirc;tre de terminal</secondary>----> </p>
+</li>
+</ol>
+</div>
+<div class="3" id="UG.UTrmE.div.34" role="Procedure">
+<h1>Mode de d&eacute;filement</h1>
+<p><!---- <primary>Terminal</primary><secondary>mode de d&eacute;filement</secondary>----> <!---- <primary>D&eacute;filement</primary><secondary>configuration</secondary>----> Le mode de d&eacute;filement continu
+affiche chaque ligne envoy&eacute;e &agrave; la fen&ecirc;tre de terminal
+imm&eacute;diatement, au lieu de la stocker dans une m&eacute;moire tampon.
+Le d&eacute;filement continu est plus agr&eacute;able &agrave; l'oeil, mais
+est plus lent. Par d&eacute;faut, le mode de d&eacute;filement continu est
+d&eacute;sactiv&eacute;. Pour activer le d&eacute;filement continu:</p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales
+n'est pas affich&eacute;e, s&eacute;lectionnez G&eacute;n&eacute;ral dans
+le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton D&eacute;filement continu et s&eacute;lectionnez
+le type de d&eacute;filement souhait&eacute;:</p>
+<ul remap="Bullet2">
+<li><p>D&eacute;sactiv&eacute; (valeur par d&eacute;faut) d&eacute;sactive
+le d&eacute;filement continu.</p>
+</li>
+<li><p>Activ&eacute; active le d&eacute;filement continu.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales ou appuyez sur Entr&eacute;e pour enregistrer la s&eacute;lection
+et sortir de la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+</div>
+<div class="3" id="UG.UTrmE.div.35">
+<h1>Param&egrave;tres du signal</h1>
+<p><!---- <primary>Terminal</primary><secondary>options du signal&lt;$startrange></secondary>----> <!---- <primary>Options</primary><secondary>signal</secondary><tertiary>terminal&lt;$startrange></tertiary>----> Il existe
+trois types d'options de param&eacute;trage du signal dans <code>dtterm</code>:</p>
+<ul remap="Bullet1">
+<li><p>Type de signal,</p>
+</li>
+<li><p>Avertissement marge,</p>
+</li>
+<li><p>Distance marge.</p>
+</li>
+</ul>
+</div>
+<div class="3" id="UG.UTrmE.div.36" role="Procedure">
+<h1>Activation du type de signal</h1>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales
+n'est pas affich&eacute;e, s&eacute;lectionnez G&eacute;n&eacute;ral dans
+le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Type de signal dans la zone Param&egrave;tres
+du signal et s&eacute;lectionnez le type souhait&eacute;.</p>
+<ul remap="Bullet2">
+<li><p>Si vous choisissez Audible (la valeur par d&eacute;faut),
+le signal prend la forme d'une sonnerie.</p>
+</li>
+<li><p>Si vous choisissez Visible, le signal se manifeste par un
+clignotement de la couleur d'arri&egrave;re-plan.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales ou appuyez sur Entr&eacute;e pour enregistrer votre
+s&eacute;lection et quitter la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+</div>
+<div class="3" id="UG.UTrmE.div.37" role="Procedure">
+<h1>Activation d'un avertissement marge</h1>
+<p>Cette option est utilis&eacute;e avec l'option Distance marge pour indiquer
+&agrave; l'utilisateur (signal sonore ou visuel) que le curseur se trouve
+&agrave; une distance donn&eacute;e de la marge de droite. Pour activer un
+avertissement marge:</p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales
+n'est pas affich&eacute;e, s&eacute;lectionnez G&eacute;n&eacute;ral dans
+le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Avertissement marge dans la zone Param&egrave;tres
+du signal.</p>
+</li>
+<li><p>S&eacute;lectionnez Activ&eacute; ou d&eacute;sactiv&eacute;.
+</p>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales ou appuyez sur Entr&eacute;e pour enregistrer la s&eacute;lection
+et quitter la fen&ecirc;tre.</p>
+<p>Pour valider vos s&eacute;lections et conserver la fen&ecirc;tre, cliquez
+sur Appliquer.</p>
+</li>
+</ol>
+<p>Notez que l'option Distance marge (section <!--Original XRef content:
+<a  role="SectionTitle" href="#UG.UTrmE.mkr.10" >'&ldquo;Activation de la distance marge</a>)
+est inactive lorsqu'Avertissement marge est d&eacute;sactiv&eacute;.</p>
+</div>
+<div class="3" id="UG.UTrmE.div.38" role="Procedure">
+<h1 id="UG.UTrmE.mkr.10">Activation de la distance marge</h1>
+<p>Cette option est active uniquement si l'option Avertissement marge est
+activ&eacute;e. D&eacute;terminez la distance par rapport &agrave; la marge
+droite de la fen&ecirc;tre <code>dtterm</code> &agrave; laquelle vous
+souhaitez que le signal sonne (ou apparaisse si sa valeur est Visible). La
+valeur par d&eacute;faut est de 10 caract&egrave;res.</p>
+<p>Pour modifier la distance:</p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options g&eacute;n&eacute;rales
+n'est pas affich&eacute;e, s&eacute;lectionnez G&eacute;n&eacute;ral dans
+le menu Options.</p>
+</li>
+<li><p>Cliquez dans la zone de texte Distance Marge dans la zone
+Param&egrave;tres du signal et entrez le nombre de caract&egrave;res d'&eacute;loignement
+de la marge droite de la fen&ecirc;tre &agrave; partir desquels &eacute;mettre
+un avertissement marge.</p>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+g&eacute;n&eacute;rales ou appuyez sur Entr&eacute;e pour enregistrer votre
+s&eacute;lection et quitter la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+<p>Les modifications effectu&eacute;es seront visibles dans les fen&ecirc;tres <code>dtterm</code> existantes; il est inutile d'en ouvrir une autre.<!---- 
+<primary>Terminal</primary><secondary>options du signal&lt;$endrange></secondary>
+----> <!---- <primary>Options</primary><secondary>signal</secondary>
+<tertiary>terminal&lt;$endrange></tertiary>----> </p>
+</div>
+</div>
+<div class="2" id="UG.UTrmE.div.39">
+<h1 id="UG.UTrmE.mkr.11">Options du terminal dtterm</h1>
+<p>Il existe deux zones modifiables dans la bo&icirc;te de dialogue Options
+terminal:</p>
+<ul remap="Bullet1">
+<li><p>Param&egrave;tres du clavier,</p>
+</li>
+<li><p>Param&egrave;tres de l'&eacute;cran.</p>
+<ul>
+<li><p>Pour afficher la bo&icirc;te de dialogue Options terminal,
+s&eacute;lectionnez Terminal sur le menu Options.</p>
+</li>
+</ul>
+</li>
+</ul>
+<img id="UG.UTrmE.igrph.9" src="./graphics/ugtermop.png">
+<p><!---- <primary>Terminal</primary><secondary>bo&icirc;te de dialogue</secondary>----> <!---- <primary>Options terminal</primary>----> Les
+modifications effectu&eacute;es dans la bo&icirc;te de dialogue Options terminal
+sont effectives dans les fen&ecirc;tres <code>dtterm</code> existantes
+; il est donc inutile d'en ouvrir d'autres.</p>
+<div class="3" id="UG.UTrmE.div.40">
+<h1>Param&egrave;tres du clavier</h1>
+<p>Vous pouvez modifier quatre aspects du clavier par l'interm&eacute;diaire
+de la bo&icirc;te de dialogue Options terminal:</p>
+<ul remap="Bullet1">
+<li><p>S&eacute;quence d'&eacute;chappement curseur,</p>
+</li>
+<li><p>Mode clavier num&eacute;rique,</p>
+</li>
+<li><p>S&eacute;quence d'interligne,</p>
+</li>
+<li><p>Touches de fonction utilisateur.</p>
+</li>
+</ul>
+</div>
+<div class="3" id="UG.UTrmE.div.41" role="Procedure">
+<h1>Configuration de la s&eacute;quence d'&eacute;chappement du curseur</h1>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options du terminal ne s'affiche
+pas, s&eacute;lectionnez Terminal dans le menu Options.<!---- <primary>Terminal</primary><secondary>options du clavier&lt;$startrange></secondary>
+----> <!---- <primary>Clavier</primary><secondary>options du terminal&lt;$startrange></secondary>----> </p>
+</li>
+<li><p>Cliquez sur le bouton S&eacute;quence d'&eacute;chappement
+curseur dans la zone Param&egrave;tres du clavier et s&eacute;lectionnez le
+mode voulu:</p>
+<ul remap="Bullet2">
+<li><p>En mode Normal (valeur par d&eacute;faut), les touches du
+curseur d&eacute;placent celui-ci dans le sens indiqu&eacute;.</p>
+</li>
+<li><p>En mode Application, les touches du curseur g&eacute;n&egrave;rent
+des s&eacute;quences d'&eacute;chappement que l'application utilise &agrave;
+ses propres fins.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+du terminal ou appuyez sur Entr&eacute;e pour enregistrer la s&eacute;lection
+et quitter la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+</div>
+<div class="3" id="UG.UTrmE.div.42" role="Procedure">
+<h1>Configuration du mode Mode clavier num&eacute;rique</h1>
+<p>Le mode clavier num&eacute;rique d&eacute;termine le comportement des
+touches du pav&eacute; num&eacute;rique.</p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options du terminal ne s'affiche
+pas, s&eacute;lectionnez Terminal dans le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Mode clavier num&eacute;rique dans la
+zone Param&egrave;tres du clavier et s&eacute;lectionnez le mode voulu:</p>
+<ul remap="Bullet2">
+<li><p>En mode Num&eacute;rique, lorsque vous appuyez sur les touches
+du pav&eacute; num&eacute;rique, le chiffre correspondant s'affiche dans la
+fen&ecirc;tre <code>dtterm</code>.</p>
+</li>
+<li><p>En mode Application, lorsque vous appuyez sur les touches
+du pav&eacute; num&eacute;rique, vous g&eacute;n&eacute;rez des s&eacute;quences
+d'&eacute;chappement que l'application utilise &agrave; ses propres fins.
+</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+du terminal ou appuyez sur Entr&eacute;e pour enregistrer la s&eacute;lection
+et quitter la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+</div>
+<div class="3" id="UG.UTrmE.div.43" role="Procedure">
+<h1>D&eacute;finition de la s&eacute;quence d'interligne</h1>
+<p>L'option S&eacute;quence d'interligne d&eacute;finit le mode de traitement
+des retours chariot en fin de ligne.</p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options du terminal ne s'affiche
+pas, s&eacute;lectionnez Terminal sur le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton S&eacute;quence d'interligne dans la
+zone Param&egrave;tres du clavier et s&eacute;lectionnez le mode voulu:</p>
+<ul remap="Bullet2">
+<li><p>Retour seulement (valeur par d&eacute;faut) g&eacute;n&egrave;re
+uniquement un retour chariot.</p>
+</li>
+<li><p>Retour/Nouvelle ligne g&eacute;n&egrave;re &agrave; la fois
+un retour chariot et une nouvelle ligne.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+du terminal ou appuyez sur Entr&eacute;e pour enregistrer la s&eacute;lection
+et quitter la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+</div>
+<div class="3" id="UG.UTrmE.div.44" role="Procedure">
+<h1>Configuration des touches de fonction utilisateur</h1>
+<p>L'option Touches de fonction utilisateur verrouille ou d&eacute;verrouille
+(valeur par d&eacute;faut) les touches de fonction utilisateur.</p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options du terminal ne s'affiche
+pas, s&eacute;lectionnez Terminal dans le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Touches de fonction utilisateur dans
+la zone Param&egrave;tres du clavier et s&eacute;lectionnez Verrouill&eacute;
+ou D&eacute;verrouill&eacute; (valeur par d&eacute;faut).</p>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+du terminal ou appuyez sur Entr&eacute;e pour sauvegarder votre s&eacute;lection
+et sortir de la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.<!---- <primary>Terminal</primary><secondary>options
+du clavier&lt;$endrange></secondary>----> <!---- <primary>Clavier</primary><secondary>options du terminal&lt;$endrange></secondary>----> </p>
+</li>
+</ol>
+</div>
+<div class="3" id="UG.UTrmE.div.45">
+<h1>Param&egrave;tres de l'&eacute;cran</h1>
+<p>Il existe trois param&egrave;tres de l'&eacute;cran dans une fen&ecirc;tre <code>dtterm</code>:</p>
+<ul remap="Bullet1">
+<li><p>s&eacute;lecteur de mode 132 colonnes,</p>
+</li>
+<li><p>passage du curseur &agrave; la ligne suivante,</p>
+</li>
+<li><p>passage du curseur &agrave; la ligne pr&eacute;c&eacute;dente.
+</p>
+</li>
+</ul>
+</div>
+<div class="3" id="UG.UTrmE.div.46" role="Procedure">
+<h1>Activation du s&eacute;lecteur de mode 132 colonnes</h1>
+<p>Cette option correspond aux options et &agrave; la ressource <code>dtterm</code> suivantes lanc&eacute;es &agrave; partir de la ligne de commande
+:<!---- <primary>Terminal</primary><secondary>options de param&eacute;trage
+de l'&eacute;cran &lt;$startrange></secondary>----> <!---- <primary>Options</primary><secondary>param&eacute;trage &eacute;cran du terminal&lt;$startrange></secondary>----> </p>
+<ul remap="Bullet1">
+<li><p><code>-132</code></p>
+</li>
+<li><p><code>+132</code></p>
+</li>
+<li><p><code>c132</code></p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options du terminal ne s'affiche
+pas, s&eacute;lectionnez Terminal sur le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton S&eacute;lecteur de mode 132 colonnes
+dans la zone Param&egrave;tres de l'&eacute;cran et s&eacute;lectionnez le
+mode voulu:</p>
+<ul remap="Bullet2">
+<li><p>D&eacute;sactiv&eacute; (valeur par d&eacute;faut) ne modifie
+pas l'affichage lorsqu'une application passe en mode 132 colonnes.</p>
+</li>
+<li><p>Activ&eacute; redimensionne automatiquement la fen&ecirc;tre <code>dtterm</code> lorsqu'une application passe au mode 132 colonnes.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+du terminal ou appuyez sur Entr&eacute;e pour enregistrer votre s&eacute;lection
+et quitter la fen&ecirc;tre.</p>
+<p>Pour sauvegarder vos s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.</p>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="3" id="UG.UTrmE.div.47" role="Procedure">
+<h1>Activation du passage du curseur &agrave; la ligne suivante</h1>
+<p>Cette option d&eacute;termine le passage ou non du curseur &agrave;
+la ligne suivante. Elle correspond aux options et &agrave; la ressource <code>dtterm</code> suivantes lanc&eacute;es &agrave; partir de la ligne de commande
+:</p>
+<ul remap="Bullet1">
+<li><p><code>-aw</code></p>
+</li>
+<li><p><code>+aw</code></p>
+</li>
+<li><p><code>autoWrap</code></p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options du terminal ne s'affiche
+pas, s&eacute;lectionnez Terminal sur le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Passage du curseur &agrave; la ligne
+suivante dans la zone Param&egrave;tres du clavier et s&eacute;lectionnez
+le mode voulu:</p>
+<ul remap="Bullet2">
+<li><p>Activ&eacute; signifie que les caract&egrave;res passent automatiquement
+&agrave; la ligne suivante lorsque la fin de la ligne est atteinte.</p>
+</li>
+<li><p>D&eacute;sactiv&eacute; signifie que le texte ne passe pas
+&agrave; la ligne suivante.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+du terminal ou appuyez sur Entr&eacute;e pour enregistrer la s&eacute;lection
+et quitter la fen&ecirc;tre.</p>
+<p>Pour valider vos s&eacute;lections et conserver la fen&ecirc;tre, cliquez
+sur Appliquer.</p>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div class="3" id="UG.UTrmE.div.48" role="Procedure">
+<h1>Activation du passage du curseur &agrave; la ligne pr&eacute;c&eacute;dente</h1>
+<p>Cette option d&eacute;termine le comportement du passage &agrave; la
+ligne pr&eacute;c&eacute;dente &agrave; la fin d'une ligne. Elle correspond
+aux options et &agrave; la ressource <code>dtterm</code> suivantes lanc&eacute;es
+&agrave; partir de la ligne de commande:</p>
+<ul remap="Bullet1">
+<li><p><code>-rw</code></p>
+</li>
+<li><p><code>+rw</code></p>
+</li>
+<li><p><code>reverseWrap</code></p>
+<ol>
+<li><p>Si la bo&icirc;te de dialogue Options du terminal ne s'affiche
+pas, s&eacute;lectionnez Terminal dans le menu Options.</p>
+</li>
+<li><p>Cliquez sur le bouton Passage du curseur &agrave; la ligne
+pr&eacute;c&eacute;dente dans la zone Param&egrave;tres du clavier et s&eacute;lectionnez
+le mode voulu:</p>
+<ul remap="Bullet2">
+<li><p>Activ&eacute; signifie que le curseur revient automatiquement
+au d&eacute;but de la ligne pr&eacute;c&eacute;dente &agrave; la fin de chaque
+ligne.</p>
+</li>
+<li><p>D&eacute;sactiv&eacute; (valeur par d&eacute;faut) signifie
+que le curseur ne revient pas au d&eacute;but de la ligne pr&eacute;c&eacute;dente.
+</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK en bas de la bo&icirc;te de dialogue Options
+du terminal ou appuyez sur Entr&eacute;e pour sauvegarder la s&eacute;lection
+et quitter la fen&ecirc;tre.</p>
+<p>Pour enregistrer les s&eacute;lections et conserver la fen&ecirc;tre,
+cliquez sur Appliquer.<!---- <primary>Terminal</primary><secondary>options
+de param&eacute;trage de l'&eacute;cran &lt;$endrange></secondary>----> <!---- 
+<primary>Options</primary><secondary>param&eacute;trage &eacute;cran du terminal&lt;$endrange></secondary>----> </p>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="1" id="UG.UTrmE.div.49">
+<h1 id="UG.UTrmE.mkr.12">Caract&egrave;res de contr&ocirc;le du terminal</h1>
+<p><!---- <primary>Caract&egrave;res</primary><secondary>sp&eacute;ciaux
+terminal&lt;$startrange></secondary>----> <!---- <primary>Terminal</primary><secondary>caract&egrave;res de contr&ocirc;le&lt;$startrange></secondary>
+----> <!---- <primary>Caract&egrave;res</primary><secondary>contr&ocirc;le
+du terminal&lt;$startrange></secondary>----> &Eacute;tant donn&eacute;
+que <code>dtterm</code> &eacute;mule uniquement un terminal, les caract&egrave;res
+de contr&ocirc;le ne sont peut-&ecirc;tre pas les m&ecirc;mes que ceux auxquels
+vous &ecirc;tes habitu&eacute;s sur un terminal physique. La ressource <code>ttyModes</code> permet de configurer les caract&egrave;res de contr&ocirc;le
+de l'&eacute;mulateur de terminal.</p>
+<p>Les caract&egrave;res de contr&ocirc;le par d&eacute;faut d&eacute;finis
+dans le Gestionnaire de configuration sont list&eacute;s dans le <!--Original
+XRef content: 'Tableau&numsp;12&hyphen;1<xref role="CodeOrFigureOrTable"
+href="#UG.UTrmE.mkr.13">.</p>
+<table id="UG.UTrmE.tbl.1" frame="Topbot">
+<h1 id="UG.UTrmE.mkr.13">Caract&egrave;res de contr&ocirc;le du terminal</h1>
+<table cols="3" colsep="0" rowsep="0">
+<colspec colwidth="1.10in">
+<colspec colwidth="1.26in">
+<colspec colwidth="3.66in">
+<thead>
+<tr><td align="left" valign="bottom"><p><code>Nom de la commande</code></p></td><td align="left" valign="bottom"><p><code>Caract&egrave;re</code></p></td><td align="left" valign="bottom"><p><code>D&eacute;finition</code></p></td></tr></thead>
+<tbody>
+<tr>
+<td align="left" valign="top"><p>erase</p></td>
+<td align="left" valign="top"><p>Ctrl+H</p></td>
+<td align="left" valign="top"><p>Le retour arri&egrave;re efface les
+caract&egrave;res.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>intr</p></td>
+<td align="left" valign="top"><p>Ctrl+C</p></td>
+<td align="left" valign="top"><p>Interruption: Annule l'op&eacute;ration
+en cours et r&eacute;affiche l'invite de la ligne de commande.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>kill</p></td>
+<td align="left" valign="top"><p>Ctrl+U</p></td>
+<td align="left" valign="top"><p>Arr&ecirc;te une op&eacute;ration ou
+une application.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>start</p></td>
+<td align="left" valign="top"><p>Ctrl+Q</p></td>
+<td align="left" valign="top"><p>Accepte la saisie de caract&egrave;res
+sur le clavier: permet de relancer une application interrompue.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>stop</p></td>
+<td align="left" valign="top"><p>Ctrl+S</p></td>
+<td align="left" valign="top"><p>N'accepte pas les entr&eacute;es au
+clavier: permet d'interrompre une application.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>swtch</p></td>
+<td align="left" valign="top"><p>Ctrl+@</p></td>
+<td align="left" valign="top"><p>Bascule entre les couches d'un shell.
+</p></td></tr></tbody></table></table>
+<p>Par exemple, pour interrompre une op&eacute;ration en cours, appuyez
+sur Ctrl+C.</p>
+<p>La syntaxe de la ressource <systemitem>ttyModes</systemitem> est:</p>
+<p><systemitem>ttyModes</systemitem>: <symbol>Ctrl+C nom</var></p>
+<p>o&ugrave; <symbol>nom</var> est la commande et <symbol>C</var>
+est le caract&egrave;re. (^ est une autre fa&ccedil;on d'exprimer la touche
+Ctrl.) Par exemple, la valeur par d&eacute;faut de <code>ttyModes</code>
+d&eacute;crivant la liste pr&eacute;c&eacute;dente est:</p>
+<listing>ttyModes: erase ^H intr ^C kill ^U start ^Q stop ^S swtch ^@
+</listing>
+<div class="2" id="UG.UTrmE.div.50" role="Procedure">
+<h1>Configuration des caract&egrave;res de contr&ocirc;le du terminal</h1>
+<ol>
+<li><p>Utilisez l'action EditResources pour mettre &agrave; jour
+la ressource <systemitem>ttyModes</systemitem>.</p>
+</li>
+<li><p>S&eacute;lectionnez Relancez Gestionnaire d'esp. de travail
+dans le menu Espace de travail.<!---- <primary>Terminal</primary><secondary>caract&egrave;res de contr&ocirc;le&lt;$endrange></secondary>----> <!---- 
+<primary>Caract&egrave;res</primary><secondary>contr&ocirc;le du terminal&lt;$endrange></secondary>----> <!---- <primary>Caract&egrave;res</primary><secondary>sp&eacute;ciaux terminal&lt;$endrange></secondary>----> </p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="UG.UTrmE.div.51">
+<h1 id="UG.UTrmE.mkr.14">Modification de l'&eacute;mulateur de terminal
+par d&eacute;faut</h1>
+<p><!---- <primary>Emulateur de terminal</primary><secondary>modification
+de l'&eacute;mulateur par d&eacute;faut</secondary>----> <!---- 
+<primary>Emulateur de terminal</primary><secondary>par d&eacute;faut, modification</secondary>----> Vous pouvez utiliser d'autres &eacute;mulateurs de
+terminal que <code>dtterm</code>. Vous pouvez lancer la plupart d'entre
+eux &agrave; partir de la ligne de commande d'un &eacute;mulateur existant
+; cependant, si vous souhaitez utiliser constamment un &eacute;mulateur de
+terminal autre que <code>dtterm</code>, vous devez changer la valeur
+attribu&eacute;e par d&eacute;faut. Pour plus de d&eacute;tails, reportez-vousau
+manuel <citetitle>Bureau CDE - Guide de l'administrateur</citetitle>.</p>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
+<?Pub Caret>
+<?Pub *0000070772>
+
+</body></html>

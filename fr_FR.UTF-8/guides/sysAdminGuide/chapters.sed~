@@ -1,0 +1,3 @@
+/.sgm">$/ s?<!ENTITY[ ]*?s|?g 
+/.sgm">$/ s?[ ]*SYSTEM[ ]*?|?g
+/.sgm">$/ s?.sgm">?.html"|g?g 

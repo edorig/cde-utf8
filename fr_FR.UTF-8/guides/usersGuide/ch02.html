@@ -1,0 +1,269 @@
+<html><body>
+<!-- $XConsortium: ch02.sgm /main/9 1996/12/20 20:42:35 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="ug.login.div.1">
+<h1 id="ug.login.mkr.1">Lancement d'une session du Bureau</h1>
+<p>L'&eacute;cran de connexion, affich&eacute; par le Gestionnaire de connexion,
+permet d'acc&eacute;der au Bureau.<!---- <primary>&Eacute;cran</primary>
+<secondary>connexion</secondary>---->  Vous entrez un nom d'utilisateur
+et un mot de passe. Le menu Options de l'&eacute;cran de connexion r&eacute;pertorie
+les options disponibles. Outre votre session de Bureau, vous pouvez lancer
+une session monofen&ecirc;tre et s&eacute;lectionner une langue de travail
+sp&eacute;cifique.</p>
+<informaltable id="ug.login.itbl.1" frame="all">
+<table cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Lancement
+et arrê<a  role="JumpText" href="#ug.login.mkr.2" >t d'une session37</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Utilisation
+d'une session dans une langue diffé<a  role="JumpText" href="#ug.login.mkr.3" >rente39</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Lancement
+d'une session à fenê<a  role="JumpText" href="#ug.login.mkr.4" >tre unique39</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Lancement
+d'une session à partir de la --><!--ligne de commande40<xref role="JumpText"
+href="#ug.login.mkr.5"></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Utilisation
+<a  role="JumpText" href="#ug.login.mkr.6" >d'une session initiale40</a></p></td>
+</tr>
+</tbody>
+</table>
+</informaltable>
+<div class="1" id="ug.login.div.2">
+<h1 id="ug.login.mkr.2">Lancement et arr&ecirc;t d'une session</h1>
+<p>Une fois que le Gestionnaire de connexion a reconnu vos nom d'utilisateur
+et mot de passe, le Gestionnaire de sessions d&eacute;marre et ouvre le Bureau
+CDE.</p>
+<p>Le Gestionnaire de sessions <em>g&egrave;re</em> les sessions.
+Il m&eacute;morise l'&eacute;tat de la derni&egrave;re session et permet d'y
+revenir lors de la connexion suivante.</p>
+<p>Le Gestionnaire de sessions sauvegarde et r&eacute;tablit les &eacute;l&eacute;ments
+suivants:</p>
+<ul remap="Bullet1"><li><p>les diff&eacute;rents param&egrave;tres
+d'aspect et de comportement (pour les polices, les couleurs, la souris, etc.)
+;</p>
+</li><li><p>les applications en cours d'ex&eacute;cution (Gestionnaire
+de fichiers et &Eacute;diteur de texte, par exemple). Toutefois, certaines
+applications ne peuvent pas &ecirc;tre sauvegard&eacute;es et r&eacute;tablies
+par le Gestionnaire de sessions. Si vous lancez l'&eacute;diteur <code>vi</code> &agrave; partir de la ligne de commande d'une fen&ecirc;tre de
+terminal, par exemple, le Gestionnaire de sessions ne peut r&eacute;tablir
+votre session d'&eacute;dition.</p>
+</li></ul>
+<div class="2" id="ug.login.div.3" role="Procedure">
+<h1>Ouverture d'une session du Bureau</h1>
+<ol><li><p>Entrez votre nom d'utilisateur et appuyez sur
+Entr&eacute;e ou cliquez sur OK.<!---- <primary>Ouverture</primary><secondary>session</secondary>----> </p>
+</li><li><p>Entrez votre mot de passe et appuyez sur Entr&eacute;e
+ou cliquez sur OK.<!---- <primary>Session</primary><secondary>Bureau</secondary>----> </p>
+<p>Si le Gestionnaire de connexion ne reconna&icirc;t pas votre nom d'utilisateur
+ou mot de passe, cliquez sur Lancement et r&eacute;essayez.</p>
+</li></ol>
+<p>Lorsque vous &ecirc;tes connect&eacute;, le Gestionnaire de connexion
+lance une session:</p>
+<ul remap="Bullet1"><li><p>S'il s'agit de votre premi&egrave;re
+connexion, une nouvelle session est lanc&eacute;e.</p>
+</li><li><p>Sinon, la session pr&eacute;c&eacute;dente est
+r&eacute;tablie.</p>
+</li></ul>
+</div>
+<div class="2" id="ug.login.div.4" role="Procedure">
+<h1>Fermeture d'une session du Bureau</h1>
+<ul remap="Bullet1"><li><p>Cliquez sur l'ic&ocirc;ne de
+sortie du Tableau de bord (Exit).<!---- <primary>Fermeture</primary>
+<secondary>session</secondary>----> <!---- <primary>Tableau de bord</primary><secondary>ic&ocirc;ne de sortie (Exit)</secondary>----> <!---- 
+<primary>Ic&ocirc;ne de sortie (Exit)</primary>----> </p>
+</li><li><p><em>Ou</em> s&eacute;lectionnez D&eacute;connexion
+dans le menu Espace de travail.</p>
+</li></ul>
+<p>&Agrave; votre d&eacute;connexion, le Gestionnaire de sessions sauvegarde
+la session en cours afin de pouvoir la r&eacute;tablir lors de la connexion
+suivante. Des informations relatives &agrave; certaines applications risquent
+de ne pas &ecirc;tre sauvegard&eacute;es.</p>
+</div>
+<div class="2" id="ug.login.div.5" role="Procedure">
+<h1 id="ug.login.mkr.3">Utilisation d'une session dans une langue diff&eacute;rente</h1>
+<ol><li><p>S&eacute;lectionnez Langue sur le menu Options
+de l'&eacute;cran de connexion.<!---- <primary>Langue</primary><secondary>session du Bureau</secondary>----> </p>
+</li><li><p>S&eacute;lectionnez le groupe de langues appropri&eacute;.
+</p>
+</li><li><p>S&eacute;lectionnez la langue de travail souhait&eacute;e.
+</p>
+</li><li><p>Connectez-vous.</p>
+</li></ol>
+<p>La langue par d&eacute;faut du syst&egrave;me est d&eacute;finie par
+l'administrateur syst&egrave;me. Le menu Options permet d'acc&eacute;der &agrave;
+d'autres langues. Le choix d'une langue dans le menu correspondant modifie
+la variable d'environnement LANG de la session. La langue par d&eacute;faut
+est r&eacute;tablie en fin de session.</p>
+</div>
+</div>
+<div class="1" id="ug.login.div.6">
+<h1 id="ug.login.mkr.4">Lancement d'une session monofen&ecirc;tre</h1>
+<p><!---- <primary>Session</primary><secondary>monofen&ecirc;tre</secondary>
+----> Une session monofen&ecirc;tre est une session qui lance une seule
+fen&ecirc;tre de terminal (et &eacute;ventuellement le Gestionnaire d'espace
+de travail). Utilisez ce type de session pour ex&eacute;cuter plusieurs commandes
+pr&eacute;alablement &agrave; l'ouverture du Bureau.</p>
+<div class="2" id="ug.login.div.7" role="Procedure">
+<h1>Ouverture d'une session monofen&ecirc;tre</h1>
+<ol><li><p>S&eacute;lectionnez Session dans le menu Options.
+</p>
+</li><li><p>S&eacute;lectionnez Session monofen&ecirc;tre dans
+le sous-menu Session.</p>
+</li><li><p>Connectez-vous.</p>
+</li></ol>
+</div>
+<div class="2" id="ug.login.div.8" role="Procedure">
+<h1>Fermeture d'une session monofen&ecirc;tre</h1>
+<ul><li><p>Entrez la commande <code>exit</code> dans
+la fen&ecirc;tre de terminal.</p>
+</li></ul>
+</div>
+</div>
+<div class="1" id="ug.login.div.9">
+<h1 id="ug.login.mkr.5">Lancement d'une session &agrave; partir de la
+ligne de commande</h1>
+<p>La connexion &agrave; partir de la ligne de commande permet de quitter
+provisoirement le bureau afin de travailler directement dans l'environnement
+d'exploitation. Ce mode de connexion ne permet pas de lancer une session du
+Bureau. Lorsque vous y faites appel, le Bureau est en attente. La connexion
+est &eacute;tablie via une proc&eacute;dure du syst&egrave;me d'exploitation,
+sans intervention du Gestionnaire de connexion du Bureau. Aucune fen&ecirc;tre
+ne s'affiche car le serveur X n'est pas lanc&eacute;.<!---- <primary>Mode de connexion (ligne de commande)</primary><secondary>d&eacute;finition</secondary>----> </p>
+<div class="2" id="ug.login.div.10" role="Procedure">
+<h1>Entr&eacute;e et sortie du mode de connexion &agrave; partir de la
+ligne de commande</h1>
+<note>
+<p>Dans certains types de configuration (terminal X, par exemple), l'option
+Connexion &agrave; partir de la ligne de commande n'est pas disponible.</p>
+</note>
+<p>Pour entrer dans le mode de connexion &agrave; partir de la ligne de
+commande :<!---- <primary>Mode de connexion (ligne de commande)</primary>
+<secondary>entr&eacute;e</secondary>----> <!---- <primary>Mode de
+connexion (ligne de commande)</primary><secondary>sortie</secondary>----> <!---- 
+<primary>Lancement</primary><secondary>mode de connexion &agrave; partir de
+la ligne de commande</secondary>----> </p>
+<ol><li><p>S&eacute;lectionnez Connexion &agrave; partir
+de la ligne de commande dans le menu Options.</p>
+<p>L'&eacute;cran de connexion dispara&icirc;t et est remplac&eacute; par
+une invite de console.</p>
+</li><li><p>Entrez votre nom d'utilisateur et votre mot de
+passe.</p>
+</li></ol>
+<p>Pour sortir du mode de connexion &agrave; partir de la ligne de commande
+:</p>
+<ul><li><p>Entrez <code>exit</code> &agrave; l'invite
+de la ligne de commande.</p>
+</li></ul>
+</div>
+</div>
+<div class="1" id="ug.login.div.11">
+<h1 id="ug.login.mkr.6">Utilisation d'une session initiale</h1>
+<p>G&eacute;n&eacute;ralement, le Bureau sauvegarde la session lors de
+la d&eacute;connexion et r&eacute;tablit les informations correspondantes
+&agrave; l'ouverture de la session suivante. Si vous lancez ou arr&ecirc;tez
+des applications en cours de session, ou si vous utilisez le Gestionnaire
+de configuration pour modifier l'apparence et le comportement du syst&egrave;me,
+toutes les modifications apport&eacute;es seront prises en compte lors de
+la session suivante. Ce type de session est appel&eacute; <em>session
+en cours</em>.<!---- <primary>Session</primary><secondary>en cours</secondary><tertiary>d&eacute;finition</tertiary>----> <!---- 
+<primary>Session</primary><secondary>initiale</secondary><tertiary>d&eacute;finition</tertiary>----> <!---- <primary>Session</primary><secondary>en
+cours</secondary>----> <!---- <primary>Session</primary><secondary>initiale</secondary>----> </p>
+<p>Le Bureau permet de cr&eacute;er une <em>session initiale</em>.
+Il s'agit d'une session sauvegard&eacute;e &agrave; un moment pr&eacute;cis.
+Si vous avez sauvegard&eacute; une session initiale, vous pouvez la r&eacute;tablir
+&agrave; chaque nouvelle connexion.</p>
+<div class="2" id="ug.login.div.12" role="Procedure">
+<h1>Sauvegarde d'une session initiale</h1>
+<ol><li><p>Cliquez sur l'ic&ocirc;ne Gestionnaire de configuration
+du Tableau de bord.<!---- <primary>Session</primary><secondary>initiale</secondary><tertiary>d&eacute;finition</tertiary>----> </p>
+</li><li><p>Cliquez sur l'ic&ocirc;ne Lancement dans le Gestionnaire
+de configuration.</p>
+<p>La bo&icirc;te de dialogue Lancement s'affiche.</p>
+</li><li><p>Cliquez sur Enregistrer la session initiale dans
+la bo&icirc;te de dialogue Lancement.</p>
+</li><li><p>Cliquez sur OK dans la bo&icirc;te de dialogue
+de confirmation qui s'affiche.</p>
+<p>La session est sauvegard&eacute;e en l'&eacute;tat.</p>
+</li></ol>
+</div>
+<div class="2" id="ug.login.div.13" role="Procedure">
+<h1>Lancement automatique de la session initiale lors de la connexion</h1>
+<ol><li><p>Cliquez sur l'ic&ocirc;ne Gestionnaire de configuration
+du Tableau de bord.<!---- <primary>Session</primary><secondary>initiale</secondary><tertiary>lancement automatique &agrave; la connexion</tertiary>
+----> <!---- <primary>Lancement</primary><secondary>session</secondary>
+<tertiary>initiale</tertiary>----> </p>
+</li><li><p>Cliquez sur l'ic&ocirc;ne Lancement dans le Gestionnaire
+de configuration.</p>
+<p>La bo&icirc;te de dialogue Lancement s'affiche.</p>
+</li><li><p>S&eacute;lectionnez Revenir &agrave; la session
+initiale.</p>
+</li><li><p>Cliquez sur OK.</p>
+</li></ol>
+<p>Lorsque vous s&eacute;lectionnez Revenir &agrave; la session initiale,
+le Gestionnaire de sessions <em>ne sauvegarde pas</em> la session
+en cours lors de la d&eacute;connexion.</p>
+</div>
+<div class="2" id="UG.LogIn.div.14" role="Procedure">
+<h1>S&eacute;lection de la session &agrave; lancer</h1>
+<ol><li><p>Dans l'&eacute;cran de connexion, cliquez sur
+le bouton Options.<!---- <primary>session</primary><secondary>d&eacute;terminer
+lors de l'entr&eacute;e en connexion</secondary>----> </p>
+</li><li><p>Cliquez sur Session. Le menu Session liste toutes
+les sessions disponibles:</p>
+<variablelist>
+<varlistentry><term>En cours</term>
+<li>
+<p>Lance la plus r&eacute;cente session.</p>
+</li>
+</varlistentry>
+<varlistentry><term>Initiale</term>
+<li>
+<p>Lance votre session initiale (si vous en sp&eacute;cifiez une).</p>
+</li>
+</varlistentry>
+<varlistentry><term><em>nom_d'affichage</em> - En cours</term>
+<li>
+<p>Cr&eacute;e une nouvelle session sp&eacute;cifique &agrave; votre affichage
+et initialise votre session initiale sp&eacute;cifique &agrave; un affichage
+(si vous en avez cr&eacute;&eacute; une), votre session initiale g&eacute;n&eacute;rique
+(le cas &eacute;ch&eacute;ant) ou une nouvelle session utilisateur.</p>
+</li>
+</varlistentry>
+<varlistentry><term><em>nom_d'affichage</em> - Initiale</term>
+<li>
+<p>Cr&eacute;e une nouvelle session sp&eacute;cifique &agrave; votre affichage
+et initialise votre session initiale g&eacute;n&eacute;rique (s'il en existe
+une) ou une nouvelle session utilisateur.</p>
+</li>
+</varlistentry>
+<varlistentry><term>Session de sauvegarde</term>
+<li>
+<p>D&eacute;marre une session de sauvegarde.</p>
+</li>
+</varlistentry>
+</variablelist>
+</li><li><p>Cliquez sur la session &agrave; initialiser.</p>
+</li></ol>
+</div>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
+<?Pub Caret>
+<?Pub *0000030921>
+</body></html>

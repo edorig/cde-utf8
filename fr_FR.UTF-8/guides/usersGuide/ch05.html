@@ -1,0 +1,1986 @@
+<html><body>
+<!-- $XConsortium: ch05.sgm /main/10 1996/12/20 20:42:55 rws $ -->
+<!-- (c) Copyright 1995 Digital Equipment Corporation. -->
+<!-- (c) Copyright 1995 Hewlett-Packard Company. -->
+<!-- (c) Copyright 1995 International Business Machines Corp. -->
+<!-- (c) Copyright 1995 Sun Microsystems, Inc. -->
+<!-- (c) Copyright 1995 Novell, Inc. -->
+<!-- (c) Copyright 1995 FUJITSU LIMITED. -->
+<!-- (c) Copyright 1995 Hitachi. -->
+<chapter id="UG.FMgr.div.1">
+<h1 id="UG.FMgr.mkr.1">Gestionnaire de fichiers</h1>
+<para id="UG.FMgr.mkr.2">Le Gestionnaire de fichiers permet de cr&eacute;er,
+de rechercher et d'utiliser des objets de l'espace de travail: fichiers,
+dossiers et applications. Chaque objet est repr&eacute;sent&eacute; par une
+ic&ocirc;ne.</p>
+<informaltable id="UG.FMgr.itbl.1" frame="All">
+<table cols="1" colsep="1" rowsep="1">
+<colspec colwidth="4.00in">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Présentation
+de la fenêtre et de l'espace de travail du Gestionnaire de fichiers90<xref
+role="JumpText" href="#UG.FMgr.mkr.3"></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Concepts
+de base des systè<a  role="JumpText" href="#UG.FMgr.mkr.4" >mes de fichiers91</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Connaissances
+<a  role="JumpText" href="#UG.FMgr.mkr.5" >de base requises par la gestion des fichiers94</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Manipulation
+<a  role="JumpText" href="#UG.FMgr.mkr.12" >des fichiers et des dossiers100</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Navigation
+<a  role="JumpText" href="#UG.FMgr.mkr.14" >vers des dossiers et sous-dossiers104</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Suppression
+d'objets (mettre à<a  role="JumpText" href="#UG.FMgr.mkr.16" > la corbeille)107</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Utilisation
+des objets du Gestionnaire de fichiers dans l'espace de travail112<xref
+role="JumpText" href="#UG.FMgr.mkr.19"></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Localisation
+<a  role="JumpText" href="#UG.FMgr.mkr.20" >de fichiers115</a></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>Personnalisation
+<a  role="JumpText" href="#UG.FMgr.mkr.23" >des vues du Gestionnaire de fichiers117</a></p></td>
+</tr></tbody></table></informaltable>
+<div class="1" id="UG.FMgr.div.2" role="Procedure">
+<h1>Ouverture du Gestionnaire de fichiers</h1>
+<ul>
+<li><p>Cliquez sur l'ic&ocirc;ne du Gestionnaire de fichiers dans
+le Tableau de bord.<!---- <primary>Gestionnaire de fichiers</primary>
+<secondary>lancement</secondary>----> <!---- <primary>Tableau de
+bord</primary><secondary>ic&ocirc;ne du Gestionnaire de fichiers</secondary>
+----> <!---- <primary>Gestionnaire de fichiers</primary><secondary>ic&ocirc;ne du Tableau de bord</secondary>----> <!---- <primary>Lancement</primary><secondary>Gestionnaire de fichiers</secondary>----> </p>
+</li>
+</ul>
+<img id="UG.FMgr.igrph.1" src="./graphics/FMFPctrl.png">
+</div>
+<div class="1" id="UG.FMgr.div.3">
+<h1 id="UG.FMgr.mkr.3">Pr&eacute;sentation de la fen&ecirc;tre et de l'espace
+de travail du Gestionnaire de fichiers</h1>
+<p><!---- <primary>Gestionnaire de fichiers</primary><secondary>fen&ecirc;tre
+principale</secondary>----> La fen&ecirc;tre principale du Gestionnaire
+de fichiers correspond &agrave; la vue d'un dossier sur votre syst&egrave;me.
+Le dossier visualis&eacute; est appel&eacute; <em>dossier courant.</em></p>
+<img id="UG.FMgr.igrph.2" src="./graphics/FMmain.png">
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="228*">
+<colspec colwidth="228*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Chemin d'acc&egrave;s au dossier courant
+</p></td>
+<td align="left" valign="top"><p>Affiche le chemin d'acc&egrave;s au
+dossier courant</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Barre de menus et menus</p></td>
+<td align="left" valign="top"><p>Contiennent les commandes disponibles
+dans le Gestionnaire de fichiers</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Zone de visualisation des objets</p></td>
+<td align="left" valign="top"><p>Affiche les objets (fichiers et dossiers)
+du dossier de travail courant</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ic&ocirc;nes d'objets</p></td>
+<td align="left" valign="top"><p>Ic&ocirc;nes repr&eacute;sentant les
+fichiers et les dossiers du dossier courant</p></td></tr></tbody></table>
+</informaltable>
+</div>
+<div class="1" id="UG.FMgr.div.4">
+<h1 id="UG.FMgr.mkr.4">Concepts de base des syst&egrave;mes de fichiers</h1>
+<p>La pr&eacute;sente section d&eacute;crit les concepts de base des syst&egrave;mes
+de fichiers.<!---- <primary>Syst&egrave;</primary>----> <!---- 
+<primary>me de fichiers hi&eacute;rarchique</primary>----> <!---- 
+<primary>Syst&egrave;me de fichiers</primary><secondary>concepts</secondary>
+----> <!---- <primary>Syst&egrave;me de fichiers</primary><secondary>hi&eacute;rarchique</secondary>----> </p>
+<div class="2" id="UG.FMgr.div.5">
+<h1>Fichiers</h1>
+<p>Un <em>fichier</em> est un conteneur renfermant des informations.
+Les fichiers que vous utilisez contiennent des donn&eacute;es dans un format
+particulier &mdash; un document, une feuille de calcul, un graphique. Le format
+correspond &agrave; la disposition des donn&eacute;es dans le fichier; il
+est indiqu&eacute; par le <em>type de donn&eacute;es</em> du fichier.
+</p>
+<p>Lorsque l'un des modes de visualisation des ic&ocirc;nes du Gestionnaire
+de fichiers est activ&eacute;, vous pouvez identifier le type de donn&eacute;es
+d'un fichier gr&acirc;ce &agrave; l'ic&ocirc;ne utilis&eacute;e pour le repr&eacute;senter.
+Chaque type de donn&eacute;es est associ&eacute; &agrave; une ic&ocirc;ne
+diff&eacute;rente.</p>
+<p>Les programmes d'application g&egrave;rent un nombre limit&eacute; de
+formats. Par exemple, un &eacute;diteur de documents ne peut lire une feuille
+de calcul. Le Bureau vous aide &agrave; reconna&icirc;tre les diff&eacute;rents
+types de fichier gr&acirc;ce &agrave; une base de donn&eacute;es de types
+de donn&eacute;es. Le type de donn&eacute;es identifie les fichiers d'un format
+particulier et les associe aux applications correspondantes; vous ne devez
+donc pas vous souvenir des commandes lorsque vous effectuez des t&acirc;ches
+fr&eacute;quentes. Lorsque vous cliquez deux fois sur un fichier, le Bureau
+lance automatiquement l'application qui prend en charge le type de donn&eacute;es
+du fichier.</p>
+<p>La longueur maximale autoris&eacute;e pour le nom d'un fichier varie
+d'un syst&egrave;me &agrave; l'autre. La longueur maximale est parfois limit&eacute;e
+&agrave; 14 caract&egrave;res. Si n&eacute;cessaire, consultez l'administrateur
+syst&egrave;me.</p>
+</div>
+<div class="2" id="UG.FMgr.div.6">
+<h1>Dossiers<!---- <primary>Dossier</primary><secondary>d&eacute;finition</secondary>----> <!---- <primary>Objets</primary><secondary>dossier</secondary>----> </h1>
+<p><!---- <primary>R&eacute;pertoires, &lt;Default Para Font> dossiers&lt;$nopage></primary>----> Un <em>dossier</em> est un conteneur de
+fichiers, semblable &agrave; un dossier utilis&eacute; dans une armoire de
+rangement. Le Gestionnaire de fichiers utilise une ic&ocirc;ne particuli&egrave;re
+pour repr&eacute;senter un dossier. Un dossier peut en contenir d'autres &mdash;
+parfois appel&eacute;s sous-dossiers. Les dossiers et sous-dossiers permettent
+de cr&eacute;er plusieurs niveaux d'organisation formant une hi&eacute;rarchie.
+Dans d'autres contextes, les dossiers sont souvent appel&eacute;s r&eacute;pertoires.
+</p>
+<p>Si vous repr&eacute;sentiez la structure hi&eacute;rarchique d'un dossier
+sous forme de sch&eacute;ma en tra&ccedil;ant des lignes entre les sous-dossiers
+et leurs dossiers parents, votre dessin ressemblerait &agrave; un arbre &agrave;
+l'envers (d'o&ugrave; le terme <em>arborescence</em>, souvent
+utilis&eacute; pour faire r&eacute;f&eacute;rence &agrave; la hi&eacute;rarchie
+des dossiers).<!---- <primary>Sous-r&eacute;pertoires</primary><secondary>d&eacute;finition</secondary>----> <!---- <primary>Sous-dossiers</primary><secondary>d&eacute;finition</secondary>----> </p>
+<p>Dans un dossier, chaque nom de fichier doit &ecirc;tre unique. Cependant,
+des fichiers m&eacute;moris&eacute;s dans des dossiers diff&eacute;rents peuvent
+porter le m&ecirc;me nom. Lorsque vous naviguez entre des dossiers, on appelle
+le r&eacute;pertoire dans lequel o&ugrave; vous vous trouvez &agrave; un moment
+donn&eacute; le <em>dossier courant<!---- <primary>Dossier</primary>
+<secondary>courant</secondary>----> </em>.</p>
+</div>
+<div class="2" id="UG.FMgr.div.7">
+<h1>Objets</h1>
+<p>Les fichiers et les dossiers sont repr&eacute;sent&eacute;s sous forme
+d'ic&ocirc;nes dans le Gestionnaire de fichiers. C'est pourquoi le terme <em>objet</em> est employ&eacute; pour les d&eacute;crire. Les objets sont
+des &eacute;l&eacute;ments du Bureau que vous pouvez cr&eacute;er et manipuler.
+</p>
+<p>Les applications peuvent &eacute;galement &ecirc;tre repr&eacute;sent&eacute;es
+comme des objets sur le Bureau. Par exemple, le Gestionnaire d'applications
+contient des objets repr&eacute;sentant les applications disponibles sur le
+syst&egrave;me.</p>
+</div>
+<div class="2" id="UG.FMgr.div.8">
+<h1>Chemins d'acc&egrave;s<!---- <primary>Chemin</primary><secondary>d'acc&egrave;s</secondary>----> <!---- <primary>Chemin</primary>
+<secondary>d'acc&egrave;s</secondary>----> </h1>
+<p>L'emplacement d'un fichier est souvent indiqu&eacute; par la liste des
+dossiers et des sous-dossiers qui permettent d'y acc&eacute;der &mdash; cette
+liste est appel&eacute;e <em>chemin d'acc&egrave;s</em>. Un chemin
+est visible &agrave; deux endroits du Gestionnaire de fichiers: dans le chemin
+d'ic&ocirc;nes, sous la forme d'une cha&icirc;ne de dossiers et sous forme
+de cha&icirc;ne de caract&egrave;res, sur la ligne de texte situ&eacute;e
+au-dessus de la zone de visualisation. Ces deux zones peuvent &ecirc;tre d&eacute;sactiv&eacute;es.
+Pour plus de d&eacute;tails, reportez-vous &agrave; la <!--Original XRef content:
+'&ldquo;Configuration des en-têtes&ldquo;, page&numsp;118<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.24">.</p>
+<div class="3" id="UG.FMgr.div.9">
+<h1>Chemins et noms de chemins</h1>
+<p>Le chemin d'acc&egrave;s &agrave; un objet indique l'emplacement de
+celui-ci dans le syst&egrave;me de fichiers. Vous pouvez indiquer un chemin
+de mani&egrave;re absolue ou relative.</p>
+<div class="4" id="UG.FMgr.div.10">
+<h1>Chemins absolus</h1>
+<p>Un chemin est <em>absolu<!---- <primary>Chemin</primary>
+<secondary>absolu</secondary>----> </em> lorsqu'il commence au
+dossier racine. Le <em>dossier racine</em> est le dossier commun
+unique de votre syst&egrave;me o&ugrave; commence la hi&eacute;rarchie. Tout
+chemin commen&ccedil;ant par une barre oblique (/) est un chemin absolu. L'exemple
+indique un chemin d'acc&egrave;s absolu au fichier <tt>lettre</tt>:
+</p>
+<listing> /usr/dt/config/lettre</listing>
+</div>
+<div class="4" id="UG.FMgr.div.11">
+<h1>Chemins relatifs</h1>
+<p>Un chemin <em>relatif<!---- <primary>Chemin</primary><secondary>relatif</secondary>----> </em> d&eacute;crit l'emplacement d'un
+fichier ou d'un dossier par rapport au dossier courant. Si vous vous trouvez
+dans un dossier et que vous voulez descendre dans la hi&eacute;rarchie des
+r&eacute;pertoires, il est inutile d'indiquer le chemin complet; sp&eacute;cifiez
+simplement le chemin en commen&ccedil;ant par le nom du dossier suivant de
+l'arborescence. Si un chemin ne commence pas par une barre oblique, il s'agit
+d'un chemin relatif. Par exemple, si le dossier de travail est <tt>/usr/dt</tt> et que vous souhaitez acc&eacute;der au dossier <tt>/usr/dt/config/lettres</tt>, utilisez le chemin relatif suivant:</p>
+<listing>config/lettres</listing>
+<p>Deux noms de dossiers sp&eacute;ciaux peuvent s'av&eacute;rer utiles
+lorsque vous sp&eacute;cifiez des chemins relatifs. Le dossier &ldquo;.&rdquo;
+repr&eacute;sente le dossier de travail. Le dossier &ldquo;..&rdquo; repr&eacute;sente
+le dossier <var">parent</var>, c'est-&agrave;-dire le
+dossier situ&eacute; au niveau sup&eacute;rieur dans la hi&eacute;rarchie.
+Par exemple, si le dossier de travail est <tt>/usr/dt/config</tt>,
+le chemin relatif du fichier <tt>Dtwm</tt> est:</p>
+<listing>../app-defaults/<var">langue</var>/Dtwm
+</listing>
+<p>En effet, ce fichier se trouve dans le dossier <tt>/usr/dt/app-defaults/</tt><var">langue</var>, un niveau au-dessus du
+dossier courant et dans le sous-dossier <tt>app-defaults/</tt><var">langue</var>.</p>
+</div>
+<div class="4" id="UG.FMgr.div.12">
+<h1>Voir aussi</h1>
+<ul remap="Bullet1">
+<li><p>&ldquo;Affichage
+d'un autre dossier&ldquo;, page&numsp;104<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.15"></p>
+</li>
+<li><p>&ldquo;Recherche d'un
+objet par son nom&ldquo;, page&numsp;115<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.21"></p>
+</li>
+<li><p>&ldquo;Recherche d'un
+fichier par son contenu&ldquo;, page&numsp;116<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.22"></p>
+</li>
+</ul>
+<p>Si vous souhaitez en savoir plus sur le syst&egrave;me de fichiers de
+votre ordinateur, reportez-vous &agrave; l'aide en ligne ou &agrave; la documentation
+accompagnant votre syst&egrave;me d'exploitation. Il exite par ailleurs de
+nombreux ouvrages traitant des principes fondamentaux de la gestion et des
+syst&egrave;mes de fichiers.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.13">
+<h1 id="UG.FMgr.mkr.5">Connaissances de base requises par la gestion des
+fichiers<!---- <primary>Connaissances de base requises pour la gestion
+des fichiers</primary>----> <!---- <primary>Gestion des fichiers</primary><secondary>connaissances de base</secondary>----> <!---- 
+<primary>Gestion des fichiers</primary>----> </h1>
+<p>Avant d'utiliser le Gestionnaire de fichiers, vous devez acqu&eacute;rir
+quelques notions de base. Chaque ic&ocirc;ne du Gestionnaire de fichiers repr&eacute;sente
+un objet que vous pouvez manipuler. Les op&eacute;rations possibles sont &eacute;num&eacute;r&eacute;es
+ci-dessous.</p>
+<ul remap="Bullet1">
+<li><p>S&eacute;lection</p>
+</li>
+<li><p>Glissement-d&eacute;placement</p>
+</li>
+<li><p>Utilisation de menus instantan&eacute;s</p>
+</li>
+<li><p>Modification du nom</p>
+</li>
+<li><p>Aide en ligne sur les objets</p>
+</li>
+<li><p>Ouverture</p>
+</li>
+</ul>
+<div class="2" id="UG.FMgr.div.14" role="Procedure">
+<h1 id="UG.FMgr.mkr.6">S&eacute;lection d'un fichier ou d'un dossier<!---- 
+<primary>S&eacute;lection</primary><secondary>fichiers</secondary>----> <!---- 
+<primary>S&eacute;lection</primary><secondary>dossiers</secondary>----> <!---- 
+<primary>S&eacute;lection</primary><secondary>objets</secondary>----> <!---- 
+<primary>S&eacute;lection</primary><secondary>ic&ocirc;nes</secondary>----> <!---- 
+<primary>Objets</primary><secondary>s&eacute;lection</secondary>----> <!---- 
+<primary>Fichiers</primary><secondary>s&eacute;lection</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>s&eacute;lection</secondary>----> <!---- 
+<primary>Ic&ocirc;nes</primary><secondary>s&eacute;lection</secondary>----> </h1>
+<p>Lorsque vous s&eacute;lectionnez l'ic&ocirc;ne d'un fichier ou d'un
+dossier, son nom est mis en &eacute;vidence. De nombreuses options des menus
+du Gestionnaire de fichiers s'appliquent alors au fichier ou au dossier <em>s&eacute;lectionn&eacute;</em>. Le menu S&eacute;lectionn&eacute;(s)
+comporte des options qui ne s'appliquent qu'aux objets s&eacute;lectionn&eacute;s
+et qui varient en fonction du type d'objet choisi. Ces options restent estomp&eacute;es
+tant que vous n'avez pas s&eacute;lectionn&eacute; d'objet.</p>
+<div class="3" id="UG.FMgr.div.15">
+<h1>Souris</h1>
+<ul>
+<li><p>Cliquez une fois sur l'ic&ocirc;ne.</p>
+</li>
+</ul>
+<div class="4" id="UG.FMgr.div.16">
+<h1>Clavier</h1>
+<ol>
+<li><p>Utilisez la touche Tab et les fl&egrave;ches de d&eacute;placement
+pour mettre en &eacute;vidence l'ic&ocirc;ne &agrave; s&eacute;lectionner.
+</p>
+</li>
+<li><p>Appuyez sur la barre d'espacement.</p>
+</li>
+</ol>
+<p>Pour d&eacute;s&eacute;lectionner un fichier ou un dossier, s&eacute;lectionnez
+une autre ic&ocirc;ne ou cliquez sur une zone vide de la fen&ecirc;tre du
+Gestionnaire de fichiers.</p>
+</div>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.17" role="Procedure">
+<h1 id="UG.FMgr.mkr.7">S&eacute;lection de plusieurs fichiers ou dossiers<!---- 
+<primary>S&eacute;lection</primary><secondary>multiple</secondary><tertiary>fichiers</tertiary>----> <!---- <primary>S&eacute;lection</primary>
+<secondary>multiple</secondary><tertiary>dossiers</tertiary>----> <!---- 
+<primary>S&eacute;lection</primary><secondary>multiple</secondary><tertiary>objets</tertiary>----> <!---- <primary>S&eacute;lection</primary>
+<secondary>multiple</secondary><tertiary>ic&ocirc;nes</tertiary>----> <!---- 
+<primary>Objets</primary><secondary>s&eacute;lection multiple</secondary>
+----> <!---- <primary>Fichier</primary><secondary>s&eacute;lection
+multiple</secondary>----> <!---- <primary>Dossier</primary><secondary>s&eacute;lection multiple</secondary>----> <!---- <primary>Ic&ocirc;nes</primary><secondary>s&eacute;lection multiple</secondary>----> </h1>
+<p>Vous pouvez s&eacute;lectionner plusieurs objets pour leur appliquer
+l'une des options du menu S&eacute;lectionn&eacute;(s). Cette fonction permet
+notamment de supprimer plusieurs fichiers &agrave; la fois ou de d&eacute;placer
+un groupe de fichiers vers un autre dossier. Cependant, lorsque vous s&eacute;lectionnez
+plusieurs objets, la partie Actions du menu S&eacute;lectionn&eacute;(s) est
+vide.</p>
+<p>Lorsque plusieurs ic&ocirc;nes sont s&eacute;lectionn&eacute;es, le
+d&eacute;placement d'une ic&ocirc;ne entra&icirc;ne le d&eacute;placement
+de l'ensemble du groupe. Le menu S&eacute;lectionn&eacute;(s) et les diff&eacute;rentes
+commandes de menu applicables &agrave; un seul objet sont inactifs.</p>
+<div class="3" id="UG.FMgr.div.18">
+<h1>Souris</h1>
+<ul remap="Bullet1">
+<li><p>Cliquez dans une zone vide de la fen&ecirc;tre &agrave; l'aide
+du bouton 1 de la souris, faites glisser cette derni&egrave;re afin de dessiner
+un cadre autour des ic&ocirc;nes &agrave; s&eacute;lectionner, puis rel&acirc;chez
+le bouton.</p>
+<p><em>Ou</em> cliquez &agrave; l'aide du bouton 1 de la souris
+pour s&eacute;lectionner la premi&egrave;re ic&ocirc;ne, puis maintenez la
+touche Ctrl enfonc&eacute;e et cliquez pour s&eacute;lectionner une autre
+ic&ocirc;ne. Cette m&eacute;thode est tr&egrave;s pratique lorsque les ic&ocirc;nes
+&agrave; s&eacute;lectionner ne sont pas adjacentes.</p>
+</li>
+<li><p>Pour d&eacute;s&eacute;lectionner une seule ic&ocirc;ne d'un
+groupe, maintenez la touche Ctrl enfonc&eacute;e et cliquez sur l'ic&ocirc;ne
+voulue.</p>
+</li>
+</ul>
+<div class="4" id="UG.FMgr.div.19">
+<h1>Clavier</h1>
+<ol>
+<li><p>S&eacute;lectionnez l'ic&ocirc;ne du premier fichier ou dossier
+en appuyant sur la barre d'espacement.</p>
+</li>
+<li><p>Mettez en &eacute;vidence chaque ic&ocirc;ne suppl&eacute;mentaire
+&agrave; s&eacute;lectionner, puis appuyez sur Ctrl+barre d'espacement.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.20" role="Procedure">
+<h1 id="UG.FMgr.mkr.8">Faire glisser/d&eacute;placer un fichier ou un dossier<!---- 
+<primary>Pose</primary><secondary>fichier</secondary>----> <!---- 
+<primary>Pose</primary><secondary>dossier</secondary>----> <!---- 
+<primary>Pose</primary><secondary>objets</secondary>----> <!---- 
+<primary>Objets</primary><secondary>d&eacute;placer</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>d&eacute;placer</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>d&eacute;placer</secondary>----> <!---- 
+<primary>Annulation</primary><secondary>glissement</secondary>----> <!---- 
+<primary>Glissement</primary><secondary>annulation</secondary>----> <!---- 
+<primary>Glissement</primary><secondary>fichier</secondary>----> <!---- 
+<primary>Glissement</primary><secondary>dossier</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>glissement</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>glissement</secondary>----> <!---- 
+<primary>Objet</primary><secondary>glissement</secondary>----> <!---- 
+<primary>Glissement</primary><secondary>objet</secondary>----> </h1>
+<ol>
+<li><p>Placez le pointeur de la souris sur le fichier ou le dossier.
+</p>
+</li>
+<li><p>Appuyez <em>et maintenez enfonc&eacute;</em> le
+bouton 1 de la souris.</p>
+</li>
+<li><p>Faites glisser l'ic&ocirc;ne &agrave; l'endroit d&eacute;sir&eacute;.
+</p>
+</li>
+<li><p>Rel&acirc;chez le bouton de la souris.</p>
+</li>
+</ol>
+<p>Donc, pour poser un objet: <em>appuyez&hellip; faites glisser&hellip;
+rel&acirc;chez</em>.</p>
+<p>Pour annuler un glissement, appuyez sur &Eacute;chap avant de rel&acirc;cher
+le bouton de la souris.</p>
+<object>
+<h1>Glissement de l'ic&ocirc;ne indiquant l'objet d&eacute;plac&eacute;</h1>
+<img id="UG.FMgr.grph.1" src="./graphics/FMdragic.png">
+</object>
+<p>Si plusieurs ic&ocirc;nes sont s&eacute;lectionn&eacute;es, faites glisser
+l'une d'entre elles pour d&eacute;placer tout le groupe.</p>
+<note>
+<p>Vous ne pouvez faire glisser/d&eacute;placer un objet si vous ne disposez
+pas d'une souris ou d'un p&eacute;riph&eacute;rique de pointage.</p>
+</note>
+<div class="3" id="UG.FMgr.div.21">
+<h1>&ldquo;Faire glisser/d&eacute;placer&rdquo; - T&acirc;ches de base</h1>
+<ul remap="Bullet1">
+<li><p>Pour d&eacute;placer un fichier vers un autre dossier, posez
+son ic&ocirc;ne sur celle du dossier cible. Ou bien, si les dossiers source
+et cible sont ouverts, faites glisser l'ic&ocirc;ne de la fen&ecirc;tre de
+visualisation du dossier source et posez-la sur le fond de la fen&ecirc;tre
+de visualisation du dossier.</p>
+</li>
+<li><p>Pour placer l'ic&ocirc;ne d'un fichier ou d'un dossier sur
+le fond de l'espace de travail actuel, posez-la sur une zone ne contenant
+aucune fen&ecirc;tre. Un objet de l'espace de travail repr&eacute;sente simplement
+une <em>r&eacute;f&eacute;rence</em> &agrave; l'objet r&eacute;el
+; ce dernier reste inchang&eacute; dans la fen&ecirc;tre du Gestionnaire de
+fichiers.</p>
+</li>
+<li><p>Pour imprimer un fichier, posez-le sur l'ic&ocirc;ne Imprimante
+du Tableau de bord (ou sur l'une des imprimantes du tableau secondaire Imprimantes
+personnelles).</p>
+</li>
+<li><p>Pour supprimer un fichier ou un dossier, posez l'ic&ocirc;ne
+correspondante sur l'ic&ocirc;ne Corbeille du Tableau de bord.</p>
+</li>
+</ul>
+<p>Si vous tentez d&eacute;placer une ic&ocirc;ne &agrave; un endroit o&ugrave;
+cette op&eacute;ration est interdite, l'ic&ocirc;ne est renvoy&eacute;e &agrave;
+son emplacement initial dans le Gestionnaire de fichiers ou sur l'espace de
+travail.</p>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.22" role="Procedure">
+<h1 id="UG.FMgr.mkr.9">Affichage d'un menu instantan&eacute;<!---- 
+<primary>Menu instantan&eacute;</primary><secondary>affichage</secondary>
+----> </h1>
+<p>Chaque objet du Gestionnaire de fichiers poss&egrave;de un menu instantan&eacute;.
+La fen&ecirc;tre du Gestionnaire de fichiers comporte elle-m&ecirc;me un tel
+menu, que vous pouvez afficher en pla&ccedil;ant le pointeur &agrave; un endroit
+de la fen&ecirc;tre de visualisation &agrave; l'ext&eacute;rieur des fichiers
+ou des dossiers.</p>
+<div class="3" id="UG.FMgr.div.23">
+<h1>Souris</h1>
+<ol>
+<li><p>Placez le pointeur sur l'ic&ocirc;ne dont vous souhaitez afficher
+le menu instantan&eacute; et appuyez sur le bouton droit de la souris. S'il s'agit
+d'une souris &agrave; deux boutons, appuyez sur le bouton droit.</p>
+<object>
+<h1>Exemple de menu instantan&eacute;</h1>
+<img id="ug.fmgr.grph.2" src="./graphics/FMpopupm.png">
+</object>
+</li>
+<li><p>Pour s&eacute;lectionner une commande du menu, positionnez
+la souris sur la commande, puis rel&acirc;chez-la. Vous pouvez &eacute;galement
+cliquer sur la commande.</p>
+</li>
+</ol>
+<div class="4" id="UG.FMgr.div.24">
+<h1>Clavier</h1>
+<ol>
+<li><p>Utilisez la touche Tab et les fl&egrave;ches de d&eacute;placement
+pour mettre en &eacute;vidence l'ic&ocirc;ne dont vous souhaitez afficher
+le menu.</p>
+</li>
+<li><p>Appuyez sur Maj+F10.</p>
+</li>
+<li><p>Pour s&eacute;lectionner une commande du menu, mettez-la en
+&eacute;vidence &agrave; l'aide des fl&egrave;ches de d&eacute;placement,
+puis appuyez sur Entr&eacute;e.</p>
+</li>
+<li><p>Pour annuler le menu sans s&eacute;lectionner de commande,
+appuyez sur &Eacute;chap.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.25" role="Procedure">
+<h1 id="UG.FMgr.mkr.10">Modification du nom d'un fichier ou d'un dossier<!---- 
+<primary>Modification du nom</primary><secondary>objet</secondary>----> <!---- 
+<primary>Objet</primary><secondary>modification du nom</secondary>----> <!---- 
+<primary>Modification du nom</primary><secondary>fichier</secondary>----> <!---- 
+<primary>Modification du nom</primary><secondary>dossier</secondary>----> <!---- 
+<primary>Objet</primary><secondary>modification du nom</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>modification du nom</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>modification du nom</secondary>----> </h1>
+<note>
+<p>Vous ne pouvez renommer des actions.</p>
+</note>
+<div class="3" id="UG.FMgr.div.26">
+<h1>Souris</h1>
+<ol>
+<li><p>S&eacute;lectionnez le nom du fichier ou du dossier en cliquant
+sur le libell&eacute; de son ic&ocirc;ne.</p>
+</li>
+<li><p>Entrez le nouveau nom.</p>
+</li>
+<li><p>Appuyez sur Entr&eacute;e. Si vous cliquez en dehors de la
+zone du nom sans appuer sur Entr&eacute;e, vous perdrez vos modifications.
+</p>
+</li>
+</ol>
+<p>Pour annuler cette op&eacute;ration, appuyez sur &Eacute;chap.</p>
+<div class="4" id="UG.FMgr.div.27">
+<h1>Clavier</h1>
+<ol>
+<li><p>Utilisez la touche Tab et les fl&egrave;ches de d&eacute;placement
+pour vous placer sur l'ic&ocirc;ne du fichier ou du dossier &agrave; renommer.
+</p>
+</li>
+<li><p>Appuyez sur la barre d'espacement pour mettre le nom de l'ic&ocirc;ne
+en &eacute;vidence.</p>
+</li>
+<li><p>Choisissez Renommer sur le menu S&eacute;lectionn&eacute;(s).
+</p>
+</li>
+<li><p>Entrez le nouveau nom.</p>
+</li>
+<li><p>Appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+<p>Pour annuler cette op&eacute;ration, appuyez sur &Eacute;chap.</p>
+</div>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.28" role="Procedure">
+<h1 id="UG.FMgr.mkr.11">Aide sur un fichier ou un dossier<!---- <primary>Aide</primary><secondary>objet</secondary>----> <!---- <primary>Objet</primary><secondary>aide</secondary>----> <!---- <primary>Aide</primary><secondary>affichage pour un fichier</secondary>----> <!---- 
+<primary>Aide</primary><secondary>affichage pour un dossier</secondary>----> <!---- 
+<primary>Objet</primary><secondary>aide</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>aide</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>aide</secondary>----> <!---- 
+<primary>Aide</primary><secondary>sur l'&eacute;l&eacute;ment</secondary>
+----> </h1>
+<p>La description affich&eacute;e lorsque vous demandez de l'aide sur une
+ic&ocirc;ne indique le type de donn&eacute;es associ&eacute; au fichier ou
+au dossier. La description est pr&eacute;cis&eacute;e dans la d&eacute;finition
+des types de donn&eacute;es.</p>
+<div class="3" id="UG.FMgr.div.29">
+<h1>Souris</h1>
+<ul remap="Bullet1">
+<li><p>S&eacute;lectionnez le fichier ou le dossier et appuyez sur
+F1.</p>
+</li>
+<li><p><em>Ou</em> placez le pointeur sur l'objet et
+s&eacute;lectionnez Aide dans son menu instantan&eacute;. Ce menu s'affiche
+lorsque vous appuyez sur le bouton droit de la souris.</p>
+</li>
+<li><p><em>Ou,</em> s&eacute;lectionnez Sur l'&eacute;l&eacute;ment
+dans le menu Aide, puis cliquez sur l'ic&ocirc;ne du fichier ou du dossier.
+</p>
+</li>
+</ul>
+<div class="4" id="UG.FMgr.div.30">
+<h1>Clavier</h1>
+<ul>
+<li><p>Utilisez la touche Tab et les fl&egrave;ches de d&eacute;placement
+pour vous placer sur l'ic&ocirc;ne et appuyez sur F1.</p>
+</li>
+</ul>
+</div>
+<div class="4" id="UG.FMgr.div.31">
+<h1>Voir aussi</h1>
+<ul remap="Bullet1">
+<li><p>Pour plus de d&eacute;tails sur l'utilisation de l'aide, reportez-vous
+au chapitre&numsp;3,
+&ldquo;Accès à<a  role="ChapNumAndTitle" href="#UG.GHelp.mkr.1" > l'aide</a>.
+</p>
+</li>
+<li><p>Pour la cr&eacute;ation des types de donn&eacute;es et des
+actions, reportez-vous &agrave; la section <!--Original XRef content:
+'&ldquo;Création d'actions et de types de données personnels<xref role="SectionTitle"
+href="#UG.UAppM.mkr.4"> du chapitre&numsp;6,
+"Lancement d'applications à partir du Bureau<xref role="ChapNumAndTitle"
+href="#UG.UAppM.mkr.1">.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.32">
+<h1>Ouverture d'un fichier ou d'un dossier<!---- <primary>Ouverture</primary><secondary>objet</secondary>----> <!---- <primary>Objet</primary><secondary>ouverture</secondary>----> </h1>
+<p>L'action de base effectu&eacute;e sur un objet consiste &agrave; ouvrir
+ce dernier. &ldquo;Ouverture&rdquo; est un terme tr&egrave;s g&eacute;n&eacute;ral
+et l'action effectu&eacute;e d&eacute;pend du type d'objet &agrave; ouvrir.
+Par exemple, l'ouverture d'un dossier modifie la vue du Gestionnaire de fichiers
+et affiche le contenu de ce dossier. L'ouverture d'un fichier de donn&eacute;es
+lance l'application qui a cr&eacute;&eacute; le fichier et charge de dernier.<!---- 
+<primary>Ouverture</primary><secondary>fichier</secondary>----> <!---- 
+<primary>Ouverture</primary><secondary>dossier</secondary>----> <!---- 
+<primary>Ouverture</primary><secondary>objet</secondary>----> <!---- 
+<primary>Objet</primary><secondary>ouverture</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>ouverture</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>ouverture</secondary>----> <!---- 
+<primary>Menu</primary><secondary>Actions</secondary>----> <!---- 
+<primary>Double clic</primary><secondary>action</secondary>----> <!---- 
+<primary>Action</primary><secondary>double clic</secondary>----> </p>
+<div class="3" id="UG.FMgr.div.33" role="Procedure">
+<h1>Ouverture d'un fichier ou d'un dossier</h1>
+<ul remap="Bullet1">
+<li><p>Cliquez deux fois sur l'ic&ocirc;ne.</p>
+<p>Cliquer deux fois sur une ic&ocirc;ne ex&eacute;cute <em>l'action
+par d&eacute;faut</em> sur l'objet. Cette derni&egrave;re correspond
+toujours &agrave; la premi&egrave;re action dans la partie correspondante
+du menu S&eacute;lectionn&eacute;(s). Pour la plupart des fichiers, cette
+action ouvre le fichier en lan&ccedil;ant l'application ad&eacute;quate et
+en chargeant le fichier.</p>
+</li>
+<li><p><em>Ou</em> s&eacute;lectionnez l'ic&ocirc;ne,
+puis choisissez Ouvrir dans la barre de menus (ou Ouvrir dans la fen&ecirc;tre
+active ou Ouvrir dans une nouvelle fen&ecirc;tre) &agrave; partir du menu
+S&eacute;lectionn&eacute;(s).</p>
+</li>
+<li><p><em>Ou</em> s&eacute;lectionnez l'option Ouvrir
+sur le menu instantan&eacute; de l'ic&ocirc;ne. Ce menu s'affiche lorsque
+vous appuyez sur Maj+F10 ou sur le bouton droit de la souris.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.34">
+<h1 id="UG.FMgr.mkr.12">Manipulation des fichiers et des dossiers<!---- 
+<primary>Objet</primary><secondary>manipulation</secondary>----> </h1>
+<p>Les principales caract&eacute;ristiques permettant d'identifier un fichier
+ou un dossier sont les suivantes:</p>
+<ul remap="Bullet1">
+<li><p>son nom et son emplacement dans la hi&eacute;rarchie des dossiers
+</p>
+</li>
+<li><p>les droits d'acc&egrave;s de son propri&eacute;taire</p>
+<p>Pour plus de d&eacute;tails sur les droits d'acc&egrave;s et leur configuration,
+reportez- vous &agrave; la section "Modification
+des droits d'accès d'un fichier ou d'un dossier", page&numsp;111<xref
+role="SecTitleAndPageNum" href="#UG.FMgr.mkr.18"></p>
+</li>
+<li><p>son lien avec un autre fichier. Un fichier li&eacute; correspond
+&agrave; la repr&eacute;sentation d'un autre fichier. Les fichiers li&eacute;s
+permettent de voir un fichier &agrave; partir de plusieurs dossiers.</p>
+</li>
+</ul>
+<div class="2" id="UG.FMgr.div.35" role="Procedure">
+<h1>Cr&eacute;ation d'un fichier ou d'un dossier<!---- <primary>Objet</primary><secondary>cr&eacute;ation</secondary>----> <!---- <primary>Fichier</primary><secondary>cr&eacute;ation</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>cr&eacute;ation</secondary>----> <!---- 
+<primary>Cr&eacute;ation</primary><secondary>objet</secondary>----> <!---- 
+<primary>Cr&eacute;ation</primary><secondary>fichier</secondary>----> <!---- 
+<primary>Cr&eacute;ation</primary><secondary>dossier</secondary>----> <!---- 
+<primary>Cr&eacute;ation</primary><secondary>objet</secondary>----> <!---- 
+<primary>Objet</primary><secondary>cr&eacute;ation</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>cr&eacute;ation</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>cr&eacute;ation</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez Nouveau fichier ou Nouveau dossier dans
+le menu Fichier.</p>
+</li>
+<li><p>Tapez un nom dans la zone Nouveau nom de fichier ou Nom du
+nouveau dossier.</p>
+</li>
+<li><p>Cliquez sur OK ou appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+<p>Pour fermer la bo&icirc;te de dialogue Nouveau fichier ou Nouveau dossier
+sans appliquer les modifications, cliquez sur Annuler ou appuyez sur &Eacute;chap.
+</p>
+<div class="3" id="UG.FMgr.div.36">
+<h1>Autres proc&eacute;dures de cr&eacute;ation d'un objet</h1>
+<ul remap="Bullet1">
+<li><p>Copiez un objet, puis renommez la copie. Reportez-vous &agrave;
+la section &ldquo;Copie
+d'un fichier ou d'un dossier&ldquo;, page&numsp;102<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.13">.</p>
+</li>
+<li><p>Cr&eacute;ez un fichier dans une application. Par exemple,
+l'Editeur de texte cr&eacute;e un fichier lorsque vous sauvegardez un nouveau
+document.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.37" role="Procedure">
+<h1>D&eacute;placement d'un fichier ou d'un dossier<!---- <primary>D&eacute;placement</primary><secondary>objet</secondary>----> <!---- 
+<primary>Objet</primary><secondary>d&eacute;placement</secondary>----> <!---- 
+<primary>D&eacute;placement</primary><secondary>fichier</secondary>----> <!---- 
+<primary>D&eacute;placement</primary><secondary>dossier</secondary>----> <!---- 
+<primary>Objet</primary><secondary>d&eacute;placement</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>d&eacute;placement</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>d&eacute;placement</secondary>----> </h1>
+<note>
+<p>Si vous essayez de d&eacute;placer un fichier ou un sous-dossier &agrave;
+partir d'un dossier auquel vous ne disposez pas des droits d'acc&egrave;s
+n&eacute;cessaires, le Gestionnaire de fichiers cr&eacute;e une copie de l'objet
+et affiche un message d'erreur indiquant que vous ne pouvez supprimer l'original.
+</p>
+</note>
+<div class="3" id="UG.FMgr.div.38">
+<h1>Souris</h1>
+<ol>
+<li><p>Affichez les dossiers source et cible.</p>
+<p>Ouvrez une vue du dossier cible ou l'ic&ocirc;ne du dossier cible ferm&eacute;
+dans une fen&ecirc;tre du Gestionnaire de fichiers.</p>
+</li>
+<li><p>S&eacute;lectionnez le fichier ou le dossier &agrave; d&eacute;placer
+et faites-le glisser et posez-le sur le dossier cible.</p>
+</li>
+</ol>
+<p>Si vous d&eacute;placez un dossier, son contenu est &eacute;galement
+d&eacute;plac&eacute;.</p>
+<div class="4" id="UG.FMgr.div.39">
+<h1>Clavier</h1>
+<ol>
+<li><p>Utilisez la touche Tab et les fl&egrave;ches de d&eacute;placement
+pour amener la mise en &eacute;vidence sur le fichier ou le dossier &agrave;
+d&eacute;placer.</p>
+</li>
+<li><p>Appuyez sur la barre d'espacement pour s&eacute;lectionner
+l'objet.</p>
+</li>
+<li><p>Choisissez D&eacute;placer dans dans le menu S&eacute;lectionn&eacute;(s).
+</p>
+</li>
+<li><p>Entrez un nom dans la zone de texte Dossier de destination.
+</p>
+<p>Par exemple, pour d&eacute;placer le fichier <tt>rapport</tt>
+dans le dossier <tt>/u/jean</tt>, tapez <tt>/u/jean</tt></p>
+</li>
+<li><p>Cliquez sur OK ou appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+<p>Si vous d&eacute;placez un dossier, son contenu est &eacute;galement
+d&eacute;plac&eacute;.</p>
+</div>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.40" role="Procedure">
+<h1 id="UG.FMgr.mkr.13">Copie d'un fichier<!---- <primary>Copie</primary>
+<secondary>objet</secondary>----> <!---- <primary>Copie</primary>
+<secondary>fichier</secondary>----> <!---- <primary>Copie</primary>
+<secondary>dossier</secondary>----> <!---- <primary>Objet</primary>
+<secondary>copie</secondary>----> <!---- <primary>Fichier</primary>
+<secondary>copie</secondary>----> <!---- <primary>Dossier</primary>
+<secondary>copie</secondary>---->  ou d'un dossier</h1>
+<div class="3" id="UG.FMgr.div.41">
+<h1>Souris</h1>
+<ol>
+<li><p>Affichez les dossiers source et cible.</p>
+<p>Ouvrez une vue du dossier cible ou l'ic&ocirc;ne du dossier cible (si
+celui-ci est ferm&eacute;) dans une fen&ecirc;tre du Gestionnaire de fichiers.
+</p>
+</li>
+<li><p>S&eacute;lectionnez le fichier ou le dossier &agrave; copier.
+</p>
+</li>
+<li><p>Appuyez sur la touche Ctrl et maintenez-la enfonc&eacute;e.
+</p>
+</li>
+<li><p>Faites glisser le fichier ou le dossier vers le dossier cible.
+</p>
+<p>Veillez &agrave; rel&acirc;cher le bouton de la souris avant la touche
+Ctrl. Sinon, vous risquez de d&eacute;placer le fichier ou le dossier au lieu
+de le copier.</p>
+</li>
+</ol>
+<div class="4" id="UG.FMgr.div.42">
+<h1>Clavier</h1>
+<ol>
+<li><p>S&eacute;lectionnez l'ic&ocirc;ne.</p>
+</li>
+<li><p>Choisissez Copier dans dans le menu S&eacute;lectionn&eacute;(s).
+</p>
+</li>
+<li><p>Entrez un nom dans la zone de texte Dossier de destination.
+</p>
+<p>Notez qu'il doit s'agir du nouveau nom du chemin d'acc&egrave;s complet
+du fichier. Par exemple, si vous souhaitez copier le fichier <tt>rapport</tt> dans le dossier <tt>/u/jean</tt>, tapez <tt>/u/jean</tt>.</p>
+</li>
+<li><p>Cliquez sur OK ou appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+<p>Pour fermer la bo&icirc;te de dialogue Copie d'objet sans effectuer
+de copie, cliquez sur Annuler ou appuyez sur &Eacute;chap.</p>
+</div>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.43" role="Procedure">
+<h1>Cr&eacute;ation d'un lien symbolique<!---- <primary>Lien symbolique</primary><secondary>cr&eacute;ation</secondary>----> <!---- <primary>Cr&eacute;ation</primary><secondary>lien symbolique</secondary>----> </h1>
+<p>Une ic&ocirc;ne de lien est la copie d'une ic&ocirc;ne d&eacute;signant
+le m&ecirc;me fichier ou dossier que l'ic&ocirc;ne d'origine. Toute modification
+apport&eacute;e apr&egrave;s l'ouverture de cette ic&ocirc;ne appara&icirc;t
+&eacute;galement lorsque vous ouvrez le fichier ou le dossier &agrave; partir
+de l'ic&ocirc;ne d'origine. La cr&eacute;ation d'un lien ne provoque pas de
+duplication de l'objet d'origine. Un lien est une r&eacute;f&eacute;rence
+suppl&eacute;mentaire associ&eacute;e &agrave; l'objet d'origine.</p>
+<div class="3" id="UG.FMgr.div.44">
+<h1>Souris</h1>
+<ol>
+<li><p>Affichez les dossiers source et cible.</p>
+<ul remap="Bullet2">
+<li><p>Ouvrez une fen&ecirc;tre du Gestionnaire de fichiers affichant
+le contenu du dossier cible.</p>
+</li>
+<li><p><em>Ou</em> ouvrez une vue du Gestionnaire de
+fichiers affichant l'ic&ocirc;ne du dossier cible ferm&eacute;.</p>
+</li>
+</ul>
+</li>
+<li><p>S&eacute;lectionnez le fichier ou le dossier &agrave; copier.
+</p>
+</li>
+<li><p>Appuyez sur les touches Maj et Ctrl et, tout en les <em>maintenant enfonc&eacute;es</em>, faites glisser l'ic&ocirc;ne du fichier
+ou du dossier sur celle du nouveau dossier.</p>
+<p>Lorsque vous posez l'ic&ocirc;ne, le Gestionnaire de fichiers cr&eacute;e
+un lien symbolique dans le nouveau dossier qui d&eacute;signe le fichier ou
+le dossier d'origine. Veillez &agrave; rel&acirc;cher le bouton de la souris
+avant les touches Maj et Ctrl, faute de de d&eacute;placer le fichier ou le
+dossier au lieu de le lier.</p>
+</li>
+</ol>
+<div class="4" id="UG.FMgr.div.45">
+<h1>Clavier</h1>
+<ol>
+<li><p>Utilisez les touches Tab et les fl&egrave;ches de d&eacute;placement
+pour mettre &eacute;vidence l'ic&ocirc;ne du fichier ou du dossier avec cr&eacute;er
+un lien.</p>
+</li>
+<li><p>Appuyez sur la barre d'espacement pour s&eacute;lectionner
+l'ic&ocirc;ne.</p>
+</li>
+<li><p>Choisissez Copier sous forme de lien dans le menu S&eacute;lectionn&eacute;(s).
+</p>
+</li>
+<li><p>Dans la zone de texte Dossier de destination, tapez le chemin
+d'acc&egrave;s du dossier o&ugrave; vous voulez que cette ic&ocirc;ne de lien
+apparaisse. Si vous souhaitez la renommer, entrez le nouveau nom dans la zone
+de texte Nom de la copie.</p>
+</li>
+<li><p>Cliquez sur OK ou appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.46">
+<h1 id="UG.FMgr.mkr.14">Navigation vers des dossiers et sous-dossiers<!---- 
+<primary>Dossier</primary><secondary>modification</secondary>----> <!---- 
+<primary>Syst&egrave;me de fichiers</primary><secondary>d&eacute;placement
+dans le</secondary>----> <!---- <primary>Sous-r&eacute;pertoires</primary><secondary>passage vers</secondary>----> <!---- <primary>Sous-dossiers</primary><secondary>passage vers</secondary>----> </h1>
+<p>Chaque fen&ecirc;tre du Gestionnaire de fichiers (&eacute;galement appel&eacute;e <em>vue</em>) affiche le contenu d'un dossier.</p>
+<p>Si vous n'&ecirc;tes pas habitu&eacute; au syst&egrave;me de fichiers
+hi&eacute;rarchique, reportez-vous &agrave; la section <!--Original XRef content:
+'&ldquo;Concepts de base des systèmes de fichiers&ldquo;, page&numsp;91<xref
+role="SecTitleAndPageNum" href="#UG.FMgr.mkr.4">.</p>
+<div class="2" id="UG.FMgr.div.47" role="Procedure">
+<h1 id="UG.FMgr.mkr.15">Affichage d'un autre dossier<!---- <primary>Dossier</primary><secondary>modification</secondary>----> </h1>
+<p>Vous pouvez afficher un autre dossier de l'une des fa&ccedil;ons suivantes
+:</p>
+<ul remap="Bullet1">
+<li><p>Cliquez deux fois sur l'ic&ocirc;ne du dossier.</p>
+</li>
+<li><p>S&eacute;lectionnez l'ic&ocirc;ne du dossier et choisissez
+l'option Ouvrir dans la fen&ecirc;tre active du menu S&eacute;lectionn&eacute;(s)
+pour ouvrir le dossier dans la fen&ecirc;tre courante, ou l'option Ouvrir
+une nouvelle fen&ecirc;tre pour l'ouvrir dans une nouvelle fen&ecirc;tre.
+</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Ouvrir dans la fen&ecirc;tre
+active ou Ouvrir dans une nouvelle fen&ecirc;tre du menu instantan&eacute;
+du dossier. Ce menu s'affiche lorsque vous appuyez sur Maj+F10 ou sur le bouton
+3 de la souris.</p>
+</li>
+<li><p>Cliquez deux fois sur le dossier dans le chemin d'ic&ocirc;nes
+pour l'afficher dans la vue.</p>
+</li>
+<li><p>S&eacute;lectionnez la ligne du dossier courant pour la modifier
+en zone de texte. Entrez le nom du chemin souhait&eacute; et appuyez sur Entr&eacute;e.
+</p>
+</li>
+<li><p>Sur la ligne du dossier de travail, cliquez deux fois sur
+un segment du chemin courant. Par exemple, si le dossier de travail est <tt>/u/tom/.dt/types</tt>, vous pouvez passer au dossier <tt>/u/tom</tt> en cliquant deux fois sur le mot <tt>tom</tt>.</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.FMgr.div.48" role="Procedure">
+<h1>Acc&egrave;s &agrave; votre dossier personnel</h1>
+<ul>
+<li><p>S&eacute;lectionnez Dossier personnel dans le menu Fichier.<!---- 
+<primary>Navigation</primary><secondary>dossier personnel</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>personnel</secondary><tertiary>navigation
+vers</tertiary>----> </p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.FMgr.div.49" role="Procedure">
+<h1>Acc&egrave;s au dossier parent</h1>
+<ul remap="Bullet1">
+<li><p>S&eacute;lectionnez D&eacute;but dans le menu Fichier.</p>
+</li>
+<li><p><em>Ou</em> cliquez deux fois sur l'ic&ocirc;ne
+.. (Pr&eacute;c&eacute;dent).<!---- <primary>Dossier</primary><secondary>parent</secondary><tertiary>navigation vers</tertiary>----> </p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.FMgr.div.50" role="Procedure">
+<h1>Ouverture d'une fen&ecirc;tre de terminal dans le dossier de travail<!---- 
+<primary>Ouverture</primary><secondary>fen&ecirc;tre de terminal dans le r&eacute;pertoire
+courant</secondary>----> <!---- <primary>Fen&ecirc;tre de terminal</primary><secondary>ouverture</secondary>----> </h1>
+<p>Cette proc&eacute;dure ouvre une fen&ecirc;tre d'&eacute;mulateur de
+terminal ayant le m&ecirc;me dossier de travail que la fen&ecirc;tre du Gestionnaire
+de fichiers. Il s'agit d'un moyen rapide d'entrer une commande affectant le
+contenu du dossier affich&eacute;.</p>
+<ul>
+<li><p>S&eacute;lectionnez Ouvrir terminal dans le menu Fichier.
+</p>
+</li>
+</ul>
+<note>
+<p>Vous devez disposer du droit d'ex&eacute;cution sur un dossier pour
+ouvrir une fen&ecirc;tre de terminal &agrave; partir de celui-ci.</p>
+</note>
+<p>Pour savoir comment utiliser les &eacute;mulateurs de terminal, reportez-vous
+au chapitre&numsp;12, "Utilisation du terminal<xref
+role="ChapNumAndTitle" href="#UG.UTrmE.mkr.1">.</p>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.51">
+<h1>Ex&eacute;cution d'une action sur un fichier ou un dossier<!---- 
+<primary>Objets</primary><secondary>ex&eacute;cution d'une action</secondary>
+----> <!---- <primary>Action</primary><secondary>ex&eacute;cution</secondary>----> <!---- <primary>Ex&eacute;cution d'actions</primary>
+----> </h1>
+<p>Les actions affectent les objets et permettent de les manipuler. Par
+exemple, l'impression du contenu d'un objet utilise l'action Imprimer. Le
+lancement de l'application d'un objet fichier de donn&eacute;es utilise l'action
+Ouvrir ou une autre action de l'application.</p>
+<p>Le menu S&eacute;lectionn&eacute;(s) contient une liste des options
+et actions applicables &agrave; l'ic&ocirc;ne s&eacute;lectionn&eacute;e.
+Les actions disponibles dans le menu S&eacute;lectionn&eacute;(s) varient
+selon le type d'ic&ocirc;ne choisi.</p>
+<img id="UG.FMgr.igrph.3" src="./graphics/FMaction.png">
+<p>L'action situ&eacute;e au sommet de la zone d'actions du menu (action
+par d&eacute;faut) correspond &agrave; l'action effectu&eacute;e lorsque vous
+cliquez deux fois sur un fichier ou un dossier. Dans le menu illustr&eacute;
+dans la figure ci-dessus, l'action par d&eacute;faut est Ouvrir dans la fen&ecirc;tre
+active.</p>
+<div class="2" id="UG.FMgr.div.52" role="Procedure">
+<h1>Ex&eacute;cution de l'action par d&eacute;faut</h1>
+<p>L'action par d&eacute;faut correspond &agrave; la premi&egrave;re action
+de la zone correspondante du menu S&eacute;lectionn&eacute;(s).</p>
+<ul>
+<li><p>Cliquez deux fois sur l'ic&ocirc;ne de l'objet.<!---- 
+<primary>Action</primary><secondary>par d&eacute;faut</secondary>----> <!---- 
+<primary>Action</primary><secondary>par d&eacute;faut</secondary>----> </p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.FMgr.div.53" role="Procedure">
+<h1>Ex&eacute;cution d'autres actions</h1>
+<ol>
+<li><p>S&eacute;lectionnez l'ic&ocirc;ne de l'objet.</p>
+</li>
+<li><p>S&eacute;lectionnez l'action &agrave; ex&eacute;cuter &agrave;
+partir du menu S&eacute;lectionn&eacute;(s) ou du menu instantan&eacute; de
+l'objet.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.54">
+<h1 id="UG.FMgr.mkr.16">Suppression d'objets (mettre &agrave; la corbeille)<!---- 
+<primary>Corbeille</primary><secondary>utilisation</secondary>----> </h1>
+<p>La corbeille rassemble les fichiers et les dossiers que vous supprimez.
+Ils ne sont pas v&eacute;ritablement supprim&eacute;s du syst&egrave;me de
+fichiers, tant que vous ne &ldquo;videz&rdquo; pas la corbeille. Si vous changez
+d'avis, vous pouvez <em>r&eacute;tablir</em> un fichier plac&eacute;
+dans la corbeille uniquement si vous n'avez pas vid&eacute; cette derni&egrave;re.
+</p>
+<div class="2" id="UG.FMgr.div.55" role="Procedure">
+<h1>Ouverture de la fen&ecirc;tre Corbeille<!---- <primary>Corbeille</primary><secondary>ouverture</secondary>----> <!---- <primary>Corbeille</primary><secondary>ouverture</secondary>----> </h1>
+<ul>
+<li><p>Cliquez sur l'ic&ocirc;ne Corbeille du Tableau de bord.</p>
+</li>
+</ul>
+<img id="UG.FMgr.igrph.4" src="./graphics/FMFPtrsh.png">
+</div>
+<div class="2" id="UG.FMgr.div.56" role="Procedure">
+<h1 id="UG.FMgr.mkr.17">Suppression d'un objet (mettre &agrave; la corbeille)</h1>
+<ul remap="Bullet1">
+<li><p>S&eacute;lectionnez l'option &ldquo;Mettre &agrave; la corbeille&rdquo;
+du menu instantan&eacute; de l'objet. Ce menu s'affiche lorsque vous appuyez
+sur Maj+F10 ou sur le bouton droit de la souris.</p>
+</li>
+<li><p><em>Ou</em> s&eacute;lectionnez l'ic&ocirc;ne
+de l'objet, puis l'option &ldquo;Mettre &agrave; la corbeille&rdquo; du menu
+S&eacute;lectionn&eacute;(s).</p>
+</li>
+<li><p><em>Ou</em> faites glisser/d&eacute;placez l'ic&ocirc;ne
+de l'objet sur l'ic&ocirc;ne Corbeille du Tableau de bord.</p>
+</li>
+<li><p><em>Ou</em> posez l'ic&ocirc;ne de l'objet dans
+la fen&ecirc;tre ouverte de la corbeille.</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.FMgr.div.57" role="Procedure">
+<h1>R&eacute;int&eacute;gration d'un fichier ou d'un dossier &agrave; partir
+de la corbeille<!---- <primary>Corbeille</primary><secondary>r&eacute;tablir
+des objets</secondary>----> <!---- <primary>Objets</primary><secondary>r&eacute;tablir &agrave; partir de la corbeille</secondary>----> <!---- 
+<primary></primary>----> <!---- <primary>R&eacute;tablir</primary>
+<secondary>&eacute;l&eacute;ments de la corbeille</secondary>----> <!---- 
+<primary>Objets</primary><secondary>r&eacute;tablir &agrave; partir de la
+corbeille</secondary>----> <!---- <primary>Fichier</primary><secondary>r&eacute;tablir &agrave; partir de la corbeille</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>r&eacute;tablir &agrave; partir de la
+corbeille</secondary>----> </h1>
+<ul remap="Bullet1">
+<li><p>Faites glisser l'objet de la fen&ecirc;tre de la corbeille
+vers celle du Gestionnaire de fichiers.</p>
+</li>
+<li><p><em>Ou</em> dans la fen&ecirc;tre de la corbeille,
+s&eacute;lectionnez l'objet &agrave; r&eacute;tablir, puis choisissez R&eacute;int&eacute;grer
+sur le menu Fichier.</p>
+</li>
+<li><p><em>Ou</em> s&eacute;lectionnez l'option R&eacute;int&eacute;grer
+du menu instantan&eacute; de l'objet. Ce menu s'affiche lorsque vous appuyez
+sur Maj+F10 ou sur le bouton droit de la souris.</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.FMgr.div.58" role="Procedure">
+<h1>Suppression d&eacute;finitive d'un fichier ou d'un dossier<!---- 
+<primary>Corbeille</primary><secondary>purge</secondary>----> <!---- 
+<primary>Suppression</primary><secondary>fichiers</secondary>----> <!---- 
+<primary>Corbeille</primary><secondary>purge</secondary>----> </h1>
+<p>Lorsque vous supprimez d&eacute;finitivement un fichier, il ne peut
+pas &ecirc;tre r&eacute;cup&eacute;r&eacute; (sauf si vous disposez d'un dispositif
+de sauvegarde).</p>
+<ol>
+<li><p>Ouvrez la corbeille.<!---- <primary>Dossier</primary>
+<secondary>suppression</secondary>----> <!---- <primary>Suppression</primary><secondary>dossiers</secondary>----> </p>
+</li>
+<li><p>S&eacute;lectionnez les objets &agrave; supprimer de la corbeille.
+</p>
+<p>S&eacute;lectionnez-les un par un ou utilisez l'option Tout s&eacute;lectionner
+du menu Fichier.</p>
+</li>
+<li><p>S&eacute;lectionnez Broyer dans le menu Fichier ou dans le
+menu instantan&eacute; de l'objet. Ce menu s'affiche lorsque vous appuyez
+sur Maj+F10 ou sur le bouton droit de la souris.</p>
+</li>
+<li><p>Cliquez sur OK dans la bo&icirc;te de dialogue de confirmation.
+</p>
+</li>
+</ol>
+<note>
+<p>La corbeille est automatiquement purg&eacute;e lors de votre d&eacute;connexion
+d'une session.</p>
+</note>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.59">
+<h1>Propri&eacute;t&eacute; et s&eacute;curit&eacute; des fichiers</h1>
+<p>Trois groupes d'utilisateurs peuvent acc&eacute;der aux fichiers: <em>le</em> <em>propri&eacute;taire,</em> <em>le</em> <em>groupe</em>, et <em>les</em> <em>autres</em>.
+L'acc&egrave;s aux fichiers est divis&eacute; en trois droits d'acc&egrave;s
+: <em>lecture</em>, <em>&eacute;criture</em> et <em>ex&eacute;cution</em>.</p>
+<div class="2" id="UG.FMgr.div.60">
+<h1>Qui peut acc&eacute;der aux objets ?</h1>
+<p>Les trois cat&eacute;gories d'utilisateurs de base sont:</p>
+<ul remap="Bullet1">
+<li><p><em>Propri&eacute;taire</em> &ndash; G&eacute;n&eacute;ralement,
+la personne qui a cr&eacute;&eacute; l'objet.</p>
+</li>
+<li><p><em>Groupe</em> &ndash; Plusieurs utilisateurs
+qui ont &eacute;t&eacute; regroup&eacute;s par l'administrateur syst&egrave;me.
+Par exemple, les membres d'un m&ecirc;me service peuvent appartenir au m&ecirc;me <em>groupe</em>.</p>
+</li>
+<li><p><em>Autre</em> &ndash; Tous les autres utilisateurs
+du syst&egrave;me.</p>
+</li>
+</ul>
+</div>
+<div class="2" id="UG.FMgr.div.61">
+<h1>Types de droits d'acc&egrave;s</h1>
+<p>Les droits d'acc&egrave;s &agrave; un fichier d&eacute;finissent les
+autorisations attribu&eacute;es au propri&eacute;taire, aux membres du groupe
+et aux autres utilisateurs.</p>
+<ul remap="Bullet1">
+<li><p><em>Droit d'acc&egrave;s en lecture</em> &ndash;
+Permet d'extraire, de copier ou de visualiser le contenu de l'objet.</p>
+</li>
+<li><p><em>Droit d'acc&egrave;s en &eacute;criture</em>
+&ndash; Permet de modifier le contenu de l'objet ou de le supprimer.</p>
+</li>
+<li><p><em>Droit d'acc&egrave;s en ex&eacute;cution</em>
+&ndash; Permet <em>d'ex&eacute;cuter</em> un fichier (fichiers
+ex&eacute;cutables, scripts et actions). Dans le cas d'un dossier, permet
+d'ex&eacute;cuter des commandes, des scripts et des actions.</p>
+</li>
+</ul>
+<p>Si vous ne disposez pas des droits n&eacute;cessaires pour &eacute;crire
+dans un dossier, celui-ci se pr&eacute;sentera comme suit:</p>
+<img id="UG.FMgr.igrph.5" src="./graphics/FMdirnw.png">
+<p>Si vous ne disposez pas des droits d'acc&egrave;s en lecture ou en ex&eacute;cution
+pour un dossier, celui-ci se pr&eacute;sentera comme suit:</p>
+<img id="UG.FMgr.igrph.6" src="./graphics/FMdirlk.png">
+<div class="3" id="UG.FMgr.div.62">
+<h1>Exemples</h1>
+<p>Pour rendre un dossier confidentiel:</p>
+<ul remap="Bullet1">
+<li><p>Modifiez la propri&eacute;t&eacute; du fichier en vous octroyant
+(propri&eacute;taire), les droits d'acc&egrave;s en lecture, &eacute;criture
+et ex&eacute;cution, et en n'attribuant aucune autorisation au groupe et aux
+autres utilisateurs. Ceci signifie que seuls le propri&eacute;taire (vous)
+et l'utilisateur root (administrateur du syst&egrave;me) peuvent visualiser
+le contenu du dossier.</p>
+</li>
+</ul>
+<p>Pour permettre &agrave; tous les utilisateurs d'acc&eacute;der &agrave;
+un objet que vous avez cr&eacute;&eacute;, tout en le prot&eacute;geant contre
+une &eacute;ventuelle suppression:</p>
+<ul remap="Bullet1">
+<li><p>Modifiez la propri&eacute;t&eacute; du fichier en attribuant
+les droits d'acc&egrave;s en lecture et en ex&eacute;cution au propri&eacute;taire,
+au groupe et aux autres utilisateurs. N'attribuez &agrave; personne le droit
+d'acc&egrave;s en &eacute;criture.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.63">
+<h1>Droits d'acc&egrave;s par d&eacute;faut</h1>
+<p>Les droits d'acc&egrave;s par d&eacute;faut d&eacute;finis lors de la
+cr&eacute;ation d'un fichier ou d'un dossier peuvent &ecirc;tre modifi&eacute;s
+par l'administrateur syst&egrave;me. Pour les visualiser, cr&eacute;ez un
+fichier ou un dossier, puis ouvrez la bo&icirc;te de dialogue Droits d'acc&egrave;s
+pour ce fichier ou ce dossier.</p>
+<p>Demandez &agrave; l'administrateur syst&egrave;me comment modifier les
+droits d'acc&egrave;s par d&eacute;faut.</p>
+</div>
+<div class="2" id="UG.FMgr.div.64" role="Procedure">
+<h1>Modification de la propri&eacute;t&eacute; d'un fichier ou d'un dossier<!---- 
+<primary>Objets</primary><secondary>modification de la propri&eacute;t&eacute;</secondary>----> <!---- <primary>Propri&eacute;t&eacute;</primary>
+<secondary>modification dans le Gestionnaire de fichiers</secondary>----> <!---- 
+<primary>Modification</primary><secondary>caract&eacute;ristiques d'un fichier</secondary>----> <!---- <primary>Modification</primary><secondary>caract&eacute;ristiques d'un dossier</secondary>----> <!---- <primary>Objets</primary><secondary>modification des caract&eacute;ristiques</secondary>
+----> <!---- <primary>Fichier</primary><secondary>modification des
+caract&eacute;ristiques</secondary>----> <!---- <primary>Dossier</primary><secondary>modification des caract&eacute;ristiques</secondary>
+----> <!---- <primary>Caract&eacute;ristiques</primary><secondary>modification d'un objet</secondary>----> <!---- <primary>Caract&eacute;ristiques</primary><secondary>modification d'un fichier</secondary>----> <!---- 
+<primary>Caract&eacute;ristiques</primary><secondary>modification d'un dossier</secondary>----> </h1>
+<p>Vous devez &ecirc;tre le propri&eacute;taire ou l'administrateur syst&egrave;me
+(utilisateur root) pour modifier la propri&eacute;t&eacute; d'un fichier ou
+d'un dossier.</p>
+<ol>
+<li><p>S&eacute;lectionnez l'ic&ocirc;ne de l'objet.</p>
+</li>
+<li><p>Choisissez Modifier les droits d'acc&egrave;s dans le menu
+S&eacute;lectionn&eacute;(s) ou dans le menu instantan&eacute; de l'objet.
+Ce menu s'affiche lorsque vous appuyez sur Maj+F10 ou sur le bouton droit de la
+souris.</p>
+</li>
+<li><p>Entrez le nom du nouveau propri&eacute;taire dans la zone
+de texte Nom du propri&eacute;taire.</p>
+</li>
+<li><p>Cliquez sur OK ou appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+<p>Si vous ne disposez pas des droits d'acc&egrave;s n&eacute;cessaires
+pour modifier les caract&eacute;ristiques d'un objet, certaines commandes
+de la bo&icirc;te de dialogue Droits d'acc&egrave;s ne sont pas disponibles.
+</p>
+</div>
+<div class="2" id="UG.FMgr.div.65" role="Procedure">
+<h1 id="UG.FMgr.mkr.18">Modification des droits d'acc&egrave;s d'un fichier
+ou d'un dossier<!---- <primary>Objets</primary><secondary>modification
+des droits d'acc&egrave;s</secondary>----> <!---- <primary>Droits
+d'acc&egrave;s</primary><secondary>modification</secondary>----> <!---- 
+<primary>Droits d'acc&egrave;s</primary><secondary>&eacute;criture</secondary>
+----> <!---- <primary>Droits d'acc&egrave;s</primary><secondary>lecture</secondary>----> <!---- <primary>Droits d'acc&egrave;s</primary>
+<secondary>ex&eacute;cution</secondary>----> <!---- <primary>Modification</primary><secondary>caract&eacute;ristiques d'un fichier</secondary>----> <!---- 
+<primary>Modification</primary><secondary>caract&eacute;ristiques d'un dossier</secondary>----> <!---- <primary>Objets</primary><secondary>modification
+des caract&eacute;ristiques</secondary>----> <!---- <primary>Fichier</primary><secondary>modification des caract&eacute;ristiques</secondary>
+----> <!---- <primary>Dossier</primary><secondary>modification des
+caract&eacute;ristiques</secondary>----> <!---- <primary>Caract&eacute;ristiques</primary><secondary>modification d'un objet</secondary>----> <!---- 
+<primary>Caract&eacute;ristiques</primary><secondary>modification d'un fichier</secondary>----> <!---- <primary>Caract&eacute;ristiques</primary>
+<secondary>modification d'un dossier</secondary>----> </h1>
+<p>Vous devez &ecirc;tre le propri&eacute;taire ou l'administrateur syst&egrave;me
+(utilisateur root) pour modifier les droits d'acc&egrave;s d'un fichier ou
+d'un dossier.</p>
+<ol>
+<li><p>S&eacute;lectionnez l'ic&ocirc;ne du fichier ou du dossier.
+</p>
+</li>
+<li><p>Choisissez Modifier les droits d'acc&egrave;s dans le menu
+S&eacute;lectionn&eacute;(s) ou dans le menu instantan&eacute; de l'ic&ocirc;ne.
+Pour afficher ce menu, appuyez sur Maj+F10 ou sur le bouton droit de la souris.
+</p>
+</li>
+<li><p>S&eacute;lectionnez les droits d'acc&egrave;s du fichier ou
+du dossier.</p>
+<p>Les droits d'acc&egrave;s s&eacute;lectionn&eacute;s dans la ligne Groupe
+indiquent les privil&egrave;ges d'acc&egrave;s pour tout utilisateur appartenant
+au groupe nomm&eacute;. Les droits d'acc&egrave;s s&eacute;lectionn&eacute;s
+dans la ligne Autres s'appliquent &agrave; tous les autres utilisateurs.</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="131*">
+<colspec colwidth="397*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Lecture</p></td>
+<td align="left" valign="top"><p>Le fichier peut &ecirc;tre lu.</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>&Eacute;criture</p></td>
+<td align="left" valign="top"><p>Le fichier peut &ecirc;tre modifi&eacute;.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Ex&eacute;cution</p></td>
+<td align="left" valign="top"><p>Le fichier peut &ecirc;tre ex&eacute;cut&eacute;.
+</p></td></tr></tbody></table></informaltable>
+<p>Si vous ne disposez pas des droits d'acc&egrave;s n&eacute;cessaires
+pour modifier les caract&eacute;ristiques d'un objet, certaines commandes
+de la bo&icirc;te de dialogue Droits d'acc&egrave;s ne sont pas disponibles.
+</p>
+</li>
+<li><p>Cliquez sur OK ou appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+<note>
+<p>La ligne Groupe indique les droits d'acc&egrave;s attribu&eacute;s aux
+membres du groupe d&eacute;fini dans la zone de texte Nom du groupe. Pour
+d&eacute;signer un autre groupe, tapez un nouveau nom dans cette zone.</p>
+</note>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.66">
+<h1 id="UG.FMgr.mkr.19">Utilisation des objets du Gestionnaire de fichiers
+dans l'espace de travail</h1>
+<p>L'espace de travail permet de poser n'importe quelle ic&ocirc;ne de
+fichier ou de dossier directement sur le fond de l'espace de travail en cours
+afin d'en faciliter l'acc&egrave;s. Toute ic&ocirc;ne pos&eacute;e sur l'espace
+de travail demeure &agrave; l'endroit o&ugrave; vous l'avez pos&eacute;e.
+</p>
+<p>Le Gestionnaire de fichiers permet de visualiser tous les objets du
+syst&egrave;me de fichiers. Cependant, ceux-ci sont uniquement visibles lorsque
+vous visualisez leur dossier d'enregistrement.</p>
+<p>Pour faciliter l'acc&egrave;s &agrave; un objet, positionnez-le directement
+sur le fond de l'espace de travail. L'espace de travail est la zone d'affichage
+des fen&ecirc;tres. Tout objet plac&eacute; dans cette zone est appel&eacute; <em>objet de l'espace de travail</em>. Chaque espace de travail du Bureau
+CDE est diff&eacute;rent.</p>
+<p>Placer un objet sur l'espace de travail ne modifie pas le fichier ou
+le dossier d'origine. En fait, l'ic&ocirc;ne qui appara&icirc;t sur le Bureau
+repr&eacute;sente simplement un raccourci pour acc&eacute;der au fichier ou
+au dossier proprement dit. Toute action effectu&eacute;e sur l'objet de l'espace
+de travail s'appliqu en fait au fichier ou au dossier qu'il repr&eacute;sente.
+</p>
+<div class="2" id="UG.FMgr.div.67">
+<h1>Espaces de travail du Bureau</h1>
+<p>Vous pouvez disposer de plusieurs espaces de travail sur votre Bureau.
+Vous pouvez donc configurer votre environnement de travail en pla&ccedil;ant
+les fichiers et les dossiers dans l'espace le plus pratique, voire m&ecirc;me
+dans plusieurs espaces si n&eacute;cessaire.</p>
+<div class="3" id="UG.FMgr.div.68">
+<h1>Menus instantan&eacute;s<!---- <primary>Menu instantan&eacute;</primary><secondary>pour les objets</secondary>----> </h1>
+<p>&Agrave; chaque objet de l'espace de travail correspond un menu instantan&eacute;
+affichable &agrave; l'aide du bouton 3 de la souris ou lorsque vous appuyez
+sur Maj+F10 si l'ic&ocirc;ne est s&eacute;lectionn&eacute;e. Ce menu contient
+des commandes permettant de manipuler l'objet, y compris toutes les actions
+qui apparaissent dans le menu S&eacute;lectionn&eacute;(s) du Gestionnaire
+de fichiers. Le menu instantan&eacute; de l'espace de travail, bien que semblable
+&agrave; celui disponible dans les fen&ecirc;tres du Gestionnaire de fichiers,
+en diff&egrave;re toutefois par certaines commandes.</p>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.69" role="Procedure">
+<h1>Pose d'un fichier ou d'un dossier sur le fond de l'espace de travail<!---- 
+<primary>Objets</primary><secondary>pose</secondary><tertiary>fond de l'espace
+de travail</tertiary>----> <!---- <primary>Fichier</primary><secondary>pose</secondary>----> <!---- <primary>Dossier</primary><secondary>pose</secondary>----> <!---- <primary>Fond</primary><secondary>pose d'un fichier ou d'un dossier</secondary>----> </h1>
+<p>Cette proc&eacute;dure affiche une copie de l'ic&ocirc;ne sur le fond
+de l'espace de travail. Toute modification apport&eacute;e &agrave; cette
+copie sur le fond de l'espace de travail sera r&eacute;percut&eacute;e sur
+l'original, dans le Gestionnaire de fichiers.</p>
+<ol>
+<li><p>Activez l'espace de travail o&ugrave; afficher l'objet.</p>
+</li>
+<li><p>Puis:</p>
+<ul remap="Bullet2">
+<li><p>Faites glisser et posez l'ic&ocirc;ne de l'objet sur l'espace
+de travail.</p>
+</li>
+<li><p><em>Ou</em> s&eacute;lectionnez l'ic&ocirc;ne,
+puis choisissez l'option Afficher dans l'espace de travail dans le menu S&eacute;lectionn&eacute;(s)
+ou dans le menu instantan&eacute; de l'ic&ocirc;ne. Ce menu s'affiche lorsque
+vous appuyez sur Maj+F10 ou sur le bouton droit de la souris.</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>R&eacute;it&eacute;rez cette proc&eacute;dure autant de fois que n&eacute;cessaire.
+</p>
+</div>
+<div class="2" id="UG.FMgr.div.70" role="Procedure">
+<h1>Affichage du menu instantan&eacute; d'un objet de l'espace de travail<!---- 
+<primary>Objets</primary><secondary>menu instantan&eacute;</secondary>----> <!---- 
+<primary>Menu instantan&eacute;</primary><secondary>pour les objets</secondary>
+----> </h1>
+<div class="3" id="UG.FMgr.div.71">
+<h1>Souris</h1>
+<ol>
+<li><p>Positionnez le pointeur de la souris sur l'ic&ocirc;ne de
+l'objet.</p>
+</li>
+<li><p>Appuyez sur le bouton droit de la souris.</p>
+</li>
+<li><p>S&eacute;lectionnez une commande du menu en faisant glisser
+la souris sur la commande, puis en rel&acirc;chant le bouton de la souris.
+</p>
+</li>
+</ol>
+<div class="4" id="UG.FMgr.div.72">
+<h1>Clavier</h1>
+<ol>
+<li><p>Mettez l'ic&ocirc;ne de l'objet en &eacute;vidence en appuyant
+sur les touches Alt+Tab.</p>
+</li>
+<li><p>Appuyez sur Maj+F10.</p>
+</li>
+<li><p>S&eacute;lectionnez une commande du menu en utilisant les
+fl&egrave;ches de d&eacute;placement pour la mettre en &eacute;vidence et
+appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+<p>Pour annuler le menu sans lancer de commande, appuyez sur &Eacute;chap.
+</p>
+</div>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.73" role="Procedure">
+<h1>Suppression d'un objet de l'espace de travail<!---- <primary>Espaces de travail</primary><secondary>suppression d'objets</secondary>----> <!---- 
+<primary>Objets</primary><secondary>suppression de l'espace de travail</secondary>
+----> <!---- <primary>Suppression</primary><secondary>fichiers
+ou dossiers de l'espace de travail</secondary>----> <!---- <primary>Objets</primary><secondary>suppression de l'espace de travail</secondary>
+----> <!---- <primary>Fichier</primary><secondary>suppression</secondary>
+----> <!---- <primary>Dossier</primary><secondary>suppression</secondary>
+----> <!---- <primary>Espaces de travail</primary><secondary>suppression
+d'objets</secondary>----> <!---- <primary>Espaces de travail</primary>
+<secondary>suppression de fichiers ou de dossiers</secondary>----> </h1>
+<ol>
+<li><p>Activez l'espace de travail sur lequel l'objet est affich&eacute;.
+</p>
+</li>
+<li><p>Rep&eacute;rez l'ic&ocirc;ne de l'objet sur l'espace de travail.
+</p>
+</li>
+<li><p>S&eacute;lectionnez Supprimer de l'espace de travail dans
+le menu instantan&eacute; de l'objet.</p>
+</li>
+</ol>
+<p>La suppression d'un objet de l'espace de travail ne modifie pas l'original.
+Cela signifie que l'objet existe toujours dans le Gestionnaire de fichiers.
+</p>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.74">
+<h1 id="UG.FMgr.mkr.20">Localisation de fichiers<!---- <primary>Fichier</primary><secondary>localisation</secondary>----> <!---- <primary>Recherche</primary><secondary>objets</secondary>----> <!---- <primary>Recherche</primary><secondary>fichiers</secondary>----> </h1>
+<p>Il devient tr&egrave;s rapidement dificile de se souvenir o&ugrave;
+se trouve chaque fichier. Le Gestionnaire de fichiers permet de rechercher
+un fichier ou un dossier par son nom. Vous pouvez &eacute;galement rechercher
+un fichier par son contenu.</p>
+<div class="2" id="UG.FMgr.div.75" role="Procedure">
+<h1 id="UG.FMgr.mkr.21">Recherche d'un objet par son nom<!---- <primary>Objets</primary><secondary>recherche par nom</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>recherche par nom</secondary>----> <!---- 
+<primary>Nom</primary><secondary>recherche d'un fichier</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez Recherche sur le menu Fichier.</p>
+<img id="ug.fmgr.igrph.7" src="./graphics/FMfind.png">
+</li>
+<li><p>Entrez le nom du fichier ou du dossier recherch&eacute; dans
+la zone Nom du fichier ou du dossier.</p>
+<p>Vous pouvez utiliser les caract&egrave;res g&eacute;n&eacute;riques,
+tels que l'ast&eacute;risque (<tt>*</tt>) et le point d'interrogation
+(<tt>?</tt>). <tt>*</tt> repr&eacute;sente une cha&icirc;ne
+de z&eacute;ro ou plusieurs caract&egrave;res et <tt>?</tt>, un
+caract&egrave;re unique.<!---- <primary>Caract&egrave;res g&eacute;n&eacute;riques</primary>----> <!---- <primary>Recherche</primary><secondary>objets</secondary><tertiary>caract&egrave;res g&eacute;n&eacute;riques</tertiary>
+---->  Par exemple:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="107*">
+<colspec colwidth="421*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>ba*</p></td>
+<td align="left" valign="top"><p>Repr&eacute;sente tous les noms commen&ccedil;ant
+par la cha&icirc;ne <filename moreinfo="refentry">ba</tt></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p>ba?</p></td>
+<td align="left" valign="top"><p>Repr&eacute;sente tous les noms de
+trois lettres commen&ccedil;ant par la cha&icirc;ne <filename moreinfo="refentry">ba</tt></p></td></tr>
+<tr>
+<td align="left" valign="top"><p>*.dt</p></td>
+<td align="left" valign="top"><p>Repr&eacute;sente tous les noms dont
+l'extension est <tt>.dt</tt>.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>*.???</p></td>
+<td align="left" valign="top"><p>Repr&eacute;sente tous les noms dont
+l'extension comporte trois caract&egrave;res.</p></td></tr></tbody>
+</table></informaltable>
+<p>Le nom et le contenu du fichier peuvent &ecirc;tre indiqu&eacute;s &agrave;
+l'aide de la syntaxe <em>d'expression r&eacute;guli&egrave;re</em>
+utilis&eacute;e par la commande <code>find</code>. Pour plus de d&eacute;tails,
+reportez-vous aux pages de manuel <filename moreinfo="refentry">find</tt>
+et <filename moreinfo="refentry">grep</tt>.</p>
+</li>
+<li><p>Entrez le nom du dossier &agrave; partir duquel commencer
+la recherche dans la zone Dossier de recherche (cette zone contient, par d&eacute;faut,
+le nom du dossier courant).</p>
+<p>Cette commande lance la recherche dans ce dossier et ses sous-dossiers.
+</p>
+</li>
+<li><p>Cliquez sur Lancer ou appuyez sur Entr&eacute;e.</p>
+<p>Le Gestionnaire de fichiers lance la recherche dans le dossier correspondant
+au nom entr&eacute; et dans ses sous-dossiers. Les correspondances sont r&eacute;pertori&eacute;es
+dans la liste Fichiers trouv&eacute;s. Lorsque vous avez trouv&eacute; un
+objet, s&eacute;lectionnez-le et cliquez sur Ouvrir dossier ou Afficher dans
+l'espace de travail.</p>
+<p>Pour arr&ecirc;ter la recherche, cliquez sur le bouton Arr&ecirc;ter
+ou appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.FMgr.div.76" role="Procedure">
+<h1 id="UG.FMgr.mkr.22">Recherche d'un fichier par son contenu<!---- 
+<primary>Contenu</primary><secondary>recherche d'un fichier</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>recherche par contenu</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez Recherche dans le menu Fichier.</p>
+</li>
+<li><p><em>Facultatif</em>. Utilisez la zone Nom du fichier
+ou du dossier pour restreindre, et ainsi acc&eacute;l&eacute;rer la recherche.
+</p>
+<p>Si vous entrez un nom incomplet (en utilisant des caract&egrave;res
+g&eacute;n&eacute;riques), le Gestionnaire de fichiers ne tient compte dans
+sa recherche que des fichiers correspondant &agrave; la zone Nom du fichier
+ou du dossier. Si vous laissez cette zone vide, le Gestionnaire de fichiers
+analysera chaque fichier du dossier et ses sous-dossiers. Les noms peuvent
+&ecirc;tre indiqu&eacute;s &agrave; l'aide de la syntaxe <em>d'expression
+r&eacute;guli&egrave;re</em> utilis&eacute;e par la commande <code>grep</code> (pour plus de d&eacute;tails, reportez-vous &agrave; la page
+de manuel <code>grep</code>).</p>
+</li>
+<li><p>Entrez la cha&icirc;ne de recherche dans la zone Contenu.
+</p>
+<p>La recherche n'op&egrave;re pas la distinction majuscules-minuscules.
+Il n'est pas n&eacute;cessaire d'utiliser des mots entiers. Par exemple, si
+vous tapez <code>fi</code>, vous trouverez les mots fil et fichier.
+</p>
+<p>Le contenu peut &ecirc;tre indiqu&eacute; &agrave; l'aide de la syntaxe <em>d'expression r&eacute;guli&egrave;re</em> utilis&eacute;e par la commande <code>grep</code> (pour plus de d&eacute;tails, reportez-vous &agrave; la page
+de manuel <code>grep</code>).</p>
+</li>
+<li><p>Entrez le nom du dossier &agrave; partir duquel commencer
+la recherche dans la zone Dossier de recherche (cette zone contient par d&eacute;faut
+le nom du dossier actuel).</p>
+</li>
+<li><p>Cliquez sur Lancer ou appuyez sur Entr&eacute;e.</p>
+<p>Le Gestionnaire de fichiers recherche dans le dossier et ses sous-dossiers
+les fichiers correspondant au texte entr&eacute;. Les correspondances sont
+r&eacute;pertori&eacute;es dans la liste Fichiers trouv&eacute;s. Lorsque
+vous avez trouv&eacute; un objet, s&eacute;lectionnez-le dans la liste et
+choisissez Ouvrir dossier ou Afficher dans l'espace de travail.</p>
+<p>Pour arr&ecirc;ter la recherche, cliquez sur le bouton Arr&ecirc;ter
+ou appuyez sur Entr&eacute;e.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="1" id="UG.FMgr.div.77">
+<h1 id="UG.FMgr.mkr.23">Personnalisation des vues du Gestionnaire de fichiers<!---- 
+<primary>Vues du Gestionnaire de fichiers</primary><secondary>modification</secondary>----> <!---- <primary>Vues du Gestionnaire de fichiers</primary><secondary>personnalisation&lt;$startrange></secondary>----> <!---- 
+<primary>Personnalisation</primary><secondary>vues du Gestionnaire de fichiers&lt;$startrange></secondary>----> <!---- <primary>Vue</primary><secondary>contr&ocirc;le
+du Gestionnaire de fichiers</secondary>----> </h1>
+<p>Le Gestionnaire de fichiers offre diff&eacute;rentes possibilit&eacute;s
+de visualisation du contenu des dossiers. Vous pouvez:</p>
+<ul remap="Bullet1">
+<li><p>modifier la structure de visualisation de base d'un dossier
+&agrave; la fois pour obtenir la vue en arborescence. Reportez-vous &agrave;
+la section &ldquo;Affichage
+de la vue par structure hiérarchique&ldquo;, page&numsp;120<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.25"></p>
+</li>
+<li><p>d&eacute;terminer l'ordre de tri des objets. Reportez-vous
+&agrave; la section &ldquo;Modification de l'ordre
+de tri des icônes&ldquo;, page&numsp;122<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.26"></p>
+</li>
+<li><p>masquer (filtrer) certains objets. Reportez-vous &agrave;
+la section &ldquo;Affichage ou masquage
+des fichiers ou des dossiers&ldquo;, page&numsp;124<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.28"></p>
+</li>
+<li><p>modifier le style utilis&eacute; pour les objets &ndash; noms
+et grandes ou petites ic&ocirc;nes, noms seuls ou liste d&eacute;taill&eacute;e
+des noms et caract&eacute;ristiques</p>
+</li>
+</ul>
+<div class="2" id="UG.FMgr.div.78" role="Procedure">
+<h1 id="UG.FMgr.mkr.24">Configuration des en-t&ecirc;tes</h1>
+<ol>
+<li><p>S&eacute;lectionnez D&eacute;finir les options de vue dans
+le menu Vue.</p>
+</li>
+<li><p>D&eacute;finissez les en-t&ecirc;tes &agrave; afficher:</p>
+<ul remap="Bullet2">
+<li><p>S&eacute;lectionnez Chemin d'ic&ocirc;nes pour afficher, dans
+la partie sup&eacute;rieure de la fen&ecirc;tre, le chemin du dossier courant
+sous forme de cha&icirc;ne d'ic&ocirc;nes de dossiers.</p>
+</li>
+<li><p>S&eacute;lectionnez Chemin texte pour afficher le nom complet
+du chemin du dossier dans une zone de texte au-dessus du volet de vue.</p>
+</li>
+<li><p>S&eacute;lectionnez Ligne de message pour afficher le nombre
+de fichiers du dossier. Cette ligne appara&icirc;t dans la partie inf&eacute;rieure
+de la fen&ecirc;tre.</p>
+</li>
+</ul>
+</li>
+<li><p>Pour appliquer l'option choisie et fermer la bo&icirc;te de
+dialogue D&eacute;finition des options de vue, cliquez sur OK.</p>
+<p>Pour appliquer une option tout en laissant la bo&icirc;te de dialogue
+D&eacute;finition des options de vue ouverte, cliquez sur Appliquer.<!---- 
+<primary>Gestionnaire de fichiers</primary><secondary>d&eacute;finition des
+en-t&ecirc;tes</secondary>----> </p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.FMgr.div.79" role="Procedure">
+<h1>Configuration de l'emplacement des ic&ocirc;nes</h1>
+<ol>
+<li><p>S&eacute;lectionnez D&eacute;finir les options de vue dans
+le menu Vue.<!---- <primary>Ic&ocirc;nes</primary><secondary>disposition
+dans les vues du Gestionnaire de fichiers</secondary>----> <!---- 
+<primary>Vues du Gestionnaire de fichiers</primary><secondary>disposition
+des ic&ocirc;nes</secondary>----> </p>
+</li>
+<li><p>D&eacute;finissez la fa&ccedil;on dont vous souhaitez disposer
+les ic&ocirc;nes:</p>
+<ul remap="Bullet2">
+<li><p>S&eacute;lectionnez Al&eacute;atoire pour laisser les ic&ocirc;nes
+o&ugrave; elles se trouvent.</p>
+</li>
+<li><p>S&eacute;lectionnez Rang&eacute;es et Colonnes pour aligner
+automatiquement les ic&ocirc;nes pos&eacute;es dans une grille.</p>
+</li>
+</ul>
+</li>
+<li><p>Pour appliquer l'option choisie et fermer la bo&icirc;te de
+dialogue D&eacute;finition des options de vue, cliquez sur OK.</p>
+<p>Pour appliquer une option tout en laissant la bo&icirc;te de dialogue
+D&eacute;finition des options de vue ouverte, cliquez sur Appliquer.<!---- 
+<primary>Vues du Gestionnaire de fichiers</primary><secondary>personnalisation&lt;$endrange></secondary>----> <!---- <primary>Personnalisation</primary><secondary>vues du Gestionnaire de fichiers&lt;$endrange></secondary>----> </p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.FMgr.div.80">
+<h1>Utilisation de la vue en arborescence</h1>
+<p><!---- <primary>Vue</primary><secondary>arborescence dans le Gestionnaire
+de fichiers&lt;$startrange></secondary>----> <!---- <primary>Vues
+du Gestionnaire de fichiers</primary><secondary>arborescence&lt;$startrange></secondary>----> Il s'agit d'une vue hi&eacute;rarchique, dans laquelle
+les fichiers et sous-dossiers d'un dossier sont affich&eacute;s sous ce dernier
+sous forme de liste indent&eacute;e.</p>
+<object>
+<h1>Vue en arborescence du Gestionnaire de fichiers</h1>
+<img id="UG.FMgr.grph.3" src="./graphics/FMtreevw.png">
+</object>
+<p>Dans cette vue, un dossier peut se pr&eacute;senter sous trois &eacute;tats
+diff&eacute;rents. Ces &eacute;tats sont indiqu&eacute;s et modifi&eacute;s
+&agrave; l'aide des boutons situ&eacute;s &agrave; gauche du dossier. Vous
+pouvez &eacute;galement r&eacute;duire ou d&eacute;velopper l'arborescence
+en s&eacute;lectionnant un dossier, et en appuyant sur les touches + et -
+du clavier (il s'agit des touches du pav&eacute; alphab&eacute;tique et non
+num&eacute;rique):</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="72*">
+<colspec colwidth="456*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>+</p></td>
+<td align="left" valign="top"><p>Le dossier est ferm&eacute;. Lorsque
+vous cliquez sur ce bouton, le contenu du dossier s'affiche, partiellement
+ou totalement, selon l'option d'arborescence active.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>-</p></td>
+<td align="left" valign="top"><p>Le contenu du dossier est int&eacute;gralement
+affich&eacute;. Cliquez sur ce bouton pour fermer compl&egrave;tement le dossier.
+</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>+/-</p></td>
+<td align="left" valign="top"><p>Le dossier est partiellement ouvert.
+Seuls les dossiers qu'il contient sont affich&eacute;s. Cette vue ne peut
+&ecirc;tre obtenue qu'en s&eacute;lectionnant l'option Dossiers, puis Fichiers.
+Cliquez sur le bouton d'extension pour afficher les noms des fichiers du dossier.
+</p></td></tr></tbody></table></informaltable>
+</div>
+<div class="2" id="UG.FMgr.div.81" role="Procedure">
+<h1 id="UG.FMgr.mkr.25">Affichage de la vue par structure hi&eacute;rarchique</h1>
+<p>Cette vue affiche un dossier, ainsi que tous les fichiers et dossiers
+qu'il contient, sous la forme d'un arbre.</p>
+<ol>
+<li><p>Affichez le dossier dont vous souhaitez obtenir une vue en
+arborescence.</p>
+</li>
+<li><p>S&eacute;lectionnez D&eacute;finir les options de vue dans
+le menu Vue.</p>
+</li>
+<li><p>S&eacute;lectionnez Par structure hi&eacute;rarchique dans
+la bo&icirc;te Afficher.</p>
+</li>
+<li><p>S&eacute;lectionnez une des trois options de vue en arborescence
+:</p>
+<informaltable>
+<table cols="2" colsep="0" rowsep="0">
+<colspec colwidth="166*">
+<colspec colwidth="362*">
+<tbody>
+<tr>
+<td align="left" valign="top"><p>Dossiers seulement</p></td>
+<td align="left" valign="top"><p>L'arborescence n'affiche que les dossiers.
+Pour visualiser les fichiers, cliquez deux fois sur le nom d'un dossier. Il
+s'agit de la vue par d&eacute;faut.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Dossiers, puis fichiers</p></td>
+<td align="left" valign="top"><p>Les dossiers apparaissent en premier.
+Cliquez sur le bouton [+] en regard de chaque dossier pour visualiser son
+contenu. Le premier clic affiche les sous-dossiers. Le deuxi&egrave;me clic
+affiche les fichiers qu'ils contiennent. Cliquez sur le bouton une troisi&egrave;me
+fois pour r&eacute;tablir la vue initiale.</p></td></tr>
+<tr>
+<td align="left" valign="top"><p>Dossiers et fichiers</p></td>
+<td align="left" valign="top"><p>L'arborescence affiche automatiquement
+les dossiers et les fichiers.</p></td></tr></tbody></table>
+</informaltable>
+</li>
+<li><p>Pour appliquer les options et fermer la bo&icirc;te de dialogue
+D&eacute;finition des options de vue, cliquez sur OK.</p>
+<p>Pour appliquer les options tout en laissant la bo&icirc;te de dialogue
+D&eacute;finition des options de vue ouverte, cliquez sur Appliquer.</p>
+</li>
+</ol>
+<p>Vous pouvez modifier l'aspect des fichiers et des dossiers dans l'arborescence
+en modifiant les param&egrave;tres de la bo&icirc;te Afficher dans la bo&icirc;te
+de dialogue D&eacute;finition des options de vue. Ces modifications ne s'appliquent
+qu'&agrave; la session en cours. Pour les rendre permanentes, reportez-vous
+&agrave; la section &ldquo;Sauvegarde des options
+courantes comme valeurs par défaut&ldquo;, page&numsp;123<xref role="SecTitleAndPageNum"
+href="#UG.FMgr.mkr.27">.</p>
+<p>Si vous cliquez deux fois sur un dossier dans la vue par structure hi&eacute;rarchique,
+une nouvelle vue de ce dossier s'ouvre. Cette derni&egrave;re n'est pas en
+mode vue par structure hi&eacute;rarchique.<!---- <primary>Vue</primary>
+<secondary>structure hi&eacute;rarchique dans le Gestionnaire de fichiers&lt;$endrange></secondary>----> <!---- <primary>Vues du Gestionnaire de fichiers</primary><secondary>arborescence&lt;$endrange></secondary>----> </p>
+</div>
+<div class="2" id="UG.FMgr.div.82" role="Procedure">
+<h1>Affichage de la vue Dossier</h1>
+<p><!---- <primary>Vue</primary><secondary>Dossier dans le Gestionnaire
+de fichiers</secondary>----> <!---- <primary>Vues du Gestionnaire
+de fichiers</primary><secondary>dossier</secondary>----> La vue Dossier
+affiche un dossier, ainsi que tous les fichiers et sous-dossiers qu'il contient.
+</p>
+<ol>
+<li><p>Affichez le dossier &agrave; visualiser.</p>
+</li>
+<li><p>S&eacute;lectionnez D&eacute;finir les options de vue dans
+le menu Vue.</p>
+</li>
+<li><p>S&eacute;lectionnez l'option Par dossier dans la bo&icirc;te
+Afficher.</p>
+</li>
+<li><p>Pour appliquer les options et fermer la bo&icirc;te de dialogue
+D&eacute;finition des options de vue, cliquez sur OK.</p>
+<p>Pour appliquer les options tout en laissant la bo&icirc;te de dialogue
+D&eacute;finition des options de vue ouverte, cliquez sur Appliquer.</p>
+</li>
+</ol>
+<p>Vous pouvez modifier l'aspect des fichiers et des dossiers dans la vue
+Dossier en modifiant les param&egrave;tres de la bo&icirc;te Afficher dans
+la bo&icirc;te de dialogue D&eacute;finition des options de vue. Ces modifications
+ne s'appliquent qu'&agrave; la session en cours. Pour les rendre permanentes,
+reportez-vous &agrave; la section &ldquo;Sauvegarde
+des options courantes comme valeurs par défaut&ldquo;, page&numsp;123<xref
+role="SecTitleAndPageNum" href="#UG.FMgr.mkr.27">.</p>
+</div>
+<div class="2" id="UG.FMgr.div.83" role="Procedure">
+<h1>Modification de la repr&eacute;sentation des objets<!---- <primary>Objets</primary><secondary>ordre de tri</secondary><tertiary>Gestionnaire
+de fichiers</tertiary>----> <!---- <primary>Ordre de tri</primary>
+<secondary>objets</secondary>----> <!---- <primary>Ordre de tri</primary><secondary>modification dans le Gestionnaire de fichiers</secondary>
+----> <!---- <primary>Vues du Gestionnaire de fichiers</primary>
+<secondary>modification de l'ordre de tri</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez D&eacute;finir les options de vue dans
+le menu Vue.</p>
+</li>
+<li><p>S&eacute;lectionnez la repr&eacute;sentation que vous pr&eacute;f&eacute;rez
+dans la bo&icirc;te Repr&eacute;sentation.</p>
+<ul remap="Bullet2">
+<li><p>Par nom seulement: les ic&ocirc;nes ne s'affichent pas dans
+le Gestionnaire de fichiers. Ce dernier indique que des objets sont des dossiers
+en ajoutant une barre oblique (/) &agrave; la fin de leur nom. Les programmes
+ex&eacute;cutables ont, eux, un ast&eacute;risque (*) apr&egrave;s leur nom.
+</p>
+</li>
+<li><p>Par grandes ic&ocirc;nes: il s'agit de la valeur par d&eacute;faut.
+Le nom et la grande ic&ocirc;ne des objets du Gestionnaire de fichiers apparaissent.
+</p>
+</li>
+<li><p>Par petites ic&ocirc;nes: le nom et la petite ic&ocirc;ne
+des objets du Gestionnaire de fichiers apparaissent.</p>
+</li>
+<li><p>Par nom, date, taille, ...: outre le nom de l'objet et son
+ic&ocirc;ne, cette repr&eacute;sentation affiche &eacute;galement la date,
+la taille et d'autres informations.</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK ou Appliquer.<!---- <primary>Ranger</primary>
+<secondary>commande du menu Vue</secondary>----> </p>
+</li>
+</ol>
+</div>
+<div class="2" id="UG.FMgr.div.84" role="Procedure">
+<h1 id="UG.FMgr.mkr.26">Modification de l'ordre de tri des ic&ocirc;nes<!---- 
+<primary>Objets</primary><secondary>ordre de tri</secondary><tertiary>Gestionnaire
+de fichiers</tertiary>----> <!---- <primary>Ordre de tri</primary>
+<secondary>objets</secondary>----> <!---- <primary>Ordre de tri</primary><secondary>modification dans le Gestionnaire de fichiers</secondary>
+----> <!---- <primary>Vues du Gestionnaire de fichiers</primary>
+<secondary>modification de l'ordre de tri</secondary>----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez D&eacute;finir les options de vue dans
+le menu Vue.</p>
+</li>
+<li><p>S&eacute;lectionnez l'ordre de tri dans la bo&icirc;te Tri
+et le sens dans la bo&icirc;te Ordre.</p>
+<ul remap="Bullet2">
+<li><p>Alphab&eacute;tique: de A &agrave; Z (croissant) ou de Z
+&agrave; A (d&eacute;croissant). Les ic&ocirc;nes dont le nom commence par
+une majuscule apparaissent en t&ecirc;te. Les ic&ocirc;nes dont le nom commence
+par une minuscule apparaissent dans le bas de la liste.</p>
+</li>
+<li><p>Par type de fichier: par type d'objet. Par exemple, les fichiers,
+les dossiers et les actions repr&eacute;sentent diff&eacute;rents types d'objets.
+Au sein de chaque groupe, les ic&ocirc;nes sont tri&eacute;es par ordre alphab&eacute;tique
+(selon l'ordre dans lequel les types de donn&eacute;es sont lus dans la base
+de donn&eacute;es).</p>
+</li>
+<li><p>Par date: selon la date de la derni&egrave;re modification
+des fichiers, de la plus ancienne &agrave; la plus r&eacute;cente (croissant)
+ou de la plus r&eacute;cente &agrave; la plus ancienne (d&eacute;croissant).
+</p>
+</li>
+<li><p>Par taille: selon la taille des fichiers, du plus petit au
+plus grand (croissant) ou du plus grand au plus petit (d&eacute;croissant).
+</p>
+</li>
+</ul>
+</li>
+<li><p>Cliquez sur OK ou Appliquer.<!---- <primary>Ranger</primary>
+<secondary>commande du menu Vue</secondary>----> </p>
+</li>
+</ol>
+<p>Si l'option Position a pour valeur Al&eacute;atoire, les ic&ocirc;nes
+sont uniquement tri&eacute;es lorsque vous s&eacute;lectionnez Ranger dans
+le menu Vue ou lorsque vous cliquez sur Appliquer dans la bo&icirc;te de dialogue
+D&eacute;finition des options de vue. Si sa valeur est Rang&eacute;es et colonnes,
+les ic&ocirc;nes sont tri&eacute;es &agrave; chaque modification du contenu
+du dossier ou lorsque vous s&eacute;lectionnez Mettre &agrave; jour dans le
+menu Vue.</p>
+</div>
+<div class="2" id="UG.FMgr.div.85" role="Procedure">
+<h1>Rangement (tri) des objets<!---- <primary>Objets</primary><secondary>tri</secondary>----> <!---- <primary>Tri</primary><secondary>fichiers
+et dossiers</secondary>----> <!---- <primary>Objets</primary><secondary>tri</secondary>----> <!---- <primary>Fichier</primary><secondary>tri</secondary>----> <!---- <primary>Dossier</primary><secondary>tri</secondary>----> <!---- <primary>Ranger</primary><secondary>commande du menu Vue</secondary>----> <!---- <primary>Objets</primary>
+<secondary>alignement dans la vue du Gestionnaire de fichiers</secondary>
+----> <!---- <primary>Ic&ocirc;nes</primary><secondary>alignement
+dans la vue du Gestionnaire de fichiers</secondary>----> <!---- 
+<primary>Vues du Gestionnaire de fichiers</primary><secondary>alignement des
+ic&ocirc;nes</secondary>----> </h1>
+<p>La commande Ranger trie les objets de la vue en cours (selon les param&egrave;tres
+d&eacute;finis dans la bo&icirc;te de dialogue D&eacute;finition des options
+de vue) et les aligne dans une grille. Les param&egrave;tres des autres fen&ecirc;tres
+du Gestionnaire de fichiers ne sont pas affect&eacute;s.</p>
+<ul>
+<li><p>S&eacute;lectionnez Ranger dans le menu Vue.</p>
+</li>
+</ul>
+<p>La commande Ranger n'est pas disponible si l'option Position a pour
+valeur Rang&eacute;es et colonnes.</p>
+</div>
+<div class="2" id="UG.FMgr.div.86" role="Procedure">
+<h1 id="UG.FMgr.mkr.27">Sauvegarde des options courantes comme valeurs
+par d&eacute;faut<!---- <primary>Vues du Gestionnaire de fichiers</primary>
+<secondary>sauvegarde</secondary>----> <!---- <primary>Gestionnaire
+de fichiers</primary><secondary>sauvegarde</secondary><tertiary>options courantes
+comme valeurs par d&eacute;faut</tertiary>----> <!---- <primary>Options</primary><secondary>courantes</secondary><tertiary>sauvegarde (Gestionnaire
+de fichiers)</tertiary>----> <!---- <primary>Modification</primary>
+<secondary>options par d&eacute;faut du Gestionnaire de fichiers</secondary>
+----> </h1>
+<p>Lorsque vous appliquez des modifications &agrave; l'aide de la bo&icirc;te
+de dialogue D&eacute;finition des options de vue, celles-ci ne s'appliquent
+qu'&agrave; la session en cours. Pour sauvegarder ces options, proc&eacute;dez
+comme suit:</p>
+<ol>
+<li><p>D&eacute;finissez les valeurs souhait&eacute;es et appliquez-les
+(&agrave; l'aide des commandes D&eacute;finir les options de vue et D&eacute;finir
+les options de filtre du menu Vue).</p>
+</li>
+<li><p>S&eacute;lectionnez Sauvegarder comme options par d&eacute;faut
+dans le menu Vue.</p>
+</li>
+<li><p>Cliquez sur OK.</p>
+</li>
+</ol>
+<p>Ces modifications de la vue par d&eacute;faut entreront en vigueur
+au prochain lancement du Gestionnaire de fichiers.</p>
+<p>Toutes les vues du Gestionnaire de fichiers seront alors pr&eacute;sent&eacute;es
+en fonction des nouvelles options.</p>
+</div>
+<div class="2" id="UG.FMgr.div.87">
+<h1>Masquage des fichiers et des dossiers</h1>
+<p>Les fichiers et les dossiers masqu&eacute;s sont ceux dont les types
+de fichiers sont s&eacute;lectionn&eacute;s dans la <em>liste des filtres</em>.</p>
+<p>Le crit&egrave;re de masquage ou d'affichage des fichiers ou des dossiers
+d&eacute;pend de leur type de donn&eacute;es. Utilisez la commande D&eacute;finir
+les options de filtre pour modifier les types de donn&eacute;es affich&eacute;s
+ou cach&eacute;s. Reportez-vous &agrave; la section <!--Original XRef content:
+"Spécification des types de données caché<a  role="SectionTitle" href="#UG.FMgr.mkr.29" >s</a>
+ci-dessous. Les types de donn&eacute;es cach&eacute;s par d&eacute;faut sont
+DOT_FILE, DOT_FOLDER et CURRENT_FOLDER.</p>
+</div>
+<div class="2" id="UG.FMgr.div.88" role="Procedure">
+<h1 id="UG.FMgr.mkr.28">Affichage ou masquage des fichiers ou des dossiers<!---- 
+<primary>Fichier</primary><secondary>masquage</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>masqu&eacute;</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>masqu&eacute;</secondary>----> <!---- 
+<primary>Fichier</primary><secondary>point</secondary>----> <!---- 
+<primary>Dossier</primary><secondary>parent</secondary>----> </h1>
+<ul>
+<li><p>S&eacute;lectionnez Afficher objets cach&eacute;s dans le
+menu Vue.</p>
+</li>
+</ul>
+<p>Si vous s&eacute;lectionnez de nouveau cette option, vous inversez le
+param&egrave;tre (affich&eacute; devient cach&eacute; et vice-versa).</p>
+<p>Le crit&egrave;re de masquage ou d'affichage des fichiers ou des dossiers
+d&eacute;pend de leur type de donn&eacute;es. Utilisez la commande D&eacute;finir
+les options de filtre pour modifier les types de donn&eacute;es affich&eacute;s
+ou cach&eacute;s. Reportez-vous &agrave; la section <!--Original XRef content:
+'"Spécification des types de données caché<a  role="SectionTitle" href="#UG.FMgr.mkr.29" >s</a>
+ci-dessous. Les types de donn&eacute;es cach&eacute;s par d&eacute;faut sont
+DOT_FILE, DOT_FOLDER et CURRENT_FOLDER.</p>
+</div>
+<div class="2" id="UG.FMgr.div.89" role="Procedure">
+<h1 id="UG.FMgr.mkr.29">Sp&eacute;cification des types de donn&eacute;es
+cach&eacute;s<!---- <primary>Masquage</primary><secondary>objets</secondary>
+----> <!---- <primary>Objets</primary><secondary>masquage</secondary>
+----> <!---- <primary>Masquage</primary><secondary>fichiers</secondary>
+----> <!---- <primary>Masquage</primary><secondary>dossiers</secondary>
+----> <!---- <primary>Objets</primary><secondary>masquage</secondary>
+----> <!---- <primary>Fichiers</primary><secondary>masquage</secondary>
+----> <!---- <primary>Dossiers</primary><secondary>masquage</secondary>
+----> </h1>
+<ol>
+<li><p>S&eacute;lectionnez D&eacute;finir les options de filtre dans
+le menu Vue.</p>
+</li>
+<li><p>S&eacute;lectionnez les types de donn&eacute;es &agrave; cacher
+dans la bo&icirc;te de dialogue correspondante. Les types d&eacute;j&agrave;
+s&eacute;lectionn&eacute;s pour le masquage sont mis en &eacute;vidence.
+</p>
+<p>Pour revenir &agrave; la liste des filtres par d&eacute;faut (DOT_FILE,
+DOT_FOLDER et CURRENT_FOLDER), cliquez sur Par d&eacute;faut.</p>
+</li>
+<li><p><em>Facultatif</em>. Entrez un masque de nom dans
+la zone Masquer &eacute;galement (facultatif) pour indiquer d'autres noms
+de fichiers et de dossiers &agrave; masquer.</p>
+<p>La liste des filtres indique les fichiers qui ne sont <em>pas</em> affich&eacute;s. Si vous s&eacute;lectionnez tous les types d'objets
+ou si vous entrez * dans la zone Cha&icirc;ne de filtrage, <em>aucun</em> fichier ne s'affiche. Si vous entrez <tt>*.txt</tt>,
+tout fichier dont le nom se termine par <tt>.txt</tt> sera ajout&eacute;
+&agrave; la liste des filtres et ne s'affichera pas.</p>
+<p>Utilisateurs confirm&eacute;s: la cha&icirc;ne de filtrage peut &ecirc;tre
+une <em>expression r&eacute;guli&egrave;re</em>. Pour plus de
+d&eacute;tails, reportez-vous &agrave; la page de manuel <filename moreinfo="RefEntry">regexp(5)</tt>.</p>
+</li>
+<li><p>Cliquez sur OK.</p>
+</li>
+</ol>
+<p>Si vous souhaitez voir les r&eacute;sultats avant de fermer la bo&icirc;te
+de dialogue, cliquez sur Appliquer.</p>
+<p>Pour revenir &agrave; la liste des filtres par d&eacute;faut, s&eacute;lectionnez
+Par d&eacute;faut. Notez cependant que les valeurs par d&eacute;faut ne seront
+pas appliqu&eacute;es tant que vous n'aurez cliqu&eacute; sur Appliquer ou
+sur OK.</p>
+</div>
+<div class="2" id="UG.FMgr.div.90">
+<h1>Visualisation d'ic&ocirc;nes</h1>
+<p><!---- <primary>Ic&ocirc;nes</primary><secondary>visualisation dans
+le Gestionnaire de fichiers</secondary>----> <!---- <primary>Gestionnaire
+de fichiers</primary><secondary>visualisation des ic&ocirc;nes</secondary>
+----> Les fichiers dont le nom se termine par <tt>.pm</tt>
+ou <tt>.bm</tt> contiennent des ic&ocirc;nes. Il s'agit des fichiers
+utilis&eacute;s par le Gestionnaire de fichiers pour cr&eacute;er des ic&ocirc;nes.
+Par d&eacute;faut, vous devez ouvrir ces fichiers pour visualiser les ic&ocirc;nes
+qu'ils contiennent. Si vous activez la visualisation des ic&ocirc;nes, le
+Gestionnaire de fichiers affiche le contenu des fichiers <tt>.pm</tt>
+ou <tt>.bm</tt>, il n'est pas donc pas n&eacute;cessaire de les
+ouvrir.</p>
+<object>
+<h1>Activation (&agrave; gauche) et d&eacute;sactivation (&agrave; droite)
+de la visualisation des ic&ocirc;nes</h1>
+<img id="UG.FMgr.grph.4" src="./graphics/FMiconbr.png">
+</object>
+<div class="3" id="UG.FMgr.div.91" role="Procedure">
+<h1>Activation de la visualisation d'ic&ocirc;nes</h1>
+<ol>
+<li><p>Copiez le fichier <tt>/usr/dt/examples/types/</tt><var">langue</var><tt>/IconBrowse.dt</tt> dans votre
+dossier <tt>/<var">R&eacute;pPersonnel</var>/.dt/types</tt>.</p>
+</li>
+<li><p>Ouvrez le Gestionnaire d'applications et cliquez deux fois
+sur Recharger actions dans le groupe d'applications Outils_Bureau.</p>
+</li>
+<li><p>Relancez le Gestionnaire de fichiers.</p>
+</li>
+</ol>
+<note>
+<p>La taille maximale de la zone d'affichage par d&eacute;faut des ic&ocirc;nes
+est de 38x38 pixels. Donc, si un fichier d'image est sup&eacute;rieur &agrave;
+cette taille, l'image sera tronqu&eacute;e et seuls les 38x38 pixels de la
+partie sup&eacute;rieure gauche s'afficheront. Vous pouvez augmenter la taille
+de la zone d'affichage des ic&ocirc;nes si vous souhaitez afficher totalement
+de plus grandes images (reportez-vous &agrave; la section <!--Original XRef
+content: '"Modification de la taille de la zone d'affichage des icônes<xref
+role="SectionTitle" href="#UG.FMgr.mkr.30">). Cependant, une zone plus grande
+ralentit l'ouverture des dossiers et les ic&ocirc;nes empi&egrave;tent sur
+les fen&ecirc;tres des dossiers.</p>
+</note>
+</div>
+<div class="3" id="UG.FMgr.div.92" role="Procedure">
+<h1>D&eacute;sactivation de la visualisation d'ic&ocirc;nes</h1>
+<ol>
+<li><p><!---- <primary>Visualisation</primary><secondary>ic&ocirc;nes</secondary>----> <!---- <primary>Gestionnaire de fichiers</primary>
+<secondary>d&eacute;sactivation de la visualisation d'ic&ocirc;nes</secondary>
+----> Supprimez votre copie du fichier <tt>IconBrowse.dt</tt>.
+</p>
+</li>
+<li><p>Ouvrez le Gestionnaire d'applications et cliquez deux fois
+sur Recharger actions dans le groupe d'applications Outils_Bureau.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="2" id="UG.FMgr.div.93" role="Procedure">
+<h1 id="UG.FMgr.mkr.30">Modification de la taille de la zone d'affichage
+des ic&ocirc;nes<!---- <primary>Ic&ocirc;nes</primary><secondary>modification
+de la taille de la zone d'affichage</secondary><tertiary>Gestionnaire de fichiers</tertiary>----> <!---- <primary>Gestionnaire de fichiers</primary>
+<secondary>taille de la zone d'affichage des ic&ocirc;nes</secondary>----> </h1>
+<ol>
+<li><p>Ouvrez une fen&ecirc;tre de terminal et entrez <code>dtpad
+~/.Xdefaults</code>.</p>
+</li>
+<li><p>Lorsque le fichier s'affiche, il peut &ecirc;tre vide ou contenir
+du texte. Dans les deux cas, ajoutez les quatre lignes de texte suivantes
+:</p>
+<listing remap="CodeIndent1">Dtfile*smallIconWidth:24
+Dtfile*smallIconHeight:24
+Dtfile*largeIconWidth:38 
+Dtfile*largeIconHeight:38</listing>
+<p>Lorsque vous entrez ces lignes, remplacez les valeurs par d&eacute;faut
+&agrave; la fin de chaque ligne par la taille de la zone d'affichage souhait&eacute;e.
+</p>
+</li>
+<li><p>S&eacute;lectionnez Sauvegarder dans le menu Fichier.</p>
+</li>
+<li><p>Choisissez Fermer dans le menu Fichier.</p>
+</li>
+</ol>
+<note>
+<p>La modification ne sera effective qu'&agrave; la prochaine connexion.
+Pour r&eacute;tanlir la taille de la zone d'affichage par d&eacute;faut, tapez
+&agrave; nouveau les valeurs par d&eacute;faut ou supprimez les quatre lignes
+ajout&eacute;es, puis quittez et relancez le Bureau.</p>
+</note>
+</div>
+</div>
+</chapter>
+<!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
+<?Pub Caret>
+<?Pub *0000125033>
+
+</body></html>
