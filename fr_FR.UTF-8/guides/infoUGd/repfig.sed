@@ -1,5 +1,5 @@
 
-s|"INFOUG.Gstart.fig.1"|"./graphics/infolib1.cgm" |g
+s|"INFOUG.Gstart.fig.1"|"./graphics/infolib1.cgm"|g
 
 s|"INFOUG.Gstart.fig.2"|"./graphics/fpico.png"|g
 
