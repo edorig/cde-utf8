@@ -8,7 +8,7 @@ done
 cd ..
 
 # Then, let's convert the SGML files to troff (MS macros) 
-cat preface.sgm ch*.sgm | sed -E -f ../../../bin/sgml2troff.sh > book.ms
+cat preface.sgm prefcan.sgm ch*.sgm glossary.sgm appa.sgm appb.sgm | sed -E -f ../../../bin/sgml2troff.sed > book.ms
 
 # Now, we need to put in place the filenames for the figures.
 sed -E -f ../../../bin/psfigs.sed <  BEntity.sgm > repfigps.sed
@@ -16,11 +16,11 @@ sed -i -E -f repfigps.sed book.ms
 
 # Now, the references must be fixed
 echo "s|</xref>||g" > references.sed  
-echo "s|<xref(.*)linkend=\"([^\"]*)\">|\"\2\"|g" >> references.sed
-echo "s|linkend=\"([^\"]*)\">|\"\1\"|g" >> references.sed 
+echo "s|<xref(.*)linkend=\"([^\"]*)\">|\"\\\\2\"|g" >> references.sed
+echo "s|linkend=\"([^\"]*)\">|\"\\\\1\"|g" >> references.sed 
 echo "s|<xref.*$||g" >> references.sed
 echo "/\.div.[0-9]*/ s/\.div\./.mkr./g" >> references.sed 
-grep "id=" preface.sgm ch*.sgm | sed -E -f linkref.sed >> references.sed
+grep "id=" preface.sgm ch*.sgm app*.sgm glossary.sgm | sed -E -f ../../../bin/linkref.sed >> references.sed
 
 sed -i -E -f references.sed book.ms
 

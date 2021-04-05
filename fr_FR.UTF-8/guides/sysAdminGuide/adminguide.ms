@@ -6,7 +6,7 @@
 \" <!-- (c) Copyright 1995 Novell, Inc. -->
 \" <!-- (c) Copyright 1995 FUJITSU LIMITED. -->
 \" <!-- (c) Copyright 1995 Hitachi. -->
-\" <preface id=Marques SGML DocBook>
+\" 
 .TL
  Pr\*'eface
 .LP
@@ -43,41 +43,41 @@ Organisation du manuel
  Cette publication comprend 16 chapitres.
 \fILe\fR  chapitre n\(de 1,
 \*Q Configuration du Gestionnaire de connexion
-Configuration du Gestionnaire de connexion<emphasis role="Lead-in">,\fR  explique comment
+Configuration du Gestionnaire de connexion\fI,\fR  explique comment
 personnaliser la pr\*'esentation et le comportement du Gestionnaire de
 connexion du Bureau.
 \fILe\fR  chapitre n\(de 2,
 \*Q Configuration du Gestionnaire de sessions
-Configuration du Gestionnaire de sessions<emphasis role="Lead-in">,\fR  pr\*'esente
+Configuration du Gestionnaire de sessions\fI,\fR  pr\*'esente
 les processus de m\*'emorisation et de r\*'etablissement de sessions,
 et explique comment personnaliser le lancement de ces derni\*`eres.
 \fILe\fR  chapitre n\(de 3,
 \*Q Ajout et gestion d'applications
-Ajout et gestion d'applications<emphasis role="Lead-in">,\fR  d\*'ecrit
+Ajout et gestion d'applications\fI,\fR  d\*'ecrit
 le regroupement des applications dans le Gestionnaire d'applications et explique
 comment ajouter des applications.
 \fILe\fR  chapitre n\(de 4,
 \*Q Enregistrement d'une application
-Enregistrement d'une application<emphasis role="Lead-in">,\fR  pr\*'esente
+Enregistrement d'une application\fI,\fR  pr\*'esente
 la cr\*'eation d'un module d'enregistrement pour une application.
 \fILe\fR  chapitre n\(de 5,
 \*Q Configuration du Bureau dans un r\*'eseau
-Configuration du Bureau dans un r\*'eseau<emphasis role="Lead-in">,\fR  explique
+Configuration du Bureau dans un r\*'eseau\fI,\fR  explique
 comment distribuer sur le r\*'eseau les fonctions, les applications et
 les donn\*'ees du Bureau.
 \fILe\fR  chapitre n\(de 6,
 \*Q Configuration et gestion de l'impression \*`a partir du Bureau
-role="ChapNumAndTitleLead-in" Configuration et gestion de l'impression \*`a<emphasis role="Lead-in">
+role="ChapNumAndTitleLead-in" Configuration et gestion de l'impression \*`a\fI
 ,\fR  pr\*'esente l'ajout et la suppression d'imprimantes et la
 d\*'efinition de l'imprimante par d\*'efaut.
 \fILe\fR  chapitre n\(de 7,
 \*Q Chemins de recherche du Bureau
-Chemins de recherche du Bureau<emphasis role="Lead-in">,\fR  explique
+Chemins de recherche du Bureau\fI,\fR  explique
 comment le Bureau recherche les applications, les fichiers d'aide, les ic\*^ones
 et les donn\*'ees sur le r\*'eseau.
 \fILe\fR  chapitre n\(de 8,
 \*Q Introduction aux actions et aux types de donn\*'ees
-Introduction aux actions et aux types de donn\*'ees<emphasis role="Lead-in">,\fR  qui d\*'ecrit
+Introduction aux actions et aux types de donn\*'ees\fI,\fR  qui d\*'ecrit
 les actions et les types de donn\*'ees, et leur utilisation dans l'interface
 utilisateur des applications.
 \fILe\fR  chapitre n\(de 9,
@@ -87,39 +87,39 @@ role="ChapNumAndTitleLead-in"\fI
 action (cr\*'eation d'actions et de types de donn\*'ees).
 \fILe\fR  chapitre n\(de 10,
 \*Q Cr\*'eation manuelle d'actions
-<emphasis role="Lead-in">,\fR  explique
+\fI,\fR  explique
 comment cr\*'eer des d\*'efinitions d'actions \*`a l'aide d'un
 fichier de configuration de base de donn\*'ees.
 \fILe\fR  chapitre n\(de 11,
 \*Q cr\*'eation manuelle de types de donn\*'ees
-Cr\*'eation manuelle de types de donn\*'ees<emphasis role="Lead-in">,\fR  explique comment
+Cr\*'eation manuelle de types de donn\*'ees\fI,\fR  explique comment
 cr\*'eer des d\*'efinitions de types de donn\*'ees \*`a l'aide
 d'un fichier de configuration de base de donn\*'ees.
 \fILe\fR  chapitre n\(de 12,
 \*Q Cr\*'eation d'ic\*^ones pour le Bureau
-Cr\*'eation d'ic\*^ones pour le Bureau<emphasis role="Lead-in">,\fR  d\*'ecrit
+Cr\*'eation d'ic\*^ones pour le Bureau\fI,\fR  d\*'ecrit
 l'utilisation de l'Editeur d'ic\*^ones, les conventions de d\*'enomination,
 les tailles et les chemins de recherche des ic\*^ones du Bureau.
 \fILe\fR  chapitre n\(de 13,
 \*Q Personnalisation du Tableau de bord
-Personnalisation<emphasis role="Lead-in">,\fR  explique comment
+Personnalisation\fI,\fR  explique comment
 cr\*'eer des objets de commande et des tableaux secondaires disponibles
 sur tout le syst\*`eme, et pr\*'esente d'autres op\*'erations
 de personnalisation.
 \fILe\fR  chapitre n\(de 14,
 \*Q Personnalisation du Gestionnaire de l'espace de travail
-Personnalisation du Gestionnaire de l'espace de<emphasis role="Lead-in">,\fR  d\*'ecrit
+Personnalisation du Gestionnaire de l'espace de\fI,\fR  d\*'ecrit
 la personnalisation de divers \*'el\*'ements, tels que les fen\*^etres,
 les associations de fonctions (aux boutons de la souris et aux touches du
 clavier) et les menus du Gestionnaire de l'espace de travail.
 \fILe\fR  chapitre n\(de 15,
 \*Q Gestion des ressources d'applications, des polices et des couleurs
-role="ChapNumAndTitleLead-in" Gestion des ressources d'applications, des polices<emphasis role="Lead-in">
+role="ChapNumAndTitleLead-in" Gestion des ressources d'applications, des polices\fI
 ,\fR  explique comment d\*'efinir les ressources d'applications
 et d\*'ecrit l'utilisation des polices et des couleurs par le Bureau.
 \fILe\fR  chapitre n\(de 16,
 \*Q Configuration de sessions de Bureau adapt\*'ees au pays
-Configuration de sessions de Bureau adapt\*'ees<emphasis role="Lead-in">,\fR  pr\*'esente
+Configuration de sessions de Bureau adapt\*'ees\fI,\fR  pr\*'esente
 les t\*^aches de gestion des syst\*`emes sur lesquels s'ex\*'ecutent
 des sessions en plusieurs langues.
 .NH 1 
@@ -127,7 +127,7 @@ Qu'entend-on par marques SGML DocBook ?
 .PP
  Ce document est r\*'edig\*'e dans le langage SGML ( Structured
 Generalized Markup Language) \*`a l'aide de DTD (DocBook Document Type
-Definition,<?Pub Caret> d\*'efinition de type de document). Le tableau
+Definition, d\*'efinition de type de document). Le tableau
 suivant d\*'ecrit les marques DocBook utilis\*'ees pour divers \*'el\*'ements
 s\*'emantiques.
 .TS
@@ -138,13 +138,15 @@ l l l.
  \fC AaBbCc123\fR 	Noms des options de commandes	Utilisez \fC ls\fR  \fC \-a\fR  pour lister tous les fichiers.
  \fC AaBbCc123\fR 	Marque de r\*'eservation de la ligne de commande: remplacez par un nom ou une valeur r\*'eelle.	Pour supprimer un fichier, tapez \fC rm\fR  \fC filename\fR .  
  \fC AaBbCc123\fR 	Noms des fichiers et des r\*'epertoires Editez votre fichier \fC .login\fR .
- \fI AaBbCc123\fR 	Titres d'ouvrages, mots ou termes nouveaux, termes anglais ou mots mis en \*'evidence.	Lisez le chapitre 6 du \fI Guide de l'utilisateur\fR . <?Pub _newline>On les appelle options de \fI classe\fR . <?Pub _newline>Vous devez vous trouver dans le r\*'epertoire racine pour proc\*'eder \*`a cette op\*'eration.	
+ \fI AaBbCc123\fR 	Titres d'ouvrages, mots ou termes nouveaux, termes anglais ou mots mis en \*'evidence.	Lisez le chapitre 6 du \fI Guide de l'utilisateur\fR . 
+On les appelle options de \fI classe\fR . 
+Vous devez vous trouver dans le r\*'epertoire racine pour proc\*'eder \*`a cette op\*'eration.	
 .TE
 Marques SGML DocBook
 .PP
-\" </preface>
+\" 
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000015617>
+
 \" <!-- $XConsortium: ch01.sgm /main/13 1996/12/21 18:56:02 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -1080,16 +1082,25 @@ ressources
 .XS
 ressources
 .XE
-\fC Dtlogin*logo*bitmapFile\fR 	 Fichier bitmap ou pixmap \*`a
-	utiliser comme logo.
- \fC Dtlogin*greeting*labelString\fR 	Message de bienvenue.	
- \fC Dtlogin*greeting*persLabelString\fR 	Message de bienvenue personnalis\*'e.
- \fC Dtlogin*greeting*fontList\fR 	Police des messages de bienvenue.
- \fC Dtlogin*labelFont\fR 	Police des boutons de fonction et des
+\fC Dtlogin*logo*bitmapFile\fR 	
+ Fichier bitmap ou pixmap \*`a utiliser
+comme logo.
+ \fC Dtlogin*greeting*labelString\fR 	
+ Message de bienvenue.	
+ \fC Dtlogin*greeting*persLabelString\fR 	
+ Message de bienvenue personnalis\*'e.
+ \fC Dtlogin*greeting*fontList\fR 	
+ Police des messages de bienvenue.
+ \fC Dtlogin*labelFont\fR 
+	
+ Police des boutons de fonction et des
 libell\*'es.
- \fC Dtlogin*textFont\fR 	Police de l'aide et des messages d'erreur.
- \fC Dtlogin*\fR \fC langue\fR \fC *languageName\fR 	Autre nom pour
-	l'environnement local (\fC langue).\fR 
+ \fC Dtlogin*textFont\fR 
+	
+ Police de l'aide et des messages d'erreur.
+ \fC Dtlogin*\fR \fC langue\fR \fC *languageName\fR 	
+ Autre nom pour l'environnement local
+(\fC langue).\fR 
 .TE
 .NH 2 
 Modification du logo
@@ -1170,9 +1181,9 @@ Xresources
 center,box;
 l l. 
  \fC Dtlogin*greeting*fontList\fR 	Police des messages de bienvenue.
- \fC Dtlogin*labelFont\fR	Police des boutons de fonction et 
-	des libell\*'es.
- \fC Dtlogin*textFont\fR	Police de l'aide et des messages d'erreur.
+ \fC Dtlogin*labelFont\fR Police des boutons de fonction et des
+libell\*'es.
+ \fC Dtlogin*textFont\fR Police de l'aide et des messages d'erreur.
 .TE
  L'exemple suivant de d\*'efinir une police plus grande pour les
 messages de bienvenue (la valeur indiqu\*'ee doit tenir sur une seule
@@ -1831,11 +1842,10 @@ l l.
  \fC /usr/dt/config/Xstartup\fR 	Fichier de lancement pr\*'e-session.
  \fC /usr/dt/config/Xreset\fR 	Fichier de r\*'etablissement post-session.
  \fC /var/dt/Xpid\fR 	ID processus du Gestionnaire de connexion.
- \fC /var/dt/Xerrors\fR 	Journal des erreurs du serveur de connexion.
+ \fC /var/dt/Xerrors\fR 	Journal des erreurs du serveur de
+connexion.
 .TE
 .bp
-
-
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
 \" <!-- $XConsortium: ch02.sgm /main/10 1996/12/20 20:38:28 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
@@ -1879,10 +1889,16 @@ l.
 .NH 1 
 En quoi consiste une session ?
 .XS
-Gestionnaire de sessions, pr\*'esentation
+Gestionnaire de sessions
 .XE
 .XS
-Session, d\*'efinition
+pr\*'esentation
+.XE
+.XS
+Session
+.XE
+.XS
+d\*'efinition
 .XE
 .PP
  Une session est l'ensemble des applications, des param\*`etres et
@@ -1895,27 +1911,49 @@ identique \*`a celui dont il disposait la derni\*`ere fois qu'il s'est
 d\*'econnect\*'e. Lorsqu'un utilisateur se connecte au Bureau pour
 la premi\*`ere fois, une
 .XS
-Session, par d\*'efaut
+Session
+.XE
+.XS
+par d\*'efaut
 .XE
  session initiale par d\*'efaut
 est charg\*'ee. Par la suite, le Gestionnaire de sessions peut distinguer
 les notions de
 .XS
-Session, en cours
+Session
+.XE
+.XS
+en cours
 .XE
  session en cours et de
 .XS
-Session initiale, personnalis\*'ee
+Session
 .XE
-
+.XS
+initiale personnalis\*'ee
+.XE
+.XS
+Session
+.XE
+.XS
+initiale personnalis\*'ee
+.XE
  session
 initiale personnalis\*'ee.
 .NH 2 
 Session initiale par d\*'efaut
 .XS
-Session, initiale par d\*'efaut
+Session
 .XE
-
+.XS
+initiale par d\*'efaut
+.XE
+.XS
+Session
+.XE
+.XS
+initiale par d\*'efaut
+.XE
 .PP
  Lorsqu'un utilisateur se connecte au syst\*`eme pour la premi\*`ere
 fois, le Gestionnaire de sessions g\*'en\*`ere la session initiale
@@ -1925,7 +1963,17 @@ au Bureau\*Q  seront lanc\*'es.
 .NH 2 
 Session en cours
 .XS
-Session en cours
+Session
+.XE
+.XS
+en
+cours
+.XE
+.XS
+Session
+.XE
+.XS
+en cours
 .XE
 .PP
  La session en cours d'ex\*'ecution est toujours consid\*'er\*'ee
@@ -1944,7 +1992,16 @@ fois.
 .NH 2 
 Session initiale personnalis\*'ee
 .XS
-Session initiale personnalis\*'ee
+Session
+.XE
+.XS
+initiale personnalis\*'ee
+.XE
+.XS
+Session
+.XE
+.XS
+initiale personnalis\*'ee
 .XE
 .PP
  Le Bureau peut \*'egalement \*^etre r\*'etabli dans le m\*^eme
@@ -1957,7 +2014,10 @@ connexion.
 .NH 2 
 Sessions sp\*'ecifiques de l'\*'ecran
 .XS
-Session, sp\*'ecifique de l'\*'ecran
+Session
+.XE
+.XS
+sp\*'ecifique de l'\*'ecran
 .XE
 .PP
  Pour lancer une session propre \*`a un \*'ecran donn\*'e,
@@ -1969,18 +2029,31 @@ de sessions lance la session sp\*'ecifique \*`a cet \*'ecran.
 .NH 1 
 Lancement d'une session
 .XS
-Session, lancement
+Session
 .XE
 .XS
-Gestionnaire de sessions, lancement
+lancement
 .XE
 .XS
-Gestionnaire de sessions voir aussi, session
+Gestionnaire de sessions
+.XE
+.XS
+lancement
+.XE
+.XS
+Gestionnaire de sessions
+.XE
+.XS
+voir aussi,
+session
 .XE
 .PP
  Le Gestionnaire de sessions est lanc\*'e par la commande \fC /usr/dt/bin/Xsession\fR .
 .XS
-Fichier Xsession
+Fichier
+.XE
+.XS
+Xsession
 .XE
 .XS
 lancement du Gestionnaire de sessions
@@ -2002,20 +2075,35 @@ certain nombre d'\*'etapes pour lancer la session de l'utilisateur.
 .IP \(rh
  Il lance le script de \fC R\*'epPersonnel\fR \fC /.dtprofile\fR .
 .XS
-Fichier .dtprofile, fourniture
+Fichier
+.XE
+.XS
+ .dtprofile
+.XE
+.XS
+fourniture
 .XE
 .IP \(rh
  Il lance les scripts\fC Xsession.d\fR .
 .XS
-R\*'epertoire Xsession.d
+R\*'epertoire
+.XE
+.XS
+Xsession.d
 .XE
 .IP \(rh
  Il affiche un
 .XS
-Gestionnaire de sessions, message de bienvenue
+Gestionnaire de sessions
 .XE
 .XS
-Message de bienvenue, affichage
+message de bienvenue
+.XE
+.XS
+Message de bienvenue
+.XE
+.XS
+affichage
 .XE
  message
 de bienvenue.
@@ -2034,11 +2122,17 @@ Bureau
  Il ex\*'ecute \*'eventuellement les commandes des
 fichiers \fC R\*'epPersonnel\fR \fC /.profile\fR 
 .XS
-Fichier .profile
+Fichier
+.XE
+.XS
+.profile
 .XE
  ou \fC R\*'epPersonnel\fR \fC /.login\fR 
 .XS
-Fichier .login
+Fichier
+.XE
+.XS
+.login
 .XE
 .
 .IP \(rh
@@ -2049,7 +2143,8 @@ ToolTalk
 .XS
 d\*'emon de messagerie
 .XE
- d\*'emon de messagerie ToolTalk\u\(rg\d.
+ d\*'emon de messagerie
+ToolTalk\u\(rg\d.
 .IP \(rh
  Il charge les
 .XS
@@ -2068,13 +2163,17 @@ session
 .IP \(rh
  Il lance le
 .XS
-Serveur, couleurs
+Serveur
+.XE
+.XS
+couleurs
 .XE
  serveur de couleurs.
 .IP \(rh
  Il lance le
 .XS
-Gestionnaire de l'espace de travail
+Gestionnaire de l'espace de
+travail
 .XE
  Gestionnaire de l'espace de travail.
 .IP \(rh
@@ -2720,7 +2819,7 @@ les applications syst\*`eme \*`a r\*'etablir par d\*'efaut
 pour toute session. Ce fichier ne doit pas \*^etre modifi\*'e \*'etant
 donn\*'e qu'il est remplac\*'e \*`a chaque nouvelle installation
 du Bureau.
- Pour plus de d\*'etails, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtsessionfile(4)\fR .
+ Pour plus de d\*'etails, reportez-vous \*`a la page de manuel \fCdtsessionfile(4)\fR .
 .XS
 Gestionnaire de sessions
 .XE
@@ -2874,7 +2973,7 @@ Fichier
 non lu par le Gestionnaire de connexion
 .XE
 .XS
-<$nopage>Shell
+Shell
 .XE
 .XS
 Voir aussi variables d'environnement, .profile, .login, .dtprofile
@@ -3005,7 +3104,7 @@ sys.session
 sys.session\fR .
  Chaque entr\*'ee de \fC sys.session\fR  appara\*^it
 sous la forme:
- \fC dtsmcmd -cmd\fR  <symbol remap="Emphasis">commande_et_options\fR 
+ \fC dtsmcmd -cmd\fR  \fCcommande_et_options\fR 
 .XS
 Commandes
 .XE
@@ -3228,7 +3327,7 @@ erreurs de connexion
 .XE
  Le fichier\fC startlog\fR  contiendra les informations
 de sortie (\fC stderr\fR ) des applications lanc\*'ees par
-le Gestionnaire de session (sur l'h\*^ote du Gestionnaire de session<?Pub Caret>).
+le Gestionnaire de session (sur l'h\*^ote du Gestionnaire de session).
 .NH 1 
 Fichiers et r\*'epertoires du Gestionnaire
 de sessions
@@ -3270,7 +3369,7 @@ r\*'epertoires
  \fC R\*'epPersonnel\fR \fC /.dt/\fR \fC display\fR /\fC home\fR 
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000065827>
+
 \" <!-- $XConsortium: ch03.sgm /main/11 1996/12/21 18:56:09 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -4120,7 +4219,7 @@ Outils_Bureau pour recharger la base de donn\*'ees des actions.
 .bp
 
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000043305>
+
 \" <!-- $XConsortium: ch04.sgm /main/11 1996/12/21 18:56:15 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -4433,9 +4532,9 @@ Etape 5: Insertion des fichiers d'aide dans.
 .IP \(rh
  Placez les fichiers de documentation
 en ligne (infolib) dans le r\*'epertoire appropri\*'e.
- See &xd2;Step 6: Putting the Infolib Files
+ See \`Step 6: Putting the Infolib Files
 in the
-Registration Package&xd3; on page n\(de 66
+Registration Package\' on page n\(de 66
 "SAG.RegAp.mkr.19a".
 .IP \(rh
  Cr\*'eez les ic\*^ones de l'application
@@ -4799,7 +4898,7 @@ cr\*'eer:
 .IP -
  une action Imprimer pour les fichiers de donn\*'ees de
 l'application
-<listitem>
+.IP -
  un type de donn\*'ees pour le groupe d'applications (voir
 la section \*U Configuration du groupe
 d'applications avec un nom d'icône unique\*U , page n\(de 75
@@ -5095,7 +5194,7 @@ de l'information. Cependant, il ne peut y acc\*'eder \*`a partir des
 fen\*^etres de l'application. Vous pouvez cr\*'eer une action pour
 acc\*'eder \*`a la biblinfo \*`a partir du groupe d'application.
 L'action de l'exemple suivant affiche le volume de la biblinfo situ\*'ee
-dans la biblioth\*`eque d'informations<?Pub Caret> \fC MyApp.dti\fR :
+dans la biblioth\*`eque d'informations \fC MyApp.dti\fR :
 .CW
  ACTION OpenMyAppInfolib
 {
@@ -5440,13 +5539,13 @@ Module d'enregistrement
 ic\*^one d'application
 .XE
 .XS
-<$nopage>Enregistrement
+Enregistrement
 .XE
 .XS
 voir aussi module d'enregistrement
 .XE
 .XS
-<$nopage>Module d'enregistrement
+Module d'enregistrement
 .XE
 .XS
 voir aussi enregistrement
@@ -5455,7 +5554,7 @@ voir aussi enregistrement
  Le groupe d'applications doit contenir une ic\*^one permettant de
 lancer l'application. Si le groupe comporte une s\*'erie d'applications,
 une ic\*^one doit exister pour chacune d'entre elles. Ces ic\*^ones
-s'appellent <emphasis role="Variable">ic\*^ones d'application\fR 
+s'appellent \fIic\*^ones d'application\fR 
 ou \fC ic\*^ones d'action\fR , puisqu'elles repr\*'esentent
 une action sous-jacente.
  Pour d\*'efinir une ic\*^one d'action, vous devez cr\*'eer
@@ -5474,8 +5573,7 @@ d'action
 .XS
 cr\*'eation
 .XE
- <emphasis
-role="Variable">fichier d'action\fR , car son but est de cr\*'eer
+ \fIfichier d'action\fR , car son but est de cr\*'eer
 une repr\*'esentation visuelle de l'action sous-jacente.
  Par exemple, si vous avez cr\*'e\*'e une action BestTextEditor
 qui ex\*'ecute l'application BestTextEditor, vous devez cr\*'eer un
@@ -5492,7 +5590,7 @@ groupe d'applications
 .NH 3 
 Fichiers Read Me
 .XS
-<$nopage>Module d'applications,
+Module d'applications,
 voir module d'enregistrement
 .XE
 .XS
@@ -5589,7 +5687,7 @@ du Tableau de bord, reportez-vous:
 .IP -
  au chapitre n\(de 13, \*U Personnalisation du Tableau de bord\*U 
 .IP -
- \*`a la page de manuel <filename moreinfo="RefEntry">dtfpfile(4)\fR .
+ \*`a la page de manuel \fCdtfpfile(4)\fR .
 .NH 1 
 Etape 9: Enregistrement de l'application \*`a
 l'aide de
@@ -5636,7 +5734,7 @@ lancer \fC dtappintegrate\fR  manuellement.
  \fC /usr/dt/bin/dtappintegrate -s\fR  \fC racine_app\fR 
  o\*`u \fC racine_app\fR  est le r\*'epertoire
 racine de l'application du Bureau. Pour plus de d\*'etails, reportez-vous
-\*`a la page de manuel <filename moreinfo="RefEntry">dtappintegrate(1)\fR .
+\*`a la page de manuel \fCdtappintegrate(1)\fR .
 .IP \(rh
  Ouvrez le groupe d'applications Outils_Bureau et cliquez deux
 fois sur Recharger applications.
@@ -5785,7 +5883,7 @@ d'applications. Pour ce faire, il cr\*'ee des liens entre
 .NH 1 
 Exemple de cr\*'eation d'un module d'enregistrement
 .XS
-<$startrange>Enregistrement
+Enregistrement
 .XE
 .XS
 exemple
@@ -5841,11 +5939,11 @@ l l.
 .TE
 .IP -
  Fichiers mod\*`eles. Ils utilisent la convention de d\*'enomination \fC *.tpl\fR . Les fichiers mod\*`eles ne peuvent \*^etre imprim\*'es.
-<listitem>
+.IP -
  Les fichiers app-defaults existant pour BestTextEditor, qui
 ne figurent pas dans le Bureau, contiennent des ressources pour les polices
 d'interface et les couleurs de premier plan et d'arri\*`ere-plan.
-<listitem>
+.IP -
  Un volume d'aide en ligne pour BestTextEditor a \*'et\*'e
 cr\*'e\*'e \*`a l'aide du kit du d\*'eveloppeur du Bureau
 CDE. Lors de sa construction, ce volume a utilis\*'e les fichiers source
@@ -5859,7 +5957,7 @@ Etapes d'enregistrement de ''BestTextEditor''
 .PP
  Les \*'etapes ci-dessous permettent d'enregistrer BestTextEditor.
 .IP \(rh
- <emphasis id="sag.regap.mkr.31" role="Lead-in">Modification
+ \fIModification
 des ressources polices et couleurs\fR 
  Dans le fichier app-defaults de BestTextEditor, supprimez les ressources
 qui d\*'efinissent:
@@ -5868,7 +5966,7 @@ qui d\*'efinissent:
 .IP \(rh
  les couleurs d'avant- et d'arri\*`ere-plan.
 .IP \(rh
- <emphasis id="sag.regap.mkr.32" role="Lead-in">Cr\*'eation
+ \fICr\*'eation
 de la racine de l'application\fR 
  Cr\*'eez le r\*'epertoir:
  \fC /desktop_approots/BTE\fR 
@@ -5877,7 +5975,7 @@ un r\*'epertoire racine diff\*'erent du r\*'epertoire d'installation
 de l'application, faute de perdre les fichiers de configuration cr\*'e\*'es
 lorsque vous mettrez l'application \*`a jour.
 .IP \(rh
- <emphasis id="sag.regap.mkr.33" role="Lead-in">Cr\*'eation
+ \fICr\*'eation
 des r\*'epertoires du module d'enregistrement\fR 
  Cr\*'eez les r\*'epertoires suivants:
 .CW
@@ -5887,7 +5985,7 @@ des r\*'epertoires du module d'enregistrement\fR
 /desktop_approots/BTE/dt/appconfig/appmanager/C/BestTextEditor
 .R
 .IP \(rh
- <emphasis id="sag.regap.mkr.34" role="Lead-in">Cr\*'eation
+ \fICr\*'eation
 des actions et des types de donn\*'ees de l'application\fR 
 .IP \(rh
  Cr\*'eez le fichier de configuration des d\*'efinitions
@@ -5970,7 +6068,7 @@ ACTION BTEPrintData
 }
 .R
  Voici une autre version de l'action BTEPrintData et du script l'accompagnant.
-Ensemble, ils g\*`erent les situations o\*`u <systemitem role="resource">
+Ensemble, ils g\*`erent les situations o\*`u \fC
 LPDEST\fR 
 n'est pas d\*'efinie et lorsque l'impression directe est demand\*'ee.
 .CW
@@ -6015,8 +6113,8 @@ BTEPrint $DEST $SILENT $1
  NoPrint est une action int\*'egr\*'ee qui affiche une bo\*^ite
 de dialogue indiquant \*`a l'utilisateur que le fichier ne peut \*^etre
 imprim\*'e.
-<listitem>
- <emphasis id="sag.regap.mkr.35" role="Lead-in">Insertion des
+.IP -
+ \fIInsertion des
 fichiers d'aide dans le module d'enregistrement\fR 
 .IP \(rh
  Placez les fichiers d'aide aux emplacements suivants:
@@ -6037,8 +6135,8 @@ fichiers d'aide dans le module d'enregistrement\fR
    DESCRIPTION   Ouvre le volume d'aide de BestTextEditor. 
 }
 .R
-<listitem>
- <emphasis id="sag.regap.mkr.36" role="Lead-in">Cr\*'eations
+.IP -
+ \fICr\*'eations
 d'ic\*^ones pour l'application\fR 
  Utilisez l'Editeur d'ic\*^ones. Voici quelques indications relatives
 \*`a la taille:
@@ -6060,8 +6158,8 @@ l l.
 .IP -
  Ic\*^ones repr\*'esentant le groupe d'applications
 (utilis\*'e \*`a l'\*'etape 7): \fC BTEApp.t.pm\fR , \fC BTEApp.m.pm\fR 
-<listitem>
- <emphasis id="sag.regap.mkr.37" role="Lead-in">Cr\*'eation
+.IP -
+ \fICr\*'eation
 du groupe d'applications\fR 
 .XS
 Groupes d'applications
@@ -6125,8 +6223,8 @@ qui ouvrira le volume d'aide. Pour ce faire, cr\*'eez le fichier:
  Placez les autres fichiers dans le groupe d'applications,
 par exemple les fichiers \*U read me\*U , de donn\*'ees \*'echantillons
 et mod\*`eles.
-<listitem>
- <emphasis id="sag.regap.mkr.38" role="Lead-in">Enregistrement
+.IP -
+ \fIEnregistrement
 de l'application\fR 
  Dans une fen\*^etre d'\*'emulateur de terminal:
 .IP \(rh
@@ -6138,14 +6236,14 @@ de l'application\fR
  Ouvrez le groupe d'applications Outils_Bureau et cliquez deux
 fois sur Recharger applications.
 .XS
-<$endrange>Enregistrement
+Enregistrement
 .XE
 .XS
 exemple
 .XE
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000100517>
+
 \" <!-- $XConsortium: ch05.sgm /main/11 1996/12/21 18:56:22 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -6158,7 +6256,7 @@ exemple
  Configuration du Bureau dans un r\*'eseau
 .LP
 .XS
-<$nopage>Mise en r\*'eseau
+Mise en r\*'eseau
 .XE
 .XS
 voir aussi serveurs
@@ -6376,29 +6474,29 @@ R\*'esum\*'e \(em Types de serveurs
 center,box;
 l l. 
  Ecran	Le syst\*`eme sur lequel s'ex\*'ecute le serveur X.	
- Serveurs de connexion/sessions	Le syst\*`eme sur lequel s'ex\*'ecute
-	la session du Bureau (Gestionnaire de connexion, de sessions, de
-	fen\*^etres, de fichiers, etc).	 
- Serveur d'applications	Le syst\*`eme sur lequel s'ex\*'ecute 
-	une application. Egalement appel\*'e \fI h\*^ote d'ex\*'ecution\fR . 
- Serveur de fichiers	Syst\*`eme sur lequel sont stock\*'es 
-	les fichiers de donn\*'ees des applications. 	
+ Serveurs de connexion/sessions	Le syst\*`eme sur lequel s'ex\*'ecute la session du Bureau (Gestionnaire de connexion, de sessions, de fen\*^etres, de fichiers, etc).	
+ Serveur d'applications	Le syst\*`eme sur lequel s'ex\*'ecute
+une application. Egalement appel\*'e \fI h\*^ote d'ex\*'ecution\fR .	
+ Serveur de fichiers	Syst\*`eme sur lequel sont stock\*'es les fichiers de donn\*'ees des applications.	
 .XS
 Serveurs
 .XE
 .XS
 aide
 .XE
-Serveur d'aide	Syst\*`eme sur lequel sont stock\*'es les fichiers d'aide.	
+Serveur d'aide	
+ Syst\*`eme sur lequel sont stock\*'es
+les fichiers d'aide.	
 .XS
 Serveurs
 .XE
 .XS
 bases de donn\*'ees
 .XE
-Serveur de bases de donn\*'ees (actions)	Syst\*`eme sur lequel
-	sont stock\*'es les fichiers contenant les d\*'efinitions 
-	de types d'actions et de donn\*'ees.
+Serveur de bases
+de donn\*'ees (actions)	
+ Syst\*`eme sur lequel sont stock\*'es
+les fichiers contenant les d\*'efinitions de types d'actions et de donn\*'ees.
 	
 .XS
 Serveurs
@@ -6528,7 +6626,7 @@ ID de groupe
  (GID). Dans un r\*'eseau de
 bureau, tous les syst\*`emes doivent utiliser des noms de groupes et des
 ID coh\*'erents.
- Pour plus de d\*'etails, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">id(1)\fR  ou <filename moreinfo="RefEntry">id(1M)\fR .
+ Pour plus de d\*'etails, reportez-vous \*`a la page de manuel \fCid(1)\fR  ou \fCid(1M)\fR .
 .NH 2 
 Configuration de l'acc\*`es au syst\*`eme
 de fichiers r\*'eparti
@@ -6552,7 +6650,7 @@ Fichiers
 .XS
 acc\*`es \*`a distance
 .XE
-NFS\u&lsquor;\d pour le partage des fichiers entre
+NFS\u\(dg\d pour le partage des fichiers entre
 les syst\*`emes. Vous devez identifier tous les syst\*`emes de fichiers
 du r\*'eseau contenant des fichiers partag\*'es et v\*'erifier
 qu'ils sont correctement
@@ -6604,12 +6702,12 @@ personnel est le r\*'epertoire d'authentification \fC dtspcd\fR
 par d\*'efaut. Pour plus de d\*'etails sur le r\*'epertoire \fC dtspcd\fR , reportez-vous \*`a la section 
 '\*U Configuration du d\*'emon de contrôle des sous-processus\*U , page
 104Configuration du d\*'emon de contr\*^ole.
-<listitem>
+.IP -
  Lorsque les utilisateurs veulent acc\*'eder \*`a des
 fichiers de donn\*'ees qui ne se trouvent pas dans leur r\*'epertoire
 personnel, ces fichiers doivent \*^etre partag\*'es par tous les syst\*`emes
 clients et serveurs du Bureau qui travaillent sur ceux-ci.
-<listitem>
+.IP -
  Les r\*'epertoires d'installation et de configuration
 du Bureau (\fC /usr/dt\fR  et \fC /etc/dt\fR ) doivent
 \*^etre partag\*'es par tous les syst\*`emes clients et serveurs
@@ -6697,7 +6795,7 @@ d'impression lp
  \fC lp\fR  pour acc\*'eder
 aux imprimantes locales ou \*'eloign\*'ees. Pour plus de d\*'etails
 sur la configuration du spouleur \fC lp\fR , reportez-vous \*`a
-la page de manuel <filename moreinfo="RefEntry">lpadmin(1M)\fR .
+la page de manuel \fClpadmin(1M)\fR .
 .XS
 Impression
 .XE
@@ -6742,7 +6840,7 @@ des messages entre les syst\*`emes. Reportez-vous \*`a la
 .XS
 Sendmail
 .XE
- page de manuel <filename moreinfo="RefEntry">sendmail(1M)\fR  pour apprendre \*`a configurer la connexion de
+ page de manuel \fCsendmail(1M)\fR  pour apprendre \*`a configurer la connexion de
 la messagerie \*'electronique.
  Avant d'essayer d'envoyer ou de recevoir des messages du Bureau, vous
 devez v\*'erifier que vous pouvez effectuer ces op\*'erations correctement
@@ -6776,7 +6874,7 @@ et en \*'ecriture au fichier \fC R\*'epPersonnel\fR \fC /.Xauthority.\fR
 .IP -
  Le fichier \fC .Xauthority\fR  d'un serveur d'applications
 doit contenir la description de l'\*'ecran sur lequel l'application tournera.
- Pour plus de d\*'etails, reportez-vous aux pages de manuel <filename moreinfo="RefEntry">X(1)\fR  ou <filename moreinfo="RefEntry">xauth(1)\fR .
+ Pour plus de d\*'etails, reportez-vous aux pages de manuel \fCX(1)\fR  ou \fCxauth(1)\fR .
 .NH 1 
 Configuration des clients et serveurs du Bureau
 .XS
@@ -6898,7 +6996,7 @@ IMS est \fC /usr/dt/config/ims/<ims_name>\fR .
 reportez-vous \*`a la page de manuel \fC dtimsstart\fR .
  Pour d\*'efinir les h\*^otes sur lesquels le IMS se trouve, vous
 pouvez configurer la ressource d''application \fC imServerHosts\fR .
-<?Pub Caret>Cette ressource (utilis\*'ee par le Gestionnaire de configuration
+Cette ressource (utilis\*'ee par le Gestionnaire de configuration
 lors de l'identification des IMS pour la s\*'election de l'utilisateur)
 contient la liste des noms d'h\*^otes s\*'epar\*'es par des virgules.
 Par exemple:
@@ -7146,7 +7244,7 @@ endroit autre que \fC /net\fR  et la variable d'environnement \fC DTMOUNTPOINT\f
 Reportez-vous \*`a la section suivante, \*U D\*'efinition
 d'une valeur pour DTMOUNTPOINT\*U D\*'efinition d'une valeur pour.
  Pour plus de d\*'etails sur le processus de montage automatique,
-reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">automount(1M)\fR .
+reportez-vous \*`a la page de manuel \fCautomount(1M)\fR .
 .NH 4 
 D\*'efinition d'une valeur pour
 .XS
@@ -7231,11 +7329,11 @@ doivent \*^etre modifi\*'ees comme suit:
  dtspc stream tcp nowait root /usr/dt/bin/dtspcd /usr/dt/bin/dtspcd -mount_point /nfs
 rpc stream tcp wait root /usr/dt/bin/rpc.ttdbserver 100083 1 rpc.ttdbserver -m /nfs
 .R
-<listitem>
+.IP \(rh
  Effectuez sur votre syst\*`eme la proc\*'edure permettant
 de relire \fC /etc/inetd.conf\fR . Pour plus de d\*'etails,
-reportez-vous \*`a la page de manuel <filename moreinfo="refentry">inetd(1M)\fR .
-<listitem>
+reportez-vous \*`a la page de manuel \fCinetd(1M)\fR .
+.IP \(rh
 .XS
 Variables
 .XE
@@ -7261,7 +7359,7 @@ des sous-processus
  Le
 .XS
 Service de contr\*^ole des sous-processus,
-voir SPC <$nopage>
+voir SPC 
 .XE
  service de contr\*^ole des sous-processus
 (
@@ -7286,7 +7384,7 @@ par le Bureau pour lancer des applications \*`a distance. Il s'agit d'un
 d\*'emon \fC inet\fR  qui accepte les requ\*^etes d'ex\*'ecution
 de commandes de clients \*`a distance. Pour plus de d\*'etails sur
 la configuration des d\*'emons \fC inet\fR , reportez-vous
-\*`a la page de manuel <filename moreinfo="RefEntry">inetd.conf(1M)\fR .
+\*`a la page de manuel \fCinetd.conf(1M)\fR .
  La biblioth\*`eque d'appel des actions du Bureau utilise le service
 SPC pour invoquer des actions \*`a distance.
 .NH 4 
@@ -7301,10 +7399,10 @@ configuration
 .PP
 .IP \(rh
  V\*'erifiez que \fC dtspc\fR  est correctement
-enregistr\*'e dans \fC /etc/services\fR  et dans \fC /etc/inetd.conf\fR . Reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtspcd(1M)\fR .
+enregistr\*'e dans \fC /etc/services\fR  et dans \fC /etc/inetd.conf\fR . Reportez-vous \*`a la page de manuel \fCdtspcd(1M)\fR .
 .IP \(rh
  HP-UX seulement: V\*'erifiez que \fC /usr/adm/inetd.sec\fR  est configur\*'e correctement. Reportez-vous \*`a la page
-de manuel <filename moreinfo="RefEntry">
+de manuel \fC
 .XS
 inetd.sec
 .XE
@@ -7378,7 +7476,7 @@ Configuration du
 ToolTalk
 .XE
 .XS
-serveur de base de donn\*'ees, voir rpc.ttdbserver<$nopage>
+serveur de base de donn\*'ees, voir rpc.ttdbserver
 .XE
  serveur de base de donn\*'ees ToolTalk
 .PP
@@ -7395,7 +7493,7 @@ manuel \fC rpc.ttdbserver(1M)\fR .
 Configuration du
 .XS
 Serveur de messages Tooltalk,
-voir ttsession<$nopage>
+voir ttsession
 .XE
  serveur de messages ToolTalk
 .PP
@@ -7425,7 +7523,7 @@ rpc.cmsd
 est g\*'en\*'eralement enregistr\*'e dans \fC /etc/inetd.conf\fR  lorsque le Bureau est install\*'e et aucune configuration
 suppl\*'ementaire n'est requise.
  Pour plus de d\*'etails sur ce d\*'emon et ses options de configuration,
-reportez-vous \*`a la page de manuel \fC rpc.cmsd\fR <filename moreinfo="RefEntry">(1)\fR .
+reportez-vous \*`a la page de manuel \fC rpc.cmsd\fR \fC(1)\fR .
 .NH 1 
 Gestion des services d'applications
 .XS
@@ -7462,7 +7560,7 @@ et ic\*^ones).
  Pour plus de d\*'etails sur ces variables d'environnement, reportez-vous
 au chapitre 7, \*U Chemins de recherche du
 Bureau\*U Chemins de recherche du Bureau,
-ou \*`a la page de manuel <filename moreinfo="RefEntry">dtenvvar(5)\fR .
+ou \*`a la page de manuel \fCdtenvvar(5)\fR .
 .NH 2 
 Configuration d'un serveur d'applications et de ses clients
 .XS
@@ -7881,7 +7979,7 @@ sp\*'ecification
 .XE
 l'h\*^ote d'ex\*'ecution\fR .
 .XS
-EXEC_HOST, Voir h\*^ote d'ex\*'ecution<$nopage>
+EXEC_HOST, Voir h\*^ote d'ex\*'ecution
 .XE
  La d\*'efinition des actions peut r\*'esider sur le serveur
 de sessions ou sur un syst\*`eme qui fournit des services d'actions et
@@ -8106,7 +8204,7 @@ fichiers de configuration de l'application, tels que les app-defaults, les
 catalogues de messages et les biblioth\*`eques r\*'eparties.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000085742>
+
 \" <!-- $XConsortium: ch06.sgm /main/13 1996/12/21 18:56:29 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -8549,10 +8647,10 @@ lanc\*'es. Le deamon PDM pour CDE par d\*'efaut est \fC dtpdmd\fR .
 .IP \(rh
  V\*'erifier que les Gestionnaires d'affichage de l'impression
 (PDM) sont correctement configur\*'es et qu'ils sont disponibles. Le PDM
-pour CDE par d\*'efaut est \fC dtpdm\fR <?Pub Caret1>.
+pour CDE par d\*'efaut est \fC dtpdm\fR .
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000027113>
+
 \" <!-- $XConsortium: ch07.sgm /main/11 1996/12/21 18:56:34 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -8599,15 +8697,9 @@ role="CodeOrFigureOrTable" Chemins de recherche du Bureau.
 .TS
 center,box;
 l l. 
- \fC Chemin de recherche\fR	\fC Description\fR 
- Applications	Permet de rep\*'erer les applications.  
-	Le Gestionnaire d'applications utilise le chemin de recherche des
-	applications pour constituer dynamiquement son niveau sup\*'erieur
-	lorsqu'un utilisateur se connecte. 	
- Base de donn\*'ees	Permet d'indiquer des emplacements pour des
-	fichiers de d\*'efinitions d'actions et de types de donn\*'ees
-	suppl\*'ementaires (fichiers \fC *.dt\fR ) et pour des fichiers du
-	Tableau de bord (fichiers\fC *.fp\fR ).	 
+ \fC Chemin de recherche\fR \fC Description\fR 
+ Applications	Permet de rep\*'erer les applications.  Le Gestionnaire d'applications utilise le chemin de recherche des applications pour constituer dynamiquement son niveau sup\*'erieur lorsqu'un utilisateur se connecte.	
+ Base de donn\*'ees	Permet d'indiquer des emplacements pour des fichiers de d\*'efinitions d'actions et de types de donn\*'ees suppl\*'ementaires (fichiers \fC *.dt\fR ) et pour des fichiers du Tableau de bord (fichiers\fC *.fp\fR ).	
  Ic\*^ones	Permettent d'indiquer des emplacements d'ic\*^ones suppl\*'ementaires.	
  biblinfo	Permettent d'indiquer des emplacements de biblioth\*`eques d'informations suppl\*'ementaires.	
  Donn\*'ees d'aide	Permettent d'indiquer des emplacements de donn\*'ees d'aide suppl\*'ementaires.	
@@ -8745,15 +8837,11 @@ dtsearchpath
 .TS
 center,box;
 l l. 
- \fC %I\fR	Utilis\*'ee dans DTINFOLIBSEARCHPATH. Il s'agit du nom
-	de la biblioth\*`eque d'information par d\*'efaut.	
- \fC %H\fR 	Utilis\*'ee dans \fC DTHELPSEARCHPATH.\fR  Il s'agit
-	du nom du volume d'aide.	
- \fC %B\fR 	Utilis\*'ee dans \fC XMICONSEARCHPATH\fR . Il s'agit 
-	du nom de base d'un fichier d'ic\*^one.	
- \fC %M\fR 	Utilis\*'ee dans \fC XMICONSEARCHPATH\fR . Il s'agit 
-	de la taille du fichier d'ic\*^one 
-	( \fC .l\fR , \fC .m\fR , \fC .s\fR , \fC .t\fR )	
+ \fC %I\fR Utilis\*'ee dans DTINFOLIBSEARCHPATH. Il s'agit du nom de
+la biblioth\*`eque d'information par d\*'efaut.	
+ \fC %H\fR 	Utilis\*'ee dans \fC DTHELPSEARCHPATH.\fR  Il s'agit du nom du volume d'aide.	
+ \fC %B\fR 	Utilis\*'ee dans \fC XMICONSEARCHPATH\fR . Il s'agit du nom de base d'un fichier d'ic\*^one.	
+ \fC %M\fR 	Utilis\*'ee dans \fC XMICONSEARCHPATH\fR . Il s'agit de la taille du fichier d'ic\*^one ( \fC .l\fR , \fC .m\fR , \fC .s\fR , \fC .t\fR )	
  \fC %L\fR 	Il s'agit de la variable d'environnement \fC LANG\fR .	
 .TE
 .NH 2 
@@ -8837,7 +8925,7 @@ La \fC langue\fR  par d\*'efaut est \fC C\fR .
 center,box;
 l l. 
  Emplacement personnel	\fC R\*'ep_personnel\fR \fC /.dt/appmanager\fR 	
- Emplacement de niveau syst\*`eme \fC	/etc/dt/appconfig/appmanager/\fR \fC langue\fR 	
+ Emplacement de niveau syst\*`eme \fC /etc/dt/appconfig/appmanager/\fR \fC langue\fR 	
  Emplacement int\*'egr\*'e	\fC /usr/dt/appconfig/appmanager/\fR \fC langue\fR 	
 .TE
 .NH 2 
@@ -8916,27 +9004,18 @@ syntaxe
 .XE
  \fC DTSPUSERAPPHOSTS\fR  est:
 .CW
- \fC VARIABLE\fR =\fC emplacement\fR  [,\fC emplacement\fR ...]
+ \fCVARIABLE\fR =\fC emplacement\fR  [,\fC emplacement\fR ...]
 .R
  o\*`u \fC emplacement\fR  peut avoir la
 syntaxe:
 .TS
 center,box;
 l l. 
- \fC/chemin\fR 	Indique un r\*'epertoire sur le syst\*`eme local 
-	(serveur de sessions). Utilisez cette syntaxe pour ajouter 
-	un r\*'epertoire local.	
- \fC nom_h\*^ote:\fR 	Indique le r\*'epertoire de niveau syst\*`eme
- \fC /etc/dt/appconfig/appmanager/langue\fR  
-	sur le syst\*`eme \fC nom_h\*^ote\fR . Utilisez cette syntaxe 
-	pour ajouter un serveur d'applications.
+ \fC /\fR \fC chemin\fR 	Indique un r\*'epertoire sur le syst\*`eme local (serveur de sessions). Utilisez cette syntaxe pour ajouter un r\*'epertoire local.	
+ \fC nom_h\*^ote\fR \fC :\fR 	Indique le r\*'epertoire de niveau syst\*`eme \fC /etc/dt/appconfig/appmanager/\fR \fC langue\fR  sur le syst\*`eme \fC nom_h\*^ote\fR . Utilisez cette syntaxe pour ajouter un serveur d'applications.
 	
- \fC nom_h\*^ote:/chemin\fR 	Indique un r\*'epertoire sur le \fC nom_h\*^ote\fR  du syst\*`eme h\*^ote.	
- \fC localhost:\fR 	L'emplacement local de niveau syst\*`eme.  
-	Ce mot cl\*'e est utilis\*'e pour modifier la priorit\*'e 
-	de l'emplacement local de niveau syst\*`eme. 
-	Reportez-vous \*`a la section Modification de la priorit\*'e 
-	de l'emplacement, page n\(de 127.
+ \fC nom_h\*^ote\fR \fC :/\fR \fC chemin\fR 	Indique un r\*'epertoire sur le \fC nom_h\*^ote\fR  du syst\*`eme h\*^ote.	
+ \fC localhost:\fR 	L'emplacement local de niveau syst\*`eme.  Ce mot cl\*'e est utilis\*'e pour modifier la priorit\*'e de l'emplacement local de niveau syst\*`eme. Reportez-vous \*`a la section Modification de la priorit\*'e de l'emplacement, page n\(de 127.
 	
 .TE
 .NH 2 
@@ -9131,9 +9210,9 @@ La \fC langue\fR  par d\*'efaut est C.
 .TS
 center,box;
 l l. 
- Emplacement personnel	\fC R\*'epPersonnel/.dt/types\fR 	
- Emplacement de niveau syst\*`eme	\fC /etc/dt/appconfig/types/langue\fR 	
- Emplacement int\*'egr\*'e	\fC /usr/dt/appconfig/types/langue\fR 	
+ Emplacement personnel	\fC R\*'epPersonnel\fR \fC /.dt/types\fR 	
+ Emplacement de niveau syst\*`eme \fC /etc/dt/appconfig/types/\fR \fC langue\fR 	
+ Emplacement int\*'egr\*'e	\fC /usr/dt/appconfig/types/\fR \fC langue\fR 	
 .TE
 .NH 2 
 Relation entre chemin de recherche d'applications et chemin de recherche
@@ -9237,19 +9316,16 @@ syntaxe
 .XE
  \fC DTSPUSERDATABASEHOSTS\fR  est:
 .CW
- <systemitem role="Variable">VARIABLE\fR =\fC emplacement\fR  [,\fC emplacement\fR ...]
+ \fCVARIABLE\fR =\fC emplacement\fR  [,\fC emplacement\fR ...]
 .R
  o\*`u \fC emplacement\fR  peut avoir la
 syntaxe:
 .TS
 center,box;
 l l. 
- \fC /chemin\fR 	Indique un r\*'epertoire sur le syst\*`eme local (serveur de sessions). 
-	Utilisez cette syntaxe pour ajouter un r\*'epertoire local.	
-\fC nom_h\*^ote\fR \fC :\fR 	Indique le r\*'epertoire de niveau
-	syst\*`eme \fC /etc/dt/appconfig/types/\fR \fC langue\fR  sur le
-	 \fC nom_h\*^ote\fR  du syst\*`eme.	 
- \fC nom_h\*^ote:/chemin\fR 	Indique un r\*'epertoire du \fC nom_h\*^ote\fR du syst\*`eme \*'eloign\*'e.  
+ \fC /\fR \fC chemin\fR 	Indique un r\*'epertoire sur le syst\*`eme local (serveur de sessions). Utilisez cette syntaxe pour ajouter un r\*'epertoire local.	
+ \fC nom_h\*^ote\fR \fC :\fR 	Indique le r\*'epertoire de niveau syst\*`eme \fC /etc/dt/appconfig/types/\fR \fC langue\fR  sur le \fC nom_h\*^ote\fR  du syst\*`eme.	
+ \fC nom_h\*^ote\fR \fC :/\fR \fC chemin\fR 	Indique un r\*'epertoire du \fC nom_h\*^ote\fR du syst\*`eme \*'eloign\*'e.  
 .TE
 .NH 2 
 Assemblage du chemin de recherche de bases de donn\*'ees
@@ -9325,8 +9401,8 @@ personnels, de niveau syst\*`eme et int\*'egr\*'es. La \fC langue\fR  par d\*'ef
 center,box;
 l l. 
  Emplacement personnel	\fC R\*'epPersonnel\fR \fC /.dt/icons\fR 	
- Emplacement de niveau syst\*`eme	\fC /etc/dt/appconfig/icons/langue\fR 	
- Emplacement int\*'egr\*'e	\fC /usr/dt/appconfig/icons/langue\fR 	
+ Emplacement de niveau syst\*`eme \fC /etc/dt/appconfig/icons/\fR \fC langue\fR 	
+ Emplacement int\*'egr\*'e	\fC /usr/dt/appconfig/icons/\fR \fC langue\fR 	
 .TE
 .NH 2 
 Relation entre chemin de recherche d'applications et chemin de recherche
@@ -9399,8 +9475,8 @@ indiqu\*'e par deux variables de sortie:
 .TS
 center,box;
 l l. 
- \fC XMICONSEARCHPATH\fR	Utilis\*'ee par les \*'ecrans couleur	
- \fC XMICONBMSEARCHPATH\fR	Utilis\*'ee par les \*'ecrans monochromes	
+ \fC XMICONSEARCHPATH\fR Utilis\*'ee par les \*'ecrans couleur	
+ \fC XMICONBMSEARCHPATH\fR Utilis\*'ee par les \*'ecrans monochromes	
 .TE
 .NH 2 
 Syntaxe des variables d'entr\*'ee du chemin de recherche d'ic\*^ones
@@ -9443,9 +9519,7 @@ syntaxe:
 .TS
 center,box;
 l l. 
- \fC /chemin\fR 	Indique un r\*'epertoire sur le syst\*`eme
-	 local (serveur de sessions). 
-	Utilisez cette syntaxe pour ajouter un r\*'epertoire local.	
+ \fC /\fR \fC chemin\fR 	Indique un r\*'epertoire sur le syst\*`eme local (serveur de sessions). Utilisez cette syntaxe pour ajouter un r\*'epertoire local.	
 .TE
  Pour indiquer un emplacement sur un autre syst\*`eme, utilisez le
 nom de son fichier de r\*'eseau \(em par exemple, \fC /nfs/servera/projects/icons\fR .
@@ -9461,15 +9535,27 @@ d'ic\*^ones
 assemblage
 .XE
 .PP
- La valeur du chemin de recherche d'ic\*^ones ( \fC
- XMICONSEARCHPATH\fR  et\fC XMICONBMSEARCHPATH\fR ) 
+ La valeur du chemin de recherche d'ic\*^ones (
 .XS
-Variable XMICONSEARCHPATH assemblage
+Variable
 .XE
 .XS
-Variable XMICONBMSEARCHPATH assemblage
+XMICONSEARCHPATH
 .XE
- 
+.XS
+assemblage
+.XE
+ \fC XMICONSEARCHPATH\fR  et
+.XS
+Variable
+.XE
+.XS
+XMICONBMSEARCHPATH
+.XE
+.XS
+assemblage
+.XE
+ \fC XMICONBMSEARCHPATH\fR )
 est cr\*'e\*'ee par l'assemblage des emplacements suivants, indiqu\*'es
 par ordre de priorit\*'e:
 .IP -
@@ -9498,7 +9584,7 @@ infolib search path
  Le chemin de recherche de biblinfo indique au bureau de rechercher les
 emplacements pr\*'ecis des biblioth\*`eques d'informations qui seront
 enregistr\*'ees sur votre syst\*`eme.
- Les variables d'environnement <systemitem class="environvar">DTINFOLIBSEARCHPATH\fR  et <systemitem class="environvar">DTINFOLIBDEFAULT\fR 
+ Les variables d'environnement \fCDTINFOLIBSEARCHPATH\fR  et \fCDTINFOLIBDEFAULT\fR 
 sont d\*'efinies au moment de l'installation par l'utilitaire \fC dtsearchpath\fR .
 .NH 2 
 Chemin de recherche de biblinfo par d\*'efaut
@@ -9517,12 +9603,12 @@ l l.
  Emplacement de niveau syst\*`eme	\fC /etc/dt/infolib/\fR \fC %L/%I\fR .dti	
  Emplacement int\*'egr\*'e	\fC /usr/dt/infolib/\fR \fC %L/%I\fR .dti	
 .TE
- La valeur de <systemitem class="environvar">DTINFOLIBDEFAULT\fR 
+ La valeur de \fCDTINFOLIBDEFAULT\fR 
 se substitue \*`a \fC %I\fR . La valeur par d\*'efaut
-de <systemitem class="environvar">DTINFOLIBDEFAULT\fR  est \fC cde\fR .
+de \fCDTINFOLIBDEFAULT\fR  est \fC cde\fR .
 .NH 2 
 Relation entre chemin de recherche d'applications et chemin de recherche
-de<?Pub Caret> biblinfo
+de biblinfo
 .XS
 infolib search path
 .XE
@@ -9533,9 +9619,9 @@ related to application search path
  Lorsqu'un emplacement est ajout\*'e au chemin de recherche d'applications,
 le sous-r\*'epertoire de biblinfo est automatiquement ajout\*'e au
 chemin de recherche de biblinfo.(voir \" <!--Original
-XRef content: '&xd2;How the
+XRef content: '\`How the
 Application Search Path Affects the Database, Icon, Infolib, and Help Search
-Paths&xd3; on
+Paths\' on
 page n\(de 119Relation entre chemin de recherche des applications).
  Par exemple, si le serveur d'applications \fC hosta:\fR est
 ajout\*'e au chemin de recherche d'applications, le r\*'epertoire \fC hosta:/etc/dt/infolib/\fR \fC %L\fR  est automatiquement
@@ -9561,14 +9647,14 @@ des emplacements int\*'egr\*'es et des variables d'entr\*'ee suivants
 .TS
 center,box;
 l l. 
- DTSPSYSINFOLIB		Variable d'entr\*'ee du chemin de recherche de biblinfo de niveau syst\*`eme	
+ DTSPSYSINFOLIB Variable d'entr\*'ee du chemin de recherche de biblinfo de niveau syst\*`eme	
  DTSPUSERINFOLIB	Variable d'entr\*'ee de chemin de recherche de biblinfo personnel
 	
 .TE
  Utilisez ces variables d'entr\*'ee pour indiquer des emplacements
 hors du chemin de recherche d'applications.
  Le chemin de recherche de biblinfo assembl\*'e est indiqu\*'e
- par la variable de sortie <systemitem class="environvar">DTINFOLIBSEARCHPATH\fR .
+ par la variable de sortie \fCDTINFOLIBSEARCHPATH\fR .
 .NH 2 
 Syntaxe des variables d'entr\*'ee du chemin de recherche de biblinfo
 .XS
@@ -9578,13 +9664,19 @@ infolib search path
 syntax of
 .XE
 .PP
- La syntaxe des variables \fC DTSPSYSINFOLIB\fR  et \fC DTSPUSERINFOLIB\fR 
+ La syntaxe des variables \fCDTSPSYSINFOLIB\fR  et \fCDTSPUSERINFOLIB\fR 
 est:
 .XS
-DTSPSYSINFOLIB variable, syntaxe
+DTSPSYSINFOLIB variable
 .XE
 .XS
-DTSPUSERINFOLIB variable, syntaxe
+syntax
+.XE
+.XS
+DTSPUSERINFOLIB variable
+.XE
+.XS
+syntax
 .XE
 .CW
  \fC VARIABLE\fR =\fC emplacement\fR  [,emplacement...]
@@ -9594,13 +9686,11 @@ syntaxe:
 .TS
 center,box;
 l l. 
- \fC /chemin\fR 	Indique un r\*'epertoire sur le syst\*`eme
-	local (serveur de sessions). Utilisez cette syntaxe 
-	pour ajouter un r\*'epertoire local.
+ \fC /\fR \fC chemin\fR 	Indique un r\*'epertoire sur le syst\*`eme local (serveur de sessions). Utilisez cette syntaxe pour ajouter un r\*'epertoire local.
 	
 .TE
  Pour indiquer un emplacement sur un autre syst\*`eme, utilisez le
-nom de son fichier de r\*'eseau \(em par exemple, \fC /nfs/servera/projects/infolib\fR .
+nom de son fichier de r\*'eseau \(empar exemple, \fC /nfs/servera/projects/infolib\fR .
 .NH 2 
 Assemblage du chemin de recherche de biblinfo
 .XS
@@ -9610,7 +9700,7 @@ infolib search path
 assembling
 .XE
 .PP
- La valeur du chemin de recherche de biblinfo (\fC DTINFOLIBSEARCHPATH\fR ) est cr\*'e\*'ee par l'assemblage
+ La valeur du chemin de recherche de biblinfo ( \fCDTINFOLIBSEARCHPATH\fR ) est cr\*'e\*'ee par l'assemblage
 des emplacements suivants indiqu\*'es par ordre de priorit\*'e:
 .XS
 XMinfolibSEARCHPATH variable
@@ -9619,13 +9709,13 @@ XMinfolibSEARCHPATH variable
 assembling
 .XE
 .IP -
- emplacements indiqu\*'es par la variable \fC DTSPUSERINFOLIB\fR 
+ emplacements indiqu\*'es par la variable \fCDTSPUSERINFOLIB\fR 
 .IP -
- emplacements d\*'eriv\*'es de la variable \fC DTSPUSERAPPHOSTS\fR 
+ emplacements d\*'eriv\*'es de la variable \fCDTSPUSERAPPHOSTS\fR 
 .IP -
  emplacement par d\*'efaut: \fC /etc/dt/infolib/\fR \fC %L/%I\fR \fC .dti\fR 
 .IP -
- emplacements indiqu\*'es par la variable \fC DTSPSYSINFOLIB\fR 
+ emplacements indiqu\*'es par la variable \fCDTSPSYSINFOLIB\fR 
 .IP -
  emplacements d\*'eriv\*'es de la variable \fCDTSPSYSAPPHOSTS\fR 
 .IP -
@@ -9853,7 +9943,7 @@ l'emplacement sp\*'ecifique de la langue est prioritaire par
 rapport \*`a l'emplacement par d\*'efaut.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000070968>
+
 \" <!-- $XConsortium: ch08.sgm /main/10 1996/12/20 20:39:13 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -9865,7 +9955,7 @@ rapport \*`a l'emplacement par d\*'efaut.
 .TL
  Introduction aux actions et aux types de donn\*'ees
 .LP
- Les <emphasis role="Variable">actions\fR 
+ Les \fIactions\fR 
 .XS
 Actions
 .XE
@@ -10286,7 +10376,7 @@ de travail permet d'indiquer l'action ex\*'ecut\*'ee par une option
 de menu. Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
 XRef content: '\*U Menus du Gestionnaire de l'espace de travail\*U ,
 page n\(de 261Menus du Gestionnaire de l'espace de travail
-et \*`a la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)\fR .
+et \*`a la page de manuel \fCdtwmrc(4)\fR .
 .IP -
  Dans le domaine de la communication entre applications:
  Une application peut \*^etre configur\*'ee de mani\*`ere
@@ -10615,8 +10705,8 @@ PCL.
 .R
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub Caret>
-<?Pub *0000037363>
+
+
 \" <!-- $XConsortium: ch09.sgm /main/10 1996/12/20 20:39:19 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -10639,7 +10729,7 @@ Cr\*'eer action
 introduction
 .XE
 .XS
-dtCreate, voir Cr\*'eer action<$nopage>
+dtCreate, voir Cr\*'eer action
 .XE
 L'outil Cr\*'eer action permet la cr\*'eation:
 .IP -
@@ -10660,7 +10750,7 @@ l.
  150Limites de Cr\*'eer action	
 152 Cr\*'eation d'une action et d'un type de donn\*'ee pour une applications
 .TE
- Pour plus de d\*'etails, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtcreate(1X)\fR .
+ Pour plus de d\*'etails, reportez-vous \*`a la page de manuel \fCdtcreate(1X)\fR .
 .NH 1 
 Fonctions de Cr\*'eer action
 .XS
@@ -10778,7 +10868,7 @@ ci-dessous est vraie.
 .IP -
  La ligne de commande requiert un
 .XS
-Actions<$nopage>Actions
+ActionsActions
 .XE
 .XS
 param\*`etres, voir arguments
@@ -11420,8 +11510,8 @@ de recherche d'ic\*^one.
 l'option de non- modification.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub Caret>
-<?Pub *0000038961>
+
+
 \" <!-- $XConsortium: ch10.sgm /main/11 1996/12/21 18:56:41 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -12109,7 +12199,7 @@ se trouver dans un r\*'epertoire du chemin de recherche des ic\*^ones
  ic\*^ones personnelles: \fC R\*'ep_Personnel\fR \fC /.dt/icons\fR 
 .IP -
  ic\*^ones syst\*`eme: \fC /etc/dt/appconfig/icons/\fR \fC langue\fR 
-<listitem>
+.IP -
  Un chemin d'acc\*`es absolu, comprenant le nom complet
 du fichier.
  Utilisez le chemin absolu uniquement si le fichier d'ic\*^one ne
@@ -12160,7 +12250,7 @@ les suivants:
 .IP \(rh
  actions personnelles: \fC R\*'ep_personnel\fR \fC /.dt/types\fR 
 .XS
-<$nopage>Actions
+Actions
 .XE
 .XS
 chemin de
@@ -12226,9 +12316,9 @@ recherch\*'es sont ceux d\*'efinis dans le chemin de recherche des
 applications
 .IP -
  actions int\*'egr\*'ees (\fC /usr/dt/appconfig/types/\fR \fC langue\fR .
-<listitem>
+.IP -
  A l'int\*'erieur d'un r\*'epertoire, les fichiers \fC *.dt\fR  sont lus dans l'ordre alphab\*'etique.
-<listitem>
+.IP -
  Les actions faisant l'objet d'une restriction \fC (ARG_CLASS\fR , \fC 
 .XS
 Zone
@@ -12334,7 +12424,7 @@ Actions
 COMMAND
 .XE
 .XS
-<$nopage>Zone
+Zone
 .XE
 .XS
 EXEC_STRING, Voir Cha\*^ine
@@ -12907,7 +12997,7 @@ fichiers
  Pour cr\*'eer une action qui supporte plusieurs arguments et ex\*'ecute
 une commande du type:
 .CW
- <command role="Variable">commande\fR  \fC fichier\fR \d1\d \fC fichier\fR \d
+ \fCcommande\fR  \fC fichier\fR \d1\d \fC fichier\fR \d
 2\d ...
 .R
  Utilisez la syntaxe:
@@ -13545,7 +13635,7 @@ l l.
 .TE
  Le client \fC dtaction\fR  dispose d'options de ligne de
 commande suppl\*'ementaires. Pour plus de d\*'etails, consultez la
-page de manuel <filename moreinfo="RefEntry">dtaction(1)\fR .
+page de manuel \fCdtaction(1)\fR .
 .NH 2 
 Cr\*'eation d'une action ex\*'ecutant une autre action
 .XS
@@ -13710,7 +13800,7 @@ ToolTalk
 applications
 .XE
 .XS
-<$nopage>ToolTalk
+ToolTalk
 .XE
 .XS
 action, Voir Actions
@@ -13785,7 +13875,7 @@ l l.
  Cr\*'eation manuelle de types de donn\*'ees
 .LP
 .XS
-Types de fichiers, voir types de donn\*'ees<$nopage>
+Types de fichiers, voir types de donn\*'ees
 .XE
 .XS
 Types de donn\*'ees
@@ -14030,7 +14120,7 @@ zone \fC ACTIONS\fR  de la d\*'efinition des attributs.
  Cliquez deux fois sur Recharger actions dans le groupe d'applications
 Outils_Bureau pour recharger la base de donn\*'ees.
 .NH 2 
-<?X-setsize 13.0 pt>Exemple de cr\*'eation
+Exemple de cr\*'eation
 .XS
 Types de donn\*'ees
 .XE
@@ -14210,7 +14300,7 @@ chemin de recherche d'ic\*^one:
  ic\*^ones personnelles: \fC R\*'ep_Personnel\fR \fC /.dt/icons\fR 
 .IP -
  ic\*^ones appliqu\*'ees au syst\*`eme: \fC /etc/dt/appconfig/icons/\fR \fC langue\fR 
-<listitem>
+.IP -
  Chemin de recherche absolu, comprenant le nom complet du fichier:
  Utilisez le chemin absolu uniquement si le fichier d'ic\*^one ne
 figure pas sur le chemin de recherche de l'ic\*^one. Par exemple, si le
@@ -14880,7 +14970,7 @@ dans le fichier. Le premier octet du fichier porte le num\*'ero 0.
 .CW
  CONTENT 0 filename \*Q \fC nom_fichier\fR 
 .R
- Utilisez la notation C standard pour la num\*'erotation octale (<?Pub Caret>0
+ Utilisez la notation C standard pour la num\*'erotation octale (0
 de t\*^ete) et hexad\*'ecimale (0X de t\*^ete).
 *
 .FS
@@ -15006,7 +15096,7 @@ le fichier de configuration li\*'e \*`a la langue.
  Adaptez les zones de la d\*'efinition de ce type de donn\*'ees.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000056425>
+
 \" <!-- $XConsortium: ch12.sgm /main/11 1996/12/21 18:56:48 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -15073,13 +15163,13 @@ Ic\*^ones
 .XE
 .XS
 chemin de recherche,
-voir Chemin de recherche des ic\*^ones<$nopage>
+voir Chemin de recherche des ic\*^ones
 .XE
 .XS
 Ic\*^ones
 .XE
 .XS
-serveurs, voir Serveur d'ic\*^ones<$nopage>
+serveurs, voir Serveur d'ic\*^ones
 .XE
 Format des fichiers d'ic\*^ones
 .XS
@@ -15089,7 +15179,7 @@ Ic\*^ones
 formats de fichiers
 .XE
 .XS
-<$nopage>Bitmaps
+Bitmaps
 .XE
 .XS
 Voir Ic\*^ones[bitmapsaaa]
@@ -15162,7 +15252,7 @@ recherche des fichiers
 2
 .XE
 .XS
-Images, voir Ic\*^ones<$nopage>
+Images, voir Ic\*^ones
 .XE
 .CW
  /usr/dt/appconfig/icons/\fClangue\fR /mail.l.pm
@@ -15580,7 +15670,7 @@ Ic\*^ones
 .XS
 couleurs
 .XE
-<?Pub Caret>
+
 .IP -
  huit nuances de gris
 .IP -
@@ -15600,8 +15690,8 @@ laissent appara\*^itre les couleurs d'arri\*`ere-plan, donnant ainsi
 l'illusion qu'elles ne sont pas rectangulaires.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000032279>
-<?Pub EntList alpha bull copy rArr sect trade ocirc>
+
+
 \" <!-- $XConsortium: ch13.sgm /main/11 1996/12/21 18:56:53 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -15646,7 +15736,7 @@ Informations connexes
 .IP -
  Pour plus de d\*'etails sur la configuration
 et les objets de commande du Tableau de bord, reportez-vous \*`a la page
-de manuel <filename moreinfo="RefEntry">dtfpfile(4X)\fR .
+de manuel \fCdtfpfile(4X)\fR .
 .IP -
  Pour plus de d\*'etails sur le Gestionnaire de l'espace
 de travail, reportez-vous aux pages de manuel\fC dtwm(1)\fR 
@@ -15938,7 +16028,7 @@ LOCKED
 personnalisations effectu\*'ees par l';utilisateur \*`a l'aide des
 menus d\*'eroulants du tableau de bord sont annul\*'ees.
  Pour r\*'etablir un contr\*^ole individuel qui a \*'et\*'e
-supprim\*'e, proc\*'edez de la mani\*`ere suivante:<?Pub Caret>
+supprim\*'e, proc\*'edez de la mani\*`ere suivante:
 .IP -
  Dans le r\*'epertoire \fC R\*'ep_Personnel\fR \fC /.dt/types/fp_dynamic\fR , supprimez le fichier
 cr\*'e\*'e lors de la suppression de l'objet de commande par l'utilisateur.
@@ -16056,7 +16146,7 @@ syntaxe
 }
 .R
  Certains mots cl\*'es sont requis, d'autres sont facultatifs. Pour
-plus de d\*'etails, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtfpfile(4X\fR ).
+plus de d\*'etails, reportez-vous \*`a la page de manuel \fCdtfpfile(4X\fR ).
 .NH 3 
 .XS
 D\*'efinition
@@ -16565,7 +16655,7 @@ chemin de recherche d'ic\*^one.
  Ic\*^ones personnelles: \fC R\*'ep_Personnel\fR \fC /.dt/icons\fR 
 .IP -
  Ic\*^ones appliqu\*'ees au syst\*`eme: \fC /etc/dt/appconfig/icons/\fR \fC langue\fR 
-<listitem>
+.IP -
  Un chemin de recherche du fichier d'ic\*^one absolu, comprenant
 le nom complet du fichier.
  Utilisez le chemin absolu uniquement si le fichier d'ic\*^one ne
@@ -16864,7 +16954,7 @@ ne peut:
 suivre pour cr\*'eer manuellement des objets de commande du Tableau de
 bord.
  Pour plus de d\*'etails sur la syntaxe des objets de commande du
-Tableau de bord, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtfpfile(4X)\fR .
+Tableau de bord, reportez-vous \*`a la page de manuel \fCdtfpfile(4X)\fR .
 .NH 2 
 D\*'efinition des objets de commande du Tableau de bord
 .PP
@@ -17696,7 +17786,7 @@ de bord
  d\*'eterminer la pr\*'esentation et le comportement
 des objets de commande
  La description par d\*'efaut du param\*`etre \fC PANEL\fR  se trouve dans le fichier \fC /usr/dt/appconfig/types/\fR \fC langue\fR \fC /dtwm.fp\fR .
- Pour plus d'informations, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtfpfile(4X)\fR .
+ Pour plus d'informations, reportez-vous \*`a la page de manuel \fCdtfpfile(4X)\fR .
 .NH 2 
 Proc\*'edure g\*'en\*'erale
 .PP
@@ -17920,7 +18010,7 @@ du s\*'electeur en \fC NewFrontPanelMiddle\fR .
 de travail du menu Espace de travail.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000093585>
+
 \" <!-- $XConsortium: ch14.sgm /main/10 1996/12/20 20:39:59 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -17934,14 +18024,14 @@ de travail du menu Espace de travail.
 travail
 .LP
 .XS
-dtwm, voir Gestionnaire de l'espace de travail<$nopage>
+dtwm, voir Gestionnaire de l'espace de travail
 .XE
 .XS
 Gestionnaire de l'espace de travail
 .XE
 .XS
 Gestionnaire de fen\*^etre Motif,
-voir Gestionnaire de l'espace de travail<$nopage>
+voir Gestionnaire de l'espace de travail
 .XE
 Le
 pr\*'esent chapitre d\*'ecrit la proc\*'edure \*`a suivre
@@ -17990,7 +18080,7 @@ Fond
 Espaces de travail
 .XE
 .XS
-voir fond<$nopage>
+voir fond
 .XE
  Fonds des espaces de travail\fR . L'utilisateur peut modifier
 les arri\*`ere-plans \*`a l'aide du Gestionnaire de configuration.
@@ -18036,7 +18126,7 @@ page n\(de 272D\*'efinition de ressources d'applications.
 .IP -
  Pour plus de d\*'etails sur les fichiers de configuration
 du Tableau de bord, reportez-vous au 
-'chapitre n\(de 13, \*U Personnalisation du Tableau de bord\*U 
+chapitre n\(de 13, \*U Personnalisation du Tableau de bord\*U 
 role="ChapNumAndTitle" Personnalisation.
  Pour plus de d\*'etails sur la configuration des ressources, reportez-vous
 \*`a la section \*U D\*'efinition de ressources
@@ -18294,7 +18384,7 @@ title
  pour modifier
 le nom d'un espace de travail donn\*'e:
  \fC Dtwm*ws\fR \fC n\fR : \fC nom\fR 
- \fC Dtwm*ws\fR <Symbol Role="Variable">n</Symbol>.title: <Symbol Role="Variable">name</Symbol>
+ \fC Dtwm*ws\fR \fCn\fR.title: \fCname\fR
  Pour plus de d\*'etails sur la d\*'efinition des ressources
 du Gestionnaire de l'espace de travail, reportez-vous \*`a la section \" <!--Original
 XRef content: \*Q D\*'efinition de ressources d'applications\*U , page n\(de 272
@@ -18488,7 +18578,7 @@ fen\*^etre en appuyant sur la touche \*Q R\*U  ou sur F5.
 .FS
 * 
  Pour plus de d\*'etails sur la syntaxe des menus du Gestionnaire
-de l'espace de travail, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)\fR .
+de l'espace de travail, reportez-vous \*`a la page de manuel \fCdtwmrc(4)\fR .
 .FE
 .NH 2 
 Modification du menu racine Espace de travail
@@ -18499,7 +18589,7 @@ Menu Espace de travail
 modification
 .XE
 .XS
-<$nopage>Menu racine, voir Espace de travail
+Menu racine, voir Espace de travail
 .XE
 .PP
 .IP \(rh
@@ -18635,7 +18725,7 @@ association de fonction au bouton
 Association de fonction au bouton
 .XE
 .XS
-<$nopage>Bouton de souris, voir Association de fonction au bouton
+Bouton de souris, voir Association de fonction au bouton
 .XE
 .PP
  Une \fI association de fonction au bouton\fR  permet l'ex\*'ecution
@@ -18712,7 +18802,7 @@ de travail (mais pas dans une fen\*^etre cliente).
 .FS
 * 
  Pour plus de d\*'etails sur la syntaxe des associations de fonctions
-aux boutons, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)\fR .
+aux boutons, reportez-vous \*`a la page de manuel \fCdtwmrc(4)\fR .
 .FE
 .NH 2 
 Ajout d'une association de fonction au bouton
@@ -18861,7 +18951,7 @@ d'une application en appuyant sur Alt+F6.
 .FS
 * 
  Pour plus de d\*'etails sur la syntaxe des associations de fonctions
-aux touches, reportez-vous \*`a la page de manuel <filename moreinfo="RefEntry">dtwmrc(4)\fR .
+aux touches, reportez-vous \*`a la page de manuel \fCdtwmrc(4)\fR .
 .FE
 .NH 2 
 Cr\*'eation d'un jeu d'associations personnalis\*'ees
@@ -18896,7 +18986,7 @@ Ressources
 .XS
 keyBindings
 .XE
-<?Pub Caret>
+
  \fC Dtwm*keyBindings\fR : \fC Nom_jeu_associations_touches\fR 
 .IP \(rh
  S\*'electionnez l'option \*Q Relancer Gestionnaire
@@ -18930,7 +19020,7 @@ ainsi que toutes les associations personnalis\*'ees de fonctions aux boutons
 et aux touches.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000051469>
+
 \" <!-- $XConsortium: ch15.sgm /main/11 1996/12/21 18:57:00 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -19168,13 +19258,13 @@ Fen\*^etre de composition \fC dtmail\fR
 .TS
 center,box;
 l l. 
- \fC Raccourcis de menus et texte de raccourci\fR \fC S\*'equence de substitution\fR 
- \fC Dtmail*ComposeDialog*menubar*Edit.Undo.acceleratorText:\fR 	Ctrl+_
- \fC Dtmail*ComposeDialog*menubar*Edit.Undo.accelerator:\fR 	Ctrl<Touche>_
+ \fC Raccourcis de menus et texte de raccourci\fR	\fC S\*'equence de substitution\fR 
+ \fC Dtmail*ComposeDialog*menubar*Edit.Undo.acceleratorText:\fR		Ctrl+_
+ \fC Dtmail*ComposeDialog*menubar*Edit.Undo.accelerator:\fR	Ctrl<Touche>_
  \fC Dtmail*ComposeDialog*menubar*Edit.Paste.acceleratorText:\fR 	Maj+Inser
- \fC Dtmail*ComposeDialog*menubar*Edit.Paste.accelerator:\fR 	Maj<Touche>Inser	
- \fC Dtmail*ComposeDialog*menubar*Edit.Find/Change.acceleratorText:\fR 	Ctrl+S
- \fC Dtmail*ComposeDialog*menubar*Edit.Find/Change.accelerator:\fR 	Ctrl<Touche>s
+ \fC Dtmail*ComposeDialog*menubar*Edit.Paste.accelerator:\fR	Maj<Touche>Inser	
+ \fC Dtmail*ComposeDialog*menubar*Edit.Find/Change.acceleratorText:\fR	Ctrl+S
+ \fC Dtmail*ComposeDialog*menubar*Edit.Find/Change.accelerator:\fR	Ctrl<Touche>s
 .TE
 .IP -
  Les correspondances ci-apr\*`es d\*'ecrivent, entre
@@ -19459,8 +19549,8 @@ xlsfonts
  La liste des descriptions XLFD et des alias de polices disponibles sur
 le syst\*`eme s'affiche. Des valeurs figurent dans les 14 zones XLFD pour
 les polices en mode point. Dans le cas des polices vectorielles, des z\*'eros
-s'affichent dans les zones <command role="Variable">Taille_pixels\fR ,<command
-role="Variable"> Taille_points\fR , <command role="Variable">D\*'efinition_X\fR  et <command role="Variable">D\*'efinition_Y\fR .
+s'affichent dans les zones \fCTaille_pixels\fR ,<command
+role="Variable"> Taille_points\fR , \fCD\*'efinition_X\fR  et \fCD\*'efinition_Y\fR .
 .IP \(rh
  Pour rechercher des polices sp\*'ecifiques, utilisez des
 formes de correspondance dans la commande \fC xlsfonts\fR . Vous
@@ -19478,7 +19568,7 @@ r\*'epertoire contenant les polices du Bureau. Le r\*'epertoire par
 d\*'efaut d\*'efini au lancement de la session est \fC /usr/dt/config/xfonts/\fR \fClangue\fR .
  Pour plus de d\*'etails, consultez:
 .IP -
- les pages de manuel \fC xset\fR  et <filename moreinfo="RefEntry">xlsfonts\fR 
+ les pages de manuel \fC xset\fR  et \fCxlsfonts\fR 
 .IP -
  \fI Using the X Window System\fR , qui d\*'ecrit
 les alias de polices et le client \fC xset\fR 
@@ -19655,38 +19745,46 @@ Ressources
 .XS
 foreground
 .XE
- \fC foreground\fR Avant-plan d'une fen\*^etre d'application
-ou d'un cadre de fen\*^etre (toujours noir ou blanc). Cette ressource est
-g\*'en\*'eralement utilis\*'ee pour le texte des fen\*^etres
-et les titres.
+ \fC foreground\fR	Avant-plan d'une fen\*^etre d'application
+	ou d'un cadre de fen\*^etre (toujours noir ou blanc).
+	Cette ressource est g\*'en\*'eralement utilis\*'ee
+	pour le texte des fen\*^etres et les titres.
 .XS
 Ressources
 .XE
 .XS
 background
 .XE
- \fC background\fR 	Arri\*`ere-plan d'une application ou d'un cadre de fen\*^etre.
+ \fC background\fR 	Arri\*`ere-plan d'une application
+	ou d'un cadre de fen\*^etre.
 .XS
 Ressources
 .XE
 .XS
 topShadowColor
 .XE
- \fC topShadowColor\fR 	Couleur des angles sup\*'erieur et gauche des objets de commande d'une application (les boutons de fonction, par exemple) et des cadres de fen\*^etres.  
+ \fC topShadowColor\fR	Couleur des angles sup\*'erieur et gauche
+	des objets de commande d'une application
+	(les boutons de fonction, par exemple)
+	et des cadres de fen\*^etres.  
 .XS
 Ressources
 .XE
 .XS
 bottomShadowColor
 .XE
- \fC bottomShadowColor\fR 	Couleur des angles inf\*'erieur et droit des objets de commande d'une application et des cadres de fen\*^etres.  
+ \fC bottomShadowColor\fR 	Couleur des angles inf\*'erieur et
+	droit des objets de commande d'une application
+	et des cadres de fen\*^etres.  
 .XS
 Ressources
 .XE
 .XS
 selectColor
 .XE
- \fC selectColor\fR 	Couleur indiquant l'\*'etat (activ\*'e ou d\*'esactiv\*'e) d'objets de commande tels que les boutons.	
+ \fC selectColor\fR 	Couleur indiquant l'\*'etat
+	(activ\*'e ou d\*'esactiv\*'e) d'objets
+	de commande tels que les boutons.	
 .TE
  Le nombre de couleurs utilis\*'ees par chaque palette est d\*'etermin\*'e
 par la ressource \fC colorUse\fR , qui peut \*^etre d\*'efinie
@@ -19802,7 +19900,7 @@ Couleurs
 .XS
 zones de texte
 .XE
- \fC textColorSetId\fR Zones d'entr\*'ee de texte.
+ \fC textColorSetId\fR	Zones d'entr\*'ee de texte.
 .XS
 Ressources
 .XE
@@ -19815,14 +19913,16 @@ Couleurs
 .XS
 fen\*^etres d'applications
 .XE
- \fC primaryColorSetId\fR Arri\*`ere-plan des applications (couleur principale).
+ \fC primaryColorSetId\fR	Arri\*`ere-plan
+	des applications (couleur principale).
 .XS
 Ressources
 .XE
 .XS
 secondaryColorSetId
 .XE
- \fC secondaryColorSetId\fR Barres de menus, menus et bo\*^ites de dialogue des applications.
+ \fC secondaryColorSetId\fR Barres de menus, menus
+	et bo\*^ites de dialogue des applications.
 .TE
  La valeur de ces ressources est un ID de jeu de couleurs, ce qui permet
 aux modifications de couleurs effectu\*'ees \*`a partir du Gestionnaire
@@ -19874,8 +19974,8 @@ l l.
 Maximum de couleurs affect\*'ees aux applications du Gestionnaire de configuration:
 .TS
 center,box;
-l l. 
- ID jeu El\*'ement de l'\*'ecran	
+l l.
+ID jeu El\*'ement de l'\*'ecran	
  1	Cadre de la fen\*^etre active.
  2	Cadres de fen\*^etres inactives.
  3	Arri\*`ere-plan des applications et du Tableau de bord.
@@ -19886,18 +19986,12 @@ l l.
 Totalit\*'e des couleurs pour les applications du Gestionnaire de configuration.
 .TS
 center,box;
-l 
-l 
- ID jeu
-<entry
-align="left" valign="bottom">
- El\*'ement de l'\*'ecran	
- 1	
- Cadre de la fen\*^etre active, boutons
-de s\*'election des espaces de travail.
- 2	
- Tous les autres \*'el\*'ements
-de l'\*'ecran.
+l l.  
+ ID jeu	El\*'ement de l'\*'ecran	
+ 1	Cadre de la fen\*^etre active, boutons
+	de s\*'election des espaces de travail.
+ 2	Tous les autres \*'el\*'ements
+	de l'\*'ecran.
 .TE
 .NH 2 
 Gestion des couleurs \*`a l'aide du Gestionnaire de configuration
@@ -19987,9 +20081,17 @@ center,box;
 l l l. 
  \fC \*'Ecran\fR 	\fC Nombre maximal de couleurs\fR \fC D\*'etail\fR 
  B_W (noir et blanc)	2	Noir en blanc 
- LOW_COLOR (d\*'efinition faible) 12	Nombre de jeux de couleurs (2) multipli\*'e par le nombre de couleurs (5), plus le noir et le blanc
- MEDIUM_COLOR (d\*'efinition moyenne) 22	Nombre de jeux de couleurs (4) multipli\*'e par le nombre de couleurs (5), plus le noir et le blanc.
- HIGH_COLOR (haute d\*'efinition) 42	Nombre de jeux de couleurs (8) multipli\*'e par le nombre de couleurs (5), plus le noir et le blanc.
+ LOW_COLOR (d\*'efinition faible) 12	Nombre de jeux de couleurs (2)
+		multipli\*'e par le nombre de couleurs (5),
+		plus le noir et le blanc
+ MEDIUM_COLOR (d\*'efinition moyenne) 22	Nombre de jeux de
+		couleurs (4) multipli\*'e par
+		le nombre de couleurs (5),
+		plus le noir et le blanc.
+ HIGH_COLOR (haute d\*'efinition) 42	Nombre de jeux de
+		couleurs (8) multipli\*'e par
+		le nombre de couleurs (5),
+		plus le noir et le blanc.
 .TE
  Pour calculer le nombre maximal de couleurs autoris\*'ees:
 .IP \(rh
@@ -20032,11 +20134,40 @@ LOW_COLOR (d\*'efinition faible)
 center,box;
 l l. 
  Valeur	Description
- B_W	Param\*`etre Noir et blanc du Gestionnaire de configuration. Utilisation de 1 \*`a 3 plans de m\*'emoire image.  Nombre de jeux de couleurs: 2. Nombre maximal de couleurs: 2. Nombre de couleurs par d\*'efaut: 2. Pas d'ic\*^ones multicolores.	
- LOW_COLOR	Param\*`etre "Autres couleurs pour applications" du Gestionnaire de configuration. Utilisation de 4 \*`a 5 plans de m\*'emoire image. Nombre de jeux de couleurs: 2. Nombre maximal de couleurs: 12. Nombre de couleurs par d\*'efaut: 12. Pas d'ic\*^ones multicolores.
- MEDIUM_COLOR	Param\*`etre Totalit\*'e des couleurs pour applications du Gestionnaire de configuration. Utilisation de 6 plans de m\*'emoire image. Nombre de jeux de couleurs: 4. Nombre maximal de couleurs: 22. Nombre de couleurs par d\*'efaut: 22. Utilisation d'ic\*^ones multicolores.
- HIGH_COLOR	Param\*`etre Autres couleurs pour le Bureau du Gestionnaire de configuration. Utilisation de 7 plans de m\*'emoire image (ou plus). Nombre de jeux de couleurs: 8. Nombre maximal de couleurs : 42. Nombre de couleurs par d\*'efaut: 42. Utilisation d'ic\*^ones multicolores.
- default (par d\*'efaut)	Le Bureau s\*'electionne la valeur correcte pour l'\*'ecran. Pour limiter le nombre de couleurs utilis\*'ees par le Bureau pour les \*'ecrans haute d\*'efinition, la valeur MEDIUM_COLOR est attribu\*'ee par d\*'efaut \*`a la ressource \fC colorUse\fR .  
+ B_W	Param\*`etre Noir et blanc du Gestionnaire de
+	configuration. Utilisation de 1 \*`a 3 plans
+	de m\*'emoire image.
+	Nombre de jeux de couleurs: 2.
+	Nombre maximal de couleurs: 2.
+	Nombre de couleurs par d\*'efaut: 2.
+	Pas d'ic\*^ones multicolores. 	
+ LOW_COLOR	Param\*`etre "Autres couleurs pour applications"
+	du Gestionnaire de configuration. Utilisation
+	de 4 \*`a 5 plans de m\*'emoire image.
+	Nombre de jeux de couleurs: 2.
+	Nombre maximal de couleurs: 12.
+	Nombre de couleurs par d\*'efaut: 12.
+	Pas d'ic\*^ones multicolores. 
+ MEDIUM_COLOR	Param\*`etre Totalit\*'e des couleurs pour
+	applications du Gestionnaire de configuration.
+	Utilisation de 6 plans de m\*'emoire image.
+	Nombre de jeux de couleurs: 4.
+	Nombre maximal de couleurs: 22.
+	Nombre de couleurs par d\*'efaut: 22.
+	Utilisation d'ic\*^ones multicolores. 
+ HIGH_COLOR	Param\*`etre Autres couleurs pour le Bureau
+	du Gestionnaire de configuration. Utilisation de 7 plans
+	de m\*'emoire image (ou plus).
+	Nombre de jeux de couleurs: 8.
+	Nombre maximal de couleurs : 42.
+	Nombre de couleurs par d\*'efaut: 42.
+	Utilisation d'ic\*^ones multicolores. 
+ default		Le Bureau s\*'electionne la valeur
+ (par d\*'efaut)	correcte pour l'\*'ecran. Pour limiter
+	le nombre de couleurs utilis\*'ees par
+	le Bureau pour les \*'ecrans haute d\*'efinition,
+	la valeur MEDIUM_COLOR est attribu\*'ee
+	par d\*'efaut \*`a la ressource \fC colorUse\fR .   
 .TE
 .NH 3 
 .XS
@@ -20075,8 +20206,14 @@ cr\*'eation d'ombrages
 center,box;
 l l. 
  Valeur Description
- True	Le Bureau cr\*'ee des couleurs \fC topShadowPixmap\fR  et \fC bottomShadowPixmap\fR \*`a utiliser \*`a la place des couleurs d'ombrage.	
- False	Les couleurs \fC topShadowColor\fR  et \fC bottomShadowColor\fR  de la palette sont utilis\*'ees.
+ True	Le Bureau cr\*'ee des couleurs
+	\fC topShadowPixmap\fR  et
+	\fC bottomShadowPixmap\fR
+	\*`a utiliser \*`a la place
+	des couleurs d'ombrage.	
+ False	Les couleurs \fC topShadowColor\fR
+	et \fC bottomShadowColor\fR
+	de la palette sont utilis\*'ees.
 .TE
  La valeur par d\*'efaut de \fC shadowPixmaps\fR 
 d\*'epend de celle de la ressource \fC colorUse\fR  et
@@ -20116,7 +20253,13 @@ l l.
  Valeur R\*'esultat
  White	L'avant-plan est blanc.	
  Black	L'avant-plan est noir.	
- Dynamic	(valeur par d\*'efaut) La couleur de l'avant-plan est d\*'efinie dynamiquement, en fonction de la valeur de \fC background\fR . Par exemple, si l'arri\*`ere-plan est jaune, le syst\*`eme utilise un avant-plan noir afin de faciliter la lisibilit\*'e du texte.
+ Dynamic	(valeur par d\*'efaut)
+	La couleur de l'avant-plan est
+	d\*'efinie dynamiquement, en fonction
+	de la valeur de \fCbackground\fR .
+	Par exemple, si l'arri\*`ere-plan est jaune,
+	le syst\*`eme utilise un avant-plan noir
+	afin de faciliter la lisibilit\*'e du texte. 
 .TE
  Si la valeur de \fC foregroundColor\fR  est Black ou
 White, le jeu de couleurs comporte une couleur de moins, et la couleur de
@@ -20151,9 +20294,16 @@ ressource dynamicColor
 .TS
 center,box;
 l l. 
- Valeur Description
- True	Les couleurs des clients sont modifi\*'ees dynamiquement \*`a la s\*'election d'une nouvelle palette (valeur par d\*'efaut).  
- False	Les couleurs des clients ne sont pas modifi\*'ees dynamiquement. Pour que la nouvelle palette soit appliqu\*'ee, la session doit \*^etre relanc\*'ee.
+ Valeur	Description
+ True	Les couleurs des clients sont
+	modifi\*'ees dynamiquement \*`a
+	la s\*'election d'une nouvelle
+	palette (valeur par d\*'efaut).   
+ False	Les couleurs des clients ne sont
+	pas modifi\*'ees dynamiquement.
+	Pour que la nouvelle palette soit
+	appliqu\*'ee, la session doit
+	\*^etre relanc\*'ee.
 .TE
  Lorsque la valeur de \fC dynamicColor\fR  est True,
 les clients pour lesquels la modification dynamique des couleurs est impossible
@@ -20206,7 +20356,7 @@ role="SecTitleAndPageNum" Chargement des ressources d'une session.
 .bp
 
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-\" <?Pub *0000080609>
+
 \" <!-- $XConsortium: ch16.sgm /main/12 1996/12/21 18:57:07 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -20577,7 +20727,7 @@ exemple est celui de la publication de documents ancients tels que les classique
 taoistes ou de l'\*'epoque de Confucius.Ces textes contiennent beaucoup
 de caract\*`eres vieillis et qui ne sont pas d\*'efinis dans les jeux
 de caract\*`eres standard. On appelle ces caract\*`eres non standard
-des&grave; \*Q caract\*`eres d\*'efinis par l'utilisateur\*U .
+des \*Q caract\*`eres d\*'efinis par l'utilisateur\*U .
 .NH 3 
 Organisation des UDC ( User Defined Characters)
 .PP
@@ -20926,7 +21076,7 @@ est le suivant:
 .NH 1 
 Localisation des noms de palettes
 .XS
-<$nopage>Localisation
+Localisation
 .XE
 .XS
 Voir Internationalisation
@@ -21169,9 +21319,9 @@ input method server
 selecting at session startup
 .XE
 .PP
- Configurez la variable d'environnement \fCDTSTARTIMS\fR  \*`a<systemitem class="constant">TRUE\fR 
+ Configurez la variable d'environnement \fCDTSTARTIMS\fR  \*`a\fCTRUE\fR 
 pour permettre aux utilisateurs de s\*'electionner un IMS avant le d\*'emarrage
-d'une session. La configuration \fCDTSTARTIMS\fR  \*`a<systemitem class="constant">TRUE\fR  fait
+d'une session. La configuration \fCDTSTARTIMS\fR  \*`a\fCTRUE\fR  fait
 ex\*'ecuter le script \fC /usr/dt/config/Xsession.d/0020.dtims\fR 
 au Gestionnaire de session. Ce script v\*'erifie la valeur \fCLANG\fR .Si\fCLANG\fR  est configur\*'e pour une langue asiatique, le script lance
 le programme\fC dtimsstart\fR . \fC dtimsstart\fR  affiche
@@ -21277,9 +21427,9 @@ IMS Entry file
  Le fichier d'entr\*'ee IMS d\*'ecrit les cract\*'eristiques
 d'un IMS. Son emplacement est :\fC /usr/dt/config/ims/\fR  \fC ims_name\fR  et son format:
 .CW
- <symbol role="variable">attribute_name\fR : <symbol role="variable">attribute_value\fR 
+ \fCattribute_name\fR : \fCattribute_value\fR 
 .R
- o\*`u <symbol role="variable">attribute_name\fR  est:
+ o\*`u \fCattribute_name\fR  est:
 .IP "\fC protocols\fR "
  Une caract\*'eristique de la cha\*^ine qui identifie les protocoles
 XIM pris en charge. Les protocoles valides sont A XIM, Ximp, et Xsi. Elle
@@ -21364,12 +21514,12 @@ dans une liste s\*'epar\*'ee par des virgules. Par exemple:
 .CW
  OnTheSpot,OverTheSpot,OffTheSpot,Root
 .R
- A l'aide des boutons <?Pub Caret>\fC Haut\fR  et \fC bas\fR  de la bo\*^ite de dialogue affich\*'ee par le contr\*^ole
+ A l'aide des boutons \fC Haut\fR  et \fC bas\fR  de la bo\*^ite de dialogue affich\*'ee par le contr\*^ole
 saI18N, l'utilisateur peut changer l'ordre des styles de pr\*'e-\*'edition
 de la liste.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
-<?Pub *0000066454>
+
 \" <!-- $XConsortium: prefcan.sgm /main/7 1996/12/20 20:40:28 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -21378,7 +21528,7 @@ de la liste.
 \" <!-- (c) Copyright 1995 Novell, Inc. -->
 \" <!-- (c) Copyright 1995 FUJITSU LIMITED. -->
 \" <!-- (c) Copyright 1995 Hitachi. -->
-<preface id="SAG.Xtra1.mkr.1">
+
 .TL
  Avis aux lecteurs canadiens
 .LP
@@ -21421,14 +21571,16 @@ figurant dans le pr\*'esent document aux touches de votre clavier.
 center,box;
 l l l.
  France Canada \*'Etats-Unis
- (Pos1) .PSPIC "./graphics/frex1.eps" .PSPIC "./graphics/frex1.eps" Home
+ (Pos1)	
+.PSPIC "./graphics/frex1.eps"	
+.PSPIC "./graphics/frex1.eps"	Home
  Fin	Fin	End
- (PgAr) .PSPIC "./graphics/frex2.eps" .PSPIC "./graphics/frex2.eps"
- PgUp
+ (PgAr)	
+ .PSPIC "./graphics/frex2.eps"	
+ .PSPIC "./graphics/frex2.eps"		PgUp
  (PgAv)
 .PSPIC "./graphics/frex3.eps"
-.PSPIC "./graphics/frex3.eps"
- PgDn
+.PSPIC "./graphics/frex3.eps"		PgDn
  Inser	Inser	Ins
  Suppr	Suppr	Del
  \*'Echap	\*'Echap	Esc

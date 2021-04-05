@@ -22,7 +22,7 @@ s/<row>//g
 s|</row>|\n|g
 s/<entry[^>*]><para>//g 
 s|</para></entry>$|\t|g
-s|</entry>||g
+s|</entry>|\t|g
 s/<entry[^>]*>//g
 
 # Figure caption 
@@ -89,29 +89,31 @@ s/<emphasis[^>]*>/\\fI /g
 s|</emphasis>|\\fR |g
 s|<replaceable[^>]*>|\\fI |g 
 s|</replaceable>|\\fR |g
-s|<command>|\\fC |g
-s|</command>|\\fR |g
-s|<systemitem[^>]*>|\\fC |g 
-s|</systemitem>|\\fR |g 
-s|<literal>|\\fC |g
-s|</literal>|\\fR |g
-s|<filename>|\\fC |g
-s|</filename>|\\fR |g
-s|<firstterm>|\\fB |g
-s|</firstterm>|\\fR |g
-s|<[Ss]ymbol[>]*>|\\fC |g 
-s|</symbol>|\\fR |g 
-s|<citetitle>|\\fI |g 
-s|</citetitle>|\\fR |g 
-s|<programlisting[^>]*>|\n.CW\n |g
-s|</programlisting>|\n.R\n |g
-s|<computeroutput>|\\fC |g
-s|</computeroutput>|\\fR |g
+s|<command[^>]*>|\\fC|g
+s|</command>|\\fR|g
+s|<systemitem[^>]*>|\\fC|g 
+s|</systemitem>|\\fR|g 
+s|<literal>|\\fC|g
+s|</literal>|\\fR|g
+s|<filename[^>]*>|\\fC|g
+s|</filename>|\\fR|g
+s|<firstterm>|\\fB|g
+s|</firstterm>|\\fR|g
+s|<symbol[>]*>|\\fC|g 
+s|<Symbol[>]*>|\\fC|g
+s|</symbol>|\\fR|g 
+s|</Symbol>|\\fR|g 
+s|<citetitle>|\\fI|g 
+s|</citetitle>|\\fR|g 
+s|<programlisting[^>]*>|\n.CW\n|g
+s|</programlisting>|\n.R\n|g
+s|<computeroutput>|\\fC|g
+s|</computeroutput>|\\fR|g
 s|<systemitem>|\\fC|g
 s|</systemitem>|\\fR|g
 s|<structname>|\\fC|g 
 s|</structname>|\\fC|g
-s|<wordasword>|\\fI |g
+s|<wordasword>|\\fI|g
 s|</wordasword>| \\fR|g
 #Subscripts and superscripts 
 s|<superscript>|\\u|g
@@ -174,8 +176,8 @@ s/&Uacute;/\\*'U/g
 s/&Ugrave;/\\*`U/g
 s/&Uuml;/\\*;U/g
 s/&Ccedil;/\\*,C/g
-# Inelegant, there is a better way to have the sharp 's'
-s/&szlig;/ss/g
+s/&szlig;/\(ss/g
+# Punctuation/Math symbols 
 s/&ldquo;/\\*Q/g 
 s/&rdquo;/\\*U/g
 s/&minus;/\\-/g 
@@ -194,7 +196,15 @@ s/&plusmn;/\\(+-/g
 s/&hellip;/.../g 
 s/&divide;/\\(di/g
 
+
 s/&amp;/\&/g
+# Various SGML symbols 
+s/<?Pub _newline>/\\n/g 
+s/<?Pub Caret[0-9]*>//g 
+s/<?Pub \*[0-9]*>//g 
+s/<$nopage>//g 
+s/<$endrange>//g 
+s/<$startrange>//g 
 
 #Index
 #s|<primary>[^<]*</primary>||g
@@ -213,6 +223,8 @@ s/<!--/\\" &/g
 
 s/<chapter[^>]*>//g
 s/<glossary[^>]*>//g
+s|<preface[^>]*>||g 
+s|[\t ]*</preface>|.bp|g 
 s|[\t ]*</chapter>|.bp|g
 s|[\t ]*</glossary[^>]*>||g
 # Don't leave empty lines 
