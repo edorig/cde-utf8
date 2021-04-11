@@ -1,5 +1,4 @@
-\" <!-- $XConsortium: preface.sgm /main/4 1996/06/19 16:45:44 drk CHECKEDOUT
-$ -->
+\" <!-- $XConsortium: preface.sgm /main/4 1996/06/19 16:45:44 drk CHECKEDOUT $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
 \" <!-- (c) Copyright 1995 International Business Machines Corp. -->
@@ -7,7 +6,6 @@ $ -->
 \" <!-- (c) Copyright 1995 Novell, Inc. -->
 \" <!-- (c) Copyright 1995 FUJITSU LIMITED. -->
 \" <!-- (c) Copyright 1995 Hitachi. -->
-<preface id="UG.ugPrf.mkr.1">
 .TL
  Pr\*'eface
 .LP
@@ -18,80 +16,69 @@ il permet d'acc\*'eder.
 Organisation du manuel
 .PP
  Ce document se compose de 13 chapitres et de deux annexes.
- \fI Le\fR  chapitre n\(de 1,
-\*QConnaissances de baseConnaissances de base
-,\fR  pr\*'esente les connaissances de base n\*'ecessaires
+ Le  chapitre n\(de 1,
+\*Q\fIConnaissances de base\fR\*U,  pr\*'esente les connaissances de base n\*'ecessaires
 \*`a l'utilisation du Bureau et du clavier, et d\*'ecrit certains
 aspects de l'interface commune mise en oeuvre.
- \fI Le\fR  chapitre n\(de 2,
-\*QLancement d'une session du Bureau
-"UG.LogIn.mkr.1"\fI ,\fR  explique comment
+Le  chapitre n\(de 2,
+\*Q\fILancement d'une session du Bureau\fR\*U,  explique comment
 ouvrir une session de Bureau, la fermer et d\*'efinir les param\*`etres
 de connexion.
- \fI Le\fR  chapitre n\(de 3,
-\*QAccès à l'aide"UG.GHelp.mkr.1"
-,\fR  pr\*'esente les diff\*'erentes proc\*'edures
+ Le  chapitre n\(de 3,
+\*Q\fIAcc\*'es \*`a l'aide\fR\*U,  pr\*'esente les diff\*'erentes proc\*'edures
 d'acc\*`es \*`a l'aide en ligne.
- \fI Le\fR  chapitre n\(de 4,
-\*QUtilisation du Tableau de bord
-Utilisation du Tableau de bord\fI ,\fR  d\*'ecrit
+ Le  chapitre n\(de 4,
+\*Q\fIUtilisation du Tableau de bord\fR\*U,  d\*'ecrit
 le Tableau de bord (fen\*^etre de gestion des t\*^aches courantes) et
 explique comment le personnaliser.
- \fI Le\fR  chapitre n\(de 5,
-\*QGestionnaire de fichiersGestionnaire de fichiers
-,\fR  fournit des instructions relatives au traitement
+ Le  chapitre n\(de 5,
+\*Q\fIGestionnaire de fichiers\fR\*U,
+fournit des instructions relatives au traitement
 des fichiers et des dossiers \*`a l'aide du Gestionnaire de fichiers.
 Il d\*'ecrit \*'egalement les connaissances de base n\*'ecessaires
 \*`a l'utilisation de cette interface graphique (navigation, gestion et
 recherche de fichiers et de dossiers, utilisation de la Corbeille).
- \fI Le\fR  chapitre n\(de 6,
-\*QLancement d'applications à partir du Bureau
-Lancement d'applications \*`a partir du Bureau\fI ,\fR  explique comment
+ Le  chapitre n\(de 6,
+\*Q\fILancement d'applications \*`a partir du Bureau\fR\*U,  explique comment
 lancer des applications \*`a partir du Bureau \*`a l'aide du Gestionnaire
 d'applications, du Gestionnaire de fichiers, du Tableau de bord et des fen\*^etres
 d'\*'emulation de terminal.
- \fI Le\fR  chapitre n\(de 7,
-\*QPersonnalisation de l'environnement CDE
-Personnalisation de l'environnement CDE\fI ,\fR  fournit des
+ Le  chapitre n\(de 7,
+\*Q\fIPersonnalisation de l'environnement CDE\fR\*U,  fournit des
 instructions permettant de personnaliser l'aspect et le comportement du Bureau
 \*`a l'aide du Gestionnaire de configuration, et explique comment d\*'efinir
 des variables d'environnement personnalis\*'ees.
- \fI Le\fR  chapitre n\(de 8,
-\*QUtilisation du Programme courrier
-Utilisation du Programme courrier\fI ,\fR  pr\*'esente
+ Le  chapitre n\(de 8,
+\*Q\fIUtilisation du Programme courrier\fR\*U,  pr\*'esente
 le Programme courrier. Cette application permet d'envoyer et de recevoir des
 messages, d'y joindre des documents ou d'extraire ces derniers.
- \fI Le\fR  chapitre n\(de 9,
-\*QImpressionImpression
+ Le  chapitre n\(de 9,
+\*Q\fIImpression\fR\*U 
 \fR , d\*'ecrit la proc\*'edure d'impression
 \*`a partir du Bureau et explique comment remplacer l'imprimante par d\*'efaut.
- \fI Le\fR  chapitre n\(de 10,
-\*QUtilisation de l'Editeur de texte
-Utilisation de l'Editeur de texte\fI ,\fR  pr\*'esente
+ Le  chapitre n\(de 10,
+\*Q\fIUtilisation de l'Editeur de texte\fR\*U,  pr\*'esente
 l'Editeur de texte, une application permettant de cr\*'eer et d'\*'editer
 des documents de taille limit\*'ee, tels que des notes, des messages ou
 des fichiers de ressources.
- \fI Le\fR  chapitre n\(de 11,
-\*QUtilisation de l'agendaUtilisation de l'agenda
+ Le  chapitre n\(de 11,
+\*Q\fIUtilisation de l'agenda\fR\*U
 ,\fR  d\*'ecrit l'Agenda, \*`a partir duquel
 fixer des rendez-vous, planifier des r\*'eunions et cr\*'eer des listes
 d'activit\*'es.
- \fI Le\fR  chapitre n\(de 12,
-\*QUtilisation du terminalUtilisation du terminal
-,\fR  fournit des instructions permettant d'afficher
+Le  chapitre n\(de 12,
+\fI\*Q\fIUtilisation du terminal\fR\*U,  fournit des instructions permettant d'afficher
 et de personnaliser des fen\*^etres d'\*'emulation de terminal sur
 le Bureau.
- \fI Le\fR \" <!--riginal XRef content: 'chapitre n\(de 13,
-\*QEditeur d'icônesEditeur d'ic\*^ones
+Le chapitre n\(de 13,
+\*Q\fIEditeur d'icônes\fR\*U
 ,\fR  explique comment cr\*'eer des fichiers graphiques
 et les utiliser comme ic\*^ones ou images de fond pour le Bureau.
- \fI L'\fR annexe n\(de A,
-\*QRaccourcis clavier pour le Bureau
-Raccourcis clavier pour le Bureau\fI ,\fR  explique comment
+L' annexe A,
+\*Q\fIRaccourcis clavier pour le Bureau\fR\*U,  explique comment
 utiliser le Bureau \*`a l'aide du clavier.
- \fI L'\fR annexe n\(de B,
-\*QLocalisation des sessions
-Localisation des sessions\fI ,\fR  d\*'ecrit
+ L' annexe B,
+\*Q\fILocalisation des sessions\fR\*U,  d\*'ecrit
 la proc\*'edure de modification de la langue et des polices d'une session.
 .NH 1 
 Bibliographie
@@ -102,7 +89,7 @@ du Bureau.
 .NH 1 
 Qu'entend-on par \fI marques SGML DocBook\fR  ?
 .PP
- Ce docu<?ment est r\*'edig\*'e dans le langage SGML
+ Ce document est r\*'edig\*'e dans le langage SGML
 (\fI Structured Generalized Markup Language\fR ) \*`a l'aide
 du DTD (\fI Document Type Definition\fR , d\*'efinition de
 type de document) DocBook. Le tableau suivant d\*'ecrit les marques DocBook
@@ -113,13 +100,12 @@ c s s
 l l l.
 Marques SGML DocBook
  \fCAspect de la marque\fR	\fCEl\*'ement(s) s\*'emantique(s)\fR	\fCExemple\fR
- \fCAaBbCc123\fR	Les noms des commandes.	 Utilisez la commande \fCls\fR pour lister les fichiers.
- \fCAaBbCc123\fR	 Les noms des options de commande.
-		Utilisez \fCls\fR\fC\-a\fR pour lister tous les fichiers.
- \fCAaBbCc123\fR	
- Marque de r\*'eservation de ligne de commande: \*`a
-remplacer par un nom ou une valeur r\*'eelle.	
- Pour supprimer un fichier, tapez \fCrm\fR\fC nom_de_fichier\fR.
+ \fCAaBbCc123\fR	Les noms des commandes.	 Utilisez la commande
+		\fCls\fR pour lister les fichiers.
+ \fCAaBbCc123\fR	 Les noms des options de commande.	Utilisez \fCls\fR\fC\-a\fR pour lister tous les fichiers.
+ \fCAaBbCc123\fR	Marque de r\*'eservation de ligne de commande: \*`a
+	remplacer par un nom ou une valeur r\*'eelle.	Pour supprimer
+	un fichier, tapez \fCrm\fR\fC nom_de_fichier\fR.
  \fCAaBbCc123\fR	Les noms des fichiers et r\*'epertoires.	Editez votre fichier \fC.login\fR.	
  \fI AaBbCc123\fR 	Titres d'ouvrages, nouveaux mots ou termes,
 	termes anglais ou mots mis en \*'evidence.	
@@ -130,10 +116,9 @@ remplacer par un nom ou une valeur r\*'eelle.
 		r\*'epertoire racine pour proc\*'eder
 		\*`a cette op\*'eration.
 .TE
-
+.bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-\" <!-- $XConsortium: prefcan.sgm /main/2 1996/06/19 11:49:11 cdedoc CHECKEDOUT
-$ -->
+\" <!-- $XConsortium: prefcan.sgm /main/2 1996/06/19 11:49:11 cdedoc CHECKEDOUT $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
 \" <!-- (c) Copyright 1995 International Business Machines Corp. -->
@@ -148,7 +133,7 @@ $ -->
  Le manuel que vous avez entre les mains a \*'et\*'e traduit
 en France. Voici les principales diff\*'erences et particularit\*'es
 dont vous devez tenir compte.
-.NH 1 
+.NH 0 
 Illustrations
 .PP
  Les illustrations sont fournies \*`a titre d'exemple. Certaines
@@ -188,10 +173,12 @@ center,box;
 
 l l l.
  France	 Canada	Etats-Unis
- (Pos1)	.PSPIC "UG.Xtra1.fig.1"	.PSPIC " UG.Xtra1.fig.2"	Home	
+ (Pos1)		Home	
  Fin	Fin	End	
- (PgAr).PSPIC "UG.Xtra1.fig.3" .PSPIC "./graphics/frex2.eps"	PgUp	
- (PgAv)	.PSPIC "UG.Xtra1.fig.5"	.PSPIC "./graphics/frex3.eps"	PgDn	
+ (PgAr)		PgUp	
+.PSPIC -L "./graphics/frex2.eps" 1c 1c
+(PgAv)		PgDn
+.PSPIC -L "./graphics/frex3.eps" 1c 1c 
  Inser	Inser	Ins	
  Suppr	Suppr	Del	
  Echap	\*'Echap	Esc	
@@ -199,7 +186,7 @@ l l l.
  Impr \*'ecran	Imp\*'Ec	PrtSc	
  Verr num	Num	Num Lock	
  Arr\*^et d\*'efil	D\*'efil	Scroll Lock	
- (Verr maj).PSPIC "UG.Xtra1.fig.7"	FixMaj	Caps Lock
+ (Verr maj)	FixMaj	Caps Lock
  Alt Gr	AltCar	Alt (\*`a droite)	
 .TE
 
@@ -214,7 +201,7 @@ travaillez - en France ou en  n\(de Belgique.
  Les indications ci-dessous permettront \*`a l'utilisateur d'\*'etablir
 la correspondance entre le texte de cet ouvrage et l'environnement propre
 \*`a la Belgique.
-.NH 1 
+.SH
 Illustrations
 .PP
 .TS
@@ -222,40 +209,25 @@ center,box;
  
  
 l l.
- FRANCE
- BELGIQUE	
- Entr\*'ee	
- Enter	
- Retour	
- Return	
- \*'Echap	
- Esc	
- Maj	
- Shift	
- VerrMaj	
- Shift Lock	
- Pg AV	
- Page Down	
- Pg AR	
- Page Up	
- VerrNum	
- Num Lock	
- Valid	
- Action	
- RetourArr	
- Backspace	
- Inser	
- Insert	
- Suppr	
- Delete	
- Pos1	
- Home	
- Fin	
- End	
+ FRANCE	BELGIQUE	
+ Entr\*'ee	Enter	
+ Retour	Return	
+ \*'Echap	Esc
+ Maj	Shift	
+ VerrMaj	Shift Lock	
+ Pg AV	Page Down	
+ Pg AR	Page Up	
+ VerrNum	Num Lock	
+ Valid	Action	
+ RetourArr	Backspace	
+ Inser	Insert	
+ Suppr	Delete	
+ Pos1	Home	
+ Fin	End	
 .TE
  \fCRemarque :\fR \fI BlocNum\fR  d\*'esigne
 le bloc de touches num\*'eriques situ\*'e sur la droite du clavier.
-
+.bp 
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:21:25-->
 
 \" <!-- $XConsortium: ch01.sgm /main/12 1996/12/21 19:05:42 rws $ -->
@@ -275,36 +247,25 @@ CDE.
 au chapitre n\(de 2, \*ULancement d'une session
 du Bureau"UG.LogIn.mkr.1".
 .TS
-center,box;
+center,allbox;
  
- 
+c 
 l.
- Utilisation
-de la souris2Utilisation de la souris	
- Utilisation
-du clavier3Utilisation du clavier	
- Présentation
-du Bureau4Pr\*'esentation du Bureau	
- Gestion
-des fenêtres9Gestion des fen\*^etres	
- Gestion
-des espaces de travail16Gestion des espaces de travail	
- Utilisation
-des objets de commande dans les fenêtres d'application19
-Utilisation des objets de commande dans les fen\*^etres
- Utilisation
-des menus26Utilisation des menus	
- Sortie
-du Bureau32Sortie du Bureau	
- Accès à
-l'aide34Acc\*`es \*`a l'aide	
+Contenu du chapitre 
+ Utilisation de la souris
+ Utilisation du clavier
+Pr\*'esentation du Bureau	
+Gestion des fen\*^etres	
+ Gestion des espaces de travail
+Utilisation des objets de commande dans les fen\*^etres d'application
+Utilisation des menus
+Sortie du Bureau
+Acc\*`es \*`a l'aide	
 .TE
 .NH 1 
 Utilisation de la souris
 .XS
-Souris
-.XE
-.XS
+Souris, 
 utilisation
 .XE
 .PP
@@ -313,9 +274,7 @@ utilisation
 .NH 2 
 Cliquer
 .XS
-Souris
-.XE
-.XS
+Souris, 
 cliquer
 .XE
 .XS
@@ -328,9 +287,7 @@ Cliquer
 rel\*^achez-le (sans d\*'eplacer la souris).
  Par d\*'efaut, le bouton gauche est le bouton de gauche.
 .XS
-Souris
-.XE
-.XS
+Souris, 
 boutons
 .XE
  Cette op\*'eration permet d'obtenir les r\*'esultats suivants
@@ -347,9 +304,7 @@ d'aide.
 .NH 2 
 Cliquer deux fois
 .XS
-Souris
-.XE
-.XS
+Souris, 
 cliquer
 deux fois
 .XE
@@ -373,9 +328,7 @@ l'angle sup\*'erieur gauche du cadre de la fen\*^etre).
 .NH 2 
 Faire glisser
 .XS
-Souris
-.XE
-.XS
+Souris, 
 faire
 glisser
 .XE
@@ -408,9 +361,7 @@ correspondante sur la commande d'impression du Tableau de bord.
 .NH 1 
 Utilisation du clavier
 .XS
-Clavier
-.XE
-.XS
+Clavier, 
 connaissances de base
 .XE
 .PP
@@ -418,9 +369,7 @@ connaissances de base
 Lorsque vous utilisez le clavier pour naviguer sur le Bureau, tenez compte
 des points suivants:
 .XS
-Clavier
-.XE
-.XS
+Clavier, 
 navigation
 .XE
 .IP -
@@ -434,8 +383,6 @@ Touche de caract\*`ere \*'etendu
 touche Retour
 .XS
 Touche
-.XE
-.XS
 Entr\*'ee
 .XE
 .IP -
@@ -443,9 +390,7 @@ Entr\*'ee
 interactives
 .XS
 Touche
-.XE
-.XS
-Echap
+\*'Echap
 .XE
 .IP -
  
@@ -460,9 +405,7 @@ le Gestionnaire de configuration, le param\*`etre Comportement de la fen\*^etre
 doit avoir la valeur Activation \*`a la s\*'election (il s'agit de
 la valeur par d\*'efaut).
 .XS
-Clavier
-.XE
-.XS
+Clavier, 
 d\*'efinition du comportement des fen\*^etres
 .XE
  Pour plus de d\*'etails sur le comportement des fen\*^etres,
@@ -475,9 +418,7 @@ Pour activer une option de menu ou un objet de commande, tel qu'un bouton,
 appuyez sur la barre d'espacement.
  Le clavier permet notamment les op\*'erations suivantes.
 .XS
-Clavier
-.XE
-.XS
+Clavier, 
 raccourcis
 .XE
 :
@@ -505,8 +446,6 @@ souhait\*'e et appuyez sur Entr\*'ee.
 Ctrl enfonc\*'ee tout en appuyant sur une fl\*`eche de d\*'eplacement.
 .XS
 Touche
-.XE
-.XS
 Ctrl
 .XE
  Pour plus de d\*'etails sur la navigation \*`a l'aide du clavier,
@@ -515,9 +454,7 @@ clavier pour le BureauRaccourcis clavier pour le Bureau.
 .NH 1 
 Pr\*'esentation du Bureau
 .XS
-Bureau
-.XE
-.XS
+Bureau, 
 g\*'en\*'eralit\*'es
 .XE
 .PP
@@ -529,9 +466,7 @@ commande, des menus et un Tableau de bord.
 les applications logicielles; vous pouvez les d\*'eplacer, les dimensionner
 ou les placer dans d'autres espaces de travail.
 .XS
-Bureau
-.XE
-.XS
+Bureau, 
 fen\*^etres
 .XE
 .IP -
@@ -540,9 +475,7 @@ o\*`u vous placez les fen\*^etres n\*'ecessaires; vous pouvez
 disposer ces fen\*^etres \*`a votre convenance ou les supprimer lorsque
 vous n'en avez plus besoin.
 .XS
-Bureau
-.XE
-.XS
+Bureau, 
 espaces de travail
 .XE
 .IP -
@@ -572,14 +505,12 @@ suivants:
 .NH 2 
 Ic\*^ones de fen\*^etres
 .PP
- .PSPIC "./graphics/WndwIcns.eps"
+.PSPIC "./graphics/WndwIcns.eps"
  Lorsque vous r\*'eduisez une fen\*^etre, elle se transforme en
 ic\*^one; les exemples d'ic\*^ones ci-contre correspondent au Gestionnaire
 de fichiers et au Gestionnaire de configuration.
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 ic\*^ones
 .XE
  Pour r\*'eduire une fen\*^etre, cliquez sur le bouton de r\*'eduction
@@ -589,7 +520,7 @@ situ\*'e dans la partie sup\*'erieure droite de son cadre.
 ic\*^one \*`a l'aide du bouton 1 de la souris. Vous pouvez \*'egalement
 cliquer une fois sur l'ic\*^one pour afficher le menu Fen\*^etre, puis
 s\*'electionner l'option Restaurer. Pour plus de d\*'etails, reportez-vous
-\*`a la section \*URétablissement d'une
+\*`a la section \*UR\*'etablissement d'une
 fenêtre à partir d'une icône\*U, à la page n\(de 13
 R\*'etablissement d'une fen\*^etre \*`a.
 .NH 3 
@@ -611,8 +542,7 @@ ce dernier, cliquez sur la fl\*`eche.
 Ic\*^ones du Tableau de bord
 .PSPIC "./graphics/fpanel.eps"
  Pour plus de d\*'etails, reportez-vous au 
-'chapitre n\(de 4, \*UUtilisation du Tableau de bord
-Utilisation du Tableau de bord.
+'chapitre n\(de 4, \*Q\fIUtilisation du Tableau de bord\fR. 
 .NH 4 
 Gestionnaire de configuration
 .PP
@@ -637,10 +567,10 @@ Gestionnaire de configuration
 lancement
 .XE
 .
- .PSPIC "./graphics/BSSMIcon.eps"
+.PSPIC "./graphics/BSSMIcon.eps"
  Pour plus de d\*'etails sur le Gestionnaire de configuration, reportez-vous
-au chapitre n\(de 7, \*UPersonnalisation de
-l'environnement CDEPersonnalisation de l'environnement CDE.
+au chapitre n\(de 7, \*QPersonnalisation de
+l'environnement CDE\*U. 
 .NH 4 
 Gestionnaire de fichiers
 .PP
@@ -649,21 +579,17 @@ Gestionnaire de fichiers
 dossiers et les programmes disponibles sur le syst\*`eme. Ces ic\*^ones
 vous \*'evitent d'utiliser des commandes complexes.
 .XS
-Gestionnaire de fichiers
-.XE
-.XS
+Gestionnaire de fichiers, 
 ic\*^one du Tableau de bord
 .XE
  Pour ouvrir une vue de votre dossier personnel, cliquez sur l'ic\*^one
 du Gestionnaire de fichiers dans le Tableau de bord.
 .XS
 Gestionnaire
-de fichiers
-.XE
-.XS
+de fichiers, 
 ouverture
 .XE
- .PSPIC "./graphics/BSFMIcon.eps"
+.PSPIC "./graphics/BSFMIcon.eps"
  Pour plus de d\*'etails, reportez-vous au 
 'chapitre n\(de 5, \*UGestionnaire de fichiers
 Gestionnaire de fichiers.
@@ -677,20 +603,16 @@ d'\fI ic\*^ones d'action\fR . Celles-ci permettent de lancer
 les applications; elles sont stock\*'ees dans des dossiers sp\*'eciaux
 appel\*'es \fI groupes d'applications\fR .
 .XS
-Gestionnaire d'applications
-.XE
-.XS
+Gestionnaire d'applications, 
 ic\*^one
 .XE
  Vous pouvez afficher les ic\*^ones d'action fr\*'equemment utilis\*'ees
 sur le fond de l'espace de travail.
- .PSPIC "./graphics/BSAMIcon.eps"
+.PSPIC "./graphics/BSAMIcon.eps"
  Pour ouvrir le Gestionnaire d'applications, cliquez sur l'ic\*^one
 correspondante du Tableau de bord.
 .XS
-Gestionnaire d'applications
-.XE
-.XS
+Gestionnaire d'applications, 
 ouverture
 .XE
  Pour plus de d\*'etails, reportez-vous au 
@@ -702,9 +624,7 @@ Objets de l'espace de travail
  Vous pouvez placer les ic\*^ones des fichiers, des dossiers et des
 actions que vous utilisez fr\*'equemment sur le fond de l'espace de travail.
 .XS
-Objets
-.XE
-.XS
+Objets, 
 espace de travail
 .XE
  Pour ce faire, faites glisser l'ic\*^one voulue \*`a partir d'une
@@ -720,9 +640,7 @@ les fen\*^etres de l'espace de travail.
 .NH 2 
 Objets de commande des cadres de fen\*^etres
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 objets de commande
 .XE
 .PP
@@ -757,8 +675,6 @@ dans l'angle sup\*'erieur gauche de la fen\*^etre.
 Fen\*^etre.
 .XS
 Bouton
-.XE
-.XS
 Fen\*^etre,
 menu
 .XE
@@ -767,8 +683,6 @@ cliquez sur le bouton de r\*'eduction. Pour la restaurer, cliquez deux
 fois sur l'ic\*^one.
 .XS
 Bouton
-.XE
-.XS
 r\*'eduction
 .XE
  Pour donner \*`a une fen\*^etre sa taille maximale, cliquez sur
@@ -776,8 +690,6 @@ le bouton d'agrandissement. Cliquez de nouveau sur ce bouton pour revenir
 \*`a la taille pr\*'ec\*'edente.
 .XS
 Bouton
-.XE
-.XS
 agrandissement
 .XE
  La barre de titre indique le nom de l'application propri\*'etaire
@@ -785,9 +697,7 @@ de la fen\*^etre. Pour s\*'electionner une fen\*^etre, cliquez sur
 sa barre de titre. Cet objet de commande permet \*'egalement de d\*'eplacer
 la fen\*^etre.
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 barre de titre
 .XE
 .XS
@@ -795,30 +705,23 @@ Barre de titre
 .XE
 .XS
 S\*'election
-.XE
-.XS
 fen\*^etre
 .XE
  Faites glisser un contour de redimensionnement de la fen\*^etre pour
 modifier la taille de celle-ci.
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 contour de redimensionnement
 .XE
  Pour plus de d\*'etails sur les fen\*^etres et la navigation
 \*`a l'aide du clavier, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*UOuverture et fermeture de fenêtres
-Ouverture et fermeture de fen\*^etres de l' annexe n\(de A,
+ \*QOuverture et fermeture de fenêtres\*U de l' annexe n\(de A,
 \*URaccourcis clavier pour le Bureau
 Raccourcis clavier pour le Bureau.
 .NH 2 
 Ouverture d'une fen\*^etre d'application
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 ouverture
 .XE
 .XS
@@ -876,33 +779,27 @@ appuyez sur Entr\*'ee pour lancer l'application.
 .NH 2 
 Fermeture d'une fen\*^etre d'application
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 fermeture
 .XE
 .XS
-Fermeture
-.XE
-.XS
+Fermeture, 
 fen\*^etre d'application
 .XE
 .PP
  
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres,
 suppression
 .XE
 Lorsque vous fermez une fen\*^etre d'application, elle dispara\*^it
 de tous les espaces de travail. Cette op\*'eration revient \*`a quitter
 l'application.
-<caution>
+.B1
  Avant de fermer une fen\*^etre d'application, enregistrez votre travail.
 Pour ce faire, il suffit g\*'en\*'eralement de s\*'electionner
 l'option Sauvegarder du menu Fichier.
-</caution>
+.B2
 .NH 3 
 \*`A l'aide de la souris
 .PP
@@ -915,12 +812,10 @@ le bouton du menu Fen\*^etre, situ\*'e dans l'angle sup\*'erieur
 gauche de la fen\*^etre de l'application
 .XS
 Bouton
-.XE
-.XS
 menu Fen\*^etre
 .XE
  (voir la \" <!--Original
-XRef content: 'Figure n\(de 1\(hy2 page n\(de 10
+Figure n\(de 1\(hy2 page n\(de 10
 Objets de commande des cadres de fen\*^etres).
 .NH 4 
 \*`A l'aide du clavier
@@ -933,9 +828,7 @@ sur la fen\*^etre \*`a fermer.
 .NH 2 
 R\*'eduction d'une fen\*^etre \*`a l'\*'etat d'ic\*^one
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres,
 r\*'eduction \*`a l'\*'etat
 d'ic\*^one
 .XE
@@ -945,8 +838,6 @@ les fen\*^etres en ic\*^ones. Elles restent ainsi accessibles et les
 programmes qu'elles contiennent continuent de s'ex\*'ecuter.
 .XS
 R\*'eduction
-.XE
-.XS
 fen\*^etres
 .XE
 .NH 3 
@@ -975,15 +866,11 @@ et appuyez sur Entr\*'ee
 R\*'etablissement d'une fen\*^etre \*`a
 partir d'une ic\*^one
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 r\*'etablissement \*`a partir d'une ic\*^one
 .XE
 .XS
 R\*'etablissement
-.XE
-.XS
 fen\*^etre \*`a
 partir d'une ic\*^one
 .XE
@@ -1011,27 +898,19 @@ vers le bas pour s\*'electionner l'option Restaurer et appuyez sur Entr\*'ee.
 .NH 2 
 D\*'eplacement d'une fen\*^etre ou d'une ic\*^one de fen\*^etre
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 d\*'eplacement
 .XE
 .XS
 D\*'eplacement
-.XE
-.XS
 fen\*^etres
 .XE
 .XS
 D\*'eplacement
-.XE
-.XS
 ic\*^ones
 .XE
 .XS
 Fen\*^etres
-.XE
-.XS
 d\*'eplacement des ic\*^ones
 .XE
 .PP
@@ -1065,15 +944,11 @@ Entr\*'ee.
 .NH 2 
 Redimensionnement d'une fen\*^etre
 .XS
-Fen\*^etres
-.XE
-.XS
+Fen\*^etres, 
 redimensionnement
 .XE
 .XS
 Redimensionnement
-.XE
-.XS
 fen\*^etres
 .XE
 .PP
@@ -1119,14 +994,10 @@ sur Entr\*'ee.
 Passage d'une fen\*^etre ou d'une ic\*^one au premier plan
 .XS
 Fen\*^etres
-.XE
-.XS
 passage au premier plan
 .XE
 .XS
-Espaces de travail
-.XE
-.XS
+Espaces de travail, 
 passage
 des fen\*^etres au premier plan
 .XE
@@ -1144,8 +1015,6 @@ masqu\*'ee au premier plan, s\*'electionnez Espace de travail pr\*'ec\*'edent
 dans le menu Espace de travail.
 .XS
 Affichage
-.XE
-.XS
 fen\*^etres masqu\*'ees
 .XE
 .NH 4 
@@ -1170,8 +1039,6 @@ l'ordre inverse, appuyez sur Maj+Alt+Tab ou Maj+Alt+\*'Echap.
 Copie et collage de texte
 .XS
 Fen\*^etres
-.XE
-.XS
 copie et collage de texte
 .XE
 .PP
@@ -1191,23 +1058,13 @@ du Gestionnaire d'aide ou d'une fen\*^etre de message du Programme courrier
 et le coller dans une fen\*^etre de l'Editeur de texte, de l'\*'emulateur
 de terminal ou dans une fen\*^etre de composition du Programme courrier.
 .XS
-Texte
-.XE
-.XS
+Texte, 
 copie et collage
 .XE
 .NH 3 
 S\*'election du texte \*`a copier
 .XS
-Texte
-.XE
-.XS
-s\*'election
-.XE
-.XS
 S\*'election
-.XE
-.XS
 texte
 .XE
 .PP
@@ -1262,7 +1119,7 @@ texte
  Voir aussi:
 .IP -
  le 
-'chapitre n\(de 3, \*UAccès à l'aide"UG.GHelp.mkr.1",
+'chapitre n\(de 3, \*UAcc\*`es à l'aide"UG.GHelp.mkr.1",
 .IP -
  le chapitre n\(de 10,
 \*UUtilisation de l'Editeur de texteUtilisation de l'Editeur de texte,
@@ -1800,34 +1657,23 @@ center,box;
  
  
 l l.
- Caract\*`eres	
- Faites glisser le pointeur du premier
-au dernier caract\*`ere.
+ Caract\*`eres	Faites glisser le pointeur du premierau dernier caract\*`ere.
 .XS
-Texte
-.XE
-.XS
+Texte, 
 s\*'election de caract\*`eres
 .XE
 .XS
-Texte
-.XE
-.XS
+Texte, 
 s\*'election de mots
 .XE
 .XS
-Texte
-.XE
-.XS
+Texte, 
 s\*'election
 de lignes
 .XE
- Mot	
- Cliquez deux fois sur le mot.	
- Ligne	
- Cliquez trois fois sur la ligne.	
- Paragraphe	
- Cliquez quatre fois sur le paragraphe.
+ Mot	 Cliquez deux fois sur le mot.	
+ Ligne	Cliquez trois fois sur la ligne.	
+ Paragraphe	Cliquez quatre fois sur le paragraphe.
 .TE
  Pour d\*'es\*'electionner le texte, cliquez sur une zone vide
 de la fen\*^etre.
@@ -1847,48 +1693,28 @@ center,box;
  
  
 l l.
- Touche d'\*'edition	
- Fonction
- Fl\*`eche de d\*'eplacement
-	
- D\*'eplace le curseur d'insertion
-de texte.
- Retour arri\*`ere	
- Supprime le caract\*`ere situ\*'e
-\*`a gauche du curseur.
+ Touche d'\*'edition	 Fonction
+ Fl\*`eche de d\*'eplacement	D\*'eplace le curseur d'insertion
+	de texte.
+ Retour arri\*`ere	Supprime le caract\*`ere situ\*'e
+	\*`a gauche du curseur.
 .XS
 Touche
-.XE
-.XS
 Retour arri\*`ere
 .XE
+ Suppr ou touche de suppression	 Supprime le caract\*`ere situ\*'e
+	\*`a droite du curseur.
 .XS
-.XE
- Suppr ou touche de suppression	
- Supprime le caract\*`ere situ\*'e
-\*`a droite du curseur.
-.XS
-Texte
-.XE
-.XS
+Texte, 
 suppression
 .XE
-.XS
-Suppression
-.XE
-.XS
-texte
-.XE
-.XS
+.XS 
 Touche
-.XE
-.XS
 Suppr
 .XE
- Ctrl+Suppr \fI ou\fR 
-Ctrl+touche de suppression	
- Supprime le texte, de l'emplacement
-du curseur \*`a la fin de la ligne.
+ Ctrl+Suppr 		Supprime le texte, 
+ \fIou\fR Ctrl+touche de suppression	de l'emplacement du curseur
+	\*`a la fin de la ligne.
 .TE
 .IP \(rh
  Pour d\*'eplacer la zone d'entr\*'ee clavier
@@ -1896,9 +1722,7 @@ hors de la zone de texte, appuyez sur Ctrl+Tab.
 .NH 1 
 Utilisation des menus
 .XS
-Menu
-.XE
-.XS
+Menu, 
 utilisation
 .XE
 .PP
@@ -1922,24 +1746,14 @@ nom ou en tapant leur caract\*`ere\fI mn\*'emonique\fR
 (caract\*`ere soulign\*'e dans le nom d'un menu ou d'une option).
 .XS
 Menu
-.XE
-.XS
 mn\*'emoniques
 .XE
 .XS
 Mn\*'emoniques
-.XE
-.XS
 Affichage
 .XE
 .XS
-menu d\*'eroulant
-.XE
-.XS
-Menu
-.XE
-.XS
-d\*'eroulant
+Menu d\*'eroulant
 .XE
 .PSPIC "./graphics/BSPullmn.eps"
  La figure ci-dessus repr\*'esente le menu Fichier d'une application.
@@ -1951,9 +1765,7 @@ des menus.
 Raccourcis
 .XE
 .XS
-Menu
-.XE
-.XS
+Menu, 
 raccourcis
 .XE
 .IP -
@@ -1962,65 +1774,40 @@ qui apparaissent lorsque vous cliquez \*`a l'aide du bouton 3 de la souris
 ou que vous appuyez sur Maj+F10 dans une fen\*^etre d'application ou sur
 un objet de l'espace de travail.
 .XS
-Souris
-.XE
-.XS
+Souris, 
 bouton 3
 .XE
 .XS
-Affichage
-.XE
-.XS
+Affichage, 
 menu instantan\*'e
 .XE
 .XS
-.XE
-.XS
 Menu instantan\*'e
-.XE
-.XS
-.XE
-.XS
-affichage
 .XE
 .PSPIC "./graphics/BSObjpop.eps"
 .NH 2 
 Menu Fen\*^etre
 .XS
-Menu Fen\*^etre
-.XE
-.XS
-options
-.XE
-.XS
 Menu
+Fen\*^etre
 .XE
 .XS
-Fen\*^etre
+Menu Fen\*^etre, options
 .XE
 .PP
  Ce menu contient des options permettant de g\*'erer les fen\*^etres
 et les ic\*^ones de fen\*^etres.
  Il s'affiche lorsque vous:
 .XS
-Menu Fen\*^etre
-.XE
-.XS
+Menu Fen\*^etre, 
 affichage
 .XE
-.XS
-Affichage
-.XE
-.XS
-menu Fen\*^etre
-.XE
+
 .IP -
  cliquez sur le bouton situ\*'e
 dans l'angle sup\*'erieur gauche d'une fen\*^etre;
 .XS
 Bouton
-.XE
-.XS
 menu Fen\*^etre
 .XE
 .IP -
@@ -2035,39 +1822,27 @@ center,box;
  
  
 l l.
- Restaurer	
- Transforme l'ic\*^one en fen\*^etre.
- D\*'eplacer	
- Modifie l'emplacement de la fen\*^etre.
- Dimensionner	
- Modifie la taille d'une fen\*^etre
+ Restaurer	 Transforme l'ic\*^one en fen\*^etre.
+ D\*'eplacer	 Modifie l'emplacement de la fen\*^etre.
+ Dimensionner	 Modifie la taille d'une fen\*^etre
 (option inactive pour les ic\*^ones).
- R\*'eduire	
- R\*'eduit une fen\*^etre \*`a
-l'\*'etat d'ic\*^one.
- Agrandir	
- Agrandit une fen\*^etre jusqu'\*`a
-sa taille maximale autoris\*'ee.
- Derri\*`ere	
- Fait passer une fen\*^etre \*`a
-l'arri\*`ere-plan.
- Occuper l'espace de travail	
- Permet de choisir les espaces de travail
-dans lesquels faire appara\*^itre une fen\*^etre.
- Occuper tous les espaces de travail
-	
- Affiche une fen\*^etre dans chaque
-espace de travail.
- Fermer	
- Ferme la fen\*^etre et la supprime
-de l'espace de travail.
+ R\*'eduire	R\*'eduit une fen\*^etre \*`a
+	l'\*'etat d'ic\*^one.
+ Agrandir	Agrandit une fen\*^etre jusqu'\*`a
+	sa taille maximale autoris\*'ee.
+ Derri\*`ere	 Fait passer une fen\*^etre \*`a
+	l'arri\*`ere-plan.
+ Occuper l'espace de travail	Permet de choisir les espaces de travail
+	dans lesquels faire appara\*^itre une fen\*^etre.
+ Occuper tous les espaces de travail	 Affiche une fen\*^etre dans chaque
+	espace de travail.
+ Fermer	 Ferme la fen\*^etre et la supprime
+	de l'espace de travail.
 .TE
 .NH 2 
 Menu Espace de travail
 .XS
-Menu
-.XE
-.XS
+Menu, 
 Espace de travail
 .XE
 .PP
@@ -2087,15 +1862,11 @@ center,box;
  
  
 l l.
- Espace de travail pr\*'ec\*'edent
-	
- Fait passer la derni\*`ere fen\*^etre
-de la pile au premier plan.
- Espace de travail suivant	
- Fait passer la premi\*`ere fen\*^etre
-de la pile \*`a l'arri\*`ere-plan.
- R\*'eg\*'en\*'erer	
- R\*'eg\*'en\*`ere l'affichage.
+ Espace de travail pr\*'ec\*'edent	Fait passer la derni\*`ere fen\*^etre
+	de la pile au premier plan.
+ Espace de travail suivant	Fait passer la premi\*`ere fen\*^etre
+	de la pile \*`a l'arri\*`ere-plan.
+ R\*'eg\*'en\*'erer	 R\*'eg\*'en\*`ere l'affichage.
 .XS
 .XE
 .XS
@@ -2109,19 +1880,15 @@ Ecran
 .XS
 r\*'eg\*'en\*'eration
 .XE
- R\*'eduire/Restaurer Tableau de
-bord	
- R\*'eduit le Tableau de bord \*`a
-l'\*'etat d'ic\*^one ou le r\*'etablit.
- Relancer Gestionnaire de l'esp. de
-travail	
- Arr\*^ete le Gestionnaire de l'espace
-de travail, puis le relance (cette option est g\*'en\*'eralement utilis\*'ee
-apr\*`es une modification des fichiers de configuration).	
- Fermer session	
- Lance le processus de fermeture de
-la session (\*'equivalent \*`a l'ic\*^one de sortie du Tableau
-de bord).
+ R\*'eduire/Restaurer Tableau de bord	 R\*'eduit le Tableau de bord \*`a
+	l'\*'etat d'ic\*^one ou le r\*'etablit.
+ Relancer Gestionnaire de l'esp. de	Arr\*^ete le Gestionnaire de l'espace
+travail	de travail, puis le relance
+	(cette option est g\*'en\*'eralement utilis\*'ee
+	apr\*`es une modification des fichiers de configuration).	
+ Fermer session	Lance le processus de fermeture de
+	la session (\*'equivalent \*`a l'ic\*^one
+	de sortie du Tableau de bord).
 .TE
 *
 .FS
@@ -2133,8 +1900,6 @@ de bord).
 S\*'election d'une option du menu Fen\*^etre
 .XS
 S\*'election
-.XE
-.XS
 option du menu Fen\*^etre
 .XE
 .PP
@@ -2183,8 +1948,7 @@ travail.
  Tout en maintenant le bouton droit enfonc\*'e, faites
 glisser la souris sur l'option, puis rel\*^achez le bouton.
  Pour fermer le menu sans s\*'electionner d'option, cliquez une fois
-\*`a l'ext\*'erieur du menu.
-*
+\*`a l'ext\*'erieur du menu.*
 .FS
 * 
  Les options du menu Espace de travail ne peuvent \*^etre s\*'electionn\*'ees
@@ -2194,9 +1958,7 @@ glisser la souris sur l'option, puis rel\*^achez le bouton.
 .NH 2 
 S\*'election d'une option de menu \*`a l'aide de la souris
 .XS
-Souris
-.XE
-.XS
+Souris, 
 s\*'election d'une option de menu
 .XE
 .PP
@@ -2312,10 +2074,10 @@ D\*'econnexion
 D\*'econnexion
 .XE
 .PP
-<caution>
+.B1
  Avant de sortir du Bureau, enregistrez votre travail dans les fen\*^etres
 d'applications ouvertes, sur tous les espaces de travail.
-</caution>
+.B2
 .IP -
  Cliquez sur l'ic\*^one de
 sortie du Tableau de bord.
@@ -2449,7 +2211,7 @@ F1
  ouvrir le Gestionnaire d'aide pour consulter la totalit\*'e
 de l'aide disponible.
  Pour plus de d\*'etails sur l'utilisation de l'aide, reportez-vous
-au chapitre n\(de 3, \*UAccès à l'aide
+au chapitre n\(de 3, \*UAcc\*`es à l'aide
 role="ChapNumAndTitle" "UG.GHelp.mkr.1".
  Le moyen le plus simple et le plus rapide d'acc\*'eder \*`a
 l'aide consiste \*`a appuyer sur la touche F1; cette op\*'eration
@@ -2468,29 +2230,25 @@ Menu
 .XS
 Aide
 .XE
- .PSPIC "./graphics/BSHlpmnu.eps"
+.PSPIC "./graphics/BSHlpmnu.eps"
 .TS
 center,box;
  
  
 l l.
- G\*'en\*'eralit\*'es	
- Affiche une pr\*'esentation de
-l'application.
- T\*^aches	
- Affiche des instructions sur l'utilisation
-de l'application.
- R\*'ef\*'erence	
- Affiche une description des \*'el\*'ements
-de l'application.
- Sur l'\*'el\*'ement	
- Transforme le pointeur en point d'interrogation
-; cliquez ensuite sur un \*'el\*'ement pour en afficher la description.
+ G\*'en\*'eralit\*'es	 Affiche une pr\*'esentation de
+	l'application.
+ T\*^aches	 Affiche des instructions sur l'utilisation
+	de l'application.
+ R\*'ef\*'erence	 Affiche une description des \*'el\*'ements
+	de l'application.
+ Sur l'\*'el\*'ement	 Transforme le pointeur en point
+	d'interrogation; cliquez ensuite sur un \*'el\*'ement
+	pour en afficher la description.
 .XS
 Pointeur d'aide
 .XE
- Aide sur l'aide	
- Affiche des informations sur l'utilisation
+ Aide sur l'aide	 Affiche des informations sur l'utilisation
 de l'aide.
  A propos de...	
  Affiche des informations sur la version
@@ -2507,7 +2265,7 @@ ligne install\*'es sur le syst\*`eme.
 .IP \(rh
  Cliquez sur le panneau secondaire Gestionnaire des informations,
 dans le Tableau de bord.
- .PSPIC "./graphics/infosubp.eps"
+.PSPIC "./graphics/infosubp.eps"
 .IP \(rh
  Cliquez sur Gestionnaire d'aide.
  La fen\*^etre de visualisation de l'aide s'ouvre et affiche le Gestionnaire
@@ -2550,7 +2308,7 @@ afficher
 des graphiques et des liens hypertexte. On appelle ces collections des "biblioth\*`eques
 d'informations". Une biblioth\*`eque d'informations consiste en une collection
 de rayons contenant chacun une s\*'erie de livres.
- .PSPIC "./graphics/fpinfico.eps"
+.PSPIC "./graphics/fpinfico.eps"
  Vous pouvez acc\*'eder \*`a cette documentation en ligne d'une
 des mani\*`eres suivantes:
 .XS
@@ -2563,7 +2321,7 @@ informations
  Faites glisser une ic\*^one Biblioth\*`eque d'informations
 du bureau vers le dispositif de contr\*^ole Gestionnaire des informations
 dans le Tableau de bord.
- .PSPIC "./graphics/ilibico.eps"
+.PSPIC "./graphics/ilibico.eps"
 .IP -
  Cliquez sur l'ic\*^one Gestionnaire des informations dans
 la fen\*^etre Gestionnaire d'applications.
@@ -2618,7 +2376,6 @@ ou suivantes. Cliquez sur des liens hypertexte (affich\*'es en gras et
 soulign\*'es) pour vous d\*'eplacer dans le livre.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000114282>
 \" <!-- $XConsortium: ch02.sgm /main/9 1996/12/20 20:42:35 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -2644,23 +2401,18 @@ les options disponibles. Outre votre session de Bureau, vous pouvez lancer
 une session monofen\*^etre et s\*'electionner une langue de travail
 sp\*'ecifique.
 .TS
-center,box;
+center,allbox;
  
- 
+c  
 l.
- Lancement
-et arrêt d'une session37Lancement et arr\*^et d'une session	
- Utilisation
-d'une session dans une langue différente39Utilisation d'une session dans une langue diff\*'erente	
- Lancement
-d'une session à fenêtre unique39Lancement d'une session monofen\*^etre	
- Lancement
-d'une session à partir de la -->\" <!--ligne de commande40
-Lancement d'une session \*`a partir de la	
- Utilisation
-d'une session initiale40Utilisation d'une session initiale	
+Contenu du chapitre 
+Lancement et arr\*^et d'une session	
+Utilisation d'une session dans une langue diff\*'erente	
+Lancement d'une session monofen\*^etre	
+Lancement d'une session \*`a partir de la ligne de commande
+Utilisation d'une session initiale	
 .TE
-.NH 1 
+.NH 0  
 Lancement et arr\*^et d'une session
 .PP
  Une fois que le Gestionnaire de connexion a reconnu vos nom d'utilisateur
@@ -3001,8 +2753,6 @@ une) ou une nouvelle session utilisateur.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
 <?
-<?Pub *0000030921>
-<?Pub EntList alpha bull copy rArr sect trade ocirc>
 \" <!-- $XConsortium: ch03.sgm /main/13 1996/12/21 19:05:49 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -3015,8 +2765,6 @@ une) ou une nouvelle session utilisateur.
  Acc\*`es \*`a l'aide
 .XS
 Aide
-.XE
-.XS
 en ligne
 .XE
 .LP
@@ -3029,36 +2777,28 @@ par l'interm\*'ediaire du Gestionnaire d'aide du Bureau.
 faire appel au syst\*`eme d'aide du Bureau ou utiliser leur propre syst\*`eme
 d'aide en ligne.
 .TS
-center,box;
+center,allbox;
  
- 
+c  
 l.
- Demande
-d'aide44Demande d'aide	
- Utilisation
-des fenêtres d'aide48Utilisation des fen\*^etres d'aide	
- Sélection
-des sujets d'aide49S\*'election des rubriques d'aide	
- Déplacement
-entre les sujets d'aide51D\*'eplacement entre les rubriques d'aide	
- Recherche
-d'informations spécifiques56Recherche d'informations sp\*'ecifiques	
- Consultation
-de l'aide sur le système58-->\" <!--Consultation de l'aide sur le syst\*`eme	
- Impression
-des sujets d'aide62Impression des rubriques d'aide	
+Contenu du chapitre 
+Demande d'aide	
+Utilisation des fen\*^etres d'aide	
+S\*'election des rubriques d'aide	
+D\*'eplacement entre les rubriques d'aide	
+Recherche d'informations sp\*'ecifiques	
+Consultation de l'aide sur le syst\*`eme	
+Impression des rubriques d'aide	
 .TE
 .NH 1 
 Demande d'aide
 .PP
- \fC
+
 .XS
 Aide
-.XE
-.XS
 sur l'application
 .XE
-\fRVous pouvez invoquer l'aide de diff\*'erentes
+Vous pouvez invoquer l'aide de diff\*'erentes
 fa\*,cons:
 .IP -
  appuyez sur F1 (\*Qtouche
@@ -3090,14 +2830,12 @@ exploit\*'ee affiche alors un rubrique d'aide se rapportant \*`a l'\*'el\*'ement
 \(em une fen\*^etre ou un bouton, par exemple \(em mis en \*'evidence.
 .XS
 Aide
-.XE
-.XS
 contextuelle
 .XE
  L'application
 d\*'eterminant le rubrique d'aide le plus appropri\*'e, ce type d'aide
 est appel\*'e \fI contextuel\fR .
- La touche F1 est un moyen rapide d'acc\*'eder \*`a l'aide sur
+ La touche F1* est un moyen rapide d'acc\*'eder \*`a l'aide sur
 un menu d'une application ou sur une bo\*^ite de dialogue. Par exemple,
 pour demander de l'aide sur le menu Fichier du Gestionnaire de fichiers, affichez
 ce menu et appuyez sur F1. Le Gestionnaire de fichiers affiche une description
@@ -3105,10 +2843,9 @@ de chaque \*'el\*'ement du menu. Ou, si une bo\*^ite de dialogue
 est ouverte,appuyez sur F1 pour afficher une explication pertinente. Cette
 touche est un raccourci et \*'equivaut \*`a cliquer sur le bouton
 Aide de la bo\*^ite de dialogue.
-*
+
 .FS
-* 
- Certains ordinateurs poss\*`edent une touche \*QAide\*U
+* Certains ordinateurs poss\*`edent une touche \*QAide\*U
 d\*'edi\*'ee sur le clavier. Si tel est le cas sur le v\*^otre,
 elle remplace la touche F1.
 .FE
@@ -3127,29 +2864,24 @@ center,box;
  
  
 l l.
- G\*'en\*'eralit\*'es	
- Affiche le \fI sujet initial\fR  de l'application. Il s'agit du premier niveau de la hi\*'erarchie
-des aides de l'application.	
- Table des mati\*`eres	
- Liste toutes les rubriques de la hi\*'erarchie
-des rubriques de l'aide de l'application.	
- T\*^aches	
- Affiche des instructions pour la plupart
-des op\*'erations possibles avec l'application concern\*'ee.	
- R\*'ef\*'erence	
- Affiche une pr\*'esentation de
-diff\*'erents \*'el\*'ements, tels que les fen\*^etres, les
-bo\*^ites de dialogue, les menus et les ressources de l'application.	
- Sur l'\*'el\*'ement	
- Permet de cliquer sur un \*'el\*'ement
-dans une fen\*^etre quelconque de l'application et d'afficher une description
-de l'\*'el\*'ement.	
- Aide sur l'aide	
- Fournit de l'aide sur l'utilisation
-des fen\*^etres d'aide.	
- \*`A propos de\fI ...\fR 	
- Affiche la version et le copyright
-de l'application.	
+ G\*'en\*'eralit\*'es	Affiche le \fI sujet initial\fR
+	de l'application. Il s'agit du premier niveau de la
+	hi\*'erarchie des aides de l'application.	
+ Table des mati\*`eres	Liste toutes les rubriques de la hi\*'erarchie
+	des rubriques de l'aide de l'application.	
+ T\*^aches	Affiche des instructions pour la plupart
+	des op\*'erations possibles avec l'application concern\*'ee.	
+ R\*'ef\*'erence	Affiche une pr\*'esentation de
+	diff\*'erents \*'el\*'ements, tels que
+	les fen\*^etres, les bo\*^ites de dialogue,
+	les menus et les ressources de l'application.	
+ Sur l'\*'el\*'ement	Permet de cliquer sur un \*'el\*'ement
+	dans une fen\*^etre quelconque de l'application
+	et d'afficher une description de l'\*'el\*'ement.	
+ Aide sur l'aide	Fournit de l'aide sur l'utilisation
+	des fen\*^etres d'aide.	
+ \*`A propos de\fI ...\fR 	 Affiche la version et le copyright
+	de l'application.	
 .TE
  Les applications peuvent pr\*'esenter d'autres options d'aide. Il
 en est de m\*^eme des menus d'aide des applications non-CDE.
@@ -3194,8 +2926,7 @@ Ic\*^one du Gestionnaire d'aide
  Cliquez sur l'un des titres soulign\*'es pour consulter les informations
 d'aide correspondantes. Pour obtenir des instructions suppl\*'ementaires
 sur l'utilisation du Gestionnaire d'aide, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QConsultation de l'aide sur le système-->\" <!--\*Q,
-page n\(de 58Consultation de l'aide sur le syst\*`eme.
+\*QConsultation de l'aide sur le syst\*'eme\*U.
  Vous pouvez \*'egalement acc\*'eder directement aux aides relatives
 au Bureau et au Tableau de bord \*`a partir du tableau secondaire Aide.
 .NH 1 
@@ -3275,8 +3006,7 @@ compl\*'ementaires. Tout texte soulign\*'e dans une fen\*^etre
 d'aide est un hyperlien.
  Des images graphiques peuvent \*'egalement \*^etre utilis\*'ees
 comme hyperliens. Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QUtilisation des hyperliens\*Q, p-->\" <!--age n\(de 50
-role="SecTitleAndPageNum" Utilisation des hyperliens.
+'\*QUtilisation des hyperliens\*U.
 .NH 2 
 Utilisation de l'arborescence des rubriques
 .PP
@@ -3289,7 +3019,7 @@ d\*'efiler l'arborescence pour afficher toutes vos s\*'elections ou
 redimensionner la fen\*^etre d'aide.
  Vous pouvez \*'egalement modifier la taille de la zone d'affichage
 de rubrique. Pour ce faire, faites glisser la manette de r\*'eglage ( \" <!--Original
-XRef content: 'Figure n\(de 3\(hy5
+Figure n\(de 3\(hy5
 Redimensionnement de la zone d'affichage des rubriques), puis rel\*^achez le bouton de la souris pour
 d\*'efinir la nouvelle taille.
 Redimensionnement de la zone d'affichage des rubriques
@@ -3315,7 +3045,7 @@ Aspect des hyperliens
  Un hyperlien standard est caract\*'eris\*'e par un trait de
 soulignement continu. Ce type de lien affiche la nouvelle rubrique dans la
 fen\*^etre d'aide courante. Le dernier paragraphe de la \" <!--Original XRef
-content: 'Figure n\(de 3\(hy5Redimensionnement de la zone d'affichage des rubriques
+Figure n\(de 3\(hy5Redimensionnement de la zone d'affichage des rubriques
 pr\*'esente un hyperlien de ce type.
  Un trait de soulignement discontinu caract\*'erise un \fI lien de d\*'efinition\fR , qui affiche une fen\*^etre d'aide
 rapide.
@@ -3386,16 +3116,15 @@ center,box;
  
  
 l l.
- Revenir	
- Permet de retourner \*`a la rubrique
-d'aide pr\*'ec\*'edente.	
- Historique	
- Affiche la bo\*^ite de dialogue
-Historique qui liste les utilitaires et rubriques d'aide consult\*'es.
-S\*'electionnez une rubrique d'aide pour y retourner.	
- Sujet initial	
- Permet de revenir \*`a la rubrique
-initiale ou au d\*'ebut du volume d'aide.	
+ Revenir	 Permet de retourner \*`a la rubrique
+	d'aide pr\*'ec\*'edente.	
+ Historique	Affiche la bo\*^ite de dialogue
+	Historique qui liste les utilitaires
+	et rubriques d'aide consult\*'es.
+	S\*'electionnez une rubrique d'aide
+	pour y retourner.	
+ Sujet initial	 Permet de revenir \*`a la rubrique
+	initiale ou au d\*'ebut du volume d'aide.	
 .TE
  Revenir et Historique existent \*'egalement sous forme de boutons
 de fonction.
@@ -3574,7 +3303,7 @@ tapez le mot ou la phrase \*`a rechercher et appuyez sur Entr\*'ee.
  La recherche traite indiff\*'eremment les majuscules et minuscules.
 Les caract\*`eres g\*'en\*'eriques tels que l'ast\*'erisque
 (*) et le point d'interrogation (?) peuvent \*^etre utilis\*'es (reportez-vous
-\*`a la section \*QSchémas de recherche
+\*`a la section \*QSch\*'emas de recherche
 role="SectionTitle" Sch\*'emas de recherche ci- dessous).
 .IP \(rh
  S\*'electionnez l'entr\*'ee d'index \*`a
@@ -3603,14 +3332,11 @@ center,box;
  
  
 l l.
- . (point)	
- Repr\*'esente un caract\*`ere
+ . (point)	Repr\*'esente un caract\*`ere
 quelconque.	
- | (barre verticale)	
- Sp\*'ecifie deux sch\*'emas
-de recherche et correspond aux deux (OU logique).	
- () (parenth\*`eses)	
- Encadrent une expression.	
+ | (barre verticale)	Sp\*'ecifie deux sch\*'emas
+	de recherche et correspond aux deux (OU logique).	
+ () (parenth\*`eses)	 Encadrent une expression.	
 .TE
  Pour rechercher dans une expression r\*'eguli\*`ere un caract\*`ere
 ayant une signification particuli\*`ere, faites-le pr\*'ec\*'eder
@@ -3623,17 +3349,14 @@ center,box;
  
  
 l l.
- souris.*clic	
- Recherche les entr\*'ees contenant
-le mot "souris" suivies d'un certain nombre de caract\*`eres, puis de
-"clic".	
- souris | clic	
- Recherche les entr\*'ees contenant
-le mot "souris" ou "clic".	
- Gestionnaire.*(session | configuration)
-	
- Recherche les entr\*'ees contenant
-"Gestionnaire de sessions" ou "Gestionnaire de configuration".	
+ souris.*clic	Recherche les entr\*'ees contenant
+	le mot "souris" suivies d'un certain nombre
+	de caract\*`eres, puis de "clic".	
+ souris | clic	Recherche les entr\*'ees contenant
+	le mot "souris" ou "clic".	
+ Gestionnaire.*(session | configuration)	Recherche les
+	entr\*'ees contenant "Gestionnaire de sessions"
+	ou "Gestionnaire de configuration".	
 .TE
 .NH 1 
 Consultation de l'aide sur le syst\*`eme
@@ -3741,9 +3464,8 @@ Fermer dans le menu Fichier.
 * 
  L'option Nouvelle fen\*^etre est uniquement disponible dans la fen\*^etre
 d'aide du Gestionnaire d'aide (reportez-vous \*`a la section \" <!--Original
-XRef content: 'Utilisation du Gestionnaire d'aide \" <!--Original
-XRef content: '\*QConsultation de l'aide sur le système\*Q, page n\(de 58
-role="SecTitleAndPageNum" Consultation de l'aide sur le syst\*`eme).
+Utilisation du Gestionnaire d'aide \" <!--Original
+'\*QConsultation de l'aide sur le syst\*`eme\*Q. 
 .FE
  
 .NH 1 
@@ -3850,20 +3572,14 @@ center,box;
  
  
 l l.
- Sujet en cours (valeur par d\*'efaut)
+ Sujet en cours (valeur par d\*'efaut)	 Imprime uniquement la rubrique en cours.
 	
- Imprime uniquement la rubrique en cours.
-	
- Sujet en cours et sous-sujets	
- Imprime la rubrique actuelle et ses
-sous-rubriques.	
- Table des mati\*`eres et index
-	
- Imprime la table des mati\*`eres
-et l'index du volume d'aide.	
- Tous les sujets du volume	
- Imprime le contenu du volume d'aide,
-y compris la table des mati\*`eres et l'index.	
+ Sujet en cours et sous-sujets	Imprime la rubrique actuelle et ses
+	sous-rubriques.	
+ Table des mati\*`eres et index	 Imprime la table des mati\*`eres
+	et l'index du volume d'aide.	
+ Tous les sujets du volume	 Imprime le contenu du volume d'aide,
+	y compris la table des mati\*`eres et l'index.	
 .TE
 .IP \(rh
  Cliquez sur Imprimer.
@@ -3929,6 +3645,7 @@ d'une application
 .IP \(rh
  \*'Editez votre fichier \fC \fCR\*'epPersonnel\fR/.Xdefaults\fR en ajoutant les ressources
 suivantes:
+.DS
 .CW
 \fCnom_application\fR*DtHelpDialog*DisplayArea.foreground: \fCcouleur
 nom_application\fR*DtHelpDialog*DisplayArea.background: \fCcouleur
@@ -3937,6 +3654,7 @@ nom_application\fR*DtHelpDialog*TocArea.background: \fCcouleur
 non_application\fR*DtHelpQuickDialog*DisplayArea.foreground: \fCcouleur
 nom_application\fR*DtHelpQuickDialog*DisplayArea.background:\fCcouleur\fR
 .R
+.DE 
  Substituez \*`a\fCnom_application\fR
 le nom de l'application dont vous souhaitez modifier les fen\*^etres d'aide.
  Pour obtenir la liste de couleurs disponibles, faites appel \*`a
@@ -3953,6 +3671,7 @@ Exemple
  Ces entr\*'ees de ressources modifient les couleurs d'avant- et
 d'arri\*`ere-plan de l'arborescence (TocArea) et de la zone d'affichage
 des sujets (DisplayArea) de l'application DtCardCatalog.
+.DS
 .CW
 DtCardCatalog*DtHelpDialog*TocArea.foreground:  yellow
 DtCardCatalog*DtHelpDialog*TocArea.background:  blue
@@ -3961,13 +3680,13 @@ DtCardCatalog*DtHelpDialog*DisplayArea.background:  blue
 DtCardCatalog*DtHelpQuickDialog*DisplayArea.foreground:  yellow
 DtCardCatalog*DtHelpQuickDialog*DisplayArea.background:  blue
 .R
+.DE 
  \*'Etant donn\*'e que les fen\*^etres d'aide rapide ne contiennent
 pas d'arborescence, la ressource \fCTocArea\fR n'est pas
 utilis\*'ee.
  
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000061311>
 \" <!-- $XConsortium: ch04.sgm /main/12 1996/12/21 19:05:55 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -3981,27 +3700,24 @@ utilis\*'ee.
 .LP
  
 .XS
-Tableau de bord<$startrange>
+Tableau de bord
 .XE
 Le
 Tableau de bord est une fen\*^etre sp\*'eciale du Bureau contenant
 un ensemble d'ic\*^ones permettant d'effectuer des t\*^aches courantes.
 Il vous accompagne lorsque vous changez d'espace de travail.
 .TS
-center,box;
+center,allbox;
  
- 
+c 
 l.
- Connaissances
-de base du Tableau de bord70Connaissances de base du Tableau de bord	
- Aperçu
-du Tableau de bord75Aper\*,cu du Tableau de bord	
- Personnalisation
-du Tableau de bord81	
- Personnalisation
-des espaces de travail85Personnalisation des espaces de travail	
+Contenu du chapitre  
+Connaissances de base du Tableau de bord
+Aper\*,cu du Tableau de bord	
+Personnalisation du Tableau de bord
+Personnalisation des espaces de travail
 .TE
-.NH 1 
+.NH 0  
 \*'El\*'ements du Tableau de bord
 .PP
  Les deux principaux \*'el\*'ements sont le Tableau de bord et
@@ -4214,15 +3930,12 @@ center,box;
  
  
 l l.
- Ajouter un panneau secondaire	
- Ajoute un panneau secondaire \*`a
-l'ic\*^one.
- Supprimer un panneau secondaire	
- Supprime un panneau secondaire et son
-contenu.
- Aide	
- Affiche l'aide Sur l'\*'el\*'ement
-de l'ic\*^one.
+ Ajouter un panneau secondaire	 Ajoute un panneau secondaire \*`a
+	l'ic\*^one.
+ Supprimer un panneau secondaire	 Supprime un panneau secondaire et son
+	contenu.
+ Aide	 Affiche l'aide Sur l'\*'el\*'ement
+	de l'ic\*^one.
 .TE
 .NH 4 
 Zone de commutation
@@ -4244,12 +3957,10 @@ center,box;
  
  
 l l.
- Ajouter un espace de travail	
- Ajoute un espace de travail et cr\*'ee
-un bouton d'espace de travail dans le s\*'electeur.
- Aide	
- Affiche l'aide du s\*'electeur
-d'espace de travail
+ Ajouter un espace de travail	 Ajoute un espace de travail et cr\*'ee
+	un bouton d'espace de travail dans le s\*'electeur.
+ Aide	 Affiche l'aide du s\*'electeur
+	d'espace de travail
 .TE
 .NH 4 
 Boutons d'espaces de travail
@@ -4264,11 +3975,9 @@ center,box;
  
  
 l l.
- Ajouter un espace de travail	
- Ajoute un espace de travail \*`a
-votre liste.
- Supprimer	
- Supprimer l'espace de travail.	
+ Ajouter un espace de travail	 Ajoute un espace de travail \*`a
+	votre liste.
+ Supprimer	 Supprimer l'espace de travail.	
  
 .XS
 Espaces de travail
@@ -4282,9 +3991,8 @@ Modification du nom
 .XS
 espace de travail
 .XE
-Renommer	
- Transforme le bouton en zone de texte
-\*'editable.
+Renommer	 Transforme le bouton en zone de texte
+	\*'editable.
  
 .XS
 S\*'electeur
@@ -4293,9 +4001,8 @@ d'espace de travail
 .XS
 aide
 .XE
-Aide	
- Affiche l'aide du s\*'electeur
-d'espace de travail
+Aide	 Affiche l'aide du s\*'electeur
+	d'espace de travail
 .TE
 .NH 4 
 Ic\*^ones du panneau secondaire
@@ -4329,9 +4036,8 @@ Tableau de bord
 d\*'eplacement de l'ic\*^one de panneau secondaire
 vers
 .XE
-Copier dans le panneau principal	
- Duplique l'ic\*^one du Tableau de
-bord et remplace celle en cours.
+Copier dans le panneau principal	 Duplique l'ic\*^one du Tableau de
+	bord et remplace celle en cours.
  
 .XS
 Ic\*^ones
@@ -4347,11 +4053,9 @@ ic\*^ones de panneaux secondaires
 .XE
 .XS
 .XE
-Supprimer	
- Supprime l'ic\*^one du panneau secondaire.
- Aide	
- Affiche l'aide Sur l'\*'el\*'ement
-de l'ic\*^one.
+Supprimer	 Supprime l'ic\*^one du panneau secondaire.
+ Aide	 Affiche l'aide Sur l'\*'el\*'ement
+	de l'ic\*^one.
 .TE
 .NH 2 
 Aide du Tableau de bord
@@ -4507,8 +4211,8 @@ Ic\*^one
 .XS
 Horloge
 .XE
-Horloge	 Sans effet	Sans effet	Heure du jour .PSPIC "./graphics/fpcal.eps"
- 
+Horloge	 Sans effet	Sans effet	Heure du jour
+.PSPIC "./graphics/fpcal.eps" 
 .XS
 Ic\*^one
 .XE
@@ -4518,23 +4222,17 @@ Calendrier
 Agenda	 Lance l'application Agenda	La pose d'un fichier de
 		rendez-vous ajoute ce dernier \*`a l'agenda	
 			Date du jour
-				.PSPIC "./graphics/fpfile.eps"
- 
+.PSPIC "./graphics/fpfile.eps" 
 .XS
 Ic\*^one
 .XE
 .XS
 Gestionnaire de fichiers
 .XE
-Gestionnaire de
-fichiers	
- Ouvre une vue du Gestionnaire de fichiers
-de votre dossier personnel	
- La pose d'un dossier ouvre une vue
-du Gestionnaire de fichiers de ce dossier	
- Sans effet
-.PSPIC "./graphics/fptext.eps"
- 
+Gestionnaire de fichiers	 Ouvre une vue	La pose d'un dossier	Sans effet
+	du Gestionnaire de fichiers	du Gestionnaire de fichiers
+	de votre dossier personnel	 ouvre une vue de ce dossier
+.PSPIC "./graphics/fptext.eps" 
 .XS
 Ic\*^one
 .XE
@@ -4547,14 +4245,10 @@ Ic\*^one
 .XS
 Applications personnelles
 .XE
-Applications
-personnelles (Editeur de texte)	
- Lance l'Editeur de texte.	
- Ouvre le fichier dans une nouvelle
-fen\*^etre de l'Editeur de texte.	
- Sans effet
+Applications personnelles	Lance l'Editeur de texte.	Ouvre	 Sans effet
+		le fichier dans une nouvelle	
+(Editeur de texte)		fen\*^etre de l'Editeur de texte.	
 .PSPIC "./graphics/fpmail1.eps"
- 
 .XS
 Ic\*^one
 .XE
@@ -4562,40 +4256,30 @@ Ic\*^one
 Courrier
 .XE
 Courrier	
- Lance l'application Courrier	
- Ouvre le contenu du fichier dans la
-fen\*^etre Nouveau message du programme Courrier	
- Change d'aspect lors de l'arriv\*'ee
-d'un message
+ Lance l'application Courrier	 Ouvre le contenu 	 Change d'aspect 
+	du fichier dans la fen\*^etre	lors de l'arriv\*'ee
+	Nouveau message du programme Courrier	d'un message
 .PSPIC "./graphics/fplock.eps"
- 
-.XS
+ .XS
 Ic\*^one
 .XE
 .XS
 Verrouillage
 .XE
-Verrouillage	
- Verrouille l'\*'ecran et le clavier.
-Entrez votre mot de passe pour d\*'everrouiller le syst\*`eme.	
- Sans effet	
- Sans effet
+Verrouillage	 Verrouille l'\*'ecran	 Sans effet	 Sans effet
+	et le clavier.
+	Entrez votre mot de passe pour
+	d\*'everrouiller le syst\*`eme.	
+
 .PSPIC "./graphics/fpswitch.eps"
- S\*'electeur d'espace de travail
-	
- Change d'espace de travail	
- Sans effet	
- Indique l'espace de travail courant
+ S\*'electeur d'espace de travail	 Change d'espace de travail	 Sans effet	 Indique l'espace de travail courant
 .PSPIC "./graphics/fpbusy.eps"
  
 .XS
 T\*'emoin d'activit\*'e
 .XE
-T\*'emoin d'activit\*'e	
- Sans effet	
- Sans effet	
- Clignote lorsque le syst\*`eme
-ex\*'ecute une action
+T\*'emoin d'activit\*'e	 Sans effet	 Sans effet	 Clignote lorsque le syst\*`eme
+		ex\*'ecute une action
 .PSPIC "./graphics/fpprint.eps"
  
 .XS
@@ -4604,26 +4288,18 @@ Ic\*^one
 .XS
 Imprimante
 .XE
-Imprimante (par d\*'efaut)
-	
- Affiche l'\*'etat de l'imprimante
-par d\*'efaut	
- Imprime le fichier sur l'imprimante
-	
- Sans effet
-.PSPIC "./graphics/fpexit.eps"
+Imprimante (par d\*'efaut)	 Affiche l'\*'etat de l'imprimante	Imprime le fichier sur l'imprimante	 Sans effet
+	par d\*'efaut	
  
+
+.PSPIC "./graphics/fpexit.eps" 
 .XS
 Ic\*^one
 .XE
 .XS
 Quitter
 .XE
-Quitter	
- D\*'econnexion de la session en
-cours	
- Sans effet	
- Sans effet
+Quitter	 D\*'econnexion de la session en cours	 Sans effet	Sans effet
 .PSPIC "./graphics/fpstyle.eps"
  
 .XS
@@ -4638,11 +4314,7 @@ Tableau de bord
 .XS
 ic\*^one Gestionnaire de configuration
 .XE
-Gestionnaire de configuration	
- Ouvre le Gestionnaire de configuration
-	
- Sans effet	
- Sans effet
+Gestionnaire de configuration	 Ouvre le Gestionnaire de configuration	 Sans effet	 Sans effet
 .PSPIC "./graphics/fpappmag.eps"
  
 .XS
@@ -4651,40 +4323,24 @@ Ic\*^one
 .XS
 Gestionnaire d'applications
 .XE
-Gestionnaire
-d'applications	
- Ouvre une fen\*^etre du Gestionnaire
-d'applications	
- Sans effet	
- Sans effet
+Gestionnaire d'applications	 Ouvre une fen\*^etre du Gestionnaire	 Sans effet	Sans effet
+	d'applications
 .PSPIC "./graphics/infoico.eps"
- Gestionnaire des informations
+ Gestionnaire des informations	Ouvre une fen\*^etre Liste des livres	 L'action de rel\*^acher une ic\*^one	 Aucune	
+	 \*'enum\*'erant les biblioth\*`eques d'informations disponibles. Biblioth\*`eque d'informations ouvre une fen\*^etre Liste des livres
+		pour cette biblioth\*`eque d'informations.
 .XS
 Gestionnaire des informations, dispositif de contr\*^ole
-.XE
-	
- Ouvre une fen\*^etre Liste des livres
-\*'enum\*'erant les biblioth\*`eques d'informations disponibles.
-	
- L'action de rel\*^acher une ic\*^one
-Biblioth\*`eque d'informations ouvre une fen\*^etre Liste des livres
-pour cette biblioth\*`eque d'informations.	
- Aucune	
-.PSPIC "./graphics/fptrash.eps"
- 
+.XE	
+.PSPIC "./graphics/fptrash.eps" 
 .XS
 Ic\*^one
 .XE
 .XS
 Corbeille
 .XE
-Corbeille	
- Ouvre la fen\*^etre de la Corbeille.
-	
- D\*'eplace le fichier dans la Corbeille.
-	
- Aspect diff\*'erent lorsque la
-Corbeille est vide ou non.
+Corbeille	 Ouvre la fen\*^etre de la Corbeille.	 D\*'eplace le fichier dans la Corbeille.	 Aspect diff\*'erent lorsque la
+	Corbeille est vide ou non.
 .TE
 .NH 2 
 Panneau secondaire Applications personnelles
@@ -4716,13 +4372,10 @@ Installer une ic\*^one
 .XS
 ic\*^one
 .XE
-Installer
-une ic\*^one	
- Sans effet	
- Installe une ic\*^one d\*'eplac\*'ee
-\*`a partir du Gestionnaire de fichiers ou d'applications dans ce panneau
-secondaire	
- Sans effet
+Installer une ic\*^one	 Sans effet	 Installe une ic\*^one d\*'eplac\*'ee	 Sans effet
+		\*`a partir du Gestionnaire de fichiers
+		ou d'applications dans ce panneau secondaire	
+
 .PSPIC "./graphics/fptexed.eps"
  
 .XS
@@ -4731,25 +4384,17 @@ Ic\*^one
 .XS
 Editeur de texte
 .XE
-Editeur de texte (double
-de l'ic\*^one du Tableau de bord)	
- Lance l'Editeur de texte	
- Ouvre le fichier dans une nouvelle
-fen\*^etre de l'Editeur de texte	
- Sans effet
+Editeur de texte (double	 Lance l'Editeur de texte	 Ouvre le fichier dans une nouvelle	Sans effet
+de l'ic\*^one du Tableau de bord)	fen\*^etre de l'Editeur de texte	
+
 .PSPIC "./graphics/fpterm.eps"
- 
 .XS
 Ic\*^one
 .XE
 .XS
 Terminal
 .XE
-Terminal	
- Lance l'\*'emulateur de terminal
-	
- Sans effet	
- Sans effet
+Terminal	 Lance l'\*'emulateur de terminal	 Sans effet	 Sans effet
 .PSPIC "./graphics/fpiconed.eps"
  
 .XS
@@ -4758,12 +4403,11 @@ Ic\*^one
 .XS
 Editeur d'ic\*^ones
 .XE
-Editeur d'ic\*^ones
-	
- Lance l'Editeur d'ic\*^ones	
- Ouvre un fichier bitmap ou pixmap dans
-une nouvelle fen\*^etre de l'Editeur d'ic\*^ones	
- Sans effet
+Editeur d'ic\*^ones	 Lance l'Editeur d'ic\*^ones	 Ouvre un	 Sans effet
+		fichier bitmap ou pixmap dans
+		une nouvelle fen\*^etre
+		de l'Editeur d'ic\*^ones	
+
 .TE
 .NH 2 
 Panneau secondaire Imprimantes personnelles
@@ -4797,13 +4441,11 @@ Installer une ic\*^one
 .XS
 ic\*^one
 .XE
-Installer
-une ic\*^one	
- Sans effet	
- Installe une ic\*^one d\*'eplac\*'ee
-\*`a partir du Gestionnaire de fichiers ou d'applications dans ce panneau
-secondaire	
- Sans effet
+Installer une ic\*^one	 Sans effet	 Installe une ic\*^one d\*'eplac\*'ee	 Sans effet
+		\*`a partir du Gestionnaire de fichiers
+		ou d'applications dans ce panneau
+		secondaire	
+
 .PSPIC "./graphics/fpprint.eps"
  
 .XS
@@ -4819,13 +4461,11 @@ par d\*'efaut
 .XS
 ic\*^one
 .XE
-Imprimante par d\*'efaut (double de l'ic\*^one du Tableau de bord)
-	
- Affiche l'\*'etat des travaux sur
-l'imprimante par d\*'efaut	
- Imprime le fichier sur l'imprimante
-par d\*'efaut ou sur une autre imprimante	
- Sans effet
+Imprimante par d\*'efaut	 Affiche l'\*'etat des travaux sur	 Imprime le fichier sur l'imprimante	 Sans effet
+ (double de l'ic\*^one du Tableau de bord)	l'imprimante par d\*'efaut	par d\*'efaut ou sur une autre imprimante	
+
+
+
 .PSPIC "./graphics/prtmgric.eps"
  
 .XS
@@ -4834,13 +4474,8 @@ Ic\*^one
 .XS
 Gestionnaire d'impression
 .XE
-Gestionnaire d'impression
-	
- Lance le Gestionnaire d'impression
-	
- Imprime le fichier sur l'imprimante
-par d\*'efaut	
- Sans effet
+Gestionnaire d'impression	 Lance le Gestionnaire d'impression	 Imprime le fichier sur l'imprimante	 Sans effet
+p	ar d\*'efaut	
 .TE
 .NH 2 
 Panneau secondaire Gestionnaire des informations
@@ -4858,75 +4493,63 @@ center,box;
 c s s s s 
 l l l l l.
 Dispositifs de contr\*^ole du panneau secondaire Gestionnaire des informations
-\fCNom\fR	\fCComportement Clic\fR	\fCComportement Rel\*^acher\fR	\fCComportement Indicateur\fR	.PSPIC "./graphics/fpinstal.eps"
- Installer ic\*^one	 Aucun	 Installe une ic\*^one d\*'eplac\*'ee\*`a partir du Gestionnaire de fichiers ou du Gestionnaire d'applicationsvers le panneau secondaire.	Aucun	.PSPIC "./graphics/fpinfico.eps"
+\fCNom\fR	\fCComportement Clic\fR	\fCComportement Rel\*^acher\fR	\fCComportement Indicateur\fR
+.PSPIC "./graphics/fpinstal.eps"
+ Installer ic\*^one	 Aucun	 Installe une ic\*^one	Aucun
+	 d\*'eplac\*'ee\*`a partir du Gestionnaire
+	 de fichiers ou du Gestionnaire d'applications
+	 vers le panneau secondaire.	
+.PSPIC "./graphics/fpinfico.eps"
  
 .XS
 Gestionnaire des
 informations, dispositifs de contr\*^ole
 .XE
-Gestionnaire
-des informations (double de l'ic\*^one du panneau principal)	
- Ouvre une fen\*^etre Liste des livres
-\*'enum\*'erant les biblioth\*`eques d'informations disponibles.
-	
- L'action de rel\*^acher une ic\*^one
-Biblioth\*`eque des informations ouvre une fen\*^etre Liste des livres
-pour cette biblioth\*`eque d'informations.	
- Aucun
+Gestionnaire	 Ouvre une fen\*^etre Liste des livres	 L'action de rel\*^acher une ic\*^one	 Aucun
+des informations	\*'enum\*'erant les biblioth\*`eques	Biblioth\*`eque des informations
+(double de l'ic\*^one du panneau principal)	d'informations disponibles.	ouvre une fen\*^etre Liste
+	 des livres pour cette
+	 biblioth\*`eque d'informations.	
+
 .PSPIC "./graphics/fphelpin.eps"
  
 .XS
 Introduction au
 Bureau, dispositif de contr\*^ole
 .XE
-Introduction au
-Bureau	
- Affiche le volume d'aide \*QIntroduction
-au Bureau\*U	
- Aucun	
- Aucun
-.PSPIC "./graphics/fphelpfp.eps"
- 
+Introduction au		 Affiche le volume d'aide \*QIntroduction	Aucun	 Aucun
+Bureau		au Bureau\*U	
+
+.PSPIC "./graphics/fphelpfp.eps" 
 .XS
 Tableau de bord
 .XE
 .XS
 Aide, dispositif de cont\*^ole
 .XE
-Aide
-du Tableau de bord	
- Affiche le volume d'aide du Tableau
-de bord.	
- Aucun	
- Aucun
+Aide	 Affiche le volume d'aide du Tableau	 Aucun	 Aucun
+du Tableau de bord	de bord.	
 .PSPIC "./graphics/fphelp.eps"
  
 .XS
 Gestionnaire d'aide,
 dispositif de contr\*^ole
 .XE
-Gestionnaire d'aide	
- Ouvre une fen\*^etre de visualisation
-de l'aide affichant le niveau sup\*'erieur des informations d'aide.	
- L'action de rel\*^acher un fichier
-de volume ma\*^itre (\fC*.sdl\fR) ouvre le volume d'aide
-en question.	
- Aucun
+Gestionnaire d'aide	 Ouvre une fen\*^etre de visualisation	 L'action de rel\*^acher un fichier	 Aucun
+	de l'aide affichant le niveau	de volume ma\*^itre (\fC*.sdl\fR) ouvre
+	sup\*'erieur des informations d'aide.	 le volume d'aide	en question.	
 .PSPIC "./graphics/fphelpoi.eps"
- 
 .XS
 Aide sur un \*'el\*'ement,
 dispositif de contr\*^ole
 .XE
-Aide sur un \*'el\*'ement
-	
- Propose une aide relative \*`a
-un \*'el\*'ement sp\*'ecifique du Tableau de bord. Cliquez sur
-ce dispositif de contr\*^ole, puis cliquez sur l'\*'el\*'ement
-au sujet duquel vous souhaitez obtenir de l'aide.	
- Aucun	
- Aucun
+Aide sur un \*'el\*'ement	 Propose une aide relative \*`a	 Aucun	 Aucun
+	un \*'el\*'ement sp\*'ecifique
+	du Tableau de bord. Cliquez sur
+	ce dispositif de contr\*^ole,
+	puis cliquez sur l'\*'el\*'ement
+	au sujet duquel vous souhaitez
+	obtenir de l'aide.	
 .TE
 .NH 1 
 .XS
@@ -4961,16 +4584,12 @@ du fichier de configuration du Tableau de bord. Pour plus de d\*'etails,
 reportez-vous au manuel \fIBureau CDE - Guide de l'administrateur\fR.
 .NH 2 
 .XS
-Tableau de bord
-.XE
-.XS
+Tableau de bord,
 modification
 des ic\*^ones
 .XE
 .XS
-Ic\*^ones
-.XE
-.XS
+Ic\*^ones, 
 d\*'eplacement vers le Tableau de bord
 .XE
 Ajout
@@ -4979,13 +4598,6 @@ d'une ic\*^one du panneau secondaire au Tableau de bord
 .IP \(rh
  Positionnez le pointeur de la souris sur l'ic\*^one
 du panneau secondaire \*`a placer dans le Tableau de bord.
-.XS
-D\*'eplacement
-.XE
-.XS
-ic\*^ones vers le Tableau
-de bord
-.XE
 .IP \(rh
  S\*'electionnez l'option \*QCopier dans
 le panneau principal\*Udu menu instantan\*'e de l'ic\*^one.
@@ -5001,15 +4613,11 @@ pr\*'ef\*'erentiellement des ic\*^ones d'application.
  Affichez l'ic\*^one de l'objet dans le Gestionnaire de
 fichiers ou dans le Gestionnaire d'applications.
 .XS
-Ic\*^ones
-.XE
-.XS
+Ic\*^ones, 
 ajout \*`a l'aide de l'option Installer une ic\*^one
 .XE
 .XS
 Ajout
-.XE
-.XS
 ic\*^ones
 .XE
 .IP \(rh
@@ -5023,17 +4631,13 @@ Fonctionnement des ic\*^ones install\*'ees
 .PP
  
 .XS
-Ic\*^ones
-.XE
-.XS
+Ic\*^ones,
 comportement dans
 le Tableau de bord
 .XE
 .XS
 Installer une
 ic\*^one
-.XE
-.XS
 fonctionnement
 .XE
 Le comportement
@@ -5044,20 +4648,16 @@ center,box;
  
  
 l l.
- Type d'ic\*^one install\*'ee
- Comportement	
- Fichier	
- M\*^eme comportement que l'ic\*^one
-du fichier dans le Gestionnaire de fichiers.
- Dossier	
- Ouvre une vue du dossier dans le Gestionnaire
-de fichiers.
- Groupe d'applications	
- Ouvre une vue du groupe d'applications
-dans le Gestionnaire d'applications.
- Ic\*^one d'application	
- M\*^eme comportement que l'ic\*^one
-de l'application dans le Gestionnaire de fichiers ou le Gestionnaire d'applications.
+ Type d'ic\*^one install\*'ee	 Comportement	
+ Fichier	 M\*^eme comportement que l'ic\*^one
+	du fichier dans le Gestionnaire de fichiers.
+ Dossier	 Ouvre une vue du dossier dans le Gestionnaire
+	de fichiers.
+ Groupe d'applications	 Ouvre une vue du groupe d'applications
+	dans le Gestionnaire d'applications.
+ Ic\*^one d'application	 M\*^eme comportement que l'ic\*^one
+	de l'application dans le Gestionnaire
+	de fichiers ou le Gestionnaire d'applications.
 .TE
 .NH 2 
 Ajout ou suppression de panneaux secondaires
@@ -5286,14 +4886,14 @@ les quatre positions suivantes.
 Ic\*^ones
 .XE
 .XS
-personnalisation dans le s\*'electeur d'espaces de travail<$startrange>
+personnalisation dans le s\*'electeur d'espaces de travail
 .XE
 .XS
 S\*'electeur d'espaces de
 travail
 .XE
 .XS
-personnalisation des ic\*^ones<$startrange>
+personnalisation des ic\*^ones
 .XE
 .PSPIC "./graphics/fpswiton.eps"
  Utilisez cette proc\*'edure pour remplacer l'une de ces ic\*^ones
@@ -5388,24 +4988,23 @@ Ic\*^ones
 .XE
 .XS
 personnalisation
-dans le s\*'electeur d'espaces de travail<$endrange>
+dans le s\*'electeur d'espaces de travail
 .XE
 .XS
 S\*'electeur d'espaces de travail
 .XE
 .XS
 personnalisation
-des ic\*^ones<$endrange>
+des ic\*^ones
 .XE
 La nouvelle ic\*^one
 appara\*^it sur le s\*'electeur.
 .XS
-Tableau de bord<$endrange>
+Tableau de bord
 .XE
 .PSPIC "./graphics/fploadsw.eps"
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000084089>
 \" <!-- $XConsortium: ch05.sgm /main/10 1996/12/20 20:42:55 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -5424,30 +5023,20 @@ ic\*^one.
 .TS
 center,box;
  
- 
+c  
 l.
- Présentation
-de la fenêtre et de l'espace de travail du Gestionnaire de fichiers90
-role="JumpText" Pr\*'esentation de la fen\*^etre et de l'espace
- Concepts
-de base des systèmes de fichiers91Concepts de base des syst\*`emes de fichiers	
- Connaissances
-de base requises par la gestion des fichiers94Connaissances de base requises par la gestion des	
- Manipulation
-des fichiers et des dossiers100Manipulation des fichiers et des dossiers	
- Navigation
-vers des dossiers et sous-dossiers104Navigation vers des dossiers et sous-dossiers	
- Suppression
-d'objets (mettre à la corbeille)107Suppression d'objets (mettre \*`a la corbeille)	
- Utilisation
-des objets du Gestionnaire de fichiers dans l'espace de travail112
-role="JumpText" Utilisation des objets du Gestionnaire de fichiers
- Localisation
-de fichiers115Localisation de fichiers	
- Personnalisation
-des vues du Gestionnaire de fichiers117Personnalisation des vues du Gestionnaire de fichiers	
+Contenu du chapitre 
+Pr\*'esentation de la fen\*^etre et de l'espace
+Concepts de base des syst\*`emes de fichiers	
+Connaissances de base requises par la gestion des fichiers
+Manipulation des fichiers et des dossiers	
+Navigation vers des dossiers et sous-dossiers	
+Suppression d'objets (mettre \*`a la corbeille)	
+ Utilisation des objets du Gestionnaire de fichiers dans l'espace de travail
+ Localisation de fichiers
+Personnalisation des vues du Gestionnaire de fichiers	
 .TE
-.NH 1 
+.NH 0
 Ouverture du Gestionnaire de fichiers
 .PP
 .IP -
@@ -5500,19 +5089,16 @@ center,box;
  
  
 l l.
- Chemin d'acc\*`es au dossier courant
-	
- Affiche le chemin d'acc\*`es au
-dossier courant
- Barre de menus et menus	
- Contiennent les commandes disponibles
-dans le Gestionnaire de fichiers
- Zone de visualisation des objets	
- Affiche les objets (fichiers et dossiers)
-du dossier de travail courant
- Ic\*^ones d'objets	
- Ic\*^ones repr\*'esentant les
-fichiers et les dossiers du dossier courant
+ Chemin d'acc\*`es au dossier courant	 Affiche le chemin d'acc\*`es au
+	dossier courant
+ Barre de menus et menus	 Contiennent les commandes disponibles
+	dans le Gestionnaire de fichiers
+ Zone de visualisation des objets	 Affiche les objets
+	 (fichiers et dossiers)
+	 du dossier de travail courant
+ Ic\*^ones d'objets	 Ic\*^ones repr\*'esentant les
+	fichiers et les dossiers
+	du dossier courant
 .TE
 .NH 1 
 Concepts de base des syst\*`emes de fichiers
@@ -5520,22 +5106,11 @@ Concepts de base des syst\*`emes de fichiers
  La pr\*'esente section d\*'ecrit les concepts de base des syst\*`emes
 de fichiers.
 .XS
-Syst\*`e
+Syst\*`eme de fichiers hi\*'erarchique
 .XE
 .XS
-me de fichiers hi\*'erarchique
-.XE
-.XS
-Syst\*`eme de fichiers
-.XE
-.XS
+Syst\*`eme de fichiers,
 concepts
-.XE
-.XS
-Syst\*`eme de fichiers
-.XE
-.XS
-hi\*'erarchique
 .XE
 .NH 2 
 Fichiers
@@ -5568,20 +5143,16 @@ syst\*`eme.
 Dossiers
 .XS
 Dossier
-.XE
-.XS
 d\*'efinition
 .XE
 .XS
 Objets
-.XE
-.XS
 dossier
 .XE
 .PP
  
 .XS
-R\*'epertoires, <Default Para Font> dossiers<$nopage>
+R\*'epertoires, \fR dossiers
 .XE
 Un \fI dossier\fR  est un conteneur de
 fichiers, semblable \*`a un dossier utilis\*'e dans une armoire de
@@ -5598,14 +5169,10 @@ utilis\*'e pour faire r\*'ef\*'erence \*`a la hi\*'erarchie
 des dossiers).
 .XS
 Sous-r\*'epertoires
-.XE
-.XS
 d\*'efinition
 .XE
 .XS
 Sous-dossiers
-.XE
-.XS
 d\*'efinition
 .XE
  Dans un dossier, chaque nom de fichier doit \*^etre unique. Cependant,
@@ -5615,8 +5182,6 @@ le r\*'epertoire dans lequel o\*`u vous vous trouvez \*`a un moment
 donn\*'e le \fI dossier courant
 .XS
 Dossier
-.XE
-.XS
 courant
 .XE
 \fR .
@@ -5634,14 +5199,6 @@ syst\*`eme.
 Chemins d'acc\*`es
 .XS
 Chemin
-.XE
-.XS
-d'acc\*`es
-.XE
-.XS
-Chemin
-.XE
-.XS
 d'acc\*`es
 .XE
 .PP
@@ -6277,11 +5834,11 @@ Voir aussi
 .IP -
  Pour plus de d\*'etails sur l'utilisation de l'aide, reportez-vous
 au chapitre n\(de 3,
-\*QAccès à l'aide"UG.GHelp.mkr.1".
+\*QAcc\*`es à l'aide"UG.GHelp.mkr.1".
 .IP -
  Pour la cr\*'eation des types de donn\*'ees et des
 actions, reportez-vous \*`a la section 
-'\*QCréation d'actions et de types de données personnels
+'\*QCr\*'eation d'actions et de types de donn\*'ees personnels
 Cr\*'eation d'actions et de types de donn\*'ees du chapitre n\(de 6,
 "Lancement d'applications à partir du Bureau
 Lancement d'applications \*`a partir du Bureau.
@@ -6397,7 +5954,7 @@ ou un dossier sont les suivantes:
  les droits d'acc\*`es de son propri\*'etaire
  Pour plus de d\*'etails sur les droits d'acc\*`es et leur configuration,
 reportez- vous \*`a la section "Modification
-des droits d'accès d'un fichier ou d'un dossier", page n\(de 111
+des droits d'acc\*`es d'un fichier ou d'un dossier", page n\(de 111
 role="SecTitleAndPageNum" Modification des droits d'acc\*`es d'un fichier
 .IP -
  son lien avec un autre fichier. Un fichier li\*'e correspond
@@ -6738,7 +6295,7 @@ passage vers
  Chaque fen\*^etre du Gestionnaire de fichiers (\*'egalement appel\*'ee \fI vue\fR ) affiche le contenu d'un dossier.
  Si vous n'\*^etes pas habitu\*'e au syst\*`eme de fichiers
 hi\*'erarchique, reportez-vous \*`a la section 
-'\*QConcepts de base des systèmes de fichiers\*Q, page n\(de 91
+'\*QConcepts de base des syst\*`emes de fichiers\*Q, page n\(de 91
 role="SecTitleAndPageNum" Concepts de base des syst\*`emes de fichiers.
 .NH 2 
 Affichage d'un autre dossier
@@ -7323,12 +6880,9 @@ center,box;
  
  
 l l.
- Lecture	
- Le fichier peut \*^etre lu.	
- \*'Ecriture	
- Le fichier peut \*^etre modifi\*'e.
- Ex\*'ecution	
- Le fichier peut \*^etre ex\*'ecut\*'e.
+ Lecture	 Le fichier peut \*^etre lu.	
+ \*'Ecriture	 Le fichier peut \*^etre modifi\*'e.
+ Ex\*'ecution	 Le fichier peut \*^etre ex\*'ecut\*'e.
 .TE
  Si vous ne disposez pas des droits d'acc\*`es n\*'ecessaires
 pour modifier les caract\*'eristiques d'un objet, certaines commandes
@@ -7611,18 +7165,15 @@ center,box;
  
  
 l l.
- ba*	
- Repr\*'esente tous les noms commen\*,cant
-par la cha\*^ine <filename moreinfo="refentry">ba\fR	
+ ba*	 Repr\*'esente tous les noms commen\*,cant
+	par la cha\*^ine \fCba\fR	
  ba?	
- Repr\*'esente tous les noms de
-trois lettres commen\*,cant par la cha\*^ine <filename moreinfo="refentry">ba\fR
- *.dt	
- Repr\*'esente tous les noms dont
-l'extension est \fC.dt\fR.
+ Repr\*'esente tous les noms de trois lettres
+	commen\*,cant par la cha\*^ine \fCba\fR
+ *.dt	 Repr\*'esente tous les noms dont l'extension est \fC.dt\fR.
  *.???	
- Repr\*'esente tous les noms dont
-l'extension comporte trois caract\*`eres.
+ Repr\*'esente tous les noms dont l'extension
+	comporte trois caract\*`eres.
 .TE
  Le nom et le contenu du fichier peuvent \*^etre indiqu\*'es \*`a
 l'aide de la syntaxe \fI d'expression r\*'eguli\*`ere\fR 
@@ -7647,14 +7198,10 @@ ou appuyez sur Entr\*'ee.
 Recherche d'un fichier par son contenu
 .XS
 Contenu
-.XE
-.XS
 recherche d'un fichier
 .XE
 .XS
 Fichier
-.XE
-.XS
 recherche par contenu
 .XE
 .PP
@@ -7703,13 +7250,13 @@ modification
 Vues du Gestionnaire de fichiers
 .XE
 .XS
-personnalisation<$startrange>
+personnalisation
 .XE
 .XS
 Personnalisation
 .XE
 .XS
-vues du Gestionnaire de fichiers<$startrange>
+vues du Gestionnaire de fichiers
 .XE
 .XS
 Vue
@@ -7725,7 +7272,7 @@ de visualisation du contenu des dossiers. Vous pouvez:
  modifier la structure de visualisation de base d'un dossier
 \*`a la fois pour obtenir la vue en arborescence. Reportez-vous \*`a
 la section \*QAffichage
-de la vue par structure hiérarchique\*Q, page n\(de 120
+de la vue par structure hi\*'erarchique\*Q, page n\(de 120
 Affichage de la vue par structure hi\*'erarchique
 .IP -
  d\*'eterminer l'ordre de tri des objets. Reportez-vous
@@ -7810,13 +7357,13 @@ D\*'efinition des options de vue ouverte, cliquez sur Appliquer.
 Vues du Gestionnaire de fichiers
 .XE
 .XS
-personnalisation<$endrange>
+personnalisation
 .XE
 .XS
 Personnalisation
 .XE
 .XS
-vues du Gestionnaire de fichiers<$endrange>
+vues du Gestionnaire de fichiers
 .XE
 .NH 2 
 Utilisation de la vue en arborescence
@@ -7827,14 +7374,14 @@ Vue
 .XE
 .XS
 arborescence dans le Gestionnaire
-de fichiers<$startrange>
+de fichiers
 .XE
 .XS
 Vues
 du Gestionnaire de fichiers
 .XE
 .XS
-arborescence<$startrange>
+arborescence
 .XE
 Il s'agit d'une vue hi\*'erarchique, dans laquelle
 les fichiers et sous-dossiers d'un dossier sont affich\*'es sous ce dernier
@@ -7853,18 +7400,18 @@ center,box;
  
  
 l l.
- +	
- Le dossier est ferm\*'e. Lorsque
-vous cliquez sur ce bouton, le contenu du dossier s'affiche, partiellement
-ou totalement, selon l'option d'arborescence active.
- -	
- Le contenu du dossier est int\*'egralement
-affich\*'e. Cliquez sur ce bouton pour fermer compl\*`etement le dossier.
- +/-	
- Le dossier est partiellement ouvert.
-Seuls les dossiers qu'il contient sont affich\*'es. Cette vue ne peut
-\*^etre obtenue qu'en s\*'electionnant l'option Dossiers, puis Fichiers.
-Cliquez sur le bouton d'extension pour afficher les noms des fichiers du dossier.
+ +	 Le dossier est ferm\*'e. Lorsque
+	vous cliquez sur ce bouton,
+	le contenu du dossier s'affiche, partiellement
+	ou totalement, selon l'option d'arborescence active.
+ -	 Le contenu du dossier est int\*'egralement
+	affich\*'e. Cliquez sur ce bouton
+	pour fermer compl\*`etement le dossier.
+ +/-	 Le dossier est partiellement ouvert.
+	Seuls les dossiers qu'il contient sont affich\*'es. Cette vue
+	ne peut \*^etre obtenue qu'en s\*'electionnant l'option
+	Dossiers, puis Fichiers. Cliquez sur le bouton d'extension
+	pour afficher les noms des fichiers du dossier.
 .TE
 .NH 2 
 Affichage de la vue par structure hi\*'erarchique
@@ -7888,19 +7435,17 @@ center,box;
  
  
 l l.
- Dossiers seulement	
- L'arborescence n'affiche que les dossiers.
-Pour visualiser les fichiers, cliquez deux fois sur le nom d'un dossier. Il
-s'agit de la vue par d\*'efaut.
- Dossiers, puis fichiers	
- Les dossiers apparaissent en premier.
-Cliquez sur le bouton [+] en regard de chaque dossier pour visualiser son
-contenu. Le premier clic affiche les sous-dossiers. Le deuxi\*`eme clic
-affiche les fichiers qu'ils contiennent. Cliquez sur le bouton une troisi\*`eme
-fois pour r\*'etablir la vue initiale.
- Dossiers et fichiers	
- L'arborescence affiche automatiquement
-les dossiers et les fichiers.
+ Dossiers seulement	 L'arborescence n'affiche que les dossiers.
+	Pour visualiser les fichiers, cliquez deux fois
+	sur le nom d'un dossier. Il s'agit de la vue par d\*'efaut.
+ Dossiers, puis fichiers	 Les dossiers apparaissent en premier.
+	Cliquez sur le bouton [+] en regard de chaque
+	dossier pour visualiser son contenu. Le premier clic affiche
+	les sous-dossiers. Le deuxi\*`eme clic  affiche les fichiers
+	qu'ils contiennent. Cliquez sur le bouton une troisi\*`eme
+	fois pour r\*'etablir la vue initiale.
+ Dossiers et fichiers	 L'arborescence affiche automatiquement
+	les dossiers et les fichiers.
 .TE
 .IP \(rh
  Pour appliquer les options et fermer la bo\*^ite de dialogue
@@ -7912,7 +7457,7 @@ en modifiant les param\*`etres de la bo\*^ite Afficher dans la bo\*^ite
 de dialogue D\*'efinition des options de vue. Ces modifications ne s'appliquent
 qu'\*`a la session en cours. Pour les rendre permanentes, reportez-vous
 \*`a la section \*QSauvegarde des options
-courantes comme valeurs par défaut\*Q, page n\(de 123
+courantes comme valeurs par d\*'efaut\*Q, page n\(de 123
 Sauvegarde des options courantes comme valeurs.
  Si vous cliquez deux fois sur un dossier dans la vue par structure hi\*'erarchique,
 une nouvelle vue de ce dossier s'ouvre. Cette derni\*`ere n'est pas en
@@ -7921,13 +7466,13 @@ mode vue par structure hi\*'erarchique.
 Vue
 .XE
 .XS
-structure hi\*'erarchique dans le Gestionnaire de fichiers<$endrange>
+structure hi\*'erarchique dans le Gestionnaire de fichiers
 .XE
 .XS
 Vues du Gestionnaire de fichiers
 .XE
 .XS
-arborescence<$endrange>
+arborescence
 .XE
 .NH 2 
 Affichage de la vue Dossier
@@ -7967,7 +7512,7 @@ Dossier en modifiant les param\*`etres de la bo\*^ite Afficher dans
 la bo\*^ite de dialogue D\*'efinition des options de vue. Ces modifications
 ne s'appliquent qu'\*`a la session en cours. Pour les rendre permanentes,
 reportez-vous \*`a la section \*QSauvegarde
-des options courantes comme valeurs par défaut\*Q, page n\(de 123
+des options courantes comme valeurs par d\*'efaut\*Q, page n\(de 123
 role="SecTitleAndPageNum" Sauvegarde des options courantes comme valeurs.
 .NH 2 
 Modification de la repr\*'esentation des objets
@@ -8230,7 +7775,7 @@ de fichiers sont s\*'electionn\*'es dans la \fI liste des filtres\fR .
 d\*'epend de leur type de donn\*'ees. Utilisez la commande D\*'efinir
 les options de filtre pour modifier les types de donn\*'ees affich\*'es
 ou cach\*'es. Reportez-vous \*`a la section 
-"Spécification des types de données cachésSp\*'ecification des types de donn\*'ees
+"Sp\*'ecification des types de donn\*'ees cach\*'esSp\*'ecification des types de donn\*'ees
 ci-dessous. Les types de donn\*'ees cach\*'es par d\*'efaut sont
 DOT_FILE, DOT_FOLDER et CURRENT_FOLDER.
 .NH 2 
@@ -8275,7 +7820,7 @@ param\*`etre (affich\*'e devient cach\*'e et vice-versa).
 d\*'epend de leur type de donn\*'ees. Utilisez la commande D\*'efinir
 les options de filtre pour modifier les types de donn\*'ees affich\*'es
 ou cach\*'es. Reportez-vous \*`a la section 
-'"Spécification des types de données cachésSp\*'ecification des types de donn\*'ees
+'"Sp\*'ecification des types de donn\*'ees cach\*'esSp\*'ecification des types de donn\*'ees
 ci-dessous. Les types de donn\*'ees cach\*'es par d\*'efaut sont
 DOT_FILE, DOT_FOLDER et CURRENT_FOLDER.
 .NH 2 
@@ -8401,8 +7946,8 @@ cette taille, l'image sera tronqu\*'ee et seuls les 38x38 pixels de la
 partie sup\*'erieure gauche s'afficheront. Vous pouvez augmenter la taille
 de la zone d'affichage des ic\*^ones si vous souhaitez afficher totalement
 de plus grandes images (reportez-vous \*`a la section \" <!--Original XRef
-content: '"Modification de la taille de la zone d'affichage des icônes
-role="SectionTitle" Modification de la taille de la zone d'affichage). Cependant, une zone plus grande
+ Modification de la taille de la zone d'affichage).
+ Cependant, une zone plus grande
 ralentit l'ouverture des dossiers et les ic\*^ones empi\*`etent sur
 les fen\*^etres des dossiers.
 .FE
@@ -8478,8 +8023,6 @@ ajout\*'ees, puis quittez et relancez le Bureau.
  
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?
-<?Pub *0000125033>
 \" <!-- $XConsortium: ch06.sgm /main/10 1996/12/20 20:43:05 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -8501,21 +8044,16 @@ lancement des applications \*`a partir du Bureau.
 .TS
 center,box;
  
- 
+c  
 l.
- Gestionnaire
-d'applications127Gestionnaire d'applications	
- Lancement
-d'applications à partir du Gestionnaire de fichiers139
-Lancement d'applications \*`a partir du Gestionnaire
- Lancement
-et gestion des applications à partir du Tableau de bord140
-Lancement et gestion des applications \*`a partir
- Lancement
-d'applications à partir d'une fenêtre d'émulation de terminal142
-role="JumpText" Lancement d'applications \*`a partir d'une fen\*^etre
+Contenu du chapitre 
+Gestionnaire d'applications	
+Lancement d'applications \*`a partir du Gestionnaire de fichiers
+Lancement et gestion des applications \*`a partir du Tableau de bord
+ Lancement d'applications à partir d'une fenêtre 
+Lancement d'applications \*`a partir d'une fen\*^etre d'\*'emulation de terminal 
 .TE
-.NH 1 
+.NH 0  
 Gestionnaire d'applications
 .PP
  Le Gestionnaire d'applications est un conteneur dans lequel sont stock\*'es
@@ -8583,7 +8121,7 @@ d'applications. En fait, des dossiers install\*'es dans d'autres emplacements
 sont rassembl\*'es dans ce dossier sp\*'ecial lors de la connexion.
 .NH 3 
 .XS
-Groupe d'applications<$startrange>
+Groupe d'applications
 .XE
 Contenu du Gestionnaire d'applications
 .PP
@@ -8657,26 +8195,18 @@ center,box;
  
  
 l l.
- \fCGroupe d'applications\fR	
- \fCContenu\fR	
- Applications_Bureau	
- Applications du Bureau (Gestionnaire
-de fichiers, Gestionnaire de configuration, Calculatrice, etc.).	
- Outils_Bureau	
- Outils du syst\*`eme d'exploitation
-et de gestion du syst\*`eme (Recharger applications, Editeur de texte
-\fCvi\fR, V\*'erifier orthographe, etc.).	
- Informations	
- Ic\*^ones correspondant aux sujets
-d'aide fr\*'equemment utilis\*'es.
- Administration_syst\*`eme	
- Outils destin\*'es \*`a l'administrateur
-syst\*`eme.
+ \fCGroupe d'applications\fR	 \fCContenu\fR	
+ Applications_Bureau	 Applications du Bureau (Gestionnaire
+	de fichiers, Gestionnaire de configuration, Calculatrice, etc.).	
+ Outils_Bureau	 Outils du syst\*`eme d'exploitation
+	et de gestion du syst\*`eme (Recharger applications,
+	Editeur de texte \fCvi\fR, V\*'erifier orthographe, etc.).	
+ Informations	 Ic\*^ones correspondant aux sujets
+	d'aide fr\*'equemment utilis\*'es.
+ Administration_syst\*`eme	 Outils destin\*'es \*`a
+	 l'administrateur syst\*`eme.
 .XS
-Groupe d'applications<
-.XE
-.XS
-endrange>
+Groupe d'applications
 .XE
 .TE
 .NH 3 
@@ -8908,9 +8438,7 @@ faites-la glisser vers votre groupe d'applications personnel.
 .IP -
  Vous pouvez cr\*'eer une action correspondant \*`a
 une application, puis placer l'ic\*^one d'action dans votre groupe d'applications.
-Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '"Création d'actions et de types de données personnels"; page n\(de 137
-role="SecTitleAndPageNum" Cr\*'eation d'actions et de types de donn\*'ees.
+Pour plus de d\*'etails, reportez-vous \*`a la section Cr\*'eation d'actions et de types de donn\*'ees.
 .XS
 Groupe
 d'applications personnel
@@ -9018,10 +8546,10 @@ d'applications lors de chaque connexion, \*`a l'emplacement suivant:
 \fCnom_dossier_sp\*'ecial\fR est un nom
 unique attribu\*'e par le syst\*`eme, d\*'ependant du nom de ce
 dernier et du nom d'utilisateur fourni lors de la connexion.
-<caution>
+.B1
  Ce nom ne doit \fI jamais\fR  \*^etre modifi\*'e
 directement \*`a partir de la ligne de commande.
-</caution>
+.B2
 .NH 3 
 Cr\*'eation d'actions et de types de donn\*'ees
 personnels
@@ -9180,22 +8708,17 @@ center,box;
  
  
 l l.
- Installer une ic\*^one	
- Zone de pose permettant d'ajouter des
-applications au panneau secondaire.
- Editeur de texte	
- Double de l'objet de commande du Tableau
-de bord permettant d'ouvrir l'Editeur de texte.
- Terminal	
- Lance l'\*'emulateur de terminal
-permettant d'entrer manuellement des commandes.
- Editeur d'ic\*^ones	
- Lance l'Editeur d'ic\*^ones, qui
-permet de cr\*'eer et de modifier des bitmaps et pixmaps.	
+ Installer une ic\*^one	 Zone de pose permettant d'ajouter des
+	applications au panneau secondaire.
+ Editeur de texte	 Double de l'objet de commande du Tableau
+	de bord permettant d'ouvrir l'Editeur de texte.
+ Terminal	 Lance l'\*'emulateur de terminal
+	permettant d'entrer manuellement des commandes.
+ Editeur d'ic\*^ones	 Lance l'Editeur d'ic\*^ones, qui
+	permet de cr\*'eer et de modifier des bitmaps et pixmaps.	
 .TE
 .NH 2 
-Copie d'une application dans le panneau secondaire
-Applications personnelles
+Copie d'une application dans le panneau secondaire Applications personnelles
 .XS
 Tableau de bord
 .XE
@@ -9275,8 +8798,7 @@ mais vous pouvez remplacer cette ic\*^one par celle de votre choix.
  Copiez l'application voulue dans le panneau secondaire Applications
 personnelles.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '"Copie d'une application dans le panneau secondaire Applications
-personnelles\*U page n\(de 141Copie d'une application dans le panneau secondaire.
+Copie d'une application dans le panneau secondaire.
 .IP \(rh
  Positionnez le pointeur sur l'ic\*^one que vous venez de
 copier, puis s\*'electionnez l'option Copier dans le panneau principal
@@ -9345,8 +8867,8 @@ terminal (syst\*`eme \*'eloign\*'e)
 Commande
 .XE
 .XS
-<Filename | Command>rlogin<Default
-Para Font>
+\fCrlogin\fR 
+
 .XE
 Commande rlogin
 .PP
@@ -9371,8 +8893,8 @@ la fen\*^etre associ\*'ee sur votre \*'ecran, utilisez l'option \fC-display\fR.
 Commande
 .XE
 .XS
-<Filename | Command>remsh<Default
-Para Font>
+\fCremsh\fR 
+
 .XE
 Commande remsh
 .PP
@@ -9417,7 +8939,6 @@ sur le syst\*`eme \*'eloign\*'e.
  
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000050824>
 \" <!-- $XConsortium: ch07.sgm /main/11 1996/12/21 19:06:02 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -9431,18 +8952,15 @@ sur le syst\*`eme \*'eloign\*'e.
 .LP
  Pour personnaliser l'aspect du Bureau, utilisez le Gestionnaire de configuration.
 .TS
-center,box;
- 
- 
+center,allbox;
+c  
 l.
- Personnalisation
-de l'aspect de l'écran146Personnalisation de l'aspect de l'\*'ecran	
- Personnalisation
-du comportement du système153Personnalisation du comportement du syst\*`eme	
- Personnalisation
-du lancement et de la déconnexion158Personnalisation du lancement et de la d\*'econnexion	
+Contenu du chapitre
+Personnalisation de l'aspect de l'\*'ecran	
+Personnalisation du comportement du syst\*`eme	
+Personnalisation du lancement et de la d\*'econnexion	
 .TE
-.NH 1 
+.NH 0 
 .XS
 Gestionnaire de configuration
 .XE
@@ -9902,7 +9420,7 @@ bo\*^ite de dialogue qui s'affiche.
  S\*'electionnez le nombre de couleurs utilis\*'ees
 par le Bureau.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QCouleurs\*Q, page n\(de 147
+\*QCouleurs\*Q, page n\(de 147
 Couleurs.
 .IP \(rh
  Cliquez sur OK.
@@ -9925,7 +9443,7 @@ s\*'election
 .XE
 .XS
 Fond de l'espace
-de travail>Voir<Default Para Font> Fond<$nopage>
+de travail>Voir\fR Fond
 .XE
 .XS
 S\*'election
@@ -10163,7 +9681,7 @@ personnalisation
 Bo\*^ites de dialogue
 .XE
 .XS
-Ecran<$startrange>
+Ecran
 .XE
 .PP
 .IP \(rh
@@ -10344,7 +9862,7 @@ ou sur Par d\*'efaut pour r\*'etablir les valeurs par d\*'efaut.
 Bo\*^ites de dialogue
 .XE
 .XS
-Ecran<$endrange>
+Ecran
 .XE
 .NH 2 
 Fen\*^etres
@@ -10473,7 +9991,7 @@ Personnalisation du lancement et de la d\*'econnexion
 Bo\*^ites de dialogue
 .XE
 .XS
-Lancement<$startrange>
+Lancement
 .XE
 .IP -
  session \*`a ouvrir \*`a
@@ -10605,7 +10123,7 @@ Confirmation de d\*'econnexion
 Bo\*^ites de dialogue
 .XE
 .XS
-Lancement<$endrange>
+Lancement
 .XE
 .PP
 .IP \(rh
@@ -10620,7 +10138,6 @@ s'affichera chaque fois que vous entrerez la commande de d\*'econnexion.
  Cliquez sur OK.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000071015>
 \" <!-- $XConsortium: ch08.sgm /main/14 1996/12/21 17:06:10 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -10637,20 +10154,15 @@ de recevoir et de g\*'erer des messages \*'electroniques.
 .TS
 center,box;
  
- 
+c  
 l.
- Visualisation
-et manipulation des messages163Visualisation et manipulation des messages	
- Envoi de
-messages168	
- Impression
-des messages179Impression des messages	
- Gestion
-des pièces jointes181Gestion des pi\*`eces jointes	
- Personnalisation
-du Programme courrier184Personnalisation du Programme courrier	
- Raccourcis
-clavier et menu du Programme courrier189Raccourcis clavier et menu du Programme courrier	
+Contenu du chapitre 
+Visualisation et manipulation des messages	
+ Envoi de messages
+ Impression des messages
+Gestion des pi\*`eces jointes	
+Personnalisation du Programme courrier
+ Raccourcis clavier et menu du Programme courrier
 .TE
  Les instructions de ce chapitre impliquent une connaissance de base
 du Bureau et de la navigation \*`a l'aide du clavier. Pour plus de d\*'etails
@@ -10660,7 +10172,7 @@ l' annexe n\(de A, "Raccourcis clavier
 pour le BureauRaccourcis clavier pour le Bureau.
 La plupart des t\*^aches de ce programme peuvent s'effectuer \*`a l'aide
 de la m\*'ethode glisser/d\*'eplacer.
-.NH 1 
+.NH 0  
 Lancement du Programme courrier
 .PP
 .IP \(rh
@@ -10714,10 +10226,9 @@ pas pratique de conserver tous les messages re\*,cus dans la bo\*^ite
 aux lettres en entr\*'ee, vous pouvez d\*'efinir d'autres bo\*^ites
 aux lettres pour stocker des groupes de messages.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '"Création d'une boîte aux lettres", page n\(de 176
-role="SecTitleAndPageNum"  ou \*`a la section \" <!--Original
-XRef content: '"Archivage d'un message dans d'autres boîtes aux lettres",
-page n\(de 177Archivage d'un message dans d'autres bo\*^ites.
+"Cr\*'eation d'une bo\*^ite aux lettres",\" page n\(de 176
+ou \*`a la section \" <!--Original
+\*QArchivage d'un message dans d'autres bo\*^ites\*U.
 .NH 2 
 .XS
 Visualisation
@@ -10821,8 +10332,7 @@ du message.
  Tapez la r\*'eponse et envoyez le message.
 Pour plus de
 d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QDiffusion, composition et envoi d'un message\*Q,
-page n\(de 169Diffusion, composition et envoi d'un message.
+\*QDiffusion, composition et envoi d'un message\*U. 
 .NH 2 
 Faire suivre un message
 .XS
@@ -10837,8 +10347,7 @@ suivre.
  Le texte du message \*`a faire suivre appara\*^it dans un nouveau
 message. Les \*'eventuelles pi\*`eces jointes apparaissent \*'egalement.
 Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QVisualisation d'une pièce jointe\*Q, page n\(de 181
-role="SecTitleAndPageNum" .
+\*QVisualisation d'une pi\*`ece jointe\*U.
 .IP \(rh
  \fI Facultatif\fR . Supprimez les pi\*`eces
 jointes \*`a ne pas faire suivre en les s\*'electionnant, puis en
@@ -10849,7 +10358,7 @@ choisissant Supprimer dans le menu Pi\*`eces jointes.
  Ajoutez \*'eventuellement un texte suppl\*'ementaire
 et cliquez sur Envoyer.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QDiffusion, composition et envoi d'un message\*Q,
+\*QDiffusion, composition et envoi d'un message\*Q,
 page n\(de 169Diffusion, composition et envoi d'un message.
 .NH 2 
 Enregistrement d'un message sous forme de texte
@@ -10926,7 +10435,7 @@ sur le bouton Supprimer.
 de la liste.
  Pour plus de d\*'etails sur les pi\*`eces jointes d'un message,
 reportez-vous \*`a la section \*QSuppression
-d'une pièce jointe et d'un message\*Q, page n\(de 183
+d'une pi\*`ece jointe et d'un message\*Q, page n\(de 183
 .
 *
 .FS
@@ -11061,8 +10570,8 @@ Diffusion, composition et envoi d'un message
  Lorsque vous disposez d'une adresse utilisateur, vos pouvez envoyer
 un message.
 .XS
-Message \*'electronique, >voir<Default
-Para Font> Message<$nopage>
+Message \*'electronique, >voir\fR 
+ Message
 .XE
 *
 .FS
@@ -11224,7 +10733,7 @@ de ces param\*`etres au message.
  Permet d'acc\*'eder rapidement
 aux mod\*`eles (fichiers texte) que vous avez cr\*'e\*'es pour
 les utiliser dans vos messages. Pour plus de d\*'etails, reportez-vous
-\*`a la section \*QCrêation de modèles
+\*`a la section \*QCrêation de mod\*`eles
 pour les messages\*Q, page n\(de 186
 Cr\*'eation de mod\*`eles pour les messages.
  Ajouter Bcc:	
@@ -11249,7 +10758,7 @@ Composer.
 le menu Formater et s\*'electionnez le mod\*`ele choisi dans la liste.
  Le mod\*`ele est ajout\*'e au message.
  Pour plus de d\*'etails sur les mod\*`eles, reportez-vous \*`a
-la section \*QCréation de modèles pour les
+la section \*QCr\*'eation de mod\*`eles pour les
 messages\*Q, page n\(de 186Cr\*'eation de mod\*`eles pour les messages.
 .NH 2 
 Inclusion de plusieurs messages dans le nouveau message
@@ -11466,8 +10975,7 @@ aux lettres.
 son emplacement
 dans le syst\*`eme de fichiers.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QOuverture et sauvegarde\*Q, page n\(de 187
-role="SecTitleAndPageNum" Ouverture et sauvegarde.
+\*QOuverture et sauvegarde.
 .IP \(rh
  Cliquez sur Nouveau.
  La nouvelle bo\*^ite aux lettres est cr\*'e\*'ee et ouverte.
@@ -11491,8 +10999,7 @@ bo\*^ites aux lettres
 .IP \(rh
  S\*'electionnez la bo\*^ite aux lettres \*`a ouvrir.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QOuverture et sauvegarde\*Q, page n\(de 187
-role="SecTitleAndPageNum" Ouverture et sauvegarde.
+\*QOuverture et sauvegarde\*U. 
 .IP \(rh
  Cliquez sur Ouvrir.
  La bo\*^ite aux lettres est ouverte dans une fen\*^etre s\*'epar\*'ee.
@@ -11545,21 +11052,19 @@ et en d\*'esignant la bo\*^ite aux lettres
  en ajoutant au menu D\*'eplacer (ou au sous-menu Copier
 dans du menu Message) des bo\*^ites aux lettres fr\*'equemment utilis\*'ees
 pour archiver des messages. Pour plus de d\*'etails sur l'ajout de bo\*^ites
-aux lettres au menu D\*'eplacer, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QAjout de boîtes aux
-lettres aux menus Déplacer et Copier dans\*Q, page n\(de 178
-role="SecTitleAndPageNum" 
+aux lettres au menu D\*'eplacer, reportez-vous \*`a la section \*QAjout de bo\*^ites aux
+lettres aux menus D\*'eplacer et Copier dans\*U. 
 .IP -
  en configurant le menu D\*'eplacer afin qu'il
 affiche
 les bo\*^ites aux lettres r\*'ecemment consult\*'ees. Pour plus
 de d\*'etails sur cette op\*'eration, reportez- vous \*`a la section \" <!--Original
-XRef content: '\*QAjout de boîtes aux lettres
-aux menus Déplacer et Copier dans\*Q, page n\(de 178
+\*QAjout de bo\*^ites aux lettres
+aux menus D\*'eplacer et Copier dans\*Q, page n\(de 178
 .IP -
  en faisant glisser des messages vers d'autres bo\*^ites
 aux lettres. Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QDéplacement de messages vers d'autres boîtes aux lettres\*Q,
+\*QD\*'eplacement de messages vers d'autres bo\*^ites aux lettres\*Q,
 page n\(de 178.
 .NH 2 
 .XS
@@ -11586,10 +11091,8 @@ aux lettres \*`a supprimer.
 menu S\*'electionn\*'e(s).
  La bo\*^ite aux lettres est supprim\*'ee.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QSuppression d'un objet (mettre à la corbeille)
-role="SectionTitle" Suppression d'un objet (mettre \*`a la corbeille) du 
-'chapitre n\(de 5, \*QGestionnaire de fichiers
-Gestionnaire de fichiers.
+Suppression d'un objet (mettre \*`a la corbeille) du 
+'chapitre n\(de 5, \*QGestionnaire de fichiers\*U. 
 .NH 2 
 .XS
 Bo\*^ites aux lettres
@@ -11858,8 +11361,7 @@ du Tableau de bord.
  D\*'efinissez les options d'impression voulues
 et cliquez sur Imprimer.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QImpression d'un message avec des options spécifiques
-role="SectionTitle" Impression d'un message avec des options sp\*'ecifiques.
+\*QImpression d'un message avec des options sp\*'ecifiques\*U.
 .NH 1 
 Gestion des pi\*`eces jointes
 .PP
@@ -11952,8 +11454,7 @@ pi\*`eces jointes
 Pi\*`eces jointes.
  La bo\*^ite de dialogue Ajouter appara\*^it. Pour plus de d\*'etails
 sur cette bo\*^ite de dialogue, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QOuverture et sauvegarde\*Q, page n\(de 187
-role="SecTitleAndPageNum" Ouverture et sauvegarde.
+\*QOuverture et sauvegarde\*Q.
 .IP \(rh
  S\*'electionnez un fichier \*`a joindre
 et cliquez sur Ajouter.
@@ -11987,8 +11488,7 @@ jointes
  S\*'electionnez la pi\*`ece jointe \*`a
 enregistrer.
  Pour plus de d\*'etails, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QOuverture et sauvegarde\*Q, page n\(de 187
-role="SecTitleAndPageNum" Ouverture et sauvegarde.
+\*QOuverture et sauvegarde\*Q.
 .IP \(rh
  S\*'electionnez Sauvegarder sous dans le menu
 Pi\*`eces jointes.
@@ -12005,8 +11505,7 @@ jointe doit \*^etre sauvegard\*'ee.
 * 
  Vous pouvez \*'egalement faire glisser une pi\*`ece jointe vers
 le Gestionnaire de fichiers. Pour plus de d\*'etails, reportez-vous au \" <!--Original
-XRef content: 'chapitre n\(de 5, \*QGestionnaire de fichiers
-role="ChapNumAndTitle" Gestionnaire de fichiers.
+chapitre n\(de 5, \*QGestionnaire de fichiers\*U.
 .FE
  
 .NH 2 
@@ -12079,19 +11578,16 @@ Ajout d'un rendez-vous de l'agenda
 .IP \(rh
  Faites-le glisser de la bo\*^ite de dialogue
 Editeur de rendez-vous de l'Agenda vers la liste des pi\*`eces jointes
-de la fen\*^etre de composition.
+de la fen\*^etre de composition.*
 .IP \(rh
  Proc\*'edez de la fa\*,con habituelle pour
 envoyer le message.
-*
 .FS
-* 
- Vous pouvez \*'egalement faire glisser un rendez-vous de la liste
+* Vous pouvez \*'egalement faire glisser un rendez-vous de la liste
 des pi\*`eces jointes vers l'agenda. Reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QDéplacement d'un rendez-vous d'une application vers
-l'agendaD\*'eplacement d'un rendez-vous d'une application, au \" <!--Original
-XRef content: 'chapitre n\(de 11, \*QUtilisation de l'agenda
-role="ChapNumAndTitle" Utilisation de l'agenda.
+\*QD\*'eplacement d'un rendez-vous d'une application vers
+l'agenda\*U, au \" <!--Original
+chapitre n\(de 11, \*QUtilisation de l'agenda\*U. 
 .FE
  
 .NH 1 
@@ -12196,10 +11692,10 @@ Cr\*'eation de mod\*`eles
 fr\*'equemment utilis\*'e lorsque vous composez des messages, tels
 qu'un formulaire d'\*'etat d'avancement, une signature ou une formule
 de politesse. Par exemple:
- <literallayout>Jean Person 
+ .DSJean Person 
 Adresse \*'electronique: jean.person@samachine
  Num\*'ero de t\*'el\*'ephone: (100) 555-1234
- Fax: (100) 555-5678</literallayout>
+ Fax: (100) 555-5678.DE
 .NH 3 
 Cr\*'eation de mod\*`eles pour les messages
 .XS
@@ -12320,8 +11816,7 @@ Raccourcis clavier pour le Bureau.
  Il se peut que certains raccourcis du Programme courrier interf\*`erent
 avec l'association de fonctions aux touches UNIX. Pour plus de d\*'etails
 sur l'association de fonctions aux touches UNIX, reportez-vous au \" <!--Original
-XRef content: 'chapitre n\(de 10, \*QUtilisation de l'Editeur de texte
-role="ChapNumAndTitle" Utilisation de l'Editeur de texte.
+chapitre n\(de 10, \*QUtilisation de l'Editeur de texte\*U.
 .FE
  
 .TS
@@ -12415,7 +11910,6 @@ des messages de la bo\*^ite aux lettres
 .TE
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000109024>
 \" <!-- $XConsortium: ch09.sgm /main/9 1996/12/20 20:43:29 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -12433,16 +11927,14 @@ et des travaux d'impression.
 .TS
 center,box;
  
- 
+c  
 l.
- Votre imprimante
-par défaut191Votre imprimante par d\*'efaut	
- Impression
-de fichiers192Impression de fichiers	
- Applications
-d'imprimantes197Applications d'imprimantes	
+Contenu du chapitre 
+Votre imprimante par d\*'efaut	
+ Impression de fichiers
+ Applications d'imprimantes
 .TE
-.NH 1 
+.NH 0 
 Votre imprimante par d\*'efaut
 .PP
  
@@ -12461,8 +11953,7 @@ vous ouvrez le Bureau pour la premi\*`ere fois, l'imprimante par d\*'efaut
 s'affiche dans le Tableau de bord.
  Pour afficher d'autres imprimantes que l'imprimante par d\*'efaut
 dans le Tableau de bord, reportez-vous \*`a la section \" <!--Original XRef
-content: '\*QModification de l'imprimante du Tableau de bord\*Q, page n\(de 203
-role="SecTitleAndPageNum" Modification de l'imprimante du Tableau de bord.
+\*QModification de l'imprimante du Tableau de bord\*Q. 
 .NH 2 
 D\*'etermination de l'imprimante par d\*'efaut
 .PP
@@ -12524,13 +12015,13 @@ Impression de fichiers
 Fichier
 .XE
 .XS
-types de fichiers pour impression<$startrange>
+types de fichiers pour impression
 .XE
 .XS
 Impression
 .XE
 .XS
-types de fichiers admis<$startrange>
+types de fichiers admis
 .XE
  peut imprimer diff\*'erents types de fichiers
 comme indiqu\*'e dans le Tableau n\(de 9\(hy1
@@ -12565,13 +12056,13 @@ des fonctions d'impression.
 Fichier
 .XE
 .XS
-types de fichiers pour impression<$endrange>
+types de fichiers pour impression
 .XE
 .XS
 Impression
 .XE
 .XS
-types de fichiers admis<$endrange>
+types de fichiers admis
 .XE
 *
 .FS
@@ -12606,7 +12097,7 @@ Imprimante du panneau secondaire Imprimantes personnelles.
 Impression
 .XE
 .XS
-Tableau de bord<$startrange>
+Tableau de bord
 .XE
 Le syst\*`eme affiche alors une bo\*^ite de
 dialogue Imprimer permettant d'indiquer les options d'impression. Une telle
@@ -12616,7 +12107,7 @@ l'ic\*^one Imprimante.
 Tableau de bord
 .XE
 .XS
-impression<$startrange>
+impression
 .XE
 .PSPIC "./graphics/PMscreen.eps"
 *
@@ -12631,8 +12122,7 @@ un syst\*`eme.
  \fI Facultatif\fR .Utilisez les zones
 de texte de la bo\*^ite de dialogue Imprimer pour d\*'efinir d'autres
 options d'impression. Reportez-vous \*`a la section \" <!--Original XRef
-content: '\*QConfiguration des options d'impression-->\" <!--\*Q, page n\(de 196
-role="SecTitleAndPageNum" "ug.print.mkr.7".
+\*QConfiguration des options d'impression. 
 .IP \(rh
  Cliquez sur OK dans la bo\*^ite de dialogue
 Imprimer pour envoyer le travail \*`a l'impression.
@@ -12640,13 +12130,13 @@ Imprimer pour envoyer le travail \*`a l'impression.
 Tableau de bord
 .XE
 .XS
-impression<$endrange>
+impression
 .XE
 .XS
 Impression
 .XE
 .XS
-Tableau de bord<$endrange>
+Tableau de bord
 .XE
 .NH 2 
 Impression \*`a partir du Gestionnaire de fichiers
@@ -12669,8 +12159,7 @@ d'indiquer les diff\*'erentes options d'impression.
  \fI Facultatif\fR . Utilisez les zones
 de texte de la bo\*^ite de dialogue Imprimer pour d\*'efinir d'autres
 options d'impression. Reportez-vous \*`a la section \" <!--Original XRef
-content: '\*QConfiguration des options d'impression\*Q, page n\(de 196
-role="SecTitleAndPageNum" Configuration des options d'impression.
+\*QConfiguration des options d'impression\*U.
 .IP \(rh
  Cliquez sur OK dans la bo\*^ite de dialogue
 Imprimer pour envoyer le travail \*`a l'impression.
@@ -12718,8 +12207,7 @@ d'indiquer les diff\*'erentes options d'impression.
  \fI Facultatif\fR . Utilisez les zones
 de texte de la bo\*^ite de dialogue Imprimer pour d\*'efinir d'autres
 options d'impression. Reportez-vous \*`a la section \" <!--Original XRef
-content: '\*QConfiguration des options d'impression-->\" <!--\*Q, page n\(de 196
-role="SecTitleAndPageNum" "ug.print.mkr.7".
+\*QConfiguration des options d'impression\*U.
 .IP \(rh
  Cliquez sur OK dans la bo\*^ite de dialogue
 Imprimer pour envoyer le travail \*`a l'impression.
@@ -12728,7 +12216,7 @@ Configuration des options d'impression
 .PP
  
 .XS
-Bo\*^ite de dialogue Imprimer<$startrange>
+Bo\*^ite de dialogue Imprimer
 .XE
 Le Bureau affiche la bo\*^ite de dialogue Imprimer
 lorsque vous imprimez des fichiers texte, PCL, Postcript et de donn\*'ees
@@ -12820,7 +12308,7 @@ du document est termin\*'ee, un message \*'emis par l'imprimante s'affiche
 dans votre bo\*^ite de messages.
 .XS
 Bo\*^ite de dialogue
-Imprimer<$endrange>
+Imprimer
 .XE
 .NH 1 
 Applications d'imprimantes
@@ -12857,13 +12345,13 @@ de bord.
 Gestionnaire d'impression
 .XE
 .XS
-lancement<$startrange>
+lancement
 .XE
 .XS
 Lancement
 .XE
 .XS
-Gestionnaire d'impression<$startrange>
+Gestionnaire d'impression
 .XE
 .PSPIC "./graphics/Screen1.eps"
 .IP -
@@ -12874,13 +12362,13 @@ dans le Gestionnaire d'applications
 Gestionnaire d'impression
 .XE
 .XS
-lancement<$endrange>
+lancement
 .XE
 .XS
 Lancement
 .XE
 .XS
-Gestionnaire d'impression <$endrange>
+Gestionnaire d'impression 
 .XE
 .NH 2 
 Application Travaux d'impression
@@ -13129,7 +12617,7 @@ Modification de l'imprimante du Tableau de bord
  La proc\*'edure suivante ne modifie pas l'affectation de l'imprimante
 par d\*'efaut. Pour savoir comment modifier l'imprimante par d\*'efaut,
 reportez-vous \*`a la section \*QModification
-de l'imprimante par défaut\*Q, page n\(de 192
+de l'imprimante par d\*'efaut\*Q, page n\(de 192
 Modification de l'imprimante par d\*'efaut.
 .FE
  
@@ -13152,8 +12640,8 @@ modification de l'imprimante
 .XE
  Si l'imprimante n'appara\*^it pas dans le panneau secondaire Imprimantes
 personnelles, ajoutez-la en suivant les \*'etapes de la section \" <!--Original
-XRef content: '\*QAjout d'une imprimante au panneau secondaire Imprimantes
-personnellesAjout d'une imprimante au panneau secondaire Imprimantes.
+\*QAjout d'une imprimante au panneau secondaire Imprimantes
+personnelles\*U.
 .IP \(rh
  Dans le panneau secondaire, placez le pointeur
 de la souris sur l'ic\*^one Imprimante \*`a ajouter au Tableau de bord
@@ -13485,7 +12973,6 @@ dans la zone Libell\*'e d'ic\*^one.
  Cliquez sur OK.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000057156>
 \" <!-- $XConsortium: ch10.sgm /main/11 1996/12/21 19:06:08 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -13529,26 +13016,19 @@ l'aide de l'Editeur de texte.
 .TS
 center,box;
  
- 
+c  
 l.
- Ouverture
-et fermeture de l'Editeur de texte210Ouverture et fermeture de l'Editeur de texte	
- Fenêtre
-de l'Editeur de texte211Fen\*^etre de l'Editeur de texte	
- Ouverture
-et sauvegarde de documents212Ouverture et sauvegarde de documents	
- Déplacement
-du curseur dans un document218D\*'eplacement du curseur dans un document	
- Entrée
-de texte216Entr\*'ee de texte	
- Edition
-de texte221Edition de texte	
- Recherche
-de document229Recherche de document	
- Formatage
-et impression de documents231Formatage et impression de documents	
+Contenu du chapitre 
+ Ouverture et fermeture de l'Editeur de texte
+Fen\*^etre de l'Editeur de texte	
+Ouverture et sauvegarde de documents
+D\*'eplacement du curseur dans un document	
+Entr\*'ee de texte	
+Edition de texte
+Recherche de document
+Formatage et impression de documents	
 .TE
-.NH 1 
+.NH 0  
 Ouverture et fermeture de l'Editeur de texte
 .XS
 Editeur de texte
@@ -13692,8 +13172,7 @@ document
 .XE
  Pour
 entrer du texte dans le document, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QEntrie de texte\*Q, page n\(de 21-->\" <!--6
-role="SecTitleAndPageNum" "ug.texte.mkr.6". Vous le nommerez lors
+\*QEntr\*'ee de texte\*Q Vous le nommerez lors
 de
 son enregistrement.
  Lorsque vous avez termin\*'e un document, vous pouvez en cr\*'eer
@@ -13737,9 +13216,7 @@ automatique, la bo\*^ite de dialogue comporte une option suppl\*'ementaire
 relative \*`a la gestion des fins de ligne. Si la fonction de retour \*`a
 la ligne automatique est d\*'esactiv\*'ee, cette option n'appara\*^it
 pas dans la bo\*^ite de dialogue. Reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QUtilisation de l'option Retour
-` la li-->\" <!--gne automatique\*Q,
-page n\(de 217"ug.texte.mkr.7".
+\*QUtilisation de l'option Retour\*`a la ligne automatique\*Q. 
 Bo\*^ite de dialogue Sauvegarder sous
 .PSPIC "./graphics/TEsaveas.eps"
 .IP \(rh
@@ -13797,13 +13274,13 @@ Document
 .XE
 .XS
 ouverture d'un
-document<$startrange>
+document
 .XE
 .XS
 Ouverture
 .XE
 .XS
-document<$startrange>
+document
 .XE
 .IP -
  Ouvrez le document dans l'Editeur
@@ -13883,13 +13360,13 @@ bord et posez-la sur celle de l'Editeur de texte.
 Document
 .XE
 .XS
-ouverture d'un document<$endrange>
+ouverture d'un document
 .XE
 .XS
 Ouverture
 .XE
 .XS
-document<$endrange>
+document
 .XE
 .NH 1 
 Entr\*'ee de texte
@@ -14116,7 +13593,7 @@ ligne donn\*'ee du document
  Affichez la ligne d'\*'etat. Reportez-vous
 \*`a la
 section \*QAffichage de la ligne
-d'état\*Q, page n\(de 211Affichage de la ligne d'\*'etat.
+d'\*'etat\*Q, page n\(de 211Affichage de la ligne d'\*'etat.
 .IP \(rh
  Appuyez sur Ctrl+G ou cliquez dans la zone Ligne
 de la ligne
@@ -14455,7 +13932,7 @@ entre les modes d'insertion et de surimpression.
  Lorsque le mode de surimpression est activ\*'e, le curseur se transforme
 en un bloc ( z ). Si vous utilisez souvent le mode de surimpression, affichez
 la ligne d'\*'etat (section \*QAffichage
-de la ligne d'état\*Q, page n\(de 211
+de la ligne d'\*'etat\*Q, page n\(de 211
 Affichage de la ligne d'\*'etat) car celle-ci indique si le mode de surimpression
 est actif ou non.
 .NH 2 
@@ -14491,12 +13968,11 @@ menu Editer
 ou appuyez sur la touche Suppr.
  Vous ne pouvez coller du texte supprim\*'e. Par contre, vous pouvez
 le r\*'ecup\*'erer \*`a l'aide de la commande Annuler. Reportez-vous
-\*`a la section \*QAnnulation d'une édition\*Q,
+\*`a la section \*QAnnulation d'une \*'edition\*Q,
 page n\(de 224Annulation d'une \*'edition.
  Pour r\*'eutiliser ult\*'erieurement le texte \*`a supprimer,
 utilisez la commande Couper. Reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QDéplacement de texte (couper-coller)\*Q, page n\(de 225
-role="SecTitleAndPageNum" D\*'eplacement de texte (couper-coller).
+D\*'eplacement de texte (couper-coller).
 .NH 2 
 Effacement de texte
 .PP
@@ -14561,11 +14037,9 @@ le texte.
  S\*'electionnez Coller dans le menu Editer
 ou appuyez
 sur Ctrl+V.
- Vous pouvez \*'egalement utiliser la m\*'ethode glisser-d\*'eplacer
+ Vous pouvez \*'egalement* utiliser la m\*'ethode glisser-d\*'eplacer
 pour copier du texte (reportez- vous \*`a la section \" <!--Original XRef
-content: '\*QCopie de texte à l'aide des commandes Faire glisser et Poser\*Q,
-page n\(de 228Copie de texte \*`a l'aide des commandes Faire).
-*
+\*QCopie de texte à l'aide des commandes Faire glisser et Poser\*Q. 
 .FS
 * 
  Utilisez le raccourci suivant pour copier un mot ou une phrase: s\*'electionnez
@@ -14601,8 +14075,8 @@ ou appuyez
 sur Ctrl+V.
  Vous pouvez \*'egalement utiliser la m\*'ethode glisser-d\*'eplacer
 pour d\*'eplacer le texte. Reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QDéplacement de texte à l'aide des commandes Faire glisser
-et Poser\*Q, page n\(de 228D\*'eplacement de texte \*`a l'aide des.
+\*QD\*'eplacement de texte à l'aide des commandes Faire glisser
+et Poser\*U.
 .NH 2 
 V\*'erification orthographique
 .XS
@@ -14663,10 +14137,10 @@ inclusion
 .PP
  Vous pouvez ins\*'erer un fichier de texte dans le document, utiliser
 l'option de menu appropri\*'ee ou faire glisser le fichier \*`a partir
-de la fen\*^etre de l'Editeur de texte. Reportez-vous \*`a la section \" <!--Original
-XRef content: '\*QInclusion d'un fichier à l'aide des commandes Faire
-glisser et Poser\*Q, page n\(de 228
-Inclusion d'un fichier \*`a l'aide des commandes.
+de la fen\*^etre de l'Editeur de texte. Reportez-vous \*`a la section
+\" <!--Original
+\*QInclusion d'un fichier à l'aide des commandes Faire
+glisser et Poser\*U.
 .IP \(rh
  Placez le curseur \*`a l'endroit o\*`u
 ins\*'erer
@@ -14880,9 +14354,9 @@ les autres
 occurrences.
  Vous pouvez \*'egalement cliquer sur Tout modifier pour remplacer
 toutes les occurrences.
-<caution>
+.B1
  Vous ne pouvez annuler cette commande.
-</caution>
+.B2
 .IP \(rh
  Cliquez sur Fermer lorsque vous avez fini.
 .NH 2 
@@ -15203,7 +14677,6 @@ Menu fichier de l'Editeur de texte modifi\*'e
 .PSPIC "./graphics/TECopyTo.eps"
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000091967>
 \" <!-- $XConsortium: ch11.sgm /main/10 1996/12/20 20:43:42 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -15224,17 +14697,14 @@ center,box;
  
  
 l.
- Planification
-d'un rendez-vous standard241	
- Options
-de rendez-vous242	
- Impression
-d'agendas, de rendez-vous ou de listes d'activités248
+ Planification d'un rendez-vous standard
+ Options de rendez-vous242	
+ Impression d'agendas, de rendez-vous ou de listes d'activit\*'es
 Impression de vues, de rendez-vous et des listes
  Consultation
-des agendas sur un réseau250	
+des agendas sur un r\*'eseau
  Planification
-de rendez-vous sur d'autres agendas252	
+de rendez-vous sur d'autres agendas
 .TE
 .NH 1 
 Lancement du programme Agenda
@@ -15909,13 +15379,13 @@ Visualisation
 .XE
 .XS
 >Voir
-aussi <Default Para Font> Affichage<$nopage>
+aussi \fR Affichage
 .XE
 Cette
 section explique comment cr\*'eer une liste de rendez-vous et l'afficher
 sur le syst\*`eme. Pour imprimer cette liste, reportez-vous \*`a la
 section \*UImpression d'agendas, de rendez-vous
-ou de listes d'activitésImpression de vues, de rendez-vous et des listes.
+ou de listes d'activit\*'esImpression de vues, de rendez-vous et des listes.
 .IP \(rh
  Affichez la vue de l'agenda en fonction de la
 liste des rendez-vous \*`a visualiser.
@@ -16086,7 +15556,7 @@ d'une liste des activit\*'es
  Cette section explique comment cr\*'eer une liste d'activit\*'es
 et l'afficher sur le syst\*`eme. Pour imprimer cette liste, reportez-vous
 \*`a la section \*UImpression d'agendas,
-de rendez-vous ou de listes d'activitésImpression de vues, de rendez-vous et des listes.
+de rendez-vous ou de listes d'activit\*'esImpression de vues, de rendez-vous et des listes.
 .IP \(rh
  Affichez la vue de l'agenda en fonction de la
 liste d'activit\*'es \*`a visualiser.
@@ -16398,7 +15868,7 @@ agendas
 des droits de consultation. Seul le propri\*'etaire de l'agenda dispose
 de droits d'\*'ecriture et de suppression. Pour modifier l'acc\*`es
 et les droits, reportez-vous \*`a la section 
-'\*UModification de l'accès et des droits\*U, page n\(de 259
+'\*UModification de l'acc\*`es et des droits\*U, page n\(de 259
 role="SecTitleAndPageNum" .
 .NH 2 
 .XS
@@ -16526,7 +15996,7 @@ Un \*QN\*U indique que vous n'y avez pas acc\*`es.
  Pour ajouter des rendez-vous ou des activit\*'es dans d'autres agendas,
 demandez aux utilisateurs de vous accorder \fI l'acc\*`es en \*'ecriture\fR  \*`a leur agenda. Pour savoir comment accorder ou interdire
 l'acc\*`es de votre agenda \*`a d'autres utilisateurs, reportez-vous
-\*`a la section \*UModification de l'accès
+\*`a la section \*UModification de l'acc\*`es
 et des droits\*U, page n\(de 259.
 .NH 1 
 .XS
@@ -16623,8 +16093,7 @@ aux agendas s\*'electionn\*'es.
  Si vous n'avez pas acc\*`es en \*'ecriture \*`a tous les
 agendas, vous pouvez envoyer un message aux participants pour les pr\*'evenir
 de la r\*'eunion. Reportez-vous \*`a la section \" <!--Original XRef
-content: '\*UEnvoi de rappels aux participants à l'aide de l'agenda
-role="SectionTitle" .
+\*UEnvoi de rappels aux participants à l'aide de l'agenda. 
 .IP \(rh
  Cliquez sur Annuler pour fermer l'Editeur de r\*'eunions.
 .NH 2 
@@ -16721,12 +16190,14 @@ r\*'eelles.
 <tab><tab>\fCligne de description 2\fR
 .R
  Par exemple:
-<literallayout remap="CodeIndent1"> ** Rendez-vous **
+.DS
+ ** Rendez-vous **
  Date:   22/11/94
  D\*'ebut: 10:00 am
  Fin:      11:00 am
  Commentaires:   R\*'eunion du personnel
-                            Salle de conf\*'erences Monet</literallayout>
+                            Salle de conf\*'erences Monet
+.DE
 .IP \(rh
  Ajoutez du texte dans le message.
 .IP \(rh
@@ -17245,8 +16716,7 @@ Vous pouvez configurer l'acc\*`es
 \*`a votre agenda afin de contr\*^oler les op\*'erations que les
 autres utilisateurs peuvent y effectuer. Pour d\*'eterminer si vous avez
 acc\*`es \*`a d'autres agendas, reportez-vous \*`a la section \" <!--Original
-XRef content: '\*UAccès à d'autres agendas\*U, page n\(de 251
-role="SecTitleAndPageNum" .
+\*UAcc\*`es à d'autres agendas\*U.
 .NH 3 
 .XS
 Droits d'acc\*`es
@@ -17400,10 +16870,10 @@ agenda
 .XE
 .NH 3 
 .XS
-Interdiction d'acc\*`es<$startrange>
+Interdiction d'acc\*`es
 .XE
 .XS
-Interdiction d'acc\*`es<$startrange>
+Interdiction d'acc\*`es
 .XE
 Interdiction d'acc\*`es \*`a votre agenda
 .PP
@@ -17430,11 +16900,11 @@ cliquez sur Annuler.
 l'agenda sp\*'ecifi\*'e.\fC
 .XS
 Interdiction
-d'acc\*`es<$endrange>
+d'acc\*`es
 .XE
 .XS
 Interdiction
-d'acc\*`es<$endrange>
+d'acc\*`es
 .XE
 \fR
 .NH 2 
@@ -17543,7 +17013,7 @@ supprimer des rendez-vous \*`a partir de la ligne de commande d'un \*'emulateur
 de terminal.
 .NH 2 
 .XS
-<Filename | Command>dtcm_editor<Default Para
+\fCdtcm_editor\fR  Para
 Font>
 .XE
 .XS
@@ -17629,7 +17099,7 @@ du rendez-vous
 dans le fichier indiqu\*'e sur la ligne de commande.
 .NH 2 
 .XS
-<Filename | Command>dtcm_lookup<Default Para
+\fCdtcm_lookup\fR  Para
 Font>
 .XE
 .XS
@@ -17649,7 +17119,7 @@ rendez-vous
 .XE
 .XS
 <Filename
-| Command>dtcm_lookup<Default Para Font>
+| Command>dtcm_lookup\fR
 .XE
 .XS
 Rendez-vous
@@ -17658,7 +17128,7 @@ Rendez-vous
 recherche
 .XE
 .XS
-<Filename | Command>dtcm_lookup<Default Para Font>
+\fCdtcm_lookup\fR
 .XE
 dtcm_lookup
 .PP
@@ -17669,35 +17139,36 @@ de votre agenda.
 ligne de commande pour visualiser les rendez-vous de la vue par d\*'efaut.
 Par exemple, si Quotidienne est la vue par d\*'efaut, les rendez-vous
 du jour en cours s'affichent.
- <literallayout>system% <userinput>dtcm_lookup</userinput>
+.DS
+ system% \fCdtcm_lookup\fR
 Rendez-vous du vendredi 23 d\*'ecembre 1995:
       1) No\:el
       2) 2:30pm-3:30pm R\*'eunion du personnel
       3) 6:00pm Achat cadeaux
       4) 7:15pm-10:00pm R\*'ep\*'etition choeur messe de No\:el
-</literallayout>
+.DE
 .IP \(rh
  Pour s\*'electionner l'agenda, la date ou la
 plage horaire dans lesquels consulter les rendez-vous, utilisez la syntaxe
 suivante:
  \fCdtcm_lookup [-c\fR\fCagenda\fR \fC] [-d\fR\fCdate\fR\fC] [-v\fR\fCvue\fR\fC]\fR
  Par exemple:
- <literallayout>system% <userinput>dtcm_lookup -c hamilton@artist -d 12/22/94 -v day
-</userinput>
+ .DSsystem% \fCdtcm_lookup -c hamilton@artist -d 12/22/94 -v day
+\fR
 Rendez-vous du jeudi 22 d\*'ecembre 1995:
       1) 9:00am-10:00am R\*'eunion projet
-      2) 1:30pm-2:00pm Test</literallayout>
+      2) 1:30pm-2:00pm Test.DE
 .NH 2 
 .XS
-<Filename | Command>dtcm_insert<Default Para
+\fCdtcm_insert\fR  Para
 Font>
 .XE
 .XS
 Insertion
 .XE
 .XS
-rendez-vous \*`a l'aide de <Filename | Command>dtcm_insert<Default
-Para Font>
+rendez-vous \*`a l'aide de \fCdtcm_insert\fR 
+
 .XE
 .XS
 .XE
@@ -17709,24 +17180,24 @@ insertion
 .XE
 .XS
 <Filename
-| Command>dtcm_insert<Default Para Font>
+| Command>dtcm_insert\fR
 .XE
 dtcm_insert
 .PP
  Utilisez \fCdtcm_insert\fR sur la ligne de commande pour
 ins\*'erer des rendez-vous dans votre agenda. Par exemple:
-<literallayout>system% <userinput>dtcm_insert -d 26/12/94 -s 11:30am -e 12:30pm -w S\*'eance d'entra\*^inement
-</userinput>
+.DSsystem% \fCdtcm_insert -d 26/12/94 -s 11:30am -e 12:30pm -w S\*'eance d'entra\*^inement
+\fR
 Rendez-vous du lundi 26 d\*'ecembre 1994:
       1) 10:00am-11:00am Facturation
       2) 11:30am-12:30pm entra\*^inement
-      3) 12:30pm-1:00pm d\*'ejeuner</literallayout>
+      3) 12:30pm-1:00pm d\*'ejeuner.DE
  \fCdtcm\fR (Agenda) imprime automatiquement les rendez-vous
 planifi\*'es. Vous pouvez ainsi constater que le nouveau rendez-vous a
 \*'et\*'e ins\*'er\*'e.
 .NH 2 
 .XS
-<Filename | Command>dtcm_delete<Default Para
+\fCdtcm_delete\fR  Para
 Font>
 .XE
 .XS
@@ -17736,8 +17207,8 @@ Suppression
 rendez-vous
 .XE
 .XS
-<Filename | Command>dtcm_delete<Default
-Para Font>
+\fCdtcm_delete\fR 
+
 .XE
 .XS
 Rendez-vous
@@ -17746,27 +17217,29 @@ Rendez-vous
 suppression
 .XE
 .XS
-<Filename | Command>dtcm_delete<Default
-Para Font>
+\fCdtcm_delete\fR 
+
 .XE
 dtcm_delete
 .PP
  Utilisez \fCdtcm_delete\fR sur la ligne de commande pour
 supprimer des rendez-vous de votre agenda. Par exemple:
-<literallayout>system% <userinput>dtcm_delete -d 26/12/94</userinput>
+.DS
+system% \fCdtcm_delete -d 26/12/94\fR
 Rendez-vous du lundi 26 d\*'ecembre 1995:
       1) 10:00am-11:00am Facturation
       2) 11:30am-12:30pm entra\*^inement
       3) 12:30:pm-1:00pm d\*'ejeuner
-\*'El\*'ement \*`a supprimer (num\*'ero)? <userinput>3</userinput>
+\*'El\*'ement \*`a supprimer (num\*'ero)? \fC3\fR
 Rendez-vous du lundi 26 d\*'ecembre 1995:
       1) 10:00am-11:00am Facturation
-      2) 11:30am-12:30pm entra\*^inement</literallayout>
+      2) 11:30am-12:30pm entra\*^inement
+.DE
  Lorsque vous ne voulez plus supprimer d'autres \*'el\*'ements,
 appuyez sur Ctrl+C.
 .NH 2 
 .XS
-<Filename | Command>dtcm<Default Para Font>
+\fCdtcm\fR
 .XE
 .XS
 Agenda
@@ -17790,11 +17263,10 @@ dtcm
  Utilisez \fCdtcm\fR pour lancer l'agenda \*`a partir
 de la ligne de commande. Par exemple:
 .CW
-system% <userinput>dtcm &</userinput>
+system% \fCdtcm &\fR
 .R
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000114449>
 \" <!-- $XConsortium: ch12.sgm /main/10 1996/12/20 20:43:52 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -17819,28 +17291,21 @@ les commandes UNIX et de copier et coller du texte.
 .TS
 center,box;
  
- 
+c  
 l.
- &Emulateur
-de terminal par défaut du Bureau270\*'Emulateur de terminal par d\*'efaut du	
- Ouverture
-d'une fenêtre de terminal270	
- Fermeture
-d'une fenêtre de terminal273Fermeture d'une fen\*^etre de terminal	
- Utilisation
-d'une fenêtre de terminal273Utilisation d'une fen\*^etre de terminal	
- Lancement
-de dtterm sur un autre système275Lancement de dtterm sur un autre syst\*`eme	
- Personnalisation
-de dtterm277Personnalisation de dtterm	
- Options
-générales de dtterm279Options g\*'en\*'erales de dtterm	
- Options
-du terminal dtterm284Options du terminal dtterm	
- Caractères
-de contrôle du terminal290Caract\*`eres de contr\*^ole du terminal	
+Contenu du chapitre 
+\*'Emulateur de terminal par d\*'efaut du Bureau
+ Ouverture d'une fen\*^etre de terminal	
+Fermeture d'une fen\*^etre de terminal	
+Utilisation d'une fen\*^etre de terminal	
+Lancement de dtterm sur un autre syst\*`eme	
+ Personnalisation de dtterm
+Options g\*'en\*'erales de dtterm	
+ Options du terminal dtterm
+Caract\*`eres de contr\*^ole du terminal	
  Modification
-de l'émulateur de terminal par défaut291Modification de l'\*'emulateur de terminal	
+Modification de l'\*'emulateur de
+terminal par d\*'efaut	
 .TE
 *
 .FS
@@ -17851,9 +17316,8 @@ pr\*'esenter un aspect diff\*'erent si vous ou l'administrateur syst\*`eme
 les avez personnalis\*'es.
 .FE
  
-.NH 1 
-\*'Emulateur de terminal par d\*'efaut du
-Bureau
+.NH 0 
+\*'Emulateur de terminal par d\*'efaut du Bureau
 .PP
  L'\*'emulateur de terminal par d\*'efaut du Bureau est \fCdtterm\fR. L'\*'emulateur de terminal \fCdtterm\fR
 \*'emule la partie du terminal VT220 qui est en conformit\*'e avec
@@ -17873,8 +17337,8 @@ valeur par d\*'efaut
 .XE
  
 .XS
-<Filename | Command>dtterm,<Default Para Font>>
-Voir<Default Para Font> Terminal<$nopage>
+\fCdtterm,\fR>
+Voir\fR Terminal
 .XE
 L'invite
 de la ligne de commande \fC
@@ -17882,7 +17346,7 @@ de la ligne de commande \fC
 Commande
 .XE
 .XS
-<Filename | Command>dtterm<Default Para Font>
+\fCdtterm\fR
 .XE
 dtterm\fR est un caract\*`ere sp\*'ecial qui s'affiche dans la marge
 gauche de l'\*'emulateur de terminal. Il peut s'agir des caract\*`eres
@@ -17895,8 +17359,8 @@ Emulateur
 de terminal
 .XE
 .XS
->Voir aussi <Default Para Font>
-Terminal<$nopage>
+Voir aussi \fR
+Terminal
 .XE
 .PSPIC "./graphics/ugdtterm.eps"
 .NH 2 
@@ -17904,13 +17368,13 @@ Terminal<$nopage>
 Terminal
 .XE
 .XS
-lancement<$startrange>
+lancement
 .XE
 .XS
 Lancement
 .XE
 .XS
-terminal<$startrange>
+terminal
 .XE
 Ouverture
 d'une fen\*^etre de terminal
@@ -18009,13 +17473,13 @@ arr\*^et
 Lancement
 .XE
 .XS
-terminal<$endrange>
+terminal
 .XE
 .XS
 Terminal
 .XE
 .XS
-lancement<$endrange>
+lancement
 .XE
 .NH 1 
 Utilisation d'une fen\*^etre de terminal
@@ -18202,7 +17666,7 @@ Terminal
 .XE
 .XS
 lancement sur un autre
-syst\*`eme<$startrange>
+syst\*`eme
 .XE
 Vous pouvez lancer \fCdtterm\fR sur un autre syst\*`eme par l'interm\*'ediaire de
 diff\*'erentes commandes:
@@ -18291,7 +17755,7 @@ syst\*`emes h\*^ote.
 Terminal
 .XE
 .XS
-lancement sur un autre syst\*`eme<$endrange>
+lancement sur un autre syst\*`eme
 .XE
 .NH 3 
 Exemple
@@ -18481,13 +17945,13 @@ Caract\*'eristiques du curseur
 Terminal
 .XE
 .XS
-options du curseur<$startrange>
+options du curseur
 .XE
 .XS
 Curseur
 .XE
 .XS
-options dans le terminal<$startrange>
+options dans le terminal
 .XE
 Vous pouvez
 modifier trois aspects du curseur \fCdtterm\fR:
@@ -18548,13 +18012,13 @@ Terminal
 .XE
 .XS
 options
-du curseur<$endrange>
+du curseur
 .XE
 .XS
 Curseur
 .XE
 .XS
-options dans le terminal<$endrange>
+options dans le terminal
 .XE
 .NH 3 
 Vitesse de clignotement du curseur
@@ -18657,7 +18121,7 @@ Param\*`etres du signal
 Terminal
 .XE
 .XS
-options du signal<$startrange>
+options du signal
 .XE
 .XS
 Options
@@ -18666,7 +18130,7 @@ Options
 signal
 .XE
 .XS
-terminal<$startrange>
+terminal
 .XE
 Il existe
 trois types d'options de param\*'etrage du signal dans \fCdtterm\fR:
@@ -18752,7 +18216,7 @@ cliquez sur Appliquer.
 Terminal
 .XE
 .XS
-options du signal<$endrange>
+options du signal
 .XE
 .XS
 Options
@@ -18761,7 +18225,7 @@ Options
 signal
 .XE
 .XS
-terminal<$endrange>
+terminal
 .XE
 .NH 2 
 Options du terminal dtterm
@@ -18813,13 +18277,13 @@ pas, s\*'electionnez Terminal dans le menu Options.
 Terminal
 .XE
 .XS
-options du clavier<$startrange>
+options du clavier
 .XE
 .XS
 Clavier
 .XE
 .XS
-options du terminal<$startrange>
+options du terminal
 .XE
 .IP \(rh
  Cliquez sur le bouton S\*'equence d'\*'echappement
@@ -18909,13 +18373,13 @@ Terminal
 .XE
 .XS
 options
-du clavier<$endrange>
+du clavier
 .XE
 .XS
 Clavier
 .XE
 .XS
-options du terminal<$endrange>
+options du terminal
 .XE
 .NH 3 
 Param\*`etres de l'\*'ecran
@@ -18937,13 +18401,13 @@ Terminal
 .XE
 .XS
 options de param\*'etrage
-de l'\*'ecran <$startrange>
+de l'\*'ecran 
 .XE
 .XS
 Options
 .XE
 .XS
-param\*'etrage \*'ecran du terminal<$startrange>
+param\*'etrage \*'ecran du terminal
 .XE
 .IP -
  \fC-132\fR
@@ -19034,17 +18498,13 @@ et quitter la fen\*^etre.
  Pour enregistrer les s\*'elections et conserver la fen\*^etre,
 cliquez sur Appliquer.
 .XS
-Terminal
-.XE
-.XS
+Terminal,
 options
-de param\*'etrage de l'\*'ecran <$endrange>
+de param\*'etrage de l'\*'ecran 
 .XE
 .XS
-Options
-.XE
-.XS
-param\*'etrage \*'ecran du terminal<$endrange>
+Options,
+param\*'etrage \*'ecran du terminal
 .XE
 .NH 1 
 Caract\*`eres de contr\*^ole du terminal
@@ -19052,23 +18512,17 @@ Caract\*`eres de contr\*^ole du terminal
  
 .XS
 Caract\*`eres
+sp\*'eciaux,
+terminal
 .XE
 .XS
-sp\*'eciaux
-terminal<$startrange>
+Terminal,
+caract\*`eres de contr\*^ole
 .XE
 .XS
-Terminal
-.XE
-.XS
-caract\*`eres de contr\*^ole<$startrange>
-.XE
-.XS
-Caract\*`eres
-.XE
-.XS
+Caract\*`eres de
 contr\*^ole
-du terminal<$startrange>
+du terminal
 .XE
 \*'Etant donn\*'e
 que \fCdtterm\fR \*'emule uniquement un terminal, les caract\*`eres
@@ -19077,7 +18531,7 @@ vous \*^etes habitu\*'es sur un terminal physique. La ressource \fCttyModes\fR p
 de l'\*'emulateur de terminal.
  Les caract\*`eres de contr\*^ole par d\*'efaut d\*'efinis
 dans le Gestionnaire de configuration sont list\*'es dans le \" <!--Original
-XRef content: 'Tableau n\(de 12\(hy1
+Tableau n\(de 12\(hy1
 Caract\*`eres de contr\*^ole du terminal.
 .TS
 center,box;
@@ -19120,22 +18574,16 @@ la ressource \fCttyModes\fR.
  S\*'electionnez Relancez Gestionnaire d'esp. de travail
 dans le menu Espace de travail.
 .XS
-Terminal
-.XE
-.XS
-caract\*`eres de contr\*^ole<$endrange>
-.XE
-.XS
-Caract\*`eres
-.XE
-.XS
-contr\*^ole du terminal<$endrange>
+Terminal,
+caract\*`eres de contr\*^ole
 .XE
 .XS
 Caract\*`eres
+contr\*^ole du terminal
 .XE
 .XS
-sp\*'eciaux terminal<$endrange>
+Caract\*`eres
+sp\*'eciaux terminal
 .XE
 .NH 1 
 Modification de l'\*'emulateur de terminal
@@ -19144,15 +18592,11 @@ par d\*'efaut
  
 .XS
 Emulateur de terminal
-.XE
-.XS
 modification
 de l'\*'emulateur par d\*'efaut
 .XE
 .XS
 Emulateur de terminal
-.XE
-.XS
 par d\*'efaut, modification
 .XE
 Vous pouvez utiliser d'autres \*'emulateurs de
@@ -19165,7 +18609,6 @@ manuel \fIBureau CDE - Guide de l'administrateur\fR.
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
 <?
-<?Pub *0000070772>
 \" <!-- $XConsortium: ch13.sgm /main/11 1996/12/21 19:06:14 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -19181,18 +18624,14 @@ manuel \fIBureau CDE - Guide de l'administrateur\fR.
 bitmaps et pixmaps pouvant \*^etre utilis\*'es comme ic\*^ones ou
 images de fond.
 .TS
-center,box;
- 
- 
+center,box; 
+c  
 l.
- Fonctions
-de base de l'Editeur d'icônes296Fonctions de base de l'Editeur d'ic\*^ones	
- Sauvegarde
-des fichiers d'icônes299Sauvegarde des fichiers d'ic\*^ones	
- Utilisation
-des couleurs302Utilisation des couleurs	
- Fonctions
-avancées de l'Editeur d'icônes302Fonctions avanc\*'ees de l'Editeur d'ic\*^ones	
+Contenu du chapitre 
+Fonctions de base de l'Editeur d'ic\*^ones	
+Sauvegarde des fichiers d'ic\*^ones	
+ Utilisation des couleurs
+Fonctions avanc\*'ees de l'Editeur d'ic\*^ones	
 .TE
  Le tableau ci-dessous r\*'epertorie les formats
 d'image support\*'es par l'Editeur d'ic\*^ones.
@@ -19201,18 +18640,15 @@ center,box;
 c s s  
 l l l.
  Formats d'ic\*^one
-\fCFormat\fR	
- \fCDescription\fR	
- \fCNom de fichier\fR	
- Pixmap X (XPM)	
- Images multicolores compos\*'ees
-de couleurs statiques et dynamiques.	
- \fC*.pm\fR	
- Bitmap X (XBM)	
- Images bicolores (couleurs d'avant-
-et d'arri\*`ere-plan) utilis\*'ees pour les ic\*^ones en noir
-et blanc.	
- \fC*.bm\fR	
+ \fCFormat\fR	\fCDescription\fR	\fCNom de fichier\fR	
+ Pixmap X (XPM)	Images multicolores compos\*'ees	 \fC*.pm\fR
+	de couleurs statiques et dynamiques.	
+
+ Bitmap X (XBM)	Images bicolores (couleurs d'avant-	 \fC*.bm\fR	
+	et d'arri\*`ere-plan) utilis\*'ees
+	pour les ic\*^ones en noir
+	et blanc.	
+
 .TE
 Fen\*^etre principale de l'Editeur d'ic\*^ones
 .PSPIC "./graphics/IEmain.eps"
@@ -19225,30 +18661,24 @@ format bitmap doit pouvoir \*^etre utilis\*'e si les couleurs disponibles
 sur l'espace de travail sont insuffisantes.
  Pour plus de d\*'etails sur la cr\*'eation d'ic\*^ones, reportez-vous
 au chapitre Visual Design du manuel \fI Style Guide and Checklist\fR .
-.NH 1 
+.NH 0  
 Lancement de l'Editeur d'ic\*^ones
 .PP
 .IP -
  Ouvrez le panneau secondaire Applications personnelles et
 cliquez sur l'objet de commande de l'Editeur d'ic\*^ones.
 .XS
-Lancement
-.XE
-.XS
+Lancement,
 Editeur d'ic\*^ones
 .XE
 .XS
-Editeur d'ic\*^ones
-.XE
-.XS
+Editeur d'ic\*^ones,
 lancement
 .XE
 .PSPIC "./graphics/fpicon.eps"
  Au lancement de l'Editeur d'ic\*^ones, la zone de dessin est vide.
 .XS
-Tableau de bord
-.XE
-.XS
+Tableau de bord,
 Editeur d'ic\*^ones
 .XE
 .NH 2 
@@ -19259,14 +18689,10 @@ ic\*^one d\*'ej\*`a charg\*'ee, en suivant une des proc\*'edures
 suivantes.
 .XS
 Ouverture
-.XE
-.XS
 ic\*^one
 .XE
 .XS
 Editeur d'ic\*^ones
-.XE
-.XS
 ouverture
 .XE
 .IP -
@@ -19275,14 +18701,10 @@ sur un fichier d'ic\*^one (l'action par d\*'efaut associ\*'ee aux
 fichiers pixmaps et bitmaps lance l'Editeur d'ic\*^ones et charge le fichier).
 .XS
 Editeur d'ic\*^ones
-.XE
-.XS
 lancement
 .XE
 .XS
-Gestionnaire de fichiers
-.XE
-.XS
+Gestionnaire de fichiers,
 lancement de l'Editeur d'ic\*^ones
 .XE
 .IP -
@@ -19290,8 +18712,6 @@ lancement de l'Editeur d'ic\*^ones
 d'ic\*^ones du panneau secondaire Applications personnelles.
 .XS
 Ouverture
-.XE
-.XS
 fichier d'ic\*^one
 .XE
 .IP -
@@ -19299,15 +18719,11 @@ fichier d'ic\*^one
 le Tableau de bord, puis ouvrez le groupe Applications_Bureau et cliquez deux
 fois sur l'Editeur d'ic\*^ones.
 .XS
-Editeur d'ic\*^ones
-.XE
-.XS
+Editeur d'ic\*^ones,
 lancement
 .XE
 .XS
-Gestionnaire d'applications
-.XE
-.XS
+Gestionnaire d'applications,
 lancement de l'Editeur d'ic\*^ones
 .XE
 .IP -
@@ -19335,9 +18751,7 @@ d'ic\*^ones.
 .NH 2 
 Ouverture d'une ic\*^one existante
 .XS
-Ic\*^ones
-.XE
-.XS
+Ic\*^ones,
 ouverture pour \*'edition
 .XE
 .PP
@@ -19351,11 +18765,9 @@ Pour annuler les modifications, s\*'electionnez OK.
  Tapez le nom du fichier \*`a charger dans la zone Entrez
 un nom de fichier ou s\*'electionnez-le dans la liste.
 .IP \(rh
- Cliquez sur Ouvrir.
-*
+ Cliquez sur Ouvrir.*
 .FS
-* 
- Lors du chargement d'un fichier, le format de sortie (menu Options)
+* Lors du chargement d'un fichier, le format de sortie (menu Options)
 est d\*'efini automatiquement en fonction du type du fichier.
 .FE
  
@@ -19364,15 +18776,11 @@ cliquer sur le fichier correspondant dans le Gestionnaire de fichiers.
 .NH 2 
 Cr\*'eation d'une ic\*^one
 .XS
-Editeur d'ic\*^ones
-.XE
-.XS
+Editeur d'ic\*^ones,
 cr\*'eation d'une ic\*^one
 .XE
 .XS
 Cr\*'eation
-.XE
-.XS
 ic\*^one
 .XE
 .PP
@@ -19398,29 +18806,23 @@ Effacement d'une ic\*^one
  S\*'electionnez Effacer l'ic\*^one dans le menu Editer.
  La totalit\*'e de la zone de dessin est effac\*'ee.
 .XS
-Ic\*^ones
-.XE
-.XS
+Ic\*^ones,
 effacement
 .XE
 .NH 2 
 Cr\*'eation d'une image
 .XS
 Cr\*'eation
-.XE
-.XS
 image
 .XE
 .XS
-Image
-.XE
-.XS
+Image,
 cr\*'eation
 .XE
 .PP
 .IP \(rh
  S\*'electionnez un outil de dessin (voir le \" <!--Original
-XRef content: 'Tableau  n\(de 13\(hy2, page 298
+Tableau  n\(de 13\(hy2, page 298
 Description des outils de dessin).
 .IP \(rh
  S\*'electionnez une couleur (couleur statique, nuances
@@ -19436,17 +18838,15 @@ Outils de dessin
 Outils de dessin de l'Editeur d'ic\*^ones repr\*'esente la zone contenant les outils de
 dessin de l'Editeur d'ic\*^ones.
 .XS
-Editeur d'ic\*^ones
+Editeur d'ic\*^ones,
+outils de dessin
 .XE
 .XS
-outils de dessin<$startrange>
-.XE
-.XS
-Outils de dessin de l'Editeur d'ic\*^ones<$startrange>
+Outils de dessin de l'Editeur d'ic\*^ones
 .XE
 Outils de dessin de l'Editeur d'ic\*^ones
 .PSPIC "./graphics/icontool.eps"
-<variablelist role="LabList">
+
 .IP ""
 .TS
 center,box;
@@ -19456,98 +18856,64 @@ center,box;
 c s s  
 l l l.
 Description des outils de dessin
-\fCOutil\fR	
- \fCFonction\fR	
- \fCUtilisation\fR	
- Crayon	
- Permet de dessiner des lignes et pixels
-\*`a main lev\*'ee.	
- Appuyez sur le bouton de la souris
-et maintenez-le enfonc\*'e pour tracer la ligne.
- Ligne	
- Permet de dessiner des lignes droites.
-	
- Appuyez sur le bouton de la souris
-et faites glisser cette derni\*`ere; une fois la ligne trac\*'ee,
-rel\*^achez le bouton.
- Rectangle	
- Permet de tracer des rectangles (pleins
-ou non).	
- Appuyez sur le bouton de la souris
-et faites glisser cette derni\*`ere; une fois le contour du rectangle
-trac\*'e, rel\*^achez le bouton.
- Cercle	
- Permet de tracer des cercles (pleins
-ou non).	
- Positionnez le pointeur de la souris
-au centre du cercle, cliquez et faites glisser la souris pour tracer la circonf\*'erence.
-Celle-ci trac\*'ee, rel\*^achez le bouton.
- Effacer	
- Permet d'effacer des zones de grande
-taille.	
- Appuyez sur le bouton de la souris
-et faites glisser cette derni\*`ere pour effacer la zone voulue.
- Pour effacer des pixels individuels, choisissez l'outil Crayon et la couleur
-Transparence.
- Coloriage	
- Permet de remplir une zone avec une
-couleur s\*'electionn\*'ee.	
- Cliquez sur un pixel de la zone \*`a
-colorier. La couleur s\*'electionn\*'ee est appliqu\*'ee \*`a
-ce pixel, ainsi qu'\*`a tous les pixels voisins de m\*^eme couleur.
-Les contours de la zone colori\*'ee ne sont pas d\*'efinis; seuls
-les pixels d'une couleur diff\*'erente de celle du pixel s\*'electionn\*'e
-ne sont pas affect\*'es.
- Polyligne	
- Permet de dessiner tracer des lignes
-droites reli\*'ees entre elles.	
- Cliquez sur le point de d\*'epart
-de la premi\*`ere ligne, puis sur l'emplacement marquant la fin de chaque
-segment.
- Cliquez deux fois sur le point final du dernier segment.
- Polygone	
- Permet de dessiner des lignes droites
-reli\*'ees entre elles (la premi\*`ere et la derni\*`ere sont
-reli\*'ees, de sorte que le polygone est ferm\*'e).	
- Cliquez sur le point de d\*'epart
-de la premi\*`ere ligne, puis sur l'emplacement marquant la fin de chaque
-segment.
- Cliquez deux fois sur le point final du dernier segment.
- Ovale	
- Permet de tracer des ellipses (pleines
-ou non).	
- Appuyez sur le bouton de la souris
-et faites glisser cette derni\*`ere; une fois l'ovale trac\*'e, rel\*^achez
-le bouton.
- S\*'election	
- Permet de s\*'electionner une
-zone; il s'agit d'une op\*'eration pr\*'ealable \*`a l'ex\*'ecution
-de nombreuses commandes du menu Editer.	
- Positionnez le pointeur sur un angle
-de la zone \*`a s\*'electionner et encadrez cette derni\*`ere,
-puis rel\*^achez le bouton de la souris.
- Remplissage	
- Permet de tracer des rectangles, cercles,
-ovales et polygones pleins (au lieu de simples contours).
+\fCOutil\fR	\fCFonction\fR	\fCUtilisation\fR	
+ Crayon	Permet de dessiner des lignes et pixels	 Appuyez sur le bouton de la souris
+	\*`a main lev\*'ee.	et maintenez-le enfonc\*'e pour tracer la ligne.	
+
+
+ Ligne	 Permet de dessiner des lignes droites.	Appuyez sur le bouton de la souris
+		et faites glisser cette derni\*`ere;
+		une fois la ligne trac\*'ee,
+		rel\*^achez le bouton.
+ Rectangle	 Permet de tracer des rectangles (pleins ou non).	Appuyez sur le bouton de la souris
+		et faites glisser cette derni\*`ere;
+		une fois le contour du rectangle
+		trac\*'e, rel\*^achez le bouton.
+ Cercle	Permet de tracer des cercles (pleins ou non).	Positionnez le pointeur de la souris
+		au centre du cercle, cliquez et faites glisser
+		la souris pour tracer la circonf\*'erence.
+		Celle-ci trac\*'ee, rel\*^achez le bouton.
+ Effacer	Permet d'effacer des zones de grande taille.	Appuyez sur le bouton de la souris
+		et faites glisser cette derni\*`ere pour effacer la zone voulue.
+		Pour effacer des pixels individuels, choisissez
+		l'outil Crayon et la couleur
+		Transparence.
+ Coloriage	Permet de remplir une zone avec  Cliquez sur un pixel de la zone \*`a
+	une couleur s\*'electionn\*'ee.	colorier. La couleur
+		s\*'electionn\*'ee est appliqu\*'ee \*`a
+		ce pixel, ainsi qu'\*`a tous les pixels voisins
+		de m\*^eme couleur.Les contours de la zone colori\*'ee
+		ne sont pas d\*'efinis; seuls les pixels d'une couleur
+		diff\*'erente de celle du pixel s\*'electionn\*'e
+		ne sont pas affect\*'es.
+ Polyligne	Permet de dessiner tracer des lignes	Cliquez sur le point de d\*'epart
+		droites reli\*'ees entre elles.	de la premi\*`ere ligne,
+		puis sur l'emplacement marquant la fin de chaque segment.
+		Cliquez deux fois sur le point final du dernier segment.
+ Polygone	Permet de dessiner des lignes droites	Cliquez sur le point de d\*'epart
+		reli\*'ees entre elles (la premi\*`ere	de la premi\*`ere ligne, puis 
+		et la derni\*`ere sont reli\*'ees,	sur l'emplacement marquant 
+		de sorte que le polygone est ferm\*'e).	la fin de chaque segment.
+		 Cliquez deux fois sur le point final du dernier segment. 
+ Ovale	 Permet de tracer des ellipses (pleines ou non).	Appuyez sur le bouton de la souris
+		et faites glisser cette derni\*`ere;
+		une fois l'ovale trac\*'e, rel\*^achez
+		le bouton.
+ S\*'election	Permet de s\*'electionner une zone;	Positionnez le pointeur sur un angle
+	il s'agit d'une op\*'eration pr\*'ealable	de la zone \*`a s\*'electionner 
+	\*`a l'ex\*'ecutionde nombreuses commandes	et encadrez cette derni\*`ere,
+	du menu Editer.	puis rel\*^achez le bouton de la souris.	
+ Remplissage	 Permet de tracer des rectangles, cercles,
+		ovales et polygones pleins
+		(au lieu de simples contours).
 .XS
-Editeur d'ic\*^ones
-.XE
-.XS
-.XE
-.XS
-outils de dessin<$endrange>
-.XE
-.XS
+Editeur d'ic\*^ones,
+outils de dessin
 .XE
 .XS
 Outils de dessin de l'Editeur
-d'ic\*^ones<$endrange>
+d'ic\*^ones
 .XE
-.XS
-.XE
-.XS
-.XE
-	
  S\*'electionnez la case Remplir
 situ\*'ee sous la palette d'outils pour dessiner des formes remplies,
 d\*'es\*'electionnez- la pour dessiner des contours uniquement.
@@ -19577,13 +18943,13 @@ se pr\*'esentent comme suit:
 Nom
 .XE
 .XS
-fichiers d'ic\*^ones<$startrange>
+fichiers d'ic\*^ones
 .XE
 .XS
 Ic\*^ones
 .XE
 .XS
-nom<$startrange>
+nom
 .XE
 .CW
 nom_base.taille.format
@@ -19594,7 +18960,7 @@ nom_base.format
 taille standard de l'ic\*^one: \fCl\fR pour large (normale
 ; 48x48 pixels), \fCm\fR pour medium (moyenne; 32x32 pixels), \fCs\fR pour small (petite; 24x24 pixels) ou \fCt\fR pour
 tiny (tr\*`es petite; 16x16 pixels). Pour plus de d\*'etails, \" <!--Original
-XRef content: 'reportez-vous à la section \*QTailles d'icônes\*Q,
+reportez-vous à la section \*QTailles d'icônes\*Q,
 page n\(de 300.Tailles d'ic\*^ones
 Si la taille de votre ic\*^one n'est pas standard, cette lettre n'est pas
 utilis\*'ee.
@@ -19612,13 +18978,13 @@ format est XBM, deux fichiers sont cr\*'e\*'es: \fCmail.t.bm\fR et \fCmail.t_m.b
 Nom
 .XE
 .XS
-fichiers d'ic\*^ones<$endrange>
+fichiers d'ic\*^ones
 .XE
 .XS
 Ic\*^ones
 .XE
 .XS
-nom<$endrange>
+nom
 .XE
 .NH 2 
 Tailles d'ic\*^ones
@@ -19637,9 +19003,6 @@ destin\*'ees \*`a \*^etre utilis\*'ees dans l'environnement
 CDE.
 .TS
 center,box;
-
-
- 
 c s s s  
 l l l l.
 Tailles conseill\*'ees pour les ic\*^ones
@@ -19648,23 +19011,11 @@ Tailles conseill\*'ees pour les ic\*^ones
  \fCGestionnaire de fichiers (petite)\fR	 16x16	 16x16	 16x16
  \fCGestionnaire d'applications(normale)\fR	 32x32	 32x32	 32x32
  \fCGestionnaire d'applications(petite)\fR	 16x16	 16x16	 16x16
- \fCTableau de bord\fR	
- 48x48	
- 48x48	
- 32x32
+ \fCTableau de bord\fR	 48x48	 48x48	 32x32
  \fCPanneaux secondaires du Tableau
-de bord\fR	
- 32x32	
- 32x32	
- 16x16
- \fCFen\*^etres r\*'eduites\fR	
- 48x48	
- 48x48	
- 32x32
- \fCEspace de travail\fR	
- 32x32	
- 32x32	
- 32x32
+de bord\fR	 32x32	32x32	16x16
+ \fCFen\*^etres r\*'eduites\fR	48x48	48x48	32x32
+ \fCEspace de travail\fR	32x32	32x32	32x32
 .TE
  La taille maximale des ic\*^ones est de 256x256.
 .NH 2 
@@ -19697,16 +19048,14 @@ format de sortie
  XPM pour les pixmaps X couleurs (format par d\*'efaut).
 .IP \(rh
  \" <!--Again, this "Sauvegarder" is wrong - To be
-consistent with Windows, etc, it really should be "Enregistrer"-Ideally we
-should change the UI (Marco Badot)-->S\*'electionnez Sauvegarder sur le
-menu Fichier.
+\" consistent with Windows, etc, it really should be "Enregistrer"-Ideally we
+\" should change the UI (Marco Badot)-->
+S\*'electionnez Sauvegarder sur le menu Fichier.
  Si l'ic\*^one n'a pas de nom ou si vous s\*'electionnez l'option
 Sauvegarder sous, l'Editeur d'ic\*^ones vous invite \*`a indiquer un
-nom de fichier. Cette op\*'eration effectu\*'ee, cliquez sur Sauvegarder.
-*
+nom de fichier. Cette op\*'eration effectu\*'ee, cliquez sur Sauvegarder.*
 .FS
-* 
- Si vous enregistrez sous le format XBM une ic\*^one contenant une
+*  Si vous enregistrez sous le format XBM une ic\*^one contenant une
 couleur transparente, un masque de fichier est \*'egalement enregistr\*'e,
 sous le nom\fCnom_base.taille\fR\fC_m\fR\fC.format.\fR Si vous d\*'eplacez l'ic\*^one, vous
 devez \*'egalement d\*'eplacer ce masque.
@@ -19746,13 +19095,13 @@ Ic\*^ones
 .XE
 .XS
 utilisation des
-couleurs<$startrange>
+couleurs
 .XE
 .XS
 Couleur
 .XE
 .XS
-ic\*^ones<$startrange>
+ic\*^ones
 .XE
 Les
 ic\*^ones disponibles sur le Bureau utilisent une palette de 22 couleurs
@@ -19809,13 +19158,13 @@ parties vides de la zone de dessin, si votre ic\*^one ne l'occupe pas int\*'egra
 Ic\*^ones
 .XE
 .XS
-utilisation des couleurs<$endrange>
+utilisation des couleurs
 .XE
 .XS
 Couleur
 .XE
 .XS
-ic\*^ones<$endrange>
+ic\*^ones
 .XE
 .NH 1 
 Fonctions avanc\*'ees de l'Editeur d'ic\*^ones
@@ -20213,10 +19562,7 @@ agrandissement
 .XE
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?
-<?Pub *0000056034>
-\" <!-- $XConsortium: glossary.sgm /main/5 1996/06/20 18:22:18 rws CHECKEDOUT
-$ -->
+\" <!-- $XConsortium: glossary.sgm /main/5 1996/06/20 18:22:18 rws CHECKEDOUT $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
 \" <!-- (c) Copyright 1995 International Business Machines Corp. -->
@@ -20508,7 +19854,7 @@ des documents.
 faisant partie d'un ensemble (par exemple, une entr\*'ee dans une liste
 ou un objet de commande dans une fen\*^etre).
 .IP "\*'el\*'ement en cours, s\*'election en
-cours</glossterm>
+cours
  \*'El\*'ement mis en \*'evidence dans une liste.
 .IP "\*'emulateur de terminal"
  
@@ -21134,7 +20480,6 @@ de texte clignotant.
 .IP "zone de travail"
  Partie d'une fen\*^etre contenant des objets de commande et du texte.
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000093289>
 \" <!-- $XConsortium: appa.sgm /main/10 1996/12/21 19:05:31 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
 \" <!-- (c) Copyright 1995 Hewlett-Packard Company. -->
@@ -21169,8 +20514,8 @@ center,box;
 l.
  Affichage
 des menus310Affichage des menus	
- Déplacement
-de la zone d'entrée clavier311D\*'eplacement de la zone d'entr\*'ee clavier	
+ D\*'eplacement
+de la zone d'entr\*'ee clavier311D\*'eplacement de la zone d'entr\*'ee clavier	
  Ouverture
 et fermeture de fenêtres312Ouverture et fermeture de fen\*^etres	
  Navigation
@@ -21312,8 +20657,7 @@ center,box;
  
  
 l l.
- Appuyez sur	
- Pour activer
+ Appuyez sur	 Pour activer
  
 .XS
 Touche
@@ -21321,28 +20665,21 @@ Touche
 .XS
 Tab
 .XE
-Tabulation	
- L'\*'el\*'ement tabul\*'e
-suivant.
- Maj+Tab	
- L'\*'el\*'ement tabul\*'e
-pr\*'ec\*'edent.
- Fl\*`eche vers le bas	
- L'objet de commande suivant des \*'el\*'ements
-tabul\*'es.
- Fl\*`eche vers le haut	
- L'objet de commande pr\*'ec\*'edent
-des \*'el\*'ements tabul\*'es.
- F10	
- La barre de menus de la fen\*^etre.
-Pour d\*'erouler les menus et passer d'une option \*`a une autre,
-utilisez les fl\*`eches de d\*'eplacement.
+Tabulation	L'\*'el\*'ement tabul\*'e suivant.
+ Maj+Tab	L'\*'el\*'ement tabul\*'e pr\*'ec\*'edent.
+ Fl\*`eche vers le bas	L'objet de commande suivant des \*'el\*'ements
+	tabul\*'es.
+ Fl\*`eche vers le haut	L'objet de commande pr\*'ec\*'edent
+	des \*'el\*'ements tabul\*'es.
+ F10	La barre de menus de la fen\*^etre.
+	Pour d\*'erouler les menus et passer 
+	d'une option \*`a une autre,
+	utilisez les fl\*`eches de d\*'eplacement.
  Maj+F10	
- Le menu instantan\*'e de l'objet
-s\*'electionn\*'e. Pour passer d'une option \*`a une autre, utilisez
-les fl\*`eches de d\*'eplacement.
- Alt+barre d'espacement	
- Le menu Fen\*^etre.	
+	Le menu instantan\*'e de l'objet
+	s\*'electionn\*'e. Pour passer d'une option 
+	\*`a une autre, utilisez les fl\*`eches de d\*'eplacement.
+ Alt+barre d'espacement	Le menu Fen\*^etre.	
 .TE
  \fI Dans un espace de travai\fR l
 .TS
@@ -21350,24 +20687,20 @@ center,box;
  
  
 l l.
- Appuyez sur	
- Pour activer
- Alt+Tab ou Alt+\*'Echap	
- La fen\*^etre ou l'ic\*^one suivante.
- Maj+Alt+Tab	
- La fen\*^etre ou l'ic\*^one pr\*'ec\*'edente.
- Alt+Fl\*`eche vers le haut	
- La derni\*`ere fen\*^etre d'une
-pile de fen\*^etres (ce qui l'am\*`ene au premier plan).	
- Alt+Fl\*`eche vers le bas	
- Le bas de la pile de fen\*^etres.
- Alt+F6	
- La fen\*^etre suivante d'une application,
-ou pour naviguer entre le Tableau de bord et un panneau secondaire.	
+ Appuyez sur	Pour activer
+ Alt+Tab ou Alt+\*'Echap	La fen\*^etre ou l'ic\*^one suivante.
+ Maj+Alt+Tab	La fen\*^etre ou l'ic\*^one pr\*'ec\*'edente.
+ Alt+Fl\*`eche vers le haut	La derni\*`ere fen\*^etre d'une
+	pile de fen\*^etres 
+	(ce qui l'am\*`ene au premier plan).	
+ Alt+Fl\*`eche vers le bas	Le bas de la pile de fen\*^etres.
+ Alt+F6	La fen\*^etre suivante d'une application,
+	ou pour naviguer entre le Tableau de bord 
+	et un panneau secondaire.	
  Maj+Alt+F6	
- La fen\*^etre pr\*'ec\*'edente
-d'une application, ou pour naviguer entre le Tableau de bord et un panneau
-secondaire.
+ La fen\*^etre pr\*'ec\*'edente d'une application, 
+	ou pour naviguer entre le Tableau de bord 
+	et un panneau secondaire.
 .TE
  \fI Dans un menu\fR 
 .TS
@@ -21375,13 +20708,9 @@ center,box;
  
  
 l l.
- Appuyez sur	
- Pour activer
- Fl\*`eche vers le bas	
- L'option suivante du menu.	
- Fl\*`eche vers le haut	
- L'option pr\*'ec\*'edente du
-menu.
+ Appuyez sur	 Pour activer
+ Fl\*`eche vers le bas	 L'option suivante du menu.	
+ Fl\*`eche vers le haut	 L'option pr\*'ec\*'edente du menu.
 .TE
  Pour activer une option de menu s\*'electionn\*'ee, appuyez
 sur la barre d'espacement.
@@ -21441,9 +20770,9 @@ fen\*^etre d'application
 .PP
  Lorsque vous fermez une fen\*^etre, elle dispara\*^it de tous
 les espaces de travail.
-<caution>
+.B1
  Avant de fermer une fen\*^etre d'application, sauvegardez votre travail.
-</caution>
+.B2
 .IP \(rh
  Appuyez sur Alt+Tab pour amener la mise en \*'evidence
 sur la fen\*^etre \*`a fermer.
@@ -21922,9 +21251,8 @@ appuyez sur Entr\*'ee.
  Appuyez sur Ctrl+R, le raccourci clavier de
 l'option Revenir.
  Pour plus de d\*'etails sur l'utilisation de l'aide, reportez-vous
-au chapitre n\(de 3, \*QAccès à l'aide
-role="ChapNumAndTitle" "UG.GHelp.mkr.1".<?
-</appendix>
+au chapitre n\(de 3, \*QAcc\*`es à l'aide.
+
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
 \" <!-- $XConsortium: appb.sgm /main/11 1996/12/21 19:05:37 rws $ -->
 \" <!-- (c) Copyright 1995 Digital Equipment Corporation. -->
@@ -21949,21 +21277,21 @@ center,box;
  
 l.
  Langue
-par défaut à la connexion321Langue par d\*'efaut \*`a la connexion	
- Sélection
+par d\*'efaut à la connexion321Langue par d\*'efaut \*`a la connexion	
+ S\*'election
 d'une langue à la connexion322S\*'election d'une langue \*`a la connexion	
- Création
-ou édition d'un fichier dans une langue donnée322
+ Cr\*'eation
+ou \*'edition d'un fichier dans une langue donn\*'ee322
 Cr\*'eation ou \*'edition d'un fichier
  Utilisation
-d'un émulateur de terminal dans une langue donnée323
+d'un \*'emulateur de terminal dans une langue donn\*'ee323
 Utilisation d'un \*'emulateur de terminal sp\*'ecifique
- Définition
+ D\*'efinition
 de polices323D\*'efinition de polices	
  Modification
 des polices324Modification des polices	
- Sélection
-du mode d'entrée et du clavier326S\*'election du mode d'entr\*'ee et du	
+ S\*'election
+du mode d'entr\*'ee et du clavier326S\*'election du mode d'entr\*'ee et du	
 .TE
  
 .XS
@@ -22128,15 +21456,14 @@ Editeur de texte
 .CW
 \fC/usr/dt/bin/dtpad &\fR
 .R
- Vous pouvez d\*'esormais entrer<? des caract\*`eres
+ Vous pouvez d\*'esormais entrer des caract\*`eres
 japonais si les fichiers sp\*'ecifiques \*`a l'environnement local
 ont \*'et\*'e install\*'es. Vous pouvez aussi utiliser la session
 Editeur de texte pour \*'editer un fichier japonais cr\*'e\*'e
 pr\*'ealablement.
- La section &xd2;Spécification de polices
-de caractères à partir de la ligne de commande; à la page n\(de 298
-role="SecTitleAndPageNum" \*`A partir de la ligne de commande offre un exemple de sp\*'ecification
-de jeu de caract\*`eres.
+ La section \*QSp\*'ecification de polices
+de caract\*`eres à partir de la ligne de commande\*U offre un exemple
+de sp\*'ecification de jeu de caract\*`eres.
 .NH 1 
 Utilisation d'un \*'emulateur de terminal sp\*'ecifique
 \*`a une langue
@@ -22181,7 +21508,7 @@ D\*'efinition de polices
 Polices
 .XE
 .XS
-localisation<$startrange>
+localisation
 .XE
 .XS
 Localisation
@@ -22281,7 +21608,7 @@ Polices
 .XE
 .XS
 d\*'efinition \*`a
-partir de la ligne de commande<$startrange>
+partir de la ligne de commande
 .XE
 Pour
 modifier les polices des menus \*`a partir de la ligne de commande, entrez
@@ -22311,7 +21638,7 @@ Polices
 .XE
 .XS
 d\*'efinition
-\*`a partir de la ligne de commande<$endrange>
+\*`a partir de la ligne de commande
 .XE
 .NH 2 
 Sp\*'ecification de polices \*`a l'aide d'un fichier ressource
@@ -22342,7 +21669,7 @@ Modificateurs de modes d'entr\*'ee
 .PP
  
 .XS
-Mode d'entr\*'ee<$startrange>
+Mode d'entr\*'ee
 .XE
 Lorsque
 plusieurs modes d'entr\*'ee sont disponibles pour un environnement local,
@@ -22367,8 +21694,7 @@ XMODIFIERS
 Ressources
 .XE
 .XS
-<Filename | Command>XmNinputMethod<Default
-Para Font>
+\fCXmNinputMethod\fR 
 .XE
 .NH 2 
 Style de mode d'entr\*'ee
@@ -22376,11 +21702,7 @@ Style de mode d'entr\*'ee
  Ce param\*`etre d\*'etermine le mode de pr\*'e-\*'edition
 utilis\*'e. Il est d\*'efini par la ressource \fC
 .XS
-Ressources
-.XE
-.XS
-Filename | <Command>XmNpreeditType<Default
-Para Font>
+Ressources \fCXmNpreeditType\fR 
 .XE
 XmNpreeditType\fR, dont la
 syntaxe et les valeurs sont les suivantes:
@@ -22389,21 +21711,16 @@ center,box;
  
  
 l l.
- Syntaxe
-<entry
-align="left" valign="bottom">
- valeur[,valeur,....]
- Valeurs disponibles	
- OverTheSpot, OffTheSpot, Root, None
- Valeur par d\*'efaut	
- OverTheSpot, OffTheSpot, Root	
+ Syntaxe	valeur[,valeur,....]
+ Valeurs disponibles	OverTheSpot, OffTheSpot, Root, None
+ Valeur par d\*'efaut	OverTheSpot, OffTheSpot, Root	
 .TE
  L'ordre des valeurs, s\*'epar\*'ees par des virgules, indique
 leur priorit\*'e; la premi\*`ere valeur prise en charge est utilis\*'ee.
  Pour plus de d\*'etails, reportez-vous au manuel \fIInternationalization
 Programmer's Guide.
 .XS
-Mode d'entr\*'ee<$endrange>
+Mode d'entr\*'ee
 .XE
 \fR
 .NH 2 
@@ -22425,9 +21742,9 @@ sur la commande \fC
 Commande
 .XE
 .XS
-<Filename | Command>xmodmap<Default Para Font>
+\fCxmodmap\fR
 .XE
 xmodmap\fR, entrez \fCman xmodmap\fR.
-</appendix>
+
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 15:44:23-->
-<?Pub *0000046971>
+
