@@ -120,7 +120,7 @@ s|</systemitem>|\\fR|g
 s|<userinput>|\\fC|g
 s|</userinput>|\\fR|g
 s|<structname>|\\fC|g 
-s|</structname>|\\fC|g
+s|</structname>|\\fR|g
 s|<wordasword>|\\fI|g
 s|</wordasword>|\\fR|g
 s|<keycap>|\\fC|g
@@ -225,7 +225,7 @@ s/<\?//g
 #Index
 
 # With groff use .IX instead of .XS/.XE 
-# With DWB troff or others, use 
+# With DWB/Heirloom troff or others, use 
 #s|<indexterm>|\n.XS\n |g
 #s|</indexterm>|\n.XE\n |g
 #s|<primary>||g

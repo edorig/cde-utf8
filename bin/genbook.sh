@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # First, let's convert the figures to EPS format 
-#cd graphics
-#for i in *.tif; 
-#do tifftopnm $i |pnmtops -noturn > `basename $i .tif`.eps ;
-#done
-#cd ..
+cd graphics
+for i in *.tif; 
+do tifftopnm $i |pnmtops -noturn > `basename $i .tif`.eps ;
+done
+cd ..
 
 # Then, let's convert the SGML files to troff (MS macros) 
-cat preface.sgm ch*.sgm glossary.sgm appa.sgm appb.sgm | sed -E -f ../../../bin/sgml2troff.sed > book.ms
+cat preface.sgm ch*.sgm | sed -E -f ../../../bin/sgml2troff.sed > book.ms
 
 # Now, we need to put in place the filenames for the figures.
 sed -E -f ../../../bin/psfigs.sed <  BEntity.sgm > repfigps.sed
