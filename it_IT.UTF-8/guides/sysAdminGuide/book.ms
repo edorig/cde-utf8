@@ -169,8 +169,7 @@ possono essere collegati direttamente al server di login,
 oppure a un terminale X o a una workstation della rete.
 *
 .FS
-* 
- Per avviare, arrestare o personalizzare il server di login \*`e
+* Per avviare, arrestare o personalizzare il server di login \*`e
 necessario operare come superutente.
 .FE
  
@@ -229,12 +228,10 @@ Pu\*`o tuttavia essere avviato anche da una riga comandi
 digitare \fC/usr/dt/bin/dtconfig -e\fR
  Il server di login si avvier\*`a automaticamente al reboot.
 .IP -
- Per avviare il server di login da una riga comandi, digitare
- \fC/usr/dt/bin/dtlogin -daemon\fR
-*
+ Per avviare il server di login da una riga comandi,* digitare
+ \fC/usr/dt/bin/dtlogin -daemon\fR 
 .FS
-* 
- Il server di login pu\*`o essere avviato dalla riga comandi per
+* Il server di login pu\*`o essere avviato dalla riga comandi per
 esigenze di prova della configurazione, ma in generale \*`e pi\*`u
 appropriato l'avvio del server al boot del sistema.
 .FE
@@ -243,12 +240,12 @@ appropriato l'avvio del server al boot del sistema.
 Gestione dei video locali e di rete
 .PP
  La Figura n\(de 1\(hy1
-Possibile configurazione del server di login mostra una possibile configurazione del server
-di login.
-Possibile configurazione del server di login
-.IX terminali X possibili configurazioni del server
-di login 
+Possibile configurazione del server di login mostra una possibile
+configurazione del server di login.
+
+.IX terminali X possibili configurazioni del server di login 
 .PSPIC "./graphics/sag1.ps"
+FIG. 1\(hy1: Possibile configurazione del server di login
 .NH 2 
 Determinazione dell'ID di processo del server di login
 .IX server di login ID del processo 
@@ -294,13 +291,13 @@ Dopo avere modificato \fC/etc/dt/config/Xservers\fR, far rileggere \fCXservers\f
 /usr/dt/bin/dtconfig -reset
 .R
  Questa operazione produce il comando \fCkill -HUP\fR \fCID processo server di login\fR
- Il formato delle righe di \fCXservers\fR
+ Il formato delle righe di \fCXservers\fR \*`e il seguente: 
 .IX Xservers, file sintassi 
- \*`e
-il seguente:
+.DS
 .CW
 \fCnome_video classe_video tipo_video comando_server_X\fR
 .R
+.DE 
  dove
 .TS
 center,box;
@@ -360,14 +357,13 @@ di login,
 il server delle finestre X e consente di eseguire il login in forma tradizionale
 sul video a mappa di bit di un terminale. Quando l'utente effettua il logout,
 o dopo un periodo di tempo specificato, il server di login riavvia il server
-X.
-*
+X.*
+
 .FS
-* 
- L'opzione
-.IX login della riga comandi 
+*  L'opzione
  \*QLogin della riga comandi\*U non \*`e
 disponibile sui video collegati mediante la rete.
+.IX login della riga comandi 
 .FE
  
  Il comportamento del \*QLogin della riga comandi\*U dipende
@@ -382,6 +378,7 @@ local\fR
  \fC
 .IX video remoto 
 foreign\fR
+
  Se si specifica \fClocal\fR@\fCterminale_video\fR, il server di login presume che il server X e \fC/dev/\fR\fCterminale_video\fR si trovino sullo stesso dispositivo
 fisico, e che su quel dispositivo sia in esecuzione un login della riga comandi
 (solitamente \fCgetty\fR). Selezionando \*QLogin della riga
@@ -390,11 +387,9 @@ al login in esecuzione (\fCgetty\fR) su \fC/dev/\fR\fCterminale_video\fR.
  Per disabilitare l'opzione \*QLogin della riga comandi\*U su
 un video, specificare \fCnone\fR come \fCterminale_video\fR. L'impostazione predefinita per \fCterminale_video\fR \*`e \fCconsole\fR. Specificando \fClocal\fR, il valore di \fCterminale_video\fR
 viene impostato automaticamente su \fCconsole\fR. Specificando \fCforeign\fR, l'opzione \*QLogin della riga comandi\*U viene
-disabilitata.
-*
+disabilitata.*
 .FS
-* 
- Avviando il server di login dalla riga comandi, l'opzione \*QLogin
+* Avviando il server di login dalla riga comandi, l'opzione \*QLogin
 della riga comandi\*U viene automaticamente disabilitata sul video locale.
 .FE
  
@@ -639,14 +634,12 @@ digitare:
 .CW
 /usr/dt/bin/dtconfig -kill
 .R
- In questo modo verr\*`a eseguito il comando \fCkill\fR \fCID di processo server di login\fR)
-*
+ In questo modo verr\*`a eseguito il comando \fCkill\fR \fCID di processo server di login\fR)*
 .FS
-* 
- L'arresto del processo del server di l
-.IX server di login eliminazione dell' ID del processo 
-ogin con il comando \fCkill\fR causer\*`a l'interruzione di tutte le sessioni utente gestite
+* L'arresto del processo del server di 
+login con il comando \fCkill\fR causer\*`a l'interruzione di tutte le sessioni utente gestite
 dal server di login.
+.IX server di login eliminazione dell' ID del processo 
 .FE
  
  Il server di login pu\*`o anche essere arrestato eliminando l'ID
@@ -872,14 +865,13 @@ anche limitatamente a un video specifico. Per specificare una risorsa per
 un determinato video occorre usare il formato \fCDtlogin*\fCnome_video\fR*\fCrisorsa\fR\fR.
 Ad esempio, per disabilitare il controllo degli accessi basato sugli utenti
 per il video \fCexpo:0\fR e lasciarlo abilitato per gli altri
-video, occorrer\*`a specificare:
+video, occorrer\*`a specificare:*
 .CW
 Dtlogin*expo_0*authorize: False
 .R
-*
+
 .FS
-* 
- Tutti i caratteri speciali contenuti nei nomi dei video, come i due
+*  Tutti i caratteri speciali contenuti nei nomi dei video, come i due
 punti (:) o i punti (.), vengono sostituiti da un carattere di sottolineatura
 (_).
 .FE
@@ -997,11 +989,9 @@ Avvio di una sessione del desktop
 dell'utente eseguendo lo script \fCXsession\fR. \fCXsession
 .IX Xsession, file esecuzione dal server di login 
 \fR richiede le autorizzazioni dell'utente
-ed esegue i comandi necessari per l'avvio del desktop.
-*
+ed esegue i comandi necessari per l'avvio del desktop.*
 .FS
-* 
- Non aggiornare mai direttamente lo script \fCXsession\fR.
+*  Non aggiornare mai direttamente lo script \fCXsession\fR.
 .FE
  
  Per informazioni su come personalizzare l'avvio delle sessioni del desktop
@@ -1469,11 +1459,9 @@ il file.
 a livello di sistema 
 .IX Gestione delle sessioni personalizzazione a livello di sistema 
 Inoltre, per fare in modo che \fCXsession\fR legga
-automaticamente uno script creato dall'utente, copiare lo script in \fC/etc/dt/config/Xsession.d\fR.
-*
+automaticamente uno script creato dall'utente, copiare lo script in \fC/etc/dt/config/Xsession.d\fR.*
 .FS
-* 
- Nel creare o modificare uno script \fCXsession.d\fR, accertarsi
+* Nel creare o modificare uno script \fCXsession.d\fR, accertarsi
 che i comandi eseguiti in foreground siano di breve durata, poich\*'e
 il tempo richiesto per l'esecuzione dei comandi influir\*`a direttamente
 sul tempo di avvio della sessione. Se un comando in foreground non viene terminato,
@@ -1652,11 +1640,9 @@ o predefinite del desktop modificando il proprio file \fCDirectoryIniziale\fR\fC
 in questo file saranno rese disponibili per le sessioni di quell'utente attraverso
 la caratteristica \fCRESOURCE_MANAGER\fR, e prevarranno
 su quelle specificate nel file di risorse predefinito del desktop o in quello
-predisposto dall'amministratore di sistema.
-*
+predisposto dall'amministratore di sistema.*
 .FS
-* 
- L'utility X Toolkit Intrinsics pu\*`o caricare le risorse per un'applicazione
+* L'utility X Toolkit Intrinsics pu\*`o caricare le risorse per un'applicazione
 da \fCRESOURCE_MANAGER\fR o da \fCDirectoryIniziale\fR\fC/.Xdefaults\fR, ma non da entrambi.
 In genere, questo significa che il file \fCDirectoryIniziale\fR\fC/.Xdefault\fRs dell'utente viene ignorato. Tuttavia,
 la Gestione delle sessioni permette di utilizzarlo in quanto lo unisce \fC
@@ -1723,8 +1709,7 @@ dei colori, vedere \*QAmministrazione dei colori\*U.
 .NH 2 
 .IX Gestione dello spazio di lavoro avvio 
 .IX Gestione delle sessioni avvio della Gestione dello spazio di lavoro 
-Avvio
-della Gestione dello spazio di lavoro
+Avvio della Gestione dello spazio di lavoro
 .PP
  La Gestione delle sessioni avvia la Gestione dello spazio di lavoro,
 che nell'impostazione predefinita \*`e \fC/usr/dt/bin/dtwm\fR.
@@ -1732,8 +1717,7 @@ che nell'impostazione predefinita \*`e \fC/usr/dt/bin/dtwm\fR.
  \*`E possibile specificare una gestione di finestre alternativa
 usando la risorsa \fCwmStartupCommand\fR.
 .IX wmStartupCommand, risorsa 
-.IX Gestione
-delle finestre cambiamento dell' 
+.IX Gestione delle finestre cambiamento dell' 
  \*`E possibile specificare una gestione di finestre alternativa
 per tutti gli utenti creando un file \fC/etc/dt/config/\fR \fClingua\fR\fC/sys.resources\fR e impostando la risorsa \fCDtsession*wmStartupCommand\fR con il percorso completo e le opzioni
 della gestione di finestre desiderata.
@@ -1817,11 +1801,9 @@ d'
 export VARIABILE_PERSONALE=\*Q\fCvalore\fR\*U
 .R
  imposter\*`a la variabile \fCNUOVA_VARIABILE\fR
-negli ambienti di tutti gli utenti al login successivo.
-*
+negli ambienti di tutti gli utenti al login successivo.*
 .FS
-* 
- La Gestione delle sessioni non legge automaticamente il file 
+*  La Gestione delle sessioni non legge automaticamente il file 
 .IX .profile, file uso dalla Gestione del login[profile, file uso] 
 .IX .login, file uso dalla Gestione del login[login, file uso] 
 .IX shell Vedere anche variabili d'ambiente, .profile, .login, .dtprofile[shell aaa] 
@@ -1839,14 +1821,11 @@ Come impostare le risorse
  Per impostare una risorsa a livello di sistema, aggiungerla
 al file \fC/etc/dt/config/\fR\fClingua\fR\fC/
 .IX sys.resources, file 
-sys.resources\fR. (Se necessario, creare il file.)
-*
+sys.resources\fR. (Se necessario, creare il file.)*
 .FS
-* 
- \fC.
-.IX .dtprofile, file sintassi[dtprofile, file sin] 
-dtprofile\fR supporta solo la sintassi della shell \fC/bin/sh\fR
+* \fC.dtprofile\fR supporta solo la sintassi della shell \fC/bin/sh\fR
 o \fC/bin/ksh\fR.
+.IX .dtprofile, file sintassi[dtprofile, file sin] 
 .FE
  
  Ad esempio, se in \fC/etc/dt/config/C/sys.resources\fR
@@ -1968,11 +1947,9 @@ di una sessione
  che contenga i comandi desiderati.
  In genere, questo file \*`e uno script e richiede le autorizzazioni
 di esecuzione. I processi avviati con \fCsessionetc\fR dovrebbero
-essere eseguiti in background.
-*
+essere eseguiti in background.*
 .FS
-* 
- Non usare \fCsessionetc\fR per avviare applicazioni client
+* Non usare \fCsessionetc\fR per avviare applicazioni client
 che vengono ripristinate automaticamente dalla Gestione delle sessioni, per
 evitare di avviare pi\*`u copie della stessa applicazione. La presenza
 di pi\*`u copie di un'applicazione potrebbe non essere immediatamente
@@ -3004,18 +2981,14 @@ durante un aggiornamento dell'applicazione.
  Ad esempio, si potr\*`a creare come \fCradice_app\fR del desktop una directory di nome \fC/etc/radiceapp_desktop/BTE\fR.
 .NH 1 
 Fase 3: Creazione delle directory del pacchetto
-di registrazione
+di registrazione*
 .IX pacchetto di registrazione directory 
 .PP
-*
 .FS
-* 
- Per un esempio della procedura da seguire per creare le directory di
+* Per un esempio della procedura da seguire per creare le directory di
 un pacchetto di registrazione, vedere il Punto n\(de 3
- "sag.regap.mkr.33" della sezione \" <!--
-'\*QEsempio di creazione di un pacchetto -->\" <!--di registrazione
- Esempio di creazione di un pacchetto di registrazione a \" <!--
-'pagina n\(de 79"sag.regap.mkr.33".
+ della sezione \" <!--
+\*QEsempio di creazione di un pacchetto di registrazione\*U 
 .FE
  
  Il pacchetto di registrazione \*`e il gruppo di file di configurazione
@@ -3129,12 +3102,10 @@ si crea un tipo di dati, occorre creare anche:
 <listitem>
  Un tipo di dati per il gruppo dell'applicazione (vedere \" <!--Original
  '\*QConfigurazione del gruppo di
-applicaz-->\" <!--ioni per l'uso di un'icona propria\*U a pagina n\(de 70
- Configurazione del gruppo di applicazioni per).
+applicazioni per l'uso di un'icona propria\*U.
  Per un'introduzione sul modo in cui le azioni e i tipi di dati vengono
 usati nel desktop, vedere il Capitolo n\(de 8,
-\*QIntroduzione alle az-->\" <!--ioni e ai tipi di dati
-Introduzione alle azioni e ai tipi di dati.
+\*QIntroduzione alle azioni e ai tipi di dati\*U
 .NH 2 
 Posizione dei file di configurazione che definiscono le azioni e i
 tipi di dati
@@ -6891,11 +6862,9 @@ In caso affermativo, il file viene identificato come file dell'azione.
 .IX file delle azioni contenuto 
 Il contenuto del file dell'azione \*`e irrilevante;
 in genere, i file delle azioni contengono un testo di commento che descrive
-la loro funzione nel desktop.
-*
+la loro funzione nel desktop.*
 .FS
-* 
- Il \fI file dell'azione\fR  non deve essere confuso con
+* Il \fI file dell'azione\fR  non deve essere confuso con
 il \fI file di definizione dell'azione\fR . Il primo \*`e
 un file con lo stesso nome dell'azione, usato per creare l'\fI icona
 dell'applicazione\fR  nella Gestione di file o nella Gestione di applicazioni.
