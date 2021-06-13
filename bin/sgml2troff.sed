@@ -1,6 +1,7 @@
-# Use tbl <filename> | groff -ms -Tps to process the output 
-# Tables first 
-# They will demand some hand editing 
+# Use that program with sed -E -f sgml2troff.sed < in.sgml > out.ms 
+# Edit the file to fix the tables, then use
+# tbl out.ms | groff -ms -Tps > out.ps to generate the ps manual. 
+
 /<tgroup/,/<\/tgroup>/ s|<title|<caption|g
 /<tgroup/,/<\/tgroup>/ s|</title|</caption|g
 
@@ -111,10 +112,14 @@ s|</symbol>|\\fR|g
 s|</Symbol>|\\fR|g 
 s|<citetitle>|\\fI|g 
 s|</citetitle>|\\fR|g 
-s|<programlisting[^>]*>|\n.CW\n|g
-s|</programlisting>|\n.R\n|g
+s|<programlisting[^>]*>|\n.DS\n.CW\n|g
+s|</programlisting>|\n.R\n.DE\n|g
 s|<computeroutput>|\\fC|g
 s|</computeroutput>|\\fR|g
+s|<abbrev>|\\fC|g
+s|</abbrev>|\\fR|g
+s|<synopsis>|\\fC|g
+s|</synopsis>|\\fR|g
 s|<systemitem>|\\fC|g
 s|</systemitem>|\\fR|g
 s|<userinput>|\\fC|g
@@ -130,7 +135,7 @@ s|</keycap>|\\fR|g
 s|<superscript>|\\u|g
 s|</superscript>|\\d|g
 s|<subscript>|\\d|g
-s|</subscript>|\\d|g
+s|</subscript>|\\u|g
 
 s|<tip>|\n.B1|g
 s|</tip>|\n.B2|g 
@@ -147,7 +152,7 @@ s/<![-]*Original XRef content: '//g ; s/'-->//g
 s|<xref([^>]*)>|&|g 
 #s/linkend="/href="#/g
 
-#Accents
+#Accents 
 s/&aacute;/\\*'a/g
 s/&agrave;/\\*`a/g
 s/&acirc;/\\*^a/g
@@ -197,7 +202,8 @@ s/&xd2;/\\*Q/g
 s/&xd3;/\\*U/g
 s/&minus;/\\-/g 
 s/&hyphen;/\\(hy/g
-s/&[mn]dash;/\\(em/g
+s/&mdash;/\\[em]/g 
+s/&ndash;/\\[en]/g
 s/&bull;/\\(bu/g
 s/&numsp;/ n\\(de /g
 s/&lt;/</g 
@@ -205,13 +211,15 @@ s/&gt;/>/g
 s/&ge;/\\(>=/g
 s/&le;/\\(<=/g
 s/&ne;/\\(!=/g
-s/&trade;/\\(rg/g
+s/&trade;/\\[tm]/g
 s/&reg;/\\(rg/g 
 s/&plusmn;/\\(+-/g
 s/&hellip;/.../g 
 s/&divide;/\\(di/g
 # symbole &ogon; => 
 s/&ogon;/\\(->/g
+s/&iexcl;/\\[r!]/g 
+S/&iquest;/\\[r?]/g 
 # hyphenation character 
 s/&shy;;/\\%/g 
 s/&amp;/\&/g

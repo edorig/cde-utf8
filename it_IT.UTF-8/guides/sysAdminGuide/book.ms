@@ -1,8 +1,29 @@
-.RP
+.RP no 
+
 .TL
 Common Desktop Environment: Manuale per utenti esperti e
-amministratori di sistema 
+amministratori di sistema
+
+.AU
+Digital Equipment Corporation 
+.AU 
+ Hewlett-Packard Company
+.AU 
+International Business Machines Corp.
+.AU 
+Sun Microsystems, Inc.
+.AU 
+Novell, Inc.
+.AU 
+Fujitsu Limited
+.AU 
+Hitachi
+.AU
+CDE Project contributors (2012- )
+.AI
+http://cdesktopenv.sourceforge.net/
 .PP
+
 .bp
 
 
@@ -129,12 +150,18 @@ Markup DocBook SGML
 \fCAspetto della marcatura\fR	\fCElemento semantico\fR	\fCEsempio\fR 
  \fCAaBbCc123\fR	Nomi di comandi.	Usare il comando \fCls\fR
 		per visualizzare l'elenco dei file.
- \fCAaBbCc123\fR	Nomi di opzioni di comandi.	Usare \fCls\fR \fC\-a\fR per visualizzare un elenco di tutti i file.	
- \fCAaBbCc123\fR	{T Posizionatore della riga comandi: sostituire con un nome o valore reale.T}	{T Per cancellare un file, digitare \fCrm\fR \fCnomefile\fR. T}
+ \fCAaBbCc123\fR	Nomi di opzioni di comandi.	Usare \fCls\fR \fC\-a\fR per visualizzare
+		 un elenco di tutti i file.	
+ \fCAaBbCc123\fR	 Posizionatore della riga comandi: 	Per cancellare un file, digitare \fCrm\fR \fCnomefile\fR.
+	 sostituire con un nome o valore reale.
+
 	
  \fCAaBbCc123\fR	Nomi di file o directory.	Editare il file \fC.login\fR.
 	
- \fI AaBbCc123\fR 	{T Titoli di libri, parole o termini nuovi, o parole di particolare importanza.	T}	{T Vedere il Capitolo 6 del \fI Manuale dell'utente\fR . \nQuesta opzione viene detta \fI classe\fR . \nPer eseguire questa operazione \fI \*`e necessario\fR  essere superutente.T}	
+ \fI AaBbCc123\fR	Titoli di libri, parole o termini nuovi,	 Vedere il Capitolo 6 del \fI Manuale dell'utente\fR . 
+	o parole di particolare importanza.	 Questa opzione viene detta \fI classe\fR . 
+		 Per eseguire questa operazione \fI \*`e necessario\fR
+		 essere superutente.
 .TE
 .bp
 \" <!--fickle 1.14 mif-to-docbook 1.7 01/02/96 16:05:15-->
@@ -1045,26 +1072,38 @@ Ambiente del server di login
 	
  \fC LANG\fR	X	X	X	X	Lingua predefinita o selezionata	
 .IX XAUTHORITY, variabile impostazione dalla Gestione del login 
- \fCXAUTHORITY\fR	X	X	X	X	File alternativo per le autorizzazioni X (opzionale)
+ \fCXAUTHORITY\fR	X	X	X	X	File alternativo per le autorizzazioni X
+					 (opzionale)
 	
 .IX PATH, variabile impostazione dalla Gestione del login 
- \fC PATH\fR	X	X	X	X	Valore della risorsa \fCDtlogin*userPath\fR (\fCXsession\fR, \fCXfailsafe\fR) o \fCDtlogin*systemPath\fR (\fCXsetup\fR, \fCXstartup\fR, \fCXreset\fR)
-	
+ \fC PATH\fR	X	X	X	X	Valore della risorsa
+					\fCDtlogin*userPath\fR
+					(\fCXsession\fR,
+					\fCXfailsafe\fR) o
+					\fCDtlogin*systemPath\fR
+					(\fCXsetup\fR, \fCXstartup\fR,
+					\fCXreset\fR) 	
 .IX DISPLAY, variabile, impostazione dalla Gestione del login 
  \fC DISPLAY\fR	X	X	X	X	Numero di connessione del server X
 	
 .IX SHELL, variabile impostazione dalla Gestione del login 
- \fC SHELL\fR	X	X	X	X	Shell specificata in \fC/etc/passwd\fR (\fCXsession\fR, \fCXfailsafe\fR) o risorsa \fCDtlogin*systemShell\fR (\fCXsetup\fR, \fCXstartup\fR, \fCXreset\fR)
-	
+ \fC SHELL\fR	X	X	X	X	Shell specificata in \fC/etc/passwd\fR 
+					(\fCXsession\fR,
+					\fCXfailsafe\fR) o risorsa
+					\fCDtlogin*systemShell\fR
+					(\fCXsetup\fR, \fCXstartup\fR,
+					\fCXreset\fR)	 
 .IX TZ, variabile 
- \fC TZ\fR	X	X	X	X	Valore della risorsa \fCDtlogin.timeZone\fR o fuso orario determinato dal sistema
-	
+ \fC TZ\fR	X	X	X	X	Valore della risorsa	
+					\fCDtlogin.timeZone\fR o fuso
+					orario determinato dal sistema 
+
 .IX USER, variabile 
  \fC USER\fR	X	X	X		Nome dell'utente
 	
 .IX HOME, variabile 
- \fC HOME\fR	X	X	X		Directory iniziale specificata in \fC/etc/passwd\fR
-	
+ \fC HOME\fR	X	X	X		Directory iniziale 
+					specificata in \fC/etc/passwd\fR
 .IX LOGNAME, variabile 
  \fC LOGNAME\fR	X	X	X		Nome dell'utente 
 .TE
@@ -4749,7 +4788,7 @@ dei file system in un punto diverso da \fC/net\fR e la variabile
 d'ambiente \fCDTMOUNTPOINT\fR viene
 impostata in modo da indicare il punto di mount. Vedere la prossima sezione, \" <!--Original
  '\*QImpostazione
-di un valore per DTMOUNTP-->\" <!--OINTImpostazione di un valore per DTMOUNTPOINT.
+di un valore per DTMOUNTPOINT\*U. 
  Per informazioni sull'automounter, vedere la pagina di spiegazioni \fCautomount(1M)\fR.
 .NH 4 
 Impostazione di un valore per DTMOUNTPOINT
@@ -13433,7 +13472,7 @@ il carattere precedente, mentre Shift-Delete cancella il carattere successivo.
  
 .IP -
  La \" <!--
-'Tabella n\(de 15\(hy1Impostazioni prioritarie di 
+Tabella n\(de 15\(hy1Impostazioni prioritarie di 
 elenca le impostazioni prioritarie di \fCdtpad\fR per le combinazioni
 di accesso rapido che entrano in conflitto con le associazioni UNIX.
 .TS
@@ -13443,28 +13482,22 @@ center,box;
  
 c s  
 l l. 
-Impostazioni prioritarie di \fCdtpad\fR
- \fCCombinazione di accesso rapido e relativo testo\fR \fCImpostazione prioritaria\fR
+Tab. 15\(hy1 Impostazioni prioritarie di \fCdtpad\fR
+ \fCCombinazione di accesso rapido e relativo testo\fR	\fCImpostazione prioritaria\fR
 	
- \fCDtpad*fileMenu.print.acceleratorText:\fR	
-	
- \fCDtpad*fileMenu.print.accelerator:\fR	
-	
- \fCDtpad*editMenu.undo.acceleratorText:\fR	Ctrl+_
-	
+ \fCDtpad*fileMenu.print.acceleratorText:\fR		
+ \fCDtpad*fileMenu.print.accelerator:\fR		
+ \fCDtpad*editMenu.undo.acceleratorText:\fR	Ctrl+_	
  \fCDtpad*editMenu.undo.accelerator:\fR	Ctrl<Key>_
-	
  \fCDtpad*editMenu.paste.acceleratorText:\fR	Shift+Insert
-	
  \fCDtpad*editMenu.paste.accelerator:\fR	Shift<Key>osfInsert	
  \fCDtpad*editMenu.selectAll.acceleratorText:\fR	Ctrl+/
-	
  \fCDtpad*editMenu.selectAll.accelerator:\fR	Ctrl<Key>/
 	
 .TE
 .IP -
  La \" <!--
-'Tabella n\(de 15\(hy2Impostazioni prioritarie della finestra di composizione
+Tabella n\(de 15\(hy2Impostazioni prioritarie della finestra di composizione
 elenca le impostazioni prioritarie della finestra di composizione di \fCdtmail\fR per le combinazioni di accesso rapido che entrano in conflitto
 con le associazioni UNIX.
 .TS
@@ -13472,7 +13505,7 @@ center,box;
 
 
  
- 
+c s 
 l l. 
 Impostazioni prioritarie della finestra di composizione di \fCdtmail\fR
  \fCCombinazione di accesso rapido e relativo testo\fR	\fCImpostazione prioritaria\fR
@@ -13515,9 +13548,9 @@ l l.
  Ctrl+Shift+Return	beginning-of-file
 	
 .TE
- GNU EMACS associa al tasto Delete la funzione delete-previous-character()
-anzich\*'e delete-next-character(). Meta+F \*`e normalmente la combinazione
-di accesso al menu File, perci\*`o l'associazione con forward-word() verr\*`a
+ GNU EMACS associa al tasto Delete la funzione \fCdelete-previous-character()\fR
+anzich\*'e \fCdelete-next-character()\fR. Meta+F \*`e normalmente la combinazione
+di accesso al menu File, perci\*`o l'associazione con \fCforward-word()\fR verr\*`a
 ignorata. Per forward-word, usare una delle altre combinazioni associate (ad
 esempio, Ctrl+punto).
 .IP -
@@ -13533,75 +13566,54 @@ c s s
 l l l. 
 Traduzioni per \fCDtEditor.text\fR
  \fCModificatore\fR	Tasto	Routine dell'azione	
- c ~s	<Key>a:	beginning-of-line()\n\	
- c s	<Key>a:	end-of-line()\n\
-	
- c ~s	<Key>b:	backward-character()\n\	
- c s	<Key>b:	forward-character()\n\	
- c ~s	<Key>b:	backward-character()\n\	
- c s	<Key>b:	backward-word()\n\
-	
- m ~s	<Key>b:	backward-word()\n\
-	
- m s	<Key>b:	forward-word()\n\
-	
- c ~s	<Key>d:	delete-next-character()\n\	
- c s	
- <Key>d:	delete-previous- character()\n\	
- m ~s	<Key>d:	kill-next-word()\n\	
- m s	<Key>d:	kill-previous-word()\n\	
- c ~s	<Key>e:	end-of-line()\n\
-	
- c s	<Key>e:	beginning-of-line()\n\	
- c ~s	<Key>f:	forward-character()\n\	
- c s	<Key>f:	backward-character()\n\	
- m ~s	<Key>f:	forward-word()\n\
-	
- m s	<Key>f:	backward-word()\n\
-	
- c	<Key>j:	newline-and-indent()\n\	
- c ~s	<Key>k:	kill-to-end-of-line()\n\	
- c s	<Key>k:	kill-to-start-of-line()\n\	
- c	<Key>l:	redraw-display()\n\	
- c	<Key>m:	newline()\n\
-	
- c s	<Key>n:	process-up()\n\
-c ~s	<Key>n:	process-down()\n\
-	
- c	<Key>o:	newline-and-backup()\n\	
- c ~s	<Key>p:	process-up()\n\
-	
- c s	<Key>p:	process-down()\n\
-	
- c ~s	<Key>u:	kill-to-start-of-line()\n\	
- c s	<Key>u:	kill-to-end-of-line()\n\	
- c ~s	<Key>v:	next-page()\n\
-c s	<Key>v:	previous-page()\n\
-	
- m ~s	<Key>v:	previous-page()\n\
-	
- m s	<Key>v:	next-page()\n\
-	
- c	<Key>w:	kill-selection()\n\	
- c ~s	<Key>y:	unkill()\n\
-	
- m	<Key>]:	forward-paragraph()\n\	
- m	<Key>[:	backward-paragraph()\n\	
- c ~s	<Key>comma:	backward-word()\n\
-c s	<Key>comma:	forward-word()\n\
-	
- m	<Key>\\<:	beginning-of-file()\n\	
- c ~s	<Key>period:	forward-word()\n\
-	
- c s	<Key>period:	backward-word()\n\
-	
- m	<Key>\\>:	end-of-file()\n\
-	
- c ~s	<Key>Return:	end-of-file()\n\
-	
- c s	<Key>Return:	beginning-of-file()\n\	
- ~c ~s ~m ~a	<Key>osfDelete:	delete-previous- character()\n\	
- ~c s ~m ~a	<Key>osfDelete:	delete-next-character()	
+ c ~s	<Key>a:	beginning-of-line()\\n	
+ c s	<Key>a:	end-of-line()\\n		
+ c ~s	<Key>b:	backward-character()\\n		
+ c s	<Key>b:	forward-character()\\n		
+ c ~s	<Key>b:	backward-character()\\n		
+ c s	<Key>b:	backward-word()\\n	
+ m ~s	<Key>b:	backward-word()\\n	
+ m s	<Key>b:	forward-word()\\n		
+ c ~s	<Key>d:	delete-next-character()\\n	
+ c s	<Key>d:	delete-previous- character()\\n	
+ m ~s	<Key>d:	kill-next-word()\\n	
+ m s	<Key>d:	kill-previous-word()\\n		
+ c ~s	<Key>e:	end-of-line()\\n	
+ c s	<Key>e:	beginning-of-line()\\n		
+ c ~s	<Key>f:	forward-character()\\n	
+ c s	<Key>f:	backward-character()\\n	
+ m ~s	<Key>f:	forward-word()\\n	
+ m s	<Key>f:	backward-word()\\n	
+ c	<Key>j:	newline-and-indent()\\n	
+ c ~s	<Key>k:	kill-to-end-of-line()\\n	
+ c s	<Key>k:	kill-to-start-of-line()\\n	
+ c	<Key>l:	redraw-display()\\n	
+ c	<Key>m:	newline()\\n	
+ c s	<Key>n:	process-up()\\n	
+ c ~s	<Key>n:	process-down()\\n	
+ c	<Key>o:	newline-and-backup()\\n	
+ c ~s	<Key>p:	process-up()\\n	
+ c s	<Key>p:	process-down()\\n	
+ c ~s	<Key>u:	kill-to-start-of-line()\\n	
+ c s	<Key>u:	kill-to-end-of-line()\\n		
+ c ~s	<Key>v:	next-page()\\n	
+ c s	<Key>v:	previous-page()\\n	
+ m ~s	<Key>v:	previous-page()\\n	
+ m s	<Key>v:	next-page()\\n	
+ c	<Key>w:	kill-selection()\\n		
+ c ~s	<Key>y:	unkill()\\n	
+ m	<Key>]:	forward-paragraph()\\n	
+ m	<Key>[:	backward-paragraph()\\n	
+ c ~s	<Key>comma:	backward-word()\\n	
+ c s	<Key>comma:	forward-word()\\n	
+ m	<Key> \<:	beginning-of-file()\\n	
+ c ~s	<Key>period:	forward-word()\\n	
+ c s	<Key>period:	backward-word()\\n	
+ m	<Key> \>:	end-of-file()\\n	
+ c ~s	<Key>Return:	end-of-file()\\n	
+ c s	<Key>Return:	beginning-of-file()\\n	
+ ~c ~s ~m ~a	<Key>osfDelete:	delete-previous- character()\\n		
+ ~c s ~m ~a	<Key>osfDelete:	delete-next-character()		
 .TE
 .NH 1 
 Amministrazione dei font\fC
@@ -13702,11 +13714,13 @@ l l.
 
 .IX font di sistema, Gestione degli stili 
  \fCSystemFont[1-7]\fR	Risorse che assegnano un font specifico
-	a un elemento del riquadro di dialogo Font selezionato per \fCSystemFont\fR
+	a un elemento del riquadro di dialogo
+	 Font selezionato per \fCSystemFont\fR 
 	
 .IX font utente, Gestione degli stili 
  \fCUserFont[1-7] \fR	Risorse che assegnano un font specifico
-	a un elemento del riquadro di dialogo Font selezionato per \fCUserFont\fR
+	a un elemento del riquadro di dialogo 
+	Font selezionato per \fCUserFont\fR
 	
 .TE
 *
@@ -13774,12 +13788,11 @@ elenca le specifiche della stringa di definizione dei font.
 font \*`e la seguente:
 .IX font stringhe
 delle caratteristiche 
+.DS
 .CW
-"-Produttore-NomeFamiglia-Spessore-
-Inclinazione-Larghezza-Stile-DimensionePixel-
-DimensionePunti-RisoluzioneX-RisoluzioneY-Spaziatura-
-LarghezzaMedia-RegistrazioneSetCaratteri-CodificaSetCaratteri"
+"-Produttore-NomeFamiglia-Spessore-Inclinazione-Larghezza-Stile-DimensionePixel-DimensionePunti-RisoluzioneX-RisoluzioneY-Spaziatura-LarghezzaMedia-RegistrazioneSetCaratteri-CodificaSetCaratteri"
 .R
+.DE
 .TS
 center,box;
  
@@ -14141,18 +14154,18 @@ center,box;
 c s s 
 l l l. 
 Numero dei colori del desktop
- \fCSchermo\fR	\fCNumero massimo di colori\fR \fCNumero ricavato da\fR
+ \fCSchermo\fR	\fCNumero massimo di colori\fR	\fCNumero ricavato da\fR
 	
  B_W	2	Bianco e nero
 	
  LOW_COLOR	12	Due set di colori moltiplicati per
-	cinque colori, pi\*`u bianco e nero
+		cinque colori, pi\*`u bianco e nero
 	
  MEDIUM_COLOR	22	Quattro set di colori moltiplicati
-	per cinque colori, pi\*`u bianco e nero
+		per cinque colori, pi\*`u bianco e nero
 	
  HIGH_COLOR	42	Otto set di colori moltiplicati per
-	cinque colori, pi\*`u bianco e nero
+		cinque colori, pi\*`u bianco e nero
 	
 .TE
  Per determinare il numero massimo di colori:
@@ -14163,16 +14176,17 @@ il numero di colori di ogni set.
  Aggiungere 2 (per bianco e nero).
  Tuttavia, con la seguente configurazione si possono ottenere solo dieci
 colori nella tavolozza: quattro set di colori per due colori di ogni set ( \fCbackground\fR e \fCselectColor\fR), pi\*`u
-bianco e nero:
+bianco e nero*:
+.DS
 .CW
 *colorUse: MEDIUM_COLOR
 *shadowPixmaps: True
 *foregroundColor: White
 .R
-*
+.DE
+
 .FS
-* 
- Le icone a pi\*`u colori utilizzano quattordici colori aggiuntivi.
+*  Le icone a pi\*`u colori utilizzano quattordici colori aggiuntivi.
 .FE
  
 .NH 3 
@@ -14195,7 +14209,7 @@ center,box;
  
  
 l l. 
- Valore Descrizione
+ Valore	Descrizione
 	
  B_W	Impostazione \*QBianco e nero\*U della Gestione 
 	degli stili Visualizzazione in 1-3 piani di colore 
@@ -14253,9 +14267,12 @@ center,box;
 l l. 
  Valore	Descrizione
 	
- True	Il desktop crea le mappe di pixel \fCtopShadowPixmap\fR e \fCbottomShadowPixmap\fR da usare al posto dei colori di ombreggiatura.
+ True	Il desktop crea le mappe di pixel \fCtopShadowPixmap\fR e
+	\fCbottomShadowPixmap\fR da usare al posto dei colori di
+	ombreggiatura. 
 	
- False	Il desktop utilizza i valori di \fCtopShadowColor\fR e \fCbottomShadowColor\fR della tavolozza.
+ False	Il desktop utilizza i valori di \fCtopShadowColor\fR e
+	\fCbottomShadowColor\fR della tavolozza. 
 	
 .TE
  Il valore predefinito per \fCshadowPixmaps\fR dipende
@@ -15207,9 +15224,7 @@ OnTheSpot,OverTheSpot,OffTheSpot,Root
 controllo Internazionalizzazione, l'utente pu\*`o cambiare l'ordine degli
 stili di pre-editazione entro l'elenco.
 .bp
-.TL 
-Elenco
-.LP 
+
 
 .2C 
 
@@ -15571,12 +15586,12 @@ DTMOUNTPOINT,	variabile		 ... 64
 DTMOUNTPOINT,	variabile	ereditariet\Z'\h'(u;\w'x'-\w'\`'/2)'\`'a	 ... 65
 DTMOUNTPOINT,	variabile	impostazione	 ... 64
 Dtpid,	file		 ... 5
-.dtprofile,	file		 ... 17
-.dtprofile,	file	creazione[dtprofile,	file ... 17
-.dtprofile,	file	impostazione	delle ... 22
-.dtprofile,	file	impostazione	di ... 188
-.dtprofile,	file	lettura[dtprofile,	file ... 17
-.dtprofile,	file	sintassi[dtprofile,	file ... 22
+ .dtprofile,	file		 ... 17
+ .dtprofile,	file	creazione[dtprofile,	file ... 17
+ .dtprofile,	file	impostazione	delle ... 22
+ .dtprofile,	file	impostazione	di ... 188
+ .dtprofile,	file	lettura[dtprofile,	file ... 17
+ .dtprofile,	file	sintassi[dtprofile,	file ... 22
 DtRootMenu			 ... 167
 dtsearchpath			 ... 116
 dtsearchpath			 ... 19
@@ -16039,7 +16054,7 @@ percorso	di	ricerca	delle ... 84
 percorso	di	ricerca	delle ... 85
 percorso	di	ricerca	delle ... 87
 PERM_TERMINAL,	supporto	a	finestre ... 121
-.pm,	estensione	per	i ... 138
+ .pm,	estensione	per	i ... 138
 POSITION_HINTS,	campo		 ... 150
 posta	elettronica,	configurazione	 ... 62
 precedenza	nella	composizione	del ... 116
@@ -16047,9 +16062,9 @@ precedenza	nella	composizione	del ... 144
 predefinita			 ... 74
 primaryColorSetId,	risorsa		 ... 181
 primaryColorSetId,	risorsa		 ... 182
-.profile,	file	lettura[profile,	file ... 19
-.profile,	file[profile,		 ... 17
-.profile,	file	uso	dalla ... 22
+ .profile,	file	lettura[profile,	file ... 19
+ .profile,	file[profile,		 ... 17
+ .profile,	file	uso	dalla ... 22
 punto	di	mount	per ... 64
 PUSH_ACTION,	campo		 ... 154
 PUSH_ANIMATION,campo			 ... 157
@@ -16408,8 +16423,8 @@ XAUTHORITY,	variabile	impostazione	dalla ... 13
 Xconfig,	file	impostazione	delle ... 11
 Xconfig,	file	modifica	 ... 5
 Xconfig,	file	uso	per ... 188
-.Xdefaults,	file[Xdefaults,	file]	 ... 172
-.Xdefaults,	file[Xdefaults,	file]	 ... 20
+ .Xdefaults,	file[Xdefaults,	file]	 ... 172
+ .Xdefaults,	file[Xdefaults,	file]	 ... 20
 XDMCP			 ... 4
 XDMCP			 ... 7
 XDMCP	accesso	diretto	 ... 7
