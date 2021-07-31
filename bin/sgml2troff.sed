@@ -2,17 +2,30 @@
 # Edit the file to fix the tables, then use
 # tbl out.ms | groff -ms -Tps > out.ps to generate the ps manual. 
 
+# First, all backslashes in the SGML text must be escaped 
+s/\\/\\\\/g
+# Processing the tables
+/<table/,/<\/table>/ s|<title[^>]*>|Tab. |g
+/<table/,/<\/table>/ s|</title>||g
 /<tgroup/,/<\/tgroup>/ s|<title|<caption|g
 /<tgroup/,/<\/tgroup>/ s|</title|</caption|g
 
 s|<informaltable[^>]*>|.TS\ncenter,box;\n|g
-s|</informaltable>|\n.TE|g
+s|</informaltable>|\n.TE\n|g
 s|<table[^>]*>|.TS\ncenter,box;\n|g
-s|</table>|\n.TE|g
-s|<colspec[^>]*>|l |g 
-s/<tgroup[^>]*>/ \n /g
+s|</table>|\n.TE\n|g
+s|<colspec[^>]*>||g 
+s/<tgroup cols="1"[^>]*>/l.\n/g
+s/<tgroup cols="2"[^>]*>/ll.\n/g
+s/<tgroup cols="3"[^>]*>/lll.\n/g
+s/<tgroup cols="4"[^>]*>/llll.\n/g
+s/<tgroup cols="5"[^>]*>/lllll.\n/g
+s/<tgroup cols="6"[^>]*>/lllllll.\n/g
+s/<tgroup cols="7"[^>]*>/llllllll.\n/g
+s/<tgroup cols="8"[^>]*>/lllllllll.\n/g
 s|</tgroup>||g 
-
+/<row>/,/<\/row>/ s/<para>//g 
+/<row>/,/<\/row>/ s|</para>||g 
 
 
 s/<tbody>//g
@@ -22,12 +35,12 @@ s|</thead>||g
 s/<row[^>]*>//g
 s|</row>|\n|g
 s/<entry[^>*]><para>//g 
-s|</para></entry>$|\t|g
+s|</para></entry>|\t|g
 s|</entry>|\t|g
 s/<entry[^>]*>//g
 
 # Figure caption 
-/<figure>/,/<\/figure>/ s|<title[^>]*>||g 
+/<figure>/,/<\/figure>/ s|<title[^>]*>|Fig. |g 
 /<figure>/,/<\/figure>/ s|</title>||g
 
 # Sectioning 
@@ -42,7 +55,7 @@ s/<entry[^>]*>//g
 
 # Definition lists 
 s/<variablelist[^>]*>//g  
-s|</variablelist>||g 
+s|</variablelist>|\n.LP\n|g 
 /<varlistentry>/,/<\/varlistentry>/ s/<listitem>//g 
 /<varlistentry>/,/<\/varlistentry>/ s|</listitem>||g
 /<varlistentry>/ s|</term>|"\n|g
@@ -63,9 +76,9 @@ s|</listitem>|\n|g
 s/<[Pp]ara[^>]*>/\n /g 
 s|</[Pp]ara>|\n|g
 s/<itemizedlist[^>]*>/\n/g
-s|</itemizedlist>|\n|g
-s|<orderedlist[^>]*>|\n|g 
-s|</orderedlist>|\n|g 
+s|</itemizedlist>|\n.LP\n|g
+s|<orderedlist[^>]*>||g 
+s|</orderedlist>|\n.LP\n|g 
 # Sections 
 s/<sect1[^>]*>/.NH 1 /g
 s/<sect2[^>]*>/.NH 2 /g
@@ -73,10 +86,10 @@ s/<sect3[^>]*>/.NH 3 /g
 s/<sect4[^>]*>/.NH 4 /g
 s|</sect[1-4]>||g 
 #Footnotes 
-s|<note>|*\n.FS\n* |g
-s|</note>|.FE\n |g
-s|<footnote[^>]*>|*\n.FS\n* |g
-s|</footnote>|.FE\n |g
+s|<note>|\\**\n.FS\n|g
+s|</note>|\n.FE\n|g
+s|<footnote[^>]*>|\\**\n.FS\n|g
+s|</footnote>|\n.FE\n|g
 
 s|<title[^>]*>|.TL\n |g
 s|</title>|\n.LP|g
@@ -143,9 +156,9 @@ s|</tip>|\n.B2|g
 s|></graphic>||g 
 s|<graphic id="[^"]*"|.PSPIC "|g
 s|[ ]*entityref="||g
-
-s/<figure>//g
-s|</figure>||g 
+# Figures are placed in a Keep environment
+s/<figure>/\n.KS/g
+s|</figure>|\n.KE|g 
 s/<sidebar>//g
 s|</sidebar>||g
 s/<![-]*Original XRef content: '//g ; s/'-->//g 
@@ -161,7 +174,7 @@ s/&eacute;/\\*'e/g
 s/&egrave;/\\*`e/g
 s/&euml;/\\:e/g
 s/&ecirc;/\\*^e/g 
-s/&iacute;/\\*'a/g
+s/&iacute;/\\*'i/g
 s/&igrave;/\\*`i/g
 s/&icirc;/\\*^i/g
 s/&iuml;/\\*:i/g
@@ -205,7 +218,7 @@ s/&hyphen;/\\(hy/g
 s/&mdash;/\\[em]/g 
 s/&ndash;/\\[en]/g
 s/&bull;/\\(bu/g
-s/&numsp;/ n\\(de /g
+s/&numsp;/ n\\[Om] /g
 s/&lt;/</g 
 s/&gt;/>/g
 s/&ge;/\\(>=/g
@@ -219,7 +232,7 @@ s/&divide;/\\(di/g
 # symbole &ogon; => 
 s/&ogon;/\\(->/g
 s/&iexcl;/\\[r!]/g 
-S/&iquest;/\\[r?]/g 
+s/&iquest;/\\[r?]/g 
 # hyphenation character 
 s/&shy;;/\\%/g 
 s/&amp;/\&/g
@@ -241,11 +254,11 @@ s/<\?//g
 s|<indexterm>||g
 s|</indexterm>|\n|g
 s|<primary>|\n.IX |g
-s|</primary>| |g
-s|<secondary>||g
-s|</secondary>| |g
-s|<tertiary>||g
-s|</tertiary>| |g
+s|</primary>||g
+s|<secondary>|, |g
+s|</secondary>||g
+s|<tertiary>|, |g
+s|</tertiary>||g
 #s|<secondary>[^<]*</secondary>||g
 #s|<tertiary>[^<]*</tertiary>||g 
 #Commentaires
@@ -278,6 +291,9 @@ s/\$startrange>//g
 # SGML tags cut at end of line... 
 s/<$//g 
 # Comments inside xref 
-s/role="[A-Za-z]*"//g
+s/role="[A-Za-z-]*"//g
+
+# Wrong opening quotation sign was used
+s/^'/ '/g
 # Don't leave empty lines 
 /^$/ d 
